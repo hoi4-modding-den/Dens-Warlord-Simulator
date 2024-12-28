@@ -1,2 +1,3 @@
 XTI = "countries/XTI.txt"
 XIS = "countries/XIS.txt"
+XWE = "countries/Chinese Peoples Republic.txt"
