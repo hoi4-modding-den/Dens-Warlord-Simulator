@@ -1,8 +1,12 @@
 #reload countrycolors
 
 XTI = {
-	color = rgb { 80 115 45}
+	color = rgb { 80 115 45 }
 	color_ui = rgb { 222 247 198 }
+}
+XHK = {
+	color = rgb { 127 73 68 }
+	color_ui = rgb { 127 73 68 }
 }
 
 
