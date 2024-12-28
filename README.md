@@ -24,7 +24,7 @@ Countries fucking exploded, new things exist now, 🤷
 
 ## Current tag list:
 
-Current Apocalypse:
+Warlords:
 <details>
   <summary>A list of every current tag, and the associated Github and Discord name.</summary>
   <br>
