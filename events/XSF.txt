@@ -1,0 +1,20 @@
+﻿add_namespace = xsf
+
+country_event = {
+	id = xsf.1
+	title = xsf.1.t
+	desc = xsf.1.d
+	picture = GFX_report_event_gre_cabinet_meeting
+	
+	is_triggered_only = yes
+	
+	option = { # chen jitang
+		name = xsf.1.a
+		
+	}
+	
+	option = { # li zongren
+		name = xsf.1.b
+		
+	}
+}

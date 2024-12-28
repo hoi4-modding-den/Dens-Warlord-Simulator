@@ -1,0 +1,14 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_portrait_XSF_chen_jitang"
+		texturefile = "gfx/XSF/chen_jitang.jpg"
+	}
+	spriteType = {
+		name = "GFX_portrait_XSF_lingnan_council"
+		texturefile = "gfx/XSF/lingnan_council.jpg"
+	}
+	spriteType = {
+		name = "GFX_portrait_XSF_li_zongren"
+		texturefile = "gfx/XSF/li_zongren.jpg"
+	}
+}

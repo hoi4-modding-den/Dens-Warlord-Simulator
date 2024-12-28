@@ -10,8 +10,8 @@ state= {
 	}
 
 	history= {
-		#owner = GXC
-		#add_core_of = GXC
+		owner = XSF
+		add_core_of = XSF
 		#add_core_of = CHI
 		#add_core_of = PRC
 		buildings = {
@@ -24,9 +24,7 @@ state= {
 			}
 		}
 
-		1938.10.25 = {		
-			remove_core_of = GXC
-			#owner = CHI
+		1938.10.25 = {
 			JAP = {
 				set_province_controller = 1202
 				set_province_controller = 4050

@@ -1,0 +1,51 @@
+characters={
+	XSF_chen_jitang = { 
+		name = XSF_chen_jitang
+		portraits = {
+			civilian = {
+				large = GFX_portrait_XSF_chen_jitang
+			}
+		}
+		corps_commander={
+			traits={ trickster trait_reckless politically_connected infantry_officer }
+			skill=4
+			attack_skill=5
+			defense_skill=3
+			planning_skill=2
+			logistics_skill=3
+			legacy_id=0
+		}
+		# doesn't become leader immediately
+	}
+	XSF_li_zongren = { 
+		name = XSF_li_zongren
+		portraits = {
+			civilian = {
+				large = GFX_portrait_XSF_li_zongren
+			}
+		}
+		corps_commander={
+			traits={  }
+			skill=3
+			attack_skill=2
+			defense_skill=5
+			planning_skill=4
+			logistics_skill=3
+			legacy_id=0
+		}
+		# doesn't become leader immediately
+	}
+	XSF_lingnan_council = { 
+		name = XSF_lingnan_council
+		portraits = {
+			civilian = {
+				large = GFX_portrait_XSF_lingnan_council
+			}
+		}
+		country_leader = {
+			ideology = despotism
+			expire = "1960.1.1.1"
+			id = -1
+		}
+	}
+}
