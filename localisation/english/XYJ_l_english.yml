@@ -1,4 +1,13 @@
 ﻿l_english:
- XWE: "Chinese Peoples Republic"
- XWE_DEF: "Chinese Peoples Republic"
- XWE_AJG: "Chinese Peoples Republic"
+ XYJ:0 "USC"
+ XYJ_DEF:0 "United States of China"
+ XYJ_AJG:0 "United States of China"
+ 
+ XYJ_fascism_party:0 "§RNO PARTY§!"
+ XYJ_fascism_party_long:0 ""
+ XYJ_communism_party:0 "Communist League"
+ XYJ_communism_party_long: ""
+ XYJ_democratic_party:1 "Kuomingtang"
+ XYJ_democratic_party_long: "Nationalist Party of China"
+ XYJ_neutrality_party: "§RNO PARTY§!"
+ XYJ_neutrality_party_long: ""
