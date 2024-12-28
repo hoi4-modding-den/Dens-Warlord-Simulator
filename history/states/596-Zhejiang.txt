@@ -6,9 +6,9 @@ state = {
 
 	history = {
 
-		#owner = CHI
-		#add_core_of = CHI
-		#add_core_of = PRC
+		owner = XMC
+		add_core_of = XMC
+#		add_core_of = CHI
 		
 		victory_points = { 
 			9974 1 # Ningbo
@@ -18,7 +18,8 @@ state = {
 		}
 		
 		buildings = {
-
+			dockyard = 2
+			arms_factory = 1
 			infrastructure = 2
 			air_base = 1 # Ningbo Lishe Airbase
 
@@ -36,21 +37,8 @@ state = {
 				naval_base = 3
 				coastal_bunker = 1
 				bunker = 1
+				naval_facility = 1
 			}
-		}
-
-		1938.10.25 = {		
-			JAP = {
-				set_province_controller = 1055
-				set_province_controller = 1096
-				set_province_controller = 4042
-				set_province_controller = 7058
-				set_province_controller = 7191
-				set_province_controller = 9974
-				set_province_controller = 10014
-				set_province_controller = 10101
-				set_province_controller = 11991
-			} 			
 		}
 	}
 

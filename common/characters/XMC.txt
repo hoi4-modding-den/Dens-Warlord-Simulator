@@ -1,0 +1,58 @@
+characters = {
+	XMC_chen_shaokuan = {
+		name = XMC_chen_shaokuan
+		portraits = {
+			civilian = {
+				large = gfx/XMC/GFX_portrait_XMC_chen_shaokuan.png
+			}
+		}
+		country_leader = {
+			ideology = despotism
+			expire = "2050.3.1.1"
+			id = -1
+		}
+		#navy_leader = {
+		#	traits = { bold superior_tactician spotter naval_lineage flight_deck_manager }
+		#	skill = 5
+		#	attack_skill = 5
+		#	defense_skill = 2
+		#	maneuvering_skill = 3
+		#	coordination_skill = 6
+		#	legacy_id = 0
+		#}
+	}
+	XMC_sa_zhenbing = {
+		name = XMC_sa_zhenbing
+		portraits = {
+			civilian = {
+				large = gfx/XMC/GFX_portrait_XMC_sa_zhenbing.png
+			}
+		}
+		navy_leader={
+			traits={ naval_lineage old_guard_navy bold ironside }
+			skill=3
+			attack_skill=5
+			defense_skill=1
+			maneuvering_skill=2
+			coordination_skill=2
+			legacy_id=0
+		}
+	}
+	XMC_chan_chak = {
+		name = XMC_chan_chak
+		portraits = {
+			civilian = {
+				large = gfx/XMC/GFX_portrait_XMC_chen_chak.png
+			}
+		}
+		navy_leader={
+			traits={ battleship_adherent fly_swatter }
+			skill=3
+			attack_skill=4
+			defense_skill=2
+			maneuvering_skill=2
+			coordination_skill=2
+			legacy_id=0
+		}
+	}
+}

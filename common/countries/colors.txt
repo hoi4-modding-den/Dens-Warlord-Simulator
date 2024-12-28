@@ -9,6 +9,10 @@ XHK = {
 	color_ui = rgb { 127 73 68 }
 }
 
+XMC = {
+	color = rgb { 75 75 175}
+	color_ui = rgb { 75 75 175 }
+}
 
 GER = {
 	color = HSV { 0.1 0.15 0.4 }
