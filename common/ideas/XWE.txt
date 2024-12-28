@@ -1,0 +1,44 @@
+ideas = {
+	country = {
+		XWE_Over_Extention = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = generic_disjointed_gov
+
+			modifier = {
+				consumer_goods_factor = 0.15
+				industrial_capacity_factory = -0.10
+				industrial_capacity_dockyard = -0.10
+			}
+		}
+		XWE_The_Peoples_Army = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = chi_army_corruption3
+
+			modifier = {
+				army_core_attack_factor = 0.1
+				army_core_defence_factor = 0.05
+				army_speed_factor = -0.05
+			}
+		}
+	}
+}

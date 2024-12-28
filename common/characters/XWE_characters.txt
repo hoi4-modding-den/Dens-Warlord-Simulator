@@ -1,2 +1,16 @@
 characters={
+	XWE_Zhou_Enlai = {
+		name = "Zhou Enlai"
+		portraits={
+			civilian={
+				large="gfx/XWE/XWE_Zhou_Enlai.png"
+			}
+		}
+		country_leader={
+			ideology=marxism
+			traits={  }
+			expire="1936.1.3.1"
+			id=-1
+		}
+	}
 }

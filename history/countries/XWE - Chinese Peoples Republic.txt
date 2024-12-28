@@ -26,7 +26,7 @@ if = {
 	}
 }
 
-#recruit_character = 
+recruit_character = XWE_Zhou_Enlai
 
 set_politics = {
 	ruling_party = communism
@@ -35,9 +35,14 @@ set_politics = {
 	elections_allowed = yes
 }
 
+add_ideas = {
+	XWE_Over_Extention
+	XWE_The_Peoples_Army
+}
+
 set_popularities = {
-	communism = 70
-	fascism = 10
-	neutrality = 10
-	democratic = 10
+	communism = 91
+	fascism = 3
+	neutrality = 3
+	democratic = 3
 }
