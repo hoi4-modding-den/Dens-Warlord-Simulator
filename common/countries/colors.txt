@@ -1,5 +1,10 @@
 #reload countrycolors
 
+
+XYJ = {
+	color = rgb { 0 74 127 }
+	color_ui = rgb { 0 74 127 }
+}
 XTI = {
 	color = rgb { 80 115 45 }
 	color_ui = rgb { 222 247 198 }

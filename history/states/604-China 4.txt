@@ -4,14 +4,12 @@ state = {
 
 	history = {
 
-		#owner = XSM
-		#add_core_of = XSM
-		#add_core_of = CHI
-		#add_core_of = PRC
+		owner = XYJ
+		add_core_of = XYJ
 
-		#victory_points = {
-		#	7940 10 # Goldmud was not ofunded until in the late fifties
-		#}
+		victory_points = {
+			7940 10 # Goldmud was not ofunded until in the late fifties
+		}
 
 		buildings = {
 			infrastructure = 1
