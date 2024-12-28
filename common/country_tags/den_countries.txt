@@ -1,1 +1,2 @@
 XTI = "countries/XTI.txt"
+XIS = "countries/XIS.txt"

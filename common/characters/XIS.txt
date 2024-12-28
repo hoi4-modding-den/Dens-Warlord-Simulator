@@ -1,0 +1,15 @@
+characters = {
+	XIS_hu_songshan = {
+		name = XIS_hu_songshan
+		portraits = {
+			civilian = {
+				large = gfx/XIS/hu_songshan_portrait.png
+			}
+		}
+		country_leader = {
+			ideology = despotism
+			expire = "2050.3.1.1"
+			id = -1
+		}
+	}
+}
