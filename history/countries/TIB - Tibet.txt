@@ -1,2 +1,1 @@
 capital = 757
-anarchy_tag = yes
