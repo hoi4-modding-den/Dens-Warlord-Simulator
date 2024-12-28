@@ -13,7 +13,10 @@ XHK = {
 	color = rgb { 127 73 68 }
 	color_ui = rgb { 127 73 68 }
 }
-
+XWE = {
+	color = rgb { 200 1 1 }
+	color_ui = rgb { 200 1 1 }
+}
 XMC = {
 	color = rgb { 75 75 175}
 	color_ui = rgb { 75 75 175 }

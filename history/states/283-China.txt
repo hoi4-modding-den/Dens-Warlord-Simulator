@@ -6,11 +6,8 @@ state = {
 	}
 
 	history = {
-		#owner = XSM
-		#add_core_of = XSM
-		#add_core_of = CHI
-		#add_core_of = PRC
-
+		owner = XWE
+		add_core_of = XWE
 		buildings = {
 			infrastructure = 2
 			industrial_complex = 1
