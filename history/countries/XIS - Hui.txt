@@ -2,6 +2,11 @@ capital = 616
 
 recruit_character = XIS_hu_songshan
 
+
+
+set_country_flag = dont_use_default_military_advisors
+set_country_flag = dont_use_default_political_advisors
+
 # Starting tech
 set_technology = {
 	infantry_weapons = 1

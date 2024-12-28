@@ -14,7 +14,11 @@ state = {
 		}
 
 		victory_points = {
-			8127 2 #Yinchuan
+			8127 5 #Yinchuan
+		}
+		
+		victory_points = {
+			5031 2 #Jinchang
 		}
 
 
@@ -25,7 +29,7 @@ state = {
 	}
 	manpower = 2077600
 	buildings_max_level_factor = 1.000
-	state_category = pastoral
+	state_category = town
 
 	local_supplies = 0.0 
 }
