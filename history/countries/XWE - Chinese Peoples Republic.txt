@@ -27,6 +27,11 @@ if = {
 }
 
 recruit_character = XWE_Zhou_Enlai
+recruit_character = XWE_mao_zedong
+recruit_character = XWE_zhu_de
+recruit_character = XWE_chen_yi
+recruit_character = XWE_peng_dehuai
+recruit_character = XWE_lin_biao
 
 set_politics = {
 	ruling_party = communism
