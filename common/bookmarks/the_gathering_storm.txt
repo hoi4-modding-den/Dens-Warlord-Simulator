@@ -1,0 +1,147 @@
+bookmarks = {
+	bookmark = {
+		name = "GATHERING_STORM_NAME"
+		desc = "GATHERING_STORM_DESC"
+		date = 1936.1.1.12
+		picture = "GFX_select_date_1936"
+		default_country = "GER"
+		default = yes
+		
+		"CHI"={
+			history = "CHI_GATHERING_STORM_DESC"
+			ideology = neutrality
+			minor = no
+			ideas = {
+				
+			}
+			focuses = {
+				
+			}
+		}
+		"XIS"={
+			history = "XIS_GATHERING_STORM_DESC"
+			ideology = neutrality
+			minor = no
+			ideas = {
+				
+			}
+			focuses = {
+				
+			}
+		}
+		"XYJ"={
+			history = "XYJ_GATHERING_STORM_DESC"
+			ideology = democratic
+			minor = no
+			ideas = {
+				
+			}
+			focuses = {
+				
+			}
+		}
+		"XWE"={
+			history = "XWE_GATHERING_STORM_DESC"
+			ideology = communism
+			minor = no
+			ideas = {
+				
+			}
+			focuses = {
+				
+			}
+		}
+		"XTN"={
+			history = "XTN_GATHERING_STORM_DESC"
+			ideology = neutrality
+			minor = no
+			ideas = {
+				
+			}
+			focuses = {
+				
+			}
+		}
+		"XKM"={
+			history = "XKM_GATHERING_STORM_DESC"
+			ideology = neutrality
+			minor = no
+			ideas = {
+				
+			}
+			focuses = {
+				
+			}
+		}
+		"XTI"={
+			history = "XTI_GATHERING_STORM_DESC"
+			ideology = neutrality
+			minor = no
+			ideas = {
+				
+			}
+			focuses = {
+				
+			}
+		}
+		"XSA"={
+			history = "XSA_GATHERING_STORM_DESC"
+			ideology = neutrality
+			minor = no
+			ideas = {
+				
+			}
+			focuses = {
+				
+			}
+		}
+		"XHK"={
+			history = "XHK_GATHERING_STORM_DESC"
+			ideology = democratic
+			minor = yes
+			ideas = {
+				
+			}
+			focuses = {
+				
+			}
+		}
+		"XSF"={
+			history = "XSF_GATHERING_STORM_DESC"
+			ideology = neutrality
+			minor = yes
+			ideas = {
+				
+			}
+			focuses = {
+				
+			}
+		}
+		"XMC"={
+			history = "XMC_GATHERING_STORM_DESC"
+			ideology = neutrality
+			minor = yes
+			ideas = {
+				
+			}
+			focuses = {
+				
+			}
+		}
+		"XSI"={
+			history = "XSI_GATHERING_STORM_DESC"
+			ideology = neutrality
+			minor = yes
+			ideas = {
+				
+			}
+			focuses = {
+				
+			}
+		}
+		effect = {
+			randomize_weather = 22345 # <- Obligatory in every bookmark !
+			#123 = { rain_light = yes }
+		}
+	}
+}
