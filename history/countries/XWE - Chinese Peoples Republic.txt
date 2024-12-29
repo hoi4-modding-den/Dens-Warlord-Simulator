@@ -25,8 +25,8 @@ if = {
 		}
 	}
 }
-
 recruit_character = XWE_Zhou_Enlai
+recruit_character = XWE_Qin_Bangxian
 recruit_character = XWE_mao_zedong
 recruit_character = XWE_zhu_de
 recruit_character = XWE_chen_yi

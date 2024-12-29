@@ -37,7 +37,7 @@ Countries fucking exploded, new things exist now, 🤷
   | XTI | Bowteye            | dbneptune              |
   | XSX | pixelaes           | pixelaes               |
   | XIS | kasastul           | kasastul               |
-  | XWE | IWillExplode       | I Will Explode         | #best modder ever btw!! > not here on line 45
+  | XWE | IWillExplode       | I Will Explode         | #best modder ever btw!!
   | X?? | Yeoudal            | yeoudal                |
   | XHK | Meepazor           | Meepazor               |
   | XSI | Carrera075         | Carrera                |

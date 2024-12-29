@@ -1,5 +1,307 @@
 ideas = {
 	country = {
+		XWE_Soviet_Style_1 = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = smersh
+
+			modifier = {
+				army_morale_factor = 0.10
+				army_attack_factor = 0.10
+				army_defence_factor = 0.10
+			}
+		}
+		XWE_Soviet_Style_2 = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = smersh
+
+			modifier = {
+				army_morale_factor = 0.10
+				army_attack_factor = 0.10
+				army_defence_factor = 0.10
+				training_time_factor = 0.50
+				minimum_training_level = 0.40
+				army_org_factor = 0.15
+				army_org_regain = 0.15
+			}
+		}
+		XWE_Soviet_Style_3 = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = smersh
+
+			modifier = {
+				army_morale_factor = 0.10
+				army_attack_factor = 0.10
+				army_defence_factor = 0.10
+				training_time_factor = 0.50
+				minimum_training_level = 0.40
+				army_org_factor = 0.15
+				army_org_regain = 0.15
+				army_speed_factor = 0.15
+			}
+			
+			equipment_bonus = {
+				motorized_equipment = {
+					instant = yes
+					build_cost_ic = -0.10
+					soft_attack = 0.1
+				}
+			}
+		}
+		XWE_Guerilla_Doctrine_1 = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = smersh
+
+			modifier = {
+				army_core_defence_factor = 0.05
+				army_morale_factor = 0.25
+				army_attack_factor = -0.05
+				supply_consumption_factor = -0.1
+			}
+		}
+		XWE_Guerilla_Doctrine_2 = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = smersh
+
+			modifier = {
+				army_core_defence_factor = 0.05
+				army_morale_factor = 0.25
+				army_attack_factor = -0.1
+				supply_consumption_factor = -0.1
+			}
+			
+			equipment_bonus = {
+				infantry_equipment = {
+					instant = yes
+					build_cost_ic = -0.10
+					soft_attack = 0.1
+				}
+			}
+		}
+		XWE_Guerilla_Doctrine_3 = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = smersh
+
+			modifier = {
+				army_core_defence_factor = 0.05
+				recruitable_population_factor = 0.25
+				org_loss_when_moving = -0.10
+				army_morale_factor = 0.25
+				army_attack_factor = -0.15
+				supply_consumption_factor = -0.1
+			}
+			
+			equipment_bonus = {
+				infantry_equipment = {
+					instant = yes
+					build_cost_ic = -0.10
+					soft_attack = 0.1
+				}
+			}
+		}
+		XWE_Guerilla_Doctrine_4 = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = smersh
+
+			modifier = {
+				army_core_defence_factor = 0.05
+				recruitable_population_factor = 0.25
+				army_defence_factor = 0.05
+				army_org_factor = 0.15
+				army_defence_against_major_factor = 0.20
+				org_loss_when_moving = -0.10
+				army_morale_factor = 0.25
+				army_attack_factor = -0.2
+				supply_consumption_factor = -0.1
+			}
+			
+			equipment_bonus = {
+				infantry_equipment = {
+					instant = yes
+					build_cost_ic = -0.10
+					soft_attack = 0.1
+				}
+			}
+		}
+		XWE_Russian_Advisors = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = SOV_stakhanovite_movement
+
+			modifier = {
+				production_speed_buildings_factor = 0.1
+				research_speed_factor = 0.05
+				political_power_factor = 0.05
+				production_factory_efficiency_gain_factor = 0.05
+			}
+		}
+		XWE_Russian_Companies = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = SOV_stakhanovite_movement
+
+			modifier = {
+				production_speed_buildings_factor = 0.15
+				research_speed_factor = 0.05
+				political_power_factor = 0.05
+				production_factory_efficiency_gain_factor = 0.1
+			}
+		}
+		XWE_Partisans = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = FRA_scw_intervention_republicans_focus
+
+			modifier = {
+				resistance_growth_on_our_occupied_states = 0.25
+				resistance_target_on_our_occupied_states = 0.25
+				compliance_growth_on_our_occupied_states = -0.25
+			}
+		}
+		XWE_Fuck_Japan = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = jap_militarism_showa
+
+			targeted_modifier = {
+				tag = JAP
+				attack_bonus_against = 0.1
+				defense_bonus_against = 0.1
+			}
+			
+			modifier = {
+			
+			}
+		}
+		XWE_Fuck_KMT = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = chi_warlord_integration
+			
+			targeted_modifier = {
+				tag = CHI
+				attack_bonus_against = 0.1
+				defense_bonus_against = 0.1
+			}
+
+			modifier = {
+			
+			}
+		}
 		XWE_Over_Extention = {
 
 			allowed = {
@@ -17,7 +319,6 @@ ideas = {
 			modifier = {
 				consumer_goods_factor = 0.15
 				industrial_capacity_factory = -0.10
-				industrial_capacity_dockyard = -0.10
 			}
 		}
 		XWE_The_Peoples_Army = {
@@ -38,6 +339,46 @@ ideas = {
 				army_core_attack_factor = 0.1
 				army_core_defence_factor = 0.05
 				army_speed_factor = -0.05
+			}
+		}
+		XWE_The_Peoples_Army_Defence_Focus = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = chi_army_corruption3
+
+			modifier = {
+				army_core_attack_factor = -0.05
+				army_core_defence_factor = 0.15
+				army_speed_factor = -0.1
+			}
+		}
+		XWE_The_Peoples_Army_Offence_Focus = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = chi_army_corruption3
+
+			modifier = {
+				army_core_attack_factor = 0.15
+				army_core_defence_factor = -0.05
+				army_speed_factor = 0.1
 			}
 		}
 	}

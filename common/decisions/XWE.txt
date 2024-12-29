@@ -1,0 +1,70 @@
+####NO STEP BACK####
+XWE_army_focus = {
+
+	XWE_Focus_On_Defence = {
+		icon = GFX_decision_hol_exchange_intelligence_data
+		days_remove = 150
+		available = {
+			tag = XWE
+			has_idea = XWE_The_Peoples_Army
+		}
+		visible = {
+			TAG = XWE
+		}
+		remove_effect = {
+			swap_ideas = {
+				remove_idea = XWE_The_Peoples_Army_Defence_Focus
+				add_idea = XWE_The_Peoples_Army
+			}			
+			
+		}
+		complete_effect = {
+			swap_ideas = {
+				remove_idea = XWE_The_Peoples_Army
+				add_idea = XWE_The_Peoples_Army_Defence_Focus
+			}	
+		}
+		
+		custom_cost_trigger = {
+			command_power > 4
+		}			
+		custom_cost_text = decision_cost_CP_5
+
+		ai_will_do = {
+			factor = 5
+		}
+	}
+	XWE_Focus_On_Offence = {
+		icon = GFX_decision_hol_exchange_intelligence_data
+		days_remove = 150
+		available = {
+			tag = XWE
+			has_idea = XWE_The_Peoples_Army
+		}
+		visible = {
+			TAG = XWE
+		}
+		remove_effect = {
+			swap_ideas = {
+				remove_idea = XWE_The_Peoples_Army_Offence_Focus
+				add_idea = XWE_The_Peoples_Army
+			}			
+			
+		}
+		complete_effect = {
+			swap_ideas = {
+				remove_idea = XWE_The_Peoples_Army
+				add_idea = XWE_The_Peoples_Army_Offence_Focus
+			}	
+		}
+		
+		custom_cost_trigger = {
+			command_power > 4
+		}			
+		custom_cost_text = decision_cost_CP_5
+
+		ai_will_do = {
+			factor = 5
+		}
+	}
+}

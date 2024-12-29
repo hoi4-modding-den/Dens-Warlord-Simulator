@@ -35,7 +35,7 @@ characters={
 			}
 		}
 		corps_commander={
-			traits={ defensive_doctrine }
+			traits={ infantry_officer }
 			skill=4
 			attack_skill=2
 			defense_skill=4
@@ -44,7 +44,23 @@ characters={
 			legacy_id=-1
 		}
 	}
-
+	XWE_Qin_Bangxian={
+		name="Qin Bangxian"
+		portraits={
+			army={
+				large="gfx/XWE/XWE_Qin_Bangxian.png"
+			}
+		}
+		corps_commander={
+			traits={ infantry_officer }
+			skill=4
+			attack_skill=2
+			defense_skill=4
+			planning_skill=3
+			logistics_skill=4
+			legacy_id=-1
+		}
+	}
 	XWE_zhu_de={
 		name=PRC_zhu_de
 		portraits={

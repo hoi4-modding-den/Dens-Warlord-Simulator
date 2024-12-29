@@ -1,0 +1,7 @@
+XWE_army_focus = {
+	icon = generic_research
+	visible = {
+		tag = XWE
+	}
+	priority = 15
+}

@@ -1,0 +1,944 @@
+focus_tree = {
+	id = XWE_Focux
+	
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = XWE
+		}
+	}
+
+	default = no
+
+	continuous_focus_position = { x = 20 y = 2500 }  
+	
+	initial_show_position = {
+		x = 20
+		y = 0
+	}
+	focus = {
+		id = XWE_Army_Decotrine
+
+		icon = GFX_focus_generic_military_mission
+
+		x = 20
+		y = 0
+		cost = 5
+
+		allow_branch = {
+			
+		}
+
+		mutually_exclusive = {
+			
+		} 
+		
+		ai_will_do = {
+			base = 0.5
+		}
+
+		available = {
+		}
+		
+		search_filters = { }
+		
+		completion_reward = {
+			army_experience = 35
+		}
+	}
+	focus = {
+		id = XWE_MaoZedong
+
+		icon = GFX_focus_focus_fra_maquis
+		relative_position_id = XWE_Army_Decotrine
+		x = 2
+		y = 1
+		cost = 5
+
+		allow_branch = {
+			
+		}
+
+		mutually_exclusive = {
+			focus = XWE_Qin_Bangxian
+		} 
+		
+		ai_will_do = {
+			base = 0.5
+		}
+
+		available = {
+		}
+		prerequisite = { focus = XWE_Army_Decotrine }
+		search_filters = { }
+		
+		completion_reward = {
+			add_ideas = XWE_Guerilla_Doctrine_1
+		}
+	}
+	focus = {
+		id = XWE_Chinese_Partisans
+
+		icon = GFX_focus_prc_agrarian_socialism
+		relative_position_id = XWE_MaoZedong
+		x = 4
+		y = 1
+		cost = 5
+
+		allow_branch = {
+			
+		}
+
+		mutually_exclusive = {
+		} 
+		
+		ai_will_do = {
+			base = 0.5
+		}
+
+		available = {
+		}
+		prerequisite = { focus = XWE_MaoZedong }
+		search_filters = { }
+		
+		completion_reward = {
+			add_ideas = XWE_Partisans
+		}
+	}
+	focus = {
+		id = XWE_Maoism
+
+		icon = GFX_focus_prc_maoism
+		relative_position_id = XWE_MaoZedong
+		x = 6
+		y = 1
+		cost = 5
+
+		allow_branch = {
+			
+		}
+
+		mutually_exclusive = {
+		} 
+		
+		ai_will_do = {
+			base = 0.5
+		}
+
+		available = {
+		}
+		prerequisite = { focus = XWE_MaoZedong }
+		search_filters = { }
+		
+		completion_reward = {
+		swap_ideas = {
+				remove_idea = XWE_Guerilla_Doctrine_1
+				add_idea = XWE_Guerilla_Doctrine_2
+			}	
+		}
+	}
+	focus = {
+		id = XWE_strenght_in_numbers
+
+		icon = GFX_focus_SOV_mobilization_plan
+		relative_position_id = XWE_Maoism
+		x = 2
+		y = 1
+		cost = 5
+
+		allow_branch = {
+			
+		}
+
+		mutually_exclusive = {
+		} 
+		
+		ai_will_do = {
+			base = 0.5
+		}
+
+		available = {
+		}
+		prerequisite = { focus = XWE_Maoism }
+		search_filters = { }
+		
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = XWE_Guerilla_Doctrine_2
+				add_idea = XWE_Guerilla_Doctrine_3
+			}
+		}
+	}
+	focus = {
+		id = XWE_far_west_industries
+
+		icon = GFX_goal_generic_construction
+		relative_position_id = XWE_strenght_in_numbers
+		x = 1
+		y = 1
+		cost = 5
+
+		allow_branch = {
+			
+		}
+
+		mutually_exclusive = {
+		} 
+		
+		ai_will_do = {
+			base = 0.5
+		}
+
+		available = {
+		}
+		prerequisite = { focus = XWE_strenght_in_numbers }
+		search_filters = { }
+		
+		completion_reward = {
+			283 = {
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+			622 = {
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+			744 = {
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+		}
+	}
+	focus = {
+		id = XWE_Defend_The_Revolution
+
+		icon = GFX_focus_SOV_builder_of_the_red_army
+		relative_position_id = XWE_strenght_in_numbers
+		x = -1
+		y = 1
+		cost = 5
+
+		allow_branch = {
+			
+		}
+
+		mutually_exclusive = {
+		} 
+		
+		ai_will_do = {
+			base = 0.5
+		}
+
+		available = {
+		}
+		prerequisite = { focus = XWE_strenght_in_numbers }
+		search_filters = { }
+		
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = XWE_Guerilla_Doctrine_3
+				add_idea = XWE_Guerilla_Doctrine_4 
+			}
+		}
+	}
+	focus = {
+		id = XWE_Communist_Propaganda
+
+		icon = GFX_focus_attack_china
+		relative_position_id = XWE_Maoism
+		x = -1
+		y = 1
+		cost = 5
+
+		allow_branch = {
+			
+		}
+
+		mutually_exclusive = {
+			focus = XWE_Anti_Japanese_Guerrilas
+		} 
+		
+		ai_will_do = {
+			base = 0.5
+		}
+
+		available = {
+		}
+		prerequisite = { focus = XWE_Maoism  }
+		prerequisite = { focus = XWE_Chinese_Partisans }
+		search_filters = { }
+		
+		completion_reward = {
+			add_ideas = XWE_Fuck_KMT
+		}
+	}
+	focus = {
+		id = XWE_Anti_Japanese_Guerrilas
+
+		icon = GFX_focus_attack_japan
+		relative_position_id = XWE_Maoism
+		x = -3
+		y = 1
+		cost = 5
+
+		allow_branch = {
+			
+		}
+
+		mutually_exclusive = {
+			focus = XWE_Communist_Propaganda
+		} 
+		
+		ai_will_do = {
+			base = 0.5
+		}
+
+		available = {
+		}
+		prerequisite = { focus = XWE_Chinese_Partisans  }
+		search_filters = { }
+		
+		completion_reward = {
+			add_ideas = XWE_Fuck_Japan
+		}
+	}
+	focus = {
+		id = XWE_Qin_Bangxian
+
+		icon = GFX_focus_generic_combined_arms
+		relative_position_id = XWE_Army_Decotrine
+		x = -2
+		y = 1
+		cost = 5
+
+		allow_branch = {
+			
+		}
+
+		mutually_exclusive = {
+			focus = XWE_MaoZedong
+		} 
+		
+		ai_will_do = {
+			base = 0.5
+		}
+
+		available = {
+		}
+		prerequisite = { focus = XWE_Army_Decotrine }
+		search_filters = { }
+		
+		completion_reward = {
+			add_ideas = XWE_Soviet_Style_1
+		}
+	}
+	focus = {
+		id = XWE_Professional_Training
+
+		icon = GFX_SOV_socialist_realism_ccp_2d_sov_compatibility
+		relative_position_id = XWE_Qin_Bangxian
+		x = -6
+		y = 1
+		cost = 5
+
+		allow_branch = {
+			
+		}
+
+		mutually_exclusive = {
+		} 
+		
+		ai_will_do = {
+			base = 0.5
+		}
+
+		available = {
+		}
+		prerequisite = { focus = XWE_Qin_Bangxian }
+		search_filters = { }
+		
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = XWE_Soviet_Style_1
+				add_idea = XWE_Soviet_Style_2
+			}
+		}
+	}
+	focus = {
+		id = XWE_Truck_Divisions
+
+		icon = GFX_focus_SOV_the_road_of_life
+		relative_position_id = XWE_Professional_Training
+		x = 0
+		y = 1
+		cost = 5
+
+		allow_branch = {
+			
+		}
+
+		mutually_exclusive = {
+		} 
+		
+		ai_will_do = {
+			base = 0.5
+		}
+
+		available = {
+		}
+		prerequisite = { focus = XWE_Professional_Training }
+		search_filters = { }
+		
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 3
+				uses = 1
+				category = motorized_equipment
+			}
+			add_equipment_to_stockpile = {
+				type = motorized_equipment
+				amount = 350
+				producer = SOV
+			}
+			division_template = {
+    			name = "Soviet Motorized Division"
+				division_names_group = CHI_INF_01
+				regiments = {
+    			    motorized = { x = 0 y = 0 }
+    			    motorized = { x = 0 y = 1 }
+    			    motorized = { x = 0 y = 2 }
+					motorized = { x = 1 y = 0 }
+    			    motorized = { x = 1 y = 1 }
+    			    motorized = { x = 1 y = 2 }
+			    }
+			    support = {
+					artillery = { x = 0 y = 0 }
+				}
+			}
+			620 = {
+				create_unit = {
+					division = "division_template = \"Soviet Motorized Division\" start_experience_factor = 0.2"
+					owner = XWE
+					count = 2
+				}
+			}
+		}
+	}
+	focus = {
+		id = XWE_First_Russian_Tank_Divisions
+
+		icon = GFX_focus_SOV_the_glory_of_the_red_army_communism
+		relative_position_id = XWE_Professional_Training
+		x = -1
+		y = 2
+		cost = 5
+
+		allow_branch = {
+			
+		}
+
+		mutually_exclusive = {
+			focus = XWE_Russian_Shock_Troopers
+		} 
+		
+		ai_will_do = {
+			base = 0.5
+		}
+
+		available = {
+		}
+		prerequisite = { focus = XWE_Truck_Divisions }
+		search_filters = { }
+		
+		completion_reward = {	
+			add_tech_bonus = {
+				bonus = 2
+				uses = 1
+				category = armor
+			}
+			division_template = {
+    			name = "Soviet Tank Brigade"
+				division_names_group = CHI_INF_01
+				regiments = {
+    			    motorized = { x = 0 y = 0 }
+    			    motorized = { x = 0 y = 1 }
+    			    motorized = { x = 0 y = 2 }
+					motorized = { x = 1 y = 0 }
+    			    motorized = { x = 1 y = 1 }
+    			    motorized = { x = 1 y = 2 }
+					light_armor = { x = 2 y = 0 }
+    			    light_armor = { x = 2 y = 1 }
+			    }
+			    support = {
+				}
+			}
+			add_equipment_to_stockpile = {
+				type = motorized_equipment
+				amount = 100
+				producer = SOV
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_dlc = "No Step Back"
+					}
+				}
+				set_technology = { gwtank = 1 }
+				add_equipment_to_stockpile = {
+					type = light_tank_equipment_1
+					amount = 150
+					producer = SOV
+				}
+			}
+			else = {
+				set_technology = { gwtank_chassis = 1 }
+				add_equipment_to_stockpile = {
+					type = light_tank_chassis_1
+					amount = 150
+					producer = SOV
+				}
+			}
+			random_owned_state = {
+				create_unit = {
+					division = "division_template = \"Soviet Tank Brigade\" start_experience_factor = 0.2"
+					owner = XWE
+					count = 1
+				}
+			}
+		}
+	}
+	focus = {
+		id = XWE_Russian_Shock_Troopers
+
+		icon = GFX_SOV_soviet_artillery_ccp_2d_sov_compatibility
+		relative_position_id = XWE_Professional_Training
+		x = 1
+		y = 2
+		cost = 5
+
+		allow_branch = {
+			
+		}
+
+		mutually_exclusive = {
+			focus = XWE_First_Russian_Tank_Divisions
+		} 
+		
+		ai_will_do = {
+			base = 0.5
+		}
+
+		available = {
+		}
+		prerequisite = { focus = XWE_Truck_Divisions }
+		search_filters = { }
+		
+		completion_reward = {
+			division_template = {
+    			name = "Soviet Shock Troop"
+				division_names_group = CHI_INF_01
+				regiments = {
+    			    motorized = { x = 0 y = 0 }
+    			    motorized = { x = 0 y = 1 }
+    			    motorized = { x = 0 y = 2 }
+					motorized = { x = 1 y = 0 }
+    			    motorized = { x = 1 y = 1 }
+    			    motorized = { x = 1 y = 2 }
+					motorized = { x = 2 y = 0 }
+    			    motorized = { x = 2 y = 1 }
+    			    motorized = { x = 2 y = 2 }
+					mot_artillery_brigade = { x = 3 y = 0 }
+    			    mot_artillery_brigade = { x = 3 y = 1 }
+					mot_artillery_brigade = { x = 3 y = 2 }
+			    }
+			    support = {
+				}
+			}
+			random_owned_state = {
+				create_unit = {
+					division = "division_template = \"Soviet Shock Troop\" start_experience_factor = 0.2"
+					owner = XWE
+					count = 2
+				}
+			}
+			add_equipment_to_stockpile = {
+				type = motorized_equipment
+				amount = 100
+				producer = SOV
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 150
+				producer = SOV
+			}
+			swap_ideas = {
+				remove_idea = XWE_Soviet_Style_2
+				add_idea = XWE_Soviet_Style_3
+			}
+		}
+	}#
+	focus = {
+		id = XWE_Russian_Airplanes
+
+		icon = GFX_focus_generic_multi_role_aircraft
+		relative_position_id = XWE_Russian_Shock_Troopers
+		x = -1
+		y = 1
+		cost = 5
+
+		allow_branch = {
+			
+		}
+
+		mutually_exclusive = {
+			focus = XWE_First_Russian_Tank_Divisions
+		} 
+		
+		ai_will_do = {
+			base = 0.5
+		}
+
+		available = {
+		}
+		prerequisite = { focus = XWE_Russian_Shock_Troopers focus = XWE_First_Russian_Tank_Divisions }
+		search_filters = { }
+		
+		completion_reward = {
+			if = {
+				limit = {
+					NOT = {
+						has_dlc = "By Blood Alone"
+					}
+				}
+				add_equipment_to_stockpile = {
+					type = strat_bomber_equipment_1
+					amount = 50
+					producer = SOV
+				}
+			}
+			else = {
+				add_equipment_to_stockpile = {
+					type = medium_plane_airframe_1
+					amount = 50
+					producer = SOV
+					variant_name = "ANT-40"
+				}	
+			}
+		}
+	}
+	focus = {
+		id = XWE_Russian_Advisors
+
+		icon = GFX_focus_SOV_the_path_of_marxism_leninism
+		relative_position_id = XWE_Qin_Bangxian
+		x = -3
+		y = 1
+		cost = 5
+
+		allow_branch = {
+			
+		}
+
+		mutually_exclusive = {
+		} 
+		
+		ai_will_do = {
+			base = 0.5
+		}
+
+		available = {
+		}
+		prerequisite = { focus = XWE_Qin_Bangxian }
+		search_filters = { }
+		
+		completion_reward = {
+			add_ideas = XWE_Russian_Advisors
+		}
+	}
+	focus = {
+		id = XWE_Russian_Companies
+
+		icon = GFX_focus_SOV_merge_plants
+		relative_position_id = XWE_Russian_Advisors
+		x = 0
+		y = 1
+		cost = 5
+
+		allow_branch = {
+			
+		}
+
+		mutually_exclusive = {
+		} 
+		
+		ai_will_do = {
+			base = 0.5
+		}
+
+		available = {
+		}
+		prerequisite = { focus = XWE_Russian_Advisors }
+		search_filters = { }
+		
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = XWE_Russian_Advisors
+				add_idea = XWE_Russian_Companies
+			}
+		}
+	}
+	focus = {
+		id = XWE_Industries
+
+		icon = GFX_goal_generic_construct_mil_factory
+		relative_position_id = XWE_Qin_Bangxian
+		x = 2
+		y = 1
+		cost = 5
+
+		allow_branch = {
+			
+		}
+
+		mutually_exclusive = {
+		} 
+		
+		ai_will_do = {
+			base = 0.5
+		}
+
+		available = {
+		}
+		prerequisite = { focus = XWE_MaoZedong focus = XWE_Qin_Bangxian }
+		search_filters = { }
+		
+		completion_reward = {
+			every_owned_state = {
+				limit = {
+					is_core_of = XWE
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+		}
+	}
+	focus = {
+		id = XWE_develop_Wuhan_artillery
+
+		icon = GFX_focus_generic_industry_3
+		relative_position_id = XWE_Industries
+		x = 1
+		y = 1
+		cost = 5
+
+		allow_branch = {
+			
+		}
+
+		mutually_exclusive = {
+		} 
+		
+		ai_will_do = {
+			base = 0.5
+		}
+
+		available = {
+		}
+		prerequisite = { focus = XWE_Industries }
+		search_filters = { }
+		
+		completion_reward = {
+			620 = {
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+		}
+	}
+	focus = {
+		id = XWE_New_Arti_Divisions
+
+		icon = GFX_goal_generic_army_artillery2
+		relative_position_id = XWE_develop_Wuhan_artillery
+		x = 0
+		y = 1
+		cost = 5
+
+		allow_branch = {
+			
+		}
+
+		mutually_exclusive = {
+		} 
+		
+		ai_will_do = {
+			base = 0.5
+		}
+
+		available = {
+		}
+		prerequisite = { focus = XWE_develop_Wuhan_artillery }
+		search_filters = { }
+		
+		completion_reward = {
+			division_template = {
+    			name = "Pàobīng shī"
+				division_names_group = CHI_INF_01
+				regiments = {
+    			    infantry = { x = 0 y = 0 }
+    			    infantry = { x = 0 y = 1 }
+    			    infantry = { x = 0 y = 2 }
+					infantry = { x = 1 y = 0 }
+    			    infantry = { x = 1 y = 1 }
+    			    infantry = { x = 1 y = 2 }
+			    }
+			    support = {
+					artillery = { x = 0 y = 0 }
+				}
+			}
+			620 = {
+				create_unit = {
+					division = "division_template = \"Pàobīng shī\" start_experience_factor = 0.5"
+					owner = XWE
+					count = 4
+				}
+			}
+		}
+	}
+	focus = {
+		id = XWE_Defend_The_Borders
+
+		icon = GFX_goal_fortify_the_westwall
+		relative_position_id = XWE_Industries
+		x = -1
+		y = 1
+		cost = 5
+
+		allow_branch = {
+			
+		}
+
+		mutually_exclusive = {
+		} 
+		
+		ai_will_do = {
+			base = 0.5
+		}
+
+		available = {
+		}
+		prerequisite = { focus = XWE_Industries }
+		search_filters = { }
+		
+		completion_reward = {
+			620 = {
+				add_building_construction = {
+				type = bunker
+				level = 4
+				instant_build = yes
+				province = {
+					all_provinces = yes
+					limit_to_border_country = CHI
+					}
+				}
+			}
+			283 = {
+				add_building_construction = {
+				type = bunker
+				level = 4
+				instant_build = yes
+				province = {
+					all_provinces = yes
+					limit_to_border_country = CHI
+					}
+				}
+			}
+			744 = {
+				add_building_construction = {
+				type = bunker
+				level = 4
+				instant_build = yes
+				province = {
+					all_provinces = yes
+					limit_to_border_country = CHI
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = XWE_Develop_Western_Supplies
+
+		icon = GFX_goal_reichsautobahn
+		relative_position_id = XWE_Defend_The_Borders
+		x = 0
+		y = 1
+		cost = 5
+
+		allow_branch = {
+			
+		}
+
+		mutually_exclusive = {
+		} 
+		
+		ai_will_do = {
+			base = 0.5
+		}
+
+		available = {
+		}
+		prerequisite = { focus = XWE_Defend_The_Borders }
+		search_filters = { }
+		
+		completion_reward = {
+			build_railway = {
+				level = 1
+				fallback = yes
+				start_province = 4619
+				target_province = 7418
+			}
+			build_railway = {
+				level = 2
+				fallback = yes
+				start_province = 7418
+				target_province = 8049
+			}
+			build_railway = {
+				level = 2
+				fallback = yes
+				start_province = 7418
+				target_province = 2022
+			}
+			283 = {
+				add_building_construction = {
+					type = supply_node
+					level = 1
+					instant_build = yes
+					province = 2022
+				}
+			}
+		}
+	}
+}
+
