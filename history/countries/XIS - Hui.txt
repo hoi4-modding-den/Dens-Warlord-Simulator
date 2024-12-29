@@ -1,6 +1,14 @@
 capital = 616
 
+oob = "XIS_1936"
+
 recruit_character = XIS_hu_songshan
+recruit_character = XIS_su_chin_shou
+recruit_character = XIS_pai_tzu_li
+recruit_character = XIS_lu_dachang
+recruit_character = XIS_han_youwen
+recruit_character = XIS_ma_dunjing
+recruit_character = XIS_ma_hongbin
 
 
 

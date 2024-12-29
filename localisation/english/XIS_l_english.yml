@@ -7,7 +7,17 @@
  
  #characters
  XIS_hu_songshan:0 "Hu Songshan"
+ XIS_su_chin_shou:0 "Su Chin-shou"
+ XIS_pai_tzu_li:0 "Pai Tzu-li"
+ XIS_lu_dachang:0 "Lu Dachang"
+ XIS_han_youwen:0 "Han Youwen"
+ XIS_ma_dunjing:0 "Ma Dunjing"
+ XIS_ma_hongbin:0 "Ma Hongbin"
  
  #victory points
  VICTORY_POINTS_5031:0 "Jinchang"
  VICTORY_POINTS_7971:0 "Jiayuguan"
+ 
+ #misc
+ inspirer_of_the_salars:0 "Inspirer of the Salars"
+ ma_the_kind_man:0 "Ma the Kind Man"

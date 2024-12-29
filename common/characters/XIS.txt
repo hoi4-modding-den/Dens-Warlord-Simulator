@@ -12,4 +12,145 @@ characters = {
 			id = -1
 		}
 	}
+	XIS_su_chin_shou = {
+		name = XIS_su_chin_shou
+		portraits = {
+			army = {
+				large = gfx/leaders/Asia/Portrait_Asia_Generic_land_3.dds
+				small = gfx/interface/ideas/idea_asia_generic_3.dds
+			}
+		}
+		corps_commander = {
+			skill=2
+			attack_skill=2
+			defense_skill=1
+			planning_skill=3
+			logistics_skill=2
+			legacy_id=-1
+		}
+	}
+	XIS_pai_tzu_li = {
+		name = XIS_pai_tzu_li
+		portraits = {
+			army = {
+				large = gfx/leaders/Asia/Portrait_Asia_Generic_land_2.dds
+				small = gfx/interface/ideas/idea_asia_generic_2.dds
+			}
+		}
+		corps_commander = {
+			skill=2
+			attack_skill=3
+			defense_skill=2
+			planning_skill=1
+			logistics_skill=2
+			legacy_id=-1
+		}
+	}
+	XIS_lu_dachang = {
+		name = XIS_lu_dachang
+		portraits = {
+			army = {
+				large = gfx/XIS/lu_dachang_portrait.png
+				small = gfx/XIS/lu_dachang_minister.png
+			}
+		}
+		corps_commander = {
+			skill=4
+			attack_skill=4
+			defense_skill=4
+			planning_skill=3
+			logistics_skill=4
+			legacy_id=-1
+		}
+	}
+	XIS_han_youwen = {
+		name = XIS_han_youwen
+		portraits = {
+			army = {
+				large = gfx/XIS/han_youwen_portrait.png
+				small = gfx/XIS/han_youwen_minister.png
+			}
+			civilian = {
+				small = gfx/XIS/han_youwen_minister.png
+			}
+		}
+		corps_commander = {
+			skill=3
+			attack_skill=2
+			defense_skill=4
+			planning_skill=3
+			logistics_skill=3
+			legacy_id=-1
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = XIS_han_youwen_advisor
+			allowed = {
+				original_tag = XIS
+			}
+			traits = {
+				inspirer_of_the_salars
+			}
+		}
+	}
+	XIS_ma_dunjing = {
+		name = XIS_ma_dunjing
+		portraits = {
+			army = {
+				large = gfx/XIS/ma_dunjing_portrait.png
+				small = gfx/XIS/ma_dunjing_minister.png
+			}
+			civilian = {
+				small = gfx/XIS/ma_dunjing_minister.png
+			}
+		}
+		corps_commander = {
+			skill=3
+			attack_skill=3
+			defense_skill=3
+			planning_skill=3
+			logistics_skill=3
+			legacy_id=-1
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = XIS_ma_dunjing_advisor
+			allowed = {
+				original_tag = XIS
+			}
+			traits = {
+				backroom_backstabber
+			}
+		}
+	}
+	XIS_ma_hongbin = {
+		name = XIS_ma_hongbin
+		portraits = {
+			army = {
+				large = gfx/XIS/ma_hongbin_portrait.png
+				small = gfx/XIS/ma_hongbin_minister.png
+			}
+			civilian = {
+				small = gfx/XIS/ma_hongbin_minister.png
+			}
+		}
+		field_marshal = {
+			skill=5
+			attack_skill=4
+			defense_skill=5
+			planning_skill=5
+			logistics_skill=5
+			legacy_id=-1
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = XIS_ma_hongbin_advisor
+			allowed = {
+				original_tag = XIS
+			}
+			traits = {
+				ma_the_kind_man
+			}
+		}
+	}	
 }

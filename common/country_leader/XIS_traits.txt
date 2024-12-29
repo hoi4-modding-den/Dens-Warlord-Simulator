@@ -1,0 +1,16 @@
+leader_traits = {
+
+	inspirer_of_the_salars = {
+		random = no
+		conscription = 0.05
+		war_support_factor = 0.05
+	}
+	
+	ma_the_kind_man = {
+		random = no
+		improve_relations_maintain_cost_factor = -0.5
+		political_advisor_cost_factor = -0.25
+		mobilization_laws_cost_factor = -0.25
+		stability_factor = 0.1
+	}
+}
