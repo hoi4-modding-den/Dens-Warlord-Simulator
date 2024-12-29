@@ -1,4 +1,23 @@
 ﻿l_english:
+
+
+ XWE_communism_party:1 "SPP"
+ XWE_communism_party_long:0 "Socialist People's Party"
+ XWE_democratic_party:1 "LSP"
+ XWE_democratic_party_long:0 "Liberal Socialist Party"
+ XWE_fascism_party:1 "NPP"
+ XWE_fascism_party_long:0 "National People's Party"
+ XWE_neutrality_party:1 "§RBANNED§!"
+ XWE_neutrality_party_long:0 "§RBANNED§!"
+ 
+ XWE.1.t:0 "The People's Republic Of China"
+ XWE.1.d:0 "After a 10 Year of Struggle The People’s Republic Of China emerged victorious, gaining its independence, that’s also thanks to the soviet help they received, establishing themselves as the First Socialist Republic in China, It spanned from the Kazakh-Cinese border to the city of Shanghai, this caused a gigantic problem for the already overstretched republic, which quickly fractured, after a civil war, the country established socialist elections. The side that lost the civil war never gave up and decided to move to Gannan, after months of stalemate, the 2 countries agreed to a ceasefire, yet they would still keep despising each other. \nIn the 1933 elections the Socialist People’s Party Won by a small 4%. One general in the Army, Mao Zedong never accepted such elections, waiting for his moment to strike and establish the perfect People’s Republic Of China. \nOnly YOU can choose the path this republic chooses."
+ XWE.1.a:0 "Glory To The People's Republic"
+ 
+ 
+ 
+ 
+ 
  XWE:0 "People's Republic Of China"
  XWE_DEF:0 "the People's Republic Of China"
  XWE_ADJ:0 "Chinese"
