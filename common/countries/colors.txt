@@ -1,5 +1,9 @@
 #reload countrycolors
 
+XQI = {
+	color = rgb { 100 150 100 }
+	color_ui = rgb { 230 230 230 }
+}
 XWX = {
 	color = rgb { 143 110 81 }
 	color_ui = rgb { 143 110 81 }
