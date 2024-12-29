@@ -221,4 +221,5 @@ From;To;Type;Through;start_x;start_y;stop_x;stop_y;adjacency_rule_name;Comment
 5864;5838;;-1;-1;-1;-1;-1;OTRANTO_STRAIT;Otranto Strait
 7014;13371;sea;8396;-1;-1;-1;-1;;Shanghai
 11928;13371;sea;8396;-1;-1;-1;-1;;Shanghai
+4189;10062;sea;5269;-1;-1;-1;-1;XHK_STRAIT;Hong-Kong-Macau
 -1;-1;;-1;-1;-1;-1;-1;-1 

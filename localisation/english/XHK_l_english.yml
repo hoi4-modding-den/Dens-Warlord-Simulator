@@ -4,6 +4,9 @@
  XHK_AJG: "United Cities of China"
  XHK_sir_mark_young: "Sir Mark Young"
  XHK_sir_mark_young_desc: "Sir Mark Young Description"
+ XHK_STRAIT: "Hong Kong Strait"
+ XHK_STRAIT_BLOCKED_FOR_COUNTRY: "$XHK_STRAIT$ Blocked for [Root.GetName]"
+ xhk_strait_blocked_tt: "§RThe strait is closed to [ROOT.GetName] due to deteriorating relations with the strait's controller.§!"
 
  #FOCUS LOCALISATIONS
  XHK_army_effort: "Army Effort"
