@@ -1,0 +1,18 @@
+leader_traits = {
+	XQI_lord_of_yunnan = {
+		random = no
+		political_power_factor = 0.05
+		stability_factor = 0.1
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	XQI_uneager_to_squabble = {
+		random = no
+		production_speed_industrial_complex_factor = 0.1
+		production_speed_infrastructure_factor = 0.1
+		ai_join_ally_desire_factor = 0.5
+		ai_will_do = {
+			factor = 1
+		}
+	}
