@@ -11,3 +11,8 @@
  XYJ_democratic_party_long: "Nationalist Party of China"
  XYJ_neutrality_party: "§RNO PARTY§!"
  XYJ_neutrality_party_long: ""
+ 
+ XYJ_indstrial_1:0 "Industrial Development: Poor"
+ XYJ_indstrial_2:0 "Industrial Development: Lackluster"
+ XYJ_indstrial_3:0 "Industrial Development: Mediocre"
+ XYJ_indstrial_4:0 "Industrial Development: Developed"

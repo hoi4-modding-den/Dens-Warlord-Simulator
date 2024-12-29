@@ -1,0 +1,92 @@
+ideas = {
+
+    country = {
+
+        XYJ_indstrial_1 = {
+            
+            picture = USC_agrarian
+
+            allowed = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+           removal_cost = -1
+
+            modifier = {	
+				production_speed_buildings_factor = -0.5
+				consumer_goods_factor = 0.25			
+            }
+
+        }
+		
+		XYJ_indstrial_2 = {
+            
+            picture = USC_agrarian
+
+            allowed = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+           removal_cost = -1
+
+            modifier = {	
+				production_speed_buildings_factor = -0.25
+				consumer_goods_factor = 0.15				
+            }
+
+        }
+		
+		XYJ_indstrial_3 = {
+            
+            picture = USC_agrarian
+
+            allowed = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+           removal_cost = -1
+
+            modifier = {	
+				production_speed_buildings_factor = -0.1
+				consumer_goods_factor = 0.05		
+            }
+
+        }
+		
+		XYJ_indstrial_4 = {
+            
+            picture = USC_agrarian
+
+            allowed = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+           removal_cost = -1
+
+            modifier = {	
+				production_speed_buildings_factor = -0.05
+				consumer_goods_factor = 0.02	
+            }
+
+        }
+
+    industrial_concern = {
+		
+	}
+}

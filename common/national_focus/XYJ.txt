@@ -1,0 +1,98 @@
+### search_filters = {FOCUS_FILTER_POLITICAL}
+### search_filters = {FOCUS_FILTER_RESEARCH}
+### search_filters = {FOCUS_FILTER_INDUSTRY}
+### search_filters = {FOCUS_FILTER_STABILITY}
+### search_filters = {FOCUS_FILTER_WAR_SUPPORT}
+### search_filters = {FOCUS_FILTER_MANPOWER}
+### search_filters = {FOCUS_FILTER_ANNEXATION}
+### search_filters = {FOCUS_FILTER_INTERNAL_AFFAIRS}
+### search_filters = {FOCUS_FILTER_ARMY_XP}
+### search_filters = {FOCUS_FILTER_NAVY_XP}
+### search_filters = {FOCUS_FILTER_AIR_XP}
+### search_filters = {FOCUS_FILTER_BALANCE_OF_POWER}
+### search_filters = {FOCUS_FILTER_POLITICAL_CHARACTER}
+### search_filters = {FOCUS_FILTER_MILITARY_CHARACTER}
+### search_filters = {FOCUS_FILTER_INTERNATIONAL_TRADE}
+
+focus_tree = {
+	id = unitedstateschina_focus
+	
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 10
+			tag = XYJ
+		}
+	}
+
+	initial_show_position = {
+		x = 20
+		y = 0
+	}
+
+	focus = {
+		id = XYJ_the_united_states
+
+		icon = GFX_goal_tfv_saf_anti_colonialist_crusade
+
+		x = 20
+		y = 0
+		cost = 1
+
+		allow_branch = {
+			
+		}
+
+		mutually_exclusive = {
+			
+		} 
+		
+		ai_will_do = {
+			base = 0.5
+		}
+
+		available = {
+		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		
+		completion_reward = {
+			add_political_power = 50
+			add_stability = 0.05
+		}
+	}
+	
+	focus = {
+		id = XYJ_the_constitution
+
+		icon = GFX_goal_tfv_saf_anti_colonialist_crusade
+		prerequisite = { focus = XYJ_the_united_states}
+
+		x = 20
+		y = 1
+		cost = 1
+
+		allow_branch = {
+			
+		}
+
+		mutually_exclusive = {
+			
+		} 
+		
+		ai_will_do = {
+			base = 0.5
+		}
+
+		available = {
+		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		
+		completion_reward = {
+			add_political_power = 50
+			add_stability = 0.05
+		}
+	}
+}

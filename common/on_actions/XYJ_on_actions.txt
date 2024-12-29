@@ -1,0 +1,10 @@
+on_actions = {
+
+	on_startup = { 
+    effect = {
+        XYJ = {
+			add_political_power = 999
+            #news_event = { id = news_event.1 days = 31 random_days = 27 } # ADD ELECTION EVENT!
+        }
+	}
+}

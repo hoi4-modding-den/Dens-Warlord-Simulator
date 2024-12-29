@@ -1,0 +1,16 @@
+spriteTypes = {
+
+# CHARACTERS
+
+	#spriteType = {
+		#name = "GFX_portrait_XWX_peasant_collective"
+		#texturefile = "gfx/XWX/portrait_XWX_peasant_collective.png"
+	#}
+
+# other stuff
+
+	spriteType = {
+		name = "GFX_idea_USC_agrarian"
+		texturefile = "gfx/XYJ/agrarian.dds"
+	}
+}
