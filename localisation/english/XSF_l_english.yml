@@ -3,14 +3,24 @@
  XSF_DEF:0 "the Lingnan Union"
  XSF_AJG:0 "Lingnese"
  
- XSF_council_meeting: "Leadership Question"
- XSF_council_meeting_desc: "We must organise the council and together choose one person to be the figurehead of the nation, leading us into a more organised and prosperous future."
+ XSF_event_complete_li: "Completed by choosing §YLi Zongren§!"
+ XSF_event_complete_chen: "Completed by choosing §YChen Jitang§!"
+ XSF_equipment_tt: "We will gain 1,000 §YInfantry Equipment§! once the §tCivil War§! begins."
+ XSF_commiemercs_tt: "We will recruit 6 §YMercenary Divisions§! once the §tCivil War§! begins."
+ XSF_sovietreinforcements: "We will recruit 3 Soviet §YTank Divisions§! once the §tCivil War§! begins."
+ XSF_civilwarprogresses_tt: "Removes §Y180 Days§! from the §tCivil War§! timer."
+ 
+ XSF_councilmeeting: "Leadership Question"
+ XSF_councilmeeting_desc: "We must organise the council and together choose one person to be the figurehead of the nation, leading us into a more organised and prosperous future."
  
  XSF_choose_jitang: "King of the South"
  XSF_choose_jitang_desc: "In order to gain the most from our nation, we must appoint Chen Jitang, infamous for both his military and political career."
  
  king_of_the_south: "King of the South"
  lingnan_regent_1: "Corrupt Regent"
+ 
+ XSF_choose_zongren: "Zongren's Regency"
+ XSF_choose_zongren_desc: "We must choose Li Zongren, his military background combined with his ambitions of restoring the Qing Dynasty in power can help us to form a rival government. He is also very influential in nearby regions."
  
  XSF_chen_jitang: "Chen Jitang"
  XSF_chen_jitang_desc: "Chen Jitang, known locally as the "King of the South", was the leader of the Guangdong region before the unification of the 4 regions. Alongside his military career in being a very efficient and well-rounded leader, he was instrumental in modernizing the state, promoting infrastructure development, education, and economic growth." 

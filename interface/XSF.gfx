@@ -11,4 +11,12 @@ spriteTypes = {
 		name = "GFX_portrait_XSF_li_zongren"
 		texturefile = "gfx/XSF/li_zongren.jpg"
 	}
+	spriteType = {
+		name = "GFX_portrait_XSF_ye_jianying"
+		texturefile = "gfx/XSF/ye_jianying.jpg"
+	}
+	spriteType = {
+		name = "GFX_portrait_XSF_ye_ting"
+		texturefile = "gfx/XSF/ye_ting.jpg"
+	}
 }

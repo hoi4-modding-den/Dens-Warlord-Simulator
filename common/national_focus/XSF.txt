@@ -58,14 +58,13 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		
 		completion_reward = {
-			add_political_power = 50
-			add_stability = 0.05
+			country_event = xsf.1
 		}
 	}
 	focus = {
 		id = XSF_choose_jitang
 
-		icon = GFX_goal_generic_improve_relations
+		icon = GFX_focus_generic_military_dictatorship
 
 		prerequisite = { focus = XSF_councilmeeting }
 		x = 7
@@ -94,6 +93,7 @@ focus_tree = {
 		}
 
 		available = {
+			XSF_event_complete_cj = yes
 		}
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
@@ -118,7 +118,7 @@ focus_tree = {
 	focus = {
 		id = XSF_choose_zongren
 
-		icon = GFX_goal_generic_improve_relations
+		icon = GFX_focus_rom_royal_dictatorship
 
 		prerequisite = { focus = XSF_councilmeeting }
 		
@@ -149,6 +149,7 @@ focus_tree = {
 		}
 
 		available = {
+			XSF_event_complete_lz = yes
 		}
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
@@ -168,6 +169,330 @@ focus_tree = {
 				promote_leader = yes
 			}
 		
+		}
+	}
+	focus = {
+		id = XSF_anticorruptionact
+
+		icon = GFX_focus_ARG_anti_corruption_policies
+
+		prerequisite = { focus = XSF_choose_jitang }
+		x = 3
+		y = 1
+		relative_position_id = XSF_choose_jitang
+		cost = 5
+
+		mutually_exclusive = {
+			
+		} 
+		
+		ai_will_do = {
+			base = 0.5
+		}
+
+		available = {
+		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XSF_militarytraining
+
+		icon = GFX_focus_generic_military_academy
+
+		prerequisite = { focus = XSF_choose_jitang }
+		x = -3
+		y = 1
+		relative_position_id = XSF_choose_jitang
+		cost = 5
+
+		mutually_exclusive = {
+			
+		} 
+		
+		ai_will_do = {
+			base = 0.5
+		}
+
+		available = {
+		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XSF_womeninmilitary
+
+		icon = GFX_focus_generic_women_in_military
+
+		prerequisite = { focus = XSF_militarytraining }
+		x = -1
+		y = 1
+		relative_position_id = XSF_militarytraining
+		cost = 5
+
+		mutually_exclusive = {
+			
+		} 
+		
+		ai_will_do = {
+			base = 0.5
+		}
+
+		available = {
+		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XSF_reform
+
+		icon = GFX_SOV_reformalize_the_role_of_the_patriarchate_ccp_2d_sov_compatibility
+
+		prerequisite = { focus = XSF_choose_jitang }
+		x = 0
+		y = 1
+		relative_position_id = XSF_choose_jitang
+		cost = 5
+
+		mutually_exclusive = {
+			
+		} 
+		
+		ai_will_do = {
+			base = 0.5
+		}
+
+		available = {
+		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XSF_educationreform
+
+		icon = GFX_focus_SWE_education_reform
+
+		prerequisite = { focus = XSF_reform }
+		x = 1
+		y = 1
+		relative_position_id = XSF_reform
+		cost = 5
+
+		mutually_exclusive = {
+			
+		} 
+		
+		ai_will_do = {
+			base = 0.5
+		}
+
+		available = {
+			
+		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		
+		completion_reward = {
+			random_list = {
+				67 = { add_ideas = XSF_economicreformsuccess }
+				33 = { add_ideas = XSF_economicreformfail }
+			}
+		}
+	}
+	focus = {
+		id = XSF_politicalreform
+
+		icon = GFX_focus_generic_improve_the_administration
+
+		prerequisite = { focus = XSF_reform }
+		x = 0
+		y = 2
+		relative_position_id = XSF_reform
+		cost = 5
+
+		mutually_exclusive = {
+			
+		} 
+		
+		ai_will_do = {
+			base = 0.5
+		}
+
+		available = {
+		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XSF_workersact
+
+		icon = GFX_focus_SWE_socialist_reforms
+
+		prerequisite = { focus = XSF_politicalreform }
+		x = 5
+		y = 1
+		offset = {
+			x = -5
+			trigger = {
+				has_completed_focus = XSF_workersact
+			}
+		}
+		relative_position_id = XSF_politicalreform
+		cost = 5
+
+		mutually_exclusive = {
+			
+		} 
+		
+		ai_will_do = {
+			base = 0.5
+		}
+
+		available = {
+		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		
+		completion_reward = {
+			mark_focus_tree_layout_dirty = yes
+			add_popularity = {
+				ideology = communism
+				popularity = 0.075
+			}
+		}
+	}
+	focus = {
+		id = XSF_armrevolutionaries
+
+		icon = GFX_focus_generic_spur_communist_revolutions
+
+		prerequisite = { focus = XSF_workersact }
+		x = 1
+		y = 1
+		relative_position_id = XSF_workersact
+		cost = 5
+
+		mutually_exclusive = {
+			
+		} 
+		
+		ai_will_do = {
+			base = 0.5
+		}
+
+		available = {
+		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		
+		completion_reward = {
+			custom_effect_tooltip = XSF_equipment_tt
+		}
+	}
+	focus = {
+		id = XSF_foreign_mercs
+
+		icon = GFX_focus_SOV_builder_of_the_red_army
+
+		prerequisite = { focus = XSF_workersact }
+		x = -1
+		y = 1
+		relative_position_id = XSF_workersact
+		cost = 5
+
+		mutually_exclusive = {
+			
+		} 
+		
+		ai_will_do = {
+			base = 0.5
+		}
+
+		available = {
+		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		
+		completion_reward = {
+			custom_effect_tooltip = XSF_commiemercs_tt
+		}
+	}
+	focus = {
+		id = XSF_soviettanks
+
+		icon = GFX_focus_SOV_the_glory_of_the_red_army_communism
+
+		prerequisite = { focus = XSF_foreign_mercs }
+		x = -0
+		y = 1
+		relative_position_id = XSF_foreign_mercs
+		cost = 5
+
+		mutually_exclusive = {
+			
+		} 
+		
+		ai_will_do = {
+			base = 0.5
+		}
+
+		available = {
+		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		
+		completion_reward = {
+			custom_effect_tooltip = if_they_accept_tt
+			custom_effect_tooltip = XSF_sovietreinforcements
+		}
+	}
+	focus = {
+		id = XSF_prepare_civilwar
+
+		icon = GFX_SOV_the_komsomol_ccp_2d_sov_compatibility
+
+		prerequisite = { focus = XSF_soviettanks }
+		prerequisite = { focus = XSF_armrevolutionaries }
+		x = 1
+		y = 1
+		relative_position_id = XSF_soviettanks
+		cost = 5
+
+		mutually_exclusive = {
+			
+		} 
+		
+		ai_will_do = {
+			base = 0.5
+		}
+
+		available = {
+		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		
+		completion_reward = {
+			custom_effect_tooltip = XSF_civilwarprogresses_tt
 		}
 	}
 }

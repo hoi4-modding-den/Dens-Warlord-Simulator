@@ -22,4 +22,14 @@ leader_traits = {
 		}
 	}
 	
+	lingnan_revolutionary = {
+		random = no
+		political_power_factor = -0.15
+		stability_factor = -0.1
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
 }

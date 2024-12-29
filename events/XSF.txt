@@ -18,20 +18,40 @@ country_event = {
 	option = { # li zongren
 		name = xsf.1.b
 		
-		retire_country_leader = yes
+		complete_national_focus = XSF_choose_zongren
 		
-		add_country_leader_role = {
+	}
+}
+
+country_event = {
+	id = xsf.2
+	title = xsf.2.t
+	desc = xsf.2.d
+	picture = GFX_report_event_gre_cabinet_meeting
+	
+	is_triggered_only = yes
+	
+	option = { # commies
+		name = xsf.2.a
 		
-			character = XSF_li_zongren
-			
-			country_leader = {
-				expire = "1965.1.1"
-				ideology = despotism
-				traits = { popular_figurehead }
+		start_civil_war = {
+			ruling_party = communism
+			# Original country's ideology changes to communism
+			ideology = ROOT
+			# Breakaway gets old ideology of ROOT
+			size = 0.5
+			capital = 594
+			states = {
+				594 728 591
 			}
-			
-			promote_leader = yes
 		}
+		
+	}
+	
+	option = { # neutrality
+		name = xsf.2.b
+		
+		
 		
 	}
 }

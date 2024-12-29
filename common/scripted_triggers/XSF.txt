@@ -1,0 +1,28 @@
+#	Example:
+#
+#	example_trigger = {
+#		tag = GER
+#		is_ai = no
+#	}
+#
+#
+#	In a script file:
+#
+#	trigger = {
+#		exampel_trigger = yes
+#	}
+#
+
+XSF_event_complete_cj = {
+	custom_trigger_tooltip = {
+        tooltip = XSF_event_complete_chen
+        always = no
+    }
+}
+
+XSF_event_complete_lz = {
+	custom_trigger_tooltip = {
+        tooltip = XSF_event_complete_li
+        always = no
+    }
+}

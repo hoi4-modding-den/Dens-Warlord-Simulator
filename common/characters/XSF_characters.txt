@@ -48,4 +48,18 @@ characters={
 			id = -1
 		}
 	}
+	XSF_ye_jianying = { 
+		name = XSF_ye_jianying
+		portraits = {
+			civilian = {
+				large = GFX_portrait_XSF_ye_jianying
+			}
+		}
+		country_leader = {
+			ideology = marxism
+			expire = "1960.1.1.1"
+			traits = {  }
+			id = -1
+		}
+	}
 }
