@@ -1,0 +1,25 @@
+leader_traits = {
+
+	king_of_the_south = {
+		random = no
+		political_power_factor = 0.10
+		stability_factor = 0.1
+		army_core_attack_factor = 0.025
+		army_core_defence_factor = 0.025
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	lingnan_regent_1 = {
+		random = no
+		political_power_factor = -0.15
+		stability_factor = -0.1
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+}

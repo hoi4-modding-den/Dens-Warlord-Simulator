@@ -11,10 +11,27 @@ country_event = {
 	option = { # chen jitang
 		name = xsf.1.a
 		
+		complete_national_focus = XSF_choose_jitang
+
 	}
 	
 	option = { # li zongren
 		name = xsf.1.b
+		
+		retire_country_leader = yes
+		
+		add_country_leader_role = {
+		
+			character = XSF_li_zongren
+			
+			country_leader = {
+				expire = "1965.1.1"
+				ideology = despotism
+				traits = { popular_figurehead }
+			}
+			
+			promote_leader = yes
+		}
 		
 	}
 }

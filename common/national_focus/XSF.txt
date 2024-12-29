@@ -36,18 +36,9 @@ focus_tree = {
 
 		icon = GFX_goal_generic_improve_relations
 
-		#relative_position_id = 	
 		x = 20
 		y = 0
 		cost = 1
-
-		#offset = {
-		#	x = -5
-		#	y = 0
-		#	trigger = {
-		#		has_completed_focus = 
-		#	}
-		#}
 
 		allow_branch = {
 			
@@ -72,25 +63,26 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = XSF_continuecouncil
+		id = XSF_choose_jitang
 
 		icon = GFX_goal_generic_improve_relations
 
-		#relative_position_id = 	
-		x = 20
-		y = 0
-		cost = 1
-
-		#offset = {
-		#	x = -5
-		#	y = 0
-		#	trigger = {
-		#		has_completed_focus = 
-		#	}
-		#}
+		prerequisite = { focus = XSF_councilmeeting }
+		x = 7
+		y = 1
+		offset = {
+			x = -7
+			trigger = {
+				has_completed_focus = XSF_choose_jitang
+			}
+		}
+		relative_position_id = XSF_councilmeeting
+		cost = 10
 
 		allow_branch = {
-			
+			NOT = {
+				has_completed_focus = XSF_choose_zongren
+			}
 		}
 
 		mutually_exclusive = {
@@ -107,30 +99,45 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		
 		completion_reward = {
-			add_political_power = 50
-			add_stability = 0.05
+			mark_focus_tree_layout_dirty = yes
+			add_country_leader_role = {
+				
+				character = XSF_chen_jitang
+				
+				country_leader = {
+					expire = "1965.1.1"
+					ideology = despotism
+					traits = { king_of_the_south }
+				}
+				
+				promote_leader = yes
+			}
+		
 		}
 	}
 	focus = {
-		id = XSF_figurehead
+		id = XSF_choose_zongren
 
 		icon = GFX_goal_generic_improve_relations
 
-		#relative_position_id = 	
-		x = 20
-		y = 0
-		cost = 1
+		prerequisite = { focus = XSF_councilmeeting }
+		
+		relative_position_id = XSF_councilmeeting
+		cost = 10
+		x = -7
+		y = 1
+		offset = {
+			x = 7
+			trigger = {
+				has_completed_focus = XSF_choose_zongren
+			}
+		}
 
-		#offset = {
-		#	x = -5
-		#	y = 0
-		#	trigger = {
-		#		has_completed_focus = 
-		#	}
-		#}
 
 		allow_branch = {
-			
+			NOT = {
+				has_completed_focus = XSF_choose_jitang
+			}
 		}
 
 		mutually_exclusive = {
@@ -147,7 +154,20 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		
 		completion_reward = {
-			
+			mark_focus_tree_layout_dirty = yes
+			add_country_leader_role = {
+				
+				character = XSF_li_zongren
+				
+				country_leader = {
+					expire = "1965.1.1"
+					ideology = despotism
+					traits = { lingnan_regent_1 }
+				}
+				
+				promote_leader = yes
+			}
+		
 		}
 	}
 }
