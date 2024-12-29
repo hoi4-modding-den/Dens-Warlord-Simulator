@@ -1,0 +1,10 @@
+spriteTypes = {
+# EVENTS
+
+	spriteType = {
+		name = "GFX_start_XWE_Republic"
+		texturefile = "gfx/XWE/Starting_Picture_XWE.png"
+	}
+
+}
+ 
