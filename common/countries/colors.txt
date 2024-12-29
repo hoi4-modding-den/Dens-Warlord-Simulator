@@ -29,6 +29,10 @@ XSI = {
 	color = rgb { 0 148 255 }
 	color_ui = rgb { 0 148 255 }
 }
+XSA = {
+	color = rrgb(248, 200, 79)
+	color_ui =rgb(248, 200, 79)
+}
 
 GER = {
 	color = HSV { 0.1 0.15 0.4 }
