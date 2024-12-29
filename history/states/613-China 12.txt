@@ -1,7 +1,7 @@
 state = {
 	id = 613
 	name = "STATE_613" # Original Shanghai
-	manpower = 16088191 #was 17305100
+	manpower = 12656580 #was 17305100
 	
 	state_category = large_town
 	

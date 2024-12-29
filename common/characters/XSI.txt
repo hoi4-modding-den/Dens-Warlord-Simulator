@@ -2,9 +2,9 @@ characters = {
 	XSI_Arnhold = {
 		name = XSI_Arnhold
 		portraits = {
-			#civilian = {
-			#	large = gfx/XSI/arnhold_portrait.png
-			#}
+			civilian = {
+				large = gfx/leaders/Europe/portrait_europe_generic_6.dds
+			}
 		}
 		country_leader = {
 			ideology = oligarchism
