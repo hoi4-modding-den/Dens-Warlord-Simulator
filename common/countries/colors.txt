@@ -30,8 +30,12 @@ XSI = {
 	color_ui = rgb { 0 148 255 }
 }
 XSA = {
-	color = rrgb(248, 200, 79)
-	color_ui =rgb(248, 200, 79)
+	color = rgb {248 200 79}
+	color_ui =rgb {248 200 79}
+}
+XKM = {
+	color = rgb {181 167 98}
+	color_ui =rgb {100 85 35}
 }
 
 GER = {

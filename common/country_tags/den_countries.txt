@@ -5,3 +5,7 @@ XMC = "countries/XMC.txt"
 XYJ = "countries/XYJ.txt"
 XTN = "countries/XTN.txt"
 XSA = "countries/XSA.txt"
+XKM = "countries/XKM.txt"
+XHK = "countries/United Cities of China.txt"
+XSI = "countries/Shanghai.txt"
+
