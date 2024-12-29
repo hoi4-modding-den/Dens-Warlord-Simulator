@@ -1,0 +1,18 @@
+characters={
+
+	XWX_peasant_collective = { 
+		name = XWX_peasant_collective_name
+		portraits = {
+			civilian = {
+				large = GFX_portrait_XWX_peasant_collective
+			}
+		}
+		country_leader = {
+			traits = { }
+			ideology = anarchist_communism
+			expire = "1960.1.1.1"
+			id = -1
+		}
+	}
+
+}

@@ -1,0 +1,63 @@
+on_actions = {
+    on_ruling_party_change = {
+        effect = {
+            if = {
+				limit = {
+					original_tag = XWX
+					has_government = neutrality
+					NOT = { has_country_flag = XWX_sichuan_province_formed }
+				}
+				set_cosmetic_tag = XWX_kmt_aligned
+			}
+			if = {
+				limit = {
+					original_tag = XWX
+					has_government = neutrality
+					has_country_flag = XWX_sichuan_province_formed
+				}
+				set_cosmetic_tag = XWX_sichuan_province
+			}
+            if = {
+				limit = {
+					original_tag = XWX
+					has_government = communism
+				}
+				set_cosmetic_tag = XWX_commie_colour
+			}
+			if = {
+				limit = {
+					original_tag = XWX
+					has_government = fascism
+				}
+				set_cosmetic_tag = XWX_JAP_aligned
+			}
+			if = {
+				limit = {
+					original_tag = XWX
+					NOT = { has_government = neutrality }
+					OR = {
+						has_cosmetic_tag = XWX_kmt_aligned
+						has_cosmetic_tag = XWX_sichuan_province
+					}
+				}
+				drop_cosmetic_tag = yes
+			}
+			if = {
+				limit = {
+					original_tag = XWX
+					NOT = { has_government = communism }
+					has_cosmetic_tag = XWX_commie_colour
+				}
+				drop_cosmetic_tag = yes
+			}
+			if = {
+				limit = {
+					original_tag = XWX
+					NOT = { has_government = fascism }
+					has_cosmetic_tag = XWX_JAP_aligned
+				}
+				drop_cosmetic_tag = yes
+			}
+        }
+    }
+}

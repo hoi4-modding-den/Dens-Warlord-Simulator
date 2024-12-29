@@ -1,0 +1,6 @@
+XWX_focus_completed_via_event = {
+    custom_trigger_tooltip = {
+        tooltip = XWX_focus_completed_via_event_tt
+        always = no
+    }
+}

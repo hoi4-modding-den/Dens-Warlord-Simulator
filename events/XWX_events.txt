@@ -1,0 +1,155 @@
+add_namespace = XWX_political_events
+add_namespace = XWX_diplomatic_events
+
+country_event = { # Industry Focus Unlock Event 
+	id = XWX_political_events.1
+	title = XWX_political_events.1.t
+	desc = XWX_political_events.1.desc
+	picture = GFX_report_event_XWX_farmer
+
+	is_triggered_only = yes
+
+	option = { 
+		name = XWX_political_events.1.a
+		complete_national_focus = XWX_industrial_revolution
+	}
+
+}
+
+country_event = { # XWX (FROM) invites ROOT to faction
+	id = XWX_diplomatic_events.1
+	title = XWX_diplomatic_events.1.t
+	desc = XWX_diplomatic_events.1.desc
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			save_event_target_as = alliance_applicant
+			FROM = {
+				save_event_target_as = alliance_inviter
+			}
+		}
+	}
+
+	option = { # Join
+		name = XWX_diplomatic_events.1.a
+		ai_chance = {
+			base = 20
+			modifier = {
+				add = 5
+				has_opinion = {
+					target = FROM
+					value > 50
+				}
+			}
+			modifier = {
+				factor = 0.1
+				is_faction_leader = yes
+			}
+			modifier = {
+				factor = 0.5
+				NOT = {
+					any_neighbor_country = {
+						is_in_faction_with = FROM
+					}
+				}
+			}
+			modifier = {
+				factor = 3
+				has_war = yes
+			}
+			modifier = {
+				factor = 10
+				any_other_country = {
+					has_war_with = FROM
+					has_war_with = ROOT
+				}
+				is_in_faction = no
+			}
+			modifier = {
+				factor = 5
+				any_other_country = {
+					has_war_with = FROM
+					has_war_with = ROOT
+				}
+				is_in_faction = yes
+			}
+			modifier = {
+				factor = 2
+				FROM = {
+					network_strength = {
+						target = ROOT
+						value > 49
+					}
+				}
+			}
+		}
+		effect_tooltip = {
+			FROM = {
+				add_to_faction = ROOT
+			}
+		}
+		FROM = { country_event = { id = XWX_diplomatic_events.2 hours = 6 } }
+		hidden_effect = {
+			set_country_flag = alliance_applicant@ROOT
+			FROM = { set_country_flag = alliance_inviter@ROOT }
+			news_event = { id = news.289 hours = 12 }
+		}
+	}
+
+	option = { # Refuse
+		ai_chance = {
+			base = 10
+			modifier = {
+				factor = 0.5
+				is_guaranteed_by = FROM
+			}
+			modifier = {
+				factor = 2
+				has_opinion = {
+					target = FROM
+					value < 30
+				}
+			}
+		}
+		name = XWX_diplomatic_events.1.b
+		FROM = { country_event = { id = XWX_diplomatic_events.3 hours = 6 } }
+	}
+
+}
+
+country_event = { # XWX (FROM) invites ROOT to faction -> FROM accepts
+	id = XWX_diplomatic_events.2
+	title = XWX_diplomatic_events.2.t
+	desc = XWX_diplomatic_events.2.desc
+	picture = GFX_report_event_generic_sign_treaty2
+
+	is_triggered_only = yes
+
+	option = { 
+		name = XWX_diplomatic_events.2.a
+		add_to_faction = FROM
+	}
+
+}
+
+country_event = { # XWX (FROM) invites ROOT to faction -> FROM refuses
+	id = XWX_diplomatic_events.3
+	title = XWX_diplomatic_events.3.t
+	desc = XWX_diplomatic_events.3.desc
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+
+	option = { 
+		name = XWX_diplomatic_events.3.a
+		add_ai_strategy = {
+			type = antagonize
+			id = FROM
+			value = 50
+		}
+	}
+
+}

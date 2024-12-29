@@ -1,0 +1,126 @@
+focus_tree = {
+	id = XWX_focus_tree
+	
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = XWX
+		}
+	}
+
+	default = no
+
+	continuous_focus_position = { x = 20 y = 2500 }  
+	
+	initial_show_position = {
+		x = 20
+		y = 0
+	}
+
+	shared_focus = XWX_situation_in_gannan
+	shared_focus = XWX_industrial_revolution
+
+}
+
+	shared_focus = {
+		id = XWX_situation_in_gannan
+		icon = GFX_focus_PLACEHOLDER
+		#prerequisite = { focus = }
+		#mutually_exclusive = { focus =  }
+		x = 10
+		y = 0
+		#relative_position_id =
+
+		cost = 5
+
+		available = {
+			
+		}
+
+		bypass = {
+
+		}
+
+		search_filters = {  }
+		completion_reward = {
+			
+		}
+	}
+
+	shared_focus = {
+		id = XWX_workers_united_front
+		icon = GFX_focus_PLACEHOLDER
+		prerequisite = { focus = XWX_situation_in_gannan }
+		mutually_exclusive = { focus = XWX_kmt_coup }
+		x = -2
+		y = 2
+		relative_position_id = XWX_situation_in_gannan
+
+		cost = 5
+
+		available = {
+			
+		}
+
+		bypass = {
+
+		}
+
+		search_filters = {  }
+		completion_reward = {
+			
+		}
+	}
+
+	shared_focus = {
+		id = XWX_kmt_coup
+		icon = GFX_focus_PLACEHOLDER
+		prerequisite = { focus = XWX_situation_in_gannan }
+		mutually_exclusive = { focus = XWX_workers_united_front }
+		x = 2
+		y = 2
+		relative_position_id = XWX_situation_in_gannan
+
+		cost = 5
+
+		available = {
+			
+		}
+
+		bypass = {
+
+		}
+
+		search_filters = {  }
+		completion_reward = {
+			
+		}
+	}
+
+	shared_focus = {
+		id = XWX_industrial_revolution
+		icon = GFX_focus_PLACEHOLDER
+		#prerequisite = { focus = }
+		#mutually_exclusive = { focus = }
+		x = 20
+		y = 0
+		#relative_position_id =
+
+		cost = 5
+
+		available = {
+			XWX_focus_completed_via_event = yes
+		}
+
+		bypass = {
+
+		}
+
+		search_filters = {  }
+		completion_reward = {
+			add_dynamic_modifier = {
+				modifier = XWX_industry_modifier
+			}
+		}
+	}

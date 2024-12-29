@@ -4,29 +4,22 @@ state={
 	provinces={
 		1918 7988 8104 12724 12837 4999
 	}
-	manpower=300000
+	manpower=1050400
 	buildings_max_level_factor=1.000
-	state_category = pastoral
+	state_category = rural
 	history={
-		#owner = CHI
-		#add_core_of = CHI
-		#add_core_of = PRC
+		owner = XWX
+		add_core_of = XWX
 		victory_points = {
-			4999 1
+			4999 2
+		}
+		victory_points = {
+			8104 3
 		}
 		buildings = {
 			infrastructure = 1
-
+			
 		}
-		1939.1.1 = {
-			buildings = {
-				industrial_complex = 1
-				infrastructure = 1
-
-			}
-
-		}
-
 	}
 
 	local_supplies=1.0 

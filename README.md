@@ -43,5 +43,6 @@ Countries fucking exploded, new things exist now, 🤷
   | XSI | Carrera075         | Carrera                |
   | XSA | Masked Rokho    | MaskedRokho       |
   | XSR | johndoodoomayan    | Johndoodoomayan       |
-  
+  | XWX | 0rland2            | 0rland0                |
+
 </details>

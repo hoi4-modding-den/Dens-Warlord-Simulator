@@ -1,0 +1,103 @@
+﻿l_english:
+ 
+# COUNTRY NAMES
+
+ XWX: "Gannan"
+ XWX_DEF: "Gannan"
+ XWX_ADJ: "Gannan"
+
+ XWX_communism: "Gannan Peasant Republic"
+ XWX_communism_DEF: "the Gannan Peasant Republic"
+ XWX_communism_ADJ: "Gannan"
+
+ XWX_kmt_aligned: "Gannan Republican Association"
+ XWX_kmt_aligned_DEF: "the Gannan Republican Association"
+ XWX_kmt_aligned_ADJ: "Gannan"
+ XWX_CHI_subject: "Gannan Province"
+ XWX_CHI_subject_DEF: "the Province of Gannan"
+ XWX_CHI_subject_ADJ: "Gannan"
+
+ XWX_sichuan_province: "Sichuan Province"
+ XWX_sichuan_province_DEF: "the Province of Sichuan"
+ XWX_sichuan_province_ADJ: "Sichuan"
+
+ XWX_JAP_aligned: "Realm of the Dragons"
+ XWX_JAP_aligned_DEF: "the Realm of the Dragons"
+ XWX_JAP_aligned_ADJ: "Red Dragon Sect"
+ XWX_JAP_fascism_subject: "Gannan Provincial Autonomous Government"
+ XWX_JAP_fascism_subject_DEF: "the Gannan Provincial Autonomous Government"
+ XWX_JAP_fascism_subject_ADJ: "Gannan"
+
+# PARTIES
+
+ XWX_fascism_party_long: "Red Dragon Society - Japanese Collaborators"
+ XWX_fascism_party: "Red Dragon Society"
+ XWX_neutrality_party_long: "Gannan Kuomintang Assembly"
+ XWX_neutrality_party: "Kuomintang"
+ XWX_communism_party_long: "Chinese National Peasants' Association"
+ XWX_communism_party: "CNPA"
+
+
+# CHARACTERS
+
+ XWX_peasant_collective_name: "Gannan Peasant Collective"
+
+
+# TRAITS
+
+ XWX_kuomintang_official_trait: "Kuomintang Officer"
+ XWX_japanese_snake_trait: "Japanese Snake"
+
+
+# OPINION MODIFIERS
+
+ XWX_is_kmt_ally_modifier: "Kuomintang Ally"
+
+
+# TRIGGERS
+
+ XWX_focus_completed_via_event_tt: "This Focus will be completed via §YEvent§!."
+
+
+# IDEAS
+
+ XWX_mountaineer_corps: "Mountain Defences"
+ XWX_mountaineer_corps_desc: "The last line of defence lies in the mountainous region of Ganzi, the fortress of Tianyu. Constructed by the Republic in 1935, the fortress is the last line of defence."
+ XWX_industry_modifier: "National Industrialisation"
+ XWX_industry_modifier_desc: "Our nation is lacking in many aspects. Comparably, it is the least industrialised province in all of China. Still, our development plans are layed out before us and with great effort will be turn our backwater region into the industrial heartlands of China."
+
+
+# EVENTS
+
+ XWX_political_events.1.t: "The Matters of Industry"
+ XWX_political_events.1.desc: "$XWX_industrial_revolution_desc$"
+ XWX_political_events.1.a: "A different kind of revolution."
+
+ XWX_diplomatic_events.1.t: "[From.GetNameDefCap] invites us to the $XWX_workers_united_front$"
+ XWX_diplomatic_events.1.desc: "Our ideological allies in [From.GetNameDef] have made note of our valuable contributions to the workers' cause, and this morning we received an invitation us to join the $XWX_workers_united_front$. Standing together with other socialist republics, we could spread the revolution with renewed strength."
+ XWX_diplomatic_events.1.a: "We will fight alongside our comrades!"
+ XWX_diplomatic_events.1.b: "We are better off without them."
+
+ XWX_diplomatic_events.2.t: "[alliance_applicant.GetNameDefCap] joins the $XWX_workers_united_front$!"
+ XWX_diplomatic_events.2.desc: "[alliance_applicant.GetNameDefCap] has decided to accept our offer to join the $XWX_workers_united_front$. Henceforth we shall stand or fall together."
+ XWX_diplomatic_events.2.a: "Together, Comrades."
+
+ XWX_diplomatic_events.3.t: "[alliance_applicant.GetNameDefCap] rejects our offer"
+ XWX_diplomatic_events.3.desc: "[alliance_applicant.GetNameDefCap] has decided to reject our offer to join the $XWX_workers_united_front$. We will have to make do without their help."
+ XWX_diplomatic_events.3.a: "Our help is not wanted."
+
+
+# FACTION NAMES
+
+ XWX_workers_united_front: "Worker's United Front"
+
+
+# NATIONAL FOCI
+
+ XWX_industrial_revolution: "The Industrial Revolution in Gannan"
+ XWX_industrial_revolution_desc: "Industrialisation has overlooked the small province of Gannan. The few workshops that produce the nation's armaments and supply the people with goods are nothing close to the factories of the industrialised world. It is time to bring the Industrial Revolution to Gannan."
+
+
+# TERRAIN
+
+ VICTORY_POINTS_8104: "Tianyu"

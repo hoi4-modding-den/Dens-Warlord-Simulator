@@ -1,0 +1,36 @@
+d_XWX_become_puppet_of_CHI = {
+
+    CHI = {
+        set_autonomy = {
+            target = XWX
+            autonomous_state = autonomy_puppet
+            end_wars = no
+            end_civil_wars = no
+        }
+    }
+
+    if = {
+        limit = {
+            CHI = { NOT = { has_government = neutrality } }
+        }
+        set_politics = {
+            ruling_party = neutrality
+            elections_allowed = no
+        }
+        add_popularity = {
+            ideology = neutrality
+            popularity = 0.4
+        }
+    }
+
+    add_opinion_modifier = {
+        target = CHI
+        modifier = XWX_is_kmt_ally_modifier
+    }
+    reverse_add_opinion_modifier = {
+        target = CHI
+        modifier = XWX_is_kmt_ally_modifier
+    }
+}
+
+

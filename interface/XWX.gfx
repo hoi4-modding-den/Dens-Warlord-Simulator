@@ -1,0 +1,26 @@
+spriteTypes = {
+
+# CHARACTERS
+
+	spriteType = {
+		name = "GFX_portrait_XWX_peasant_collective"
+		texturefile = "gfx/XWX/portrait_XWX_peasant_collective.png"
+	}
+
+# EVENTS
+
+	spriteType = {
+		name = "GFX_report_event_XWX_farmer"
+		texturefile = "gfx/XWX/report_event_XWX_farmer.png"
+	}
+
+	spriteType = {
+		name = "GFX_report_event_XWX_industry"
+		texturefile = "gfx/XWX/report_event_XWX_industry.png"
+	}
+
+	spriteType = {
+		name = "GFX_report_event_XWX_KMT_victory"
+		texturefile = "gfx/XWX/report_event_XWX_kmt_victory.png"
+	}
+}

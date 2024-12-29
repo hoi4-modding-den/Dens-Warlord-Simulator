@@ -1,6 +1,9 @@
 #reload countrycolors
 
-
+XWX = {
+	color = rgb { 143 110 81 }
+	color_ui = rgb { 143 110 81 }
+}
 XSF = {
 	color = rgb { 223 28 17 }
 	color_ui = rgb { 223 28 17 }
