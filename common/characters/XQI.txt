@@ -1,0 +1,19 @@
+characters = {
+	XQI_Long_Yun = {
+		name = XQI_Long_Yun
+		portraits = {
+			civilian = {
+				large = GFX_portrait_XQI_Placeholder_General
+			}
+		}
+		country_leader = {
+			ideology = despotism
+			traits = { 
+			XQI_lord_of_yunnan
+			XQI_uneager_to_squabble
+			}
+			expire = "2001.9.11"
+			id = -1
+		}
+	}
+}
