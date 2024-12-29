@@ -1,0 +1,35 @@
+﻿add_namespace = XWE
+
+
+country_event = { #Introduction
+	id = XWE.1
+	title = XWE.1.t
+	desc = XWE.1.d
+	picture = GFX_report_event_gre_cabinet_meeting
+	fire_only_once = yes
+	trigger = {
+		tag = XWE
+	}
+	
+	option = {
+		name = XWE.1.a	
+	}
+	
+}
+
+country_event = { #Chinese Elections
+	id = XWE.2
+	title = XWE.2.t
+	desc = XWE.2.d
+	picture = GFX_report_event_gre_cabinet_meeting
+	
+	is_triggered_only = yes
+	
+	option = {    #Another 4 Years To The Socialist
+		name = XWE.2.a
+		
+		
+		
+	}
+	
+}
