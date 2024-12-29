@@ -1,0 +1,59 @@
+﻿l_english:
+
+#states
+ STATE_613:0 "Southern Jiangsu"
+ STATE_982:0 "Shanghai"
+
+#country
+ XSI:0 "Shanghai"
+ XSI_DEF: "the City of Shanghai"
+ XSI_ADJ: "Shanghainese"
+ XSI_subject:0 "$OVERLORDADJ$ $XSI$"
+ XSI_subject_DEF:0 "$OVERLORDADJ$ $XSI$"
+ XSI_fascism:0 "Shanghai State"
+ XSI_fascism_DEF:0 "the Shanghai National State"
+ XSI_fascism_party: "Japanese Army"
+ XSI_fascism_party_long: "Shanhai-haken-gun"
+ XSI_democratic:0 "Republic of Shanghai"
+ XSI_democratic_DEF:0 "the Republic of Shanghai"
+ XSI_democratic_party: "KMT"
+ XSI_democratic_party_long: "Chungkuo Kuomintang"
+ XSI_communism:0 "Commune of Shanghai"
+ XSI_communism_DEF:0 "the Commune of Shanghai"
+ XSI_communism_party: "CPC"
+ XSI_communism_party_long: "Zhongguo Gongchandang"
+ XSI_neutrality:0 "International Shanghai"
+ XSI_neutrality_DEF:0 "the Shanghai International Settlement"
+ XSI_neutrality_party: "SMC"
+ XSI_neutrality_party_long: "Council for the Foreign Settlement North of the Yang-king-pang"
+ XSI_fascism_ADJ:0 "Shanghainese"
+ XSI_democratic_ADJ:0 "Shanghainese"
+ XSI_communism_ADJ:0 "Shanghainese"
+ XSI_neutrality_ADJ:0 "Shanghailander"
+ XSI_JAP_neutrality_subject:0 "Shanghai Autonomy"
+ XSI_JAP_neutrality_subject_DEF:0 "the Shanghai Autonomy"
+ XSI_JAP_neutrality_subject_ADJ:0 "Shanghainese"
+ XSI_JAP_fascism_subject:0 "Shanghai Occupation Zone"
+ XSI_JAP_fascism_subject_DEF:0 "the Shanghai Occupation Zone"
+ XSI_JAP_fascism_subject_ADJ:0 "Shanghainese"
+ 
+ #cosmetic tags
+ XSI_ancom:0 "Free Territory of Shanghai"
+ XSI_ancom_DEF:0 "the Free Territory of Shanghai"
+ XSI_ancom_ADJ:0 "Shanghaian"
+ 
+ #characters
+ XSI_Arnhold:0 "Harry Edward Arnhold" #game start-april 1937 leader
+ XSI_Franklin:0 "Cornell Sidney Franklin" #april 1937-april 1940 leader
+ XSI_Keswick:0 "William Johnstone Keswick" #april 1940-may 1st 1941 leader
+ XSI_Liddell:0 "John Hellyer Liddell" #may 1st 1941-january 5th 1942 leader
+ XSI_Okazaki:0 "Katsuo Okazaki" #Japanese puppet leader, january 5th 1942-august 1st 1943 leader 
+ #country was disbanded in febuary 1943 for the Republic of China, and annexed into japanese China in July 1943
+ XSI_Shushi:0 "Rao Shushi" #communist mayor of Shanghai in 1949
+ XSI_Tiecheng:0 "Wu Tiecheng" #mayor of non-international Shanghai in 1936
+ XSI_Commune:0 "Anarchist Commune"
+ 
+ #etc.
+ XSI_imperial_benefactor:0 "Imperial Benefactor"
+ XSI_anti:0 "Recent Hostilities"
+ 

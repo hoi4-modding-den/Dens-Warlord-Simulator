@@ -25,6 +25,10 @@ XTN = {
 	color = rgb { 100 168 108 }
 	color_ui = rgb { 100 168 108 }
 }
+XSI = {
+	color = rgb { 0 148 255 }
+	color_ui = rgb { 0 148 255 }
+}
 
 GER = {
 	color = HSV { 0.1 0.15 0.4 }

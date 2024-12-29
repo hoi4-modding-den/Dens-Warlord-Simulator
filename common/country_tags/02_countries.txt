@@ -1,1 +1,2 @@
 XHK = "countries/United Cities of China.txt"
+XSI = "countries/Shanghai.txt"
