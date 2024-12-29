@@ -18,14 +18,14 @@ focus_tree = {
 		y = 0
 	}
 
-	shared_focus = XWX_situation_in_gannan
+	shared_focus = XWX_communal_report_1936
 	shared_focus = XWX_industrial_revolution
 
 }
 
 	shared_focus = {
-		id = XWX_situation_in_gannan
-		icon = GFX_focus_PLACEHOLDER
+		id = XWX_communal_report_1936
+		icon = GFX_focus_generic_treaty
 		#prerequisite = { focus = }
 		#mutually_exclusive = { focus =  }
 		x = 10
@@ -49,13 +49,144 @@ focus_tree = {
 	}
 
 	shared_focus = {
-		id = XWX_workers_united_front
+		id = XWX_commune_discussion
+		icon = GFX_focus_generic_join_comintern
+		prerequisite = { focus = XWX_communal_report_1936 }
+		#mutually_exclusive = { focus = }
+		x = -3
+		y = 1
+		relative_position_id = XWX_communal_report_1936
+
+		cost = 5
+
+		available = {
+			has_government = communism
+		}
+
+		bypass = {
+
+		}
+
+		search_filters = {  }
+		completion_reward = {
+			
+		}
+	}
+
+	shared_focus = {
+		id = XWX_reconcile_with_prc
+		icon = GFX_goal_generic_improve_relations
+		prerequisite = { focus = XWX_commune_discussion }
+		mutually_exclusive = { focus = XWX_maintain_course }
+		x = -1
+		y = 1
+		relative_position_id = XWX_commune_discussion
+
+		cost = 5
+
+		available = {
+			has_government = communism
+			XWE = {
+				has_government = communism
+				NOT = { has_war_with = ROOT }
+			}
+		}
+
+		bypass = {
+
+		}
+
+		search_filters = {  }
+		completion_reward = {
+			if = {
+				limit = {
+					has_dlc = "Man the Guns"
+				}
+				diplomatic_relation = {
+					country = XWE
+					relation = embargo
+					active = no
+				}
+				XWE = {
+					diplomatic_relation = {
+						country = ROOT
+						relation = embargo
+						active = no
+					}
+				}
+				hidden_effect = {
+					remove_opinion_modifier = {
+						target = XWE
+						modifier = embargoed_us
+					}
+					XWE = {
+						remove_opinion_modifier = {
+							target = ROOT
+							modifier = embargoed_us
+						}
+					}
+				}
+			}
+			else = {
+				remove_opinion_modifier = {
+					target = XWE
+					modifier = embargo
+				}
+				XWE = {
+					remove_opinion_modifier = {
+						target = ROOT
+						modifier = embargo
+					}
+				}
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			XWE = {
+				remove_opinion_modifier = {
+					target = ROOT
+					modifier = XWX_splinter_faction_modifier
+				}
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			remove_ideas = XWX_splinter_faction
+		}
+	}
+
+	shared_focus = {
+		id = XWX_maintain_course
 		icon = GFX_focus_PLACEHOLDER
-		prerequisite = { focus = XWX_situation_in_gannan }
-		mutually_exclusive = { focus = XWX_kmt_coup }
-		x = -2
-		y = 2
-		relative_position_id = XWX_situation_in_gannan
+		prerequisite = { focus = XWX_commune_discussion }
+		mutually_exclusive = { focus = XWX_reconcile_with_prc }
+		x = 1
+		y = 1
+		relative_position_id = XWX_commune_discussion
+
+		cost = 5
+
+		available = {
+			has_government = communism
+		}
+
+		bypass = {
+
+		}
+
+		search_filters = {  }
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = XWX_splinter_faction
+				add_idea = XWX_splinter_faction_2
+			}
+		}
+	}
+
+	shared_focus = {
+		id = XWX_continue_fortification_plans
+		icon = GFX_focus_generic_mountain_fortification
+		prerequisite = { focus = XWX_communal_report_1936 }
+		#mutually_exclusive = { focus = }
+		x = 0
+		y = 1
+		relative_position_id = XWX_communal_report_1936
 
 		cost = 5
 
@@ -70,22 +201,88 @@ focus_tree = {
 		search_filters = {  }
 		completion_reward = {
 			
+		}
+	}
+
+	shared_focus = {
+		id = XWX_hunt_for_kmt_reactionaries
+		icon = GFX_focus_SOV_the_last_purge
+		prerequisite = { focus = XWX_communal_report_1936 }
+		#mutually_exclusive = { focus = }
+		x = 3
+		y = 1
+		relative_position_id = XWX_communal_report_1936
+
+		cost = 5
+
+		available = {
+			
+		}
+
+		bypass = {
+			NOT = { has_government = communism }
+		}
+
+		search_filters = {  }
+		completion_reward = {
+			add_popularity = {
+				ideology = fascism
+				popularity = -0.05
+			}
+			add_popularity = {
+				ideology = neutrality
+				popularity = -0.05
+			}
+			add_popularity = {
+				ideology = democratic
+				popularity = -0.05
+			}
+		}
+	}
+
+	shared_focus = {
+		id = XWX_workers_victory
+		icon = GFX_focus_PLACEHOLDER
+		prerequisite = { focus = XWX_commune_discussion }
+		mutually_exclusive = { focus = XWX_kmt_coup }
+		x = -5
+		y = 4
+		relative_position_id = XWX_communal_report_1936
+
+		cost = 5
+
+		available = {
+			has_government = communism
+		}
+
+		bypass = {
+
+		}
+
+		search_filters = {  }
+		completion_reward = {
+			set_rule = {
+				can_create_factions = yes
+			}
+			create_faction = XWX_workers_united_front
 		}
 	}
 
 	shared_focus = {
 		id = XWX_kmt_coup
 		icon = GFX_focus_PLACEHOLDER
-		prerequisite = { focus = XWX_situation_in_gannan }
-		mutually_exclusive = { focus = XWX_workers_united_front }
-		x = 2
-		y = 2
-		relative_position_id = XWX_situation_in_gannan
+		prerequisite = { focus = XWX_hunt_for_kmt_reactionaries }
+		mutually_exclusive = { focus = XWX_workers_victory }
+		x = 5
+		y = 4
+		relative_position_id = XWX_communal_report_1936
 
 		cost = 5
 
 		available = {
-			
+			CHI = {
+				is_faction_leader = yes
+			}
 		}
 
 		bypass = {
@@ -94,20 +291,22 @@ focus_tree = {
 
 		search_filters = {  }
 		completion_reward = {
-			
+			CHI = {
+				country_event = generic.2
+			}
 		}
 	}
 
 	shared_focus = {
 		id = XWX_industrial_revolution
-		icon = GFX_focus_PLACEHOLDER
+		icon = GFX_focus_generic_industry_1
 		#prerequisite = { focus = }
 		#mutually_exclusive = { focus = }
-		x = 20
+		x = 25
 		y = 0
 		#relative_position_id =
 
-		cost = 5
+		cost = 1
 
 		available = {
 			XWX_focus_completed_via_event = yes
@@ -121,6 +320,485 @@ focus_tree = {
 		completion_reward = {
 			add_dynamic_modifier = {
 				modifier = XWX_industry_modifier
+			}
+		}
+	}
+
+	shared_focus = {
+		id = XWX_construction_sector
+		icon = GFX_goal_generic_construction2
+		prerequisite = { focus = XWX_industrial_revolution }
+		#mutually_exclusive = { focus = }
+		x = -2
+		y = 1
+		relative_position_id = XWX_industrial_revolution
+
+		cost = 5
+
+		available = {
+			
+		}
+
+		bypass = {
+
+		}
+
+		search_filters = {  }
+		completion_reward = {
+			custom_effect_tooltip = modify_XWX_industry_tt
+			add_to_variable = {
+				XWX_industry_production_speed_buildings_factor = 0.05
+				tooltip = production_speed_buildings_factor_tt
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_tech_bonus = {
+				name = XWX_construction_equipment
+				uses = 1
+				bonus = 0.5
+				category = construction_tech
+			}
+		}
+	}
+
+	shared_focus = {
+		id = XWX_civilian_construction_funds
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = XWX_industrial_revolution }
+		#mutually_exclusive = { focus = }
+		x = 0
+		y = 1
+		relative_position_id = XWX_industrial_revolution
+
+		cost = 5
+
+		available = {
+			
+		}
+
+		bypass = {
+
+		}
+
+		search_filters = {  }
+		completion_reward = {
+			custom_effect_tooltip = modify_XWX_industry_tt
+			add_to_variable = {
+				XWX_industry_production_speed_industrial_complex_factor = 0.1
+				tooltip = production_speed_industrial_complex_factor_tt
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+					is_fully_controlled_by = ROOT
+					is_owned_by = ROOT
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}	
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}	
+			}
+		}
+	}
+
+	shared_focus = {
+		id = XWX_clear_space
+		icon = GFX_focus_generic_land_reclamation
+		prerequisite = { focus = XWX_industrial_revolution }
+		#mutually_exclusive = { focus = }
+		x = 2
+		y = 1
+		relative_position_id = XWX_industrial_revolution
+
+		cost = 5
+
+		available = {
+			
+		}
+
+		bypass = {
+
+		}
+
+		search_filters = {  }
+		completion_reward = {
+			custom_effect_tooltip = modify_XWX_industry_tt
+			add_to_variable = {
+				XWX_industry_local_building_slots_factor = 0.1
+				tooltip = MODIFIER_LOCAL_BUILDING_SLOTS_FACTOR_tt
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_timed_idea = {
+				idea = XWX_land_reform
+				days = 7
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = after_idea_times_out_tt
+			custom_effect_tooltip = modify_XWX_industry_tt
+			effect_tooltip = {
+				add_to_variable = {
+					XWX_industry_local_building_slots_factor = 0.1
+					tooltip = MODIFIER_LOCAL_BUILDING_SLOTS_FACTOR_tt
+				}
+			}
+		}
+	}
+
+	shared_focus = {
+		id = XWX_local_schools
+		icon = GFX_focus_research
+		prerequisite = { focus = XWX_construction_sector focus = XWX_civilian_construction_funds focus = XWX_clear_space }
+		#mutually_exclusive = { focus = }
+		x = -2
+		y = 1
+		relative_position_id = XWX_construction_sector
+
+		cost = 5
+
+		available = {
+			num_of_civilian_factories > 19
+		}
+
+		bypass = {
+
+		}
+
+		search_filters = {  }
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+
+	shared_focus = {
+		id = XWX_production_lines
+		icon = GFX_goal_generic_production2
+		prerequisite = { focus = XWX_construction_sector focus = XWX_civilian_construction_funds focus = XWX_clear_space }
+		#mutually_exclusive = { focus = }
+		x = 0
+		y = 1
+		relative_position_id = XWX_construction_sector
+
+		cost = 5
+
+		available = {
+			num_of_civilian_factories > 14
+		}
+
+		bypass = {
+
+		}
+
+		search_filters = {  }
+		completion_reward = {
+			custom_effect_tooltip = modify_XWX_industry_tt
+			add_to_variable = {
+				XWX_industry_production_factory_efficiency_gain_factor = 0.05
+				tooltip = production_factory_efficiency_gain_factor_tt
+			}
+			add_to_variable = {
+				XWX_industry_production_factory_max_efficiency_factor = 0.1
+				tooltip = production_factory_max_efficiency_factor_tt
+			}
+		}
+	}
+
+	shared_focus = {
+		id = XWX_workshop_output
+		icon = GFX_focus_generic_reorient_production
+		prerequisite = { focus = XWX_construction_sector focus = XWX_civilian_construction_funds focus = XWX_clear_space }
+		#mutually_exclusive = { focus = }
+		x = 0
+		y = 1
+		relative_position_id = XWX_civilian_construction_funds
+
+		cost = 5
+
+		available = {
+			num_of_civilian_factories > 14
+		}
+
+		bypass = {
+
+		}
+
+		search_filters = {  }
+		completion_reward = {
+			custom_effect_tooltip = modify_XWX_industry_tt
+			add_to_variable = {
+				XWX_industry_industrial_capacity_factory = 0.15
+				tooltip = industrial_capacity_factory_tt
+			}
+		}
+	}
+
+	shared_focus = {
+		id = XWX_relocate_civilian_funds
+		icon = GFX_focus_generic_energy
+		prerequisite = { focus = XWX_construction_sector focus = XWX_civilian_construction_funds focus = XWX_clear_space }
+		#mutually_exclusive = { focus = }
+		x = 0
+		y = 1
+		relative_position_id = XWX_clear_space
+
+		cost = 5
+
+		available = {
+			num_of_civilian_factories > 14
+		}
+
+		bypass = {
+
+		}
+
+		search_filters = {  }
+		completion_reward = {
+			custom_effect_tooltip = modify_XWX_industry_tt
+			add_to_variable = {
+				XWX_industry_production_speed_industrial_complex_factor = -0.15
+				tooltip = production_speed_industrial_complex_factor_tt
+			}
+			add_to_variable = {
+				XWX_industry_production_speed_buildings_factor = 0.1
+				tooltip = production_speed_buildings_factor_tt
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+					is_fully_controlled_by = ROOT
+					is_owned_by = ROOT
+					infrastructure < 5
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}	
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+					is_fully_controlled_by = ROOT
+					is_owned_by = ROOT
+					infrastructure < 5
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}	
+			}
+		}
+	}
+
+	shared_focus = {
+		id = XWX_construction_equipment
+		icon = GFX_goal_generic_construction
+		prerequisite = { focus = XWX_relocate_civilian_funds }
+		#mutually_exclusive = { focus = }
+		x = 0
+		y = 2
+		relative_position_id = XWX_relocate_civilian_funds
+
+		cost = 5
+
+		available = {
+			num_of_civilian_factories > 29
+		}
+
+		bypass = {
+
+		}
+
+		search_filters = {  }
+		completion_reward = {
+			custom_effect_tooltip = modify_XWX_industry_tt
+			add_to_variable = {
+				XWX_industry_production_speed_buildings_factor = 0.1
+				tooltip = production_speed_buildings_factor_tt
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_tech_bonus = {
+				name = XWX_construction_equipment
+				uses = 1
+				bonus = 2
+				category = construction_tech
+			}
+		}
+	}
+
+	shared_focus = {
+		id = XWX_resource_deficit_management
+		icon = GFX_focus_GER_factories_for_resources
+		prerequisite = { focus = XWX_local_schools focus = XWX_relocate_civilian_funds focus = XWX_workshop_output focus = XWX_production_lines }
+		#mutually_exclusive = { focus = }
+		x = -1
+		y = 1
+		relative_position_id = XWX_production_lines
+
+		cost = 5
+
+		available = {
+			num_of_military_factories > 4
+			OR = {
+				num_of_civilian_factories > 29
+				has_war = yes
+			}
+		}
+
+		bypass = {
+
+		}
+
+		search_filters = {  }
+		completion_reward = {
+			custom_effect_tooltip = modify_XWX_industry_tt
+			add_to_variable = {
+				XWX_industry_production_lack_of_resource_penalty_factor = -0.2
+				tooltip = production_lack_of_resource_penalty_factor_tt
+			}
+		}
+	}
+
+	shared_focus = {
+		id = XWX_arm_the_nation
+		icon = GFX_focus_generic_military_industry
+		prerequisite = { focus = XWX_local_schools focus = XWX_relocate_civilian_funds focus = XWX_workshop_output focus = XWX_production_lines }
+		mutually_exclusive = { focus = XWX_military_buildup }
+		x = 1
+		y = 1
+		relative_position_id = XWX_production_lines
+
+		cost = 5
+
+		available = {
+			num_of_military_factories > 4
+			OR = {
+				num_of_civilian_factories > 29
+				has_war = yes
+			}
+		}
+
+		bypass = {
+
+		}
+
+		search_filters = {  }
+		completion_reward = {
+			custom_effect_tooltip = modify_XWX_industry_tt
+			add_to_variable = {
+				XWX_industry_industrial_capacity_factory = 0.1
+				tooltip = industrial_capacity_factory_tt
+			}
+		}
+	}
+
+	shared_focus = {
+		id = XWX_military_buildup
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = XWX_local_schools focus = XWX_relocate_civilian_funds focus = XWX_workshop_output focus = XWX_production_lines }
+		mutually_exclusive = { focus = XWX_arm_the_nation }
+		x = 1
+		y = 1
+		relative_position_id = XWX_workshop_output
+
+		cost = 5
+
+		available = {
+			num_of_military_factories > 4
+			OR = {
+				num_of_civilian_factories > 29
+				has_war = yes
+			}
+		}
+
+		bypass = {
+
+		}
+
+		search_filters = {  }
+		completion_reward = {
+			custom_effect_tooltip = modify_XWX_industry_tt
+			add_to_variable = {
+				XWX_industry_production_speed_arms_factory_factor = 0.15
+				tooltip = production_speed_arms_factory_factor_tt
+			}
+		}
+	}
+
+	shared_focus = {
+		id = XWX_mine_expansion
+		icon = GFX_focus_generic_mining_industry
+		prerequisite = { focus = XWX_construction_sector  }
+		prerequisite = {  focus = XWX_civilian_construction_funds }
+		prerequisite = {  focus = XWX_clear_space }
+		#mutually_exclusive = { focus = }
+		x = 4
+		y = 2
+		relative_position_id = XWX_industrial_revolution
+
+		cost = 5
+
+		available = {
+			
+		}
+
+		bypass = {
+
+		}
+
+		search_filters = {  }
+		completion_reward = {
+			custom_effect_tooltip = modify_XWX_industry_tt
+			add_to_variable = {
+				XWX_industry_local_resources_factor = 0.1
+				tooltip = local_resources_factor_tt
+			}
+		}
+	}
+
+	shared_focus = {
+		id = XWX_iron_extraction
+		icon = GFX_focus_generic_steel
+		prerequisite = { focus = XWX_mine_expansion }
+		#mutually_exclusive = { focus = }
+		x = 0
+		y = 1
+		relative_position_id = XWX_mine_expansion
+
+		cost = 5
+
+		available = {
+			
+		}
+
+		bypass = {
+
+		}
+
+		search_filters = {  }
+		completion_reward = {
+			custom_effect_tooltip = modify_XWX_industry_tt
+			add_to_variable = {
+				XWX_industry_local_resources_factor = 0.1
+				tooltip = local_resources_factor_tt
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			random_controlled_state = {
+				limit = {
+					is_owned_by = ROOT
+				}
+				add_resource = {
+					type = steel
+					amount = 20
+				}
 			}
 		}
 	}

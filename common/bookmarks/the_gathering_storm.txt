@@ -144,7 +144,8 @@ bookmarks = {
 			ideology = communism
 			minor = yes
 			ideas = {
-				
+				XWX_mountaineer_corps
+				XWX_splinter_faction
 			}
 			focuses = {
 				

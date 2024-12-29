@@ -9,9 +9,8 @@ characters={
 		}
 		country_leader = {
 			traits = { }
-			ideology = anarchist_communism
+			ideology = marxism
 			expire = "1960.1.1.1"
-			id = -1
 		}
 	}
 

@@ -17,12 +17,21 @@ on_actions = {
 				}
 				set_cosmetic_tag = XWX_sichuan_province
 			}
-            if = {
+			if = {
 				limit = {
 					original_tag = XWX
 					has_government = communism
+					NOT = { has_country_flag = XWX_prc_proclaimed }
 				}
 				set_cosmetic_tag = XWX_commie_colour
+			}
+			if = {
+				limit = {
+					original_tag = XWX
+					has_government = communism
+					has_country_flag = XWX_prc_proclaimed
+				}
+				set_cosmetic_tag = XWX_prc
 			}
 			if = {
 				limit = {

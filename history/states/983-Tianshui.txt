@@ -1,0 +1,28 @@
+state = {
+	id = 983
+	name = "STATE_983" # Tianshui
+	manpower = 1030760 # I'm making this shit up
+	
+	state_category = city
+	
+	history = {
+
+		owner = XWX
+		add_core_of = XWX
+
+		buildings = {
+			infrastructure = 2
+			arms_factory = 1
+		}
+
+		victory_points = {
+			2045 5
+		}
+	}
+
+	provinces = {
+		2045 13381 13378
+	}
+
+	local_supplies = 1.0 
+}

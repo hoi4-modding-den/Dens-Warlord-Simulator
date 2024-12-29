@@ -6,9 +6,13 @@
  XWX_DEF: "Gannan"
  XWX_ADJ: "Gannan"
 
- XWX_communism: "Gannan Peasant Republic"
- XWX_communism_DEF: "the Gannan Peasant Republic"
+ XWX_communism: "Gannan Peasant Republics"
+ XWX_communism_DEF: "the Gannan Peasant Republics"
  XWX_communism_ADJ: "Gannan"
+
+ XWX_prc: "United Peasant Republics of China"
+ XWX_prc_DEF: "the United Peasant Republics of China"
+ XWX_prc_ADJ: "Chinese"
 
  XWX_kmt_aligned: "Gannan Republican Association"
  XWX_kmt_aligned_DEF: "the Gannan Republican Association"
@@ -30,6 +34,8 @@
 
 # PARTIES
 
+ XWX_democratic_party_long: "Chinese Peasants' and Workers' Democratic Party"
+ XWX_democratic_party: "CPWDP"
  XWX_fascism_party_long: "Red Dragon Society - Japanese Collaborators"
  XWX_fascism_party: "Red Dragon Society"
  XWX_neutrality_party_long: "Gannan Kuomintang Assembly"
@@ -40,7 +46,7 @@
 
 # CHARACTERS
 
- XWX_peasant_collective_name: "Gannan Peasant Collective"
+ XWX_peasant_collective_name: "Peasant Collectives"
 
 
 # TRAITS
@@ -52,6 +58,7 @@
 # OPINION MODIFIERS
 
  XWX_is_kmt_ally_modifier: "Kuomintang Ally"
+ XWX_splinter_faction_modifier: "Revisionist Splinters!"
 
 
 # TRIGGERS
@@ -62,9 +69,15 @@
 # IDEAS
 
  XWX_mountaineer_corps: "Mountain Defences"
- XWX_mountaineer_corps_desc: "The last line of defence lies in the mountainous region of Ganzi, the fortress of Tianyu. Constructed by the Republic in 1935, the fortress is the last line of defence."
+ XWX_mountaineer_corps_desc: "The last line of defence lies in the mountainous region of Ganzi, the fortress of Tianyu. Constructed by the Collectives in 1935, the fortress is the last line of defence."
+ XWX_splinter_faction: "Independent Communes"
+ XWX_splinter_faction_desc: "The Peasants Republics are a splinter faction of the People's Republic of China, having seceeded from them in a conflict over ideological disparities in 1933."
+ XWX_land_reform: "Land Reform"
  XWX_industry_modifier: "National Industrialisation"
  XWX_industry_modifier_desc: "Our nation is lacking in many aspects. Comparably, it is the least industrialised province in all of China. Still, our development plans are layed out before us and with great effort will be turn our backwater region into the industrial heartlands of China."
+ modify_XWX_industry_tt: "Modify §Y$XWX_industry_modifier$§! by:"
+
+ after_idea_times_out_tt: "§YAfter the National Spirit runs out:§!"
 
 
 # EVENTS
@@ -89,15 +102,65 @@
 
 # FACTION NAMES
 
- XWX_workers_united_front: "Worker's United Front"
+ XWX_workers_united_front: "Revolutionary United Front"
 
 
 # NATIONAL FOCI
 
+ XWX_communal_report_1936: "Second Communal Conference"
+ XWX_communal_report_1936_desc: ""
+ XWX_commune_discussion: "State of the Communes"
+ XWX_commune_discussion_desc: ""
+ XWX_reconcile_with_prc: "Reconcile with the PRC"
+ XWX_reconcile_with_prc_desc: ""
+ XWX_maintain_course: "Maintain the Course of the Revolution"
+ XWX_maintain_course_desc: ""
+ XWX_continue_fortification_plans: "Continue the Tianyu Plan"
+ XWX_continue_fortification_plans_desc: ""
+ XWX_hunt_for_kmt_reactionaries: "Committee against Reactionary Influence"
+ XWX_hunt_for_kmt_reactionaries_desc: ""
+
+ XWX_workers_victory: "The Worker State Secured"
+ XWX_workers_victory_desc: ""
+ XWX_kmt_coup: "Kuomintang Coup d'Etat"
+ XWX_kmt_coup_desc: ""
+
  XWX_industrial_revolution: "The Industrial Revolution in Gannan"
  XWX_industrial_revolution_desc: "Industrialisation has overlooked the small province of Gannan. The few workshops that produce the nation's armaments and supply the people with goods are nothing close to the factories of the industrialised world. It is time to bring the Industrial Revolution to Gannan."
 
+ XWX_construction_sector: "Develop the Construction Sector"
+ XWX_construction_sector_desc: ""
+ XWX_civilian_construction_funds: "Civilian Development Funds"
+ XWX_civilian_construction_funds_desc: ""
+ XWX_clear_space: "Appropriate Farmlands"
+ XWX_clear_space_desc: ""
+ XWX_local_schools: "Regional Education Office"
+ XWX_local_schools_desc: ""
+ XWX_relocate_civilian_funds: "Relocate Civilian Funds"
+ XWX_relocate_civilian_funds_desc: ""
+ XWX_construction_equipment: "Adopt Modern Construction Techniques"
+ XWX_construction_equipment_desc: ""
+ XWX_workshop_output: "Support Armament Production"
+ XWX_workshop_output_desc: ""
+ XWX_production_lines: "Plan Production Lines"
+ XWX_production_lines_desc: ""
+ XWX_resource_deficit_management: "Resource Deficit Management"
+ XWX_resource_deficit_management_desc: ""
+ XWX_arm_the_nation: "Bureau of Armament Acquisition"
+ XWX_arm_the_nation_desc: ""
+ XWX_military_buildup: "Finance Extensive Military Buildup"
+ XWX_military_buildup_desc: ""
+ XWX_mine_expansion: "Expand the Mines"
+ XWX_mine_expansion_desc: ""
+ XWX_iron_extraction: "Iron Extraction"
+ XWX_iron_extraction_desc: ""
 
 # TERRAIN
 
+ STATE_983: "Tianshui Area"
+ STATE_984: "Kangding"
+ STATE_985: "Ganzi Mountains"
+
  VICTORY_POINTS_8104: "Tianyu"
+ VICTORY_POINTS_13376: "Kangding"
+ VICTORY_POINTS_10787: "Hezuo"

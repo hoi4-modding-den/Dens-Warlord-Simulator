@@ -6,10 +6,10 @@ XWX_industry_modifier = {
 
 	# 1st. Level: No reqs.
 	production_speed_industrial_complex_factor = XWX_industry_production_speed_industrial_complex_factor	# MAX 0.3
-    production_speed_buildings_factor = XWX_industry_production_speed_buildings_factor						# MAX 0.25, 0.1 increase for 0.15 production_speed_industrial_complex_factor decrease
+    production_speed_buildings_factor = XWX_industry_production_speed_buildings_factor						# MAX 0.25
     local_building_slots_factor = XWX_industry_local_building_slots_factor									# MAX 0.2
 
-	# 1 and 1/2 Level: completed all Level 1 foci and has done mine expansion decision
+	# 1 and 1/2 Level: completed all Level 1 foci
     local_resources_factor = XWX_industry_local_resources_factor 											# MAX 0.2
 
 	# 2nd. Level: at least 15 civs
@@ -19,7 +19,7 @@ XWX_industry_modifier = {
 
 	# 3rd. Level: at least 5 mils and either at war or 30 civs || all options mutually_exclusive
     production_lack_of_resource_penalty_factor = XWX_industry_production_lack_of_resource_penalty_factor 	# MAX -0.2
-    production_speed_arms_factory_factor = XWX_industry_production_speed_arms_factory_factor 				# MAX 0.1
+    production_speed_arms_factory_factor = XWX_industry_production_speed_arms_factory_factor 				# MAX 0.15
 	#industrial_capacity_factory = XWX_industry_industrial_capacity_factory									# MAX 0.25
 
 	# not level

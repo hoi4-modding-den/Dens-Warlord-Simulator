@@ -2,20 +2,14 @@ state={
 	id=752
 	name="STATE_752"
 	provinces={
-		1918 7988 8104 12724 12837 4999
+		1918 7988 13377 13379
 	}
-	manpower=1050400
+	manpower=550400
 	buildings_max_level_factor=1.000
 	state_category = rural
 	history={
 		owner = XWX
 		add_core_of = XWX
-		victory_points = {
-			4999 2
-		}
-		victory_points = {
-			8104 3
-		}
 		buildings = {
 			infrastructure = 1
 			

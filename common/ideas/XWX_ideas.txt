@@ -24,6 +24,87 @@ ideas = {
 
         }
 
+        XWX_splinter_faction = {
+            
+            picture = trotskyite_plot
+
+            allowed = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+           removal_cost = -1
+
+            modifier = {
+                drift_defence_factor = 0.25
+            }
+
+            targeted_modifier = {
+                tag = XWE
+                attack_bonus_against = 0.1
+                defense_bonus_against = 0.15
+            }
+
+        }
+
+        XWX_splinter_faction_2 = {
+
+            name = XWX_splinter_faction
+            
+            picture = trotskyite_plot
+
+            allowed = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+           removal_cost = -1
+
+            modifier = {
+                drift_defence_factor = 0.5
+                conscription_factor = 0.1
+            }
+
+            targeted_modifier = {
+                tag = XWE
+                attack_bonus_against = 0.1
+                defense_bonus_against = 0.15
+            }
+
+        }
+
+        XWX_land_reform = {
+            
+            picture = generic_agrarian_reform
+
+            allowed = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+           removal_cost = -1
+
+            modifier = {
+                local_factories  = -0.15
+            }
+
+            on_remove = {
+                add_to_variable = {
+                    XWX_industry_local_building_slots_factor = 0.1
+                }
+            }
+
+        }
+
     }
 
     industrial_concern = {

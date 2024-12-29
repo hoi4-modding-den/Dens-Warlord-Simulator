@@ -13,5 +13,9 @@ opinion_modifiers = {
 	XWX_is_kmt_ally_modifier = {
 		value = 100
 	}
+
+	XWX_splinter_faction_modifier = {
+		value = -75
+	}
 	
 }

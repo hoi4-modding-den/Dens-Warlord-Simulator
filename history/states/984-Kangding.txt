@@ -1,0 +1,27 @@
+state = {
+	id = 984
+	name = "STATE_984" # Kangding
+	manpower = 57000
+	
+	state_category = rural
+	
+	history = {
+
+		owner = XWX
+		add_core_of = XWX
+
+		buildings = {
+			infrastructure = 1
+		}
+
+		victory_points = {
+			13376 2
+		}
+	}
+
+	provinces = {
+		4999 13376
+	}
+
+	local_supplies = 1.0 
+}

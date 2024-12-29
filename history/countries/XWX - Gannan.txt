@@ -1,4 +1,6 @@
-capital = 753
+capital = 983
+
+oob = "XWX_1936"
 
 set_stability = 0.7
 set_war_support = 0.05
@@ -10,11 +12,38 @@ set_technology = {
 
 add_ideas = {
 	XWX_mountaineer_corps
+	XWX_splinter_faction
+}
+
+if = {
+	limit = {
+		has_dlc = "Man the Guns"
+	}
+	send_embargo = XWE
+	XWE = { send_embargo = XWX }
+}
+if = {
+	limit = {
+		NOT = { has_dlc = "Man the Guns" }
+	}
+	add_opinion_modifier = {
+		target = XWE
+		modifier = embargo
+	}
+	reverse_add_opinion_modifier = {
+		target = XWE
+		modifier = embargo
+	}
+}
+
+reverse_add_opinion_modifier = {
+	target = XWE
+	modifier = XWX_splinter_faction_modifier
 }
 
 country_event = { id = XWX_political_events.1 days = 7 }
 
-set_variable = { XWX_industry_production_speed_industrial_complex_factor = 0.3 }
+set_variable = { XWX_industry_production_speed_industrial_complex_factor = 0.2 }
 
 recruit_character = XWX_peasant_collective
 
