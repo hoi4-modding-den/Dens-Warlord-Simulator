@@ -1,0 +1,18 @@
+characters={
+	XTI_thubten_gyatso={
+		name="Thubten Gyatso"
+		portraits={
+			civilian={
+				large= gfx/XTI/XTI_thubten_gyatso.png
+			}
+		}
+		country_leader={
+			ideology=oligarchism
+			expire="1942.1.1.1"
+			id=-1
+			traits = {
+				speaker_to_the_wall
+			}
+		}
+	}
+}

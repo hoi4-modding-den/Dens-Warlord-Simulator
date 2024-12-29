@@ -1,0 +1,86 @@
+characters = {
+	XSI_Arnhold = {
+		name = XSI_Arnhold
+		portraits = {
+			civilian = {
+				large = gfx/leaders/Europe/portrait_europe_generic_6.dds
+			}
+		}
+		country_leader = {
+			ideology = oligarchism
+			expire = "1950.1.1.1"
+			id = -1
+		}
+	}
+	XSI_Franklin = {
+		name = XSI_Franklin
+		portraits = {
+			#civilian = {
+			#	large = gfx/XSI/franklin_portrait.png
+			#}
+		}
+		country_leader = {
+			ideology = oligarchism
+			expire = "1959.2.24.1"
+			id = -1
+		}
+	}
+	XSI_Keswick = {
+		name = XSI_Keswick
+		country_leader = {
+			ideology = oligarchism
+			expire = "1990.1.1.1"
+			id = -1
+		}
+	}
+	XSI_Liddell = {
+		name = XSI_Liddell
+		country_leader = {
+			ideology = oligarchism
+			expire = "1984.1.24.1"
+			id = -1
+		}
+	}
+	XSI_Okazaki = {
+		name = XSI_Okazaki
+		portraits = {
+			#civilian = {
+			#	large = gfx/XSI/okazaki_portrait.png
+			#}
+		}
+		country_leader = {
+			ideology = fascism_ideology
+			expire = "1965.10.10.1"
+			id = -1
+		}
+	}
+	XSI_Shushi = {
+		name = XSI_Shushi 
+		country_leader = {
+			ideology = marxism
+			expire = "1975.1.1.1"
+			id = -1
+		}
+	}
+	XSI_Tiecheng = {
+		name = XSI_Tiecheng
+		country_leader = {
+			ideology = conservatism
+			expire = "1953.11.19.1"
+			id = -1
+		}
+	}
+	XSI_Commune = {
+		name = XSI_Commune 
+		portraits = {
+			#civilian = {
+			#	large = gfx/XSI/commune_portrait.png
+			#}
+		}
+		country_leader = {
+			ideology = anarchist_communism
+			expire = "9999.1.1.1"
+			id = -1
+		}
+	}
+}

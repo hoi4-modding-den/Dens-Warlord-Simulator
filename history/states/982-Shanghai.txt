@@ -1,0 +1,38 @@
+state = {
+	id = 982
+	name = "STATE_982" # Shanghai
+	manpower = 4648520 #1216909 for just the original concession, the larger number makes sense if you're including the whole city
+	
+	state_category = large_city
+	
+	history = {
+
+		owner = XSI
+		add_core_of = XSI
+#		add_core_of = CHI
+
+		buildings = {
+			infrastructure = 3
+			dockyard = 1
+			industrial_complex = 1
+			arms_factory = 1
+			air_base = 6
+			dockyard = 1
+			7014 = {
+				naval_base = 6
+				coastal_bunker = 1
+				bunker = 1
+			}
+		}
+
+		victory_points = {
+			7014 20 # Shanghai
+		}
+	}
+
+	provinces = {
+		7014 13370 13371
+	}
+
+	local_supplies = 0.0 
+}

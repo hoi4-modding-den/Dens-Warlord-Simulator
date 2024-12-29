@@ -22,8 +22,24 @@ XWE = {
 	color_ui = rgb { 200 1 1 }
 }
 XMC = {
-	color = rgb { 75 75 175}
+	color = rgb { 75 75 175 }
 	color_ui = rgb { 75 75 175 }
+}
+XTN = {
+	color = rgb { 100 168 108 }
+	color_ui = rgb { 100 168 108 }
+}
+XSI = {
+	color = rgb { 0 148 255 }
+	color_ui = rgb { 0 148 255 }
+}
+XSA = {
+	color = rgb {248 200 79}
+	color_ui =rgb {248 200 79}
+}
+XKM = {
+	color = rgb {181 167 98}
+	color_ui =rgb {100 85 35}
 }
 
 GER = {

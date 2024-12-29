@@ -1,0 +1,13 @@
+﻿
+
+
+### Air Forces ###
+air_wings = {
+#tbh I didn't even check if they own Sichuan, I'm just trying to lower the error count
+	# Sichuan
+	605 = {
+		medium_plane_airframe_0 =  { owner = "CHI" amount = 6 creator = "ITA" version_name = "S.72"}		# Savoia S.72
+		small_plane_airframe_0 = { owner = "CHI" amount = 11 creator = "USA" version_name = "P-26A"} 		#  Boeing P-26 Peashooter
+	}
+}
+
