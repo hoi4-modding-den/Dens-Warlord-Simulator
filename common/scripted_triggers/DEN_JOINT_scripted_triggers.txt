@@ -9,5 +9,6 @@ DEN_is_chinese_country = {
         original_tag = XYJ
         original_tag = XTN
         original_tag = XKM
+		original_tag = XIS
     }
 }

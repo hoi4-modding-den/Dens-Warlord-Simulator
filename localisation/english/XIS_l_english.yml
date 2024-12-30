@@ -14,6 +14,12 @@
  XIS_ma_dunjing:0 "Ma Dunjing"
  XIS_ma_hongbin:0 "Ma Hongbin"
  
+ #political parties
+ XIS_neutrality_party:0 "Hu Clique"
+ XIS_democratic_party:0 "Ma Hongbin Clique"
+ XIS_communism_party:0 "Dispersed Communist Forces"
+ XIS_fascism_party:0 "Pro-Japan Forces"
+ 
  #victory points
  VICTORY_POINTS_5031:0 "Jinchang"
  VICTORY_POINTS_7971:0 "Jiayuguan"
