@@ -1,0 +1,13 @@
+DEN_is_chinese_country = {
+    OR = {
+        original_tag = CHI
+        original_tag = XSA
+        original_tag = XMC
+        original_tag = XWE
+        original_tag = XWX
+        original_tag = XIX
+        original_tag = XYJ
+        original_tag = XTN
+        original_tag = XKM
+    }
+}
