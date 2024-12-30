@@ -1,0 +1,10 @@
+XKM = {
+	male = {
+		names = { Abdullah Adil Alim Ismail Muhemmet Muhammad Yusup Masud Ibrahim Husayn Ali }
+	}
+	female = {
+		names = { Meryem Patime Reyhan Arifya }
+	}
+	surnames = { Akhun Alptekin Kashgari Beg Ibrahim Amin Ahmad Khan Chagatai }
+	callsigns = { }
+}

@@ -1,0 +1,44 @@
+ideas = {
+	country = {
+		XKM_mongol_roots = {
+			allowed = {
+				always = no
+			}
+			removal_cost = -1
+			picture = generic_motorized_equipment_manufacturer_2
+			modifier = {
+				army_org_factor = 0.05
+				coordination_bonus = 0.05
+				initiative_factor = 0.05
+			}
+		}
+		XKM_upset_turkestan_community = {
+			picture = raj_marginalized_muslim_community_angry
+			allowed = {
+				always = no
+			}
+			removal_cost = -1
+			targeted_modifier = {
+				tag = XTN
+				defense_bonus_against = -0.1
+			}
+			modifier = {
+				stability_factor = -0.15
+				war_support_factor = -0.15
+				political_power_factor = -0.35
+			}
+		}
+		XKM_nomadic_community = {
+			picture = generic_agrarian_society
+			allowed = {
+				always = no
+			}
+			removal_cost = -1
+			modifier = {
+				global_building_slots = -1
+				production_speed_buildings_factor = -0.1
+				industrial_capacity_factory = -0.35
+			}
+		}
+	}
+}

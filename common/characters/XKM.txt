@@ -1,0 +1,19 @@
+characters={
+	XKM_yulbars_khan = { 
+		name = XKM_yulbars_khan
+		portraits = {
+			civilian = {
+				large = GFX_portrait_XKM_yulbars_khan
+			}
+		}
+		country_leader = {
+			ideology = despotism
+			expire = "1960.1.1.1"
+			id = -1
+			traits = {
+				XKM_cavalry_leader
+				kuomintang_sympathizer
+			}
+		}
+	}
+}

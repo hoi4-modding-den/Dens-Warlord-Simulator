@@ -1,0 +1,272 @@
+focus_tree = {
+    id = XKM_tree
+    country = {
+        factor = 0
+        modifier = {
+            tag = XKM
+            add = 10
+        }
+    }
+
+	default = no
+	reset_on_civilwar = no
+
+	continuous_focus_position = { x = 1000 y = 1000 }
+    #focus = {
+        #id = XKM_
+        #icon = icon_here
+        #cost = 10
+        #prerequisite = { focus = XKM_ }
+        #relative_position_id = XKM_
+        #mutually_exclusive = { focus = XKM_ }
+        #x = 0
+        #y = 0
+        #completion_reward = {
+
+        #}
+    #}
+
+    focus = {
+        id = XKM_national_identity
+        icon = icon_here
+        cost = 10
+        #prerequisite = { focus = XKM_ }
+        #relative_position_id = XKM_
+        #mutually_exclusive = { focus = XKM_ }
+        x = 0
+        y = 0
+        completion_reward = {
+
+        }
+    }
+
+    focus = {
+        id = XKM_religion_question
+        icon = icon_here
+        cost = 10
+        #prerequisite = { focus = XKM_ }
+        #relative_position_id = XKM_
+        #mutually_exclusive = { focus = XKM_ }
+        x = 7
+        y = 0
+        completion_reward = {
+
+        }
+    }
+
+    focus = {
+        id = XKM_state_atheism
+        icon = GFX_focus_generic_soviet_politics
+        cost = 10
+        prerequisite = { focus = XKM_religion_question }
+        relative_position_id = XKM_religion_question
+        mutually_exclusive = { focus = XKM_religious_compromise }
+        mutually_exclusive = { focus = XKM_islamic_state }
+        x = 2
+        y = 1
+        completion_reward = {
+
+        }
+    }
+
+    focus = {
+        id = XKM_islamic_state
+        icon = GFX_focus_TUR_turanist_ambition
+        cost = 10
+        prerequisite = { focus = XKM_religion_question }
+        relative_position_id = XKM_religion_question
+        mutually_exclusive = { focus = XKM_religious_compromise }
+        mutually_exclusive = { focus = XKM_state_atheism }
+        x = -2
+        y = 1
+        completion_reward = {
+
+        }
+    }
+
+    focus = {
+        id = XKM_religious_compromise
+        icon = GFX_goal_tripartite_pact
+        cost = 10
+        prerequisite = { focus = XKM_religion_question }
+        relative_position_id = XKM_religion_question
+        mutually_exclusive = { focus = XKM_state_atheism }
+        mutually_exclusive = { focus = XKM_islamic_state }
+        x = 0
+        y = 1
+        completion_reward = {
+
+        }
+    }
+    
+    focus = {
+        id = XKM_abandon_nomadism
+        icon = icon_here
+        cost = 10
+        #prerequisite = { focus = XKM_ }
+        #relative_position_id = XKM_
+        mutually_exclusive = { focus = XKM_pastorial_economy }
+        x = 12
+        y = 0
+        completion_reward = {
+
+        }
+    }
+    
+    focus = {
+        id = XKM_pastorial_economy
+        icon = icon_here
+        cost = 10
+        #prerequisite = { focus = XKM_ }
+        #relative_position_id = XKM_
+        mutually_exclusive = { focus = XKM_abandon_nomadism }
+        x = 14
+        y = 0
+        completion_reward = {
+
+        }
+    }
+    
+    focus = {
+        id = XKM_urbanization_efforts
+        icon = GFX_focus_generic_industry_1
+        cost = 10
+        prerequisite = { focus = XKM_abandon_nomadism }
+        relative_position_id = XKM_abandon_nomadism
+        #mutually_exclusive = { focus = XKM_ }
+        x = -1
+        y = 1
+        completion_reward = {
+            add_victory_points = {
+                province = 4709
+                value = 2
+            }
+            add_victory_points = {
+                province = 4770
+                value = 1
+            }
+            add_victory_points = {
+                province = 4823
+                value = 1
+            }
+            add_victory_points = {
+                province = 12526
+                value = 1
+            }
+        }
+    }
+    
+    focus = {
+        id = XKM_rural_development
+        icon = GFX_focus_generic_land_reclamation
+        cost = 10
+        prerequisite = { focus = XKM_pastorial_economy }
+        relative_position_id = XKM_pastorial_economy
+        #mutually_exclusive = { focus = XKM_ }
+        x = 1
+        y = 1
+        completion_reward = {
+
+        }
+    }
+    
+    focus = {
+        id = XKM_basic_road_construction
+        icon = GFX_goal_generic_construct_infrastructure
+        cost = 10
+        prerequisite = { focus = XKM_pastorial_economy focus = XKM_abandon_nomadism }
+        relative_position_id = XKM_pastorial_economy
+        #mutually_exclusive = { focus = XKM_ }
+        x = -1
+        y = 1
+        completion_reward = {
+
+        }
+    }
+
+    focus = {
+        id = XKM_embracing_china
+        icon = GFX_focus_chi_united_front
+        cost = 10
+        prerequisite = { focus = XKM_national_identity }
+        relative_position_id = XKM_national_identity
+        mutually_exclusive = { focus = XKM_self_determination }
+        x = 2
+        y = 1
+        completion_reward = {
+
+        }
+    }
+
+    focus = {
+        id = XKM_pledge_nationalist_loyalty
+        icon = GFX_focus_chi_cooperation_with_the_nationalists
+        cost = 10
+        prerequisite = { focus = XKM_embracing_china }
+        relative_position_id = XKM_embracing_china
+        mutually_exclusive = { focus = XKM_revolutionary_thought }
+        x = 1
+        y = 1
+        completion_reward = {
+
+        }
+    }
+
+    focus = {
+        id = XKM_revolutionary_thought
+        icon = GFX_focus_chi_cooperation_with_the_communists
+        cost = 10
+        prerequisite = { focus = XKM_embracing_china }
+        relative_position_id = XKM_embracing_china
+        mutually_exclusive = { focus = XKM_pledge_nationalist_loyalty }
+        x = -1
+        y = 1
+        completion_reward = {
+
+        }
+    }
+    
+    focus = {
+        id = XKM_self_determination
+        icon = icon_here
+        cost = 10
+        prerequisite = { focus = XKM_national_identity }
+        relative_position_id = XKM_national_identity
+        mutually_exclusive = { focus = XKM_embracing_china }
+        x = -2
+        y = 1
+        completion_reward = {
+
+        }
+    }
+    
+    focus = {
+        id = XKM_uyghur_identity
+        icon = icon_here
+        cost = 10
+        prerequisite = { focus = XKM_self_determination }
+        relative_position_id = XKM_self_determination
+        mutually_exclusive = { focus = XKM_turko_mongols }
+        x = 1
+        y = 1
+        completion_reward = {
+
+        }
+    }
+    
+    focus = {
+        id = XKM_turko_mongols
+        icon = icon_here
+        cost = 10
+        prerequisite = { focus = XKM_self_determination }
+        relative_position_id = XKM_self_determination
+        mutually_exclusive = { focus = XKM_uyghur_identity }
+        x = -1
+        y = 1
+        completion_reward = {
+
+        }
+    }
+
+
+}

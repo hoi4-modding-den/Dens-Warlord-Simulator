@@ -1,4 +1,35 @@
 ﻿l_english:
+
+ XKM_GATHERING_STORM_DESC: "Located in northern Xinjiang, the Kumul Khanate has a unique ethnic mix of Turkic, Mongol, Han, and Uyghur populations. The pivotal role of General Yulbars Khan, who leveraged the East Turkestan movements to establish a pro-Kumuntang state in northwestern China, significantly shaped the course of the Kumul Khanate's history. The nation is currently grappling with the challenge of quelling the nationalistic Uyghur population, which vehemently opposes unification with China. The added complexity of Communist infiltration further worsens the nation's struggle to define its identity amidst the looming prospect of Chinese integration."
+
  XKM: "Kumul Khanate"
  XKM_DEF: "the Kumul Khanate"
  XKM_ADJ: "Uyghur-Mongol"
+ 
+ XKM_yulbars_khan: "Yulbars Khan"
+
+ XKM_mongol_roots: "Mongolian Roots"
+ XKM_upset_turkestan_community: "Turkestan Community - Upset"
+ XKM_nomadic_community: "Nomadic Community"
+ XKM_cavalry_leader: "Cavalry Leader"
+ kuomintang_sympathizer: "Kuomintang Sympathizer"
+
+ VICTORY_POINTS_4770: "Karamay"
+ VICTORY_POINTS_12526: "Yining"
+
+ XKM_national_identity:0 "Finding a National Identity"
+ XKM_religion_question:0 "The Religion Question"
+ XKM_state_atheism:0 "State Atheism"
+ XKM_islamic_state:0 "Founding an Islamic State"
+ XKM_religious_compromise:0 "Religious Compromise"
+ XKM_abandon_nomadism:0 "Abandon Nomadism"
+ XKM_pastorial_economy:0 "Pastorial Economy"
+ XKM_urbanization_efforts:0 "Urbanization Efforts I"
+ XKM_rural_development:0 "Rural Development I"
+ XKM_basic_road_construction:0 "Basic Road Construction"
+ XKM_embracing_china:0 "Embracing Chinese Identity"
+ XKM_pledge_nationalist_loyalty:0 "Pledge Loyalty to the Nationalists"
+ XKM_revolutionary_thought:0 "Embrace Revolutionary Ideals"
+ XKM_self_determination:0 "Self-Determination"
+ XKM_uyghur_identity:0 "Uniting the Uyghurs"
+ XKM_turko_mongols:0 "Turko-Mongol Identity"

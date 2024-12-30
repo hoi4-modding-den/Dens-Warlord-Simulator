@@ -1,5 +1,13 @@
 leader_traits = {
 
+	kuomintang_sympathizer = {
+		random = no
+		targeted_modifier = {
+			tag = CHI
+			trade_cost_for_target_factor = -0.25
+		}
+	}
+
 	speaker_to_the_wall = {
 		random = no
 		political_power_factor = -0.50

@@ -67,10 +67,13 @@ bookmarks = {
 			ideology = neutrality
 			minor = no
 			ideas = {
-				
+				XKM_mongol_roots
+				XKM_upset_turkestan_community
+				XKM_nomadic_community
 			}
 			focuses = {
-				
+				XKM_turko_mongols
+				XKM_islamic_state
 			}
 		}
 		"XTI"={
