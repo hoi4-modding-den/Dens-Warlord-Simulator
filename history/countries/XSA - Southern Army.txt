@@ -2,6 +2,11 @@
 
 oob = "XSA_1936"
 
+recruit_character = XSA_wang_lingji
+recruit_character = XSA_wang_jialie
+recruit_character = XSA_peng_dehuai
+recruit_character = XSA_he_long
+
 if = {
 	limit = { has_dlc = "By Blood Alone" }
 		set_air_oob = "CHI_1936_air_bba"
@@ -12,6 +17,25 @@ if = {
 			early_bomber = 1
 		}
 	}
+}
+
+602 = {
+	start_resistance = yes
+	set_compliance = 5
+	set_resistance = 15
+	set_garrison_strength = 1.0
+}
+603 = {
+	start_resistance = yes
+	set_compliance = 5
+	set_resistance = 15
+	set_garrison_strength = 1.0
+}
+599 = {
+	start_resistance = yes
+	set_compliance = 5
+	set_resistance = 15
+	set_garrison_strength = 1.0
 }
 
 set_stability = 0.2
@@ -68,6 +92,11 @@ set_politics = {
 
 set_popularities = {
 	neutrality = 100
+}
+
+add_ideas = {
+	XSF_frequent_raiding
+	XSF_warlord_state
 }
 
 add_opinion_modifier = { target = XWE modifier = hostile_status }

@@ -29,6 +29,16 @@ XWX_sichuan_province = {
 	color_ui = rgb { 229 138 47 }
 }
 
+XSA_commie_colour = {
+	color = rgb { 180 70 70 }
+	color_ui = rgb { 180 70 70 }
+}
+
+XSA_unified_china = {
+	color = rgb { 20 90 180 }
+	color_ui = rgb { 20 90 180 }
+}
+
 #vanilla HOI4 cosmetic tags#
 MAL_UK = {
     color = rgb { 201 56 93 }

@@ -1,0 +1,71 @@
+characters = {
+	XSA_wang_lingji={
+		name=XSA_wang_lingji
+		portraits={
+		}
+		country_leader={
+			ideology=despotism
+			traits={ hawk }
+			expire="1948.1.1.12"
+			id=-1
+		}
+		corps_commander={
+			traits={ 	}
+			skill=2
+			attack_skill=1
+			defense_skill=3
+			planning_skill=1
+			logistics_skill=2
+			legacy_id=-1
+		}
+	}
+	XSA_wang_jialie={
+		name=XSA_wang_jialie
+		portraits={
+		}
+		country_leader={
+			ideology=despotism
+			traits={  }
+			expire="1948.1.1.12"
+			id=-1
+		}
+	}
+	XSA_peng_dehuai={
+		name=PRC_peng_dehuai
+		portraits={
+			army={
+				large="GFX_portrait_prc_peng_dehuai"
+				small=GFX_portrait_PRC_peng_dehuai_small
+			}
+		}
+		country_leader={
+			ideology=leninism
+			traits={ cornered_fox }
+			expire="1965.1.1.1"
+			id=-1
+		}
+		corps_commander={
+			traits={ infantry_officer trait_mountaineer hidden_sympathies}
+			skill=4
+			attack_skill=3
+			defense_skill=5
+			planning_skill=3
+			logistics_skill=2
+			legacy_id=-1
+		}
+	}
+	XSA_he_long={
+		name=XSA_he_long
+		portraits={
+		}
+		corps_commander={
+			traits={  hidden_sympathies}
+			skill=3
+			attack_skill=3
+			defense_skill=2
+			planning_skill=2
+			logistics_skill=2
+			legacy_id=-1
+		}
+	}
+}

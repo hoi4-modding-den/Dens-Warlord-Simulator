@@ -1,0 +1,56 @@
+on_actions = {
+	on_puppet = {
+		effect = { 
+			if = {
+				limit = {
+					XSA = {
+						NOT = {
+							has_government = communism
+						}
+						has_cosmetic_tag = XSA_commie_colour
+					}
+				}
+				XSA = {
+					drop_cosmetic_tag = yes
+				}
+			}
+			if = {
+				limit = {
+					XSA = {
+						has_government = communism
+					}
+				}
+				XSA = {
+					set_cosmetic_tag = XSA_commie_colour
+				}
+			}
+		} 
+	}
+    on_government_change = {
+		effect = { 
+			if = {
+				limit = {
+					XSA = {
+						NOT = {
+							has_government = communism
+						}
+						has_cosmetic_tag = XSA_commie_colour
+					}
+				}
+				XSA = {
+					drop_cosmetic_tag = yes
+				}
+			}
+			if = {
+				limit = {
+					XSA = {
+						has_government = communism
+					}
+				}
+				XSA = {
+					set_cosmetic_tag = XSA_commie_colour
+				}
+			}
+		}
+    }
+}

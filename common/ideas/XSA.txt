@@ -1,0 +1,68 @@
+ideas = {
+	country = {
+		XSF_frequent_raiding = {
+
+			picture = chi_army_corruption2
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				resistance_target = 0.6
+				compliance_growth  = 0.25
+				political_power_cost = 0.15
+				stability_factor = -0.1
+			}
+		}
+		XSF_frequent_raiding_1 = {
+
+			picture = chi_army_corruption2
+
+			name = XSF_frequent_raiding
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				resistance_target = 0.3
+				compliance_growth  = 0.5
+				political_power_cost = 0.1
+			}
+		}
+		XSF_warlord_state = {
+
+			picture = chi_incompetent_officers
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				attrition = -0.08
+				army_org_factor = -0.1
+				army_speed_factor = 0.15
+				max_dig_in_factor = 0.1
+			}
+		}
+	}
+}
