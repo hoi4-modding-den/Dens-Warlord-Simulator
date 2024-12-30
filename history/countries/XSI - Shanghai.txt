@@ -67,27 +67,46 @@ if = {
 }
 add_ideas = {
 	free_trade
+	XSI_foreigner_republic
+	XSI_japanese_occupation_zone
+	XSI_white_terror
+	XSI_broke
+	XSI_safe_place
 }
 
 set_convoys = 50
 
 set_politics = {
 	ruling_party = neutrality
-	last_election = "1934.3.27"
-	election_frequency = 48
-	elections_allowed = no
+	last_election = "1935.4.1"
+	election_frequency = 12
+	elections_allowed = yes
 }
 
 set_popularities = {
-	neutrality = 50
-	communism = 15
-	fascism = 10
+	neutrality = 52
+	communism = 8
+	fascism = 15
 	democratic = 25
 }
 
 add_opinion_modifier = { target = JAP modifier = XSI_anti }
 add_opinion_modifier = { target = ENG modifier = XSI_imperial_benefactor }
 add_opinion_modifier = { target = USA modifier = XSI_imperial_benefactor }
+add_opinion_modifier = { target = FRA modifier = XSI_imperial_benefactor }
+add_opinion_modifier = { target = JAP modifier = XSI_minor_benefactor }
+add_opinion_modifier = { target = ITA modifier = XSI_minor_benefactor }
+add_opinion_modifier = { target = NOR modifier = XSI_minor_benefactor }
+add_opinion_modifier = { target = SWE modifier = XSI_minor_benefactor }
+add_opinion_modifier = { target = DEN modifier = XSI_minor_benefactor }
+add_opinion_modifier = { target = HOL modifier = XSI_minor_benefactor }
+add_opinion_modifier = { target = SPR modifier = XSI_minor_benefactor }
+add_opinion_modifier = { target = POR modifier = XSI_minor_benefactor }
+add_opinion_modifier = { target = PRU modifier = XSI_minor_benefactor }
+add_opinion_modifier = { target = MEX modifier = XSI_minor_benefactor }
+add_opinion_modifier = { target = SWI modifier = XSI_minor_benefactor }
+
+
 
 ### VARIANTS ###
 # 1936 Start #

@@ -1,0 +1,33 @@
+add_namespace = XSI_natural_event
+add_namespace = XSI_focus_event
+add_namespace = XSI_news_event
+add_namespace = XSI_diplo_event
+
+#Natural Events# (they just show up on their own)
+country_event = { #intro event
+    id = XSI_natural_event.1
+    title = XSI.NE_1.t
+    # picture = GFX_report_event_DEN_celebration
+    desc = XSI.NE_1.d
+
+    is_triggered_only = yes
+    fire_only_once = no
+	option = {
+        name = XSI.NE_1.a
+		ai_chance = {
+			base = 100
+		}
+	hidden_effect = {
+			#country_event = { id = XSI_natural_event.2 days = 35 }
+		}
+    	}
+}
+
+#Focus Events# (events from focuses)
+
+
+#News Events# (the big news pop-ups)
+
+
+#Diplomatic Events# (events from interactions with other countries)
+

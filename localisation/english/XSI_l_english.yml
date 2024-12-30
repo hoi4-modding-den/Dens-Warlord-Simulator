@@ -1,10 +1,5 @@
 ﻿l_english:
-
-#states
- STATE_613:0 "Southern Jiangsu"
- STATE_982:0 "Shanghai"
-
-#country
+#country#
  XSI:0 "Shanghai"
  XSI_DEF: "the City of Shanghai"
  XSI_ADJ: "Shanghainese"
@@ -20,7 +15,7 @@
  XSI_democratic_party_long: "Chungkuo Kuomintang"
  XSI_communism:0 "Commune of Shanghai"
  XSI_communism_DEF:0 "the Commune of Shanghai"
- XSI_communism_party: "CPC"
+ XSI_communism_party: "CPC (in-exile)"
  XSI_communism_party_long: "Zhongguo Gongchandang"
  XSI_neutrality:0 "International Shanghai"
  XSI_neutrality_DEF:0 "the Shanghai International Settlement"
@@ -34,26 +29,56 @@
  XSI_JAP_neutrality_subject_DEF:0 "the Shanghai Autonomy"
  XSI_JAP_neutrality_subject_ADJ:0 "Shanghainese"
  XSI_JAP_fascism_subject:0 "Shanghai Occupation Zone"
- XSI_JAP_fascism_subject_DEF:0 "the Shanghai Occupation Zone"
+ XSI_JAP_fascism_subject_DEF:0 "the Shanghai Military Security Zone"
  XSI_JAP_fascism_subject_ADJ:0 "Shanghainese"
  
- #cosmetic tags
+ #cosmetic tags#
  XSI_ancom:0 "Free Territory of Shanghai"
  XSI_ancom_DEF:0 "the Free Territory of Shanghai"
  XSI_ancom_ADJ:0 "Shanghaian"
+ XSI_china:0 "International China"
+ XSI_china_DEF:0 "the Chinese International Economic Authority"
+ XSI_china_ADJ:0 "Chinese"
  
- #characters
+ #characters#
  XSI_Arnhold:0 "Harry Edward Arnhold" #game start-april 1937 leader
  XSI_Franklin:0 "Cornell Sidney Franklin" #april 1937-april 1940 leader
- XSI_Keswick:0 "William Johnstone Keswick" #april 1940-may 1st 1941 leader
+ XSI_Keswick:0 "William Johnstone Keswick" #april 1940-may 1st 1941 leader, note: the Japanese attempted to assassinate him in 1941
  XSI_Liddell:0 "John Hellyer Liddell" #may 1st 1941-january 5th 1942 leader
  XSI_Okazaki:0 "Katsuo Okazaki" #Japanese puppet leader, january 5th 1942-august 1st 1943 leader 
- #country was disbanded in febuary 1943 for the Republic of China, and annexed into japanese China in July 1943
+ #country was officially disbanded in Febuary 1943 by the British for the Republic of China, and annexed into japanese China in July 1943
  XSI_Shushi:0 "Rao Shushi" #communist mayor of Shanghai in 1949
  XSI_Tiecheng:0 "Wu Tiecheng" #mayor of non-international Shanghai in 1936
  XSI_Commune:0 "Anarchist Commune"
  
- #etc.
- XSI_imperial_benefactor:0 "Imperial Benefactor"
+ #ideas#
+ #starting
+ XSI_foreigner_republic:0 "Ratepayer Democracy"
+ XSI_foreigner_republic_desc:0 "While technically a democracy, voting is limited solely to foreign landowners, a fraction of a fraction of the city's population, of which only about a quarter of that actually votes in elections. In practice, Shanghai is run by a thousand wealthy citizens in a manner more reminiscent of a corporation than an actual city. While this helps us expedite political decisions, the decisions we do make have little regard for the actual desires of the majority working class Chinese population."
+ XSI_japanese_occupation_zone:0 "Japanese Occupation of Hongkew" 
+ XSI_japanese_occupation_zone_desc:0 "On January 28th, 1931, Japanese forces provoked an anti-Japanese lynching, resulting in the Japanese military razing the city, with over 10,000 civilian deaths as a result. Since the ceasefire in May 1931, Japanese police forces have effectively occupied the neighborhood of Hongkew, with our government having no control over the neighborhood. Fears of Japanese political subversion, if not another military invasion, cannot be alleviated until the district is returned to our control." 
+ XSI_broke:0 "Running on Fiscal Fumes"
+ XSI_broke_desc:0 "Despite the council's efforts to maintain fiscal stability, we are deep in the red, due in part to the reconstruction of the city, and the expansion of our police forces. While we have managed to maintain our budget due to our reserve funds from the sale of electricity, our reserves are quickly diminishing. We must either raise our taxes in an efficient manner, or 'cut out the fat', if we even have enough fat left to cut."
+ XSI_safe_place:0 "Refuge of the World"
+ XSI_safe_place_desc:0 "Due to the city government's loosely-defined semi-legal existence, we have little to no restrictions on immigration. As a result, many refugees have migrated to the city, either to get away from the chaos that has engulfed the rest of China, or to escape persecution from places like Germany. If the city finds itself occupied, the refugees will likely be forced to flee."
+ XSI_white_terror:0 "Memories of April 12th"
+ XSI_white_terror_desc:0 "On April 12th, 1927, conservative KMT forces, cooperating with the Green Gang crime syndicate, started a brutal purge against the CPC, Left-KMT, and other progressive forces in China, starting with Shanghai. In what came to be known as the April 12 Massacre, over 5,000-10,000 people, suspected communists, communist sympathizers, union members, and non-traditionally dressed women, were executed by the army in the streets. While the purge effectively destroyed any overt communist influence in Shanghai, it has extensively radicalized those who had survived, and scared off many people from the KMT."
+ #economic
+ XSI_broke_oops:0 "Financial Collapse"
+ XSI_broke_oops_desc:0 "Despite the best efforts of the city to maintain a balanced budget, we are officially bankrupt. If we do not resolve this soon, our very existence will be called into question."
+ XSI_broke_recovering:0 "Fiscal Stability"
+ XSI_broke_recovering:0 "We have taken efforts to restabilize our budget. While this will upset taxpayers, it is necessary to ensure the stability of our government."
+ 
+ #events#
+ XSI.NE_1.t:0 "The Situation in Shanghai, 1936"
+ XSI.NE_1.d:0 "The Shanghai International Settlement was founded in 1863 from the merger of the American and British concessions that were established in the aftermath of the First Opium War. Unlike Macau and Hong Kong, the Shanghai concessions were legally under Chinese sovereignty, but the city government is managed by the Shanghai Municipal Council (SMC). The SMC was created and managed with the support of all treaty powers, which was expanded to include 18 different nations by 1914, but the city is mostly managed by the British and the Americans.\n\nHowever, with the Xinhai Revolution and the start of the warlord era, there has not been any single unified Chinese government to answer to, leaving Shanghai de facto independent. The civil war between the Kuomintang (KMT) and Socialist forces has left China divided, chaotic, and vulnerable to Japanese aggression. Anti-Communist forces carried out a purge of suspected socialists in 1927, killing tens of thousands, while Japanese forces staged an anti-Japanese riot in 1932, resulting in the Japanese military razing the city, permanently occupying the neighborhood of Hongkew, and forcing the KMT military to leave the city.\n\nAfter the Japanese invasion, with pressure from the British, the KMT was forced to surrender the Chinese portions of Shanghai, while the French concession was also annexed into the International Settlement. While this expansion has granted us more resources to repair the city, it has also strained our budget, and greatly increased the tensions between our foreigner-led Council and the local Chinese population. If the Pearl of the Orient is to survive the decade, we must take decisive action, before the Japanese do it for us."
+ XSI.NE_1.a:0 "The sparrow may be small, but all the vital organs are there, hopefully..."
+ #election lead-up
+ 
+ 
+ #etc.#
+ XSI_GATHERING_STORM_DESC:0 ""
+ XSI_imperial_benefactor:0 "Major Supporting Treaty Power"
+ XSI_minor_benefactor:0 "Supporting Treaty Power"
  XSI_anti:0 "Recent Hostilities"
  

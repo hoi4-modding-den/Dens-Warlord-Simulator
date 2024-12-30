@@ -136,7 +136,9 @@ bookmarks = {
 			ideology = neutrality
 			minor = yes
 			ideas = {
-				
+				XSI_foreigner_republic
+				XSI_japanese_occupation_zone
+				XSI_white_terror
 			}
 			focuses = {
 				

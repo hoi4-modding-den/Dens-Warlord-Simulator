@@ -2,6 +2,9 @@ opinion_modifiers = {
 	XSI_imperial_benefactor = {
 		value = 50
 	}
+	XSI_minor_benefactor = {
+		value = 25
+	}
 	XSI_anti = {
 		value = -50
 	}
