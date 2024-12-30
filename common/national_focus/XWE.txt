@@ -972,7 +972,37 @@ focus_tree = {
 		id = XWE_Steady_as_she_goes
 
 		icon = GFX_focus_focus_fra_maquis
-		x = 5
+		x = -3
+		y = 1
+		cost = 5
+		
+		relative_position_id = XWE_Elections
+
+		allow_branch = {
+			
+		}
+
+		mutually_exclusive = {
+		} 
+		
+		ai_will_do = {
+			base = 0.5
+		}
+
+		available = {
+		}
+		prerequisite = { focus = XWE_Elections }
+		search_filters = { }
+		
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XWE_Pro_Comintern_Policies
+
+		icon = GFX_focus_focus_fra_maquis
+		x = 2
 		y = 1
 		cost = 5
 		

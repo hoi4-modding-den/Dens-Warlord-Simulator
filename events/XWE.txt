@@ -25,11 +25,25 @@ country_event = { #Chinese Elections
 	
 	is_triggered_only = yes
 	
-	option = {    #Another 4 Years To The Socialist
+	option = {    #Another 4 Years To The Socialist (historical PRO UNITED FRONT)
 		name = XWE.2.a
-		
-		
-		
+		XWE = {
+			complete_national_focus = XWE_Elections
+			complete_national_focus = XWE_Steady_as_she_goes
+		}
 	}
-	
+	option = {    #Deng Fa and the Pro Comintern Policies
+		name = XWE.2.b
+		XWE = {
+			complete_national_focus = XWE_Elections
+			complete_national_focus = XWE_Pro_Comintern_Policies
+		}
+	}
+	option = {    #Mao Seizes Power, Solo China Path
+		name = XWE.2.c
+		XWE = {
+			complete_national_focus = XWE_Elections
+			complete_national_focus = XWE_Mao_Coup
+		}
+	}
 }
