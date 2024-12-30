@@ -30,6 +30,8 @@ country_event = { #Chinese Elections
 		XWE = {
 			complete_national_focus = XWE_Elections
 			complete_national_focus = XWE_Steady_as_she_goes
+			
+			
 		}
 	}
 	option = {    #Deng Fa and the Pro Comintern Policies
@@ -37,6 +39,19 @@ country_event = { #Chinese Elections
 		XWE = {
 			complete_national_focus = XWE_Elections
 			complete_national_focus = XWE_Pro_Comintern_Policies
+			remove_country_leader_role = {
+				character = XWE_Zhou_Enlai
+				ideology = marxism
+			}
+			add_country_leader_role = {
+				character = XWE_Deng_Fa
+				promote_leader = yes
+				country_leader = {
+					ideology = marxism
+					expire = "1965.1.1.1"
+					traits = { }
+				}
+			}
 		}
 	}
 	option = {    #Mao Seizes Power, Solo China Path
@@ -44,6 +59,19 @@ country_event = { #Chinese Elections
 		XWE = {
 			complete_national_focus = XWE_Elections
 			complete_national_focus = XWE_Mao_Coup
+			remove_country_leader_role = {
+				character = XWE_Zhou_Enlai
+				ideology = marxism
+			}
+			add_country_leader_role = {
+				character = XWE_mao_zedong
+				promote_leader = yes
+				country_leader = {
+					ideology = marxism
+					expire = "1965.1.1.1"
+					traits = { }
+				}
+			}
 		}
 	}
 }

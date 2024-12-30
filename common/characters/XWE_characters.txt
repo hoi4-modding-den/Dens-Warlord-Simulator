@@ -26,11 +26,11 @@ characters={
 		name=PRC_mao_zedong
 		portraits={
 			army={
-				large="GFX_portrait_prc_mao_zedong"
+				large="gfx/XWE/XWE_Mao_Zedong.png"
 				small=GFX_portrait_PRC_mao_zedong_small
 			}
 			civilian={
-				large="GFX_portrait_prc_mao_zedong"
+				large="gfx/XWE/XWE_Mao_Zedong.png"
 				small=GFX_portrait_PRC_mao_zedong_small
 			}
 		}
@@ -39,6 +39,26 @@ characters={
 			skill=4
 			attack_skill=2
 			defense_skill=4
+			planning_skill=3
+			logistics_skill=4
+			legacy_id=-1
+		}
+	}
+	XWE_Deng_Fa={
+		name="Deng Fa"
+		portraits={
+			army={
+				large="gfx/XWE/XWE_Deng_Fa.png"
+			}
+			civilian={
+				large="gfx/XWE/XWE_Deng_Fa.png"
+			}
+		}
+		corps_commander={
+			traits={ infantry_officer }
+			skill=4
+			attack_skill=3
+			defense_skill=3
 			planning_skill=3
 			logistics_skill=4
 			legacy_id=-1
@@ -54,8 +74,8 @@ characters={
 		corps_commander={
 			traits={ infantry_officer }
 			skill=4
-			attack_skill=2
-			defense_skill=4
+			attack_skill=4
+			defense_skill=2
 			planning_skill=3
 			logistics_skill=4
 			legacy_id=-1
