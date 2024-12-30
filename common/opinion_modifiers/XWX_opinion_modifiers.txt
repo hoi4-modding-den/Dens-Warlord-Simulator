@@ -17,5 +17,13 @@ opinion_modifiers = {
 	XWX_splinter_faction_modifier = {
 		value = -75
 	}
+
+	XWX_aided_during_famine = {
+		value = 25
+	}
+
+	XWX_refused_to_help = {
+		value = -25
+	}
 	
 }

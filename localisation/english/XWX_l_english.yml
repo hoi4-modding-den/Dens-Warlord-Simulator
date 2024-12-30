@@ -14,8 +14,8 @@
  XWX_prc_DEF: "the United Peasant Republics of China"
  XWX_prc_ADJ: "Chinese"
 
- XWX_kmt_aligned: "Gannan Republican Association"
- XWX_kmt_aligned_DEF: "the Gannan Republican Association"
+ XWX_kmt_aligned: "Gannan Kuomintang Association"
+ XWX_kmt_aligned_DEF: "the Gannan Kuomintang Association"
  XWX_kmt_aligned_ADJ: "Gannan"
  XWX_CHI_subject: "Gannan Province"
  XWX_CHI_subject_DEF: "the Province of Gannan"
@@ -59,20 +59,34 @@
 
  XWX_is_kmt_ally_modifier: "Kuomintang Ally"
  XWX_splinter_faction_modifier: "Revisionist Splinters!"
+ XWX_aided_during_famine: "Aided us during Famine"
+ XWX_refused_to_help: "Refused to help us"
 
 
 # TRIGGERS
 
  XWX_focus_completed_via_event_tt: "This Focus will be completed via §YEvent§!."
+ XWX_second_gannan_famine: "The §YSecond Gannan Famine§! is active."
+ XWX_has_100_supplies_tt: "Has §G100§! £GFX_supply_texticon Relief Supplies."
+ XWX_second_gannan_famine_over: "The §YSecond Gannan Famine§! has concluded."
+
+
+# MODIFIERS
+
+ famine_progress_tt: "£GFX_supply_texticon Relief Supplies: $RIGHT|+=0$"
 
 
 # IDEAS
 
- XWX_mountaineer_corps: "Mountain Defences"
- XWX_mountaineer_corps_desc: "The last line of defence lies in the mountainous region of Ganzi, the fortress of Tianyu. Constructed by the Collectives in 1935, the fortress is the last line of defence."
+ XWX_mountaineer_corps: "Gannan Mountaineers"
+ XWX_mountaineer_corps_desc: "The Mountaineers of [ROOT.GetNameDef] are highly integrated into the regular armed forces."
+ XWX_mountain_fort: "Mountain Defences"
+ XWX_mountain_fort_desc: "The last line of defence lies in the mountainous region of Ganzi, the fortress of Tianyu."
  XWX_splinter_faction: "Independent Communes"
  XWX_splinter_faction_desc: "The Peasants Republics are a splinter faction of the People's Republic of China, having seceeded from them in a conflict over ideological disparities in 1933."
  XWX_land_reform: "Land Reform"
+ XWX_famine: "The Second Gannan Famine"
+ XWX_famine_desc: "[ROOT.GetNameDefCap] is once again swept up in a major famine, brought about by the unfortunate combination of new economic policies and a drought."
  XWX_industry_modifier: "National Industrialisation"
  XWX_industry_modifier_desc: "Our nation is lacking in many aspects. Comparably, it is the least industrialised province in all of China. Still, our development plans are layed out before us and with great effort will be turn our backwater region into the industrial heartlands of China."
  modify_XWX_industry_tt: "Modify §Y$XWX_industry_modifier$§! by:"
@@ -80,11 +94,69 @@
  after_idea_times_out_tt: "§YAfter the National Spirit runs out:§!"
 
 
+# DECISIONS
+
+XWX_construction_decisions: "Construction Projects"
+
+ XWX_tianyu_fort_construction: "Finalise Tianyu Fort Construction..."
+
+XWX_second_gannan_famine_cat: "Famine Relief Efforts"
+XWX_second_gannan_famine_cat_desc: "\nFAMINE AHHHHHHHHHHHHH!\n \nCurrent Amount of Relief Supplies: [?XWX_famine_progress|.0+]\n "
+
+ XWX_end_the_famine: "End the Famine"
+ XWX_smuggle_supplies: "Smuggle Supplies"
+ XWX_scavenge_supplies: "Confiscate Private Supplies"
+ XWX_request_supplies_from_neighbours: "Request Aid from [FROM.GetNameDef]"
+
+ decision_cost_stab_10_pp_75: "£GFX_stability_texticon §Y10§! £GFX_pol_power §Y75§!"
+ decision_cost_stab_10_pp_75_blocked: "£GFX_stability_texticon §R10§! £GFX_pol_power §R75§!"
+ decision_cost_stab_10_pp_75_tooltip: "It costs £GFX_stability_texticon §Y10§! £GFX_pol_power §Y75§! to take the decision"
+
+
+# BoP
+
+ XWX_communes_bop: "Balance in the Communes"
+
+   XWX_bop_balanced: "Faction Equilibrium"
+
+  XWX_federalists: "Federalists"
+
+   XWX_federalists_low_control_range: "Low Federalist Influence"
+   XWX_federalists_medium_control_range: "Rising Federalist Influence"
+   XWX_federalists_high_control_range: "High Federalist Influence"
+   XWX_federalists_total_control_range: "Implementing the Federalist Model"
+
+  XWX_centralists: "Centralists"
+
+   XWX_centralists_low_control_range: "Low Centralist Influence"
+   XWX_centralists_medium_control_range: "Rising Centralist Influence"
+   XWX_centralists_high_control_range: "High Centralist Influence"
+   XWX_centralists_total_control_range: "Implementing the Unitary Model"
+
+
 # EVENTS
 
  XWX_political_events.1.t: "The Matters of Industry"
  XWX_political_events.1.desc: "$XWX_industrial_revolution_desc$"
  XWX_political_events.1.a: "A different kind of revolution."
+
+ XWX_political_events.2.t: "Tianyu Fort completed!"
+ XWX_political_events.2.desc: "A delegation from the [ROOT.GetAdjective] government has arrived at Tianyu Fortress to inaugurate the fort. Following the beginning of construction in June 1934, the fort has swallowed large amounts of resources, which some say was a massive waste, and personnel, which was delegated to protecting the unfinished structure."
+ XWX_political_events.2.a: "What a beautiful fortress."
+
+ XWX_political_events.3.t: "The Second Gannan Famine"
+ XWX_political_events.3.desc: "The First Gannan Famine started under the reign of the People's Republic of China. Mismanaged economic policies meant not enough farmers worked on the fields. That year, a drought happened and with the few supplies left, many starved. While our nation has recovered from it. With the recent land reforms, it would seem that we have not learned from the past."
+ XWX_political_events.3.a: "Not like this!"
+ XWX_start_second_gannan_famine: "Unlock §YFoci§! and §YDecisions§! to deal with the §RFamine§!."
+
+ XWX_political_events.4.t: "The Third Commune Conference"
+ XWX_political_events.4.desc: "The Gannan Peasant Republics are made up of multiple constituent republics, each represented by via the collectives in the National Assembly.\n \nThe two main factions within the collectives are the Federalists, who want to keep the influence of the central government low, so that they can make local law, and the Centralists, who want to increase the powers of the National Assembly to prevent any factionalism.\n \nIn the third major conference of the Commune, each side now presents their plans for the future of our nation."
+ XWX_political_events.4.a: "We must prevent a Kuomintang Insurgency."
+ XWX_political_events.4.b: "Developing the nation comes first."
+
+ XWX_kmt_events.1.t: "$XWX_kmt_coup$"
+ XWX_kmt_events.1.desc: "The coup was swift and bloodless. Following nummerous failed raids on Kuomintang hideouts, their assault on the Revolutionary regime's headquarters came unexpected. Thanks to support from the [CHI.capital.GetCapitalVictoryPointName] Government, the Kuomintang were able to muster enough equipment and soldiers take control of the building and put the communist ministers under arrest."
+ XWX_kmt_events.1.a: "Hail the Marshal!"
 
  XWX_diplomatic_events.1.t: "[From.GetNameDefCap] invites us to the $XWX_workers_united_front$"
  XWX_diplomatic_events.1.desc: "Our ideological allies in [From.GetNameDef] have made note of our valuable contributions to the workers' cause, and this morning we received an invitation us to join the $XWX_workers_united_front$. Standing together with other socialist republics, we could spread the revolution with renewed strength."
@@ -99,6 +171,21 @@
  XWX_diplomatic_events.3.desc: "[alliance_applicant.GetNameDefCap] has decided to reject our offer to join the $XWX_workers_united_front$. We will have to make do without their help."
  XWX_diplomatic_events.3.a: "Our help is not wanted."
 
+ XWX_diplomatic_events.4.t: "[FROM.GetNameDefCap] seek help during Famine."
+ XWX_diplomatic_events.4.desc: "The Gannan Province is currently swept up in a major drought. This drought, combined with the regime's recent land reforms has caused a great famine in the lands. [FROM.GetAdjectiveCap] diplomats have approached us with a request for aid."
+ XWX_diplomatic_events.4.a: "Of course we will help."
+ XWX_diplomatic_events.4.b: "It is none of our concern."
+
+ XWX_aid_request_tip_tt: "If their §Yopinion of us§! is §Ybelow 0§!, they will §Ralways refuse§!! The chance they accept is §Ghigher§! if their §Yopinion of us§! is §Yat least 50§!.\n "
+
+ XWX_diplomatic_events.5.t: "[FROM.GetNameDefCap] sends supplies!"
+ XWX_diplomatic_events.5.desc: "The [FROM.GetAdjective] government in [FROM.capital.GetCapitalVictoryPointName] has heard our pleas. They have sent us some supplies, but we shouldn't push for more."
+ XWX_diplomatic_events.5.a: "Thank you!"
+
+ XWX_diplomatic_events.6.t: "[FROM.GetNameDefCap] ignores our request!"
+ XWX_diplomatic_events.6.desc: "The [FROM.GetAdjective] government has ingored our request for aid. We won't get anything from them."
+ XWX_diplomatic_events.6.a: "Damn you, too!"
+
 
 # FACTION NAMES
 
@@ -107,23 +194,45 @@
 
 # NATIONAL FOCI
 
- XWX_communal_report_1936: "Second Communal Conference"
+ XWX_communal_report_1936: "Third Commune Conference"
  XWX_communal_report_1936_desc: ""
- XWX_commune_discussion: "State of the Communes"
+ XWX_commune_discussion: "Inter-Provincial Politics"
  XWX_commune_discussion_desc: ""
  XWX_reconcile_with_prc: "Reconcile with the PRC"
  XWX_reconcile_with_prc_desc: ""
  XWX_maintain_course: "Maintain the Course of the Revolution"
  XWX_maintain_course_desc: ""
- XWX_continue_fortification_plans: "Continue the Tianyu Plan"
+ XWX_agrarian_socialism: "Support the Farmers"
+ XWX_agrarian_socialism_desc: ""
+ XWX_continue_fortification_plans: "Speed up the Tianyu Plan"
  XWX_continue_fortification_plans_desc: ""
+ XWX_breadbasket: "Agricultural Subsidies"
+ XWX_breadbasket_desc: ""
+ XWX_prevent_another_famine: "Prevent another Famine"
+ XWX_prevent_another_famine_desc: ""
  XWX_hunt_for_kmt_reactionaries: "Committee against Reactionary Influence"
  XWX_hunt_for_kmt_reactionaries_desc: ""
+ XWX_worker_judiciary: "The Peasant Judiciary"
+ XWX_worker_judiciary_desc: ""
+ XWX_end_worker_gov_ideas: "End Worker Rule"
+ XWX_end_worker_gov_ideas_desc: ""
 
  XWX_workers_victory: "The Worker State Secured"
  XWX_workers_victory_desc: ""
+ XWX_loads_new_focus_tree_tt: "Completing this §Yfocus§! will load the next branch of the §Yfocus tree§!.\n§GFoci from this branch can still be completed!§!"
+
+ XWX_spread_the_revolution: "Maintain the Peasant Republics"
+ XWX_spread_the_revolution_desc: ""
+ XWX_the_peasant_united_front: "The $XWX_workers_united_front$"
+ XWX_the_peasant_united_front_desc: ""
+
  XWX_kmt_coup: "Kuomintang Coup d'Etat"
  XWX_kmt_coup_desc: ""
+
+ XWX_consolidate_control: "Consolidate Control"
+ XWX_consolidate_control_desc: ""
+ XWX_message_the_central_government: "Message the Central Government"
+ XWX_message_the_central_government_desc: ""
 
  XWX_industrial_revolution: "The Industrial Revolution in Gannan"
  XWX_industrial_revolution_desc: "Industrialisation has overlooked the small province of Gannan. The few workshops that produce the nation's armaments and supply the people with goods are nothing close to the factories of the industrialised world. It is time to bring the Industrial Revolution to Gannan."
@@ -142,8 +251,8 @@
  XWX_construction_equipment_desc: ""
  XWX_workshop_output: "Support Armament Production"
  XWX_workshop_output_desc: ""
- XWX_production_lines: "Plan Production Lines"
- XWX_production_lines_desc: ""
+ XWX_textile_mills: "Prop up the Textile Industry"
+ XWX_textile_mills_desc: ""
  XWX_resource_deficit_management: "Resource Deficit Management"
  XWX_resource_deficit_management_desc: ""
  XWX_arm_the_nation: "Bureau of Armament Acquisition"

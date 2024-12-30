@@ -1,0 +1,45 @@
+XWX_construction_decisions = {
+
+	icon = GFX_decision_category_generic_industry
+
+    allowed = {
+        original_tag = XWX
+    }
+
+    priority = 50
+
+	visible = {
+		
+	}
+
+}
+
+XWX_second_gannan_famine_cat = {
+
+	icon = GFX_decision_category_eng_concessions_to_the_trade_unions
+
+    allowed = {
+        original_tag = XWX
+    }
+
+    priority = 100
+
+	visible = {
+		
+	}
+
+    visible_when_empty = yes
+
+}
+
+XWX_bop_cat = {
+
+    allowed = {
+        original_tag = XWX
+    }
+
+	visible = {
+		
+	}
+
+}

@@ -23,6 +23,58 @@ focus_tree = {
 
 }
 
+focus_tree = {
+	id = XWX_focus_tree_peasants
+	
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = XWX
+		}
+	}
+
+	default = no
+
+	continuous_focus_position = { x = 20 y = 2500 }  
+	
+	initial_show_position = {
+		x = 20
+		y = 0
+	}
+
+	shared_focus = XWX_communal_report_1936
+	shared_focus = XWX_spread_the_revolution
+	shared_focus = XWX_industrial_revolution
+
+}
+
+focus_tree = {
+	id = XWX_focus_tree_kmt
+	
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = XWX
+		}
+	}
+
+	default = no
+
+	continuous_focus_position = { x = 20 y = 2500 }  
+	
+	initial_show_position = {
+		x = 20
+		y = 0
+	}
+
+	shared_focus = XWX_communal_report_1936
+	shared_focus = XWX_consolidate_control
+	shared_focus = XWX_industrial_revolution
+
+}
+
 	shared_focus = {
 		id = XWX_communal_report_1936
 		icon = GFX_focus_generic_treaty
@@ -32,7 +84,7 @@ focus_tree = {
 		y = 0
 		#relative_position_id =
 
-		cost = 5
+		cost = 3
 
 		available = {
 			
@@ -44,16 +96,17 @@ focus_tree = {
 
 		search_filters = {  }
 		completion_reward = {
-			
+			country_event = XWX_political_events.4
+			add_political_power = 100
 		}
 	}
 
 	shared_focus = {
 		id = XWX_commune_discussion
-		icon = GFX_focus_generic_join_comintern
+		icon = GFX_focus_generic_diplomatic_treaty
 		prerequisite = { focus = XWX_communal_report_1936 }
 		#mutually_exclusive = { focus = }
-		x = -3
+		x = -4
 		y = 1
 		relative_position_id = XWX_communal_report_1936
 
@@ -69,7 +122,7 @@ focus_tree = {
 
 		search_filters = {  }
 		completion_reward = {
-			
+			add_political_power = 50
 		}
 	}
 
@@ -153,7 +206,7 @@ focus_tree = {
 
 	shared_focus = {
 		id = XWX_maintain_course
-		icon = GFX_focus_PLACEHOLDER
+		icon = GFX_focus_generic_soviet_politics
 		prerequisite = { focus = XWX_commune_discussion }
 		mutually_exclusive = { focus = XWX_reconcile_with_prc }
 		x = 1
@@ -180,6 +233,45 @@ focus_tree = {
 	}
 
 	shared_focus = {
+		id = XWX_agrarian_socialism
+		icon = GFX_focus_prc_agrarian_socialism
+		prerequisite = { focus = XWX_communal_report_1936 }
+		#mutually_exclusive = { focus = }
+		x = -1
+		y = 2
+		relative_position_id = XWX_communal_report_1936
+
+		cost = 5
+
+		available = {
+			has_country_flag = XWX_second_gannan_famine
+		}
+
+		bypass = {
+			has_country_flag = XWX_second_gannan_famine_over
+		}
+
+		search_filters = {  }
+		completion_reward = {
+			custom_effect_tooltip = modify_XWX_industry_tt
+			add_to_variable = {
+				XWX_industry_monthly_population = 0.05
+				tooltip = monthly_population_tt
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_to_variable = {
+				XWX_famine_progress = 10
+				tooltip = famine_progress_tt
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_popularity = {
+				ideology = communism
+				popularity = 0.05
+			}
+		}
+	}
+
+	shared_focus = {
 		id = XWX_continue_fortification_plans
 		icon = GFX_focus_generic_mountain_fortification
 		prerequisite = { focus = XWX_communal_report_1936 }
@@ -200,7 +292,80 @@ focus_tree = {
 
 		search_filters = {  }
 		completion_reward = {
-			
+			add_days_mission_timeout = {
+				mission = XWX_tianyu_fort_construction
+				days = -100
+			}
+		}
+	}
+
+	shared_focus = {
+		id = XWX_breadbasket
+		icon = GFX_focus_generic_agricultural_subsidies
+		prerequisite = { focus = XWX_communal_report_1936 }
+		#mutually_exclusive = { focus = }
+		x = 1
+		y = 2
+		relative_position_id = XWX_communal_report_1936
+
+		cost = 5
+
+		available = {
+			has_country_flag = XWX_second_gannan_famine
+		}
+
+		bypass = {
+			has_country_flag = XWX_second_gannan_famine_over
+		}
+
+		search_filters = {  }
+		completion_reward = {
+			custom_effect_tooltip = modify_XWX_industry_tt
+			add_to_variable = {
+				XWX_industry_monthly_population = 0.05
+				tooltip = monthly_population_tt
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_to_variable = {
+				XWX_famine_progress = 10
+				tooltip = famine_progress_tt
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.05
+			}
+		}
+	}
+
+	shared_focus = {
+		id = XWX_prevent_another_famine
+		icon = GFX_focus_generic_farmland
+		prerequisite = { focus = XWX_agrarian_socialism focus = XWX_breadbasket }
+		#mutually_exclusive = { focus = }
+		x = 1
+		y = 1
+		relative_position_id = XWX_agrarian_socialism
+
+		cost = 5
+
+		available = {
+			has_country_flag = XWX_second_gannan_famine_over
+		}
+
+		bypass = {
+
+		}
+
+		search_filters = {  }
+		completion_reward = {
+			add_stability = 0.1
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = modify_XWX_industry_tt
+			add_to_variable = {
+				XWX_industry_monthly_population = 0.05
+				tooltip = monthly_population_tt
+			}
 		}
 	}
 
@@ -209,7 +374,7 @@ focus_tree = {
 		icon = GFX_focus_SOV_the_last_purge
 		prerequisite = { focus = XWX_communal_report_1936 }
 		#mutually_exclusive = { focus = }
-		x = 3
+		x = 4
 		y = 1
 		relative_position_id = XWX_communal_report_1936
 
@@ -241,13 +406,125 @@ focus_tree = {
 	}
 
 	shared_focus = {
+		id = XWX_worker_judiciary
+		icon = GFX_focus_AUS_lawmaking_leniency
+		prerequisite = { focus = XWX_hunt_for_kmt_reactionaries }
+		#mutually_exclusive = { focus = }
+		x = 0
+		y = 1
+		relative_position_id = XWX_hunt_for_kmt_reactionaries
+
+		cost = 5
+
+		available = {
+			has_government = communism
+		}
+
+		bypass = {
+
+		}
+
+		search_filters = {  }
+		completion_reward = {
+			
+		}
+	}
+
+	shared_focus = {
 		id = XWX_workers_victory
-		icon = GFX_focus_PLACEHOLDER
-		prerequisite = { focus = XWX_commune_discussion }
+		icon = GFX_focus_prc_proclaim_the_peoples_republic
+		prerequisite = { focus = XWX_maintain_course focus = XWX_reconcile_with_prc }
 		mutually_exclusive = { focus = XWX_kmt_coup }
 		x = -5
 		y = 4
 		relative_position_id = XWX_communal_report_1936
+
+		cost = 5
+
+		available = {
+			has_government = communism
+		}
+
+		bypass = {
+
+		}
+
+		search_filters = {  }
+		completion_reward = {
+			custom_effect_tooltip = XWX_loads_new_focus_tree_tt
+			hidden_effect = {
+				load_focus_tree = { tree = XWX_focus_tree_peasants keep_completed = yes }
+				mark_focus_tree_layout_dirty = yes
+			}
+		}
+	}
+
+	shared_focus = {
+		id = XWX_kmt_coup
+		icon = GFX_focus_generic_china1
+		prerequisite = { focus = XWX_hunt_for_kmt_reactionaries }
+		mutually_exclusive = { focus = XWX_workers_victory }
+		x = 5
+		y = 4
+		relative_position_id = XWX_communal_report_1936
+
+		cost = 5
+
+		available = {
+			neutrality > 0.49
+		}
+
+		bypass = {
+
+		}
+
+		search_filters = {  }
+		completion_reward = {
+			country_event = XWX_kmt_events.1
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = XWX_loads_new_focus_tree_tt
+			hidden_effect = {
+				load_focus_tree = { tree = XWX_focus_tree_kmt keep_completed = yes }
+				mark_focus_tree_layout_dirty = yes
+			}
+		}
+	}
+
+	# Maintain the Peasant Republic
+
+	shared_focus = {
+		id = XWX_spread_the_revolution
+		icon = GFX_focus_PLACEHOLDER
+		#prerequisite = { focus =  }
+		#mutually_exclusive = { focus = XWX_workers_victory }
+		x = 5
+		y = 1
+		relative_position_id = XWX_workers_victory
+
+		cost = 5
+
+		available = {
+			has_government = communism
+		}
+
+		bypass = {
+
+		}
+
+		search_filters = {  }
+		completion_reward = {
+			
+		}
+	}
+
+	shared_focus = {
+		id = XWX_the_peasant_united_front
+		icon = GFX_focus_PLACEHOLDER
+		prerequisite = { focus = XWX_spread_the_revolution }
+		#mutually_exclusive = { focus =  }
+		x = 0
+		y = 1
+		relative_position_id = XWX_spread_the_revolution
 
 		cost = 5
 
@@ -268,18 +545,46 @@ focus_tree = {
 		}
 	}
 
+	# KMT
+
 	shared_focus = {
-		id = XWX_kmt_coup
-		icon = GFX_focus_PLACEHOLDER
-		prerequisite = { focus = XWX_hunt_for_kmt_reactionaries }
-		mutually_exclusive = { focus = XWX_workers_victory }
+		id = XWX_consolidate_control
+		icon = GFX_goal_generic_political_pressure
+		#prerequisite = { focus =  }
+		#mutually_exclusive = { focus =  }
 		x = 5
-		y = 4
-		relative_position_id = XWX_communal_report_1936
+		y = 1
+		relative_position_id = XWX_workers_victory
 
 		cost = 5
 
 		available = {
+			has_government = neutrality
+		}
+
+		bypass = {
+
+		}
+
+		search_filters = {  }
+		completion_reward = {
+			add_stability = 0.1
+		}
+	}
+
+	shared_focus = {
+		id = XWX_message_the_central_government
+		icon = GFX_focus_chi_cooperation_with_the_nationalists
+		prerequisite = { focus = XWX_consolidate_control }
+		#mutually_exclusive = { focus =  }
+		x = 0
+		y = 1
+		relative_position_id = XWX_consolidate_control
+
+		cost = 5
+
+		available = {
+			has_government = neutrality
 			CHI = {
 				is_faction_leader = yes
 			}
@@ -296,6 +601,8 @@ focus_tree = {
 			}
 		}
 	}
+
+	# INDUSTRY
 
 	shared_focus = {
 		id = XWX_industrial_revolution
@@ -320,6 +627,25 @@ focus_tree = {
 		completion_reward = {
 			add_dynamic_modifier = {
 				modifier = XWX_industry_modifier
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+					is_fully_controlled_by = ROOT
+					is_owned_by = ROOT
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}	
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}	
 			}
 		}
 	}
@@ -356,6 +682,13 @@ focus_tree = {
 				uses = 1
 				bonus = 0.5
 				category = construction_tech
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			every_core_state = {
+				limit = {
+					is_controlled_by = ROOT
+				}
+				add_extra_state_shared_building_slots = 1
 			}
 		}
 	}
@@ -437,7 +770,7 @@ focus_tree = {
 			custom_effect_tooltip = generic_skip_one_line_tt
 			add_timed_idea = {
 				idea = XWX_land_reform
-				days = 7
+				days = 100
 			}
 			custom_effect_tooltip = generic_skip_one_line_tt
 			custom_effect_tooltip = after_idea_times_out_tt
@@ -446,6 +779,12 @@ focus_tree = {
 				add_to_variable = {
 					XWX_industry_local_building_slots_factor = 0.1
 					tooltip = MODIFIER_LOCAL_BUILDING_SLOTS_FACTOR_tt
+				}
+			}
+			hidden_effect = {
+				country_event = {
+					id = XWX_political_events.3
+					days = 200
 				}
 			}
 		}
@@ -477,8 +816,8 @@ focus_tree = {
 	}
 
 	shared_focus = {
-		id = XWX_production_lines
-		icon = GFX_goal_generic_production2
+		id = XWX_textile_mills
+		icon = GFX_focus_CHL_enlarge_the_textile_industries
 		prerequisite = { focus = XWX_construction_sector focus = XWX_civilian_construction_funds focus = XWX_clear_space }
 		#mutually_exclusive = { focus = }
 		x = 0
@@ -505,6 +844,25 @@ focus_tree = {
 			add_to_variable = {
 				XWX_industry_production_factory_max_efficiency_factor = 0.1
 				tooltip = production_factory_max_efficiency_factor_tt
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+					is_fully_controlled_by = ROOT
+					is_owned_by = ROOT
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}	
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}	
 			}
 		}
 	}
@@ -534,6 +892,25 @@ focus_tree = {
 			add_to_variable = {
 				XWX_industry_industrial_capacity_factory = 0.15
 				tooltip = industrial_capacity_factory_tt
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+					is_fully_controlled_by = ROOT
+					is_owned_by = ROOT
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}	
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}	
 			}
 		}
 	}
@@ -637,11 +1014,11 @@ focus_tree = {
 	shared_focus = {
 		id = XWX_resource_deficit_management
 		icon = GFX_focus_GER_factories_for_resources
-		prerequisite = { focus = XWX_local_schools focus = XWX_relocate_civilian_funds focus = XWX_workshop_output focus = XWX_production_lines }
+		prerequisite = { focus = XWX_local_schools focus = XWX_relocate_civilian_funds focus = XWX_workshop_output focus = XWX_textile_mills }
 		#mutually_exclusive = { focus = }
 		x = -1
 		y = 1
-		relative_position_id = XWX_production_lines
+		relative_position_id = XWX_textile_mills
 
 		cost = 5
 
@@ -670,11 +1047,11 @@ focus_tree = {
 	shared_focus = {
 		id = XWX_arm_the_nation
 		icon = GFX_focus_generic_military_industry
-		prerequisite = { focus = XWX_local_schools focus = XWX_relocate_civilian_funds focus = XWX_workshop_output focus = XWX_production_lines }
+		prerequisite = { focus = XWX_local_schools focus = XWX_relocate_civilian_funds focus = XWX_workshop_output focus = XWX_textile_mills }
 		mutually_exclusive = { focus = XWX_military_buildup }
 		x = 1
 		y = 1
-		relative_position_id = XWX_production_lines
+		relative_position_id = XWX_textile_mills
 
 		cost = 5
 
@@ -697,13 +1074,32 @@ focus_tree = {
 				XWX_industry_industrial_capacity_factory = 0.1
 				tooltip = industrial_capacity_factory_tt
 			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+					is_fully_controlled_by = ROOT
+					is_owned_by = ROOT
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}	
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}	
+			}
 		}
 	}
 
 	shared_focus = {
 		id = XWX_military_buildup
 		icon = GFX_goal_generic_construct_mil_factory
-		prerequisite = { focus = XWX_local_schools focus = XWX_relocate_civilian_funds focus = XWX_workshop_output focus = XWX_production_lines }
+		prerequisite = { focus = XWX_local_schools focus = XWX_relocate_civilian_funds focus = XWX_workshop_output focus = XWX_textile_mills }
 		mutually_exclusive = { focus = XWX_arm_the_nation }
 		x = 1
 		y = 1
@@ -729,6 +1125,25 @@ focus_tree = {
 			add_to_variable = {
 				XWX_industry_production_speed_arms_factory_factor = 0.15
 				tooltip = production_speed_arms_factory_factor_tt
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+					is_fully_controlled_by = ROOT
+					is_owned_by = ROOT
+					free_building_slots = {
+						building = arms_factory
+						size > 1
+						include_locked = yes
+					}	
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}	
 			}
 		}
 	}

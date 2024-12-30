@@ -43,6 +43,8 @@ reverse_add_opinion_modifier = {
 
 country_event = { id = XWX_political_events.1 days = 7 }
 
+activate_mission = XWX_tianyu_fort_construction
+
 set_variable = { XWX_industry_production_speed_industrial_complex_factor = 0.2 }
 
 recruit_character = XWX_peasant_collective
