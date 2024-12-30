@@ -12,7 +12,9 @@ bookmarks = {
 			ideology = neutrality
 			minor = no
 			ideas = {
-				
+				XIS_a_nation_on_horseback
+				XIS_feudal_society
+				XIS_disgruntled_han_minority
 			}
 			focuses = {
 				

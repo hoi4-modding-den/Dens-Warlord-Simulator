@@ -2,7 +2,7 @@ leader_traits = {
 
 	inspirer_of_the_salars = {
 		random = no
-		conscription = 0.05
+		conscription_factor = 0.05
 		war_support_factor = 0.05
 	}
 	

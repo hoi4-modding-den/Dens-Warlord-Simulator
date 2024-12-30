@@ -10,7 +10,11 @@ recruit_character = XIS_han_youwen
 recruit_character = XIS_ma_dunjing
 recruit_character = XIS_ma_hongbin
 
-
+add_ideas = {
+	XIS_a_nation_on_horseback
+	XIS_feudal_society
+	XIS_disgruntled_han_minority
+}
 
 set_country_flag = dont_use_default_military_advisors
 set_country_flag = dont_use_default_political_advisors
