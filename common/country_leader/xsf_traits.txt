@@ -12,11 +12,11 @@ leader_traits = {
 		}
 	}
 	
-	lingnan_regent_1 = {
+	technocrat = {
 		random = no
-		political_power_factor = -0.15
-		stability_factor = -0.1
-
+		research_speed_factor = 0.1
+		production_speed_industrial_complex_factor = 0.1
+		
 		ai_will_do = {
 			factor = 1
 		}

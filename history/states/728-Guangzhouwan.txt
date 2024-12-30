@@ -1,7 +1,7 @@
 state={
 	id=728
 	name="STATE_728"
-	manpower = 200000
+	manpower = 86300
 	
 	state_category = enclave
 	
@@ -10,15 +10,12 @@ state={
 		add_core_of = XSF
 		#add_core_of = PRC
 		buildings = {
-			infrastructure = 2
-			11981 = {
-				naval_base = 1
-			}
+			infrastructure = 1
 		}
 	}
 	
 	provinces={
-		11981 
+		7108
 	}
 
 	local_supplies=0.0 

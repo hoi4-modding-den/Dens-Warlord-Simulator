@@ -1,0 +1,17 @@
+﻿add_namespace = xsf_news
+
+news_event = {
+	id = xsf_news.1
+	title = xsf_news.1.t
+	desc = xsf_news.1.desc
+	picture = GFX_news_event_tank_factory
+	
+	major = no
+	
+	is_triggered_only = yes
+	
+	option = { #
+		name = xsf_news.1.a
+		
+	}
+}

@@ -163,7 +163,7 @@ focus_tree = {
 				country_leader = {
 					expire = "1965.1.1"
 					ideology = despotism
-					traits = { lingnan_regent_1 }
+					traits = { technocrat }
 				}
 				
 				promote_leader = yes
@@ -309,6 +309,36 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		
 		completion_reward = {
+			add_research_slot = 1
+			add_ideas = XSF_educationreform_idea
+		}
+	}
+	focus = {
+		id = XSF_economicreform
+
+		icon = GFX_focus_generic_economic_recovery
+
+		prerequisite = { focus = XSF_reform }
+		x = -1
+		y = 1
+		relative_position_id = XSF_reform
+		cost = 5
+
+		mutually_exclusive = {
+			
+		} 
+		
+		ai_will_do = {
+			base = 0.5
+		}
+
+		available = {
+			
+		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		
+		completion_reward = {
 			random_list = {
 				67 = { add_ideas = XSF_economicreformsuccess }
 				33 = { add_ideas = XSF_economicreformfail }
@@ -319,11 +349,45 @@ focus_tree = {
 		id = XSF_politicalreform
 
 		icon = GFX_focus_generic_improve_the_administration
-
+		
 		prerequisite = { focus = XSF_reform }
 		x = 0
 		y = 2
+		cost = 5
 		relative_position_id = XSF_reform
+
+		mutually_exclusive = {
+			
+		} 
+		
+		ai_will_do = {
+			base = 0.5
+		}
+
+		available = {
+		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XSF_empowerthenationalists
+
+		icon = GFX_focus_generic_fascist_propaganda
+
+		prerequisite = { focus = XSF_politicalreform }
+		x = -5
+		y = 1
+		offset = {
+			x = 5
+			trigger = {
+				has_completed_focus = XSF_empowerthenationalists
+			}
+		}
+		relative_position_id = XSF_politicalreform
 		cost = 5
 
 		mutually_exclusive = {
@@ -493,6 +557,9 @@ focus_tree = {
 		
 		completion_reward = {
 			custom_effect_tooltip = XSF_civilwarprogresses_tt
+			hidden_effect = {
+				
+			}
 		}
 	}
 }

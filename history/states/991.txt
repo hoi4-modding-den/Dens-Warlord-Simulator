@@ -1,0 +1,24 @@
+state = {
+	id = 991
+	name = "STATE_991"
+	manpower = 461000
+	
+	state_category = pastoral
+	
+	history = {
+
+		owner = XSF
+		add_core_of = XSF
+
+		buildings = {
+			infrastructure = 1
+		}
+		
+	}
+
+	provinces = {
+		1162 1202 12095
+	}
+
+	local_supplies = 1.0 
+}

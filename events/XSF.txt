@@ -34,18 +34,29 @@ country_event = {
 	option = { # commies
 		name = xsf.2.a
 		
-		start_civil_war = {
-			ruling_party = communism
-			# Original country's ideology changes to communism
-			ideology = ROOT
-			# Breakaway gets old ideology of ROOT
-			size = 0.5
-			capital = 594
-			states = {
-				594 728 591
+		load_oob = "XSF_commies"
+		
+		hidden_effect = {
+			set_popularities = {
+				communism = 100
+			}
+			load_focus_tree = lingnan_commie_focus
+			start_civil_war = {
+				ruling_party = communism
+				set_popularities = {
+					neutrality = 100
+				}
+				load_focus_tree = lingnan_nonaligned_focus
+				# Original country's ideology changes to communism
+				ideology = ROOT
+				# Breakaway gets old ideology of ROOT
+				size = 0
+				capital = 594
+				states = {
+					594 728 591 986 987 988 989
+				}
 			}
 		}
-		
 	}
 	
 	option = { # neutrality
@@ -53,5 +64,48 @@ country_event = {
 		
 		
 		
+		hidden_effect = {
+			set_popularities = {
+				neutrality = 100
+			}
+			load_focus_tree = lingnan_nonaligned_focus
+			start_civil_war = {
+				ruling_party = neutrality
+				set_politics = {
+					ruling_party = communism
+					elections_allowed = no
+					last_election = "1935.12.17"
+					election_frequency = 48
+				}
+				set_popularities = {
+					communism = 100
+				}
+				load_focus_tree = lingnan_commie_focus
+				# Original country's ideology changes to communism
+				ideology = ROOT
+				# Breakaway gets old ideology of ROOT
+				size = 0.5
+				capital = 592
+				states = {
+					592 593 728 990 991 992 993 994 995
+				}
+			}
+		
+		}
+	}
+}
+country_event = {
+	id = xsf.3
+	title = xsf.3.t
+	desc = xsf.3.d
+	picture = GFX_report_event_gre_cabinet_meeting
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = xsf.3.a
+		
+		set_cosmetic_tag = PRC_proclaimed
+
 	}
 }

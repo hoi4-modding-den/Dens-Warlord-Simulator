@@ -1,4 +1,9 @@
 #dens cosmetic tags#
+XSF_prsc = {
+    color = rgb { 151 9 8 }
+    color_ui = rgb { 151 9 8 }
+}
+
 XSI_ancom = {
     color = rgb { 65 0 20 }
     color_ui = rgb { 65 0 20 }

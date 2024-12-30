@@ -1,14 +1,49 @@
 ﻿l_english:
- XSF:0 "Lingnan Union"
- XSF_DEF:0 "the Lingnan Union"
+ XSF:0 "Lingnese Union"
+ XSF_DEF:0 "the Lingnese Union"
  XSF_AJG:0 "Lingnese"
+ 
+ XSF_communism:0 "Lingnese Worker's Union"
+ XSF_communism_DEF:0 "the Lingnese Worker's Union"
+ XSF_communism_AJG:0 "Lingnese"
+ 
+ XSF_GATHERING_STORM_DESC: "After uniting the 4 nations of Nanning, Hainan, Guangzhou and Guangdong in 1933, the Lingnese Union has struggled both economically and politically as the Council has shown itself as being an inefficient form of leadership in the nation. Political instability is rife as tensions with the Southern Army in the north continue to rise from frequent raids due to bandits in the union."
+ 
+ STATE_728: "Shenzhen"
+ STATE_986: "Qin"
+ STATE_987: "Fangcheng"
+ STATE_988: "Qintang"
+ STATE_989: "Xuwen-Leizhou"
+ STATE_990: "Guangdong Coast"
+ STATE_991: "Huizhou"
+ STATE_992: "Zhenjiang"
+ STATE_993: "Yangshan"
+ STATE_994: "Doumen"
+ STATE_995: "Ngchow"
+ 
+ xsf_news.1.t: "Soviets Agree!"
+ xsf_news.1.d: "The Soviets have agreed to send 3 §YTank Divisions§! once our civil war begins."
+ xsf_news.1.a: "Excellent."
+ 
+ xsf.2.t: "March on Guangzhou"
+ xsf.2.d: "The communist supporters led by Ye Jianying have stormed our capital of Guangzhou. We have managed to flee to Nanning, but the communists have taken over the majority of the east of our nation."
+ xsf.2.a: "Glory to the Revolution!"
+ xsf.2.b: "Traitors!"
+ 
+ XSF_neglected_military_0: "Neglected Military"
+ XSF_depression: "Economic Depression"
+ XSF_recession: "Economic Recession"
+ XSF_stagnation: "Economic Stagnation"
+ 
+ XSF_ye_jianling: "Ye Jianying"
+ XSF_ye_jianling_desc: "A major military figurehead and promoting equality throughout the nation, Ye Jianling helped the formation of the Lingnese Worker's Party, gaining popularity in the capital and surrounding regions."
  
  XSF_event_complete_li: "Completed by choosing §YLi Zongren§!"
  XSF_event_complete_chen: "Completed by choosing §YChen Jitang§!"
  XSF_equipment_tt: "We will gain 1,000 §YInfantry Equipment§! once the §tCivil War§! begins."
  XSF_commiemercs_tt: "We will recruit 6 §YMercenary Divisions§! once the §tCivil War§! begins."
  XSF_sovietreinforcements: "We will recruit 3 Soviet §YTank Divisions§! once the §tCivil War§! begins."
- XSF_civilwarprogresses_tt: "Removes §Y180 Days§! from the §tCivil War§! timer."
+ XSF_civilwarprogresses_tt: "The §tCivil War§! begins."
  
  XSF_councilmeeting: "Leadership Question"
  XSF_councilmeeting_desc: "We must organise the council and together choose one person to be the figurehead of the nation, leading us into a more organised and prosperous future."
@@ -19,8 +54,8 @@
  king_of_the_south: "King of the South"
  lingnan_regent_1: "Corrupt Regent"
  
- XSF_choose_zongren: "Zongren's Regency"
- XSF_choose_zongren_desc: "We must choose Li Zongren, his military background combined with his ambitions of restoring the Qing Dynasty in power can help us to form a rival government. He is also very influential in nearby regions."
+ XSF_choose_zongren: "Zongren's Technocracy"
+ XSF_choose_zongren_desc: "We must choose Li Zongren, his military background combined with his ambitions of modernising the nation can help us to form a rival government. He is also very influential in nearby regions."
  
  XSF_chen_jitang: "Chen Jitang"
  XSF_chen_jitang_desc: "Chen Jitang, known locally as the "King of the South", was the leader of the Guangdong region before the unification of the 4 regions. Alongside his military career in being a very efficient and well-rounded leader, he was instrumental in modernizing the state, promoting infrastructure development, education, and economic growth." 
@@ -28,5 +63,5 @@
  XSF_li_zongren: "Li Zongren"
  XSF_li_zongren_desc: "A powerful leader originating from the Guangxi area, Li Zongren took up the mantle of the Nanning regional leader after the death of the former leader in 1935. His political career in the nation is limited, however, his military career is filled with victories against stronger armies where others may flee."
  
- XSF_lingnan_council: "Lingnan Council"
- XSF_lingnan_council_desc: "The Lingnan Council, made up of the 4 previous leaders of each states which were united under the banner of the Lingnan Union in 1933."
+ XSF_lingnan_council: "Lingnese Council"
+ XSF_lingnan_council_desc: "The Lingnese Council, made up of the 4 previous leaders of each states which were united under the banner of the Lingnese Union in 1933."

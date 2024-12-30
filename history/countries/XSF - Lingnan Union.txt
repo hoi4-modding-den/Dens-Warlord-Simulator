@@ -7,11 +7,17 @@ set_research_slots = 3
 #set_technology = {
 #}
 
-
+add_ideas = {
+	XSF_depression
+	CHI_hyper_inflation_1
+	XSF_neglectedmilitary_0
+	XSF_famine
+}
 
 recruit_character = XSF_chen_jitang 
 recruit_character = XSF_li_zongren 
 recruit_character = XSF_lingnan_council 
+recruit_character = XSF_ye_jianying 
 
 set_politics = {
 	ruling_party = neutrality
