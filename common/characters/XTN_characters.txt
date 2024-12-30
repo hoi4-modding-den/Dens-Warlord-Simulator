@@ -1,0 +1,15 @@
+characters={
+	XTN_Pavel_Papengut = { 
+		name = XTN_Pavel_Papengut
+		portraits = {
+			civilian = {
+				large = GFX_portrait_XTN_pavel_papengut
+			}
+		}
+		country_leader = {
+			ideology = despotism
+			expire = "1960.1.1.1"
+			id = -1
+		}
+	}
+}

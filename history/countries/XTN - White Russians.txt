@@ -7,7 +7,7 @@ set_research_slots = 2
 #set_technology = {
 #}
 
-recruit_character = XYJ_Pavel_Papengut
+recruit_character = XTN_Pavel_Papengut
 
 set_politics = {
 	ruling_party = neutrality

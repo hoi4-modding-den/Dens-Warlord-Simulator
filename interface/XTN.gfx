@@ -1,0 +1,9 @@
+spriteTypes = {
+
+### CHARACTERS
+
+	spriteType = {
+		name = "GFX_portrait_XTN_pavel_papengut"
+		texturefile = "gfx/XTN/portrait_Pavel_Papengut.png"
+	}
+}

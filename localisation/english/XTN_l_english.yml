@@ -4,3 +4,18 @@
 XTN: "East Turkestan Military Government"
 XTN_DEF: "Interim Military Government of East Turkestan"
 XTN_ADJ: "White Russian"
+
+### POLITICAL PARTIES ###
+XTN_democratic_party: "STMJ"
+XTN_democratic_party_long: "Sherqiy Tyrkistan Musteqilliq Jem'iyiti - East Turkestan Association of Independence"
+XTN_communism_party: "TBD"
+XTN_communism_party_long: "TBD"
+XTN_fascism_party: "TBD"
+XTN_fascism_party_long: "TBD"
+XTN_neutrality_party: "Voyennoye Pravitel'stvo"
+XTN_neutrality_party_long: "Voyennoye Pravitel'stvo - Military Government"
+
+###  CHARACTERS ###
+
+# Leaders
+XTN_Pavel_Papengut: "Pavel Papengut"
