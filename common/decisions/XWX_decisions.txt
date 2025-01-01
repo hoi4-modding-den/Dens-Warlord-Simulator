@@ -35,6 +35,16 @@ XWX_construction_decisions = {
                     instant_build = yes
                     province = 8104
                 }
+                add_building_construction = {
+                    type = supply_node
+                    level = 1
+                    instant_build = yes
+                    province = 8104
+                }
+                add_victory_points = {
+                    province = 8104
+                    value = 2
+                }
             }
             custom_effect_tooltip = generic_skip_one_line_tt
             swap_ideas = {
@@ -57,11 +67,488 @@ XWX_construction_decisions = {
             is_debug = yes
             is_ai = no
             NOT = { has_active_mission = XWX_tianyu_fort_construction }
+            NOT = { has_idea = XWX_mountain_fort }
         }
 
         complete_effect = {
             activate_mission = XWX_tianyu_fort_construction
         }
+    }
+
+    XWX_link_up_tianyu_fort = {
+
+        icon = GFX_decision_generic_train
+
+        allowed = {
+            original_tag = XWX
+        }
+
+        available = {
+            983 = { is_controlled_by = ROOT }
+            753 = { is_controlled_by = ROOT }
+            752 = { is_controlled_by = ROOT }
+            985 = { is_controlled_by = ROOT }
+            num_of_civilian_factories_available_for_projects > 0
+        }
+
+        cancel_trigger = {
+            OR = {
+                NOT = { 983 = { is_controlled_by = ROOT } }
+                NOT = { 753 = { is_controlled_by = ROOT } }
+                NOT = { 752 = { is_controlled_by = ROOT } }
+                NOT = { 985 = { is_controlled_by = ROOT } }
+            }
+        }
+
+        cost = 50
+
+        days_remove = 50
+
+        fire_only_once = yes
+
+        modifier = {
+            civilian_factory_use = 1
+        }
+
+        remove_effect = {
+            build_railway = {
+                level = 2
+                build_only_on_allied = yes
+                controller_priority = {
+                    base = 1
+                    modifier = {
+                        tag = XWX
+                        add = 2
+                    }
+                }
+                fallback = yes
+                #path = { 42 10 20 30 40 84 }
+                start_province = 2045
+                target_province = 8104
+            }
+        }
+    }
+
+    XWX_urbanise_gannan = {
+
+        icon = GFX_decision_generic_welfare
+
+        allowed = {
+            original_tag = XWX
+        }
+
+        available = {
+            753 = { is_controlled_by = ROOT }
+        }
+
+        cancel_trigger = {
+            NOT = { 753 = { is_controlled_by = ROOT } }
+        }
+
+        cost = 75
+
+        days_remove = 80
+
+        fire_only_once = yes
+
+        modifier = {
+            consumer_goods_factor = 0.04
+        }
+
+        remove_effect = {
+            753 = {
+                increase_state_category = yes
+            }
+        }
+    }
+
+    XWX_urbanise_ganzi = {
+
+        icon = GFX_decision_generic_welfare
+
+        allowed = {
+            original_tag = XWX
+        }
+
+        available = {
+            752 = { is_controlled_by = ROOT }
+            985 = { is_controlled_by = ROOT }
+        }
+
+        cancel_trigger = {
+            OR = {
+                NOT = { 752 = { is_controlled_by = ROOT } }
+                NOT = { 985 = { is_controlled_by = ROOT } }
+            }
+        }
+
+        cost = 75
+
+        days_remove = 80
+
+        fire_only_once = yes
+
+        modifier = {
+            consumer_goods_factor = 0.07
+        }
+
+        remove_effect = {
+            752 = {
+                increase_state_category = yes
+            }
+            985 = {
+                increase_state_category = yes
+            }
+        }
+    }
+
+}
+
+XWX_army_improvement = {
+
+    XWX_army_reform_decision = {
+
+        icon = GFX_decision_generic_army_support
+
+        allowed = {
+            original_tag = XWX
+        }
+
+        available = {
+            has_completed_focus = XWX_reform_the_militias
+        }
+
+        visible = {
+            OR = {
+                has_idea = XWX_incompetent_provincial_army
+                has_idea = XWX_untrained_provincial_army
+            }
+        }
+
+        ai_hint_pp_cost = 0
+        custom_cost_trigger = {
+			has_army_experience > 99
+		}
+		custom_cost_text = decision_cost_100_army_xp
+
+        ai_will_do = {
+			base = 100
+		}
+
+        days_remove = 200
+
+        complete_effect = {
+            hidden_effect = {
+                army_experience = -100
+            }
+        }
+
+        remove_effect = {
+            XWX_improve_provincial_army = yes
+        }
+    }
+
+    XWX_raid_neighbouring_states = {
+
+        icon = GFX_decision_generic_scorched_earth
+
+        allowed = {
+            tag = XWX
+        }
+
+        available = {
+            has_completed_focus = XWX_raid_tactics
+            FROM = {
+                owner = {
+                    OR = {
+                        has_opinion = {
+                            target = ROOT
+                            value < 0
+                        }
+                        ROOT = {
+                            has_opinion = {
+                                target = PREV
+                                value < 0
+                            }
+                        }
+                    }
+                }
+            }
+            NOT = { has_idea = XWX_raid_aftermath }
+        }
+
+        visible = {
+            FROM = {
+                owner = {
+                    NOT = {
+                        has_war_with = ROOT
+                    }
+                    NOT = {
+                        is_ally_with = ROOT
+                    }
+                }
+            }
+        }
+
+        targets_dynamic = yes
+
+        state_target = yes
+
+        target_trigger = {
+            FROM = {
+                any_neighbor_state = {
+                    is_fully_controlled_by = ROOT
+                }
+                NOT = { is_controlled_by = ROOT }
+            }
+        }
+
+        ai_hint_pp_cost = 0
+        custom_cost_trigger = {
+			command_power > 19
+		}
+		custom_cost_text = decision_cost_20_cp
+
+        days_re_enable = 100
+
+        complete_effect = {
+            hidden_effect = {
+                add_command_power = -20
+                random_list = {
+                    20 = {
+                        FROM = {
+                            owner = {
+                                country_event = {
+                                    id = XWX_diplomatic_events.7
+                                    hours = 18
+                                }
+                            }
+                        }
+                    }
+                    80 = {
+                        FROM = {
+                            owner = {
+                                country_event = {
+                                    id = XWX_diplomatic_events.9
+                                    hours = 18
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            custom_effect_tooltip = XWX_successful_raid_effects_tt
+            effect_tooltip = {
+                FROM = {
+                    owner = {
+                        send_equipment_fraction = {
+                            value = 0.05
+                            target = ROOT
+                        }
+                    }
+                }
+            }
+            custom_effect_tooltip = generic_skip_one_line_tt     
+            effect_tooltip = {
+                FROM = {
+                    owner = {        
+                        add_opinion_modifier = {
+                            target = ROOT
+                            modifier = XWX_launched_raid_on_us
+                        }
+                    }
+                }
+            }
+            custom_effect_tooltip = generic_skip_one_line_tt
+            custom_effect_tooltip = XWX_failed_raid_effects_tt
+            effect_tooltip = {
+                add_timed_idea = {
+                    idea = XWX_raid_aftermath
+                    days = 80
+                } 
+                add_manpower = -1000
+            }
+            custom_effect_tooltip = generic_skip_one_line_tt     
+            effect_tooltip = {
+                FROM = {
+                    owner = {        
+                        add_opinion_modifier = {
+                            target = ROOT
+                            modifier = XWX_launched_raid_on_us
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+
+}
+
+XWX_chinese_education_bureau = {
+
+    XWX_wuchang_military_academy = {
+
+        icon = GFX_decision_generic_research
+
+        allowed = {
+            original_tag = XWX
+        }
+
+        available = {
+            has_completed_focus = XWX_military_academies
+            FROM = {
+                is_owned_by = ROOT
+                is_controlled_by = ROOT
+            }
+        }
+
+        targets_dynamic = yes
+
+        state_target = yes
+
+        target_trigger = {
+            FROM = {
+                state = 620
+            }
+        }
+
+        cost = 100
+
+        days_remove = 100
+
+        fire_only_once = yes
+
+        cancel_trigger = {
+            FROM = {
+                NOT = { is_controlled_by = ROOT }
+            }
+        }
+
+        remove_effect = {
+            add_doctrine_cost_reduction = {
+				name = XWX_wuchang_military_academy
+				cost_reduction = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+            add_research_slot = 1
+        }
+
+    }
+
+    XWX_nanning_military_academy = {
+
+        icon = GFX_decision_generic_research
+
+        allowed = {
+            original_tag = XWX
+        }
+
+        available = {
+            has_completed_focus = XWX_military_academies
+            FROM = {
+                is_owned_by = ROOT
+                is_controlled_by = ROOT
+            }
+        }
+
+        targets_dynamic = yes
+
+        state_target = yes
+
+        target_trigger = {
+            FROM = {
+                state = 594
+            }
+        }
+
+        cost = 100
+
+        days_remove = 100
+
+        fire_only_once = yes
+
+        cancel_trigger = {
+            FROM = {
+                NOT = { is_controlled_by = ROOT }
+            }
+        }
+
+        remove_effect = {
+            add_doctrine_cost_reduction = {
+				name = XWX_wuchang_military_academy
+				cost_reduction = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+            add_research_slot = 1
+        }
+
+    }
+
+    XWX_open_rural_university = {
+
+        icon = GFX_decision_SOV_academy_of_sciences
+
+        allowed = {
+            original_tag = XWX
+        }
+
+        available = {
+            has_completed_focus = XWX_local_schools
+            FROM = {
+                is_owned_by = ROOT
+                is_controlled_by = ROOT
+            }
+        }
+
+        targets_dynamic = yes
+
+        state_target = yes
+
+        target_trigger = {
+            FROM = {
+                OR = {
+                    state = 325
+                    state = 604
+                    state = 283
+                    state = 597
+                    state = 756
+                }
+            }
+        }
+
+        cost = 100
+
+        days_remove = 100
+
+        fire_only_once = yes
+
+        cancel_trigger = {
+            FROM = {
+                NOT = { is_controlled_by = ROOT }
+            }
+        }
+
+        modifier = {
+            consumer_goods_factor = 0.05
+        }
+
+        remove_effect = {
+            custom_effect_tooltip = modify_XWX_industry_tt
+			add_to_variable = {
+				XWX_industry_research_speed_factor = 0.02
+				tooltip = research_speed_factor_tt
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+            FROM = {
+                increase_state_category = yes
+            }
+        }
+
     }
 
 }
@@ -139,7 +626,7 @@ XWX_second_gannan_famine_cat = {
             
         }
 
-        ai_hint_pp_cost = 0
+        ai_hint_pp_cost = 75
 		custom_cost_trigger = {
 			has_stability > 9
             has_political_power > 74

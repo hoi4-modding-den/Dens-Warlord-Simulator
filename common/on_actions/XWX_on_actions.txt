@@ -5,7 +5,7 @@ on_actions = {
 				limit = {
 					original_tag = XWX
 					has_government = neutrality
-					NOT = { has_country_flag = XWX_sichuan_province_formed }
+					NOT = { has_country_flag = XWX_xikang_province_formed }
 				}
 				set_cosmetic_tag = XWX_kmt_aligned
 			}
@@ -13,9 +13,9 @@ on_actions = {
 				limit = {
 					original_tag = XWX
 					has_government = neutrality
-					has_country_flag = XWX_sichuan_province_formed
+					has_country_flag = XWX_xikang_province_formed
 				}
-				set_cosmetic_tag = XWX_sichuan_province
+				set_cosmetic_tag = XWX_xikang_province
 			}
 			if = {
 				limit = {
@@ -46,7 +46,7 @@ on_actions = {
 					NOT = { has_government = neutrality }
 					OR = {
 						has_cosmetic_tag = XWX_kmt_aligned
-						has_cosmetic_tag = XWX_sichuan_province
+						has_cosmetic_tag = XWX_xikang_province
 					}
 				}
 				drop_cosmetic_tag = yes

@@ -6,6 +6,38 @@ XWX_construction_decisions = {
         original_tag = XWX
     }
 
+    priority = 60
+
+	visible = {
+		
+	}
+
+}
+
+XWX_army_improvement = {
+
+	icon = GFX_decision_category_military_operation
+
+    allowed = {
+        original_tag = XWX
+    }
+
+    priority = 50
+
+	visible = {
+		
+	}
+
+}
+
+XWX_chinese_education_bureau = {
+
+	icon = GFX_decision_category_SOV_soviet_academy_of_sciences
+
+    allowed = {
+        original_tag = XWX
+    }
+
     priority = 50
 
 	visible = {
@@ -25,7 +57,7 @@ XWX_second_gannan_famine_cat = {
     priority = 100
 
 	visible = {
-		
+		has_country_flag = XWX_second_gannan_famine
 	}
 
     visible_when_empty = yes

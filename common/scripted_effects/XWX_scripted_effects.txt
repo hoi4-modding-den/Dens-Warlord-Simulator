@@ -33,4 +33,39 @@ d_XWX_become_puppet_of_CHI = {
     }
 }
 
+XWX_improve_provincial_army = {
+    if = {
+        limit = {
+            has_idea = XWX_incompetent_provincial_army
+        }
+        swap_ideas = {
+            remove_idea = XWX_incompetent_provincial_army
+            add_idea = XWX_untrained_provincial_army
+        }
+    }
+    if = {
+        limit = {
+            has_idea = XWX_untrained_provincial_army
+        }
+        swap_ideas = {
+            remove_idea = XWX_untrained_provincial_army
+            add_idea = XWX_trained_provincial_army
+        }
+    }
+}
 
+XWX_disband_peoples_militia = {
+    if = {
+        limit = {
+            NOT = { has_country_flag = peoples_militia_disbanded }
+            has_template = "People's Militia"
+        }
+        delete_unit_template_and_units = {
+            division_template = "People's Militia"
+            disband = yes
+        }
+        add_stability = 0.03
+        set_country_flag = peoples_militia_disbanded
+        custom_effect_tooltip = generic_skip_one_line_tt
+    }
+}

@@ -21,9 +21,9 @@
  XWX_CHI_subject_DEF: "the Province of Gannan"
  XWX_CHI_subject_ADJ: "Gannan"
 
- XWX_sichuan_province: "Sichuan Province"
- XWX_sichuan_province_DEF: "the Province of Sichuan"
- XWX_sichuan_province_ADJ: "Sichuan"
+ XWX_xikang_province: "Xikang Province"
+ XWX_xikang_province_DEF: "the Province of Xikang"
+ XWX_xikang_province_ADJ: "Xikang"
 
  XWX_JAP_aligned: "Realm of the Dragons"
  XWX_JAP_aligned_DEF: "the Realm of the Dragons"
@@ -47,6 +47,7 @@
 # CHARACTERS
 
  XWX_peasant_collective_name: "Peasant Collectives"
+ XWX_liu_wenhui_name: "Liu Wenhui"
 
 
 # TRAITS
@@ -61,6 +62,7 @@
  XWX_splinter_faction_modifier: "Revisionist Splinters!"
  XWX_aided_during_famine: "Aided us during Famine"
  XWX_refused_to_help: "Refused to help us"
+ XWX_launched_raid_on_us: "Raided our Lands"
 
 
 # TRIGGERS
@@ -84,9 +86,19 @@
  XWX_mountain_fort_desc: "The last line of defence lies in the mountainous region of Ganzi, the fortress of Tianyu."
  XWX_splinter_faction: "Independent Communes"
  XWX_splinter_faction_desc: "The Peasants Republics are a splinter faction of the People's Republic of China, having seceeded from them in a conflict over ideological disparities in 1933."
+ 
  XWX_land_reform: "Land Reform"
  XWX_famine: "The Second Gannan Famine"
  XWX_famine_desc: "[ROOT.GetNameDefCap] is once again swept up in a major famine, brought about by the unfortunate combination of new economic policies and a drought."
+ 
+ XWX_raid_aftermath: "Failed Raid Aftermath"
+ XWX_aircraft_production: "Aircraft Production Facilities"
+
+ XWX_incompetent_provincial_army: "Incompetent Provincial Army"
+ XWX_untrained_provincial_army: "Untrained Provincial Army"
+ XWX_trained_provincial_army: "Provincial Army"
+ XWX_competent_provincial_army: "Revolutionary Army Reborn"
+
  XWX_industry_modifier: "National Industrialisation"
  XWX_industry_modifier_desc: "Our nation is lacking in many aspects. Comparably, it is the least industrialised province in all of China. Still, our development plans are layed out before us and with great effort will be turn our backwater region into the industrial heartlands of China."
  modify_XWX_industry_tt: "Modify §Y$XWX_industry_modifier$§! by:"
@@ -98,10 +110,28 @@
 
 XWX_construction_decisions: "Construction Projects"
 
- XWX_tianyu_fort_construction: "Finalise Tianyu Fort Construction..."
+ XWX_tianyu_fort_construction: "Finalise Tianyu Fort Construction"
+ XWX_link_up_tianyu_fort: "Tianshui-Tianyu Railway Line"
+ XWX_urbanise_gannan: "Develop Gannan"
+ XWX_urbanise_ganzi: "Develop Ganzi"
+
+XWX_army_improvement: "Provincial Army Command"
+
+ XWX_army_reform_decision: "Reform the Provincial Army"
+ XWX_army_reform_decision_desc: "The Provincial Army is severly under-equipped and untrained. In its current state, it resembles more a bandit group than an actual army, partly because it is made of people's militia troops that were recruited for national defence while our nation was ill-prepared to take the fight to them."
+ XWX_raid_neighbouring_states: "Raid [FROM.GetName]-Border Supply Depot"
+ XWX_raid_neighbouring_states_desc: "Our soldiers will cross the border in the middle of the night and raid a [FROM.owner.GetAdjective] supply depot to fill our stockpiles."
+ XWX_successful_raid_effects_tt: "§YIf the Raid is successful:§!"
+ XWX_failed_raid_effects_tt: "§YIf the Raid fails:§!"
+
+XWX_chinese_education_bureau: "Chinese Education Bureau"
+
+ XWX_wuchang_military_academy: "Establish the [620.GetCapitalVictoryPointName] Military Science Academy"
+ XWX_nanning_military_academy: "Establish the [594.GetCapitalVictoryPointName] Military Science Academy"
+ XWX_open_rural_university: "Open Public University in [FROM.GetCapitalVictoryPointName]"
 
 XWX_second_gannan_famine_cat: "Famine Relief Efforts"
-XWX_second_gannan_famine_cat_desc: "\nFAMINE AHHHHHHHHHHHHH!\n \nCurrent Amount of Relief Supplies: [?XWX_famine_progress|.0+]\n "
+XWX_second_gannan_famine_cat_desc: "\nThe province is currently undergoing a famine. We must gather Relief Supplies to ensure we can recover from it.\n \nCurrent Amount of Relief Supplies: [?XWX_famine_progress|.0+]\n "
 
  XWX_end_the_famine: "End the Famine"
  XWX_smuggle_supplies: "Smuggle Supplies"
@@ -112,6 +142,13 @@ XWX_second_gannan_famine_cat_desc: "\nFAMINE AHHHHHHHHHHHHH!\n \nCurrent Amount 
  decision_cost_stab_10_pp_75_blocked: "£GFX_stability_texticon §R10§! £GFX_pol_power §R75§!"
  decision_cost_stab_10_pp_75_tooltip: "It costs £GFX_stability_texticon §Y10§! £GFX_pol_power §Y75§! to take the decision"
 
+ decision_cost_100_army_xp: "£GFX_army_experience §Y100§!"
+ decision_cost_100_army_xp_blocked: "£GFX_army_experience §R100§!"
+ decision_cost_100_army_xp_tooltip: "It costs £GFX_army_experience §Y100§! to take the decision"
+
+ decision_cost_20_cp: "£GFX_command_power §Y20§!"
+ decision_cost_20_cp_blocked: "£GFX_command_power §R20§!"
+ decision_cost_20_cp_tooltip: "It costs £GFX_command_power §Y20§! to take the decision"
 
 # BoP
 
@@ -147,7 +184,7 @@ XWX_second_gannan_famine_cat_desc: "\nFAMINE AHHHHHHHHHHHHH!\n \nCurrent Amount 
  XWX_political_events.3.t: "The Second Gannan Famine"
  XWX_political_events.3.desc: "The First Gannan Famine started under the reign of the People's Republic of China. Mismanaged economic policies meant not enough farmers worked on the fields. That year, a drought happened and with the few supplies left, many starved. While our nation has recovered from it. With the recent land reforms, it would seem that we have not learned from the past."
  XWX_political_events.3.a: "Not like this!"
- XWX_start_second_gannan_famine: "Unlock §YFoci§! and §YDecisions§! to deal with the §RFamine§!."
+ XWX_start_second_gannan_famine: "Unlock §YFoci§! and £GFX_decision_icon_small §YDecisions§! to deal with the §RFamine§!."
 
  XWX_political_events.4.t: "The Third Commune Conference"
  XWX_political_events.4.desc: "The Gannan Peasant Republics are made up of multiple constituent republics, each represented by via the collectives in the National Assembly.\n \nThe two main factions within the collectives are the Federalists, who want to keep the influence of the central government low, so that they can make local law, and the Centralists, who want to increase the powers of the National Assembly to prevent any factionalism.\n \nIn the third major conference of the Commune, each side now presents their plans for the future of our nation."
@@ -186,6 +223,21 @@ XWX_second_gannan_famine_cat_desc: "\nFAMINE AHHHHHHHHHHHHH!\n \nCurrent Amount 
  XWX_diplomatic_events.6.desc: "The [FROM.GetAdjective] government has ingored our request for aid. We won't get anything from them."
  XWX_diplomatic_events.6.a: "Damn you, too!"
 
+ XWX_diplomatic_events.7.t: "[FROM.GetAdjectiveCap] Raid on Supply Depot!"
+ XWX_diplomatic_events.7.desc: "Soldiers from [FROM.GetNameDefCap] have raided one of our supply depots near the border in a surprise raid attack! They took with them large amounts of weaponry!"
+ XWX_diplomatic_events.7.a: "Damn them!"
+
+ XWX_diplomatic_events.8.t: "Successful Raid Operation!"
+ XWX_diplomatic_events.8.desc: "We have successfully raided a [FROM.GetAdjective] supply depot, bringing back their stored weaponry."
+ XWX_diplomatic_events.8.a: "Wonderful."
+ 
+ XWX_diplomatic_events.9.t: "Failed [FROM.GetAdjectiveCap] Raid on Supply Depot!"
+ XWX_diplomatic_events.9.desc: "Soldiers from [FROM.GetNameDefCap] tried to raid one of our supply depots near the border in a surprise raid attack! Luckily, the garrison was able to overwhelm them and force them to retreat!"
+ XWX_diplomatic_events.9.a: "Deserved!"
+
+ XWX_diplomatic_events.10.t: "Failed Raid Operation!"
+ XWX_diplomatic_events.10.desc: "Our soldiers failed to raid the targeted [FROM.GetAdjective] supply depot, being overwhelmed by the stationed garrison troops."
+
 
 # FACTION NAMES
 
@@ -221,7 +273,7 @@ XWX_second_gannan_famine_cat_desc: "\nFAMINE AHHHHHHHHHHHHH!\n \nCurrent Amount 
  XWX_workers_victory_desc: ""
  XWX_loads_new_focus_tree_tt: "Completing this §Yfocus§! will load the next branch of the §Yfocus tree§!.\n§GFoci from this branch can still be completed!§!"
 
- XWX_spread_the_revolution: "Maintain the Peasant Republics"
+ XWX_spread_the_revolution: "Revolutionary Fervour"
  XWX_spread_the_revolution_desc: ""
  XWX_the_peasant_united_front: "The $XWX_workers_united_front$"
  XWX_the_peasant_united_front_desc: ""
@@ -239,14 +291,15 @@ XWX_second_gannan_famine_cat_desc: "\nFAMINE AHHHHHHHHHHHHH!\n \nCurrent Amount 
 
  XWX_construction_sector: "Develop the Construction Sector"
  XWX_construction_sector_desc: ""
- XWX_civilian_construction_funds: "Civilian Development Funds"
+ XWX_civilian_construction_funds: "Industrial Development Funds"
  XWX_civilian_construction_funds_desc: ""
  XWX_clear_space: "Appropriate Farmlands"
  XWX_clear_space_desc: ""
  XWX_local_schools: "Regional Education Office"
  XWX_local_schools_desc: ""
- XWX_relocate_civilian_funds: "Relocate Civilian Funds"
+ XWX_relocate_civilian_funds: "Relocate Industrial Funds"
  XWX_relocate_civilian_funds_desc: ""
+ XWX_relocate_civilian_funds_tt: "Unlock £GFX_decision_icon_small §Y$XWX_urbanise_gannan$§!."
  XWX_construction_equipment: "Adopt Modern Construction Techniques"
  XWX_construction_equipment_desc: ""
  XWX_workshop_output: "Support Armament Production"
@@ -263,6 +316,39 @@ XWX_second_gannan_famine_cat_desc: "\nFAMINE AHHHHHHHHHHHHH!\n \nCurrent Amount 
  XWX_mine_expansion_desc: ""
  XWX_iron_extraction: "Iron Extraction"
  XWX_iron_extraction_desc: ""
+
+ XWX_provincial_army: "The Provincial Army"
+ XWX_provincial_army_desc: "The Armed Forces of the Gannan Province are mostly volunteers to protect the region from bandits and occasional raids by neighbouring powers. If we want to become something in the world, we must adapt."
+
+ XWX_reform_the_militias: "Disband the Militias"
+ XWX_reform_the_militias_desc: ""
+ XWX_reform_the_militias_tt: "Unlock £GFX_decision_icon_small §Y$XWX_army_reform_decision$§!."
+ XWX_raid_tactics: "Raid Tactics"
+ XWX_raid_tactics_desc: ""
+ XWX_two_generals_get_scavenger_tt: "Two Generals will get the trait §Y$scavenger$§!:"
+ XWX_raid_tactics_tt: "Unlock £GFX_decision_icon_small §YRaid State-Border Supply Depot§!."
+ XWX_army_motorisation: "Army Motorisation"
+ XWX_army_motorisation_desc: ""
+ XWX_military_academies: "Gannan Military Science Academy"
+ XWX_military_academies_desc: ""
+ XWX_military_academies_tt: "Unlock £GFX_decision_icon_small §Y$XWX_wuchang_military_academy$§!.\nUnlock £GFX_decision_icon_small §Y$XWX_nanning_military_academy$§!."
+
+ XWX_final_army_improvement: "Restore the Revolutionary Spirit"
+ XWX_final_army_improvement_desc: ""
+ XWX_heavy_conscription: "Forced Conscription"
+ XWX_heavy_conscription_desc: ""
+
+ XWX_acquire_more_planes: "Aircraft Acquisition"
+ XWX_acquire_more_planes_desc: ""
+ XWX_own_plane_designs: "Own Plane Designs"
+ XWX_own_plane_designs_desc: ""
+ XWX_plane_industry: "Support Local Aircraft Production"
+ XWX_plane_industry_desc: ""
+ XWX_professional_air_doctrine: "Professional Airforce"
+ XWX_professional_air_doctrine_desc: ""
+ XWX_air_bases: "Construct Airbases"
+ XWX_air_bases_desc: ""
+
 
 # TERRAIN
 

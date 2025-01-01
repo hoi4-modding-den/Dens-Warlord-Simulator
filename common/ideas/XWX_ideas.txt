@@ -155,6 +155,165 @@ ideas = {
 
         }
 
+        XWX_raid_aftermath = {
+
+			picture = tfv_can_conscription_crisis
+		
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+                army_org_factor = -0.15
+                supply_consumption_factor = 0.1
+            }
+
+		}
+
+		XWX_aircraft_production = {
+
+			picture = man_five_year_plan_air
+		
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+                production_factory_efficiency_gain_factor = 0.1
+            }
+
+			equipment_bonus = {
+				small_plane_airframe = {
+					instant = yes
+					build_cost_ic = -0.15
+				}
+				medium_plane_airframe = {
+					instant = yes
+					build_cost_ic = -0.15
+				}
+				large_plane_airframe = {
+					instant = yes
+					build_cost_ic = -0.15
+				}
+			}
+
+		}
+
+        XWX_incompetent_provincial_army = {
+
+			picture = chi_incompetent_officers
+		
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				army_attack_factor = -0.3
+				army_defence_factor = -0.3
+				mobilization_speed = -0.35
+				army_org_factor = -0.02
+                command_power_gain_mult = -0.15
+				conscription = 0.01
+				attrition = 0.05
+				supply_consumption_factor = 0.03
+			}
+
+		}
+
+        XWX_untrained_provincial_army = {
+
+			picture = chi_army_corruption
+		
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				army_attack_factor = -0.15
+				army_defence_factor = -0.15
+				mobilization_speed = -0.1
+                command_power_gain_mult = -0.05
+				conscription = 0.01
+				attrition = 0.01
+				supply_consumption_factor = 0.01
+			}
+
+		}
+
+        XWX_trained_provincial_army = {
+
+			picture = chi_army_corruption2
+		
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				army_org_factor = 0.01
+                command_power_gain_mult = 0.1
+				conscription = 0.01
+				attrition = -0.02
+				supply_consumption_factor = -0.01
+			}
+
+		}
+
+        XWX_competent_provincial_army = {
+
+			picture = chi_army_corruption3
+		
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+                army_attack_factor = 0.05
+				army_defence_factor = 0.05
+				army_org_factor = 0.02
+                command_power_gain_mult = 0.1
+				conscription = 0.01
+				attrition = -0.05
+				supply_consumption_factor = -0.03
+			}
+
+		}
+
     }
 
     industrial_concern = {

@@ -24,6 +24,12 @@ opinion_modifiers = {
 
 	XWX_refused_to_help = {
 		value = -25
+		decay = 5
+	}
+
+	XWX_launched_raid_on_us = {
+		value = -40
+		decay = 5
 	}
 	
 }

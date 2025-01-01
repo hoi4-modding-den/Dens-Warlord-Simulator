@@ -20,6 +20,7 @@ focus_tree = {
 
 	shared_focus = XWX_communal_report_1936
 	shared_focus = XWX_industrial_revolution
+	shared_focus = XWX_provincial_army
 
 }
 
@@ -46,6 +47,7 @@ focus_tree = {
 	shared_focus = XWX_communal_report_1936
 	shared_focus = XWX_spread_the_revolution
 	shared_focus = XWX_industrial_revolution
+	shared_focus = XWX_provincial_army
 
 }
 
@@ -72,8 +74,11 @@ focus_tree = {
 	shared_focus = XWX_communal_report_1936
 	shared_focus = XWX_consolidate_control
 	shared_focus = XWX_industrial_revolution
+	shared_focus = XWX_provincial_army
 
 }
+
+# Start Politics
 
 	shared_focus = {
 		id = XWX_communal_report_1936
@@ -287,7 +292,7 @@ focus_tree = {
 		}
 
 		bypass = {
-
+			NOT = { has_active_mission = XWX_tianyu_fort_construction }
 		}
 
 		search_filters = {  }
@@ -443,6 +448,7 @@ focus_tree = {
 
 		available = {
 			has_government = communism
+			communism > 0.5
 		}
 
 		bypass = {
@@ -471,7 +477,7 @@ focus_tree = {
 		cost = 5
 
 		available = {
-			neutrality > 0.49
+			neutrality > 0.5
 		}
 
 		bypass = {
@@ -480,6 +486,7 @@ focus_tree = {
 
 		search_filters = {  }
 		completion_reward = {
+			XWX_disband_peoples_militia = yes
 			country_event = XWX_kmt_events.1
 			custom_effect_tooltip = generic_skip_one_line_tt
 			custom_effect_tooltip = XWX_loads_new_focus_tree_tt
@@ -490,7 +497,7 @@ focus_tree = {
 		}
 	}
 
-	# Maintain the Peasant Republic
+# Maintain the Peasant Republic
 
 	shared_focus = {
 		id = XWX_spread_the_revolution
@@ -542,10 +549,29 @@ focus_tree = {
 				can_create_factions = yes
 			}
 			create_faction = XWX_workers_united_front
+			if = {
+				limit = {
+					has_completed_focus = XWX_reconcile_with_prc
+					XWE = {
+						has_government = communism
+						is_subject = no
+						NOT = {
+							has_war_with = ROOT
+						}
+					}
+				}
+				custom_effect_tooltip = generic_skip_one_line_tt
+				XWE = {
+					country_event = {
+						id = XWX_diplomatic_events.1
+						hours = 6
+					}
+				}
+			}
 		}
 	}
 
-	# KMT
+# KMT
 
 	shared_focus = {
 		id = XWX_consolidate_control
@@ -602,7 +628,7 @@ focus_tree = {
 		}
 	}
 
-	# INDUSTRY
+# INDUSTRY
 
 	shared_focus = {
 		id = XWX_industrial_revolution
@@ -613,7 +639,7 @@ focus_tree = {
 		y = 0
 		#relative_position_id =
 
-		cost = 1
+		cost = 0.2
 
 		available = {
 			XWX_focus_completed_via_event = yes
@@ -702,7 +728,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = XWX_industrial_revolution
 
-		cost = 5
+		cost = 6
 
 		available = {
 			
@@ -799,10 +825,10 @@ focus_tree = {
 		y = 1
 		relative_position_id = XWX_construction_sector
 
-		cost = 5
+		cost = 6
 
 		available = {
-			num_of_civilian_factories > 19
+			num_of_civilian_factories > 9
 		}
 
 		bypass = {
@@ -824,7 +850,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = XWX_construction_sector
 
-		cost = 5
+		cost = 4
 
 		available = {
 			num_of_civilian_factories > 14
@@ -853,14 +879,14 @@ focus_tree = {
 					is_owned_by = ROOT
 					free_building_slots = {
 						building = industrial_complex
-						size > 0
+						size > 1
 						include_locked = yes
 					}	
 				}
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = industrial_complex
-					level = 1
+					level = 2
 					instant_build = yes
 				}	
 			}
@@ -901,14 +927,14 @@ focus_tree = {
 					is_owned_by = ROOT
 					free_building_slots = {
 						building = arms_factory
-						size > 0
+						size > 1
 						include_locked = yes
 					}	
 				}
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = arms_factory
-					level = 1
+					level = 2
 					instant_build = yes
 				}	
 			}
@@ -924,7 +950,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = XWX_clear_space
 
-		cost = 5
+		cost = 4
 
 		available = {
 			num_of_civilian_factories > 14
@@ -972,6 +998,8 @@ focus_tree = {
 					instant_build = yes
 				}	
 			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = XWX_relocate_civilian_funds_tt
 		}
 	}
 
@@ -1053,7 +1081,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = XWX_textile_mills
 
-		cost = 5
+		cost = 4
 
 		available = {
 			num_of_military_factories > 4
@@ -1082,14 +1110,14 @@ focus_tree = {
 					is_owned_by = ROOT
 					free_building_slots = {
 						building = arms_factory
-						size > 0
+						size > 1
 						include_locked = yes
 					}	
 				}
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = arms_factory
-					level = 1
+					level = 2
 					instant_build = yes
 				}	
 			}
@@ -1105,7 +1133,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = XWX_workshop_output
 
-		cost = 5
+		cost = 4
 
 		available = {
 			num_of_military_factories > 4
@@ -1134,14 +1162,14 @@ focus_tree = {
 					is_owned_by = ROOT
 					free_building_slots = {
 						building = arms_factory
-						size > 1
+						size > 2
 						include_locked = yes
 					}	
 				}
-				add_extra_state_shared_building_slots = 2
+				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
 					type = arms_factory
-					level = 2
+					level = 3
 					instant_build = yes
 				}	
 			}
@@ -1213,6 +1241,431 @@ focus_tree = {
 				add_resource = {
 					type = steel
 					amount = 20
+				}
+			}
+		}
+	}
+
+
+# ARMY
+
+	shared_focus = {
+		id = XWX_provincial_army
+		icon = GFX_focus_chi_army_reform
+		#prerequisite = { focus = }
+		#mutually_exclusive = { focus = }
+		x = 21
+		y = 5
+		#relative_position_id =
+
+		cost = 4
+
+		available = {
+			
+		}
+
+		bypass = {
+
+		}
+
+		search_filters = {  }
+		completion_reward = {
+			army_experience = 25
+		}
+	}
+
+	shared_focus = {
+		id = XWX_reform_the_militias
+		icon = GFX_goal_generic_military_sphere
+		prerequisite = { focus = XWX_provincial_army }
+		#mutually_exclusive = { focus = }
+		x = -3
+		y = 1
+		relative_position_id = XWX_provincial_army
+
+		cost = 5
+
+		available = {
+			
+		}
+
+		bypass = {
+
+		}
+
+		search_filters = {  }
+		completion_reward = {
+			XWX_disband_peoples_militia = yes
+			custom_effect_tooltip = XWX_reform_the_militias_tt
+		}
+	}
+
+	shared_focus = {
+		id = XWX_raid_tactics
+		icon = GFX_focus_AUS_raid_military_storages
+		prerequisite = { focus = XWX_reform_the_militias }
+		#mutually_exclusive = { focus = }
+		x = -1
+		y = 1
+		relative_position_id = XWX_reform_the_militias
+
+		cost = 4
+
+		available = {
+			
+		}
+
+		bypass = {
+
+		}
+
+		search_filters = {  }
+		completion_reward = {
+			custom_effect_tooltip = XWX_two_generals_get_scavenger_tt
+			every_army_leader = {
+				limit = {
+					NOT = { has_trait = scavenger }
+				}
+				random_select_amount = 2
+				add_trait = { trait = scavenger }
+			}
+			custom_effect_tooltip = XWX_raid_tactics_tt
+		}
+	}
+
+	shared_focus = {
+		id = XWX_army_motorisation
+		icon = GFX_goal_generic_army_motorized
+		prerequisite = { focus = XWX_raid_tactics }
+		#mutually_exclusive = { focus = }
+		x = 0
+		y = 1
+		relative_position_id = XWX_raid_tactics
+
+		cost = 4
+
+		available = {
+			
+		}
+
+		bypass = {
+
+		}
+
+		search_filters = {  }
+		completion_reward = {
+			add_tech_bonus = {
+				name = XWX_army_motorisation
+				bonus = 1
+				uses = 2
+				category = motorized_equipment
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_equipment_to_stockpile = {
+				type = motorized_equipment
+				amount = 100
+				producer = XWX
+			}
+		}
+	}
+
+	shared_focus = {
+		id = XWX_military_academies
+		icon = GFX_focus_generic_military_academy
+		prerequisite = { focus = XWX_reform_the_militias }
+		#mutually_exclusive = { focus = }
+		x = 2
+		y = 1
+		relative_position_id = XWX_reform_the_militias
+
+		cost = 4
+
+		available = {
+			
+		}
+
+		bypass = {
+
+		}
+
+		search_filters = {  }
+		completion_reward = {
+			add_doctrine_cost_reduction = {
+				name = XWX_military_academies
+				cost_reduction = 1
+				uses = 1
+				category = land_doctrine
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_research_slot = 1
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = XWX_military_academies_tt
+		}
+	}
+
+	shared_focus = {
+		id = XWX_final_army_improvement
+		icon = GFX_focus_GER_the_supreme_leader
+		prerequisite = { focus = XWX_provincial_army }
+		#mutually_exclusive = { focus = }
+		x = 0
+		y = 1
+		relative_position_id = XWX_provincial_army
+
+		cost = 5
+
+		available = {
+			has_idea = XWX_trained_provincial_army
+		}
+
+		bypass = {
+
+		}
+
+		search_filters = {  }
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = XWX_trained_provincial_army
+				add_idea = XWX_competent_provincial_army
+			}
+		}
+	}
+
+	shared_focus = {
+		id = XWX_heavy_conscription
+		icon = GFX_focus_generic_manpower
+		prerequisite = { focus = XWX_provincial_army }
+		#mutually_exclusive = { focus = }
+		x = 2
+		y = 1
+		relative_position_id = XWX_provincial_army
+
+		cost = 5
+
+		available = {
+			has_war = yes
+			OR = {
+				longest_war_length > 12
+				surrender_progress > 0.2
+			}
+		}
+
+		bypass = {
+
+		}
+
+		search_filters = {  }
+		completion_reward = {
+			add_ideas = CHI_forced_conscription
+		}
+	}
+
+	shared_focus = {
+		id = XWX_acquire_more_planes
+		icon = GFX_focus_SMB_purchase_aircraft
+		prerequisite = { focus = XWX_provincial_army }
+		#mutually_exclusive = { focus = }
+		x = 4
+		y = 1
+		relative_position_id = XWX_provincial_army
+
+		cost = 4
+
+		available = {
+			
+		}
+
+		bypass = {
+
+		}
+
+		search_filters = {  }
+		completion_reward = {
+			air_experience = 25
+			custom_effect_tooltip = generic_skip_one_line_tt
+			if = {
+				limit = { has_dlc = "By Blood Alone" }
+				if = {
+					limit = {
+						has_government = communism
+					}
+					add_equipment_to_stockpile = {
+						type = small_plane_airframe_0
+						amount = 200
+						variant_name = "I-15"
+						producer = SOV
+					}
+				}
+				else = {
+					add_equipment_to_stockpile = {
+						type = small_plane_airframe_0
+						amount = 200
+						variant_name = "HE 51"
+						producer = GER
+					}
+				}
+			}
+			else = {
+				if = {
+					limit = {
+						has_government = communism
+					}
+					add_equipment_to_stockpile = {
+						type = fighter_equipment_0
+						amount = 200
+						producer = SOV
+					}
+				}
+				else = {
+					add_equipment_to_stockpile = {
+						type = fighter_equipment_0
+						amount = 200
+						producer = GER
+					}
+				}
+			}
+		}
+	}
+
+	shared_focus = {
+		id = XWX_own_plane_designs
+		icon = GFX_focus_generic_copy_plane_designs
+		prerequisite = { focus = XWX_acquire_more_planes }
+		#mutually_exclusive = { focus = }
+		x = -1
+		y = 1
+		relative_position_id = XWX_acquire_more_planes
+
+		cost = 4
+
+		available = {
+			
+		}
+
+		bypass = {
+
+		}
+
+		search_filters = {  }
+		completion_reward = {
+			add_tech_bonus = {
+				name = XWX_own_plane_designs
+				bonus = 0.75
+				uses = 2
+				category = air_equipment
+			}
+		}
+	}
+
+	shared_focus = {
+		id = XWX_plane_industry
+		icon = GFX_focus_generic_aircraft_production
+		prerequisite = { focus = XWX_own_plane_designs }
+		#mutually_exclusive = { focus = }
+		x = 0
+		y = 1
+		relative_position_id = XWX_own_plane_designs
+
+		cost = 4
+
+		available = {
+			
+		}
+
+		bypass = {
+
+		}
+
+		search_filters = {  }
+		completion_reward = {
+			add_ideas = XWX_aircraft_production
+			custom_effect_tooltip = generic_skip_one_line_tt
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+					is_fully_controlled_by = ROOT
+					is_owned_by = ROOT
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}	
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}	
+			}
+		}
+	}
+
+	shared_focus = {
+		id = XWX_professional_air_doctrine
+		icon = GFX_goal_generic_air_doctrine
+		prerequisite = { focus = XWX_acquire_more_planes }
+		#mutually_exclusive = { focus = }
+		x = 1
+		y = 1
+		relative_position_id = XWX_acquire_more_planes
+
+		cost = 5
+
+		available = {
+			
+		}
+
+		bypass = {
+
+		}
+
+		search_filters = {  }
+		completion_reward = {
+			air_experience = 50
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_doctrine_cost_reduction = {
+				name = XWX_professional_air_doctrine
+				cost_reduction = 0.5
+				uses = 2
+				category = air_doctrine
+			}
+		}
+	}
+
+	shared_focus = {
+		id = XWX_air_bases
+		icon = GFX_focus_generic_air_bases
+		prerequisite = { focus = XWX_acquire_more_planes }
+		#mutually_exclusive = { focus = }
+		x = 3
+		y = 1
+		relative_position_id = XWX_acquire_more_planes
+
+		cost = 3
+
+		available = {
+			
+		}
+
+		bypass = {
+
+		}
+
+		search_filters = {  }
+		completion_reward = {
+			air_experience = 20
+			custom_effect_tooltip = generic_skip_one_line_tt
+			every_owned_state = {
+				limit = {
+					is_controlled_by = ROOT
+					air_base < 5
+				}
+				random_select_amount = 2
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
 				}
 			}
 		}

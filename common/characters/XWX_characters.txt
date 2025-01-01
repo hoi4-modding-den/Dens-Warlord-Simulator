@@ -14,4 +14,21 @@ characters={
 		}
 	}
 
+	XWX_liu_wenhui = { 
+		name = XWX_liu_wenhui_name
+		portraits = {
+			army = {
+				large = GFX_portrait_XWX_liu_wenhui
+			}
+		}
+		corps_commander={
+			traits={ }
+			skill=3
+			attack_skill=3
+			defense_skill=1
+			planning_skill=2
+			logistics_skill=3
+		}
+	}
+
 }

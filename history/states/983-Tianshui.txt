@@ -3,7 +3,7 @@ state = {
 	name = "STATE_983" # Tianshui
 	manpower = 1030760 # I'm making this shit up
 	
-	state_category = city
+	state_category = town
 	
 	history = {
 
@@ -16,7 +16,7 @@ state = {
 		}
 
 		victory_points = {
-			2045 5
+			2045 10
 		}
 	}
 

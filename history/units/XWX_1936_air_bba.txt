@@ -1,0 +1,7 @@
+﻿air_wings = {
+	753 = {
+		small_plane_airframe_0 = {
+			owner = "XWX" amount = 5 creator = "SOV" version_name = "I-15"
+		}
+	}
+}

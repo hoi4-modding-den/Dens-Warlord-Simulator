@@ -153,6 +153,7 @@ bookmarks = {
 			ideas = {
 				XWX_mountaineer_corps
 				XWX_splinter_faction
+				XWX_incompetent_provincial_army
 			}
 			focuses = {
 				

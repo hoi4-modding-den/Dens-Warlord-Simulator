@@ -7,6 +7,11 @@ spriteTypes = {
 		texturefile = "gfx/XWX/portrait_XWX_peasant_collective.png"
 	}
 
+	spriteType = {
+		name = "GFX_portrait_XWX_liu_wenhui"
+		texturefile = "gfx/XWX/portrait_XWX_liu_wenhui.png"
+	}
+
 # EVENTS
 
 	spriteType = {
