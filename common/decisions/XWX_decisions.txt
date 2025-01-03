@@ -1,3 +1,153 @@
+XWX_kmt_insurgency_cat = {
+
+    XWX_kmt_civil_war_timer = {
+
+		icon = GFX_decision_generic_ignite_civil_war
+
+		priority = 100
+
+		activation = {
+			always = no
+		}
+
+    	allowed = {
+    	    tag = XWX
+    	}
+
+    	available = {
+			XWX_kmt_active = no
+    	}
+
+        cancel_trigger = {
+            has_government = neutrality
+        }
+
+    	is_good = no
+
+		fire_only_once = no
+
+    	days_mission_timeout = 42
+
+        complete_effect = {
+            add_stability = 0.15
+            custom_effect_tooltip = generic_skip_one_line_tt
+            country_event = XWX_kmt_events.3
+        }
+
+    	timeout_effect = {
+            if = {
+                limit = {
+                    check_variable = {
+                        XWX_kmt_power < 19
+                    } 
+                }
+                add_popularity = {
+                    popularity = -0.02
+                    ideology = communism
+                }
+                XWX_increase_kmt_power = yes
+                custom_effect_tooltip = generic_skip_one_line_tt
+                activate_mission = XWX_kmt_civil_war_timer
+            }
+            else = {
+                country_event = XWX_kmt_events.4
+            }
+    	}
+	}
+
+    XWX_kmt_civil_war_timer_debug = {
+
+        allowed = {
+            tag = XWX
+        }
+
+        visible = {
+            is_debug = yes
+            is_ai = no
+            has_civil_war = no
+            NOT = { has_active_mission = XWX_kmt_civil_war_timer }
+        }
+
+        complete_effect = {
+            activate_mission = XWX_kmt_civil_war_timer
+        }
+    }
+
+    XWX_raid_kmt_hideouts = {
+
+        icon = GFX_decision_generic_prepare_civil_war #GFX_decision_oppression
+
+        allowed = {
+            original_tag = XWX
+        }
+
+        available = {
+            XWX_kmt_active = yes
+        }
+
+        visible = {
+            
+        }
+
+        cost = 50
+
+        ai_will_do = {
+			base = 100
+            modifier = {
+                factor = 0
+                XWX_go_kmt_path = yes
+            }
+		}
+
+        days_remove = 20
+
+        days_re_enable = 10
+
+        remove_effect = {
+            add_war_support = -0.02
+            XWX_decrease_kmt_power = yes
+        }
+    }
+
+    XWX_ignore_kmt = {
+
+        icon = GFX_decision_eng_propaganda_campaigns 
+
+        allowed = {
+            original_tag = XWX
+        }
+
+        available = {
+            XWX_kmt_active = yes
+        }
+
+        visible = {
+            
+        }
+
+        cost = 50
+
+        ai_will_do = {
+			base = 0
+            modifier = {
+                add = 100
+                XWX_go_kmt_path = yes
+                NOT = { has_idea = XWX_strong_kmt_insurgency }
+            }
+		}
+
+        days_remove = 40
+
+        days_re_enable = 10
+
+        remove_effect = {
+            add_stability = 0.05
+            XWX_increase_kmt_power = yes
+        }
+    }
+
+}
+
 XWX_construction_decisions = {
 
     XWX_tianyu_fort_construction = {
@@ -100,11 +250,15 @@ XWX_construction_decisions = {
             }
         }
 
+        visible = {
+            NOT = { has_country_flag = tianyu_railway_built }
+        }
+
         cost = 50
 
         days_remove = 50
 
-        fire_only_once = yes
+        fire_only_once = no
 
         modifier = {
             civilian_factory_use = 1
@@ -126,6 +280,17 @@ XWX_construction_decisions = {
                 start_province = 2045
                 target_province = 8104
             }
+            if = {
+                limit = {
+                    has_active_mission = XWX_tianyu_fort_construction
+                }
+                custom_effect_tooltip = generic_skip_one_line_tt
+                add_days_mission_timeout = {
+                    mission = XWX_tianyu_fort_construction
+                    days = -50
+                }
+            }
+            set_country_flag = tianyu_railway_built
         }
     }
 
@@ -138,6 +303,7 @@ XWX_construction_decisions = {
         }
 
         available = {
+            has_completed_focus = XWX_develop_the_province
             753 = { is_controlled_by = ROOT }
         }
 
@@ -145,11 +311,15 @@ XWX_construction_decisions = {
             NOT = { 753 = { is_controlled_by = ROOT } }
         }
 
+        visible = {
+            NOT = { has_country_flag = developed_gannan }
+        }
+
         cost = 75
 
         days_remove = 80
 
-        fire_only_once = yes
+        fire_only_once = no
 
         modifier = {
             consumer_goods_factor = 0.04
@@ -159,6 +329,7 @@ XWX_construction_decisions = {
             753 = {
                 increase_state_category = yes
             }
+            set_country_flag = developed_gannan
         }
     }
 
@@ -171,6 +342,7 @@ XWX_construction_decisions = {
         }
 
         available = {
+            has_completed_focus = XWX_develop_the_province
             752 = { is_controlled_by = ROOT }
             985 = { is_controlled_by = ROOT }
         }
@@ -182,11 +354,15 @@ XWX_construction_decisions = {
             }
         }
 
+        visible = {
+            NOT = { has_country_flag = developed_ganzi }
+        }
+
         cost = 75
 
         days_remove = 80
 
-        fire_only_once = yes
+        fire_only_once = no
 
         modifier = {
             consumer_goods_factor = 0.07
@@ -199,6 +375,7 @@ XWX_construction_decisions = {
             985 = {
                 increase_state_category = yes
             }
+            set_country_flag = developed_ganzi
         }
     }
 
@@ -232,7 +409,7 @@ XWX_army_improvement = {
 		custom_cost_text = decision_cost_100_army_xp
 
         ai_will_do = {
-			base = 100
+			base = 1000
 		}
 
         days_remove = 200
@@ -272,6 +449,10 @@ XWX_army_improvement = {
                             }
                         }
                     }
+                    custom_trigger_tooltip = {
+                        tooltip = XWX_is_chinese_country_tt
+                        DEN_is_chinese_country = yes
+                    }
                 }
             }
             NOT = { has_idea = XWX_raid_aftermath }
@@ -308,6 +489,14 @@ XWX_army_improvement = {
 			command_power > 19
 		}
 		custom_cost_text = decision_cost_20_cp
+
+        ai_will_do = {
+			base = 50
+            modifier = {
+                factor = 0
+                has_war = yes
+            }
+		}
 
         days_re_enable = 100
 
@@ -523,7 +712,7 @@ XWX_chinese_education_bureau = {
 
         cost = 100
 
-        days_remove = 100
+        days_remove = 80
 
         fire_only_once = yes
 
@@ -698,5 +887,106 @@ XWX_second_gannan_famine_cat = {
             custom_effect_tooltip = XWX_aid_request_tip_tt
         }
     }
+
+}
+
+XWX_bop_cat = {
+
+    XWX_decentralise_the_state = {
+
+        icon = GFX_decision_generic_civil_support
+
+        allowed = {
+            original_tag = XWX
+        }
+
+        available = {
+            NOT = { has_country_flag = XWX_doing_bop_decision }
+            is_power_balance_in_range = {
+                id = XWX_communes_bop
+                range > XWX_federalists_total_control_range
+            }
+        }
+
+        cost = 50
+
+        ai_will_do = {
+			base = 10
+            modifier = {
+                factor = 0
+                has_country_flag = XWX_ai_prioritise_centralists
+            }
+		}
+
+        days_remove = 30
+        
+        days_re_enable = 30
+
+        modifier = {
+            political_power_cost = 0.1
+        }
+
+        complete_effect = {
+            set_country_flag = XWX_doing_bop_decision
+            add_power_balance_value = {
+				id = XWX_communes_bop
+				value = -0.05
+				tooltip_side = XWX_federalists
+			}
+        }
+
+        remove_effect = {
+            clr_country_flag = XWX_doing_bop_decision
+        }
+    }
+
+    XWX_centralise_the_state = {
+
+        icon = GFX_decision_generic_civil_support
+
+        allowed = {
+            original_tag = XWX
+        }
+
+        available = {
+            NOT = { has_country_flag = XWX_doing_bop_decision }
+            is_power_balance_in_range = {
+                id = XWX_communes_bop
+                range < XWX_centralists_total_control_range
+            }
+        }
+
+        cost = 50
+
+        ai_will_do = {
+			base = 10
+            modifier = {
+                factor = 0
+                has_country_flag = XWX_ai_prioritise_federalists
+            }
+		}
+
+        days_remove = 30
+        
+        days_re_enable = 30
+
+        modifier = {
+            political_power_cost = 0.1
+        }
+
+        complete_effect = {
+            set_country_flag = XWX_doing_bop_decision
+            add_power_balance_value = {
+				id = XWX_communes_bop
+				value = 0.05
+				tooltip_side = XWX_centralists
+			}
+        }
+
+        remove_effect = {
+            clr_country_flag = XWX_doing_bop_decision
+        }
+    }
+
 
 }

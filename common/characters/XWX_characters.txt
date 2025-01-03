@@ -14,20 +14,205 @@ characters={
 		}
 	}
 
+	XWX_hu_lanqi = { 
+		name = XWX_hu_lanqi_name
+		gender = female
+		portraits = {
+			army = {
+				large = GFX_portrait_XWX_hu_lanqi
+				small = GFX_idea_XWX_hu_lanqi
+			}
+			civilian = {
+				small = GFX_idea_XWX_hu_lanqi
+			}
+		}
+		corps_commander={
+			visible = {
+				has_government = communism
+			}
+			traits={ JAP_communist_sympathizer organizer }
+			skill=4
+			attack_skill=3
+			defense_skill=1
+			planning_skill=2
+			logistics_skill=3
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = XWX_hu_lanqi_advisor
+		
+			allowed = {
+
+			}
+			available = {
+				has_government = communism
+				has_completed_focus = XWX_liberated_women
+			}
+			
+			cost = 100
+
+			ai_will_do = {
+				factor = 5
+			}
+
+			traits = {
+				red_suffragette
+			}
+
+			on_add = {
+				if = {
+					limit = {
+						ROOT = {
+							has_power_balance = { id = XWX_communes_bop }
+						}
+					}
+					add_power_balance_value = {
+						id = XWX_communes_bop
+						value = -0.05
+						tooltip_side = XWX_federalists
+					}
+				}
+			}
+			on_remove = {
+				if = {
+					limit = {
+						ROOT = {
+							has_power_balance = { id = XWX_communes_bop }
+						}
+					}
+					add_power_balance_value = {
+						id = XWX_communes_bop
+						value = 0.05
+						tooltip_side = XWX_centralists
+					}
+				}
+			}
+		}
+	}
+
 	XWX_liu_wenhui = { 
 		name = XWX_liu_wenhui_name
 		portraits = {
 			army = {
 				large = GFX_portrait_XWX_liu_wenhui
+				small = GFX_idea_XWX_liu_wenhui
 			}
 		}
 		corps_commander={
-			traits={ }
+			visible = {
+				
+			}
+			traits={ career_officer trait_mountaineer }
 			skill=3
 			attack_skill=3
 			defense_skill=1
 			planning_skill=2
 			logistics_skill=3
+		}
+		advisor={
+			slot = high_command
+			idea_token = XWX_liu_wenhui_advisor
+		
+			allowed = {
+
+			}
+			available = {
+				
+			}
+			
+			cost = 50
+
+			ai_will_do = {
+				factor = 5
+			}
+
+			traits = {
+				army_commando_1
+			}
+		}
+	}
+
+	XWX_liu_xiang = { 
+		name = XWX_liu_xiang_name
+		portraits = {
+			army = {
+				large = GFX_portrait_XWX_liu_xiang
+				small = GFX_idea_XWX_liu_xiang
+			}
+		}
+		corps_commander={
+			visible = {
+				
+			}
+			traits={ armor_officer }
+			skill=3
+			attack_skill=4
+			defense_skill=2
+			planning_skill=2
+			logistics_skill=2
+		}
+		advisor={
+			slot = high_command
+			idea_token = XWX_liu_xiang_advisor
+		
+			allowed = {
+
+			}
+			available = {
+				
+			}
+			
+			cost = 100
+
+			ai_will_do = {
+				factor = 5
+			}
+
+			traits = {
+				army_armored_2
+			}
+		}
+	}
+
+	XWX_rao_guohua = { 
+		name = XWX_rao_guohua_name
+		portraits = {
+			army = {
+				large = GFX_portrait_XWX_rao_guohua
+				small = GFX_idea_XWX_rao_guohua
+			}
+		}
+		corps_commander={
+			visible = {
+
+			}
+			traits={ engineer_officer }
+			skill=2
+			attack_skill=1
+			defense_skill=3
+			planning_skill=2
+			logistics_skill=1
+		}
+		advisor={
+			slot = army_chief
+			idea_token = XWX_liu_wenhui_advisor
+		
+			allowed = {
+
+			}
+			available = {
+				
+			}
+			
+			cost = 100
+
+			ai_will_do = {
+				factor = 5
+			}
+
+			traits = {
+				army_chief_entrenchment_2
+			}
 		}
 	}
 

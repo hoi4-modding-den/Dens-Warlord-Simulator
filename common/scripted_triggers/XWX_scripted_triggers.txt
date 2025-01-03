@@ -4,3 +4,29 @@ XWX_focus_completed_via_event = {
         always = no
     }
 }
+
+XWX_kmt_active = {
+    custom_trigger_tooltip = {
+        tooltip = XWX_kmt_active_tt
+        OR = {
+            has_idea = XWX_weak_kmt_insurgency
+            has_idea = XWX_kmt_insurgency
+            has_idea = XWX_strong_kmt_insurgency
+        }
+    }
+}
+
+XWX_go_kmt_path = {
+    OR = {
+        is_historical_focus_on = yes
+        has_country_flag = XWX_random_kmt_path
+    }
+}
+
+XWX_go_jap_path = {
+    has_country_flag = XWX_random_jap_path
+}
+
+XWX_go_commie_path = {
+    has_country_flag = XWX_random_com_path
+}

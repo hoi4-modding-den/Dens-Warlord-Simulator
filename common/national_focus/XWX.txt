@@ -45,7 +45,7 @@ focus_tree = {
 	}
 
 	shared_focus = XWX_communal_report_1936
-	shared_focus = XWX_spread_the_revolution
+	shared_focus = XWX_revolutionary_fervour
 	shared_focus = XWX_industrial_revolution
 	shared_focus = XWX_provincial_army
 
@@ -78,6 +78,33 @@ focus_tree = {
 
 }
 
+focus_tree = {
+	id = XWX_focus_tree_japan
+	
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = XWX
+		}
+	}
+
+	default = no
+
+	continuous_focus_position = { x = 20 y = 2500 }  
+	
+	initial_show_position = {
+		x = 20
+		y = 0
+	}
+
+	shared_focus = XWX_communal_report_1936
+	shared_focus = XWX_the_red_dragon_society
+	shared_focus = XWX_japanese_military_control
+	shared_focus = XWX_industrial_revolution
+
+}
+
 # Start Politics
 
 	shared_focus = {
@@ -90,6 +117,10 @@ focus_tree = {
 		#relative_position_id =
 
 		cost = 3
+
+		ai_will_do = {
+			base = 100
+		}
 
 		available = {
 			
@@ -111,7 +142,7 @@ focus_tree = {
 		icon = GFX_focus_generic_diplomatic_treaty
 		prerequisite = { focus = XWX_communal_report_1936 }
 		#mutually_exclusive = { focus = }
-		x = -4
+		x = -6
 		y = 1
 		relative_position_id = XWX_communal_report_1936
 
@@ -141,6 +172,14 @@ focus_tree = {
 		relative_position_id = XWX_commune_discussion
 
 		cost = 5
+
+		ai_will_do = {
+			base = 0
+            modifier = {
+                add = 50
+                XWX_go_commie_path = yes
+            }
+		}
 
 		available = {
 			has_government = communism
@@ -218,7 +257,15 @@ focus_tree = {
 		y = 1
 		relative_position_id = XWX_commune_discussion
 
-		cost = 5
+		cost = 4
+
+		ai_will_do = {
+			base = 0
+            modifier = {
+                add = 50
+                XWX_go_commie_path = yes
+            }
+		}
 
 		available = {
 			has_government = communism
@@ -233,6 +280,117 @@ focus_tree = {
 			swap_ideas = {
 				remove_idea = XWX_splinter_faction
 				add_idea = XWX_splinter_faction_2
+			}
+		}
+	}
+
+	shared_focus = {
+		id = XWX_develop_the_province
+		icon = GFX_goal_generic_construction
+		prerequisite = { focus = XWX_communal_report_1936 }
+		#mutually_exclusive = { focus = }
+		x = -3
+		y = 1
+		relative_position_id = XWX_communal_report_1936
+
+		cost = 5
+
+		available = {
+			has_war = no
+		}
+
+		search_filters = {  }
+		completion_reward = {
+			custom_effect_tooltip = XWX_develop_the_province_tt
+			custom_effect_tooltip = generic_skip_one_line_tt
+			every_core_state = {
+				limit = {
+					is_controlled_by = ROOT
+				}
+				random_select_amount = 3
+				add_extra_state_shared_building_slots = 1
+			}
+		}
+	}
+
+	shared_focus = {
+		id = XWX_civilian_focus
+		icon = GFX_goal_generic_consumer_goods
+		prerequisite = { focus = XWX_develop_the_province }
+		#mutually_exclusive = { focus = }
+		x = 0
+		y = 1
+		relative_position_id = XWX_develop_the_province
+
+		cost = 5
+
+		available = {
+			has_war = no
+		}
+
+		search_filters = {  }
+		completion_reward = {
+			every_owned_state = {
+				limit = {
+					is_core_of = ROOT
+					is_fully_controlled_by = ROOT
+					is_owned_by = ROOT
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}	
+				}
+				random_select_amount = 2
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}	
+			}
+			if = {
+				limit = {
+					has_power_balance = {
+						id = XWX_communes_bop
+					}
+				}
+				custom_effect_tooltip = generic_skip_one_line_tt
+				add_power_balance_value = {
+					id = XWX_communes_bop
+					value = -0.1
+					tooltip_side = XWX_federalists
+				}
+			}
+		}
+	}
+
+	shared_focus = {
+		id = XWX_liberated_women
+		icon = GFX_focus_ARG_women_in_industry
+		prerequisite = { focus = XWX_civilian_focus }
+		prerequisite = { focus = XWX_reconcile_with_prc focus = XWX_maintain_course }
+		#mutually_exclusive = { focus = }
+		x = -1
+		y = 1
+		relative_position_id = XWX_civilian_focus
+
+		cost = 5
+
+		available = {
+			has_government = communism
+		}
+
+		search_filters = {  }
+		completion_reward = {
+			add_ideas = XWX_liberated_women_idea
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = XWX_hu_lanqi_advisor
+			custom_effect_tooltip = generic_skip_one_line_tt
+			XWX_hu_lanqi = {
+				add_max_trait = 1
+				add_logistics = 1
 			}
 		}
 	}
@@ -285,7 +443,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = XWX_communal_report_1936
 
-		cost = 5
+		cost = 3
 
 		available = {
 			
@@ -375,22 +533,115 @@ focus_tree = {
 	}
 
 	shared_focus = {
-		id = XWX_hunt_for_kmt_reactionaries
-		icon = GFX_focus_SOV_the_last_purge
+		id = XWX_liberation_philosophy
+		icon = GFX_focus_GER_liberate_exploited_colonial_workers
 		prerequisite = { focus = XWX_communal_report_1936 }
 		#mutually_exclusive = { focus = }
-		x = 4
+		x = 3
 		y = 1
 		relative_position_id = XWX_communal_report_1936
 
 		cost = 5
 
+		ai_will_do = {
+			base = 0
+            modifier = {
+                add = 100
+                XWX_go_commie_path = yes
+            }
+		}
+
 		available = {
-			
+			has_government = communism
+		}
+
+		search_filters = {  }
+		completion_reward = {
+			add_war_support = 0.1
+		}
+	}
+
+	shared_focus = {
+		id = XWX_government_broadcast
+		icon = GFX_focus_SWE_radiotjanst
+		prerequisite = { focus = XWX_liberation_philosophy }
+		#mutually_exclusive = { focus = }
+		x = 0
+		y = 1
+		relative_position_id = XWX_liberation_philosophy
+
+		cost = 5
+
+		ai_will_do = {
+			base = 0
+            modifier = {
+                add = 100
+                XWX_go_commie_path = yes
+            }
+			modifier = {
+                add = 100
+                XWX_go_kmt_path = yes
+				has_government = neutrality
+            }
+			modifier = {
+                add = 100
+                XWX_go_jap_path = yes
+				has_government = fascism
+            }
+		}
+
+		available = {
+			has_tech = radio
+		}
+
+		search_filters = {  }
+		completion_reward = {
+			add_war_support = 0.05
+			add_popularity = {
+				popularity = 0.05
+				ideology = ROOT
+			}
+			if = {
+				limit = {
+					has_power_balance = {
+						id = XWX_communes_bop
+					}
+				}
+				custom_effect_tooltip = generic_skip_one_line_tt
+				add_power_balance_value = {
+					id = XWX_communes_bop
+					value = 0.1
+					tooltip_side = XWX_centralists
+				}
+			}
+		}
+	}
+
+	shared_focus = {
+		id = XWX_hunt_for_kmt_reactionaries
+		icon = GFX_focus_SOV_the_last_purge
+		prerequisite = { focus = XWX_communal_report_1936 }
+		#mutually_exclusive = { focus = }
+		x = 6
+		y = 1
+		relative_position_id = XWX_communal_report_1936
+
+		cost = 5
+
+		ai_will_do = {
+			base = 75
+            modifier = {
+                add = 100
+                XWX_go_kmt_path = yes
+            }
+		}
+
+		available = {
+			has_government = communism
 		}
 
 		bypass = {
-			NOT = { has_government = communism }
+			has_government = neutrality
 		}
 
 		search_filters = {  }
@@ -407,6 +658,106 @@ focus_tree = {
 				ideology = democratic
 				popularity = -0.05
 			}
+			XWX_decrease_kmt_power = yes
+		}
+	}
+
+	shared_focus = {
+		id = XWX_guarantee_military_loyalty
+		icon = GFX_focus_SOV_military_purge
+		prerequisite = { focus = XWX_hunt_for_kmt_reactionaries }
+		mutually_exclusive = { focus = XWX_worker_judiciary }
+		x = -1
+		y = 1
+		relative_position_id = XWX_hunt_for_kmt_reactionaries
+
+		cost = 4
+
+		ai_will_do = {
+			base = 75
+            modifier = {
+                add = 100
+                XWX_go_kmt_path = yes
+            }
+		}
+
+		available = {
+			has_government = communism
+		}
+
+		bypass = {
+			has_government = neutrality
+		}
+
+		search_filters = {  }
+		completion_reward = {
+			add_command_power = 30
+			custom_effect_tooltip = generic_skip_one_line_tt
+			every_army_leader = {
+				limit = {
+					NOT = { has_trait = JAP_communist_sympathizer }
+				}
+				add_temporary_buff_to_units = {
+					org_damage_multiplier = 0.75
+					cannot_retreat_while_attacking = 1
+								
+					days = 70
+				}
+			}
+			XWX_decrease_kmt_power = yes
+		}
+	}
+
+	shared_focus = {
+		id = XWX_red_army_cooperation
+		icon = GFX_focus_generic_spur_communist_revolutions
+		prerequisite = { focus = XWX_guarantee_military_loyalty focus = XWX_government_broadcast }
+		#mutually_exclusive = { focus = }
+		x = -1
+		y = 1
+		relative_position_id = XWX_guarantee_military_loyalty
+
+		cost = 5
+
+		available = {
+			has_government = communism
+			any_other_country = {
+				exists = yes
+				has_government = communism
+				is_major = yes
+				NOT = { has_war_with = ROOT }
+			}
+		}
+
+		search_filters = {  }
+		completion_reward = {
+			random_other_country = {
+				limit = {
+					exists = yes
+					has_government = communism
+					is_major = yes
+					NOT = { has_war_with = ROOT }
+				}
+				country_event = {
+					id = XWX_diplomatic_events.11
+					hours = 6
+				}
+			}
+			custom_effect_tooltip = if_they_accept_tt
+			effect_tooltip = {
+				add_doctrine_cost_reduction = {
+					name = XWX_red_army
+					cost_reduction = 1
+					uses = 1
+					category = land_doctrine
+				}
+				army_experience = 50
+				custom_effect_tooltip = generic_skip_one_line_tt
+				every_army_leader = {
+					random_select_amount = 3
+					gain_xp = 250
+				}
+			}
 		}
 	}
 
@@ -414,12 +765,20 @@ focus_tree = {
 		id = XWX_worker_judiciary
 		icon = GFX_focus_AUS_lawmaking_leniency
 		prerequisite = { focus = XWX_hunt_for_kmt_reactionaries }
-		#mutually_exclusive = { focus = }
-		x = 0
+		mutually_exclusive = { focus = XWX_guarantee_military_loyalty }
+		x = 1
 		y = 1
 		relative_position_id = XWX_hunt_for_kmt_reactionaries
 
 		cost = 5
+
+		ai_will_do = {
+			base = 100
+            modifier = {
+                factor = 0
+                XWX_go_kmt_path = yes
+            }
+		}
 
 		available = {
 			has_government = communism
@@ -431,7 +790,25 @@ focus_tree = {
 
 		search_filters = {  }
 		completion_reward = {
-			
+			add_stability = 0.02
+			add_popularity = {
+				popularity = 0.05
+				ideology = communism
+			}
+			if = {
+				limit = {
+					has_power_balance = {
+						id = XWX_communes_bop
+					}
+				}
+				custom_effect_tooltip = generic_skip_one_line_tt
+				add_power_balance_value = {
+					id = XWX_communes_bop
+					value = -0.1
+					tooltip_side = XWX_federalists
+				}
+			}
+			XWX_decrease_kmt_power = yes
 		}
 	}
 
@@ -439,14 +816,23 @@ focus_tree = {
 		id = XWX_workers_victory
 		icon = GFX_focus_prc_proclaim_the_peoples_republic
 		prerequisite = { focus = XWX_maintain_course focus = XWX_reconcile_with_prc }
-		mutually_exclusive = { focus = XWX_kmt_coup }
+		mutually_exclusive = { focus = XWX_kmt_coup focus = XWX_the_red_dragon_society }
 		x = -5
 		y = 4
 		relative_position_id = XWX_communal_report_1936
 
 		cost = 5
 
+		ai_will_do = {
+			base = 0
+            modifier = {
+                add = 100
+                XWX_go_commie_path = yes
+            }
+		}
+
 		available = {
+			XWX_kmt_active = no
 			has_government = communism
 			communism > 0.5
 		}
@@ -466,17 +852,51 @@ focus_tree = {
 	}
 
 	shared_focus = {
+		id = XWX_the_red_dragon_society
+		icon = GFX_focus_chi_collaboration_with_the_japanese
+		#prerequisite = { focus = }
+		mutually_exclusive = { focus = XWX_kmt_coup focus = XWX_workers_victory }
+		x = 0
+		y = 4
+		relative_position_id = XWX_communal_report_1936
+
+		cost = 0.2
+
+		available = {
+			has_government = fascism
+		}
+
+		bypass = {
+
+		}
+
+		search_filters = {  }
+		completion_reward = {
+			custom_effect_tooltip = XWX_loads_new_focus_tree_tt
+		}
+	}
+
+	shared_focus = {
 		id = XWX_kmt_coup
 		icon = GFX_focus_generic_china1
-		prerequisite = { focus = XWX_hunt_for_kmt_reactionaries }
-		mutually_exclusive = { focus = XWX_workers_victory }
+		prerequisite = { focus = XWX_guarantee_military_loyalty }
+		mutually_exclusive = { focus = XWX_workers_victory focus = XWX_the_red_dragon_society }
 		x = 5
 		y = 4
 		relative_position_id = XWX_communal_report_1936
 
 		cost = 5
 
+		ai_will_do = {
+			base = 0
+            modifier = {
+                add = 100
+                XWX_go_kmt_path = yes
+            }
+		}
+
 		available = {
+			has_idea = XWX_strong_kmt_insurgency
 			neutrality > 0.5
 		}
 
@@ -486,7 +906,6 @@ focus_tree = {
 
 		search_filters = {  }
 		completion_reward = {
-			XWX_disband_peoples_militia = yes
 			country_event = XWX_kmt_events.1
 			custom_effect_tooltip = generic_skip_one_line_tt
 			custom_effect_tooltip = XWX_loads_new_focus_tree_tt
@@ -500,7 +919,7 @@ focus_tree = {
 # Maintain the Peasant Republic
 
 	shared_focus = {
-		id = XWX_spread_the_revolution
+		id = XWX_revolutionary_fervour
 		icon = GFX_focus_PLACEHOLDER
 		#prerequisite = { focus =  }
 		#mutually_exclusive = { focus = XWX_workers_victory }
@@ -525,13 +944,50 @@ focus_tree = {
 	}
 
 	shared_focus = {
+		id = XWX_hold_local_elections
+		icon = GFX_focus_generic_communist
+		prerequisite = { focus = XWX_revolutionary_fervour }
+		#mutually_exclusive = { focus =  }
+		x = -3
+		y = 1
+		relative_position_id = XWX_revolutionary_fervour
+
+		cost = 5
+
+		available = {
+			has_government = communism
+		}
+
+		bypass = {
+
+		}
+
+		search_filters = {  }
+		completion_reward = {
+			if = {
+				limit = {
+					has_power_balance = {
+						id = XWX_communes_bop
+					}
+				}
+				custom_effect_tooltip = generic_skip_one_line_tt
+				add_power_balance_value = {
+					id = XWX_communes_bop
+					value = -0.1
+					tooltip_side = XWX_federalists
+				}
+			}
+		}
+	}
+
+	shared_focus = {
 		id = XWX_the_peasant_united_front
-		icon = GFX_focus_PLACEHOLDER
-		prerequisite = { focus = XWX_spread_the_revolution }
+		icon = GFX_focus_generic_red_flags
+		prerequisite = { focus = XWX_revolutionary_fervour }
 		#mutually_exclusive = { focus =  }
 		x = 0
 		y = 1
-		relative_position_id = XWX_spread_the_revolution
+		relative_position_id = XWX_revolutionary_fervour
 
 		cost = 5
 
@@ -571,6 +1027,104 @@ focus_tree = {
 		}
 	}
 
+	shared_focus = {
+		id = XWX_enforce_revolutionary_doctrine
+		icon = GFX_focus_PLACEHOLDER
+		prerequisite = { focus = XWX_revolutionary_fervour }
+		#mutually_exclusive = { focus =  }
+		x = 3
+		y = 1
+		relative_position_id = XWX_revolutionary_fervour
+
+		cost = 5
+
+		available = {
+			has_government = communism
+			is_subject = no
+		}
+
+		bypass = {
+
+		}
+
+		search_filters = {  }
+		completion_reward = {
+			if = {
+				limit = {
+					has_power_balance = {
+						id = XWX_communes_bop
+					}
+				}
+				custom_effect_tooltip = generic_skip_one_line_tt
+				add_power_balance_value = {
+					id = XWX_communes_bop
+					value = 0.1
+					tooltip_side = XWX_centralists
+				}
+			}
+		}
+	}
+
+	shared_focus = {
+		id = XWX_invade_tibet
+		icon = GFX_focus_PLACEHOLDER
+		prerequisite = { focus = XWX_enforce_revolutionary_doctrine }
+		#mutually_exclusive = { focus =  }
+		x = -1
+		y = 1
+		relative_position_id = XWX_enforce_revolutionary_doctrine
+
+		cost = 5
+
+		available = {
+			has_government = communism
+			XTI = {
+				exists = yes
+				NOT = { is_ally_with = ROOT }
+			}
+		}
+
+		bypass = {
+			has_war_with = XTI
+		}
+
+		will_lead_to_war_with = XTI
+
+		search_filters = {  }
+		completion_reward = {
+			create_wargoal = {
+				target = XTI
+				type = annex_everything
+			}
+		}
+	}
+
+	shared_focus = {
+		id = XWX_
+		icon = GFX_focus_PLACEHOLDER
+		prerequisite = { focus = XWX_enforce_revolutionary_doctrine }
+		#mutually_exclusive = { focus =  }
+		x = 1
+		y = 1
+		relative_position_id = XWX_enforce_revolutionary_doctrine
+
+		cost = 5
+
+		available = {
+			has_government = communism
+			
+		}
+
+		bypass = {
+			
+		}
+
+		search_filters = {  }
+		completion_reward = {
+			
+		}
+	}
+
 # KMT
 
 	shared_focus = {
@@ -595,12 +1149,152 @@ focus_tree = {
 		search_filters = {  }
 		completion_reward = {
 			add_stability = 0.1
+			add_popularity = {
+				popularity = 0.1
+				ideology = neutrality
+			}
+		}
+	}
+
+	shared_focus = {
+		id = XWX_remove_communist_influence
+		icon = GFX_focus_SWE_attack_landsorganisationen
+		prerequisite = { focus = XWX_consolidate_control }
+		#mutually_exclusive = { focus =  }
+		x = -3
+		y = 1
+		relative_position_id = XWX_consolidate_control
+
+		cost = 5
+
+		available = {
+			OR = {
+				has_government = neutrality
+				has_government = democratic
+			}
+		}
+
+		bypass = {
+
+		}
+
+		search_filters = {  }
+		completion_reward = {
+			add_popularity = {
+				popularity = -0.15
+				ideology = communism
+			}
+		}
+	}
+
+	shared_focus = {
+		id = XWX_power_to_the_parliament
+		icon = GFX_goal_support_democracy
+		prerequisite = { focus = XWX_remove_communist_influence }
+		mutually_exclusive = { focus = XWX_establish_the_xikang_clique }
+		x = -1
+		y = 1
+		relative_position_id = XWX_remove_communist_influence
+
+		cost = 5
+
+		available = {
+			OR = {
+				has_government = neutrality
+				has_government = democratic
+			}
+		}
+
+		bypass = {
+
+		}
+
+		search_filters = {  }
+		completion_reward = {
+			add_popularity = {
+				popularity = 0.05
+				ideology = democratic
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_timed_idea = {
+				idea = XWX_promises_of_democracy
+				days = 730
+			}
+		}
+	}
+
+	shared_focus = {
+		id = XWX_establish_the_xikang_clique
+		icon = GFX_focus_generic_military_dictatorship
+		prerequisite = { focus = XWX_remove_communist_influence }
+		mutually_exclusive = { focus = XWX_power_to_the_parliament }
+		x = 1
+		y = 1
+		relative_position_id = XWX_remove_communist_influence
+
+		cost = 5
+
+		available = {
+			has_government = neutrality
+			
+		}
+
+		bypass = {
+
+		}
+
+		search_filters = {  }
+		completion_reward = {
+			add_war_support = 0.1
+			add_command_power = 20
+			add_manpower = 10000
+		}
+	}
+
+	shared_focus = {
+		id = XWX_japanese_war_intelligence
+		icon = GFX_goal_generic_intelligence_exchange
+		prerequisite = { focus = XWX_power_to_the_parliament focus = XWX_establish_the_xikang_clique }
+		#mutually_exclusive = { focus =  }
+		x = 0
+		y = 2
+		relative_position_id = XWX_remove_communist_influence
+
+		cost = 5
+
+		available = {
+			NOT = { has_government = fascism }
+			has_war_with = JAP
+			if = {
+				limit = {
+					has_dlc = "La Resistance"
+				}
+				network_strength = {
+					target = JAP
+					value > 20
+				}
+			}
+		}
+
+		bypass = {
+
+		}
+
+		search_filters = {  }
+		completion_reward = {
+			JAP = {
+				country_event = XWX_diplomatic_events.19
+				add_timed_idea = {
+					idea = XWX_enemy_intelligence_idea
+					days = 365
+				}
+			}	
 		}
 	}
 
 	shared_focus = {
 		id = XWX_message_the_central_government
-		icon = GFX_focus_chi_cooperation_with_the_nationalists
+		icon = GFX_focus_GER_ally_chiang_kai_shek
 		prerequisite = { focus = XWX_consolidate_control }
 		#mutually_exclusive = { focus =  }
 		x = 0
@@ -610,14 +1304,19 @@ focus_tree = {
 		cost = 5
 
 		available = {
-			has_government = neutrality
+			OR = {
+				has_government = neutrality
+				has_government = democratic
+			}
 			CHI = {
+				has_government = neutrality
 				is_faction_leader = yes
 			}
+			is_subject = no
 		}
 
 		bypass = {
-
+			is_ally_with = CHI
 		}
 
 		search_filters = {  }
@@ -628,6 +1327,209 @@ focus_tree = {
 		}
 	}
 
+	shared_focus = {
+		id = XWX_join_the_united_front
+		icon = GFX_focus_chi_cooperation_with_the_nationalists
+		prerequisite = { focus = XWX_message_the_central_government }
+		#mutually_exclusive = { focus =  }
+		x = 0
+		y = 2
+		relative_position_id = XWX_message_the_central_government
+
+		cost = 5
+
+		available = {
+			has_war_with = JAP
+			is_in_faction_with = CHI
+			CHI = {
+				surrender_progress > 0.25
+			}
+		}
+
+		bypass = {
+
+		}
+
+		search_filters = {  }
+		completion_reward = {
+			set_major = yes
+			add_ideas = XWX_safeguard_china
+		}
+	}
+
+	shared_focus = {
+		id = XWX_prepare_for_japanese_invasion
+		icon = GFX_goal_generic_defence
+		prerequisite = { focus = XWX_consolidate_control }
+		#mutually_exclusive = { focus =  }
+		x = 3
+		y = 1
+		relative_position_id = XWX_consolidate_control
+
+		cost = 5
+
+		available = {
+			NOT = { has_government = fascism }
+		}
+
+		bypass = {
+
+		}
+
+		search_filters = {  }
+		completion_reward = {
+			add_ideas = XWX_defensive_preparations
+		}
+	}
+
+	shared_focus = {
+		id = XWX_secure_tibet
+		icon = GFX_goal_generic_territory_or_war
+		prerequisite = { focus = XWX_prepare_for_japanese_invasion }
+		#mutually_exclusive = { focus =  }
+		x = -1
+		y = 1
+		relative_position_id = XWX_prepare_for_japanese_invasion
+
+		cost = 5
+
+		available = {
+			NOT = { has_government = fascism }
+			is_subject = no
+		}
+
+		bypass = {
+			OR = {
+				has_war_with = XTI
+				XTI = { is_ally_with = ROOT }
+				XTI = { exists = no }
+			}
+		}
+
+		will_lead_to_war_with = XTI
+
+		search_filters = {  }
+		completion_reward = {
+			XTI = {
+				country_event = {
+					id = XWX_diplomatic_events.14
+					hours = 3
+				}
+			}
+		}
+	}
+
+	shared_focus = {
+		id = XWX_air_defence
+		icon = GFX_focus_generic_air_defense
+		prerequisite = { focus = XWX_prepare_for_japanese_invasion }
+		#mutually_exclusive = { focus =  }
+		x = 1
+		y = 1
+		relative_position_id = XWX_prepare_for_japanese_invasion
+
+		cost = 5
+
+		available = {
+			NOT = { has_government = fascism }
+		}
+
+		bypass = {
+
+		}
+
+		search_filters = {  }
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = XWX_defensive_preparations
+				add_idea = XWX_defensive_preparations_2
+			}
+		}
+	}
+
+	shared_focus = {
+		id = XWX_mistakes_of_the_first_war
+		icon = GFX_focus_attack_japan
+		prerequisite = { focus = XWX_secure_tibet focus = XWX_air_defence }
+		#mutually_exclusive = { focus =  }
+		x = 0
+		y = 2
+		relative_position_id = XWX_prepare_for_japanese_invasion
+
+		cost = 5
+
+		available = {
+			NOT = { has_government = fascism }
+			has_war_with = JAP
+		}
+
+		bypass = {
+
+		}
+
+		search_filters = {  }
+		completion_reward = {
+			add_ideas = XWX_anti_japan_bonus
+		}
+	}
+
+# JAPANESE COLLABORATORS
+
+	shared_focus = {
+		id = XWX_japanese_military_control
+		icon = GFX_focus_generic_military_dictatorship
+		#prerequisite = { focus =  }
+		#mutually_exclusive = { focus =  }
+		x = 5
+		y = 1
+		relative_position_id = XWX_workers_victory
+
+		cost = 5
+
+		available = {
+			has_government = fascism
+		}
+
+		bypass = {
+
+		}
+
+		search_filters = {  }
+		completion_reward = {
+			add_war_support = 0.1
+			add_popularity = {
+				popularity = 0.1
+				ideology = fascism
+			}
+		}
+	}
+
+	shared_focus = {
+		id = XWX_coordinate_with_japan
+		icon = GFX_focus_AST_war_japan
+		prerequisite = { focus = XWX_japanese_military_control }
+		#mutually_exclusive = { focus =  }
+		x = 0
+		y = 1
+		relative_position_id = XWX_japanese_military_control
+
+		cost = 5
+
+		available = {
+			has_government = fascism
+			has_war_with = CHI
+		}
+
+		bypass = {
+
+		}
+
+		search_filters = {  }
+		completion_reward = {
+		
+		}
+	}
+
 # INDUSTRY
 
 	shared_focus = {
@@ -635,7 +1537,7 @@ focus_tree = {
 		icon = GFX_focus_generic_industry_1
 		#prerequisite = { focus = }
 		#mutually_exclusive = { focus = }
-		x = 25
+		x = 26
 		y = 0
 		#relative_position_id =
 
@@ -753,14 +1655,14 @@ focus_tree = {
 					is_owned_by = ROOT
 					free_building_slots = {
 						building = industrial_complex
-						size > 0
+						size > 1
 						include_locked = yes
 					}	
 				}
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = industrial_complex
-					level = 1
+					level = 2
 					instant_build = yes
 				}	
 			}
@@ -810,7 +1712,7 @@ focus_tree = {
 			hidden_effect = {
 				country_event = {
 					id = XWX_political_events.3
-					days = 200
+					days = 80
 				}
 			}
 		}
@@ -828,7 +1730,7 @@ focus_tree = {
 		cost = 6
 
 		available = {
-			num_of_civilian_factories > 9
+			num_of_civilian_factories > 6
 		}
 
 		bypass = {
@@ -838,6 +1740,8 @@ focus_tree = {
 		search_filters = {  }
 		completion_reward = {
 			add_research_slot = 1
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = XWX_local_schools_tt
 		}
 	}
 
@@ -853,7 +1757,7 @@ focus_tree = {
 		cost = 4
 
 		available = {
-			num_of_civilian_factories > 14
+			num_of_civilian_factories > 9
 		}
 
 		bypass = {
@@ -953,7 +1857,7 @@ focus_tree = {
 		cost = 4
 
 		available = {
-			num_of_civilian_factories > 14
+			num_of_civilian_factories > 9
 		}
 
 		bypass = {
@@ -998,14 +1902,12 @@ focus_tree = {
 					instant_build = yes
 				}	
 			}
-			custom_effect_tooltip = generic_skip_one_line_tt
-			custom_effect_tooltip = XWX_relocate_civilian_funds_tt
 		}
 	}
 
 	shared_focus = {
 		id = XWX_construction_equipment
-		icon = GFX_goal_generic_construction
+		icon = GFX_goal_generic_production2
 		prerequisite = { focus = XWX_relocate_civilian_funds }
 		#mutually_exclusive = { focus = }
 		x = 0
@@ -1051,9 +1953,9 @@ focus_tree = {
 		cost = 5
 
 		available = {
-			num_of_military_factories > 4
+			num_of_military_factories > 3
 			OR = {
-				num_of_civilian_factories > 29
+				num_of_civilian_factories > 14
 				has_war = yes
 			}
 		}
@@ -1086,7 +1988,7 @@ focus_tree = {
 		available = {
 			num_of_military_factories > 4
 			OR = {
-				num_of_civilian_factories > 29
+				num_of_civilian_factories > 19
 				has_war = yes
 			}
 		}
@@ -1121,6 +2023,19 @@ focus_tree = {
 					instant_build = yes
 				}	
 			}
+			if = {
+				limit = {
+					has_power_balance = {
+						id = XWX_communes_bop
+					}
+				}
+				custom_effect_tooltip = generic_skip_one_line_tt
+				add_power_balance_value = {
+					id = XWX_communes_bop
+					value = -0.1
+					tooltip_side = XWX_federalists
+				}
+			}
 		}
 	}
 
@@ -1138,7 +2053,7 @@ focus_tree = {
 		available = {
 			num_of_military_factories > 4
 			OR = {
-				num_of_civilian_factories > 29
+				num_of_civilian_factories > 19
 				has_war = yes
 			}
 		}
@@ -1172,6 +2087,19 @@ focus_tree = {
 					level = 3
 					instant_build = yes
 				}	
+			}
+			if = {
+				limit = {
+					has_power_balance = {
+						id = XWX_communes_bop
+					}
+				}
+				custom_effect_tooltip = generic_skip_one_line_tt
+				add_power_balance_value = {
+					id = XWX_communes_bop
+					value = 0.1
+					tooltip_side = XWX_centralists
+				}
 			}
 		}
 	}
@@ -1254,7 +2182,7 @@ focus_tree = {
 		icon = GFX_focus_chi_army_reform
 		#prerequisite = { focus = }
 		#mutually_exclusive = { focus = }
-		x = 21
+		x = 24
 		y = 5
 		#relative_position_id =
 
@@ -1301,6 +2229,37 @@ focus_tree = {
 	}
 
 	shared_focus = {
+		id = XWX_prepare_the_lands
+		icon = GFX_focus_FIN_weapon_caches
+		prerequisite = { focus = XWX_reform_the_militias }
+		#mutually_exclusive = { focus = }
+		x = -3
+		y = 1
+		relative_position_id = XWX_reform_the_militias
+
+		cost = 4
+
+		available = {
+			
+		}
+
+		bypass = {
+
+		}
+
+		search_filters = {  }
+		completion_reward = {
+			army_experience = 15
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = XWX_when_at_war_tt
+			effect_tooltip = {
+				add_ideas = XWX_prepared_trenches
+			}
+			set_country_flag = XWX_entrenched
+		}
+	}
+
+	shared_focus = {
 		id = XWX_raid_tactics
 		icon = GFX_focus_AUS_raid_military_storages
 		prerequisite = { focus = XWX_reform_the_militias }
@@ -1321,6 +2280,8 @@ focus_tree = {
 
 		search_filters = {  }
 		completion_reward = {
+			add_command_power = 20
+			custom_effect_tooltip = generic_skip_one_line_tt
 			custom_effect_tooltip = XWX_two_generals_get_scavenger_tt
 			every_army_leader = {
 				limit = {
@@ -1370,6 +2331,118 @@ focus_tree = {
 	}
 
 	shared_focus = {
+		id = XWX_liu_xiangs_armoured_project
+		icon = GFX_goal_generic_army_tanks
+		prerequisite = { focus = XWX_army_motorisation }
+		#mutually_exclusive = { focus = }
+		x = 0
+		y = 1
+		relative_position_id = XWX_army_motorisation
+
+		cost = 4
+
+		available = {
+			XWX_liu_xiang = {
+				is_high_command = yes
+			}
+		}
+
+		bypass = {
+
+		}
+
+		search_filters = {  }
+		completion_reward = {
+			unlock_military_industrial_organization_tooltip = mio:XWX_tank_designer
+			mio:XWX_tank_designer = {
+				add_mio_size = 1
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_tech_bonus = {
+				name = XWX_liu_xiangs_armoured_project
+				bonus = 0.5
+				uses = 2
+				category = armor
+			}
+			hidden_effect = {
+				if = {
+					limit = { has_template = "Tank Brigade" }
+					delete_unit_template_and_units = {
+						division_template = "Tank Brigade"
+						disband = yes
+					}
+				}
+				division_template = {
+					name = "Tank Brigade"
+					regiments = {
+						motorized = { x = 0 y = 0 }
+						motorized = { x = 0 y = 1 }
+						motorized = { x = 0 y = 2 }
+						light_armor = { x = 1 y = 0 }
+						light_armor = { x = 1 y = 1 }
+					}
+					support = {
+						engineer = { x = 0 y = 0 }
+					}
+				}
+			}
+			if = {
+				limit = {
+					NOT = { has_tech = tech_engineers }
+				}
+				set_technology = { tech_engineers = 1 }
+			}
+			if = {
+				limit = {
+					NOT = { has_dlc = "No Step Back" }
+					NOT = { has_tech = gwtank }
+				}
+				set_technology = { gwtank = 1 }
+			}
+			else_if = {
+				limit = {
+					NOT = { has_tech = gwtank_chassis }
+				}
+				set_technology = { gwtank_chassis = 1 }
+			}
+			hidden_effect = {
+				if = {
+					limit = { has_dlc = "No Step Back" }
+					create_equipment_variant = {
+						name = "Leichttraktor"
+						type = light_tank_chassis_0
+						parent_version = 0
+						modules = {
+							main_armament_slot = tank_small_cannon
+							turret_type_slot = tank_light_two_man_tank_turret
+							suspension_type_slot = tank_christie_suspension
+							armor_type_slot = tank_riveted_armor
+							engine_type_slot = tank_gasoline_engine
+							special_type_slot_1 = tank_radio_1
+						}
+						upgrades = {
+							tank_nsb_engine_upgrade = 2
+							tank_nsb_armor_upgrade = 2
+						}
+						icon = "GFX_GER_gwtank_medium"
+					}
+				}
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = XWX_liu_xiangs_armoured_project_tt
+			hidden_effect = {
+				capital_scope = {
+					create_unit = {
+						division = "name = \"Liu Xiang's Tank Brigade\" division_template = \"Tank Brigade\" start_experience_factor = 0.4"
+						owner = XWX
+						count = 1
+					}
+				}
+			}
+		}
+	}
+
+	shared_focus = {
 		id = XWX_military_academies
 		icon = GFX_focus_generic_military_academy
 		prerequisite = { focus = XWX_reform_the_militias }
@@ -1397,15 +2470,90 @@ focus_tree = {
 				category = land_doctrine
 			}
 			custom_effect_tooltip = generic_skip_one_line_tt
-			add_research_slot = 1
-			custom_effect_tooltip = generic_skip_one_line_tt
+			if = {
+				limit = {
+					NOT = { has_completed_focus = XWX_local_schools }
+				}
+				custom_effect_tooltip = XWX_local_schools_completed_tt
+			}
 			custom_effect_tooltip = XWX_military_academies_tt
 		}
 	}
 
 	shared_focus = {
+		id = XWX_artillery_development
+		icon = GFX_goal_generic_army_artillery
+		prerequisite = { focus = XWX_military_academies }
+		mutually_exclusive = { focus = XWX_aircraft_development }
+		x = -1
+		y = 1
+		relative_position_id = XWX_military_academies
+
+		cost = 4
+
+		available = {
+			
+		}
+
+		bypass = {
+
+		}
+
+		search_filters = {  }
+		completion_reward = {
+			add_tech_bonus = {
+				name = XWX_artillery_development
+				bonus = 1
+				uses = 1
+				category = artillery
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_breakthrough_progress = {
+				specialization = specialization_land
+				value = 0.75
+			}
+		}
+	}
+
+	shared_focus = {
+		id = XWX_aircraft_development
+		icon = GFX_focus_generic_air_research_boost
+		prerequisite = { focus = XWX_military_academies }
+		prerequisite = { focus = XWX_own_plane_designs }
+		mutually_exclusive = { focus = XWX_artillery_development }
+		x = 2
+		y = 1
+		relative_position_id = XWX_military_academies
+
+		cost = 4
+
+		available = {
+			
+		}
+
+		bypass = {
+
+		}
+
+		search_filters = {  }
+		completion_reward = {
+			add_tech_bonus = {
+				name = XWX_aircraft_development
+				bonus = 1
+				uses = 2
+				category = air_equipment
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_breakthrough_progress = {
+				specialization = specialization_air
+				value = 0.75
+			}
+		}
+	}
+
+	shared_focus = {
 		id = XWX_final_army_improvement
-		icon = GFX_focus_GER_the_supreme_leader
+		icon = GFX_focus_focus_fra_revolution_utmost
 		prerequisite = { focus = XWX_provincial_army }
 		#mutually_exclusive = { focus = }
 		x = 0
@@ -1548,6 +2696,11 @@ focus_tree = {
 
 		search_filters = {  }
 		completion_reward = {
+			unlock_military_industrial_organization_tooltip = mio:XWX_plane_designer
+			mio:XWX_plane_designer = {
+				add_mio_size = 2
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
 			add_tech_bonus = {
 				name = XWX_own_plane_designs
 				bonus = 0.75
@@ -1578,6 +2731,11 @@ focus_tree = {
 
 		search_filters = {  }
 		completion_reward = {
+			unlock_military_industrial_organization_tooltip = mio:XWX_small_plane_designer
+			mio:XWX_small_plane_designer = {
+				add_mio_size = 2
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
 			add_ideas = XWX_aircraft_production
 			custom_effect_tooltip = generic_skip_one_line_tt
 			random_owned_controlled_state = {

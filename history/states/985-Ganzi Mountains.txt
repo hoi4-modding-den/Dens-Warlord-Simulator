@@ -23,6 +23,11 @@ state = {
 		
 	}
 
+	resources={
+		steel = 12
+		tungsten = 3
+	}
+
 	provinces = {
 		8104 12724 12837 13383 13384 13385
 	}

@@ -100,6 +100,288 @@ ideas = {
 
         }
 
+		XWX_weak_kmt_insurgency = {
+
+			name = XWX_kmt_insurgency
+            
+            picture = XWX_kmt_influencee
+
+            allowed = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+           removal_cost = -1
+
+            modifier = {
+                stability_factor = -0.05
+				resistance_activity = 0.05
+				resistance_decay = -0.1
+				neutrality_drift = 0.03
+				custom_modifier_tooltip = XWX_show_kmt_power_tt
+            }
+
+        }
+
+		XWX_kmt_insurgency = {
+            
+            picture = XWX_kmt_influencee
+
+            allowed = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+           removal_cost = -1
+
+            modifier = {
+                stability_factor = -0.1
+				resistance_activity = 0.08
+				resistance_decay = -0.15
+				neutrality_drift = 0.04
+				custom_modifier_tooltip = XWX_show_kmt_power_tt
+            }
+
+        }
+
+		XWX_strong_kmt_insurgency = {
+            
+            picture = XWX_kmt_influencee
+
+            allowed = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+           removal_cost = -1
+
+            modifier = {
+                stability_factor = -0.2
+				resistance_activity = 0.1
+				resistance_decay = -0.25
+				neutrality_drift = 0.05
+				custom_modifier_tooltip = XWX_show_kmt_power_tt
+            }
+
+        }
+
+		XWX_kmt_insurgency_bonus = {
+            
+            picture = XWX_nationalist_army
+
+            allowed = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+           removal_cost = -1
+
+            modifier = {
+                surrender_limit = 0.5
+				supply_combat_penalties_on_core_factor = -0.2
+				army_org_factor = 0.05
+				army_core_defence_factor = 0.1
+            }
+
+        }
+
+		XWX_liberated_women_idea = {
+            
+            picture = AUS_women_in_academia
+
+            allowed = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+           removal_cost = -1
+
+            modifier = {
+				female_random_operative_chance = 0.4
+				research_speed_factor = 0.03
+				conscription_factor = 0.06
+				compliance_gain = 0.02
+            }
+
+        }
+
+		XWX_promises_of_democracy = {
+            
+            picture = generic_democratic_drift_bonus
+
+            allowed = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			cancel = {
+				has_government = fascism
+			}
+
+            removal_cost = -1
+
+            modifier = {
+				political_power_factor = 0.03
+				political_advisor_cost_factor = -0.15
+				offensive_war_stability_factor = 0.2
+            }
+
+        }
+
+		XWX_enemy_intelligence_idea = {
+            
+            picture = generic_spy_intel
+
+            allowed = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			cancel = {
+				has_government = fascism
+			}
+
+            removal_cost = -1
+
+            modifier = {
+				army_intel_to_others = 20
+				navy_intel_to_others = 10
+            }
+
+        }
+
+		XWX_safeguard_china = {
+            
+            picture = chi_chinese_unity
+
+            allowed = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			cancel = {
+				OR = {
+					has_government = fascism
+					has_capitulated = yes
+					has_war = no
+				}
+			}
+
+            removal_cost = -1
+
+			modifier = {
+				surrender_limit = 0.2
+				army_core_defence_factor = 0.1
+            }
+
+        }
+
+		XWX_defensive_preparations = {
+            
+            picture = YUG_federal_defense_council
+
+            allowed = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+            removal_cost = -1
+
+			modifier = {
+				land_bunker_effectiveness_factor = 0.2
+				production_speed_bunker_factor = 0.15
+            }
+
+        }
+
+		XWX_defensive_preparations_2 = {
+
+			name = XWX_defensive_preparations
+            
+            picture = YUG_federal_defense_council
+
+            allowed = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+            removal_cost = -1
+
+			modifier = {
+				land_bunker_effectiveness_factor = 0.2
+				production_speed_bunker_factor = 0.15
+				static_anti_air_hit_chance_factor = 0.1
+            }
+
+			equipment_bonus = {
+				anti_air = {
+					instant = yes
+					build_cost_ic = -0.2
+				}
+			}
+
+        }
+
+		XWX_anti_japan_bonus = {
+            
+            picture = generic_japanese_conflict
+
+            allowed = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			cancel = {
+				has_government = fascism
+			}
+
+            removal_cost = -1
+
+			modifier = {
+				army_org_regain = 0.02
+            }
+
+            targeted_modifier = {
+				tag = JAP
+				attack_bonus_against = 0.15
+				defense_bonus_against = 0.15
+            }
+
+        }
+
         XWX_land_reform = {
             
             picture = generic_agrarian_reform
@@ -112,7 +394,7 @@ ideas = {
 				always = yes
 			}
 
-           removal_cost = -1
+            removal_cost = -1
 
             modifier = {
                 local_factories  = -0.15
@@ -310,6 +592,31 @@ ideas = {
 				conscription = 0.01
 				attrition = -0.05
 				supply_consumption_factor = -0.03
+			}
+
+		}
+
+		XWX_prepared_trenches = {
+
+			picture = ast_all_in
+		
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			cancel = {
+				has_war = no
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				max_dig_in = 3
+                dont_lose_dig_in_on_attack = 1
 			}
 
 		}

@@ -5,49 +5,47 @@ on_actions = {
 				limit = {
 					original_tag = XWX
 					has_government = neutrality
-					NOT = { has_country_flag = XWX_xikang_province_formed }
+					NOT = { has_country_flag = XWX_is_china }
 				}
 				set_cosmetic_tag = XWX_kmt_aligned
 			}
 			if = {
 				limit = {
 					original_tag = XWX
-					has_government = neutrality
-					has_country_flag = XWX_xikang_province_formed
-				}
-				set_cosmetic_tag = XWX_xikang_province
-			}
-			if = {
-				limit = {
-					original_tag = XWX
 					has_government = communism
-					NOT = { has_country_flag = XWX_prc_proclaimed }
+					NOT = { has_country_flag = XWX_is_china }
 				}
 				set_cosmetic_tag = XWX_commie_colour
 			}
 			if = {
 				limit = {
 					original_tag = XWX
-					has_government = communism
-					has_country_flag = XWX_prc_proclaimed
-				}
-				set_cosmetic_tag = XWX_prc
-			}
-			if = {
-				limit = {
-					original_tag = XWX
 					has_government = fascism
+					NOT = { has_country_flag = XWX_is_china }
 				}
 				set_cosmetic_tag = XWX_JAP_aligned
 			}
 			if = {
 				limit = {
 					original_tag = XWX
+					has_government = communism
+					has_country_flag = XWX_is_china
+				}
+				set_cosmetic_tag = XWX_prc
+			}
+			if = {
+				limit = {
+					original_tag = XWX
+					NOT = { has_government = communism }
+					has_country_flag = XWX_is_china
+				}
+				set_cosmetic_tag = CHI_warlord_leader
+			}
+			if = {
+				limit = {
+					original_tag = XWX
 					NOT = { has_government = neutrality }
-					OR = {
-						has_cosmetic_tag = XWX_kmt_aligned
-						has_cosmetic_tag = XWX_xikang_province
-					}
+					has_cosmetic_tag = XWX_kmt_aligned
 				}
 				drop_cosmetic_tag = yes
 			}
@@ -69,4 +67,31 @@ on_actions = {
 			}
         }
     }
+
+	on_capitulation = {
+		effect = {
+			if = { # civil war ignores peace deals
+				limit = {
+					ROOT = { original_tag = XWX }
+					FROM = { original_tag = XWX }
+				}
+				ROOT = {
+					every_owned_state = {
+						transfer_state_to = FROM
+					}
+				}
+			}
+		}
+	}
+
+	on_war = {
+		effect = {
+			if = {
+				limit = {
+					has_country_flag = XWX_entrenched
+				}
+				add_ideas = XWX_prepared_trenches
+			}
+		}
+	}
 }

@@ -1,3 +1,20 @@
+XWX_kmt_insurgency_cat = {
+
+	icon = GFX_decision_category_generic_crisis
+
+    allowed = {
+        tag = XWX
+    }
+
+    priority = 100
+
+	visible = {
+		XWX_kmt_active = yes
+	}
+
+}
+
+
 XWX_construction_decisions = {
 
 	icon = GFX_decision_category_generic_industry
@@ -41,7 +58,7 @@ XWX_chinese_education_bureau = {
     priority = 50
 
 	visible = {
-		
+		has_completed_focus = XWX_local_schools
 	}
 
 }

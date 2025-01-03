@@ -6,10 +6,11 @@ XWX_communes_bop = {
 
 	range = { #Balanced Range, neither Councils nor Cantons
 		id = XWX_bop_balanced 
-		min = -0.04
-		max = 0.04
+		min = -0.05
+		max = 0.05
 		modifier = {
 			political_advisor_cost_factor = -0.5
+			drift_defence_factor = -0.25
 		}
 	}
 
@@ -19,10 +20,22 @@ XWX_communes_bop = {
 
 		range = {
 			id = XWX_federalists_low_control_range
-			min = -0.14
+			min = -0.15
 			max = -0.05
 			modifier = {
-				
+				# ARMY
+				army_core_defence_factor = 0.01
+				conscription_factor = 0.01
+				#coordination_bonus = 0
+
+				# INDUSTRY
+				local_resources_factor = -0.02
+				#production_factory_max_efficiency_factor = -0.01
+				production_factory_efficiency_gain_factor = 0.02
+				industrial_capacity_factory = 0.01
+
+				# POLITICS
+				surrender_limit = 0.05
 			}
 			on_activate = {
 				
@@ -34,10 +47,22 @@ XWX_communes_bop = {
 
 		range = {
 			id = XWX_federalists_medium_control_range
-			min = -0.59
+			min = -0.6
 			max = -0.15
 			modifier = {
-				
+				# ARMY
+				army_core_defence_factor = 0.03
+				conscription_factor = 0.02
+				#coordination_bonus = 0
+
+				# INDUSTRY
+				local_resources_factor = -0.04
+				#production_factory_max_efficiency_factor = -0.02
+				production_factory_efficiency_gain_factor = 0.04
+				industrial_capacity_factory = 0.02
+
+				# POLITICS
+				surrender_limit = 0.02
 			}
 			on_activate = {
 				
@@ -49,10 +74,22 @@ XWX_communes_bop = {
 
 		range = {
 			id = XWX_federalists_high_control_range
-			min = -0.99
+			min = -1
 			max = -0.6
 			modifier = {
-				
+				# ARMY
+				army_core_defence_factor = 0.05
+				conscription_factor = 0.03
+				#coordination_bonus = 0
+
+				# INDUSTRY
+				local_resources_factor = -0.05
+				#production_factory_max_efficiency_factor = -0.03
+				production_factory_efficiency_gain_factor = 0.05
+				industrial_capacity_factory = 0.03
+
+				# POLITICS
+				surrender_limit = 0.07
 			}
 			on_activate = {
 				
@@ -67,7 +104,19 @@ XWX_communes_bop = {
 			min = -1
 			max = -1
 			modifier = {
-				
+				# ARMY
+				army_core_defence_factor = 0.07
+				conscription_factor = 0.04
+				#coordination_bonus = 0
+
+				# INDUSTRY
+				local_resources_factor = -0.06
+				#production_factory_max_efficiency_factor = -0.05
+				production_factory_efficiency_gain_factor = 0.07
+				industrial_capacity_factory = 0.05
+
+				# POLITICS
+				surrender_limit = 0.1
 			}
 			on_activate = {
 			}
@@ -83,9 +132,21 @@ XWX_communes_bop = {
 		range = {
 			id = XWX_centralists_low_control_range
 			min = 0.05
-			max = 0.14
+			max = 0.15
 			modifier = {
-				
+				# ARMY
+				#army_core_defence_factor = 0
+				conscription_factor = 0.01
+				coordination_bonus = 0.01
+
+				# INDUSTRY
+				local_resources_factor = 0.02
+				production_factory_max_efficiency_factor = 0.01
+				production_factory_efficiency_gain_factor = -0.02
+				#industrial_capacity_factory = -0.01
+
+				# POLITICS
+				stability_factor = 0.02
 			}
 			on_activate = {
 				
@@ -98,9 +159,21 @@ XWX_communes_bop = {
 		range = {
 			id = XWX_centralists_medium_control_range
 			min = 0.15
-			max = 0.59
+			max = 0.6
 			modifier = {
-				
+				# ARMY
+				#army_core_defence_factor = 0
+				conscription_factor = 0.02
+				coordination_bonus = 0.03
+
+				# INDUSTRY
+				local_resources_factor = 0.04
+				production_factory_max_efficiency_factor = 0.02
+				production_factory_efficiency_gain_factor = -0.04
+				#industrial_capacity_factory = -0.02
+
+				# POLITICS
+				stability_factor = 0.05
 			}
 			on_activate = {
 				
@@ -113,9 +186,21 @@ XWX_communes_bop = {
 		range = {
 			id = XWX_centralists_high_control_range
 			min = 0.6
-			max = 0.99
+			max = 1
 			modifier = {
-				
+				# ARMY
+				#army_core_defence_factor = 0
+				conscription_factor = 0.03
+				coordination_bonus = 0.05
+
+				# INDUSTRY
+				local_resources_factor = 0.05
+				production_factory_max_efficiency_factor = 0.03
+				production_factory_efficiency_gain_factor = -0.05
+				#industrial_capacity_factory = -0.03
+
+				# POLITICS
+				stability_factor = 0.07
 			}
 			on_activate = {
 				
@@ -130,7 +215,19 @@ XWX_communes_bop = {
 			min = 1
 			max = 1
 			modifier = {
-				
+				# ARMY
+				#army_core_defence_factor = 0
+				conscription_factor = 0.04
+				coordination_bonus = 0.07
+
+				# INDUSTRY
+				local_resources_factor = 0.07
+				production_factory_max_efficiency_factor = 0.05
+				production_factory_efficiency_gain_factor = -0.06
+				#industrial_capacity_factory = -0.05
+
+				# POLITICS
+				stability_factor = 0.1
 			}
 			on_activate = {
 			}

@@ -1,6 +1,33 @@
 spriteTypes = {
 
+# IDEA
+
+	spriteType = {
+		name = "GFX_idea_XWX_kmt_influencee"
+		texturefile = "gfx/XWX/idea_XWX_kmt_influence.png"
+	}
+
+	spriteType = {
+		name = "GFX_idea_XWX_nationalist_army"
+		texturefile = "gfx/XWX/idea_XWX_nationalist_army.png"
+	}
+
 # CHARACTERS
+
+	spriteType = {
+		name = "GFX_portrait_XWX_hu_lanqi"
+		texturefile = "gfx/XWX/portrait_XWX_hu_lanqi.png"
+	}
+
+	spriteType = {
+		name = "GFX_portrait_XWX_liu_wenhui"
+		texturefile = "gfx/XWX/portrait_XWX_liu_wenhui.png"
+	}
+
+	spriteType = {
+		name = "GFX_portrait_XWX_liu_xiang"
+		texturefile = "gfx/XWX/portrait_XWX_liu_xiang.png"
+	}
 
 	spriteType = {
 		name = "GFX_portrait_XWX_peasant_collective"
@@ -8,8 +35,30 @@ spriteTypes = {
 	}
 
 	spriteType = {
-		name = "GFX_portrait_XWX_liu_wenhui"
-		texturefile = "gfx/XWX/portrait_XWX_liu_wenhui.png"
+		name = "GFX_portrait_XWX_rao_guohua"
+		texturefile = "gfx/XWX/portrait_XWX_rao_guohua.png"
+	}
+
+# ADVISORS
+
+	spriteType = {
+		name = "GFX_idea_XWX_hu_lanqi"
+		texturefile = "gfx/XWX/idea_XWX_hu_lanqi.png"
+	}
+
+	spriteType = {
+		name = "GFX_idea_XWX_liu_wenhui"
+		texturefile = "gfx/XWX/idea_XWX_liu_wenhui.png"
+	}
+
+	spriteType = {
+		name = "GFX_idea_XWX_liu_xiang"
+		texturefile = "gfx/XWX/idea_XWX_liu_xiang.png"
+	}
+
+	spriteType = {
+		name = "GFX_idea_XWX_rao_guohua"
+		texturefile = "gfx/XWX/idea_XWX_rao_guohua.png"
 	}
 
 # EVENTS
@@ -28,4 +77,13 @@ spriteTypes = {
 		name = "GFX_report_event_XWX_KMT_victory"
 		texturefile = "gfx/XWX/report_event_XWX_kmt_victory.png"
 	}
+
+# TEXTICONS
+
+	spriteType = {
+		name = "GFX_XWX_kmt_texticon"
+		texturefile = "gfx/XWX/XWX_kmt_texticon.png"
+		legacy_lazy_load = no
+	}
+
 }

@@ -151,12 +151,14 @@ bookmarks = {
 			ideology = communism
 			minor = yes
 			ideas = {
-				XWX_mountaineer_corps
+				XWX_kmt_insurgency
 				XWX_splinter_faction
 				XWX_incompetent_provincial_army
 			}
 			focuses = {
-				
+				XWX_the_peasant_united_front
+				XWX_final_army_improvement
+				XWX_kmt_coup
 			}
 		}
 		effect = {

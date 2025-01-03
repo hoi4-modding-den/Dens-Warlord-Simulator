@@ -1,0 +1,116 @@
+#####################
+
+###  ##  #  # # #  ## 
+ #  #  # ## # # # #   
+ #  #### # ## ##   #  
+ #  #  # #  # # #   # 
+ #  #  # #  # # # ## 
+
+ #################### 
+
+XWX_tank_designer = {
+	include = generic_mobile_tank_organization
+	icon = GFX_idea_generic_armor
+	allowed = {	
+		original_tag = XWX
+	}
+	available = {
+		owner = {
+			has_completed_focus = XWX_liu_xiangs_armoured_project
+		}
+	}
+}
+
+###########################
+
+###  #    ##  #  # ###  ## 
+#  # #   #  # ## # #   #   
+###  #   #### # ## ##   #  
+#    #   #  # #  # #     # 
+#    ### #  # #  # ### ##  
+
+###########################
+
+XWX_plane_designer = {
+	include = generic_general_aircraft_organization
+	icon = GFX_idea_generic_air_manufacturer_2
+	allowed = {	
+		OR = {
+			DEN_is_chinese_country = yes
+			tag = MAN
+			tag = MEN
+		}
+	}
+	visible = {
+		OR = {
+			XWX = { has_completed_focus = XWX_own_plane_designs }
+			owner = { tag = XWX }
+		}
+	}
+	available = {
+		XWX = {
+			has_completed_focus = XWX_own_plane_designs
+		}
+		owner = {
+			controls_state = 753
+		}
+	}
+}
+
+XWX_small_plane_designer = {
+	include = generic_light_aircraft_organization
+	icon = GFX_idea_generic_air_manufacturer_3
+	allowed = {	
+		original_tag = XWX
+	}
+	available = {
+		owner = {
+			has_completed_focus = XWX_plane_industry
+		}
+	}
+}
+
+################################### 
+
+#   #  ##  ### ### ###  ### ### #   
+## ## #  #  #  #   #  #  #  #   #   
+# # # ####  #  ##  ###   #  ##  #   
+#   # #  #  #  #   #  #  #  #   #   
+#   # #  #  #  ### #  # ### ### ### 
+
+
+###################################
+
+XWX_gannan_arsenal = {
+	include = generic_infantry_equipment_organization
+	icon = GFX_idea_generic_infantry_equipment_manufacturer_3
+	allowed = {	
+		OR = {
+			DEN_is_chinese_country = yes
+			tag = MAN
+			tag = MEN
+		}
+	}
+	available = {
+		owner = {
+			controls_state = 983
+		}
+	}
+}
+
+XWX_kangding_arsenal = {
+	include = generic_artillery_organization
+	icon = GFX_idea_generic_artillery_manufacturer_2
+	allowed = {	
+		OR = {
+			DEN_is_chinese_country = yes
+			tag = MAN
+			tag = MEN
+		}
+	}
+	available = {
+		owner = {
+			controls_state = 984
+		}
+	}
+}

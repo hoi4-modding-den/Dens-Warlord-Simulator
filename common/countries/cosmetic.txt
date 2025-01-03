@@ -14,11 +14,6 @@ XWX_kmt_aligned = {
 	color_ui = rgb { 229 138 47 }
 }
 
-XWX_xikang_province = {
-	color = rgb { 229 138 47 }
-	color_ui = rgb { 229 138 47 }
-}
-
 XWX_commie_colour = {
 	color = rgb { 125 13 24 }
 	color_ui = rgb { 163 17 31 }
