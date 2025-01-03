@@ -1,0 +1,18 @@
+add_namespace = XTI
+
+
+country_event = { #House Pangda
+	id = XTI.1
+	title = XTI.1.t
+	desc = XTI.1.d
+	picture = GFX_house_pangda
+	fire_only_once = yes
+	trigger = {
+		tag = XTI
+	}
+	
+	option = {
+		name = XTI.1.a	
+	}
+	
+}

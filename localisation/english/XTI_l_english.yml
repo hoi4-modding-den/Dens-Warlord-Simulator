@@ -2,8 +2,33 @@
 
 # COUNTRY
 
- XTI:0 "Tibetan Order"
- XBO_DEF:0 "the Tibetan Order"
- XBO_ADJ:0 "Tibetan"
+ XTI: "Tibet"
+ XTI_democratic: "Republic of Tibet"
+ XTI_democratic_DEF: "the Republic of Tibet"
+ XTI_neutrality: "Provisional Government of Tibet"
+ XTI_neutrality_DEF: "the Provisional Government of Tibet"
+ XBO_DEF: "Tibet"
+ XBO_ADJ: "Tibetan"
 
- speaker_to_the_wall:0 "Speaker to the Wall"
+ XTI_democratic_party: "TIP"
+ XTI_democratic_party_long: "Tibet Improvement Party"
+ XTI_neutrality_party: "Pandastang"
+ XTI_neutrality_party_long: "House Pangda (Martial Law)"
+
+# Focus
+  
+  XTI_house_pangda: "House Pangda"
+  XTI_the_khamba_rebellion: "The Khamba Rebellion"
+  XTI_the_brothers_of_the_revolution: "The Brothers of the Revolution"
+  XTI_pivoting_to_the_future: "Pivoting to the Future"
+
+  XTI_house_pangda_desc: ""
+  XTI_the_khamba_rebellion_desc: ""
+  XTI_the_brothers_of_the_revolution_desc: ""
+  XTI_pivoting_to_the_future_desc: ""
+
+# EVENTS
+
+  XTI.1.t: "House Pangda"
+  XTI.1.d: "After the death of Thubten Gyatso, the power of the Pandatsang family quickly began to fade. A shadow was cast over the house after their main tie into the government and a close friend of the family, Thubten Kumbela, was framed for the death of the Dalai Lama. \n\nGrowing from humble beginnings in the wool trade, the Pandatsang grew their power over centuries. As the Western world rushed to colonize the East and new trade opportunities emerged, their power spread. Tibet was safe, at least for now, and soon enough..."
+  XTI.1.a: "The earth was Pandatsang. The sky was Pandatsang."

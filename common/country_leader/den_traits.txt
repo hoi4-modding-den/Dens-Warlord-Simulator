@@ -8,9 +8,4 @@ leader_traits = {
 		}
 	}
 
-	speaker_to_the_wall = {
-		random = no
-		political_power_factor = -0.50
-		stability_factor = -0.15
-	}
 }

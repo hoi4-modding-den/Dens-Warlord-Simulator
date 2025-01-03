@@ -1,0 +1,126 @@
+focus_tree = {
+	id = xti_focus
+	
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 10
+			tag = XTI
+		}
+	}
+
+	continuous_focus_position = { x = 200 y = 2000 }
+
+	focus = {
+		id = XTI_house_pangda
+		icon = GFX_goal_tfv_saf_anti_colonialist_crusade
+
+		x = 20
+		y = 0
+		cost = 1
+
+		allow_branch = {
+			
+		}
+
+		mutually_exclusive = {
+			
+		} 
+		
+		ai_will_do = {
+			base = 0.5
+		}
+
+		available = {
+		}
+		
+		completion_reward = {
+			country_event = XTI.1
+		}
+	}
+	focus = {
+		id = XTI_the_khamba_rebellion
+		icon = GFX_goal_tfv_saf_anti_colonialist_crusade
+		prerequisite = { focus = XTI_house_pangda }
+		relative_position_id = XTI_house_pangda 
+
+		x = 0
+		y = 1
+		cost = 1
+
+		allow_branch = {
+			
+		}
+
+		mutually_exclusive = {
+			
+		} 
+		
+		ai_will_do = {
+			base = 0.5
+		}
+
+		available = {
+		}
+		
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = XTI_the_brothers_of_the_revolution
+		icon = GFX_goal_tfv_saf_anti_colonialist_crusade
+		prerequisite = { focus = XTI_the_khamba_rebellion }
+		relative_position_id = XTI_the_khamba_rebellion 
+
+		x = 0
+		y = 1
+		cost = 1
+
+		allow_branch = {
+			
+		}
+
+		mutually_exclusive = {
+			
+		} 
+		
+		ai_will_do = {
+			base = 0.5
+		}
+
+		available = {
+		}
+		
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = XTI_pivoting_to_the_future
+		icon = GFX_goal_tfv_saf_anti_colonialist_crusade
+		prerequisite = { focus = XTI_the_brothers_of_the_revolution }
+		relative_position_id = XTI_the_brothers_of_the_revolution 
+
+		x = 0
+		y = 1
+		cost = 2
+
+		allow_branch = {
+			
+		}
+
+		mutually_exclusive = {
+			
+		} 
+		
+		ai_will_do = {
+			base = 0.5
+		}
+
+		available = {
+		}
+		
+		completion_reward = {
+		}
+	}
+}

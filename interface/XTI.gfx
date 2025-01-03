@@ -1,0 +1,10 @@
+spriteTypes = {
+# EVENTS
+
+	spriteType = {
+		name = "GFX_house_pangda"
+		texturefile = "gfx/XTI/XTI_house_pangda.png"
+	}
+
+}
+ 

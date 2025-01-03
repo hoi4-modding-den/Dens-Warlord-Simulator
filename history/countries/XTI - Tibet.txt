@@ -5,7 +5,7 @@ set_technology = {
 	infantry_weapons = 1
 }
 
-recruit_character = XTI_thubten_gyatso
+recruit_character = XTI_pandastang_tobgye
 
 
 set_politics = {
@@ -15,5 +15,6 @@ set_politics = {
 	elections_allowed = no
 }
 set_popularities = {
-	neutrality = 100
+	neutrality = 23
+	democratic = 77
 }
