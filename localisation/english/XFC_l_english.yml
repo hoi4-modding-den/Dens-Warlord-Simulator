@@ -1,0 +1,17 @@
+﻿l_english:
+ XFC: "Indochinese Federation"
+ XFC_DEF: "Indochinese Federation"
+ XFC_AJG: "Indochinese"
+ XFC_subject: "$OVERLORDADJ$ Indochina"
+
+ XFC_neutral: "Republic of Indochina"
+ XFC_neutral_DEF: "Federal Republic of Indochina"
+
+ XFC_democratic: "Inochinese Republic"
+ XFC_democratic_DEF: "Democratic Republic of Indochina"
+
+ XFC_fascism: "Empire of Indochina"
+ XFC_fascism_DEF: "Free Empire of Indochina"
+
+ XFC_communism: "People's Republic of Indochina"
+ XFC_communism_DEF: "People's Free Indochinese Republic"
