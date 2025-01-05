@@ -104,6 +104,7 @@ recruit_character = XWX_hu_lanqi
 recruit_character = XWX_liu_wenhui
 recruit_character = XWX_liu_xiang
 recruit_character = XWX_rao_guohua
+recruit_character = XWX_nie_rongzhen
 
 set_politics = {
 	ruling_party = communism

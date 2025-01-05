@@ -1,5 +1,118 @@
 spriteTypes = {
 
+# FOCI
+
+	spriteType = {
+		name = "GFX_focus_XWX_attack_XTI"
+		texturefile = "gfx/XWX/focus_XWX_attack_XTI.png"
+	}
+
+	SpriteType = {
+		name = "GFX_focus_XWX_attack_XTI_shine"
+		texturefile = "gfx/XWX/focus_XWX_attack_XTI.png"
+				effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/XWX/focus_XWX_attack_XTI.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds" 	# <- the animated file
+			animationrotation = -90.0		# -90 clockwise 90 counterclockwise(by default)
+			animationlooping = no			# yes or no ;)
+			animationtime = 0.75				# in seconds
+			animationdelay = 0			# in seconds
+			animationblendmode = "add"       #add, multiply, overlay
+			animationtype = "scrolling"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+
+		animation = {
+			animationmaskfile = "gfx/XWX/focus_XWX_attack_XTI.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds" 	# <- the animated file
+			animationrotation = 90.0		# -90 clockwise 90 counterclockwise(by default)
+			animationlooping = no			# yes or no ;)
+			animationtime = 0.75				# in seconds
+			animationdelay = 0			# in seconds
+			animationblendmode = "add"       #add, multiply, overlay
+			animationtype = "scrolling"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		legacy_lazy_load = no
+	}
+
+	spriteType = {
+		name = "GFX_focus_XWX_befriend_XWE"
+		texturefile = "gfx/XWX/focus_XWX_befriend_XWE.png"
+	}
+
+	SpriteType = {
+		name = "GFX_focus_XWX_befriend_XWE_shine"
+		texturefile = "gfx/XWX/focus_XWX_befriend_XWE.png"
+				effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/XWX/focus_XWX_befriend_XWE.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds" 	# <- the animated file
+			animationrotation = -90.0		# -90 clockwise 90 counterclockwise(by default)
+			animationlooping = no			# yes or no ;)
+			animationtime = 0.75				# in seconds
+			animationdelay = 0			# in seconds
+			animationblendmode = "add"       #add, multiply, overlay
+			animationtype = "scrolling"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+
+		animation = {
+			animationmaskfile = "gfx/XWX/focus_XWX_befriend_XWE.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds" 	# <- the animated file
+			animationrotation = 90.0		# -90 clockwise 90 counterclockwise(by default)
+			animationlooping = no			# yes or no ;)
+			animationtime = 0.75				# in seconds
+			animationdelay = 0			# in seconds
+			animationblendmode = "add"       #add, multiply, overlay
+			animationtype = "scrolling"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		legacy_lazy_load = no
+	}
+
+	spriteType = {
+		name = "GFX_focus_XWX_the_peasant_united_front"
+		texturefile = "gfx/XWX/focus_XWX_the_peasant_united_front.png"
+	}
+
+	SpriteType = {
+		name = "GFX_focus_XWX_the_peasant_united_front_shine"
+		texturefile = "gfx/XWX/focus_XWX_the_peasant_united_front.png"
+				effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/XWX/focus_XWX_the_peasant_united_front.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds" 	# <- the animated file
+			animationrotation = -90.0		# -90 clockwise 90 counterclockwise(by default)
+			animationlooping = no			# yes or no ;)
+			animationtime = 0.75				# in seconds
+			animationdelay = 0			# in seconds
+			animationblendmode = "add"       #add, multiply, overlay
+			animationtype = "scrolling"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+
+		animation = {
+			animationmaskfile = "gfx/XWX/focus_XWX_the_peasant_united_front.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds" 	# <- the animated file
+			animationrotation = 90.0		# -90 clockwise 90 counterclockwise(by default)
+			animationlooping = no			# yes or no ;)
+			animationtime = 0.75				# in seconds
+			animationdelay = 0			# in seconds
+			animationblendmode = "add"       #add, multiply, overlay
+			animationtype = "scrolling"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		legacy_lazy_load = no
+	}
+
 # IDEA
 
 	spriteType = {
@@ -30,6 +143,11 @@ spriteTypes = {
 	}
 
 	spriteType = {
+		name = "GFX_portrait_XWX_nie_rongzhen"
+		texturefile = "gfx/XWX/portrait_XWX_nie_rongzhen.png"
+	}
+
+	spriteType = {
 		name = "GFX_portrait_XWX_peasant_collective"
 		texturefile = "gfx/XWX/portrait_XWX_peasant_collective.png"
 	}
@@ -57,11 +175,21 @@ spriteTypes = {
 	}
 
 	spriteType = {
+		name = "GFX_idea_XWX_nie_rongzhen"
+		texturefile = "gfx/XWX/idea_XWX_nie_rongzhen.png"
+	}
+
+	spriteType = {
 		name = "GFX_idea_XWX_rao_guohua"
 		texturefile = "gfx/XWX/idea_XWX_rao_guohua.png"
 	}
 
 # EVENTS
+
+	spriteType = {
+		name = "GFX_news_event_XWX_kmt_victory"
+		texturefile = "gfx/XWX/news_event_XWX_kmt_victory.png"
+	}
 
 	spriteType = {
 		name = "GFX_report_event_XWX_farmer"

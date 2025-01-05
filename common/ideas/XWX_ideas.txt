@@ -271,7 +271,7 @@ ideas = {
 
         }
 
-		XWX_safeguard_china = {
+		XWX_safeguard_china_idea = {
             
             picture = chi_chinese_unity
 

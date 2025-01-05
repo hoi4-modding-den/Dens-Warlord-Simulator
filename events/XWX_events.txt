@@ -1,12 +1,13 @@
 add_namespace = XWX_political_events
 add_namespace = XWX_kmt_events
 add_namespace = XWX_diplomatic_events
+add_namespace = XWX_news_events
 
 country_event = { # Industry Focus Unlock Event 
 	id = XWX_political_events.1
 	title = XWX_political_events.1.t
 	desc = XWX_political_events.1.desc
-	picture = GFX_report_event_XWX_farmer
+	picture = GFX_report_event_XWX_industry
 
 	is_triggered_only = yes
 
@@ -145,6 +146,27 @@ country_event = { # Kuomintang Coup (without Civil War)
 		remove_power_balance = {
 			id = XWX_communes_bop
 		}
+		hidden_effect = {
+			news_event = {
+				id = XWX_news_events.1
+				hours = 2
+			}
+			if = {
+				limit = {
+					CHI = {
+						has_government = neutrality
+					}
+				}
+				add_opinion_modifier = {
+					target = CHI
+					modifier = XWX_is_kmt_ally_modifier
+				}
+				reverse_add_opinion_modifier = {
+					target = CHI
+					modifier = XWX_is_kmt_ally_modifier
+				}
+			}
+		}
 	}
 
 }
@@ -180,7 +202,7 @@ country_event = { # Kuomintang defeated
 
 }
 
-country_event = { # Kuomintang Civil War starts
+country_event = { # Kuomintang Civil War preparations
 	id = XWX_kmt_events.4
 	title = XWX_kmt_events.4.t
 	desc = XWX_kmt_events.4.desc
@@ -250,6 +272,21 @@ country_event = { # Kuomintang Civil War starts
 						count = 3
 					}
 				}
+				if = {
+					limit = {
+						CHI = {
+							has_government = neutrality
+						}
+					}
+					add_opinion_modifier = {
+						target = CHI
+						modifier = XWX_is_kmt_ally_modifier
+					}
+					reverse_add_opinion_modifier = {
+						target = CHI
+						modifier = XWX_is_kmt_ally_modifier
+					}
+				}
 			}
 		}
 	}
@@ -263,6 +300,12 @@ country_event = { # Kuomintang Civil War starts
 			declare_war_on = {
 				target = ROOT
 				type = civil_war
+			}
+		}
+		hidden_effect = {
+			news_event = {
+				id = XWX_news_events.2
+				hours = 2
 			}
 		}
 	}
@@ -843,7 +886,29 @@ country_event = { # Tibet refuses puppet status
 	}
 
 	option = { # invade
+		trigger = {
+			OR = {
+				is_ai = no
+				is_in_faction = no
+			}
+			FROM = {
+				NOT = { is_in_faction_with = ROOT }
+			}
+		}
 		name = XWX_diplomatic_events.16.b
+		create_wargoal = {
+			target = FROM
+			type = puppet_wargoal_focus
+		}
+	}
+
+	option = { # can't do anything
+		trigger = {
+			FROM = {
+				is_in_faction_with = ROOT
+			}
+		}
+		name = XWX_diplomatic_events.16.c
 		create_wargoal = {
 			target = FROM
 			type = puppet_wargoal_focus
@@ -940,6 +1005,144 @@ country_event = { # Japan gets debuffed
 				idea = XWX_enemy_intelligence_idea
 				days = 365
 			}
+		}
+	}
+
+}
+
+
+news_event = { # KMT Coup
+	id = XWX_news_events.1
+	title = XWX_news_events.1.t
+	desc = XWX_news_events.1.desc
+	picture = GFX_news_event_XWX_kmt_victory
+
+	is_triggered_only = yes
+
+	option = { 
+		name = XWX_news_events.1.a
+		trigger = {
+			OR = {
+				original_tag = XWX
+				original_tag = CHI
+				original_tag = XMC
+				original_tag = XSA
+			}
+			has_government = neutrality
+		}
+	}
+
+	option = { 
+		name = XWX_news_events.1.b
+		trigger = {
+			has_government = communism
+		}
+	}
+
+	option = { 
+		name = XWX_news_events.1.c
+		trigger = {
+			NOT = { has_government = communism }
+			NOT = {
+				AND = {
+					OR = {
+						original_tag = XWX
+						original_tag = CHI
+						original_tag = XMC
+						original_tag = XSA
+					}
+					has_government = neutrality
+				}
+			}
+		}
+	}
+
+}
+
+news_event = { # KMT Civil War
+	id = XWX_news_events.2
+	title = XWX_news_events.2.t
+	desc = XWX_news_events.2.desc
+	picture = GFX_news_event_chinese_soldiers_city_ruin
+
+	is_triggered_only = yes
+
+	option = { 
+		name = XWX_news_events.2.a
+		trigger = {
+			OR = {
+				original_tag = XWX
+				original_tag = CHI
+				original_tag = XMC
+				original_tag = XSA
+			}
+			has_government = neutrality
+		}
+	}
+
+	option = { 
+		name = XWX_news_events.2.b
+		trigger = {
+			has_government = communism
+		}
+	}
+
+	option = { 
+		name = XWX_news_events.2.c
+		trigger = {
+			NOT = { has_government = communism }
+			NOT = {
+				AND = {
+					OR = {
+						original_tag = XWX
+						original_tag = CHI
+						original_tag = XMC
+						original_tag = XSA
+					}
+					has_government = neutrality
+				}
+			}
+		}
+	}
+
+}
+
+news_event = { # XWX proclaims the United Republics of China
+	id = XWX_news_events.3
+	title = XWX_news_events.3.t
+	desc = XWX_news_events.3.desc
+	picture = GFX_news_event_HUN_leninist_gathering
+
+	is_triggered_only = yes
+
+	option = { 
+		name = XWX_news_events.3.a
+		trigger = {
+			tag = XWX
+		}
+	}
+
+	option = { 
+		name = XWX_news_events.3.b
+		trigger = {
+			NOT = { tag = XWX }
+			DEN_is_chinese_country = yes
+		}
+	}
+
+	option = { 
+		name = XWX_news_events.3.c
+		trigger = {
+			has_government = communism
+			DEN_is_chinese_country = no
+		}
+	}
+
+	option = { 
+		name = XWX_news_events.3.d
+		trigger = {
+			NOT = { has_government = communism }
+			DEN_is_chinese_country = no
 		}
 	}
 

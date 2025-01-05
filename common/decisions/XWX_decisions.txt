@@ -104,7 +104,7 @@ XWX_kmt_insurgency_cat = {
         days_re_enable = 10
 
         remove_effect = {
-            add_war_support = -0.02
+            add_war_support = 0.01
             XWX_decrease_kmt_power = yes
         }
     }

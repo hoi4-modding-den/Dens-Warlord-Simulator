@@ -27,6 +27,10 @@ XWX_GATHERING_STORM_DESC: "The Gannan Peasant Republics are a collective in the 
  XWX_JAP_fascism_subject_DEF: "the Gannan Provincial Autonomous Government"
  XWX_JAP_fascism_subject_ADJ: "Gannan"
 
+ XTI_XWX_neutrality_subject: "Tibet Governorate"
+ XTI_XWX_neutrality_subject_DEF: "the Tibet Governorate"
+ XTI_XWX_neutrality_subject_ADJ: "Tibetan"
+
 # PARTIES
 
  XWX_democratic_party_long: "Chinese Peasants' and Workers' Democratic Party"
@@ -46,6 +50,7 @@ XWX_GATHERING_STORM_DESC: "The Gannan Peasant Republics are a collective in the 
  XWX_liu_wenhui_name: "Liu Wenhui"
  XWX_liu_xiang_name: "Liu Xiang"
  XWX_rao_guohua_name: "Rao Gouhua"
+ XWX_nie_rongzhen_name: "Nie Rongzhen"
 
 
 # TRAITS
@@ -99,7 +104,7 @@ XWX_GATHERING_STORM_DESC: "The Gannan Peasant Republics are a collective in the 
  XWX_liberated_women_idea: "Legislated Women's Rights"
  XWX_promises_of_democracy: "Promises of Democracy"
  XWX_enemy_intelligence_idea: "[XWX.GetAdjectiveCap] Spy Operations"
- XWX_safeguard_china: "Last Stand of the United Front"
+ XWX_safeguard_china_idea: "Last Stand of the United Front"
  XWX_defensive_preparations: "Defensive Preparations"
  XWX_anti_japan_bonus: "Lessons of the First Sino-Japanese War"
 
@@ -308,31 +313,50 @@ XWX_bop_cat: "BoP Category"
  XWX_diplomatic_events.13.a: "Reactionaries!"
 
  XWX_diplomatic_events.14.t: "[FROM.GetNameDefCap] wants to secure our Allegiance!"
- XWX_diplomatic_events.14.desc: "..."
+ XWX_diplomatic_events.14.desc: "[FROM.GetAdjectiveCap] Officials have approached us in regards to our alignment towards the [CHI.capital.GetCapitalVictoryPointName] Government. They demand that we give up our autonomy regarding our diplomatic alignment and install a government more friendly to them. Otherwise we will face a diplomatic embargo and possibly invasion."
  XWX_diplomatic_events.14.a: "We have no other choice."
  XWX_diplomatic_events.14.b: "Never!"
 
  XWX_diplomatic_events.15.t: "[FROM.GetNameDefCap] allows our intervention!"
- XWX_diplomatic_events.15.desc: "..."
+ XWX_diplomatic_events.15.desc: "The government of [FROM.GetNameDefCap] has accepted our demands of installing a Kuomintang-Aligned regime in their nation and surrendering their autonomy."
  XWX_diplomatic_events.15.a: "Wonderful."
 
- XWX_diplomatic_events.16.t: "[FROM.GetNameDefCap] stops our meddling!"
- XWX_diplomatic_events.16.desc: "..."
- XWX_diplomatic_events.16.a: "Perhaps we can convince them to join the [ROOT.GetFactionName]?"
+ XWX_diplomatic_events.16.t: "[FROM.GetNameDefCap] refuses our demands!"
+ XWX_diplomatic_events.16.desc: "The government of [FROM.GetNameDefCap] has refused to heed our demands, wishing to keep their autonomy and diplomatic freedom."
+ XWX_diplomatic_events.16.a: "Demand they at least join the [FROM.GetFactionName]!"
  XWX_diplomatic_events.16.b: "Start the Invasion!"
 
  XWX_diplomatic_events.17.t: "[FROM.GetNameDefCap] demands we join the [FROM.GetFactionName]!"
- XWX_diplomatic_events.17.desc: "..."
+ XWX_diplomatic_events.17.desc: "After our refusal to surrender our autonomy to the regime in [FROM.capital.GetCapitalVictoryPointName], they now demand that we at least join the [FROM.GetFactionName], to assist in their mission of protecting China from outside interference. Otherwise, they promise to invade us."
  XWX_diplomatic_events.17.a: "We can compromise on this."
  XWX_diplomatic_events.17.b: "Let them come!"
 
  XWX_diplomatic_events.18.t: "[FROM.GetNameDefCap] refuses [FROM.GetFactionName] Membership!"
- XWX_diplomatic_events.18.desc: "..."
+ XWX_diplomatic_events.18.desc: "[FROM.GetNameDefCap] has issued a statement, saying that they will under no circumstances work with the Kuomintang Government."
  XWX_diplomatic_events.18.a: "They have ignored all warnings!"
 
  XWX_diplomatic_events.19.t: "[FROM.GetAdjective] Operatives leak Army Intel!"
  XWX_diplomatic_events.19.desc: "We have noticed too late that operatives from [FROM.GetNameDef] have stolen important military secrets, leaking them to the Chinese army."
  XWX_diplomatic_events.19.a: "Damn!"
+
+ XWX_news_events.1.t: "Kuomintang Coup in Gannan"
+ XWX_news_events.1.desc: "News today from the Chinese Province of Gannan, where the Communist government of the 'Peasant Republics of Gannan' was overthrown by members of the Kuomintang. They were backed by Chiang Kai-Shek's Central Government, which enabled them to overthrow the Communist regime without significant displays of violence."
+ XWX_news_events.1.a: "Good Work, Brothers!"
+ XWX_news_events.1.b: "Another failed Revolution..."
+ XWX_news_events.1.c: "The Nationalist Influence grows..."
+
+ XWX_news_events.2.t: "Kuomintang Rebellion in Gannan"
+ XWX_news_events.2.desc: "The tensions in the Chinese Province of Gannan have reached a melting point, as Kuomintang Insurgents clash with the People's Militias in the streets of Hezuo. Following the Gannan Government's failure to completely crack down on Kuomintang resistance, Kuomintang elements managed to block roads to the city of Hezuo, proclaiming a new government of the province. Now the People's Army of Gannan is entering the occupied zone, determined to crush the insurgents once and for all."
+ XWX_news_events.2.a: "Let's hope they win."
+ XWX_news_events.2.b: "May the Fires of the Revolution never extinguish!"
+ XWX_news_events.2.c: "The Chaos never ends."
+
+ XWX_news_events.3.t: "Proclamation of [XWX.GetNameDef]"
+ XWX_news_events.3.desc: "The communist regime in [XWX.capital.GetCapitalVictoryPointName] has announced its intentions to become the true government of China. In its proclamation of [XWX.GetNameDef], it states its ambition to unite all of China under its rule. Henceforth, what was previously a small rebel group hiding in remote mountain villages will become a full-fledged government over all of China."
+ XWX_news_events.3.a: "The Revolution will engulf China!"
+ XWX_news_events.3.b: "Preposterous!"
+ XWX_news_events.3.c: "A possible ally in China?"
+ XWX_news_events.3.d: "They are doomed to fail..."
 
 
 # FACTION NAMES
@@ -388,10 +412,25 @@ XWX_bop_cat: "BoP Category"
  XWX_revolutionary_fervour_desc: ""
  XWX_hold_local_elections: "Allow Local Elections"
  XWX_hold_local_elections_desc: ""
+ XWX_work_against_corruption: "Prevent Administrative Corruption"
+ XWX_work_against_corruption_desc: ""
+ XWX_worker_rights: "Guarantee Worker Rights"
+ XWX_worker_rights_desc: ""
+ XWX_peasants_revolution: "Safe Haven of the Revolution"
+ XWX_peasants_revolution_desc: ""
  XWX_the_peasant_united_front: "The $XWX_workers_united_front$"
  XWX_the_peasant_united_front_desc: ""
+ XWX_the_peasant_united_front_tt: "Unlock £GFX_decision_icon_small §YInvite Countries to the $XWX_workers_united_front$§!."
+ XWX_restart_the_civil_war: "Restart the Civil War"
+ XWX_restart_the_civil_war_desc: ""
  XWX_enforce_revolutionary_doctrine: "The Ideological Doctrine"
  XWX_enforce_revolutionary_doctrine_desc: ""
+ XWX_invade_tibet: "Liberate Tibet"
+ XWX_invade_tibet_desc: ""
+ XWX_revolutionary_defense: "In Defence of the Revolution"
+ XWX_revolutionary_defense_desc: ""
+ XWX_peasant_army: "March Towards International Liberation"
+ XWX_peasant_army_desc: ""
 
  XWX_kmt_coup: "Kuomintang Coup d'Etat"
  XWX_kmt_coup_desc: ""
@@ -408,8 +447,8 @@ XWX_bop_cat: "BoP Category"
  XWX_japanese_war_intelligence_desc: ""
  XWX_message_the_central_government: "Message the Chonqing Government"
  XWX_message_the_central_government_desc: ""
- XWX_join_the_united_front: "Safeguard the Second United Front"
- XWX_join_the_united_front_desc: ""
+ XWX_safeguard_china: "Safeguard the Second United Front"
+ XWX_safeguard_china_desc: ""
  XWX_prepare_for_japanese_invasion: "Prepare for External Threats"
  XWX_prepare_for_japanese_invasion_desc: ""
  XWX_secure_tibet: "Secure Tibetan Allegiance"
@@ -418,14 +457,6 @@ XWX_bop_cat: "BoP Category"
  XWX_air_defence_desc: ""
  XWX_mistakes_of_the_first_war: "Mistakes of the First Sino-Japanese War"
  XWX_mistakes_of_the_first_war_desc: ""
-
- XWX_the_red_dragon_society: "The Red Dragon Society"
- XWX_the_red_dragon_society_desc: ""
-
- XWX_japanese_military_control: "Japanese Military Attache"
- XWX_japanese_military_control_desc: ""
- XWX_coordinate_with_japan: "Coordinate the Invasion"
- XWX_coordinate_with_japan_desc: ""
 
  XWX_industrial_revolution: "The Industrial Revolution in Gannan"
  XWX_industrial_revolution_desc: "Industrialisation has overlooked the small province of Gannan. The few workshops that produce the nation's armaments and supply the people with goods are nothing close to the factories of the industrialised world. It is time to bring the Industrial Revolution to Gannan."

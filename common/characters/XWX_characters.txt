@@ -1,4 +1,4 @@
-characters={
+characters = {
 
 	XWX_peasant_collective = { 
 		name = XWX_peasant_collective_name
@@ -26,24 +26,21 @@ characters={
 				small = GFX_idea_XWX_hu_lanqi
 			}
 		}
-		corps_commander={
+		corps_commander = {
 			visible = {
 				has_government = communism
 			}
-			traits={ JAP_communist_sympathizer organizer }
+			traits = { JAP_communist_sympathizer organizer }
 			skill=4
 			attack_skill=3
 			defense_skill=1
 			planning_skill=2
 			logistics_skill=3
 		}
-		advisor={
+		advisor = {
 			slot = political_advisor
 			idea_token = XWX_hu_lanqi_advisor
-		
-			allowed = {
 
-			}
 			available = {
 				has_government = communism
 				has_completed_focus = XWX_liberated_women
@@ -98,24 +95,21 @@ characters={
 				small = GFX_idea_XWX_liu_wenhui
 			}
 		}
-		corps_commander={
+		corps_commander = {
 			visible = {
 				
 			}
-			traits={ career_officer trait_mountaineer }
+			traits = { career_officer trait_mountaineer }
 			skill=3
 			attack_skill=3
 			defense_skill=1
 			planning_skill=2
 			logistics_skill=3
 		}
-		advisor={
+		advisor = {
 			slot = high_command
 			idea_token = XWX_liu_wenhui_advisor
-		
-			allowed = {
 
-			}
 			available = {
 				
 			}
@@ -140,24 +134,21 @@ characters={
 				small = GFX_idea_XWX_liu_xiang
 			}
 		}
-		corps_commander={
+		corps_commander = {
 			visible = {
 				
 			}
-			traits={ armor_officer }
+			traits = { armor_officer }
 			skill=3
 			attack_skill=4
 			defense_skill=2
 			planning_skill=2
 			logistics_skill=2
 		}
-		advisor={
+		advisor = {
 			slot = high_command
 			idea_token = XWX_liu_xiang_advisor
-		
-			allowed = {
 
-			}
 			available = {
 				
 			}
@@ -182,24 +173,21 @@ characters={
 				small = GFX_idea_XWX_rao_guohua
 			}
 		}
-		corps_commander={
+		corps_commander = {
 			visible = {
 
 			}
-			traits={ engineer_officer }
+			traits = { trait_engineer }
 			skill=2
 			attack_skill=1
 			defense_skill=3
 			planning_skill=2
 			logistics_skill=1
 		}
-		advisor={
+		advisor = {
 			slot = army_chief
 			idea_token = XWX_liu_wenhui_advisor
-		
-			allowed = {
 
-			}
 			available = {
 				
 			}
@@ -212,6 +200,45 @@ characters={
 
 			traits = {
 				army_chief_entrenchment_2
+			}
+		}
+	}
+
+	XWX_nie_rongzhen = { 
+		name = XWX_nie_rongzhen_name
+		portraits = {
+			army = {
+				large = GFX_portrait_XWX_nie_rongzhen
+				small = GFX_idea_XWX_nie_rongzhen
+			}
+		}
+		corps_commander = {
+			visible = {
+				has_government = communism
+			}
+			traits = { JAP_communist_sympathizer engineer_officer }
+			skill=3
+			attack_skill=1
+			defense_skill=2
+			planning_skill=2
+			logistics_skill=4
+		}
+		advisor = {
+			slot = high_command
+			idea_token = XWX_nie_rongzhen_advisor
+
+			available = {
+				has_government = communism
+			}
+			
+			cost = 100
+
+			ai_will_do = {
+				factor = 5
+			}
+
+			traits = {
+				GER_adaptive_engineer
 			}
 		}
 	}
