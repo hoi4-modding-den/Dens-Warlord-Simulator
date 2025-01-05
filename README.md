@@ -45,6 +45,7 @@ Countries fucking exploded, new things exist now, 🤷
   | XSR | johndoodoomayan    | Johndoodoomayan        |
   | XWX | 0rland2            | 0rland0                |
   | XQI | Dumpstertruck13    | AteAStardestroyer      |
+  | XFC | EnlightenedEsoteric| esoteric_ego           |
 
 </details>
 #Welcome to O'Block
