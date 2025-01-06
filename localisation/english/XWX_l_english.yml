@@ -45,7 +45,8 @@ XWX_GATHERING_STORM_DESC: "The Gannan Peasant Republics are a collective in the 
 
 # CHARACTERS
 
- XWX_peasant_collective_name: "Peasant Collectives"
+ XWX_peasant_collective_name: "Gannan Peasant Collectives"
+ XWX_peasant_collective_name_PRC: "Chinese Peasant Government"
  XWX_hu_lanqi_name: "Hu Lanqi"
  XWX_liu_wenhui_name: "Liu Wenhui"
  XWX_liu_xiang_name: "Liu Xiang"
@@ -55,8 +56,10 @@ XWX_GATHERING_STORM_DESC: "The Gannan Peasant Republics are a collective in the 
 
 # TRAITS
 
+ XWX_peasant_administration_trait: "People's Administration"
  XWX_kuomintang_official_trait: "Kuomintang Officer"
  XWX_japanese_snake_trait: "Japanese Snake"
+ XWX_feminist_revolutionary: "Feminist Revolutionary"
 
 
 # OPINION MODIFIERS
@@ -71,12 +74,13 @@ XWX_GATHERING_STORM_DESC: "The Gannan Peasant Republics are a collective in the 
 # TRIGGERS
 
  XWX_focus_completed_via_event_tt: "This Focus will be completed via §YEvent§!."
- XWX_kmt_active_tt: "the §YKuomintang§! is active within our nation."
- XWX_kmt_active_tt_NOT: "the §YKuomintang§! has been defeated."
+ XWX_kmt_active_tt: "the §YKuomintang Insurgency§! is active within our nation."
+ XWX_kmt_active_tt_NOT: "the §YKuomintang§! have been defeated."
  XWX_second_gannan_famine: "The §YSecond Gannan Famine§! is active."
  XWX_has_100_supplies_tt: "Has §G100§! £GFX_supply_texticon Relief Supplies."
  XWX_second_gannan_famine_over: "The §YSecond Gannan Famine§! has concluded."
  XWX_is_chinese_country_tt: "Is a §YChinese Warlord§!."
+ XWX_is_chinese_country_tt_not: "Is not a §YChinese Warlord§!."
 
 
 # MODIFIERS
@@ -101,7 +105,10 @@ XWX_GATHERING_STORM_DESC: "The Gannan Peasant Republics are a collective in the 
  XWX_show_kmt_power_tt: "\n£GFX_XWX_kmt_texticon  Current Kuomintang Strength: [?XWX_kmt_power|.0-]"
  XWX_kmt_insurgency_bonus: "Support from the Nationalist Government"
  
+ XWX_liberation_efforts: "Assembling the Liberation Army"
+ XWX_liberation_doctrine: "Liberation Doctrine"
  XWX_liberated_women_idea: "Legislated Women's Rights"
+ XWX_socialist_democracy: "Democratic Principles"
  XWX_promises_of_democracy: "Promises of Democracy"
  XWX_enemy_intelligence_idea: "[XWX.GetAdjectiveCap] Spy Operations"
  XWX_safeguard_china_idea: "Last Stand of the United Front"
@@ -118,7 +125,7 @@ XWX_GATHERING_STORM_DESC: "The Gannan Peasant Republics are a collective in the 
  XWX_incompetent_provincial_army: "Incompetent Provincial Army"
  XWX_untrained_provincial_army: "Untrained Provincial Army"
  XWX_trained_provincial_army: "Provincial Army"
- XWX_competent_provincial_army: "Revolutionary Army Reborn"
+ XWX_competent_provincial_army: "National Revolutionary Army Restored"
  XWX_prepared_trenches: "Entrenched Positions"
 
  XWX_industry_modifier: "National Industrialisation"
@@ -144,11 +151,13 @@ XWX_kmt_insurgency_cat: "Dealing with the Kuomintang"
  XWX_kmt_civil_war_timer: "Imminent Kuomintang Activity..."
  XWX_raid_kmt_hideouts: "Raid Kuomintang Hideouts"
  XWX_ignore_kmt: "Focus on Stability"
+ XWX_ignore_kmt_desc: "We have much bigger problems than the reactionaries of the Kuomintang. Let us ignore them while we better our nation."
 
 XWX_construction_decisions: "Construction Projects"
 
  XWX_tianyu_fort_construction: "Finalise Tianyu Fort Construction"
  XWX_link_up_tianyu_fort: "Tianshui-Tianyu Railway Line"
+ XWX_link_up_tianyu_fort_desc: "Building a railway between the Tianyu Fortress and Tianshui will help connect the nation."
  XWX_urbanise_gannan: "Develop Gannan"
  XWX_urbanise_ganzi: "Develop Ganzi"
 
@@ -168,8 +177,12 @@ XWX_chinese_education_bureau: "Chinese Education Bureau"
  XWX_open_rural_university: "Open Public University in [FROM.GetCapitalVictoryPointName]"
  XWX_open_rural_university_desc: "To improve our nation's education, we will support the founding of a university open to the people in [FROM.GetCapitalVictoryPointName]."
 
+XWX_peasant_united_front_cat: "The [FROM.GetFactionName]"
+
+ XWX_invite_to_united_front: "Invite [FROM.GetNameDef] to the [FROM.GetFactionName]"
+
 XWX_second_gannan_famine_cat: "Famine Relief Efforts"
-XWX_second_gannan_famine_cat_desc: "\nThe province is currently undergoing a famine. We must gather Relief Supplies to ensure we can recover from it.\n \nCurrent Amount of Relief Supplies: [?XWX_famine_progress|.0+]\n "
+ XWX_second_gannan_famine_cat_desc: "\nThe province is currently undergoing a famine. We must gather Relief Supplies to ensure we can recover from it.\n \nCurrent Amount of Relief Supplies: [?XWX_famine_progress|.0+]\n "
 
  XWX_end_the_famine: "End the Famine"
  XWX_smuggle_supplies: "Smuggle Supplies"
@@ -180,8 +193,22 @@ XWX_bop_cat: "BoP Category"
  XWX_doing_bop_decision: "currently swaying the §YBalance of Power§!"
 
  XWX_decentralise_the_state: "£GFX_BoP_left_texticon  Decentralise the State"
- XWX_centralise_the_state: "£GFX_BoP_right_texticon  Centralise the State"
+  XWX_implement_federalist_policies: "£GFX_BoP_left_texticon  National Federalisation Act"
+  XWX_implement_federalist_policies_desc: "The National Federalisation Act will give more autonomy to local governments and to ease the grip of the central government on regional projects."
+  XWX_support_regional_specialisation: "£GFX_BoP_left_texticon  Support Regional Specialisation"
+  XWX_aid_during_famine: "£GFX_BoP_left_texticon  Distribute Supplies"
+  XWX_aid_during_famine_desc: "To aid the people affected by the Famine, supplies will be shared via the local administrations."
+  XWX_promote_self_defence: "£GFX_BoP_left_texticon  Promote People's Militia Membership"
 
+ XWX_centralise_the_state: "£GFX_BoP_right_texticon  Centralise the State"
+  XWX_implement_centralist_policies: "£GFX_BoP_right_texticon  Protection of Socialism Act"
+  XWX_implement_centralist_policies_desc: "The Protection of Socialism Act will give the Central Government the power to interfere directly in the doings of local governments, if they exhibit reactionary behaviour."
+  XWX_nationalise_arms_industries: "£GFX_BoP_right_texticon  Nationalise Arms Industries"
+  XWX_crush_kmt_insurgents: "£GFX_BoP_right_texticon  Hunt the Insurgents"
+  XWX_crush_kmt_insurgents_desc: "The power of the central government must be strengthened to root out the reactionary Kuomintang insurgents."
+  XWX_army_recruitment_drive: "£GFX_BoP_right_texticon  Army Recruitment Drive"
+
+# Decision Costs
 
  decision_cost_stab_10_pp_75: "£GFX_stability_texticon §Y10§! £GFX_pol_power §Y75§!"
  decision_cost_stab_10_pp_75_blocked: "£GFX_stability_texticon §R10§! £GFX_pol_power §R75§!"
@@ -199,7 +226,7 @@ XWX_bop_cat: "BoP Category"
 
  XWX_communes_bop: "Balance in the Communes"
 
-   XWX_bop_balanced: "Faction Equilibrium"
+  XWX_bop_balanced: "Faction Equilibrium"
 
   XWX_federalists: "Federalists"
 
@@ -219,7 +246,7 @@ XWX_bop_cat: "BoP Category"
 # EVENTS
 
  XWX_political_events.1.t: "The Matters of Industry"
- XWX_political_events.1.desc: "$XWX_industrial_revolution_desc$"
+ XWX_political_events.1.desc: "$XWX_industrial_revolution_desc$\n \nThe Third Commune Conference will also handle some of these matters of industry, hopefully pushing our province towards becoming a modern nation."
  XWX_political_events.1.a: "A different kind of revolution."
 
  XWX_political_events.2.t: "Tianyu Fort completed!"
@@ -235,6 +262,10 @@ XWX_bop_cat: "BoP Category"
  XWX_political_events.4.desc: "The Gannan Peasant Republics are made up of multiple constituent republics, each represented by via the collectives in the National Assembly.\n \nThe two main factions within the collectives are the Federalists, who want to keep the influence of the central government low, so that they can make local law, and the Centralists, who want to increase the powers of the National Assembly to prevent any factionalism.\n \nIn the third major conference of the Commune, each side now presents their plans for the future of our nation."
  XWX_political_events.4.a: "We must prevent a Kuomintang Insurgency."
  XWX_political_events.4.b: "Developing the nation comes first."
+
+ XWX_political_events.5.t: "The State of the Armed Forces"
+ XWX_political_events.5.desc: "The Armed Forces of the Peasant Republics, the 'Provincial Army', is heavily reliant on recruits from the People's Militia, a paramilitary organisation and a holdover from our time as a part of the People's Republic of China. If we want to reform our army into an effective fighting force, we will have to give up our reliance on the militia.\n \nThanks to a Soviet military mission, our Armed Forces does have an official airforce branch, helmed by General Liu Xiang."
+ XWX_political_events.5.a: "Another step towards modernisation."
 
  XWX_kmt_events.1.t: "Kuomintang Coup d'Etat!"
  XWX_kmt_events.1.desc: "The coup was swift and bloodless. Following nummerous failed raids on Kuomintang hideouts, their assault on the Revolutionary regime's headquarters came unexpected. Thanks to support from the [CHI.capital.GetCapitalVictoryPointName] Government, the Kuomintang were able to muster enough equipment and soldiers take control of the building and put the communist ministers under arrest."
@@ -339,6 +370,19 @@ XWX_bop_cat: "BoP Category"
  XWX_diplomatic_events.19.desc: "We have noticed too late that operatives from [FROM.GetNameDef] have stolen important military secrets, leaking them to the Chinese army."
  XWX_diplomatic_events.19.a: "Damn!"
 
+ XWX_diplomatic_events.20.t: "[FROM.GetNameDef] demands Integration Referendum!"
+ XWX_diplomatic_events.20.desc: "The government of the newly formed [FROM.GetName] have sent the demands for a referendum, which is to be held by the people of our state, about whether or not they wish to be integrated into [ROOT.GetNameDef]."
+ XWX_diplomatic_events.20.a: "The Referendum will be held."
+ XWX_diplomatic_events.20.b: "Stop it at all costs! We will remain in control!"
+
+ XWX_diplomatic_events.21.t: "[FROM.GetNameDEf] integrates itself into the Union!"
+ XWX_diplomatic_events.21.desc: "The people of [FROM.GetNameDef] have chosen to be peacefully integrated into our new [ROOT.GetName]."
+ XWX_diplomatic_events.21.a: "Welcome home, Comrades!"
+
+ XWX_diplomatic_events.22.t: "[FROM.GetNameDef] refuses Integration!"
+ XWX_diplomatic_events.22.desc: "The leaders of [FROM.GetNameDEf] have refused to let their nation get integrated into the new [ROOT.GetName]. We have no choice but to change their mind, through force."
+ XWX_diplomatic_events.22.a: "They will regret that."
+
  XWX_news_events.1.t: "Kuomintang Coup in Gannan"
  XWX_news_events.1.desc: "News today from the Chinese Province of Gannan, where the Communist government of the 'Peasant Republics of Gannan' was overthrown by members of the Kuomintang. They were backed by Chiang Kai-Shek's Central Government, which enabled them to overthrow the Communist regime without significant displays of violence."
  XWX_news_events.1.a: "Good Work, Brothers!"
@@ -397,7 +441,7 @@ XWX_bop_cat: "BoP Category"
  XWX_government_broadcast_desc: ""
  XWX_hunt_for_kmt_reactionaries: "Committee against Reactionary Influence"
  XWX_hunt_for_kmt_reactionaries_desc: ""
- XWX_guarantee_military_loyalty: "Guarantee Military Loyalty"
+ XWX_guarantee_military_loyalty: "Accusations of Treason"
  XWX_guarantee_military_loyalty_desc: ""
  XWX_worker_judiciary: "The Peasant Judiciary"
  XWX_worker_judiciary_desc: ""
@@ -421,8 +465,10 @@ XWX_bop_cat: "BoP Category"
  XWX_the_peasant_united_front: "The $XWX_workers_united_front$"
  XWX_the_peasant_united_front_desc: ""
  XWX_the_peasant_united_front_tt: "Unlock £GFX_decision_icon_small §YInvite Countries to the $XWX_workers_united_front$§!."
- XWX_restart_the_civil_war: "Restart the Civil War"
- XWX_restart_the_civil_war_desc: ""
+ XWX_end_the_false_revolution: "Extinguish the False Revolution"
+ XWX_end_the_false_revolution_desc: ""
+ XWX_restart_the_civil_war: "Proclaim a Rival Government"
+ XWX_restart_the_civil_war_desc: "The Nationalist Government in Chongqing is illigitimate, as it was not chosen by the People. It is time to right their wrongs and proclaim our own National Government under the $XWX_prc$!"
  XWX_enforce_revolutionary_doctrine: "The Ideological Doctrine"
  XWX_enforce_revolutionary_doctrine_desc: ""
  XWX_invade_tibet: "Liberate Tibet"
@@ -433,7 +479,7 @@ XWX_bop_cat: "BoP Category"
  XWX_peasant_army_desc: ""
 
  XWX_kmt_coup: "Kuomintang Coup d'Etat"
- XWX_kmt_coup_desc: ""
+ XWX_kmt_coup_desc: "Our influence in Gannan has grown enough and with help from Chiang-Kai Shek and the other Kuomintang members, we will be able to overthrow the communist regime."
 
  XWX_consolidate_control: "Consolidate Control"
  XWX_consolidate_control_desc: ""
@@ -486,14 +532,14 @@ XWX_bop_cat: "BoP Category"
  XWX_military_buildup_desc: ""
  XWX_mine_expansion: "Expand the Mines"
  XWX_mine_expansion_desc: ""
- XWX_iron_extraction: "Iron Extraction"
+ XWX_iron_extraction: "Ganzi Steelworks"
  XWX_iron_extraction_desc: ""
 
  XWX_provincial_army: "The Provincial Army"
  XWX_provincial_army_desc: "The Armed Forces of the Gannan Province are mostly volunteers to protect the region from bandits and occasional raids by neighbouring powers. If we want to become something in the world, we must adapt."
 
- XWX_reform_the_militias: "Disband the Militias"
- XWX_reform_the_militias_desc: ""
+ XWX_reform_the_militias: "Disband the Militia Brigades"
+ XWX_reform_the_militias_desc: "While the People's Militia has been the backbone of our army for long, it is time to move away from their structures in favour of a professionally trained and commandeered army. The members of the People's Militia will however still be used as reservists."
  XWX_reform_the_militias_tt: "Unlock £GFX_decision_icon_small §Y$XWX_army_reform_decision$§!."
  XWX_prepare_the_lands: "Prepare Defensive Positions"
  XWX_prepare_the_lands_desc: ""
@@ -505,7 +551,7 @@ XWX_bop_cat: "BoP Category"
  XWX_army_motorisation: "Army Motorisation"
  XWX_army_motorisation_desc: ""
  XWX_liu_xiangs_armoured_project: "Liu Xiangs Armour Project"
- XWX_liu_xiangs_armoured_project_desc: ""
+ XWX_liu_xiangs_armoured_project_desc: "Liu Xiang has some interesting ideas for how to involve armoured vehicles in combat. Perhaps he is onto something?"
  XWX_liu_xiangs_armoured_project_tt: "A §g10-Width§! §CArmoured Division§! composed of §Y3 Motorised Battalions§!, §Y2 Light Tank Battalions§! and an §YEngineer Company§! are deployed in §Y[ROOT.capital.GetName]§!."
  XWX_military_academies: "Gannan Military Science Academy"
  XWX_military_academies_desc: ""
@@ -517,12 +563,12 @@ XWX_bop_cat: "BoP Category"
  XWX_aircraft_development_desc: ""
 
  XWX_final_army_improvement: "Restore the Revolutionary Spirit"
- XWX_final_army_improvement_desc: ""
+ XWX_final_army_improvement_desc: "Our Provincial Army has grown from its humble beginnings as the remnants of the PLA and a bunch of communist partisan groups. It is time to fully accept who we are and restore the honour of the National Revolutionary Army."
  XWX_heavy_conscription: "Forced Conscription"
  XWX_heavy_conscription_desc: ""
 
  XWX_acquire_more_planes: "Aircraft Acquisition"
- XWX_acquire_more_planes_desc: ""
+ XWX_acquire_more_planes_desc: "The beginnings of our airforce were sponsored by a Soviet military mission to aid the revolution. But to actually develop a formidable airforce, we need to spend some resources to acquire more."
  XWX_own_plane_designs: "Own Plane Designs"
  XWX_own_plane_designs_desc: ""
  XWX_plane_industry: "Support Local Aircraft Production"

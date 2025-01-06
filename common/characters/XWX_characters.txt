@@ -8,7 +8,7 @@ characters = {
 			}
 		}
 		country_leader = {
-			traits = { }
+			traits = { XWX_peasant_administration_trait }
 			ideology = marxism
 			expire = "1960.1.1.1"
 		}
@@ -43,7 +43,6 @@ characters = {
 
 			available = {
 				has_government = communism
-				has_completed_focus = XWX_liberated_women
 			}
 			
 			cost = 100
@@ -53,7 +52,7 @@ characters = {
 			}
 
 			traits = {
-				red_suffragette
+				XWX_feminist_revolutionary
 			}
 
 			on_add = {
@@ -150,17 +149,35 @@ characters = {
 			idea_token = XWX_liu_xiang_advisor
 
 			available = {
-				
+				is_air_chief = no
 			}
 			
 			cost = 100
 
 			ai_will_do = {
-				factor = 5
+				factor = 20
 			}
 
 			traits = {
 				army_armored_2
+			}
+		}
+		advisor = {
+			slot = air_chief
+			idea_token = XWX_liu_xiang_advisor_air
+
+			available = {
+				is_high_command = no
+			}
+			
+			cost = 100
+
+			ai_will_do = {
+				factor = 0
+			}
+
+			traits = {
+				air_chief_safety_2
 			}
 		}
 	}
@@ -186,20 +203,20 @@ characters = {
 		}
 		advisor = {
 			slot = army_chief
-			idea_token = XWX_liu_wenhui_advisor
+			idea_token = XWX_rao_guohua_advisor
 
 			available = {
-				
+				has_completed_focus = XWX_prepare_the_lands
 			}
 			
-			cost = 100
+			cost = 200
 
 			ai_will_do = {
 				factor = 5
 			}
 
 			traits = {
-				army_chief_entrenchment_2
+				army_chief_entrenchment_3
 			}
 		}
 	}
@@ -224,7 +241,7 @@ characters = {
 			logistics_skill=4
 		}
 		advisor = {
-			slot = high_command
+			slot = political_advisor
 			idea_token = XWX_nie_rongzhen_advisor
 
 			available = {

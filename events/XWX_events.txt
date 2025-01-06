@@ -125,6 +125,21 @@ country_event = { # Second Commune Conference
 
 }
 
+country_event = { # Military Focus Unlock Event 
+	id = XWX_political_events.5
+	title = XWX_political_events.5.t
+	desc = XWX_political_events.5.desc
+	picture = GFX_report_event_chinese_officers
+
+	is_triggered_only = yes
+
+	option = { 
+		name = XWX_political_events.5.a
+		complete_national_focus = XWX_provincial_army
+	}
+
+}
+
 country_event = { # Kuomintang Coup (without Civil War) 
 	id = XWX_kmt_events.1
 	title = XWX_kmt_events.1.t
@@ -143,8 +158,10 @@ country_event = { # Kuomintang Coup (without Civil War)
 		custom_effect_tooltip = generic_skip_one_line_tt
 		XWX_remove_kmt_insurgency = yes
 		custom_effect_tooltip = generic_skip_one_line_tt
-		remove_power_balance = {
-			id = XWX_communes_bop
+		effect_tooltip = {
+			remove_power_balance = {
+				id = XWX_communes_bop
+			}
 		}
 		hidden_effect = {
 			news_event = {
@@ -534,7 +551,7 @@ country_event = { # XWX requests relief supplies -> FROM refuses
 		}
 		custom_effect_tooltip = generic_skip_one_line_tt
 		add_to_variable = {
-            XWX_famine_progress = 10
+            XWX_famine_progress = 20
             tooltip = famine_progress_tt
         }
 	}
@@ -775,6 +792,27 @@ country_event = { # Gannan demands Tibet becomes puppet
 
 	option = { 
 		name = XWX_diplomatic_events.14.a
+		ai_chance = {
+			base = 20
+			modifier = {
+				add = 5
+				has_opinion = {
+					target = FROM
+					value > 50
+				}
+			}
+			modifier = {
+				factor = 0.75
+				NOT = { has_government = ROOT }
+			}
+			modifier = {
+				factor = 0.25
+				strength_ratio = {
+					tag = FROM
+					ratio > 1
+				}
+			}
+		}
 		effect_tooltip = {
 			FROM = {
 				every_other_country = {
@@ -808,6 +846,9 @@ country_event = { # Gannan demands Tibet becomes puppet
 	}
 
 	option = { 
+		ai_chance = {
+			base = 5
+		}
 		name = XWX_diplomatic_events.14.b
 		FROM = {
 			country_event = {
@@ -936,6 +977,57 @@ country_event = { # Gannan demands Tibet joins United Front
 
 	option = { 
 		name = XWX_diplomatic_events.17.a
+		ai_chance = {
+			base = 20
+			modifier = {
+				add = 5
+				has_opinion = {
+					target = FROM
+					value > 50
+				}
+			}
+			modifier = {
+				factor = 0.1
+				is_faction_leader = yes
+			}
+			modifier = {
+				factor = 0.5
+				NOT = {
+					any_neighbor_country = {
+						is_in_faction_with = FROM
+					}
+				}
+			}
+			modifier = {
+				factor = 3
+				has_war = yes
+			}
+			modifier = {
+				factor = 10
+				any_other_country = {
+					has_war_with = FROM
+					has_war_with = ROOT
+				}
+				is_in_faction = no
+			}
+			modifier = {
+				factor = 5
+				any_other_country = {
+					has_war_with = FROM
+					has_war_with = ROOT
+				}
+				is_in_faction = yes
+			}
+			modifier = {
+				factor = 2
+				FROM = {
+					network_strength = {
+						target = ROOT
+						value > 49
+					}
+				}
+			}
+		}
 		FROM = {
 			faction_leader = {
 				add_to_faction = ROOT
@@ -956,6 +1048,20 @@ country_event = { # Gannan demands Tibet joins United Front
 
 	option = { 
 		name = XWX_diplomatic_events.17.b
+		ai_chance = {
+			base = 10
+			modifier = {
+				factor = 0.5
+				is_guaranteed_by = FROM
+			}
+			modifier = {
+				factor = 2
+				has_opinion = {
+					target = FROM
+					value < 30
+				}
+			}
+		}
 		FROM = { 
 			country_event = { id = XWX_diplomatic_events.18 hours = 6 }
 		}
@@ -976,7 +1082,7 @@ country_event = { # Tibet refuses United Front membership
 	id = XWX_diplomatic_events.18
 	title = XWX_diplomatic_events.18.t
 	desc = XWX_diplomatic_events.18.desc
-	picture = GFX_report_event_chinese_officers
+	picture = GFX_report_event_china_infiltration
 
 	is_triggered_only = yes
 
@@ -1010,6 +1116,152 @@ country_event = { # Japan gets debuffed
 
 }
 
+country_event = { # XWX demands annexation
+	id = XWX_diplomatic_events.20
+	title = XWX_diplomatic_events.20.t
+	desc = XWX_diplomatic_events.20.desc
+	picture = GFX_report_event_chinese_officers
+
+	is_triggered_only = yes
+
+	option = { 
+		name = XWX_diplomatic_events.20.a
+		ai_chance = {
+			base = 20
+			modifier = {
+				add = 5
+				has_opinion = {
+					target = FROM
+					value > 50
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = { has_government = ROOT }
+			}
+			modifier = {
+				factor = 0.25
+				strength_ratio = {
+					tag = FROM
+					ratio > 1
+				}
+			}
+		}
+		effect_tooltip = {
+			FROM = {
+				annex_country = {
+					target = ROOT
+					transfer_troops = yes
+				}
+			}
+			every_subject_country = {
+				FROM = {
+					annex_country = {
+						target = PREV
+						transfer_troops = yes
+					}
+				}
+			}
+		}
+		custom_effect_tooltip = GAME_OVER_TT
+		custom_effect_tooltip = generic_skip_one_line_tt
+		FROM = {
+			country_event = {
+				id = XWX_diplomatic_events.21
+				hours = 2
+				random_hours = 6
+			}
+		}
+	}
+
+	option = { 
+		name = XWX_diplomatic_events.20.b
+		trigger = {
+			OR = {
+				is_subject = no
+				is_ai = no
+			}
+		}
+		if = {
+			limit = {
+				is_subject = yes
+			}
+			overlord = {
+				set_autonomy = {
+					target = ROOT
+					autonomous_state = autonomy_free
+					end_wars = no
+					end_civil_wars = no
+				}
+			}
+		}
+		leave_faction = yes
+		custom_effect_tooltip = generic_skip_one_line_tt
+		effect_tooltip = {
+			FROM = {
+				create_wargoal = {
+					target = ROOT
+					type = annex_everything
+				}
+			}
+		}
+		custom_effect_tooltip = generic_skip_one_line_tt
+		FROM = {
+			country_event = {
+				id = XWX_diplomatic_events.22
+				hours = 3
+				random_hours = 6
+			}
+		}
+	}
+
+}
+
+country_event = { # FROM gets annexed
+	id = XWX_diplomatic_events.21
+	title = XWX_diplomatic_events.21.t
+	desc = XWX_diplomatic_events.21.desc
+	picture = GFX_report_event_chinese_japanese_handshake
+
+	is_triggered_only = yes
+
+	option = { 
+		name = XWX_diplomatic_events.21.a
+		FROM = {
+			every_subject_country = {
+				ROOT = {
+					annex_country = {
+						target = PREV
+						transfer_troops = yes
+					}
+				}
+			}
+		}
+		annex_country = {
+			target = FROM
+			transfer_troops = yes
+		}
+	}
+
+}
+
+country_event = { # FROM refuses annexation
+	id = XWX_diplomatic_events.22
+	title = XWX_diplomatic_events.22.t
+	desc = XWX_diplomatic_events.22.desc
+	picture = GFX_report_event_china_infiltration
+
+	is_triggered_only = yes
+
+	option = { 
+		name = XWX_diplomatic_events.22.a
+		create_wargoal = {
+			target = FROM
+			type = annex_everything
+		}
+	}
+
+}
 
 news_event = { # KMT Coup
 	id = XWX_news_events.1

@@ -36,20 +36,20 @@ d_XWX_become_puppet_of_CHI = {
 XWX_improve_provincial_army = {
     if = {
         limit = {
-            has_idea = XWX_incompetent_provincial_army
-        }
-        swap_ideas = {
-            remove_idea = XWX_incompetent_provincial_army
-            add_idea = XWX_untrained_provincial_army
-        }
-    }
-    if = {
-        limit = {
             has_idea = XWX_untrained_provincial_army
         }
         swap_ideas = {
             remove_idea = XWX_untrained_provincial_army
             add_idea = XWX_trained_provincial_army
+        }
+    }
+    if = {
+        limit = {
+            has_idea = XWX_incompetent_provincial_army
+        }
+        swap_ideas = {
+            remove_idea = XWX_incompetent_provincial_army
+            add_idea = XWX_untrained_provincial_army
         }
     }
 }

@@ -197,6 +197,89 @@ ideas = {
 
         }
 
+		XWX_liberation_efforts = {
+            
+            picture = generic_communist_army
+
+            allowed = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			cancel = {
+				NOT = { has_government = communism }
+			}
+
+            removal_cost = -1
+
+            modifier = {
+				weekly_manpower = 500
+				conscription_factor = 0.03
+				compliance_gain = 0.02
+            }
+
+        }
+
+		XWX_liberation_doctrine = {
+            
+            picture = generic_communist_army
+
+            allowed = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			cancel = {
+				NOT = { has_government = communism }
+			}
+
+            removal_cost = -1
+
+            modifier = {
+				weekly_manpower = 500
+				conscription_factor = 0.07
+				compliance_gain = 0.02
+				army_attack_factor = 0.02
+            }
+
+        }
+
+		XWX_liberation_doctrine_2 = {
+
+			name = XWX_liberation_doctrine
+            
+            picture = generic_communist_army
+
+            allowed = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			cancel = {
+				NOT = { has_government = communism }
+			}
+
+            removal_cost = -1
+
+            modifier = {
+				weekly_manpower = 1000
+				conscription_factor = 0.07
+				compliance_gain = 0.04
+				army_attack_factor = 0.02
+				army_org_factor = 0.05
+            }
+
+        }
+
 		XWX_liberated_women_idea = {
             
             picture = AUS_women_in_academia
@@ -209,13 +292,163 @@ ideas = {
 				always = yes
 			}
 
-           removal_cost = -1
+			cancel = {
+				NOT = { has_government = communism }
+			}
+
+            removal_cost = -1
 
             modifier = {
 				female_random_operative_chance = 0.4
 				research_speed_factor = 0.03
-				conscription_factor = 0.06
-				compliance_gain = 0.02
+				conscription_factor = 0.03
+            }
+
+        }
+
+		XWX_socialist_democracy = {
+            
+            picture = GER_limited_democratic_principles
+
+            allowed = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			cancel = {
+				NOT = { has_government = communism }
+			}
+
+            removal_cost = -1
+
+            modifier = {
+				political_power_factor = 0.05
+				offensive_war_stability_factor = 0.2
+            }
+
+        }
+
+		XWX_socialist_democracy_2 = { # XWX_work_against_corruption
+
+			name = XWX_socialist_democracy
+            
+            picture = GER_limited_democratic_principles
+
+            allowed = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			cancel = {
+				NOT = { has_government = communism }
+			}
+
+            removal_cost = -1
+
+            modifier = {
+				political_power_factor = 0.1
+				offensive_war_stability_factor = 0.2
+				consumer_goods_factor = -0.15
+				local_resources_factor = 0.1
+            }
+
+        }
+
+		XWX_socialist_democracy_3 = { # XWX_worker_rights
+
+			name = XWX_socialist_democracy
+            
+            picture = GER_limited_democratic_principles
+
+            allowed = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			cancel = {
+				NOT = { has_government = communism }
+			}
+
+            removal_cost = -1
+
+            modifier = {
+				political_power_factor = 0.1
+				offensive_war_stability_factor = 0.2
+				line_change_production_efficiency_factor = 0.1
+				production_factory_start_efficiency_factor = 0.05
+            }
+
+        }
+
+		XWX_socialist_democracy_4 = { # XWX_work_against_corruption + XWX_worker_rights
+
+			name = XWX_socialist_democracy
+            
+            picture = GER_limited_democratic_principles
+
+            allowed = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			cancel = {
+				NOT = { has_government = communism }
+			}
+
+            removal_cost = -1
+
+            modifier = {
+				political_power_factor = 0.1
+				offensive_war_stability_factor = 0.25
+				consumer_goods_factor = -0.15
+				local_resources_factor = 0.1
+				line_change_production_efficiency_factor = 0.1
+				production_factory_start_efficiency_factor = 0.05
+            }
+
+        }
+
+		XWX_socialist_democracy_5 = {
+
+			name = XWX_socialist_democracy
+            
+            picture = GER_limited_democratic_principles
+
+            allowed = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			cancel = {
+				NOT = { has_government = communism }
+			}
+
+            removal_cost = -1
+
+            modifier = {
+				political_power_factor = 0.1
+				offensive_war_stability_factor = 0.25
+				consumer_goods_factor = -0.15
+				local_resources_factor = 0.1
+				line_change_production_efficiency_factor = 0.1
+				production_factory_start_efficiency_factor = 0.05
+				army_core_defence_factor = 0.1
+				army_core_attack_factor = 0.1
             }
 
         }
@@ -240,7 +473,6 @@ ideas = {
 
             modifier = {
 				political_power_factor = 0.03
-				political_advisor_cost_factor = -0.15
 				offensive_war_stability_factor = 0.2
             }
 
@@ -273,7 +505,7 @@ ideas = {
 
 		XWX_safeguard_china_idea = {
             
-            picture = chi_chinese_unity
+            picture = XWX_safeguard_china
 
             allowed = {
 				always = yes
@@ -495,7 +727,7 @@ ideas = {
 
         XWX_incompetent_provincial_army = {
 
-			picture = chi_incompetent_officers
+			picture = chi_army_corruption
 		
 			allowed = {
 				always = no
@@ -522,7 +754,7 @@ ideas = {
 
         XWX_untrained_provincial_army = {
 
-			picture = chi_army_corruption
+			picture = chi_army_corruption2
 		
 			allowed = {
 				always = no
@@ -548,7 +780,7 @@ ideas = {
 
         XWX_trained_provincial_army = {
 
-			picture = chi_army_corruption2
+			picture = chi_army_corruption3
 		
 			allowed = {
 				always = no
@@ -572,7 +804,7 @@ ideas = {
 
         XWX_competent_provincial_army = {
 
-			picture = chi_army_corruption3
+			picture = XWX_nra_restored
 		
 			allowed = {
 				always = no

@@ -2,11 +2,24 @@ leader_traits = {
 
 # LEADERS
 
+	XWX_peasant_administration_trait = {
+		random = no
+
+		political_power_gain = 0.1
+		min_export = -0.15
+		compliance_gain = 0.01
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
     XWX_kuomintang_official_trait = {
 		random = no
 
 		political_power_factor = 0.07
 		war_support_factor = 0.1
+		neutrality_drift = 0.04
 
 		ai_will_do = {
 			factor = 1
@@ -18,6 +31,7 @@ leader_traits = {
 
 		equipment_capture_factor = 0.1
 		attrition = -0.02
+		fascism_drift = 0.04
 
 		targeted_modifier = {
 			tag = JAP
@@ -52,6 +66,18 @@ leader_traits = {
 	# 16 = ARTILLERY
 	# 17 = HORSE
 	# 18 = SALUTE
+
+	XWX_feminist_revolutionary = {
+		random = no
+        sprite = 13
+
+        political_power_factor = 0.05
+		conscription_factor = 0.07
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
 
 
 }

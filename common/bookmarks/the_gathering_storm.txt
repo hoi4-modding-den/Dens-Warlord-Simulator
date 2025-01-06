@@ -156,7 +156,7 @@ bookmarks = {
 				XWX_incompetent_provincial_army
 			}
 			focuses = {
-				XWX_the_peasant_united_front
+				XWX_restart_the_civil_war
 				XWX_final_army_improvement
 				XWX_kmt_coup
 			}

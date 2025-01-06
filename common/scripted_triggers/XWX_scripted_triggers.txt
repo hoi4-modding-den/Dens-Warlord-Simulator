@@ -23,10 +23,6 @@ XWX_go_kmt_path = {
     }
 }
 
-XWX_go_jap_path = {
-    has_country_flag = XWX_random_jap_path
-}
-
 XWX_go_commie_path = {
     has_country_flag = XWX_random_com_path
 }

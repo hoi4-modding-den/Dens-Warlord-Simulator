@@ -125,6 +125,16 @@ spriteTypes = {
 		texturefile = "gfx/XWX/idea_XWX_nationalist_army.png"
 	}
 
+	spriteType = {
+		name = "GFX_idea_XWX_nra_restored"
+		texturefile = "gfx/XWX/idea_XWX_nra_restored.png"
+	}
+
+	spriteType = {
+		name = "GFX_idea_XWX_safeguard_china"
+		texturefile = "gfx/XWX/idea_XWX_safeguard_china.png"
+	}
+
 # CHARACTERS
 
 	spriteType = {

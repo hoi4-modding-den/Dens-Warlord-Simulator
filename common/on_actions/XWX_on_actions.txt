@@ -65,6 +65,29 @@ on_actions = {
 				}
 				drop_cosmetic_tag = yes
 			}
+			if = {
+				limit = {
+					has_power_balance = {
+						id = XWX_communes_bop
+					}
+					NOT = { has_government = communism }
+				}
+				set_country_flag = XWX_dormant_commune_bop
+				remove_power_balance = {
+					id = XWX_communes_bop
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = XWX_dormant_commune_bop
+					has_government = communism
+				}
+				set_power_balance = {
+					id = XWX_communes_bop
+					left_side = XWX_federalists
+					right_side = XWX_centralists
+				}
+			}
         }
     }
 
