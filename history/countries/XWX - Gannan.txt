@@ -101,7 +101,10 @@ set_variable = { XWX_industry_production_speed_industrial_complex_factor = 0.2 }
 set_variable = { XWX_kmt_power = 4 }
 
 recruit_character = XWX_peasant_collective
+recruit_character = XWX_chen_yi
+recruit_character = XWX_deng_xihou
 recruit_character = XWX_hu_lanqi
+recruit_character = XWX_jacob_rosenberg
 recruit_character = XWX_liu_wenhui
 recruit_character = XWX_liu_xiang
 recruit_character = XWX_rao_guohua

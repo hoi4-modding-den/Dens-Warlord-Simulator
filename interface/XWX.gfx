@@ -138,8 +138,23 @@ spriteTypes = {
 # CHARACTERS
 
 	spriteType = {
+		name = "GFX_portrait_XWX_chen_yi"
+		texturefile = "gfx/XWX/portrait_XWX_chen_yi.png"
+	}
+
+	spriteType = {
+		name = "GFX_portrait_XWX_deng_xihou"
+		texturefile = "gfx/XWX/portrait_XWX_deng_xihou.png"
+	}
+
+	spriteType = {
 		name = "GFX_portrait_XWX_hu_lanqi"
 		texturefile = "gfx/XWX/portrait_XWX_hu_lanqi.png"
+	}
+
+	spriteType = {
+		name = "GFX_portrait_XWX_jacob_rosenberg"
+		texturefile = "gfx/XWX/portrait_XWX_jacob_rosenberg.png"
 	}
 
 	spriteType = {
@@ -170,8 +185,23 @@ spriteTypes = {
 # ADVISORS
 
 	spriteType = {
+		name = "GFX_idea_XWX_chen_yi"
+		texturefile = "gfx/XWX/idea_XWX_chen_yi.png"
+	}
+
+	spriteType = {
+		name = "GFX_idea_XWX_deng_xihou"
+		texturefile = "gfx/XWX/idea_XWX_deng_xihou.png"
+	}
+
+	spriteType = {
 		name = "GFX_idea_XWX_hu_lanqi"
 		texturefile = "gfx/XWX/idea_XWX_hu_lanqi.png"
+	}
+
+	spriteType = {
+		name = "GFX_idea_XWX_jacob_rosenberg"
+		texturefile = "gfx/XWX/idea_XWX_jacob_rosenberg.png"
 	}
 
 	spriteType = {
@@ -214,6 +244,11 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_report_event_XWX_KMT_victory"
 		texturefile = "gfx/XWX/report_event_XWX_kmt_victory.png"
+	}
+
+	spriteType = {
+		name = "GFX_report_event_XWX_rosenfeld"
+		texturefile = "gfx/XWX/report_event_XWX_rosenfeld.png"
 	}
 
 # TEXTICONS

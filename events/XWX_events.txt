@@ -140,6 +140,44 @@ country_event = { # Military Focus Unlock Event
 
 }
 
+country_event = { # Jakob Rosenfeld arrives 
+	id = XWX_political_events.6
+	title = XWX_political_events.6.t
+	desc = XWX_political_events.6.desc
+	picture = GFX_report_event_XWX_rosenfeld
+
+	trigger = {
+		# basic reqs.
+		tag = XWX
+		exists = yes
+		has_government = communism
+
+		# Anschluss has happened
+		GER = {
+			has_government = fascism
+			exists = yes
+			has_country_flag = AUS_annexed
+		}
+	}
+    
+    is_triggered_only = no
+    fire_only_once = yes
+
+	mean_time_to_happen = {
+		months = 2
+	}
+
+	option = { 
+		name = XWX_political_events.6.a
+		add_political_power = 15
+		custom_effect_tooltip = generic_skip_one_line_tt
+		set_country_flag = XWX_rosenberg_arrived
+		custom_effect_tooltip = available_political_advisor
+		show_ideas_tooltip = XWX_jacob_rosenberg_advisor
+	}
+
+}
+
 country_event = { # Kuomintang Coup (without Civil War) 
 	id = XWX_kmt_events.1
 	title = XWX_kmt_events.1.t
@@ -227,6 +265,12 @@ country_event = { # Kuomintang Civil War preparations
 
 	is_triggered_only = yes
 
+	immediate = {
+		hidden_effect = {
+			set_country_flag = XWX_civil_War_imminent
+		}
+	}
+
 	option = { 
 		name = XWX_kmt_events.4.a
 		XWX_remove_kmt_insurgency = yes
@@ -303,6 +347,13 @@ country_event = { # Kuomintang Civil War starts
 						target = CHI
 						modifier = XWX_is_kmt_ally_modifier
 					}
+				}
+				create_country_leader = {
+					name = XWX_deng_xihou_name
+					picture = GFX_portrait_XWX_deng_xihou
+					traits = { XWX_kuomintang_official_trait experienced_insurgent }
+					ideology = despotism
+					expire = "1960.1.1.1"
 				}
 			}
 		}

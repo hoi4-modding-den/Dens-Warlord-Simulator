@@ -14,6 +14,75 @@ characters = {
 		}
 	}
 
+	XWX_chen_yi = { 
+		name = XWX_chen_yi_name
+		portraits = {
+			army = {
+				large = GFX_portrait_XWX_chen_yi
+				small = GFX_idea_XWX_chen_yi
+			}
+		}
+		field_marshal = {
+			visible = {
+				has_government = communism
+			}
+			traits = { career_officer JAP_communist_sympathizer }
+			skill=4
+			attack_skill=4
+			defense_skill=2
+			planning_skill=3
+			logistics_skill=3
+		}
+		advisor = {
+			slot = high_command
+			idea_token = XWX_chen_yi_advisor
+
+			available = {
+				has_government = communism
+			}
+			
+			cost = 100
+
+			ai_will_do = {
+				factor = 5
+			}
+
+			traits = {
+				army_regrouping_2
+			}
+		}
+	}
+
+	XWX_deng_xihou = { 
+		name = XWX_deng_xihou_name
+		portraits = {
+			army = {
+				large = GFX_portrait_XWX_deng_xihou
+				small = GFX_idea_XWX_deng_xihou
+			}
+			civilian = {
+				large = GFX_portrait_XWX_deng_xihou
+				small = GFX_idea_XWX_deng_xihou
+			}
+		}
+		country_leader = {
+			traits = { XWX_kuomintang_official_trait experienced_insurgent }
+			ideology = despotism
+			expire = "1960.1.1.1"
+		}
+		field_marshal = {
+			visible = {
+				has_government = neutrality
+			}
+			traits = { inspirational_leader }
+			skill=4
+			attack_skill=4
+			defense_skill=3
+			planning_skill=3
+			logistics_skill=3
+		}
+	}
+
 	XWX_hu_lanqi = { 
 		name = XWX_hu_lanqi_name
 		gender = female
@@ -55,33 +124,49 @@ characters = {
 				XWX_feminist_revolutionary
 			}
 
-			on_add = {
-				if = {
-					limit = {
-						ROOT = {
-							has_power_balance = { id = XWX_communes_bop }
-						}
-					}
-					add_power_balance_value = {
-						id = XWX_communes_bop
-						value = -0.05
-						tooltip_side = XWX_federalists
-					}
-				}
+		}
+	}
+
+	XWX_jacob_rosenberg = { 
+		name = XWX_jacob_rosenberg_name
+		portraits = {
+			army = {
+				large = GFX_portrait_XWX_jacob_rosenberg
+				small = GFX_idea_XWX_jacob_rosenberg
 			}
-			on_remove = {
-				if = {
-					limit = {
-						ROOT = {
-							has_power_balance = { id = XWX_communes_bop }
-						}
-					}
-					add_power_balance_value = {
-						id = XWX_communes_bop
-						value = 0.05
-						tooltip_side = XWX_centralists
-					}
-				}
+		}
+		corps_commander = {
+			visible = {
+				has_country_flag = XWX_rosenberg_arrived
+				has_government = communism
+			}
+			traits = { JAP_communist_sympathizer inspirational_leader militias_officer }
+			skill=2
+			attack_skill=1
+			defense_skill=3
+			planning_skill=1
+			logistics_skill=2
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = XWX_jacob_rosenberg_advisor
+
+			available = {
+				NOT = { has_government = fascism }
+			}
+
+			visible = {
+				has_country_flag = XWX_rosenberg_arrived
+			}
+			
+			cost = 100
+
+			ai_will_do = {
+				factor = 5
+			}
+
+			traits = {
+				ICE_progressive_doctor
 			}
 		}
 	}

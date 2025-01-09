@@ -47,7 +47,10 @@ XWX_GATHERING_STORM_DESC: "The Gannan Peasant Republics are a collective in the 
 
  XWX_peasant_collective_name: "Gannan Peasant Collectives"
  XWX_peasant_collective_name_PRC: "Chinese Peasant Government"
+ XWX_chen_yi_name: "Chen Yi"
+ XWX_deng_xihou_name: "Deng Xihou"
  XWX_hu_lanqi_name: "Hu Lanqi"
+ XWX_jacob_rosenberg_name: "Jakob Rosenfeld" #accidentally misspelled his name everywhere
  XWX_liu_wenhui_name: "Liu Wenhui"
  XWX_liu_xiang_name: "Liu Xiang"
  XWX_rao_guohua_name: "Rao Gouhua"
@@ -127,6 +130,10 @@ XWX_GATHERING_STORM_DESC: "The Gannan Peasant Republics are a collective in the 
  XWX_trained_provincial_army: "Provincial Army"
  XWX_competent_provincial_army: "National Revolutionary Army Restored"
  XWX_prepared_trenches: "Entrenched Positions"
+ XWX_whapoa_advisors: "Whampoa Training Instructors"
+ XWX_60_divisions_plan: "60 Divisions Plan"
+ XWX_revolutionary_offense_idea: "Revolutionary Offense"
+ XWX_liberation_planning: "Army Improvement Committee"
 
  XWX_industry_modifier: "National Industrialisation"
  XWX_industry_modifier_desc: "Our nation is lacking in many aspects. Comparably, it is the least industrialised province in all of China. Still, our development plans are layed out before us and with great effort will be turn our backwater region into the industrial heartlands of China."
@@ -233,14 +240,14 @@ XWX_bop_cat: "BoP Category"
    XWX_federalists_low_control_range: "Low Federalist Influence"
    XWX_federalists_medium_control_range: "Rising Federalist Influence"
    XWX_federalists_high_control_range: "High Federalist Influence"
-   XWX_federalists_total_control_range: "The Federalist Model"
+   XWX_federalists_total_control_range: "Federalist Dominance"
 
   XWX_centralists: "Centralists"
 
    XWX_centralists_low_control_range: "Low Centralist Influence"
    XWX_centralists_medium_control_range: "Rising Centralist Influence"
    XWX_centralists_high_control_range: "High Centralist Influence"
-   XWX_centralists_total_control_range: "The Unitary Model"
+   XWX_centralists_total_control_range: "Centralist Dominance"
 
 
 # EVENTS
@@ -249,7 +256,7 @@ XWX_bop_cat: "BoP Category"
  XWX_political_events.1.desc: "$XWX_industrial_revolution_desc$\n \nThe Third Commune Conference will also handle some of these matters of industry, hopefully pushing our province towards becoming a modern nation."
  XWX_political_events.1.a: "A different kind of revolution."
 
- XWX_political_events.2.t: "Tianyu Fort completed!"
+ XWX_political_events.2.t: "Tianyu Fort completed"
  XWX_political_events.2.desc: "A delegation from the [ROOT.GetAdjective] government has arrived at Tianyu Fortress to inaugurate the fort. Following the beginning of construction in June 1934, the fort has swallowed large amounts of resources, which some say was a massive waste, and personnel, which was delegated to protecting the unfinished structure."
  XWX_political_events.2.a: "What a beautiful fortress."
 
@@ -267,21 +274,27 @@ XWX_bop_cat: "BoP Category"
  XWX_political_events.5.desc: "The Armed Forces of the Peasant Republics, the 'Provincial Army', is heavily reliant on recruits from the People's Militia, a paramilitary organisation and a holdover from our time as a part of the People's Republic of China. If we want to reform our army into an effective fighting force, we will have to give up our reliance on the militia.\n \nThanks to a Soviet military mission, our Armed Forces does have an official airforce branch, helmed by General Liu Xiang."
  XWX_political_events.5.a: "Another step towards modernisation."
 
+ XWX_political_events.6.t: "Austrian Doctor offers Service"
+ XWX_political_events.6.desc: "The Jewish Austrian doctor Jakob Rosenberg is a fugitive from the German-occupied Austria. Rosenfeld fled his home after being persecuted by the fascist regime. He arrived in Shanghai a few months ago and has made his way to our small province in search for refuge."
+ XWX_political_events.6.a: "Welcome in [ROOT.capital.GetCapitalVictoryPointName], Comrade."
+
  XWX_kmt_events.1.t: "Kuomintang Coup d'Etat!"
  XWX_kmt_events.1.desc: "The coup was swift and bloodless. Following nummerous failed raids on Kuomintang hideouts, their assault on the Revolutionary regime's headquarters came unexpected. Thanks to support from the [CHI.capital.GetCapitalVictoryPointName] Government, the Kuomintang were able to muster enough equipment and soldiers take control of the building and put the communist ministers under arrest."
  XWX_kmt_events.1.a: "Hail the Marshal!"
 
  XWX_kmt_events.2.t: "The Kuomintang Insurgency"
- XWX_kmt_events.2.desc: "The Kuomintang has been working in the underground of our nation to destabilise the regime. They are a threat to the security of the revolution and the nation."
+ XWX_kmt_events.2.desc: "The Kuomintang has been working in the underground of our nation to destabilise the regime. With assistance of the Nationalist Government in Chongqing, their insurgency has yet to be put to an end. They are a threat to the security of the revolution and the nation."
  XWX_kmt_events.2.a: "Someone has to stop them!"
 
  XWX_kmt_events.3.t: "The Kuomintang's Retreat"
- XWX_kmt_events.3.desc: "After extensive operations to hunt down the reactionaries of the KMT, we have finally driven them out of the Gannan Province. With this, the Nationalist Government may try to attack us, but for now our nation is stable."
+ XWX_kmt_events.3.desc: "After extensive operations to hunt down the reactionaries of the Kuomintang, we have finally driven them out of the Gannan Province. With this, the Nationalist Government may try to attack us, but for now our nation is stable."
  XWX_kmt_events.3.a: "Victory!"
 
  XWX_kmt_events.4.t: "Gannan Blockade!"
  XWX_kmt_events.4.desc: "Tensions between the government and the Kuomintang have reached a boiling point. Members of the Kuomintang armed forces have blockaded roads to Hezuo, effectively preventing our troops from entering the state."
- XWX_kmt_events.4.a: "Ready the Troops!"
+ XWX_kmt_events.4.a: "Ready the Army!"
+
+ XWX_civil_War_imminent: "£GFX_XWX_kmt_texticon Kuomintang Strength has reached §R20§!."
 
  XWX_kmt_events.5.t: "Kuomintang Rebellion!"
  XWX_kmt_events.5.desc: "Following the Blockade, the Army has prepared for this moment. With the Kuomintang officially proclaiming its seccession from [ROOT.GetNameDef], it is time to put an end to their resistance."
@@ -328,7 +341,7 @@ XWX_bop_cat: "BoP Category"
  XWX_diplomatic_events.9.a: "Deserved!"
 
  XWX_diplomatic_events.10.t: "Failed Raid Operation!"
- XWX_diplomatic_events.10.desc: "Our soldiers failed to raid the targeted [FROM.GetAdjective] supply depot, being overwhelmed by the stationed garrison troops."
+ XWX_diplomatic_events.10.desc: "Our soldiers failed to raid the targeted [FROM.GetAdjective] supply depot, being overwhelmed by the stationed garrison troops. This defeat has severely impacted the morale of our troops and we should reconsider our plans for another raid in the near future."
 
  XWX_diplomatic_events.11.t: "[FROM.GetAdjectiveCap]-[ROOT.GetAdjective] Joint Exercises"
  XWX_diplomatic_events.11.desc: "Officers from the [FROM.GetAdjectiveCap] Army have approached our military officials in organising a joint exercise between our armies."
@@ -341,7 +354,7 @@ XWX_bop_cat: "BoP Category"
 
  XWX_diplomatic_events.13.t: "[FROM.GetAdjectiveCap] Army denies Request"
  XWX_diplomatic_events.13.desc: "Our proposal for a [ROOT.GetAdjectiveCap]-[FROM.GetAdjective] Joint Exercise has been denied by [FROM.GetAdjective] military officials. They cite not wanting to strengthen our government on the basis that their opinion of us is not high enough."
- XWX_diplomatic_events.13.a: "Reactionaries!"
+ XWX_diplomatic_events.13.a: "Rude."
 
  XWX_diplomatic_events.14.t: "[FROM.GetNameDefCap] wants to secure our Allegiance!"
  XWX_diplomatic_events.14.desc: "[FROM.GetAdjectiveCap] Officials have approached us in regards to our alignment towards the [CHI.capital.GetCapitalVictoryPointName] Government. They demand that we give up our autonomy regarding our diplomatic alignment and install a government more friendly to them. Otherwise we will face a diplomatic embargo and possibly invasion."
@@ -358,7 +371,7 @@ XWX_bop_cat: "BoP Category"
  XWX_diplomatic_events.16.b: "Start the Invasion!"
 
  XWX_diplomatic_events.17.t: "[FROM.GetNameDefCap] demands we join the [FROM.GetFactionName]!"
- XWX_diplomatic_events.17.desc: "After our refusal to surrender our autonomy to the regime in [FROM.capital.GetCapitalVictoryPointName], they now demand that we at least join the [FROM.GetFactionName], to assist in their mission of protecting China from outside interference. Otherwise, they promise to invade us."
+ XWX_diplomatic_events.17.desc: "After our refusal to surrender our autonomy to [FROM.capital.GetCapitalVictoryPointName], they now demand that we at least join the [FROM.GetFactionName], to assist in their mission of protecting China from outside interference. Otherwise, they promise to invade us."
  XWX_diplomatic_events.17.a: "We can compromise on this."
  XWX_diplomatic_events.17.b: "Let them come!"
 
@@ -541,6 +554,8 @@ XWX_bop_cat: "BoP Category"
  XWX_reform_the_militias: "Disband the Militia Brigades"
  XWX_reform_the_militias_desc: "While the People's Militia has been the backbone of our army for long, it is time to move away from their structures in favour of a professionally trained and commandeered army. The members of the People's Militia will however still be used as reservists."
  XWX_reform_the_militias_tt: "Unlock £GFX_decision_icon_small §Y$XWX_army_reform_decision$§!."
+ XWX_heavy_conscription: "Forced Conscription"
+ XWX_heavy_conscription_desc: ""
  XWX_prepare_the_lands: "Prepare Defensive Positions"
  XWX_prepare_the_lands_desc: ""
  XWX_when_at_war_tt: "§YWhen at war:§!"
@@ -561,12 +576,6 @@ XWX_bop_cat: "BoP Category"
  XWX_artillery_development_desc: ""
  XWX_aircraft_development: "Aircraft Development"
  XWX_aircraft_development_desc: ""
-
- XWX_final_army_improvement: "Restore the Revolutionary Spirit"
- XWX_final_army_improvement_desc: "Our Provincial Army has grown from its humble beginnings as the remnants of the PLA and a bunch of communist partisan groups. It is time to fully accept who we are and restore the honour of the National Revolutionary Army."
- XWX_heavy_conscription: "Forced Conscription"
- XWX_heavy_conscription_desc: ""
-
  XWX_acquire_more_planes: "Aircraft Acquisition"
  XWX_acquire_more_planes_desc: "The beginnings of our airforce were sponsored by a Soviet military mission to aid the revolution. But to actually develop a formidable airforce, we need to spend some resources to acquire more."
  XWX_own_plane_designs: "Own Plane Designs"
@@ -577,6 +586,28 @@ XWX_bop_cat: "BoP Category"
  XWX_professional_air_doctrine_desc: ""
  XWX_air_bases: "Construct Airbases"
  XWX_air_bases_desc: ""
+
+ XWX_kmt_army_improvements: "The Nationalist Army"
+ XWX_kmt_army_improvements_desc: ""
+ XWX_whampoa_military_training: "Whampoa Training Instructors"
+ XWX_whampoa_military_training_desc: ""
+ XWX_adopt_60_divisions_plan: "Adopt the 60 Divisions Plan"
+ XWX_adopt_60_divisions_plan_desc: ""
+ XWX_final_army_improvement: "Restore the Revolutionary Spirit"
+ XWX_final_army_improvement_desc: "Our Provincial Army has grown from its humble beginnings as the remnants of the PLA and a bunch of communist partisan groups. It is time to fully accept who we are and restore the honour of the National Revolutionary Army."
+ XWX_kmt_army: "Combine the Curriculum"
+ XWX_kmt_army_desc: ""
+
+ XWX_peasant_army_improvements: "The People's Army"
+ XWX_peasant_army_improvements_desc: ""
+ XWX_revolutionary_offense: "Revolution on the Offensive"
+ XWX_revolutionary_offense_desc: ""
+ XWX_liberation_plans: "Army Improvement Committee"
+ XWX_liberation_plans_desc: ""
+ XWX_final_army_improvement_2: "$XWX_final_army_improvement$"
+ XWX_final_army_improvement_2_desc: "$XWX_final_army_improvement_desc$"
+ XWX_liberation_army: "Merge the Committees"
+ XWX_liberation_army_desc: ""
 
 
 # TERRAIN
