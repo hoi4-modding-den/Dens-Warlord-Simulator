@@ -20,8 +20,8 @@ XWX_commie_colour = {
 }
 
 XWX_prc = {
-	color = rgb { 125 13 24 }
-	color_ui = rgb { 163 17 31 }
+	color = rgb { 221 66 0 }
+	color_ui = rgb { 221 66 0 }
 }
 
 XWX_JAP_aligned = {

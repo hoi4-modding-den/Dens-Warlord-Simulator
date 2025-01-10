@@ -1,4 +1,24 @@
 on_actions = {
+	on_startup = {
+		effect = {
+			if = {
+				limit = {
+					is_historical_focus_on = no
+				}
+				random_list = {
+					80 = {
+						set_country_flag = XWX_random_com_path
+					}
+					20 = {
+						set_country_flag = XWX_random_kmt_path
+					}
+				}
+			}
+			else = {
+				set_country_flag = XWX_random_kmt_path
+			}
+		}
+	}
     on_ruling_party_change = {
         effect = {
             if = {

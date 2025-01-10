@@ -10,5 +10,34 @@ DEN_is_chinese_country = {
         original_tag = XTN
         original_tag = XKM
 		original_tag = XIS
+        original_tag = XSF
+        original_tag = XSI
+        original_tag = XHK
     }
+}
+
+DEN_is_chinese_state = {
+	OR = {
+		region = 252 # Tien Shan
+		region = 242 # Northern Manchuria
+		region = 243 # Eastern Manchuria
+		region = 155 # Western Manchuria
+		region = 244 # Chahar
+		region = 144 # Western China
+		region = 245 # Shanxi Region
+		region = 247 # Yangtze River Region
+		region = 145 # Taklamakan
+		region = 200 # Qinghai
+		region = 250 # Kham
+		region = 246 # Central China
+		region = 164 # Eastern China
+		region = 165 # Southern China
+		region = 248 # Guangxi
+		region = 249 # Yunnan
+		region = 143 # Northern China
+        state = 524 # Taiwan
+        state = 757 # Shigatse/Tibet
+        state = 322 # Nagqu/Tibet
+        state = 758 # Ngari/Tibet
+	}
 }

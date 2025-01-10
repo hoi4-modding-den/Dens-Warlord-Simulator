@@ -121,7 +121,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = XWX_communal_report_1936
 
-		cost = 5
+		cost = 8
 
 		available = {
 			has_government = communism
@@ -230,6 +230,8 @@ focus_tree = {
 			}
 			custom_effect_tooltip = generic_skip_one_line_tt
 			remove_ideas = XWX_splinter_faction
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = XWX_unlock_faction_focus_tt
 		}
 	}
 
@@ -242,7 +244,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = XWX_commune_discussion
 
-		cost = 4
+		cost = 5
 
 		ai_will_do = {
 			base = 0
@@ -266,6 +268,7 @@ focus_tree = {
 				remove_idea = XWX_splinter_faction
 				add_idea = XWX_splinter_faction_2
 			}
+			custom_effect_tooltip = XWX_unlock_prc_war_focus_tt
 		}
 	}
 
@@ -316,7 +319,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = XWX_develop_the_province
 
-		cost = 5
+		cost = 10
 
 		available = {
 			has_war = no
@@ -369,7 +372,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = XWX_civilian_focus
 
-		cost = 8
+		cost = 7
 
 		available = {
 			has_government = communism
@@ -402,6 +405,10 @@ focus_tree = {
 		relative_position_id = XWX_communal_report_1936
 
 		cost = 5
+
+		ai_will_do = {
+			base = 200
+		}
 
 		available = {
 			has_country_flag = XWX_second_gannan_famine
@@ -471,6 +478,10 @@ focus_tree = {
 
 		cost = 5
 
+		ai_will_do = {
+			base = 200
+		}
+
 		available = {
 			has_country_flag = XWX_second_gannan_famine
 		}
@@ -508,7 +519,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = XWX_agrarian_socialism
 
-		cost = 5
+		cost = 10
 
 		available = {
 			has_country_flag = XWX_second_gannan_famine_over
@@ -543,7 +554,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = XWX_communal_report_1936
 
-		cost = 5
+		cost = 10
 
 		ai_will_do = {
 			base = 0
@@ -626,7 +637,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = XWX_communal_report_1936
 
-		cost = 5
+		cost = 8
 
 		ai_will_do = {
 			base = 75
@@ -672,7 +683,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = XWX_hunt_for_kmt_reactionaries
 
-		cost = 4
+		cost = 5
 
 		ai_will_do = {
 			base = 75
@@ -707,7 +718,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = XWX_guarantee_military_loyalty
 
-		cost = 5
+		cost = 7
 
 		available = {
 			has_government = communism
@@ -788,7 +799,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = XWX_hunt_for_kmt_reactionaries
 
-		cost = 5
+		cost = 3
 
 		ai_will_do = {
 			base = 100
@@ -860,6 +871,14 @@ focus_tree = {
 
 		search_filters = {  }
 		completion_reward = {
+			XWX_peasant_collective = {
+				swap_country_leader_traits = {
+					remove = XWX_peasant_administration_trait
+					add = XWX_peasant_administration_improved_trait
+					ideology = marxism
+				}
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
 			custom_effect_tooltip = XWX_loads_new_focus_tree_tt
 			hidden_effect = {
 				load_focus_tree = { tree = XWX_focus_tree_peasants keep_completed = yes }
@@ -921,6 +940,10 @@ focus_tree = {
 
 		cost = 5
 
+		ai_will_do = {
+			base = 500
+		}
+
 		available = {
 			has_government = communism
 		}
@@ -945,7 +968,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = XWX_revolutionary_fervour
 
-		cost = 5
+		cost = 8
 
 		available = {
 			has_government = communism
@@ -1066,7 +1089,7 @@ focus_tree = {
 		y = 2
 		relative_position_id = XWX_hold_local_elections
 
-		cost = 10
+		cost = 8
 
 		available = {
 			has_government = communism
@@ -1103,6 +1126,7 @@ focus_tree = {
 			has_completed_focus = XWX_reconcile_with_prc
 			has_government = communism
 			is_subject = no
+			has_war = no
 		}
 
 		bypass = {
@@ -1114,7 +1138,15 @@ focus_tree = {
 			set_rule = {
 				can_create_factions = yes
 			}
-			create_faction = XWX_workers_united_front
+			if = {
+				limit = {
+					is_faction_leader = yes
+				}
+				set_faction_name = XWX_workers_united_front
+			}
+			else = {
+				create_faction = XWX_workers_united_front
+			}
 			if = {
 				limit = {
 					XWE = {
@@ -1186,7 +1218,19 @@ focus_tree = {
 		y = 1
 		relative_position_id = XWX_the_peasant_united_front
 
-		cost = 7
+		cost = 8
+
+		ai_will_do = {
+			base = 0
+            modifier = {
+                add = 100
+                OR = {
+					has_completed_focus = XWX_peasant_army
+					has_completed_focus = XWX_peasants_revolution
+					has_completed_focus = XWX_liberation_army
+				}
+            }
+		}
 
 		available = {
 			has_government = communism
@@ -1201,8 +1245,21 @@ focus_tree = {
 		completion_reward = {
 			set_cosmetic_tag = XWX_prc
 			set_country_flag = XWX_is_china
+			if = {
+				limit = {
+					has_country_leader = {
+						character = XWX_peasant_collective
+						ruling_only = yes
+					}
+ 				}
+				hidden_effect = {
+					set_country_leader_name = {
+						name = XWX_peasant_collective_PRC_name
+					}
+				}
+			}
 			custom_effect_tooltip = generic_skip_one_line_tt
-			# get cores on all of China
+			d_XWX_gain_cores_on_china = yes
 			custom_effect_tooltip = generic_skip_one_line_tt
 			if = {
 				limit = {
@@ -1214,7 +1271,10 @@ focus_tree = {
 							is_subject = no
 							is_subject_of = ROOT
 						}
-						DEN_is_chinese_country = yes
+						OR = {
+							DEN_is_chinese_country = yes
+							original_tag = XTI
+						}
 					}
 					country_event = {
 						id = XWX_diplomatic_events.20
@@ -1226,7 +1286,10 @@ focus_tree = {
 				limit = {
 					is_in_faction = yes
 					faction_leader = {
-						DEN_is_chinese_country = yes
+						OR = {
+							DEN_is_chinese_country = yes
+							original_tag = XTI
+						}
 					}
 				}
 				leave_faction = yes
@@ -1249,11 +1312,11 @@ focus_tree = {
 		y = 1
 		relative_position_id = XWX_revolutionary_fervour
 
-		cost = 5
+		cost = 8
 
 		available = {
 			has_government = communism
-			has_idea = XWX_liberation_doctrine
+			has_idea = XWX_liberation_efforts
 		}
 
 		bypass = {
@@ -1332,7 +1395,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = XWX_enforce_revolutionary_doctrine
 
-		cost = 5
+		cost = 10
 
 		available = {
 			has_government = communism
@@ -1358,7 +1421,7 @@ focus_tree = {
 		y = 2
 		relative_position_id = XWX_enforce_revolutionary_doctrine
 
-		cost = 10
+		cost = 8
 
 		available = {
 			has_government = communism
@@ -1391,6 +1454,10 @@ focus_tree = {
 
 		cost = 5
 
+		ai_will_do = {
+			base = 500
+		}
+
 		available = {
 			has_government = neutrality
 		}
@@ -1418,7 +1485,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = XWX_consolidate_control
 
-		cost = 5
+		cost = 8
 
 		available = {
 			OR = {
@@ -1513,7 +1580,7 @@ focus_tree = {
 		y = 2
 		relative_position_id = XWX_remove_communist_influence
 
-		cost = 5
+		cost = 8
 
 		available = {
 			NOT = { has_government = fascism }
@@ -1521,6 +1588,7 @@ focus_tree = {
 			if = {
 				limit = {
 					has_dlc = "La Resistance"
+					is_ai = no
 				}
 				network_strength = {
 					target = JAP
@@ -1556,6 +1624,10 @@ focus_tree = {
 
 		cost = 5
 
+		ai_will_do = {
+			base = 500
+		}
+
 		available = {
 			OR = {
 				has_government = neutrality
@@ -1589,7 +1661,11 @@ focus_tree = {
 		y = 1
 		relative_position_id = XWX_message_the_central_government
 
-		cost = 5
+		cost = 8
+
+		ai_will_do = {
+			base = 500
+		}
 
 		available = {
 			has_war_with = JAP
@@ -1619,7 +1695,11 @@ focus_tree = {
 		y = 1
 		relative_position_id = XWX_consolidate_control
 
-		cost = 5
+		cost = 8
+
+		ai_will_do = {
+			base = 100
+		}
 
 		available = {
 			NOT = { has_government = fascism }
@@ -1645,6 +1725,10 @@ focus_tree = {
 		relative_position_id = XWX_prepare_for_japanese_invasion
 
 		cost = 5
+
+		ai_will_do = {
+			base = 100
+		}
 
 		available = {
 			has_government = neutrality
@@ -1743,7 +1827,7 @@ focus_tree = {
 		y = 2
 		relative_position_id = XWX_prepare_for_japanese_invasion
 
-		cost = 7
+		cost = 8
 
 		available = {
 			NOT = { has_government = fascism }
@@ -1969,7 +2053,11 @@ focus_tree = {
 		y = 1
 		relative_position_id = XWX_construction_sector
 
-		cost = 6
+		cost = 10
+
+		ai_will_do = {
+			base = 150
+		}
 
 		available = {
 			num_of_civilian_factories > 6
@@ -1996,7 +2084,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = XWX_construction_sector
 
-		cost = 4
+		cost = 5
 
 		available = {
 			num_of_civilian_factories > 9
@@ -2048,7 +2136,11 @@ focus_tree = {
 		y = 1
 		relative_position_id = XWX_civilian_construction_funds
 
-		cost = 5
+		cost = 8
+
+		ai_will_do = {
+			base = 150
+		}
 
 		available = {
 			num_of_civilian_factories > 14
@@ -2096,7 +2188,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = XWX_clear_space
 
-		cost = 4
+		cost = 5
 
 		available = {
 			num_of_civilian_factories > 9
@@ -2142,7 +2234,7 @@ focus_tree = {
 		y = 2
 		relative_position_id = XWX_relocate_civilian_funds
 
-		cost = 5
+		cost = 8
 
 		available = {
 			num_of_civilian_factories > 19
@@ -2211,7 +2303,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = XWX_textile_mills
 
-		cost = 4
+		cost = 8
 
 		available = {
 			num_of_military_factories > 4
@@ -2276,7 +2368,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = XWX_workshop_output
 
-		cost = 4
+		cost = 8
 
 		available = {
 			num_of_military_factories > 4
@@ -2343,7 +2435,7 @@ focus_tree = {
 		y = 2
 		relative_position_id = XWX_industrial_revolution
 
-		cost = 5
+		cost = 8
 
 		available = {
 			
@@ -2372,7 +2464,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = XWX_mine_expansion
 
-		cost = 5
+		cost = 8
 
 		available = {
 			controls_state = 752
@@ -2472,7 +2564,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = XWX_reform_the_militias
 
-		cost = 4
+		cost = 8
 
 		available = {
 			
@@ -2506,7 +2598,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = XWX_reform_the_militias
 
-		cost = 4
+		cost = 5
 
 		ai_will_do = {
 			base = 500
@@ -2581,7 +2673,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = XWX_army_motorisation
 
-		cost = 5
+		cost = 10
 
 		available = {
 			XWX_liu_xiang = {
@@ -2675,7 +2767,7 @@ focus_tree = {
 			hidden_effect = {
 				capital_scope = {
 					create_unit = {
-						division = "name = \"Liu Xiang's Tank Brigade\" division_template = \"Tank Brigade\" start_experience_factor = 0.4"
+						division = "name = \"Experimental Tank Brigade\" division_template = \"Tank Brigade\" start_experience_factor = 0.4"
 						owner = XWX
 						count = 1
 					}
@@ -2693,7 +2785,11 @@ focus_tree = {
 		y = 1
 		relative_position_id = XWX_reform_the_militias
 
-		cost = 5
+		cost = 10
+
+		ai_will_do = {
+			base = 150
+		}
 
 		ai_will_do = {
 			base = 500
@@ -2735,7 +2831,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = XWX_military_academies
 
-		cost = 7
+		cost = 8
 
 		available = {
 			
@@ -2771,7 +2867,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = XWX_military_academies
 
-		cost = 7
+		cost = 8
 
 		available = {
 			
@@ -2806,7 +2902,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = XWX_provincial_army
 
-		cost = 4
+		cost = 5
 
 		available = {
 			has_war = yes
@@ -2835,7 +2931,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = XWX_provincial_army
 
-		cost = 4
+		cost = 5
 
 		available = {
 			
@@ -2902,7 +2998,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = XWX_acquire_more_planes
 
-		cost = 4
+		cost = 8
 
 		available = {
 			
@@ -2937,7 +3033,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = XWX_own_plane_designs
 
-		cost = 5
+		cost = 10
 
 		available = {
 			
@@ -3058,7 +3154,7 @@ focus_tree = {
 		y = 6
 		#relative_position_id =
 
-		cost = 4
+		cost = 10
 
 		available = {
 			has_idea = XWX_trained_provincial_army
@@ -3140,7 +3236,7 @@ focus_tree = {
 		y = 2
 		relative_position_id = XWX_kmt_army_improvements
 
-		cost = 8
+		cost = 10
 
 		available = {
 			has_army_experience > 149
@@ -3171,7 +3267,7 @@ focus_tree = {
 		y = 2
 		relative_position_id = XWX_final_army_improvement
 
-		cost = 4
+		cost = 8
 
 		available = {
 
@@ -3204,7 +3300,11 @@ focus_tree = {
 		y = 6
 		#relative_position_id =
 
-		cost = 4
+		cost = 10
+
+		ai_will_do = {
+			base = 150
+		}
 
 		available = {
 			has_idea = XWX_trained_provincial_army
@@ -3282,7 +3382,11 @@ focus_tree = {
 		y = 2
 		relative_position_id = XWX_peasant_army_improvements
 
-		cost = 8
+		cost = 10
+
+		ai_will_do = {
+			base = 150
+		}
 
 		available = {
 			has_army_experience > 149
@@ -3313,7 +3417,7 @@ focus_tree = {
 		y = 2
 		relative_position_id = XWX_final_army_improvement_2
 
-		cost = 4
+		cost = 8
 
 		available = {
 			

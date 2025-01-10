@@ -50,7 +50,15 @@ XWX_kmt_insurgency_cat = {
                 activate_mission = XWX_kmt_civil_war_timer
             }
             else = {
-                country_event = XWX_kmt_events.4
+                if = {
+                    limit = {
+                        is_ai = no
+                    }
+                    country_event = XWX_kmt_events.4
+                }
+                else = { # to make the AI not kill itself because it's stupid
+                    XWX_decrease_kmt_power = yes
+                }
             }
     	}
 	}
@@ -134,7 +142,7 @@ XWX_kmt_insurgency_cat = {
         ai_will_do = {
 			base = 0
             modifier = {
-                add = 100
+                add = 50
                 XWX_go_kmt_path = yes
                 NOT = { has_idea = XWX_strong_kmt_insurgency }
             }
@@ -179,6 +187,7 @@ XWX_construction_decisions = {
     	days_mission_timeout = 366
 
     	timeout_effect = {
+            set_country_flag = XWX_fort_constructed
             hidden_effect = {
                 country_event = XWX_political_events.2
             }
@@ -260,6 +269,14 @@ XWX_construction_decisions = {
 
         cost = 50
 
+        ai_will_do = {
+			base = 50
+            modifier = {
+                factor = 4
+                NOT = { has_country_flag = XWX_fort_constructed }
+            }
+		}
+
         days_remove = 50
 
         fire_only_once = no
@@ -321,6 +338,10 @@ XWX_construction_decisions = {
 
         cost = 75
 
+        ai_will_do = {
+			base = 50 
+		}
+
         days_remove = 80
 
         fire_only_once = no
@@ -363,6 +384,10 @@ XWX_construction_decisions = {
         }
 
         cost = 75
+
+        ai_will_do = {
+			base = 50 
+		}
 
         days_remove = 80
 
@@ -416,7 +441,7 @@ XWX_army_improvement = {
 			base = 1000
 		}
 
-        days_remove = 200
+        days_remove = 180
 
         complete_effect = {
             hidden_effect = {
@@ -481,7 +506,7 @@ XWX_army_improvement = {
                     is_fully_controlled_by = ROOT
                 }
                 NOT = { is_controlled_by = ROOT }
-                DEN_is_chinese_country = yes
+                owner = { DEN_is_chinese_country = yes }
             }
         }
 
@@ -506,6 +531,14 @@ XWX_army_improvement = {
                 add_command_power = -20
                 random_list = {
                     20 = {
+                        modifier = {
+                            factor = 3
+                            FROM = {
+                                owner = {
+                                    has_war = yes
+                                }
+                            }
+                        }
                         FROM = {
                             owner = {
                                 country_event = {
@@ -516,6 +549,17 @@ XWX_army_improvement = {
                         }
                     }
                     80 = {
+                        modifier = {
+                            factor = 2
+                            FROM = {
+                                owner = {
+                                    strength_ratio = {
+                                        tag = ROOT
+                                        ratio < 2
+                                    }
+                                }
+                            }
+                        }
                         FROM = {
                             owner = {
                                 country_event = {
@@ -607,6 +651,10 @@ XWX_chinese_education_bureau = {
 
         cost = 100
 
+        ai_will_do = {
+			base = 150 
+		}
+
         days_remove = 100
 
         fire_only_once = yes
@@ -657,6 +705,10 @@ XWX_chinese_education_bureau = {
         }
 
         cost = 100
+
+        ai_will_do = {
+			base = 150 
+		}
 
         days_remove = 100
 
@@ -714,6 +766,10 @@ XWX_chinese_education_bureau = {
         }
 
         cost = 75
+
+        ai_will_do = {
+			base = 125 
+		}
 
         days_remove = 80
 
@@ -776,6 +832,19 @@ XWX_peasant_united_front_cat = {
 
         cost = 100
 
+        ai_will_do = {
+			base = 25
+            modifier = {
+                factor = 8
+                FROM = {
+                    has_opinion = {
+                        target = ROOT
+                        value > 9
+                    }
+                }
+            } 
+		}
+
         remove_effect = {
             FROM = {
                 country_event = {
@@ -801,6 +870,10 @@ XWX_second_gannan_famine_cat = {
         visible = {
             
         }
+
+        ai_will_do = {
+			base = 1000
+		}        
 
         available = {
             custom_trigger_tooltip = {
@@ -832,6 +905,10 @@ XWX_second_gannan_famine_cat = {
         }
 
         cost = 50
+
+        ai_will_do = {
+			base = 100
+		}
 
         days_remove = 30
 
@@ -942,6 +1019,15 @@ XWX_second_gannan_famine_cat = {
                     }
                 }
             }
+            modifier = {
+                factor = 10
+                FROM = {
+                    has_opinion = {
+                        target = ROOT
+                        value > 50
+                    }
+                }
+            }
 		}
 
         complete_effect = {
@@ -991,6 +1077,10 @@ XWX_bop_cat = {
                 factor = 0
                 has_country_flag = XWX_ai_prioritise_centralists
             }
+            modifier = {
+                factor = 0
+                XWX_go_kmt_path = yes
+            }
 		}
 
         days_remove = 30
@@ -1036,6 +1126,10 @@ XWX_bop_cat = {
                 factor = 100
                 has_country_flag = XWX_ai_prioritise_federalists
             }
+            modifier = {
+                factor = 0
+                XWX_go_kmt_path = yes
+            }
 		}
 
         fire_only_once = yes
@@ -1051,11 +1145,6 @@ XWX_bop_cat = {
         complete_effect = {
             add_stability = 0.1
             add_war_support = -0.1
-            add_power_balance_value = {
-				id = XWX_communes_bop
-				value = -0.15
-				tooltip_side = XWX_federalists
-			}
         }
     }
 
@@ -1081,6 +1170,10 @@ XWX_bop_cat = {
             modifier = {
                 factor = 50
                 has_country_flag = XWX_ai_prioritise_federalists
+            }
+            modifier = {
+                factor = 0
+                XWX_go_kmt_path = yes
             }
 		}
 
@@ -1155,6 +1248,10 @@ XWX_bop_cat = {
                 factor = 100
                 has_country_flag = XWX_ai_prioritise_federalists
             }
+            modifier = {
+                factor = 0
+                XWX_go_kmt_path = yes
+            }
 		}
 
         days_remove = 70
@@ -1177,7 +1274,7 @@ XWX_bop_cat = {
 			}
             custom_effect_tooltip = generic_skip_one_line_tt
             add_to_variable = {
-                XWX_famine_progress = 10
+                XWX_famine_progress = 20
                 tooltip = famine_progress_tt
             }
             clr_country_flag = XWX_doing_bop_decision
@@ -1215,6 +1312,10 @@ XWX_bop_cat = {
             modifier = {
                 factor = 50
                 has_country_flag = XWX_ai_prioritise_federalists
+            }
+            modifier = {
+                factor = 0
+                XWX_go_kmt_path = yes
             }
 		}
 
@@ -1266,6 +1367,10 @@ XWX_bop_cat = {
                 factor = 0
                 has_country_flag = XWX_ai_prioritise_federalists
             }
+            modifier = {
+                factor = 0
+                XWX_go_kmt_path = yes
+            }
 		}
 
         days_remove = 30
@@ -1311,6 +1416,10 @@ XWX_bop_cat = {
                 factor = 100
                 has_country_flag = XWX_ai_prioritise_centralists
             }
+            modifier = {
+                factor = 0
+                XWX_go_kmt_path = yes
+            }
 		}
 
         fire_only_once = yes
@@ -1326,11 +1435,6 @@ XWX_bop_cat = {
         complete_effect = {
             add_stability = -0.1
             add_war_support = 0.1
-            add_power_balance_value = {
-				id = XWX_communes_bop
-				value = 0.15
-				tooltip_side = XWX_centralists
-			}
         }
     }
 
@@ -1357,6 +1461,10 @@ XWX_bop_cat = {
             modifier = {
                 factor = 50
                 has_country_flag = XWX_ai_prioritise_centralists
+            }
+            modifier = {
+                factor = 0
+                XWX_go_kmt_path = yes
             }
 		}
 
@@ -1479,6 +1587,10 @@ XWX_bop_cat = {
             modifier = {
                 factor = 50
                 has_country_flag = XWX_ai_prioritise_centralists
+            }
+            modifier = {
+                factor = 0
+                XWX_go_kmt_path = yes
             }
 		}
 

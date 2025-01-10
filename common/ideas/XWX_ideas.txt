@@ -57,7 +57,11 @@ ideas = {
 				always = yes
 			}
 
-           removal_cost = -1
+			cancel = {
+				NOT = { has_government = communism }
+			}
+
+            removal_cost = -1
 
             modifier = {
                 drift_defence_factor = 0.25
@@ -85,7 +89,11 @@ ideas = {
 				always = yes
 			}
 
-           removal_cost = -1
+			cancel = {
+				NOT = { has_government = communism }
+			}
+
+            removal_cost = -1
 
             modifier = {
                 drift_defence_factor = 0.5

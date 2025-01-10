@@ -33,6 +33,20 @@ d_XWX_become_puppet_of_CHI = {
     }
 }
 
+d_XWX_gain_cores_on_china = {
+    custom_effect_tooltip = XWX_gain_cores_on_china_tt
+    hidden_effect = {
+        every_state = {
+			limit = {
+				DEN_is_chinese_state = yes
+                NOT = { is_core_of = ROOT }
+			}
+			add_core_of = ROOT
+		}
+    }
+    log = "ROOT: [ROOT.GetName] gained cores on all chinese states"
+}
+
 XWX_improve_provincial_army = {
     if = {
         limit = {

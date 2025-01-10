@@ -83,6 +83,12 @@ country_event = { # Second Commune Conference
 
 	option = { # Centralists
 		name = XWX_political_events.4.a
+		trigger = {
+			OR = {
+				is_ai = no
+				XWX_go_kmt_path = no
+			}
+		}
 		set_power_balance = {
 			id = XWX_communes_bop
 			left_side = XWX_federalists
@@ -193,15 +199,18 @@ country_event = { # Kuomintang Coup (without Civil War)
 			ruling_party = neutrality
 			elections_allowed = no
 		}
+		add_popularity = {
+			ideology = neutrality
+			popularity = 0.15
+		}
 		custom_effect_tooltip = generic_skip_one_line_tt
 		XWX_remove_kmt_insurgency = yes
 		custom_effect_tooltip = generic_skip_one_line_tt
-		effect_tooltip = {
-			remove_power_balance = {
-				id = XWX_communes_bop
-			}
+		remove_power_balance = {
+			id = XWX_communes_bop
 		}
 		hidden_effect = {
+			set_cosmetic_tag = XWX_kmt_aligned
 			news_event = {
 				id = XWX_news_events.1
 				hours = 2
@@ -220,6 +229,8 @@ country_event = { # Kuomintang Coup (without Civil War)
 					target = CHI
 					modifier = XWX_is_kmt_ally_modifier
 				}
+				give_guarantee = CHI
+				CHI = { give_guarantee = ROOT }
 			}
 		}
 	}
@@ -318,9 +329,6 @@ country_event = { # Kuomintang Civil War starts
 						infantry = { x = 0 y = 0 }
 						infantry = { x = 0 y = 1 }
 						infantry = { x = 0 y = 2 }
-						infantry = { x = 1 y = 0 }
-						infantry = { x = 1 y = 1 }
-						infantry = { x = 1 y = 2 }
 					}
 					support = {
 						recon = { x = 0 y = 0 }
@@ -328,9 +336,9 @@ country_event = { # Kuomintang Civil War starts
 				}
 				753 = {
 					create_unit = {
-						division = "name = \"Nationalist Militia\" division_template = \"Nationalist Militia\" start_experience_factor = 0.5"
+						division = "name = \"Nationalist Militia\" division_template = \"Nationalist Militia\" start_equipment_factor = 0.5 start_experience_factor = 0.1"
 						owner = PREV
-						count = 3
+						count = 6
 					}
 				}
 				if = {
@@ -355,6 +363,7 @@ country_event = { # Kuomintang Civil War starts
 					ideology = despotism
 					expire = "1960.1.1.1"
 				}
+				set_cosmetic_tag = XWX_kmt_aligned
 			}
 		}
 	}
@@ -1198,6 +1207,14 @@ country_event = { # XWX demands annexation
 				}
 			}
 		}
+		trigger = {
+			NOT = {
+				any_other_country = {
+					is_subject_of = ROOT
+					is_ai = no
+				}
+			}
+		}
 		effect_tooltip = {
 			FROM = {
 				annex_country = {
@@ -1231,6 +1248,10 @@ country_event = { # XWX demands annexation
 			OR = {
 				is_subject = no
 				is_ai = no
+				any_other_country = {
+					is_subject_of = ROOT
+					is_ai = no
+				}
 			}
 		}
 		if = {
@@ -1278,6 +1299,17 @@ country_event = { # FROM gets annexed
 
 	option = { 
 		name = XWX_diplomatic_events.21.a
+		FROM = {
+			every_subject_country = {
+				every_unit_leader = {
+					set_nationality = ROOT
+				}
+			}
+			every_unit_leader = {
+				set_nationality = ROOT
+			}
+		}
+		custom_effect_tooltip = generic_skip_one_line_tt
 		FROM = {
 			every_subject_country = {
 				ROOT = {

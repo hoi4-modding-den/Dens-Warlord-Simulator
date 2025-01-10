@@ -46,7 +46,7 @@ XWX_GATHERING_STORM_DESC: "The Gannan Peasant Republics are a collective in the 
 # CHARACTERS
 
  XWX_peasant_collective_name: "Gannan Peasant Collectives"
- XWX_peasant_collective_name_PRC: "Chinese Peasant Government"
+ XWX_peasant_collective_PRC_name: "Chinese Peasant Government"
  XWX_chen_yi_name: "Chen Yi"
  XWX_deng_xihou_name: "Deng Xihou"
  XWX_hu_lanqi_name: "Hu Lanqi"
@@ -60,6 +60,7 @@ XWX_GATHERING_STORM_DESC: "The Gannan Peasant Republics are a collective in the 
 # TRAITS
 
  XWX_peasant_administration_trait: "People's Administration"
+ XWX_peasant_administration_improved_trait: "People's Administration"
  XWX_kuomintang_official_trait: "Kuomintang Officer"
  XWX_japanese_snake_trait: "Japanese Snake"
  XWX_feminist_revolutionary: "Feminist Revolutionary"
@@ -84,6 +85,11 @@ XWX_GATHERING_STORM_DESC: "The Gannan Peasant Republics are a collective in the 
  XWX_second_gannan_famine_over: "The §YSecond Gannan Famine§! has concluded."
  XWX_is_chinese_country_tt: "Is a §YChinese Warlord§!."
  XWX_is_chinese_country_tt_not: "Is not a §YChinese Warlord§!."
+
+
+# SCIPTED EFFECTS
+
+ XWX_gain_cores_on_china_tt: "Gain §GCores§! on every §YChinese State§!."
 
 
 # MODIFIERS
@@ -240,14 +246,14 @@ XWX_bop_cat: "BoP Category"
    XWX_federalists_low_control_range: "Low Federalist Influence"
    XWX_federalists_medium_control_range: "Rising Federalist Influence"
    XWX_federalists_high_control_range: "High Federalist Influence"
-   XWX_federalists_total_control_range: "Federalist Dominance"
+   XWX_federalists_total_control_range: "The Federalist Model"
 
   XWX_centralists: "Centralists"
 
    XWX_centralists_low_control_range: "Low Centralist Influence"
    XWX_centralists_medium_control_range: "Rising Centralist Influence"
    XWX_centralists_high_control_range: "High Centralist Influence"
-   XWX_centralists_total_control_range: "Centralist Dominance"
+   XWX_centralists_total_control_range: "The Centralist Model"
 
 
 # EVENTS
@@ -408,8 +414,8 @@ XWX_bop_cat: "BoP Category"
  XWX_news_events.2.b: "May the Fires of the Revolution never extinguish!"
  XWX_news_events.2.c: "The Chaos never ends."
 
- XWX_news_events.3.t: "Proclamation of [XWX.GetNameDef]"
- XWX_news_events.3.desc: "The communist regime in [XWX.capital.GetCapitalVictoryPointName] has announced its intentions to become the true government of China. In its proclamation of [XWX.GetNameDef], it states its ambition to unite all of China under its rule. Henceforth, what was previously a small rebel group hiding in remote mountain villages will become a full-fledged government over all of China."
+ XWX_news_events.3.t: "Proclamation of the United Peasant Republics"
+ XWX_news_events.3.desc: "The communist regime in [XWX.capital.GetCapitalVictoryPointName] has announced its intentions to become the true government of China. In its proclamation of the United Peasant Republics, it states its ambition to unite all of China under its rule. Henceforth, what was previously a small rebel group hiding in remote mountain villages will become a full-fledged government over all of China, in its official capacities referred to as [XWX.GetNameDef]."
  XWX_news_events.3.a: "The Revolution will engulf China!"
  XWX_news_events.3.b: "Preposterous!"
  XWX_news_events.3.c: "A possible ally in China?"
@@ -429,8 +435,10 @@ XWX_bop_cat: "BoP Category"
  XWX_commune_discussion_desc: ""
  XWX_reconcile_with_prc: "Reconcile with the PRC"
  XWX_reconcile_with_prc_desc: ""
+ XWX_unlock_faction_focus_tt: "Taking this §Yfocus§! will later allow the §Yformation of a faction§! with [XWE.GetNameDef]."
  XWX_maintain_course: "Maintain the Course of the Revolution"
  XWX_maintain_course_desc: ""
+ XWX_unlock_prc_war_focus_tt: "Taking this §Yfocus§! will later allow us to §Ygain a wargoal§! on [XWE.GetNameDEf]."
  XWX_red_army_cooperation: "Seek Foreign Army Support"
  XWX_red_army_cooperation_desc: ""
  XWX_develop_the_province: "Develop the Province"
