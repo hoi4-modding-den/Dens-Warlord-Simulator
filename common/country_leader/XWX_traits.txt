@@ -57,6 +57,22 @@ leader_traits = {
 		}
 	}
 
+	XWX_judicial_ministry_merged_trait = {
+		random = no
+
+		improve_relations_maintain_cost_factor = -0.5
+		resistance_decay = 0.05
+		custom_modifier_tooltip = ITA_political_reformer_tt
+		political_advisor_cost_factor = -0.25
+		air_advisor_cost_factor = -0.25
+		army_advisor_cost_factor = -0.25
+		navy_advisor_cost_factor = -0.25
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
 
 # POLITCIAL ADVISORS
 

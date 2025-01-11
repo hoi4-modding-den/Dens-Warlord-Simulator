@@ -46,18 +46,32 @@ units = {
 
 # Garrison
 	division = {
-		name = "Bandit Suppression Corps Tianshui"
+		name = "1. Bandit Suppression Corps Tianshui"
 		location = 2045
 		division_template = "People's Police Corps"
 		start_equipment_factor = 1
-		start_experience_factor = 0.3
+		start_experience_factor = 0.5
 	}
 	division = {
-		name = "Bandit Suppression Corps Ganzi"
+		name = "2. Bandit Suppression Corps Tianshui"
+		location = 2045
+		division_template = "People's Police Corps"
+		start_equipment_factor = 0.8
+		start_experience_factor = 0.4
+	}
+	division = {
+		name = "1. Bandit Suppression Corps Ganzi"
+		location = 8104
+		division_template = "People's Police Corps"
+		start_equipment_factor = 1
+		start_experience_factor = 0.4
+	}
+	division = {
+		name = "2. Bandit Suppression Corps Ganzi"
 		location = 8104
 		division_template = "People's Police Corps"
 		start_equipment_factor = 0.9
-		start_experience_factor = 0.5
+		start_experience_factor = 0.4
 	}
 
 # Infantry

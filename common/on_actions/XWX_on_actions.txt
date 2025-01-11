@@ -48,6 +48,14 @@ on_actions = {
 			if = {
 				limit = {
 					original_tag = XWX
+					has_government = fascism
+					NOT = { has_country_leader_with_trait = XWX_japanese_snake_trait }
+				}
+				add_country_leader_trait = XWX_japanese_snake_trait
+			}
+			if = {
+				limit = {
+					original_tag = XWX
 					has_government = communism
 					has_country_flag = XWX_is_china
 				}

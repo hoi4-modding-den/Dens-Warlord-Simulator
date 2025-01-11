@@ -1544,22 +1544,6 @@ european_union_leader = {
 	color_ui = rgb { 0 51 153 }
 }
 
-XWX_kmt_aligned = {
-	color = hsv { 0.18 0.6 0.9 } #255 244 190
-	color_ui = hsv { 0.18 0.3 0.9 }
-}
-
-XWX_cpc_aligned = {
-	color = rgb { 125 13 24 }
-	color_ui = rgb { 163 17 31 }
-}
-
-XWX_JAP_aligned = {
-	color = hsv { 0.05 0.3 1 }
-	color_ui = hsv { 0.05 0.25 1.2 }
-}
-
-
 MAL_UK = {
     color = rgb { 201 56 93 }
     color_ui = rgb { 255 73 121 }

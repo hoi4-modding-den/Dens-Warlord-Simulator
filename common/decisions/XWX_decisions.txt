@@ -884,7 +884,7 @@ XWX_second_gannan_famine_cat = {
             }
         }
 
-        days_remove = 70
+        days_remove = 30
 
         remove_effect = {
             remove_ideas = XWX_famine
@@ -993,6 +993,10 @@ XWX_second_gannan_famine_cat = {
         available = {
             FROM = {
                 NOT = { has_war_with = ROOT }
+                has_opinion = {
+                    target = ROOT
+                    value > 0
+                }
             }
         }
 
