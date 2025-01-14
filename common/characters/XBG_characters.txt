@@ -1,0 +1,15 @@
+characters={
+	XBG_lin_sen = { 
+		name = XBG_lin_sen
+		portraits = {
+			civilian = {
+				large = GFX_portrait_XBG_lin_sen
+			}
+		}
+		country_leader = {
+			ideology = conservatism
+			expire = "1960.1.1.1"
+			id = -1
+		}
+	}
+}

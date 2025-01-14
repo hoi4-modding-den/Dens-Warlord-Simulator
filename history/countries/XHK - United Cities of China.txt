@@ -7,7 +7,8 @@ set_research_slots = 3
 #set_technology = {
 #}
 
-recruit_character = XHK_sir_mark_young 
+recruit_character = XHK_sir_mark_young
+recruit_character = XHK_hachiro_arita
 
 set_politics = {
 	ruling_party = neutrality

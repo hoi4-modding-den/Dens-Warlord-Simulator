@@ -17,4 +17,12 @@ characters={
 			id = -1
 		}
 	}
+	XHK_hachiro_arita = { 
+		name = XHK_hachiro_arita
+		portraits = {
+			civilian = {
+				large = GFX_portrait_XHK_hachiro_arita
+			}
+		}
+	}
 }

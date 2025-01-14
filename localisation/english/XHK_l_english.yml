@@ -1,7 +1,10 @@
 ﻿l_english:
  XHK: "United Cities of China"
  XHK_DEF: "United Cities of China"
- XHK_AJG: "United Cities of China"
+ XHK_AJG: "Chinese"
+ XHK_japan: "Japanese Mandate of Chinese Ports"
+ XHK_japan_DEF: "the Japanese Mandate of Chinese Ports"
+ XHK_japan_AJG: "Japanese-Chinese"
  XHK_sir_mark_young: "Sir Mark Young"
  XHK_sir_mark_young_desc: "Sir Mark Young Description"
  XHK_STRAIT: "Hong Kong Strait"
@@ -121,3 +124,6 @@
  XHK_ideological_fanaticism_desc: "Ideological Fanaticism Description"
  XHK_technology_sharing: "Technology Sharing"
  XHK_technology_sharing_desc: "Technology Sharing Description"
+
+ XHK_hachiro_arita: "Hachirō Arita"
+ XHK_hachiro_arita_desc: "Hachirō Arita Description"

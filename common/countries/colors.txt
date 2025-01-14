@@ -1,9 +1,5 @@
 #reload countrycolors
 
-XQI = {
-	color = rgb { 100 150 100 }
-	color_ui = rgb { 230 230 230 }
-}
 XFC = {
 	color = rgb { 38 90 174 }
 	color_ui = rgb { 38 90 174 }
@@ -1129,4 +1125,15 @@ KUB = {
 	color_ui = rgb { 61 61 92 }
 }
 
-
+XQI = {
+	color = rgb { 100 150 100 }
+	color_ui = rgb { 230 230 230 }
+}
+XSX = {
+	color = rgb { 158 165 230 }
+	color_ui = rgb { 158 165 230 }
+}
+XBG = {
+	color = rgb { 242 162 168 }
+	color_ui = rgb { 242 162 168 }
+}

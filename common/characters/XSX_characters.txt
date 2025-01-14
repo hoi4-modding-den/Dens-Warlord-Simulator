@@ -1,0 +1,15 @@
+characters={
+	XSX_yan_xishan = { 
+		name = XSX_yan_xishan
+		portraits = {
+			civilian = {
+				large = GFX_portrait_XSX_yan_xishan
+			}
+		}
+		country_leader = {
+			ideology = gen_nazism
+			expire = "1960.1.1.1"
+			id = -1
+		}
+	}
+}

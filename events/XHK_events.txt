@@ -1,5 +1,18 @@
-#add_namespace = example
+add_namespace = XHK_events
 
-#country_event = {}
+#test event
+country_event = {
+	id = XHK_events.999
+	title = XHK_events.999.t
+	desc = XHK_events.999.desc
+	picture = GFX_news_event_tank_factory
+	
+	is_triggered_only = yes
+	
+	option = { #test event option
+		name = XHK_events.999.a
+		puppet = XHK
+	}
+}
 
 #news_event = {}

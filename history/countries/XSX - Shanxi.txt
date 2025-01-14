@@ -1,0 +1,24 @@
+capital = 1
+
+oob = "XSX_1936"
+
+set_research_slots = 3
+
+#set_technology = {
+#}
+
+recruit_character = XSX_yan_xishan 
+
+set_politics = {
+	ruling_party = fascism
+	last_election = "1936.1.1"
+	election_frequency = 48
+	elections_allowed = yes
+}
+
+set_popularities = {
+	fascism = 70
+	neutrality = 10
+	democratic = 10
+	communism = 10
+}

@@ -1,2 +1,33 @@
 on_actions = {
+	on_weekly_XHK = {
+		effect = {
+			if = {
+				limit = {
+					is_subject_of = JAP
+					NOT = { has_country_flag = XHK_japan }
+				}
+				set_cosmetic_tag = XHK_japan
+				retire_country_leader = yes
+				add_country_leader_role = {
+					character = XHK_hachiro_arita
+					promote_leader = yes
+					country_leader = {
+						ideology = despotism
+						expire = "1965.1.1.1"
+						traits = { } 
+					}
+				}
+				add_country_leader_role = {
+					character = XHK_hachiro_arita
+					promote_leader = yes
+					country_leader = {
+						ideology = fascism_ideology
+						expire = "1965.1.1.1"
+						traits = { }
+					}
+				}
+				set_country_flag = XHK_japan
+			}
+		}
+	}
 }
