@@ -298,7 +298,7 @@ XWX_bop_cat: "BoP Category"
  XWX_kmt_events.3.a: "Victory!"
 
  XWX_kmt_events.4.t: "Gannan Blockade!"
- XWX_kmt_events.4.desc: "Tensions between the government and the Kuomintang have reached a boiling point. Members of the Kuomintang armed forces have blockaded roads to Hezuo, effectively preventing our troops from entering the state."
+ XWX_kmt_events.4.desc: "Tensions between the government and the Kuomintang have reached a boiling point. Members of the Kuomintang armed forces have blockaded roads to Hezuo. Saboteurs have cut of the state from any communications network and the Kuomintang's militia groups have put most of our Hezuo-based politicians under house arrest.\nHigh command is making preparations for crushing the insurgents, but as long as their plans are not completed, the state is effectively demilitarised."
  XWX_kmt_events.4.a: "Ready the Army!"
 
  XWX_civil_War_imminent: "£GFX_XWX_kmt_texticon Kuomintang Strength has reached §R20§!."

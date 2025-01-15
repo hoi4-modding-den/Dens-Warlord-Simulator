@@ -180,6 +180,17 @@ country_event = { # Jakob Rosenfeld arrives
 		set_country_flag = XWX_rosenberg_arrived
 		custom_effect_tooltip = available_political_advisor
 		show_ideas_tooltip = XWX_jacob_rosenberg_advisor
+		custom_effect_tooltip = generic_skip_one_line_tt
+		effect_tooltip = {
+			add_corps_commander_role = {
+				traits = { JAP_communist_sympathizer inspirational_leader militias_officer }
+				skill=2
+				attack_skill=1
+				defense_skill=3
+				planning_skill=1
+				logistics_skill=2
+			}
+		}
 	}
 
 }

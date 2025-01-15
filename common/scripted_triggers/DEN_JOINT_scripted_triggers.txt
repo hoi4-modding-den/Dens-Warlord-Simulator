@@ -13,6 +13,9 @@ DEN_is_chinese_country = {
         original_tag = XSF
         original_tag = XSI
         original_tag = XHK
+		original_tag = XQI
+		original_tag = XSX
+		original_tag = XBG
     }
 }
 
