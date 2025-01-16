@@ -17,6 +17,23 @@
  XBG_democratic_party_long:0 "Kuomintang"
  XBG_democratic_party:0 "KMT"
 
+ ### CHARACTERS ###
+
+ XBG_Zou_Zuohua:0 "Zou Zuohua"
+ XBG_Zhou_Fucheng:0 "Zhou Fucheng"
+ XBG_Zhang_Zuoxiang:0 "Zhang Zuoxiang"
+ XBG_Zhang_Jinghui:0 "Zhang Jinghui"
+ XBG_Yu_Zhishan:0 "Yu Zhishan"
+ XBG_Yang_Yutin:0 "Yang Yutin"
+ XBG_Wu_Junsheng:0 "Wu Junsheng"
+ XBG_Wan_Fulin:0 "Wan Fulin"
+ XBG_Tang_Yulin:0 "Tang Yulin"
+ XBG_Ma_Zhanshan:0 "Ma Zhanshan"
+ XBG_Feng_Zhanhai:0 "Feng Zhanhai"
+ XBG_Bao_Wenyue:0 "Bao Wenyue"
+ XBG_Yin_Zuoqian:0 "Yin Zuoqian"
+ XBG_Shen_Honglie:0 "Shen Honglie"
+
  #FOCUS LOCALISATIONS
  XBG_army_effort: "Army Effort"
  XBG_army_effort_desc: "Army Effort Description"

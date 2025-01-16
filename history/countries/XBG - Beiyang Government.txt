@@ -8,6 +8,20 @@ set_research_slots = 3
 #}
 
 recruit_character = XBG_Zhang_Zuolin 
+recruit_character = XBG_Shen_Honglie 
+recruit_character = XBG_Yin_Zuoqian 
+recruit_character = XBG_Bao_Wenyue 
+recruit_character = XBG_Feng_Zhanhai 
+recruit_character = XBG_Ma_Zhanshan 
+recruit_character = XBG_Tang_Yulin 
+recruit_character = XBG_Wan_Fulin 
+recruit_character = XBG_Wu_Junsheng 
+recruit_character = XBG_Yang_Yutin 
+recruit_character = XBG_Yu_Zhishan 
+recruit_character = XBG_Zhang_Jinghui 
+recruit_character = XBG_Zhang_Zuoxiang
+recruit_character = XBG_Zhou_Fucheng
+recruit_character = XBG_Zou_Zuohua 
 
 set_party_name = {
     ideology = neutrality

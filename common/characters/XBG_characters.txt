@@ -12,6 +12,7 @@ characters={
 			id = -1
 		}
 	}
+
 	XBG_Zhang_Zuolin = { 
 		name = XBG_Zhang_Zuolin
 		portraits = {
@@ -23,6 +24,258 @@ characters={
 			ideology = oligarchism
 			expire = "1960.1.1.1"
 			id = -1
+		}
+	}
+
+	XBG_Shen_Honglie = {
+		name = XBG_Shen_Honglie
+		portraits = {
+			army = {
+				large = GFX_portrait_XBG_Shen_Honglie
+			}
+		}
+		navy_leader = {
+			traits = { }
+			skill = 3
+			attack_skill = 5
+			defense_skill = 1
+			maneuvering_skill = 2
+			coordination_skill = 2
+			legacy_id = -1
+		}
+	}
+
+	XBG_Yin_Zuoqian = {
+		name = XBG_Yin_Zuoqian
+		portraits = {
+			army = {
+				large = GFX_portrait_XBG_Yin_Zuoqian
+			}
+		}
+		navy_leader = {
+			traits = { }
+			skill = 3
+			attack_skill = 5
+			defense_skill = 1
+			maneuvering_skill = 2
+			coordination_skill = 2
+			legacy_id = -1
+		}
+	}
+
+	XBG_Bao_Wenyue = {
+		name = XBG_Bao_Wenyue
+		portraits = {
+			army = {
+				large = GFX_portrait_XBG_Bao_Wenyue
+			}
+		}
+		corps_commander = {
+			traits = { }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2
+			legacy_id = -1
+		}
+	}
+
+	XBG_Feng_Zhanhai = {
+		name = XBG_Feng_Zhanhai
+		portraits = {
+			army = {
+				large = GFX_portrait_XBG_Feng_Zhanhai
+			}
+		}
+		corps_commander = {
+			traits = { }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2
+			legacy_id = -1
+		}
+	}
+
+	XBG_Ma_Zhanshan = {
+		name = XBG_Ma_Zhanshan
+		portraits = {
+			army = {
+				large = GFX_portrait_XBG_Ma_Zhanshan
+			}
+		}
+		corps_commander = {
+			traits = { }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2
+			legacy_id = -1
+		}
+	}
+
+	XBG_Tang_Yulin = {
+		name = XBG_Tang_Yulin
+		portraits = {
+			army = {
+				large = GFX_portrait_XBG_Tang_Yulin
+			}
+		}
+		corps_commander = {
+			traits = { }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2
+			legacy_id = -1
+		}
+	}
+
+	XBG_Wan_Fulin = {
+		name = XBG_Wan_Fulin
+		portraits = {
+			army = {
+				large = GFX_portrait_XBG_Wan_Fulin
+			}
+		}
+		corps_commander = {
+			traits = { }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2
+			legacy_id = -1
+		}
+	}
+
+	XBG_Wu_Junsheng = {
+		name = XBG_Wu_Junsheng
+		portraits = {
+			army = {
+				large = GFX_portrait_XBG_Wu_Junsheng
+			}
+		}
+		corps_commander = {
+			traits = { }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2
+			legacy_id = -1
+		}
+	}
+
+	XBG_Yang_Yutin = {
+		name = XBG_Yang_Yutin
+		portraits = {
+			army = {
+				large = GFX_portrait_XBG_Yang_Yutin
+			}
+		}
+		corps_commander = {
+			traits = { }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2
+			legacy_id = -1
+		}
+	}
+
+	XBG_Yu_Zhishan = {
+		name = XBG_Yu_Zhishan
+		portraits = {
+			army = {
+				large = GFX_portrait_XBG_Yu_Zhishan
+			}
+		}
+		corps_commander = {
+			traits = { }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2
+			legacy_id = -1
+		}
+	}
+
+	XBG_Zhang_Jinghui = {
+		name = XBG_Zhang_Jinghui
+		portraits = {
+			army = {
+				large = GFX_portrait_XBG_Zhang_Jinghui
+			}
+		}
+		corps_commander = {
+			traits = { }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2
+			legacy_id = -1
+		}
+	}
+
+	XBG_Zhang_Zuoxiang = {
+		name = XBG_Zhang_Zuoxiang
+		portraits = {
+			army = {
+				large = GFX_portrait_XBG_Zhang_Zuoxiang
+			}
+		}
+		corps_commander = {
+			traits = { }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2
+			legacy_id = -1
+		}
+	}
+
+	XBG_Zhou_Fucheng = {
+		name = XBG_Zhou_Fucheng
+		portraits = {
+			army = {
+				large = GFX_portrait_XBG_Zhou_Fucheng
+			}
+		}
+		corps_commander = {
+			traits = { }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2
+			legacy_id = -1
+		}
+	}
+
+	XBG_Zou_Zuohua = {
+		name = XBG_Zou_Zuohua
+		portraits = {
+			army = {
+				large = GFX_portrait_XBG_Zou_Zuohua
+			}
+		}
+		corps_commander = {
+			traits = { }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2
+			legacy_id = -1
 		}
 	}
 }

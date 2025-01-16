@@ -3,4 +3,60 @@ spriteTypes = {
 		name = "GFX_portrait_XBG_Zhang_Zuolin"
 		texturefile = "gfx/XBG/portraits/XBG_Leader_Zhang_Zuolin.dds"
 	}
+	spriteType = {
+		name = "GFX_portrait_XBG_Shen_Honglie"
+		texturefile = "gfx/XBG/portraits/XBG_Admiral_Shen_Honglie.dds"
+	}
+	spriteType = {
+		name = "GFX_portrait_XBG_Yin_Zuoqian"
+		texturefile = "gfx/XBG/portraits/XBG_Admiral_Yin_Zuoqian.dds"
+	}
+	spriteType = {
+		name = "GFX_portrait_XBG_Bao_Wenyue"
+		texturefile = "gfx/XBG/portraits/XBG_General_Bao_Wenyue.dds"
+	}
+	spriteType = {
+		name = "GFX_portrait_XBG_Feng_Zhanhai"
+		texturefile = "gfx/XBG/portraits/XBG_General_Feng_Zhanhai.dds"
+	}
+	spriteType = {
+		name = "GFX_portrait_XBG_Ma_Zhanshan"
+		texturefile = "gfx/XBG/portraits/XBG_General_Ma_Zhanshan.dds"
+	}
+	spriteType = {
+		name = "GFX_portrait_XBG_Tang_Yulin"
+		texturefile = "gfx/XBG/portraits/XBG_General_Tang_Yulin.dds"
+	}
+	spriteType = {
+		name = "GFX_portrait_XBG_Wan_Fulin"
+		texturefile = "gfx/XBG/portraits/XBG_General_Wan_Fulin.dds"
+	}
+	spriteType = {
+		name = "GFX_portrait_XBG_Wu_Junsheng"
+		texturefile = "gfx/XBG/portraits/XBG_General_Wu_Junsheng.dds"
+	}
+	spriteType = {
+		name = "GFX_portrait_XBG_Yang_Yutin"
+		texturefile = "gfx/XBG/portraits/XBG_General_Yang_Yutin.dds"
+	}
+	spriteType = {
+		name = "GFX_portrait_XBG_Yu_Zhishan"
+		texturefile = "gfx/XBG/portraits/XBG_General_Yu_Zhishan.dds"
+	}
+	spriteType = {
+		name = "GFX_portrait_XBG_Zhang_Jinghui"
+		texturefile = "gfx/XBG/portraits/XBG_General_Zhang_Jinghui.dds"
+	}
+	spriteType = {
+		name = "GFX_portrait_XBG_Zhang_Zuoxiang"
+		texturefile = "gfx/XBG/portraits/XBG_General_Zhang_Zuoxiang.dds"
+	}
+	spriteType = {
+		name = "GFX_portrait_XBG_Zhou_Fucheng"
+		texturefile = "gfx/XBG/portraits/XBG_General_Zhou_Fucheng.dds"
+	}
+	spriteType = {
+		name = "GFX_portrait_XBG_Zou_Zuohua"
+		texturefile = "gfx/XBG/portraits/XBG_General_Zou_Zuohua.dds"
+	}
 }
