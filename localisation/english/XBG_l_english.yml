@@ -1,9 +1,21 @@
 ﻿l_english:
- XBG: "Beijing Governate"
- XBG_DEF: "Beijing Governate"
- XBG_AJG: "Beijing Governate"
+ XBG: "Beiyang Government"
+ XBG_DEF: "the Beiyang Government"
+ XBG_AJG: "Beiyang"
  XBG_lin_sen: "Lin Sen"
  XBG_lin_sen_desc: "Lin Sen Description"
+
+ XBG_Zhang_Zuolin:0 "Zhang Zuolin"
+ XBG_Zhang_Zuolin_desc:0 "PLACEHOLDER"
+
+ XBG_neutrality_party_long:0 "National Pacification Army"
+ XBG_neutrality_party:0 "NPA"
+
+ XBG_communism_party_long:0 "Chinese Communist Party"
+ XBG_communism_party:0 "CCP"
+
+ XBG_democratic_party_long:0 "Kuomintang"
+ XBG_democratic_party:0 "KMT"
 
  #FOCUS LOCALISATIONS
  XBG_army_effort: "Army Effort"

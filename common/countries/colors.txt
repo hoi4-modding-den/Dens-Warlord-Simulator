@@ -1133,7 +1133,3 @@ XSX = {
 	color = rgb { 158 165 230 }
 	color_ui = rgb { 158 165 230 }
 }
-XBG = {
-	color = rgb { 242 162 168 }
-	color_ui = rgb { 242 162 168 }
-}

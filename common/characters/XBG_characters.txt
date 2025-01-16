@@ -12,4 +12,17 @@ characters={
 			id = -1
 		}
 	}
+	XBG_Zhang_Zuolin = { 
+		name = XBG_Zhang_Zuolin
+		portraits = {
+			civilian = {
+				large = GFX_portrait_XBG_Zhang_Zuolin
+			}
+		}
+		country_leader = {
+			ideology = oligarchism
+			expire = "1960.1.1.1"
+			id = -1
+		}
+	}
 }

@@ -1,0 +1,6 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_portrait_XBG_Zhang_Zuolin"
+		texturefile = "gfx/XBG/portraits/XBG_Leader_Zhang_Zuolin.dds"
+	}
+}
