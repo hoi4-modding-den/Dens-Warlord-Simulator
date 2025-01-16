@@ -1,4 +1,5 @@
 add_namespace = XWX_political_events
+add_namespace = XWX_election_events
 add_namespace = XWX_kmt_events
 add_namespace = XWX_diplomatic_events
 add_namespace = XWX_news_events
@@ -182,15 +183,107 @@ country_event = { # Jakob Rosenfeld arrives
 		show_ideas_tooltip = XWX_jacob_rosenberg_advisor
 		custom_effect_tooltip = generic_skip_one_line_tt
 		effect_tooltip = {
-			add_corps_commander_role = {
-				traits = { JAP_communist_sympathizer inspirational_leader militias_officer }
-				skill=2
-				attack_skill=1
-				defense_skill=3
-				planning_skill=1
-				logistics_skill=2
+			XWX_jacob_rosenberg = {
+				add_corps_commander_role = {
+					traits = { JAP_communist_sympathizer inspirational_leader militias_officer }
+					skill=2
+					attack_skill=1
+					defense_skill=3
+					planning_skill=1
+					logistics_skill=2
+				}
 			}
 		}
+	}
+
+}
+
+country_event = { # Democratic Party event
+	id = XWX_political_events.7
+	title = XWX_political_events.7.t
+	desc = XWX_political_events.7.desc
+	picture = GFX_report_event_asian_politicians
+
+	is_triggered_only = yes
+
+	option = { 
+		name = XWX_political_events.7.a
+		add_popularity = {
+			ideology = democratic
+			popularity = 0.05
+		}
+		set_party_name = {
+			ideology = democratic
+			long_name = XWX_democratic_party_new_long
+			name = XWX_democratic_party_new
+		}
+	}
+
+}
+
+country_event = { # Communism: First Election
+	id = XWX_election_events.1
+	title = XWX_election_events.1.t
+	desc = XWX_election_events.1.desc
+	picture = GFX_report_event_asian_politicians
+
+	trigger = {
+		tag = XWX
+		exists = yes
+		has_government = communism
+		NOT = { has_country_flag = first_election_happened }
+	}
+
+	immediate = {
+		hidden_effect = {
+			set_country_flag = first_election_happened
+		}
+	}
+    
+    is_triggered_only = yes
+    fire_only_once = yes
+
+	option = { 
+		name = XWX_election_events.1.a
+		retire_character = XWX_peasant_collective
+		promote_character = XWX_hu_lanqi
+		XWX_choose_opposition_leader = yes
+	}
+
+	option = { 
+		name = XWX_election_events.1.b
+		retire_character = XWX_peasant_collective
+		promote_character = XWX_chen_yi
+		XWX_choose_opposition_leader = yes
+	}
+
+}
+
+country_event = { # Communism: Repeat Election
+	id = XWX_election_events.2
+	title = XWX_election_events.2.t
+	desc = XWX_election_events.2.desc
+	picture = GFX_report_event_asian_politicians
+
+	trigger = {
+		tag = XWX
+		exists = yes
+		has_government = communism
+		has_country_flag = first_election_happened
+	}
+    
+    is_triggered_only = yes
+    fire_only_once = no
+
+	option = { # keep leader
+		name = XWX_election_events.2.a
+		XWX_choose_opposition_leader = yes
+	}
+
+	option = { 
+		name = XWX_election_events.2.b
+		XWX_promote_opposition_leader = yes
+		XWX_choose_opposition_leader = yes
 	}
 
 }

@@ -39,6 +39,12 @@ characters = {
 
 			available = {
 				has_government = communism
+				NOT = {
+                    has_country_leader = {
+                        character = XWX_chen_yi
+                        ruling_only = yes
+                    }
+                }
 			}
 			
 			cost = 100
@@ -50,6 +56,11 @@ characters = {
 			traits = {
 				army_regrouping_2
 			}
+		}
+		country_leader = {
+			traits = { xWX_diplomatic_commander XWX_socialist_premier }
+			ideology = marxism
+			expire = "1960.1.1.1"
 		}
 	}
 
@@ -112,6 +123,12 @@ characters = {
 
 			available = {
 				has_government = communism
+				NOT = {
+                    has_country_leader = {
+                        character = XWX_hu_lanqi
+                        ruling_only = yes
+                    }
+                }
 			}
 			
 			cost = 100
@@ -124,6 +141,12 @@ characters = {
 				XWX_feminist_revolutionary
 			}
 
+		}
+
+		country_leader = {
+			traits = { XWX_feminist_revolutionary_leader XWX_socialist_premier }
+			ideology = marxism
+			expire = "1960.1.1.1"
 		}
 	}
 
@@ -153,6 +176,12 @@ characters = {
 
 			available = {
 				NOT = { has_government = fascism }
+				NOT = {
+                    has_country_leader = {
+                        character = XWX_jacob_rosenberg
+                        ruling_only = yes
+                    }
+                }
 			}
 
 			visible = {
@@ -168,6 +197,12 @@ characters = {
 			traits = {
 				ICE_progressive_doctor
 			}
+		}
+
+		country_leader = {
+			traits = { XWX_foreign_doctor XWX_socialist_premier }
+			ideology = marxism
+			expire = "1960.1.1.1"
 		}
 	}
 
@@ -330,11 +365,17 @@ characters = {
 			logistics_skill=4
 		}
 		advisor = {
-			slot = political_advisor
+			slot = high_command
 			idea_token = XWX_nie_rongzhen_advisor
 
 			available = {
 				has_government = communism
+				NOT = {
+                    has_country_leader = {
+                        character = XWX_nie_rongzhen
+                        ruling_only = yes
+                    }
+                }
 			}
 			
 			cost = 100
@@ -346,6 +387,12 @@ characters = {
 			traits = {
 				GER_adaptive_engineer
 			}
+		}
+
+		country_leader = {
+			traits = { XWX_master_engineer XWX_socialist_premier }
+			ideology = marxism
+			expire = "1960.1.1.1"
 		}
 	}
 

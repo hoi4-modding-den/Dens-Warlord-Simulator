@@ -62,11 +62,67 @@ leader_traits = {
 
 		improve_relations_maintain_cost_factor = -0.5
 		resistance_decay = 0.05
-		custom_modifier_tooltip = ITA_political_reformer_tt
 		political_advisor_cost_factor = -0.25
-		air_advisor_cost_factor = -0.25
-		army_advisor_cost_factor = -0.25
-		navy_advisor_cost_factor = -0.25
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	XWX_socialist_premier = {
+		random = no
+
+		political_power_gain = 0.2
+		compliance_gain = 0.02
+		communism_drift = 0.04
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	XWX_feminist_revolutionary_leader = {
+		random = no
+
+		conscription_factor = 0.1
+		industrial_capacity_factory = 0.1
+		industrial_capacity_dockyard = 0.1
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	XWX_master_engineer = {
+		random = no
+
+		equipment_conversion_speed = 0.15
+		equipment_capture_factor = 0.07
+		conversion_cost_civ_to_mil_factor = -0.25
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	XWX_foreign_doctor = {
+		random = no
+
+		weekly_manpower = 500
+		monthly_population = 0.15
+		army_morale_factor = 0.02
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	xWX_diplomatic_commander = {
+		random = no
+
+		experience_gain_army = 0.05
+		army_core_defence_factor = 0.2
+		war_support_factor = 0.1
 
 		ai_will_do = {
 			factor = 1

@@ -186,3 +186,66 @@ XWX_decrease_kmt_power = {
         }
     }
 }
+
+XWX_choose_opposition_leader = {
+    hidden_effect = {
+        every_character = {
+            clr_character_flag = XWX_is_opposition_leader
+        }
+        random_list = {
+            25 = {
+                modifier = {
+                    factor = 0
+                    has_country_leader = {
+                        character = XWX_chen_yi
+                        ruling_only = yes
+                    }
+                }
+                XWX_chen_yi = { set_character_flag = XWX_is_opposition_leader }
+            }
+            25 = {
+                modifier = {
+                    factor = 0
+                    has_country_leader = {
+                        character = XWX_hu_lanqi
+                        ruling_only = yes
+                    }
+                }
+                XWX_hu_lanqi = { set_character_flag = XWX_is_opposition_leader }
+            }
+            25 = {
+                modifier = {
+                    factor = 0
+                    NOT = { has_country_flag = XWX_rosenberg_arrived }
+                }
+                modifier = {
+                    factor = 0
+                    has_country_leader = {
+                         character = XWX_jacob_rosenberg
+                        ruling_only = yes
+                    }
+                }
+                XWX_jacob_rosenberg = { set_character_flag = XWX_is_opposition_leader }
+            }
+            25 = {
+                modifier = {
+                    factor = 0
+                    has_country_leader = {
+                        character = XWX_nie_rongzhen
+                        ruling_only = yes
+                    }
+                }
+                XWX_nie_rongzhen = { set_character_flag = XWX_is_opposition_leader }
+            }
+        }
+    }
+}
+
+XWX_promote_opposition_leader = {
+    random_character = {
+        limit = {
+            has_character_flag = XWX_is_opposition_leader
+        }
+        promote_character = yes
+    }
+}

@@ -1,0 +1,36 @@
+defined_text = {
+	name = XWX_opposition_leader
+
+	text = {
+        trigger = {
+            XWX_chen_yi = {
+                has_character_flag = XWX_is_opposition_leader
+            }
+        }
+		localization_key = XWX_chen_yi_name
+	}
+	text = {
+        trigger = {
+            XWX_hu_lanqi = {
+                has_character_flag = XWX_is_opposition_leader
+            }
+        }
+		localization_key = XWX_hu_lanqi_name
+	}
+	text = {
+        trigger = {
+            XWX_jacob_rosenberg = {
+                has_character_flag = XWX_is_opposition_leader
+            }
+        }
+		localization_key = XWX_jacob_rosenberg_name
+	}
+    text = {
+        trigger = {
+            XWX_nie_rongzhen = {
+                has_character_flag = XWX_is_opposition_leader
+            }
+        }
+        localization_key = XWX_nie_rongzhen_name
+    }
+}

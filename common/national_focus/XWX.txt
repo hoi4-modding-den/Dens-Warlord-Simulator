@@ -420,7 +420,7 @@ focus_tree = {
 						}
 					}
 					add_offsite_building = {
-						building = industrial_complex
+						type = industrial_complex
 						level = XWX_commie_friends
 					}
 				}
@@ -933,6 +933,17 @@ focus_tree = {
 		completion_reward = {
 			add_stability = -0.15
 			add_country_leader_trait = XWX_judicial_ministry_merged_trait
+			hidden_effect = {
+				every_character  = {	
+					limit = {
+						can_be_country_leader = yes
+					}
+					add_trait = {
+						ideology = marxism
+						trait = XWX_judicial_ministry_merged_trait
+					}
+				}
+			}
 		}
 	}
 
@@ -1065,6 +1076,10 @@ focus_tree = {
 
 		cost = 8
 
+		ai_will_do = {
+			base = 120
+		}
+
 		available = {
 			has_government = communism
 		}
@@ -1076,6 +1091,15 @@ focus_tree = {
 		search_filters = {  }
 		completion_reward = {
 			add_stability = 0.15
+			custom_effect_tooltip = generic_skip_one_line_tt
+			set_politics = {
+				ruling_party = communism
+				elections_allowed = yes
+				election_frequency = 36
+			}
+			hidden_effect = {
+				hold_election = ROOT
+			}
 			custom_effect_tooltip = generic_skip_one_line_tt
 			add_ideas = XWX_socialist_democracy
 			if = {
@@ -1089,6 +1113,12 @@ focus_tree = {
 					id = XWX_communes_bop
 					value = -0.05
 					tooltip_side = XWX_federalists
+				}
+			}
+			hidden_effect = {
+				country_event = {
+					id = XWX_political_events.7
+					days = 90
 				}
 			}
 		}
@@ -1598,6 +1628,12 @@ focus_tree = {
 			add_popularity = {
 				popularity = -0.15
 				ideology = communism
+			}
+			hidden_effect = {
+				country_event = {
+					id = XWX_political_events.7
+					days = 20
+				}
 			}
 		}
 	}

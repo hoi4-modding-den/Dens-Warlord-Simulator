@@ -1069,7 +1069,7 @@ XWX_bop_cat = {
             NOT = { has_country_flag = XWX_doing_bop_decision }
             is_power_balance_in_range = {
                 id = XWX_communes_bop
-                range > XWX_federalists_total_control_range
+                range < XWX_centralists_total_control_range
             }
         }
 
@@ -1162,6 +1162,10 @@ XWX_bop_cat = {
 
         available = {
             NOT = { has_country_flag = XWX_doing_bop_decision }
+            is_power_balance_in_range = {
+                id = XWX_communes_bop
+                range < XWX_centralists_high_control_range
+            }
         }
 
         visible = {
@@ -1232,6 +1236,10 @@ XWX_bop_cat = {
 
         available = {
             NOT = { has_country_flag = XWX_doing_bop_decision }
+            is_power_balance_in_range = {
+                id = XWX_communes_bop
+                range < XWX_centralists_high_control_range
+            }
             has_country_flag = XWX_second_gannan_famine
         }
 
@@ -1299,6 +1307,10 @@ XWX_bop_cat = {
 
         available = {
             NOT = { has_country_flag = XWX_doing_bop_decision }
+            is_power_balance_in_range = {
+                id = XWX_communes_bop
+                range < XWX_centralists_high_control_range
+            }
             has_war = yes
         }
 
@@ -1359,7 +1371,7 @@ XWX_bop_cat = {
             NOT = { has_country_flag = XWX_doing_bop_decision }
             is_power_balance_in_range = {
                 id = XWX_communes_bop
-                range < XWX_centralists_total_control_range
+                range > XWX_federalists_total_control_range
             }
         }
 
@@ -1452,6 +1464,10 @@ XWX_bop_cat = {
 
         available = {
             NOT = { has_country_flag = XWX_doing_bop_decision }
+            is_power_balance_in_range = {
+                id = XWX_communes_bop
+                range > XWX_federalists_high_control_range
+            }
         }
 
         visible = {
@@ -1523,6 +1539,10 @@ XWX_bop_cat = {
 
         available = {
             NOT = { has_country_flag = XWX_doing_bop_decision }
+            is_power_balance_in_range = {
+                id = XWX_communes_bop
+                range > XWX_federalists_high_control_range
+            }
             XWX_kmt_active = yes
         }
 
@@ -1574,6 +1594,10 @@ XWX_bop_cat = {
 
         available = {
             NOT = { has_country_flag = XWX_doing_bop_decision }
+            is_power_balance_in_range = {
+                id = XWX_communes_bop
+                range > XWX_federalists_high_control_range
+            }
             has_war = yes
         }
 
