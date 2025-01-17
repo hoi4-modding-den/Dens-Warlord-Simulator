@@ -147,3 +147,10 @@
  XBG_ideological_fanaticism_desc: "Ideological Fanaticism Description"
  XBG_technology_sharing: "Technology Sharing"
  XBG_technology_sharing_desc: "Technology Sharing Description"
+
+ ### VICTORY POINTS ###
+
+ VICTORY_POINTS_10022: "Baoding"
+ VICTORY_POINTS_4190: "Taiyung"
+ VICTORY_POINTS_1200: "Yantai"
+ VICTORY_POINTS_7025: "Xuzhou"

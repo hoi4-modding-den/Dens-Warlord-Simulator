@@ -12,11 +12,17 @@ state=
 		add_core_of = XBG
 		#add_core_of = PRC
 		victory_points = {
-			1069 3 
+			1069 5
 		}
+
+		victory_points = { # Yantai
+			1200 1
+		}
+
 		buildings = {
 			infrastructure = 2
 			industrial_complex = 1
+			arms_factory = 1
 			air_base = 3
 			4205 = {
 				naval_base = 2

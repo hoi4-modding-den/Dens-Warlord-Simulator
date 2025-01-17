@@ -12,6 +12,15 @@ state={
 		#add_core_of = PRC
 		buildings = {
 			infrastructure = 2
+			industrial_complex = 1
+		}
+
+		victory_points = { # Baoding
+			10022 1 
+		}
+
+		victory_points = { # Taiyung
+			4190 2
 		}
 
 		1938.10.25 = {
