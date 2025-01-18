@@ -1,0 +1,35 @@
+focus_tree={
+
+	id = XSI_focus
+
+	country = {
+		factor = 0
+		modifier = {
+			add = 11
+			tag = XSI
+		}
+	}
+	
+	default = no
+	reset_on_civilwar = no
+
+	continuous_focus_position = { x = 1 y = 1 }
+
+	focus = {
+		id = XSI_elections_focus 
+		icon = GFX_focus_ARG_crackdown_on_corruption
+		x = 15
+		y = 0
+		cost = 12
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		select_effect = { 
+			country_event = { id = XSI_focus_event.1 days = 7 }
+		}
+		available_if_capitulated = yes
+
+		completion_reward = {
+			custom_effect_tooltip = XSI_election_focus_tooltip
+		}
+	}
+
+}

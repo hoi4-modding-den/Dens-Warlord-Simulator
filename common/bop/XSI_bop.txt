@@ -1,0 +1,105 @@
+XSI_democratic_balance = {
+    initial_value = 0.0
+    left_side = XSI_communist_side
+    right_side = XSI_neutrality_side
+
+    range = { 
+        id = XSI_city_primacy
+        min = -0.25
+        max = 0.25
+        modifier = {
+		political_power_gain = 0.1
+		stability_factor = 0.1
+		democratic_drift = 0.02
+        }
+    }
+
+    range = {
+        id = XSI_communist_low
+        min = -0.50
+        max = -0.25
+        modifier = {
+        	stability_factor = -0.05
+        }
+    }
+    range = {
+        id = XSI_neutrality_low
+        min = 0.25
+        max = 0.50
+        modifier = {
+            war_support_factor = -0.05
+        }
+    }
+
+
+
+    range = {
+        id = XSI_communist_medium
+        min = -0.80
+        max = -0.50
+        modifier = {
+            stability_factor = -0.1
+            communism_drift = 0.01
+        }
+    }
+    range = {
+        id = XSI_neutrality_medium
+        min = 0.50
+        max = 0.80
+        modifier = {
+            war_support_factor = -0.1
+            neutrality_drift = 0.01
+        }
+    }
+
+    range = {
+        id = XSI_communist_high
+            min = -0.95
+            max = -0.80
+            modifier = {
+            	stability_factor = -0.15
+            	communism_drift = 0.03
+            }
+    }
+    range = {
+        id = XSI_neutrality_high
+            min = 0.80
+            max = 0.95
+            modifier = {
+                war_support_factor = -0.15
+            	neutrality_drift = 0.03
+            }
+    }
+
+    side = {
+        id = XSI_communist_side
+        icon = GFX_idea_generic_communist_army
+        range = {
+            id = XSI_communist_total
+            min = -1
+            max = -0.95
+            modifier = {
+                communism_drift = 0.05
+            }
+	    on_activate = {
+		country_event = XSI_natural_event.2
+            }
+        }
+    }
+
+    side = {
+        id = XSI_neutrality_side
+        icon = GFX_idea_chi_army_corruption3
+        range = {
+            id = XSI_neutrality_total
+            min = 0.95
+            max = 1
+            modifier = {
+                neutrality_drift = 0.05
+            }
+	    on_activate = {
+		country_event = XSI_natural_event.3
+            }
+        }
+    }
+}

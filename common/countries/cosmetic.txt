@@ -8,6 +8,43 @@ XSI_ancom = {
     color = rgb { 65 0 20 }
     color_ui = rgb { 65 0 20 }
 }
+XSI_ancom_china = {
+    color = rgb { 65 0 20 }
+    color_ui = rgb { 65 0 20 }
+}
+XSI_KMT_aligned = {
+    color = rgb { 166 150 90 }
+    color_ui = rgb { 166 150 90 }
+}
+XSI_KMT_aligned_china = {
+    color = rgb { 166 150 90 }
+    color_ui = rgb { 166 150 90 }
+}
+XSI_XWE_aligned = {
+    color = rgb { 200 75 75 }
+    color_ui = rgb { 200 75 75 }
+}
+XSI_XWE_aligned_china = {
+    color = rgb { 200 75 75 }
+    color_ui = rgb { 200 75 75 }
+}
+XSI_XBG_aligned = {
+    color = rgb { 90 115 75 }
+    color_ui = rgb { 90 115 75 }
+}
+XSI_JAP_aligned = {
+    color = rgb { 150 70 125 }
+    color_ui = rgb { 150 70 125 }
+}
+XSI_democratic = {
+    color = rgb { 190 255 250 }
+    color_ui = rgb { 190 255 250 }
+}
+XSI_democratic_china = {
+    color = rgb { 190 255 250 }
+    color_ui = rgb { 190 255 250 }
+}
+
 
 XWX_kmt_aligned = {
 	color = rgb { 229 138 47 }

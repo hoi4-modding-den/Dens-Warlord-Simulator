@@ -1,4 +1,9 @@
 ﻿l_english:
+#note to self: add new states for claims:
+#Greater China: Gorno-Badakhshan, adjust Alma-Ata state, Jetisu Region, East Kazakhstan Region, adjust Amur state, adjust Kashmir state, adjust Arunachal Pradesh, Northern Kachin, Northern Vietnam
+#Coastal States: Guangzhouwan, split Fujian, split Zhejiang, split Nanjing, split Jiangsu, split Shandong, Weihaiwei, Singapore, Tianjin, Brunei, Vladivostok
+#note to self: add flags for cosmetic tags
+
 #country#
  XSI:0 "Shanghai"
  XSI_DEF: "the City of Shanghai"
@@ -26,19 +31,40 @@
  XSI_communism_ADJ:0 "Shanghainese"
  XSI_neutrality_ADJ:0 "Shanghailander"
  XSI_JAP_neutrality_subject:0 "Shanghai Autonomy"
- XSI_JAP_neutrality_subject_DEF:0 "the Shanghai Autonomy"
+ XSI_JAP_neutrality_subject_DEF:0 "the Shanghai Autonomous Government"
  XSI_JAP_neutrality_subject_ADJ:0 "Shanghainese"
  XSI_JAP_fascism_subject:0 "Shanghai Occupation Zone"
  XSI_JAP_fascism_subject_DEF:0 "the Shanghai Military Security Zone"
  XSI_JAP_fascism_subject_ADJ:0 "Shanghainese"
  
  #cosmetic tags#
- XSI_ancom:0 "Free Territory of Shanghai"
- XSI_ancom_DEF:0 "the Free Territory of Shanghai"
+ XSI_ancom:0 "People's Association of Shanghai"
+ XSI_ancom_DEF:0 "the Free People's Association of Shanghai"
  XSI_ancom_ADJ:0 "Shanghaian"
+ XSI_ancom_china:0 "Chinese People's Association"
+ XSI_ancom_china_DEF:0 "the Anarchist Federation of People's Associations"
+ XSI_ancom_china_ADJ:0 "Shanghaian"
  XSI_china:0 "International China"
  XSI_china_DEF:0 "the Chinese International Economic Authority"
  XSI_china_ADJ:0 "Chinese"
+ XSI_democratic_china:0 "Chinese Confederation"
+ XSI_democratic_china_DEF:0 "the Confederation of Chinese Municipalities and Provinces"
+ XSI_democratic_china_ADJ:0 "Chinese"
+ XSI_JAP_aligned:0 "Shanghai Autonomy"
+ XSI_JAP_aligned_DEF:0 "the Shanghai Autonomous Government"
+ XSI_JAP_aligned_ADJ:0 "Shanghainese"
+ XSI_KMT_aligned:0 "Shanghai Clique"
+ XSI_KMT_aligned_DEF:0 "the Clique of Shanghai"
+ XSI_KMT_aligned_ADJ:0 "Shanghainese"
+ XSI_KMT_aligned_china:0 "Republic of China"
+ XSI_KMT_aligned_china_DEF:0 "the Republic of China"
+ XSI_KMT_aligned_china_ADJ:0 "Chinese"
+ XSI_XWE_aligned_china:0 "Democratic Republic of China"
+ XSI_XWE_aligned_china_DEF:0 "the Democratic Republic of China"
+ XSI_XWE_aligned_china_ADJ:0 "Chinese"
+ XSI_XBG_aligned:0 "Shanghai Province"
+ XSI_XBG_aligned_DEF:0 "the Province of Shanghai"
+ XSI_XBG_aligned_ADJ:0 "Shanghainese"
  
  #characters#
  XSI_Arnhold:0 "Harry Edward Arnhold" #game start-april 1937 leader
@@ -69,12 +95,36 @@
  XSI_broke_recovering:0 "Fiscal Stability"
  XSI_broke_recovering:0 "We have taken efforts to restabilize our budget. While this will upset taxpayers, it is necessary to ensure the stability of our government."
  
+ #focuses#
+ XSI_elections_focus:0 "The 1936 Municipal Elections"
+ XSI_elections_focus_desc:0 "Every year, the Shanghai International Settlement holds elections to determine the chairman of the municipal council. While normally not significant, the effective state of lawlessness in the rest of China, the endless strife in our streets, and the neverending pressure from Japan, has put our city government in a precarious situation. If we don’t acquiesce to our members' demands, we may face dire consequences..."
+ XSI_election_focus_tooltip:0 "§GThe fate of §CShanghai §Gwill be §Yautomatically determined §Gbased on the §Raftermath §Gof this year's elections§W\n\n§gWhen it's implemented anyways xd§W"
+ 
  #events#
+ #natural
  XSI.NE_1.t:0 "The Situation in Shanghai, 1936"
  XSI.NE_1.d:0 "The Shanghai International Settlement was founded in 1863 from the merger of the American and British concessions that were established in the aftermath of the First Opium War. Unlike Macau and Hong Kong, the Shanghai concessions were legally under Chinese sovereignty, but the city government is managed by the Shanghai Municipal Council (SMC). The SMC was created and managed with the support of all treaty powers, which was expanded to include 18 different nations by 1914, but the city is mostly managed by the British and the Americans.\n\nHowever, with the Xinhai Revolution and the start of the warlord era, there has not been any single unified Chinese government to answer to, leaving Shanghai de facto independent. The civil war between the Kuomintang (KMT) and Socialist forces has left China divided, chaotic, and vulnerable to Japanese aggression. Anti-Communist forces carried out a purge of suspected socialists in 1927, killing tens of thousands, while Japanese forces staged an anti-Japanese riot in 1932, resulting in the Japanese military razing the city, permanently occupying the neighborhood of Hongkew, and forcing the KMT military to leave the city.\n\nAfter the Japanese invasion, with pressure from the British, the KMT was forced to surrender the Chinese portions of Shanghai, while the French concession was also annexed into the International Settlement. While this expansion has granted us more resources to repair the city, it has also strained our budget, and greatly increased the tensions between our foreigner-led Council and the local Chinese population. If the Pearl of the Orient is to survive the decade, we must take decisive action, before the Japanese do it for us."
  XSI.NE_1.a:0 "The sparrow may be small, but all the vital organs are there, hopefully..."
  #election lead-up
+ XSI.FE_1.t:0 "Replacing Chén Jiè"
+ XSI.FE_1.d:0 "Born in Hangzhou in 1885 to a well-off family, Chén Jiè studied in Japan after the Qing abolished the examination system, before transferring to the University of Berlin to study law in 1907, returning to China after the Xinhai Revolution. A lifelong bureaucrat, Chén Jiè had previously served in several directorial and administrative roles in the Bayang government while concurrently as a professor at Peking University. But since 1928, he has left government work and has worked mostly as the head manager of several banks, notably the Salt Industry Bank which was relocated to Shanghai in 1934. Having moved to Shanghai, he was appointed to the ratepayer council, having served as one of the main representatives for Chinese business on the council. However, the Kuomintang government reached out to Chén Jiè in 1935, seeking to appoint him as secretary of the Ministry of Foreign Affairs as a result of his connections with Germany. In a meeting on December 23rd, Chén Jiè had submitted his resignation from the council, effective January 4th, and suggested that the Chinese members of the council should discuss a replacement to fill his vacancy.\n\nOn December 27th, members of the Chinese Ratepayers Association publicly ‘‘elected’’ Xi Yushu, a native of Shanghai and manager of the Shanghai Commercial & Savings Bank, but this election has been called into question. Because Chén Jiè did not finish his term, his replacement is supposed to be elected with majority approval from the council, not just the Chinese representatives. While this has occurred once before without issue, it is still against council rules, and several council members have questioned if filling the vacancy is necessary this close to the yearly elections making Xi’s reelection an inevitability, not to mention the possibility of this inspiring other council members to act with greater impunity (particularly the Japanese members). Despite this, Xi Yushu’s appointment by the majority of the council would be greatly appreciated by the Chinese members of the council, and the election of a local (even a bourgeois one) would help with convincing the local population of our legitimacy."
+ XSI.FE_1.a:0 "Approve Xi Yushu’s ascension to the Council"
+ XSI.FE_1.b:0 "Reject the Chinese Ratepayers election as illegal"
  
+ #decisions#
+ #balance of power
+ XSI_democratic_balance:0 "Party Influence" 
+ XSI_communist_side:0 "Communist Party"
+ XSI_neutrality_side:0 "Kuomintang"
+ XSI_city_primacy:0 "Firm Municipal Control"
+ XSI_communist_low:0 "Slight CPC Support"
+ XSI_neutrality_low:0 "Slight KMT Support"
+ XSI_communist_medium:0 "Strong CPC Support"
+ XSI_neutrality_medium:0 "Strong KMT Support"
+ XSI_communist_high:0 "CPC Influence in Government"
+ XSI_neutrality_high:0 "KMT Influence in Government"
+ XSI_communist_total:0 "Imminent CPC Coup"
+ XSI_neutrality_total:0 "Imminent KMT Coup"
  
  #etc.#
  XSI_GATHERING_STORM_DESC:0 ""

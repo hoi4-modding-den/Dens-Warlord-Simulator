@@ -20,11 +20,41 @@ country_event = { #intro event
 	hidden_effect = {
 			#country_event = { id = XSI_natural_event.2 days = 35 }
 		}
-    	}
+    }
 }
 
 #Focus Events# (events from focuses)
+country_event = { #intro event
+    id = XSI_focus_event.1
+    title = XSI.FE_1.t
+    # picture = GFX_report_event_DEN_celebration
+    desc = XSI.FE_1.d
 
+    is_triggered_only = yes
+    fire_only_once = no
+	option = {
+        name = XSI.FE_1.a
+		ai_chance = {
+			base = 50 #historical
+		}
+	hidden_effect = {
+			#country_event = { id = XSI_natural_event.2 days = 35 }
+		}
+    }
+	option = {
+        name = XSI.FE_1.b
+		ai_chance = {
+			base = 50
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 0
+			}
+		}
+	hidden_effect = {
+			#country_event = { id = XSI_natural_event.2 days = 35 }
+		}
+    	}
+}
 
 #News Events# (the big news pop-ups)
 
