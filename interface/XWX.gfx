@@ -153,6 +153,11 @@ spriteTypes = {
 	}
 
 	spriteType = {
+		name = "GFX_portrait_XWX_huangqi_xiang"
+		texturefile = "gfx/XWX/portrait_XWX_huangqi_xiang.png"
+	}
+
+	spriteType = {
 		name = "GFX_portrait_XWX_jacob_rosenberg"
 		texturefile = "gfx/XWX/portrait_XWX_jacob_rosenberg.png"
 	}
@@ -197,6 +202,11 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_idea_XWX_hu_lanqi"
 		texturefile = "gfx/XWX/idea_XWX_hu_lanqi.png"
+	}
+
+	spriteType = {
+		name = "GFX_idea_XWX_huangqi_xiang"
+		texturefile = "gfx/XWX/idea_XWX_huangqi_xiang.png"
 	}
 
 	spriteType = {

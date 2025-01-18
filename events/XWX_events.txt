@@ -208,15 +208,19 @@ country_event = { # Democratic Party event
 
 	option = { 
 		name = XWX_political_events.7.a
-		add_popularity = {
-			ideology = democratic
-			popularity = 0.05
-		}
 		set_party_name = {
 			ideology = democratic
 			long_name = XWX_democratic_party_new_long
 			name = XWX_democratic_party_new
 		}
+		add_popularity = {
+			ideology = democratic
+			popularity = 0.05
+		}
+		custom_effect_tooltip = generic_skip_one_line_tt
+		set_country_flag = XWX_democratic_guy_unlocked
+		custom_effect_tooltip = available_political_advisor
+		show_ideas_tooltip = XWX_huangqi_xiang_advisor
 	}
 
 }
@@ -284,6 +288,62 @@ country_event = { # Communism: Repeat Election
 		name = XWX_election_events.2.b
 		XWX_promote_opposition_leader = yes
 		XWX_choose_opposition_leader = yes
+	}
+
+}
+
+country_event = { # KMT election
+	id = XWX_election_events.3
+	title = XWX_election_events.3.t
+	desc = XWX_election_events.3.desc
+	picture = GFX_report_event_asian_politicians
+
+	trigger = {
+		tag = XWX
+		exists = yes
+		OR = {
+			has_government = democratic
+			has_government = neutrality
+		}
+	}
+    
+    is_triggered_only = yes
+    fire_only_once = no
+
+	option = {
+		name = XWX_election_events.3.a
+		ai_chance = {
+			base = 1
+			modifier = {
+				factor = 0
+				any_other_country = {
+					has_government = democratic
+					ROOT = { is_subject_of = PREV }
+				}
+			}
+		}
+		set_politics = {
+			ruling_party = neutrality
+			elections_allowed = yes
+		}
+	}
+
+	option = { 
+		name = XWX_election_events.3.b
+		ai_chance = {
+			base = 20
+			modifier = {
+				factor = 0
+				any_other_country = {
+					NOT = { has_government = democratic }
+					ROOT = { is_subject_of = PREV }
+				}
+			}
+		}
+		set_politics = {
+			ruling_party = democratic
+			elections_allowed = yes
+		}
 	}
 
 }

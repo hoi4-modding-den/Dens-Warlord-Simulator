@@ -474,7 +474,10 @@ ideas = {
 			}
 
 			cancel = {
-				has_government = fascism
+				OR = {
+					has_government = fascism
+					has_government = communism
+				}
 			}
 
             removal_cost = -1
@@ -482,7 +485,27 @@ ideas = {
             modifier = {
 				political_power_factor = 0.03
 				offensive_war_stability_factor = 0.2
+				democratic_drift = 0.04
             }
+
+			on_remove = {
+				if = {
+					limit = {
+						NOT = {
+							OR = {
+								has_government = fascism
+								has_government = communism
+							}
+						}
+					}
+					set_politics = {
+						ruling_party = neutrality
+						elections_allowed = yes
+						election_frequency = 48
+					}
+					hold_election = ROOT
+				}
+			}
 
         }
 

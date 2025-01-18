@@ -1097,9 +1097,8 @@ focus_tree = {
 				elections_allowed = yes
 				election_frequency = 36
 			}
-			hidden_effect = {
-				hold_election = ROOT
-			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			hold_election = ROOT
 			custom_effect_tooltip = generic_skip_one_line_tt
 			add_ideas = XWX_socialist_democracy
 			if = {
@@ -1429,6 +1428,46 @@ focus_tree = {
 	}
 
 	shared_focus = {
+		id = XWX_crush_the_kmt
+		icon = GFX_focus_ICE_embrace_the_workers_revolution
+		prerequisite = { focus = XWX_restart_the_civil_war }
+		#mutually_exclusive = { focus =  }
+		x = 0
+		y = 1
+		relative_position_id = XWX_restart_the_civil_war
+
+		cost = 8
+
+		available = {
+			has_government = communism
+			any_other_country = {
+				DEN_is_chinese_country = yes
+				XWX_has_kmt_regime = yes
+			}
+		}
+
+		bypass = {
+			
+		}
+
+		search_filters = {  }
+		completion_reward = {
+			every_other_country = {
+				limit = {
+					DEN_is_chinese_country = yes
+					XWX_has_kmt_regime = yes
+				}
+				ROOT = {
+					create_wargoal = {
+						target = PREV
+						type = annex_everything
+					}
+				}
+			}
+		}
+	}
+
+	shared_focus = {
 		id = XWX_enforce_revolutionary_doctrine
 		icon = GFX_focus_generic_army_doctrines_2
 		prerequisite = { focus = XWX_revolutionary_fervour }
@@ -1671,6 +1710,19 @@ focus_tree = {
 				idea = XWX_promises_of_democracy
 				days = 730
 			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = after_idea_times_out_tt
+			effect_tooltip = {
+				set_politics = {
+					ruling_party = neutrality
+					elections_allowed = yes
+					election_frequency = 48
+				}
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			effect_tooltip = {
+				hold_election = ROOT
+			}
 		}
 	}
 
@@ -1699,6 +1751,37 @@ focus_tree = {
 			add_war_support = 0.1
 			add_command_power = 20
 			add_manpower = 10000
+		}
+	}
+
+	shared_focus = {
+		id = XWX_technocratic_democracy
+		icon = GFX_focus_research2
+		prerequisite = { focus = XWX_power_to_the_parliament }
+		#mutually_exclusive = { focus =  }
+		x = 0
+		y = 2
+		relative_position_id = XWX_power_to_the_parliament
+
+		cost = 8
+
+		available = {
+			has_government = democratic
+		}
+
+		bypass = {
+
+		}
+
+		search_filters = {  }
+		completion_reward = {
+			add_stability = 0.1
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = modify_XWX_industry_tt
+			add_to_variable = {
+				XWX_industry_research_speed_factor = 0.05
+				tooltip = research_speed_factor_tt
+			}
 		}
 	}
 
@@ -1862,7 +1945,6 @@ focus_tree = {
 		}
 
 		available = {
-			has_government = neutrality
 			is_subject = no
 		}
 

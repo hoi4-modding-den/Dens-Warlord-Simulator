@@ -5,6 +5,52 @@ XWX_focus_completed_via_event = {
     }
 }
 
+XWX_has_kmt_regime = {
+    custom_trigger_tooltip = {
+        tooltip = XWX_has_kmt_regime_tt
+        OR = {
+            AND = {
+                original_tag = CHI
+                has_government = neutrality
+            }
+            AND = {
+                original_tag = XWX
+                has_government = neutrality
+            }
+            AND = {
+                original_tag = XMC
+                NOT = { has_government = communism }
+            }
+            AND = {
+                original_tag = XSA
+                OR = {
+                    has_government = neutrality
+                    has_government = democratic
+                }
+            }
+            AND = {
+                original_tag = XYJ
+                has_government = democratic
+            }
+            AND = {
+                original_tag = XBG
+                has_government = democratic
+            }
+            AND = {
+                original_tag = XSI
+                has_government = democratic
+            }
+            AND = {
+                original_tag = XQI
+            }
+            any_other_country = {
+                is_ally_with = PREV
+                XWX_has_kmt_regime = yes
+            }
+        }
+    }
+}
+
 XWX_kmt_active = {
     custom_trigger_tooltip = {
         tooltip = XWX_kmt_active_tt

@@ -129,6 +129,18 @@ leader_traits = {
 		}
 	}
 
+	XWX_democratic_leader = {
+		random = no
+
+		political_power_gain = 0.1
+		research_speed_factor = 0.07
+		democratic_drift = 0.05
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
 
 # POLITCIAL ADVISORS
 
@@ -158,6 +170,18 @@ leader_traits = {
 
         political_power_factor = 0.05
 		conscription_factor = 0.07
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	XWX_democratic_reformer = {
+		random = no
+        sprite = 13
+
+		research_speed_factor = 0.07
+        democratic_drift = 0.03
 
 		ai_will_do = {
 			factor = 1

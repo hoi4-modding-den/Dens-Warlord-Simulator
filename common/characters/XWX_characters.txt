@@ -150,6 +150,62 @@ characters = {
 		}
 	}
 
+	XWX_huangqi_xiang = { 
+		name = XWX_huangqi_xiang_name
+		portraits = {
+			civilian = {
+				large = GFX_portrait_XWX_huangqi_xiang
+				small = GFX_idea_XWX_huangqi_xiang
+			}
+		}
+		corps_commander = {
+			visible = {
+				NOT = { has_government = fascism }
+			}
+			traits = { inflexible_strategist }
+			skill=3
+			attack_skill=2
+			defense_skill=4
+			planning_skill=2
+			logistics_skill=3
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = XWX_huangqi_xiang_advisor
+
+			available = {
+				has_country_flag = XWX_democratic_guy_unlocked
+				OR = {
+					is_subject = no
+					has_government = democratic
+				}
+				NOT = {
+                    has_country_leader = {
+                        character = XWX_huangqi_xiang
+                        ruling_only = yes
+                    }
+                }
+			}
+			
+			cost = 100
+
+			ai_will_do = {
+				factor = 5
+			}
+
+			traits = {
+				XWX_democratic_reformer
+			}
+
+		}
+
+		country_leader = {
+			traits = { XWX_democratic_leader }
+			ideology = socialism
+			expire = "1960.1.1.1"
+		}
+	}
+
 	XWX_jacob_rosenberg = { 
 		name = XWX_jacob_rosenberg_name
 		portraits = {
