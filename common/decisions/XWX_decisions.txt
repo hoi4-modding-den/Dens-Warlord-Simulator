@@ -160,6 +160,184 @@ XWX_kmt_insurgency_cat = {
 
 }
 
+XWX_opium_crackdowns = {
+
+    XWX_root_out_corruption = {
+
+        icon = GFX_decision_generic_police_action
+
+        allowed = {
+            original_tag = XWX
+        }
+
+        available = {
+            NOT = { has_country_flag = XWX_opium_crackdown_active }
+        }
+
+        cost = 75
+
+        ai_will_do = {
+			base = 300
+		}
+
+        fire_only_once = yes
+
+        days_remove = 50
+
+        complete_effect = {
+            set_country_flag = XWX_opium_crackdown_active
+        }
+
+        modifier = {
+            political_power_cost = 0.15
+        }
+
+        remove_effect = {
+            add_stability = 0.1
+            set_country_flag = XWX_root_out_corruption_completed
+            clr_country_flag = XWX_opium_crackdown_active
+        }
+    }
+
+    XWX_destroy_plantations = {
+
+        icon = GFX_decision_generic_scorched_earth
+
+        allowed = {
+            original_tag = XWX
+        }
+
+        available = {
+            NOT = { has_country_flag = XWX_opium_crackdown_active }
+        }
+
+        cost = 75
+
+        ai_will_do = {
+			base = 300
+		}
+
+        fire_only_once = yes
+
+        days_remove = 50
+
+        complete_effect = {
+            set_country_flag = XWX_opium_crackdown_active
+        }
+
+        modifier = {
+            stability_weekly = -0.001
+        }
+
+        remove_effect = {
+            set_country_flag = XWX_destroy_plantations_completed
+            clr_country_flag = XWX_opium_crackdown_active
+        }
+    }
+
+    XWX_speak_out_against_opium = {
+
+        icon = GFX_decision_generic_political_address
+
+        allowed = {
+            original_tag = XWX
+        }
+
+        available = {
+            NOT = { has_country_flag = XWX_opium_crackdown_active }
+        }
+
+        cost = 75
+
+        ai_will_do = {
+			base = 300
+		}
+
+        fire_only_once = yes
+
+        days_remove = 25
+
+        complete_effect = {
+            set_country_flag = XWX_opium_crackdown_active
+        }
+
+        modifier = {
+            political_power_gain = 0.1
+        }
+
+        remove_effect = {
+            add_stability = 0.1
+            clr_country_flag = XWX_opium_crackdown_active
+        }
+    }
+
+    XWX_arrest_syndicate_members = {
+
+        icon = GFX_decision_generic_arrest
+
+        allowed = {
+            original_tag = XWX
+        }
+
+        available = {
+            NOT = { has_country_flag = XWX_opium_crackdown_active }
+        }
+
+        cost = 75
+
+        ai_will_do = {
+			base = 300
+		}
+
+        fire_only_once = yes
+
+        days_remove = 50
+
+        complete_effect = {
+            set_country_flag = XWX_opium_crackdown_active
+        }
+
+        modifier = {
+            consumer_goods_factor = 0.1
+        }
+
+        remove_effect = {
+            add_stability = 0.1
+            set_country_flag = XWX_arrest_syndicate_members_completed
+            clr_country_flag = XWX_opium_crackdown_active
+        }
+    }
+
+    XWX_erase_opium_syndicate_influence = {
+
+        icon = GFX_decision_oppression
+
+        allowed = {
+            original_tag = XWX
+        }
+
+        available = {
+            has_country_flag = XWX_root_out_corruption_completed
+            has_country_flag = XWX_destroy_plantations_completed
+            has_country_flag = XWX_arrest_syndicate_members_completed
+        }
+
+        cost = 100
+
+        ai_will_do = {
+			base = 300
+		}
+
+        fire_only_once = yes
+
+        complete_effect = {
+            add_stability = 0.15
+            remove_ideas = XWX_opium_magnates
+        }
+    }
+
+}
+
 XWX_construction_decisions = {
 
     XWX_tianyu_fort_construction = {

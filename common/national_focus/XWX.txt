@@ -2197,6 +2197,9 @@ focus_tree = {
 					instant_build = yes
 				}	
 			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = available_industrial_concern
+			show_ideas_tooltip = XWX_modernisation_committee
 		}
 	}
 
@@ -2285,6 +2288,9 @@ focus_tree = {
 			add_research_slot = 1
 			custom_effect_tooltip = generic_skip_one_line_tt
 			custom_effect_tooltip = XWX_local_schools_tt
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = available_industrial_concern
+			show_ideas_tooltip = XWX_education_office
 		}
 	}
 
@@ -2922,11 +2928,11 @@ focus_tree = {
 				division_template = {
 					name = "Tank Brigade"
 					regiments = {
-						motorized = { x = 0 y = 0 }
-						motorized = { x = 0 y = 1 }
-						motorized = { x = 0 y = 2 }
-						light_armor = { x = 1 y = 0 }
-						light_armor = { x = 1 y = 1 }
+						infantry = { x = 0 y = 0 }
+						infantry = { x = 0 y = 1 }
+						infantry = { x = 0 y = 2 }
+						heavy_armor = { x = 1 y = 0 }
+						heavy_armor = { x = 1 y = 1 }
 					}
 					support = {
 						engineer = { x = 0 y = 0 }
@@ -2952,27 +2958,40 @@ focus_tree = {
 				}
 				set_technology = { gwtank_chassis = 1 }
 			}
-			hidden_effect = {
-				if = {
-					limit = { has_dlc = "No Step Back" }
-					create_equipment_variant = {
-						name = "Leichttraktor"
-						type = light_tank_chassis_0
-						parent_version = 0
-						modules = {
-							main_armament_slot = tank_small_cannon
-							turret_type_slot = tank_light_two_man_tank_turret
-							suspension_type_slot = tank_christie_suspension
-							armor_type_slot = tank_riveted_armor
-							engine_type_slot = tank_gasoline_engine
-							special_type_slot_1 = tank_radio_1
-						}
-						upgrades = {
-							tank_nsb_engine_upgrade = 2
-							tank_nsb_armor_upgrade = 2
-						}
-						icon = "GFX_GER_gwtank_medium"
+			if = {
+				limit = {
+					NOT = { has_dlc = "No Step Back" }
+					NOT = { has_tech = basic_heavy_tank }
+				}
+				set_technology = { basic_heavy_tank = 1 }
+			}
+			else_if = {
+				limit = {
+					NOT = { has_tech = basic_heavy_tank_chassis }
+				}
+				set_technology = { basic_heavy_tank_chassis = 1 }
+			}
+			if = {
+				limit = { has_dlc = "No Step Back" }
+				create_equipment_variant = {
+					name = "Experimental Heavy Armour"
+					type = heavy_tank_chassis_1
+					mark_older_equipment_obsolete = yes
+					modules = {
+						main_armament_slot = tank_heavy_machine_gun
+						turret_type_slot = tank_heavy_three_man_tank_turret
+						suspension_type_slot = tank_interleaved_suspension
+						armor_type_slot = tank_riveted_armor
+						engine_type_slot = tank_gasoline_engine
+						special_type_slot_1 = sloped_armor
+						special_type_slot_2 = armor_skirts
 					}
+					upgrades = {
+						tank_nsb_engine_upgrade = 1
+						tank_nsb_armor_upgrade = 4
+					}
+					design_team = mio:XWX_tank_designer
+					allow_without_tech = yes
 				}
 			}
 			custom_effect_tooltip = generic_skip_one_line_tt

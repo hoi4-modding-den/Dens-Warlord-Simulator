@@ -75,6 +75,9 @@ XWX_GATHERING_STORM_DESC: "The Gannan Peasant Republics are a collective in the 
  XWX_democratic_leader: "$XWX_democratic_reformer$"
  XWX_feminist_revolutionary: "Feminist Revolutionary"
  XWX_democratic_reformer: "Democratic Technocrat"
+ XWX_opium_magnates_trait: "Crime Syndicates"
+ XWX_modernisation_committee_trait: "Modernisation Committee"
+ XWX_education_office_trait: "Education Coordination"
 
 
 # OPINION MODIFIERS
@@ -159,14 +162,31 @@ XWX_GATHERING_STORM_DESC: "The Gannan Peasant Republics are a collective in the 
 
  after_idea_times_out_tt: "§YAfter the National Spirit runs out:§!"
 
+ XWX_opium_magnates: "Opium Syndicates"
+ XWX_opium_magnates_trigger: "§Rcan only be removed via the decision§! §Y$XWX_erase_opium_syndicate_influence$§!§R!§!"
+ XWX_modernisation_committee: "Committee for the Industrialisation of Gannan"
+ XWX_education_office: "$XWX_local_schools$"
+
 
 # MIOs
 
- XWX_tank_designer: "Gannan Experimental Armour"
+ XWX_tank_designer: "Gannan Armour"
+ XWX_tank_designer_init: "Experimental Armour Designer"
  XWX_plane_designer: "Hezuo Aviation"
  XWX_small_plane_designer: "National Fighter Industries"
  XWX_gannan_arsenal: "Tianshui Arsenal"
  XWX_kangding_arsenal: "Kangding Artillery Works"
+
+ XWX_mio_trait_improved_fuel_use: "Optimised Fuel Consumption"
+ XWX_mio_trait_improved_production_lines: "Underground Assemblies"
+ XWX_mio_trait_experimental_defences: "Experimental Defence Equipment"
+ XWX_mio_trait_experimental_defences_2: "Xiang's Armour Design"
+ XWX_mio_header_hezuo_airfields: "Hezuo Facilities"
+ XWX_mio_trait_hezuo_airfield: "Expand Hezuo Airfield"
+ XWX_mio_trait_hezuo_factories: "Privatise Assembly Plants"
+ XWX_mio_trait_airplane_factories: "Cheaper Fighter Designs"
+ XWX_mio_trait_gannan_gun_workshops: "Tianshui Production Facilities"
+ XWX_mio_trait_direct_mining: "Nationalise Kangding Mines"
 
 
 # DECISIONS
@@ -177,6 +197,25 @@ XWX_kmt_insurgency_cat: "Dealing with the Kuomintang"
  XWX_raid_kmt_hideouts: "Raid Kuomintang Hideouts"
  XWX_ignore_kmt: "Focus on Stability"
  XWX_ignore_kmt_desc: "We have much bigger problems than the reactionaries of the Kuomintang. Let us ignore them while we better our nation."
+
+XWX_opium_crackdowns: "Crackdown on Opium"
+ XWX_opium_crackdowns_desc: "The poison that is opium is spread throughout the province. The syndicates that peddle this drug hold a great influence over our economy, to the extend that a large part of our officials is being bribed by them."
+ XWX_opium_crackdown_active: "currently doing a §Y$XWX_opium_crackdowns$§! decision."
+
+ XWX_root_out_corruption: "Root out Government Corruption"
+ XWX_root_out_corruption_desc: "To counteract the rampant corruption within our nation, we will create the rank of ombudsman, an anti-corruption official, to assist in the crackdown."
+ XWX_root_out_corruption_completed: "Has completed the decision §Y$XWX_root_out_corruption$§!."
+
+ XWX_destroy_plantations: "Burn down Opium Plantations"
+ XWX_destroy_plantations_desc: "Many farmers have turned to opium as a profitable source of income, since the syndicates pay well. Burning down the opium fields will both bring production to a halt as well as send a message."
+ XWX_destroy_plantations_completed: "Has completed the decision §Y$XWX_destroy_plantations$§!."
+
+ XWX_speak_out_against_opium: "Speak out against Opium"
+
+ XWX_arrest_syndicate_members: "Arrest Syndicate Members"
+ XWX_arrest_syndicate_members_completed: "Has completed the decision §Y$XWX_arrest_syndicate_members$§!."
+
+ XWX_erase_opium_syndicate_influence: "Crush the Opium Syndicates"
 
 XWX_construction_decisions: "Construction Projects"
 
@@ -615,7 +654,7 @@ XWX_bop_cat: "BoP Category"
  XWX_army_motorisation_desc: ""
  XWX_liu_xiangs_armoured_project: "Liu Xiangs Armour Project"
  XWX_liu_xiangs_armoured_project_desc: "Liu Xiang has some interesting ideas for how to involve armoured vehicles in combat. Perhaps he is onto something?"
- XWX_liu_xiangs_armoured_project_tt: "A §g10-Width§! §CArmoured Division§! composed of §Y3 Motorised Battalions§!, §Y2 Light Tank Battalions§! and an §YEngineer Company§! are deployed in §Y[ROOT.capital.GetName]§!."
+ XWX_liu_xiangs_armoured_project_tt: "A §g10-Width§! §CArmoured Division§! composed of §Y3 Infantry Battalions§!, §Y2 Heavy Tank Battalions§! and an §YEngineer Company§! are deployed in §Y[ROOT.capital.GetName]§!."
  XWX_military_academies: "Gannan Military Science Academy"
  XWX_military_academies_desc: ""
  XWX_local_schools_completed_tt: "When the Focus §Y$XWX_local_schools$§! has been completed:"

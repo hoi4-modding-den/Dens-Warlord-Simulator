@@ -188,5 +188,29 @@ leader_traits = {
 		}
 	}
 
+	XWX_opium_magnates_trait = {
+		random = no
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	XWX_modernisation_committee_trait = {
+		random = no
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	XWX_education_office_trait = {
+		random = no
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
 
 }

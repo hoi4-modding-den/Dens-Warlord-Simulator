@@ -9,7 +9,7 @@
  #################### 
 
 XWX_tank_designer = {
-	include = generic_mobile_tank_organization
+	include = generic_infantry_tank_organization
 	icon = GFX_idea_generic_armor
 	allowed = {	
 		original_tag = XWX
@@ -19,6 +19,121 @@ XWX_tank_designer = {
 			has_completed_focus = XWX_liu_xiangs_armoured_project
 		}
 	}
+
+	initial_trait = {
+		name = XWX_tank_designer_init
+		
+		limit_to_equipment_type = { 
+			mio_cat_eq_all_heavy_tank
+		}
+		
+		equipment_bonus = {
+			armor_value = 0.05
+			hard_attack = 0.05
+		}
+
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.15
+			military_industrial_organization_size_up_requirement = 0.03
+		}
+	}
+
+	add_trait = {
+		token = XWX_mio_trait_improved_fuel_use
+		name = XWX_mio_trait_improved_fuel_use
+		icon = GFX_generic_mio_trait_icon_fuel_consumption
+
+		position = { x = -3 y = 1 }
+		relative_position_id = generic_mio_trait_heavy_tank_improvements
+
+		any_parent = { generic_mio_trait_heavy_tank_improvements generic_mio_trait_medium_tank_improvements }
+
+		limit_to_equipment_type = { mio_cat_eq_all_heavy_tank mio_cat_eq_all_medium_tank }
+		
+		equipment_bonus = {
+			fuel_consumption = -0.05
+		}
+	}
+
+	override_trait = {
+		token = generic_mio_trait_modular_construction
+		
+		any_parent = { generic_mio_trait_heavy_tank_improvements generic_mio_trait_medium_tank_improvements generic_mio_trait_light_tank_improvements }
+	}
+
+	add_trait = {
+		token = XWX_mio_trait_improved_production_lines
+		name = XWX_mio_trait_improved_production_lines
+		icon = GFX_generic_mio_department_icon_facilities
+
+		position = { x = -1 y = 1 }
+		relative_position_id = generic_mio_trait_heavy_tank_improvements
+
+		all_parents = { generic_mio_trait_heavy_tank_improvements }
+
+		limit_to_equipment_type = { mio_cat_eq_all_heavy_tank }
+		
+		production_bonus = {
+			production_efficiency_cap_factor = 0.05
+		}
+
+		on_complete = {
+			FROM = {
+				add_offsite_building = {
+					type = arms_factory
+					level = 1
+				}
+			}
+		}
+	}
+
+	add_trait = {
+		token = XWX_mio_trait_experimental_defences
+		name = XWX_mio_trait_experimental_defences
+		icon = GFX_generic_mio_department_icon_tank_general_armor
+
+		position = { x = 0 y = 2 }
+		relative_position_id = generic_mio_trait_heavy_tank_improvements
+
+		all_parents = { generic_mio_trait_heavy_tank_improvements }
+
+		limit_to_equipment_type = { mio_cat_eq_all_heavy_tank }
+		
+		equipment_bonus = {
+			reliability = -0.05
+			defense = 0.1
+		}
+
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.05
+		}
+	}
+
+	add_trait = {
+		token = XWX_mio_trait_experimental_defences_2
+		name = XWX_mio_trait_experimental_defences_2
+		icon = GFX_generic_mio_trait_icon_armor_value
+
+		position = { x = 0 y = 1 }
+		relative_position_id = XWX_mio_trait_experimental_defences
+
+		all_parents = { XWX_mio_trait_experimental_defences }
+
+		limit_to_equipment_type = { mio_cat_eq_all_heavy_tank }
+
+		available = {
+			FROM = {
+				XWX_liu_xiang = {
+					is_high_command = yes
+				}
+			}
+		}
+		
+		equipment_bonus = {
+			armor_value = 0.1
+		}
+	}
+
 }
 
 ###########################
@@ -55,6 +170,95 @@ XWX_plane_designer = {
 			controls_state = 753
 		}
 	}
+
+	tree_header_text = {
+		text = mio_header_fighter_aircraft
+		x = 1
+	}
+
+	tree_header_text = {
+		text = mio_header_bomber_aircraft
+		x = 4
+	}
+
+	tree_header_text = {
+		text = mio_header_naval_aircraft
+		x = 7
+	}
+
+	tree_header_text = {
+		text = XWX_mio_header_hezuo_airfields
+		x = 9
+	}
+
+	override_trait = {
+		token = generic_mio_trait_conservative_designs
+		position = { x = 4 y = 0 }
+	}
+
+	add_trait = {
+		token = XWX_mio_trait_hezuo_airfield
+		name = XWX_mio_trait_hezuo_airfield
+		icon = GFX_generic_mio_department_icon_facilities
+
+		position = { x = 5 y = 0 }
+		relative_position_id = generic_mio_trait_conservative_designs
+
+		limit_to_equipment_type = {  }
+
+		equipment_bonus = {
+			air_range = 0.02
+		}
+		
+		on_complete = {
+			FROM = {
+				air_experience = 15
+				753 = {
+					add_building_construction = {
+						type = air_base
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+		}
+
+	}
+
+	add_trait = {
+		token = XWX_mio_trait_hezuo_factories
+		name = XWX_mio_trait_hezuo_factories
+		icon = GFX_generic_mio_department_icon_facilities
+
+		position = { x = 0 y = 1 }
+		relative_position_id = XWX_mio_trait_hezuo_airfield
+
+		any_parent = { XWX_mio_trait_hezuo_airfield }
+
+		limit_to_equipment_type = {  }
+
+		production_bonus = {
+			production_efficiency_cap_factor = 0.05
+		}
+
+		organization_modifier = {
+			military_industrial_organization_funds_gain = 0.1
+		}
+		
+		on_complete = {
+			FROM = {
+				753 = {
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+		}
+
+	}
 }
 
 XWX_small_plane_designer = {
@@ -68,6 +272,30 @@ XWX_small_plane_designer = {
 			has_completed_focus = XWX_plane_industry
 		}
 	}
+
+	add_trait = {
+		token = XWX_mio_trait_airplane_factories
+		name = XWX_mio_trait_airplane_factories
+		icon = GFX_generic_mio_trait_icon_build_cost_ic
+
+		position = { x = 0 y = 2 }
+		relative_position_id = generic_mio_trait_expanded_production_facilities
+
+		any_parent = { generic_mio_trait_expanded_production_facilities }
+
+		limit_to_equipment_type = {  }
+		
+		production_bonus = {
+			production_cost_factor = -0.15
+		}
+
+		equipment_bonus = {
+			air_agility = -0.03
+			maximum_speed = -0.03
+		}
+
+	}
+
 }
 
 ################################### 
@@ -96,6 +324,49 @@ XWX_gannan_arsenal = {
 			controls_state = 983
 		}
 	}
+
+	add_trait = {
+		token = XWX_mio_trait_gannan_gun_workshops
+		name = XWX_mio_trait_gannan_gun_workshops
+		icon = GFX_generic_mio_department_icon_facilities
+
+		position = { x = 1 y = 1 }
+		relative_position_id = generic_mio_trait_quality_materials
+
+		all_parents = { generic_mio_trait_quality_materials generic_mio_trait_advanced_barrel_forging }
+
+		limit_to_equipment_type = {  }
+
+		available = {
+			FROM = {
+				owns_state = 983
+			}
+		}
+		
+		production_bonus = {
+			production_efficiency_cap_factor = 0.05
+		}
+
+		on_complete = {
+			FROM = {
+				983 = {
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+
+	override_trait = {
+		token = generic_mio_trait_armor_piercing_rounds
+
+		position = { x = 0 y = 2 }
+	}
+
 }
 
 XWX_kangding_arsenal = {
@@ -113,4 +384,23 @@ XWX_kangding_arsenal = {
 			controls_state = 984
 		}
 	}
+
+	add_trait = {
+		token = XWX_mio_trait_direct_mining
+		name = XWX_mio_trait_direct_mining
+		icon = GFX_generic_mio_trait_icon_resources
+
+		position = { x = 1 y = 1 }
+		relative_position_id = generic_mio_trait_advanced_barrel_forging
+
+		any_parent = { generic_mio_trait_advanced_barrel_forging }
+
+		limit_to_equipment_type = {  }
+		
+		production_bonus = {
+			production_resource_penalty_factor = -0.15
+		}
+
+	}
+
 }

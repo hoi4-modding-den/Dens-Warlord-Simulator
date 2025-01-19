@@ -59,6 +59,7 @@ if = {
 }
 
 add_ideas = {
+	XWX_opium_magnates
 	XWX_mountaineer_corps
 	XWX_kmt_insurgency
 	XWX_splinter_faction

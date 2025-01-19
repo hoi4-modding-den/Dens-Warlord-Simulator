@@ -1053,6 +1053,92 @@ ideas = {
     }
 
     industrial_concern = {
+
+		XWX_opium_magnates = {
+
+			picture = prc_permit_opium_trade
+			
+			allowed = {
+				original_tag = XWX
+			}
+
+			available = {
+				has_idea = XWX_opium_magnates
+			}
+			
+			modifier = {
+				consumer_goods_factor = 0.5
+				production_speed_buildings_factor = -0.25
+				production_factory_max_efficiency_factor = -0.15
+			}
+
+			allowed_to_remove = {
+				custom_trigger_tooltip = {
+					tooltip = XWX_opium_magnates_trigger
+					always = no
+				}
+			}
+
+			cost = 0
+			
+			traits = { XWX_opium_magnates_trait }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
 		
+		XWX_modernisation_committee = {
+
+			picture = SOV_second_five_year_plan
+			
+			allowed = {
+				original_tag = XWX
+			}
+
+			available = {
+				has_completed_focus = XWX_civilian_construction_funds
+			}
+
+			cost = 150
+			
+			research_bonus = {
+				industry = 0.1
+				electronics = 0.05
+				construction_tech = 0.05
+			}
+			
+			traits = { XWX_modernisation_committee_trait }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		XWX_education_office = {
+
+			picture = generic_research_bonus
+			
+			allowed = {
+				original_tag = XWX
+			}
+
+			available = {
+				has_completed_focus = XWX_local_schools
+			}
+
+			cost = 150
+			
+			modifier = {
+				research_speed_factor = 0.12
+			}
+			
+			traits = { XWX_education_office_trait }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
 	}
 }
