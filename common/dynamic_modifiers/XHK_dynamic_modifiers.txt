@@ -1,0 +1,6 @@
+XHK_international_city = {
+    icon = GFX_idea_generic_victors_of_ww1
+    enable = { always = yes }
+    political_power_gain = XHK_political_power_gain
+	custom_modifier_tooltip = XHK_international_city_tt
+}

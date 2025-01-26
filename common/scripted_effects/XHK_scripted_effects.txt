@@ -1,0 +1,129 @@
+XHK_generate_ideology_advisor = {
+	if = {
+		limit = { has_government = democratic }
+		ROOT = { 
+			if = {
+				limit = { has_country_flag = XHK_generate_ideology_advisor_dem }
+				custom_effect_tooltip = XHK_generate_popularity_dem
+				hidden_effect = {
+					add_popularity = {
+						ideology = democratic
+						popularity = 0.05
+					}
+				}
+			}
+			else = {
+				set_country_flag = XHK_generate_ideology_advisor_dem
+				custom_effect_tooltip = XHK_generate_ideology_advisor_dem
+				generate_character = {
+					token_base = generic_democratic_reformer # token will be TAG_token_base
+					advisor = {
+						slot = political_advisor
+						cost = 75
+						traits = { democratic_reformer }
+						available = {
+							IF = {
+								limit = { has_dlc = "Man the Guns" }	
+								NOT = { has_autonomy_state = autonomy_supervised_state }
+							}
+						}
+						ai_will_do = {
+							factor = 0
+						}
+					}
+					portraits = { 
+						army = { small = GFX_idea_generic_democratic_reformer }
+					}
+				}
+			}
+		}
+	}
+	else_if = {
+		limit = { has_government = communism }
+		ROOT = { 
+			if = {
+				limit = { has_country_flag = XHK_generate_ideology_advisor_com }
+				custom_effect_tooltip = XHK_generate_popularity_com
+				hidden_effect = {
+					add_popularity = {
+						ideology = communism
+						popularity = 0.05
+					}
+				}
+			}
+			else = {
+				set_country_flag = XHK_generate_ideology_advisor_com
+				custom_effect_tooltip = XHK_generate_ideology_advisor_com
+				generate_character = {
+					token_base = generic_communist_revolutionary # token will be TAG_token_base
+					advisor = {
+						slot = political_advisor
+						cost = 75
+						traits = { communist_revolutionary }
+						available = {
+							IF = {
+								limit = { has_dlc = "Man the Guns" }	
+								NOT = { has_autonomy_state = autonomy_supervised_state }
+							}
+						}
+						ai_will_do = {
+							factor = 1
+						}
+					}
+					portraits = { 
+						army = { small = GFX_idea_generic_communist_revolutionary }
+					}
+				}
+			}
+		}
+	}
+	else_if = {
+		limit = { has_government = fascism }
+		ROOT = { 
+			if = {
+				limit = { has_country_flag = XHK_generate_ideology_advisor_fas }
+				custom_effect_tooltip = XHK_generate_popularity_fas
+				hidden_effect = {
+					add_popularity = {
+						ideology = fascism
+						popularity = 0.05
+					}
+				}
+			}
+			else = {
+				set_country_flag = XHK_generate_ideology_advisor_fas
+				custom_effect_tooltip = XHK_generate_ideology_advisor_fas
+				generate_character = {
+					token_base = generic_fascist_demagogue # token will be TAG_token_base
+					advisor = {
+						slot = political_advisor
+						cost = 75
+						traits = { fascist_demagogue }
+						available = {
+							IF = {
+								limit = { has_dlc = "Man the Guns" }	
+								NOT = { has_autonomy_state = autonomy_supervised_state }
+							}				
+						}
+						ai_will_do = {
+							factor = 0
+						}
+					}
+					portraits = { 
+						army = { small = GFX_idea_generic_fascist_demagogue }
+					}
+				}
+			}
+		}
+	}
+	else_if = {
+		limit = { has_government = neutrality }
+		custom_effect_tooltip = XHK_generate_popularity_neu
+		hidden_effect = {
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.08
+			}
+		}
+	}
+}

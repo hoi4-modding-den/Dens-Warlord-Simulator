@@ -1,4 +1,5 @@
 add_namespace = XHK_events
+add_namespace = XHK_country
 
 #test event
 country_event = {
@@ -12,6 +13,66 @@ country_event = {
 	option = { #test event option
 		name = XHK_events.999.a
 		puppet = XHK
+	}
+}
+
+#focus unlock event
+country_event = {
+	id = XHK_country.1
+	title = XHK_country.1.t
+	desc = XHK_country.1.desc
+	picture = GFX_news_event_tank_factory
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			add_to_temp_variable = { XHK_european_inf = XHK_ENG_inf }
+			add_to_temp_variable = { XHK_european_inf = XHK_POR_inf }
+			add_to_temp_array = { XHK_inf_check = XHK_european_inf }
+			
+			add_to_temp_variable = { XHK_asian_inf = XHK_JAP_inf }
+			add_to_temp_variable = { XHK_asian_inf = XHK_RAJ_inf }
+			add_to_temp_array = { XHK_inf_check = XHK_asian_inf }
+			
+			add_to_temp_variable = { XHK_cold_war_inf = XHK_USA_inf	}
+			add_to_temp_variable = { XHK_cold_war_inf = XHK_SOV_inf }
+			add_to_temp_array = { XHK_inf_check = XHK_cold_war_inf }
+			
+			add_to_temp_variable = { XHK_china_inf = XHK_CHI_inf }
+			multiply_temp_variable = { XHK_china_inf = 1.5 }
+			add_to_temp_array = { XHK_inf_check = XHK_china_inf }
+			
+			find_highest_in_array = {
+				array = XHK_inf_check
+				value = XHK_inf_largest_val
+				index = XHK_inf_largest_num
+			}
+			
+			if = {
+				limit = { check_variable = { XHK_inf_largest_num = 0 } }
+				set_country_flag = XHK_european_inf
+			}
+			else_if = {
+				limit = { check_variable = { XHK_inf_largest_num = 1 } }
+				set_country_flag = XHK_asian_inf
+			}
+			else_if = {
+				limit = { check_variable = { XHK_inf_largest_num = 2 } }
+				set_country_flag = XHK_cold_war_inf
+			}
+			else_if = {
+				limit = { check_variable = { XHK_inf_largest_num = 3 } }
+				set_country_flag = XHK_china_inf
+			}
+			
+			mark_focus_tree_layout_dirty = yes
+		}
+	}
+	
+	option = { #option
+		name = XHK_country.1.a
+		add_political_power = 150
 	}
 }
 

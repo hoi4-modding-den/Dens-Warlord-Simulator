@@ -10,6 +10,22 @@ set_research_slots = 3
 recruit_character = XHK_sir_mark_young
 recruit_character = XHK_hachiro_arita
 
+set_country_flag = dont_use_default_political_advisors
+set_country_flag = dont_use_default_head_of_intelligence
+set_country_flag = dont_use_default_military_advisors
+
+set_variable = { XHK_political_power_gain = 0.25 }
+set_variable = { XHK_ENG_inf = 20 }
+set_variable = { XHK_POR_inf = 20 }
+add_dynamic_modifier = {
+	modifier = XHK_international_city
+}
+
+country_event = {
+	id = XHK_country.1
+	days = 1460
+}
+
 set_politics = {
 	ruling_party = neutrality
 	last_election = "1936.1.1"

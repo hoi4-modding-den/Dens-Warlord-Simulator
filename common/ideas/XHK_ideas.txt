@@ -1,4 +1,60 @@
 ideas = {
 	country = {
+		XHK_extended_immigration_campaign = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = generic_manpower_bonus
+
+			modifier = {
+				weekly_manpower = 500
+				stability_weekly = -0.001
+			}
+		}
+		XHK_a_second_military = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = generic_manpower_bonus
+
+			modifier = {
+				conscription_factor = 0.5
+			}
+		}
+		XHK_national_housing_project = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = generic_manpower_bonus
+
+			modifier = {
+				consumer_goods_factor = 0.1
+				stability_weekly = 0.002
+			}
+		}
 	}
 }
