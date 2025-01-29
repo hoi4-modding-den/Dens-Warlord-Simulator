@@ -1,22 +1,25 @@
 DEN_is_chinese_country = {
-    OR = {
-        original_tag = CHI
-        original_tag = XSA
-        original_tag = XMC
-        original_tag = XWE
-        original_tag = XWX
-        original_tag = XIX
-        original_tag = XYJ
-        original_tag = XTN
-        original_tag = XKM
-		original_tag = XIS
-        original_tag = XSF
-        original_tag = XSI
-        original_tag = XHK
-		original_tag = XQI
-		original_tag = XSX
-		original_tag = XBG
-    }
+    custom_trigger_tooltip = {
+		tooltip = DEN_is_chinese_country_tt
+		OR = {
+			original_tag = CHI
+			original_tag = XSA
+			original_tag = XMC
+			original_tag = XWE
+			original_tag = XWX
+			original_tag = XIX
+			original_tag = XYJ
+			original_tag = XTN
+			original_tag = XKM
+			original_tag = XIS
+			original_tag = XSF
+			original_tag = XSI
+			original_tag = XHK
+			original_tag = XQI
+			original_tag = XSX
+			original_tag = XBG
+		}
+	}
 }
 
 DEN_is_chinese_state = {
