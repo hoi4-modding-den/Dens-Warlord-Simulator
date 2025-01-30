@@ -1,0 +1,448 @@
+XWX_army_expansion = {
+	allowed = {
+		original_tag = XWX
+	}
+	enable = {
+		always = yes
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = force_build_armies
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = garrison
+		value = -30
+	}
+	ai_strategy = {
+		type = build_army
+		id = garrison_generic
+		value = 50
+	}
+	ai_strategy = {
+		type = build_army
+		id = mountaineers_default
+		value = 50
+	}
+	
+	ai_strategy = {
+		type = role_ratio
+		id = mountaineers
+		value = 2
+	}
+
+}
+
+XWX_focus_on_civs = {
+	allowed = {
+		original_tag = XWX
+	}
+	enable = {
+		num_of_civilian_factories < 10
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = building_target
+		id = industrial_complex
+		value = 100
+	}
+
+}
+
+XWX_ignore_airforce = {
+	allowed = {
+		original_tag = XWX
+	}
+	enable = { 
+		NOT = { has_completed_focus = XWX_acquire_more_planes }
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = air_factory_balance
+		value = -100
+	}
+
+}
+
+
+XWX_build_airplanes = {
+	allowed = {
+		original_tag = XWX
+	}
+	enable = {
+		has_completed_focus = XWX_own_plane_designs
+		NOT = { has_completed_focus = XWX_plane_industry }
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = air_factory_balance
+		value = 25
+	}
+
+}
+
+XWX_build_even_more_airplanes = {
+	allowed = {
+		original_tag = XWX
+	}
+	enable = {
+		has_completed_focus = XWX_plane_industry
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = air_factory_balance
+		value = 50
+	}
+
+}
+
+XWX_hate_CHI = {
+	allowed = {
+		original_tag = XWX
+	}
+	abort_when_not_enabled = yes
+
+	enable = {
+		OR = {
+			has_government = communism
+			has_government = fascism
+		}
+	}
+	abort = {
+		NOT = { country_exists = CHI }
+	}
+
+	ai_strategy = {
+    	type = antagonize
+   		id = CHI
+    	value = 100
+	}
+	ai_strategy = {
+    	type = ignore
+   		id = CHI
+    	value = 100
+	}
+	ai_strategy = {
+		type = prepare_for_war
+		id = CHI
+		value = 100
+	}
+}
+
+XXW_hate_JAP = {
+	allowed = {
+		original_tag = XWX
+	}
+	abort_when_not_enabled = yes
+
+	enable = {
+		NOT = { has_government = fascism }
+	}
+	abort = {
+		NOT = { country_exists = JAP }
+	}
+
+	ai_strategy = {
+	    type = antagonize
+	    id = JAP
+		value = 1000
+	}
+	ai_strategy = {
+	    type = ignore
+	    id = JAP
+		value = 1000
+	}
+	ai_strategy = {
+	    type = prepare_for_war
+	    id = JAP
+		value = 500
+	}
+}
+
+XXW_hate_JAP_dem = {
+	allowed = {
+		original_tag = XWX
+	}
+	abort_when_not_enabled = yes
+
+	enable = {
+		has_government = democratic
+	}
+	abort = {
+		NOT = { country_exists = JAP }
+	}
+
+	ai_strategy = {
+	    type = contain
+	    id = JAP
+		value = 1000
+	}
+}
+
+XWX_approach_ENG_dem = {
+	allowed = {
+		original_tag = XWX
+	}
+	abort_when_not_enabled = yes
+
+	enable = {
+		has_government = democratic
+		ENG = { has_government = democratic }
+	}
+	abort = {
+		NOT = { country_exists = ENG }
+	}
+
+	ai_strategy = {
+	    type = alliance
+	    id = ENG
+		value = 100
+	}
+	ai_strategy = {
+	    type = befriend
+	    id = ENG
+		value = 100
+	}
+}
+
+XWX_support_JAP = {
+	allowed = {
+		original_tag = XWX
+	}
+	abort_when_not_enabled = yes
+
+	enable = {
+		has_government = fascism
+	}
+	abort = {
+		NOT = { country_exists = JAP }
+	}
+
+	ai_strategy = {
+	    type = send_volunteers_desire
+	    id = JAP
+		value = 100
+	}
+}
+
+XWX_ally_CHI = {
+	allowed = {
+		original_tag = XWX
+	}
+	abort_when_not_enabled = yes
+
+	enable = {
+		OR = {
+			has_government = neutrality
+			has_government = democratic
+		}
+	}
+	abort = {
+		NOT = { country_exists = CHI }
+	}
+
+	ai_strategy = {
+	    type = alliance
+	    id = CHI
+		value = 100
+	}
+	ai_strategy = {
+	    type = befriend
+	    id = CHI
+		value = 100
+	}
+}
+
+XWX_ally_XWE = {
+	allowed = {
+		original_tag = XWX
+	}
+	abort_when_not_enabled = yes
+
+	enable = {
+		has_government = communism
+		XWE = { has_government = neutrality }
+		has_completed_focus = XWX_reconcile_with_prc
+	}
+	abort = {
+		NOT = { country_exists = XWE }
+	}
+
+	ai_strategy = {
+	    type = alliance
+	    id = XWE
+		value = 100
+	}
+	ai_strategy = {
+	    type = befriend
+	    id = XWE
+		value = 200
+	}
+	ai_strategy = {
+		type = conquer
+		id = XWE
+		value = -100
+	}
+}
+
+XWX_ignore_foreign_allies = {
+	allowed = { original_tag = XWX }
+	enable = {
+		is_major = no
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = area_priority
+		id = europe
+		value = 0
+	}
+
+	ai_strategy = {
+		type = area_priority
+		id = scandinavia
+		value = 0
+	}
+
+	ai_strategy = {
+		type = area_priority
+		id = north_america
+		value = 0
+	}
+
+	ai_strategy = {
+		type = area_priority
+		id = south_america
+		value = 0
+	}
+
+	ai_strategy = {
+		type = area_priority
+		id = asia
+		value = 1000
+	}
+
+	ai_strategy = {
+		type = area_priority
+		id = middle_east
+		value = 0
+	}
+
+	ai_strategy = {
+		type = area_priority
+		id = africa
+		value = 0
+	}
+	ai_strategy = {
+        type = area_priority
+        id = suez
+        value = 0
+    }
+
+	ai_strategy = {
+		type = area_priority
+		id = pacific
+		value = 10 #less focus here
+	}
+
+	ai_strategy = {
+		type = area_priority
+		id = oceania
+		value = 0
+	}
+}
+
+XWX_avoid_spending_army_xp = {
+	allowed = {
+		original_tag = XWX
+	}
+
+	enable = {
+		has_completed_focus = XWX_provincial_army
+	}
+	abort = {
+		OR = {
+			has_completed_focus = XWX_peasant_army_improvements
+			has_completed_focus = XWX_kmt_army_improvements
+		}
+	}
+
+	ai_strategy = {
+		type = land_xp_spend_priority
+		id = upgrade_xp_cutoff
+		value = -100
+	}
+	ai_strategy = {
+		type = land_xp_spend_priority
+		id = division_template
+		value = -100
+	}
+}
+
+XWX_avoid_spending_army_xp_less = {
+	allowed = {
+		original_tag = XWX
+	}
+
+	enable = {
+		OR = {
+			has_completed_focus = XWX_peasant_army_improvements
+			has_completed_focus = XWX_kmt_army_improvements
+		}
+	}
+	abort = {
+		OR = {
+			has_completed_focus = XWX_final_army_improvement
+			has_completed_focus = XWX_final_army_improvement_2
+		}
+	}
+
+	ai_strategy = {
+		type = land_xp_spend_priority
+		id = upgrade_xp_cutoff
+		value = -75
+	}
+	ai_strategy = {
+		type = land_xp_spend_priority
+		id = division_template
+		value = -50
+	}
+}
+
+XWX_improve_relations_because_famine = {
+	allowed = {
+		original_tag = XWX
+	}
+	abort_when_not_enabled = yes
+
+	enable = {
+		has_idea = XWX_famine
+	}
+
+	ai_strategy = {
+	    type = befriend
+	    id = XYJ
+		value = 100
+	}
+	ai_strategy = {
+	    type = befriend
+	    id = XTI
+		value = 100
+	}
+	ai_strategy = {
+	    type = befriend
+	    id = XWE
+		value = 100
+	}
+	ai_strategy = {
+	    type = befriend
+	    id = CHI
+		value = 100
+	}
+}

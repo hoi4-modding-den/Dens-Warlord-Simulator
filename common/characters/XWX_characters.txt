@@ -77,7 +77,7 @@ characters = {
 			}
 		}
 		country_leader = {
-			traits = { XWX_kuomintang_official_trait }
+			traits = { XWX_kuomintang_official_trait XWX_kmt_marshal_trait }
 			ideology = despotism
 			expire = "1960.1.1.1"
 		}
@@ -274,7 +274,7 @@ characters = {
 			visible = {
 				
 			}
-			traits = { career_officer trait_mountaineer }
+			traits = { career_officer trait_mountaineer commando }
 			skill=3
 			attack_skill=3
 			defense_skill=1
@@ -286,17 +286,36 @@ characters = {
 			idea_token = XWX_liu_wenhui_advisor
 
 			available = {
-				
+				is_theorist = no
 			}
 			
 			cost = 50
 
 			ai_will_do = {
-				factor = 5
+				factor = 0
 			}
 
 			traits = {
 				army_commando_1
+			}
+		}
+		advisor = {
+			slot = theorist
+			idea_token = XWX_liu_wenhui_theorist
+
+			available = {
+				is_high_command = no
+				has_completed_focus = XWX_raid_tactics
+			}
+			
+			cost = 50
+
+			ai_will_do = {
+				factor = 15
+			}
+
+			traits = {
+				XWX_raid_theorist
 			}
 		}
 	}

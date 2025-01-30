@@ -62,6 +62,10 @@
 
 		ai_will_do = {
 			factor = 4
+			modifier = {
+				factor = 10
+				has_war_with = JAP
+			}
 		}
 
 		available = {
@@ -94,7 +98,7 @@
 		y = 1
 		relative_position_id = CHI_three_principles_of_the_people
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 4
@@ -363,7 +367,7 @@
 		y = 1
 		relative_position_id = CHI_three_principles_of_the_people
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -684,10 +688,14 @@
 		y = 1
 		relative_position_id = CHI_three_principles_of_the_people
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 4
+			modifier = {
+				factor = 10
+				has_war_with = JAP
+			}
 		}
 
 		available = {
@@ -721,6 +729,10 @@
 
 		ai_will_do = {
 			factor = 4
+			modifier = {
+				factor = 10
+				has_war_with = JAP
+			}
 		}
 
 		available = {
@@ -799,7 +811,24 @@
 			factor = 1
 			modifier = {
 				factor = 0.5
-				NOT = { any_other_country = { has_country_flag = DEN_JOINT_will_join_united_front } }
+				OR = {
+					XWX = {
+						OR = {
+							has_war_with = ROOT
+							exists = no
+							AND = {
+								is_subject = yes
+								NOT = { is_subject_of = ROOT }
+							}
+						}
+					}
+					NOT = { any_other_country = { has_country_flag = DEN_JOINT_will_join_united_front } }
+					NOT = { any_other_country = { is_guaranteed_by = ROOT DEN_is_chinese_country = yes } }
+				}
+			}
+			modifier = {
+				factor = 10
+				has_war_with = JAP
 			}
 		}
 
@@ -809,7 +838,15 @@
 		}
 
 		bypass = {
-			is_in_faction_with = PRC
+			OR = {
+				is_faction_leader = yes
+				AND = {
+					XWE = {
+						is_faction_leader = yes
+						is_in_faction_with = ROOT
+					}
+				}
+			}
 		}
 
 		cancel_if_invalid = yes
@@ -826,13 +863,41 @@
 				create_faction = chinese_united_front
 			}
 
+			if = {
+				limit = {
+					XWE = {
+						is_subject = no
+						NOT = { has_War_with = ROOT }
+						exists = yes
+					}
+				}
+				custom_effect_tooltip = generic_skip_one_line_tt
+
+				XWE = {
+					country_event = {
+						id = DEN_JOINT_china.1
+						random_hours = 6
+					}
+				}
+			}
+
 			custom_effect_tooltip = generic_skip_one_line_tt
 
 			every_other_country = {
 				limit = {
-					has_country_flag = DEN_JOINT_will_join_united_front
+					OR = {
+						has_country_flag = DEN_JOINT_will_join_united_front
+						AND = {
+							is_guaranteed_by = ROOT
+							DEN_is_chinese_country = yes
+						}
+					}
 				}
-				country_event = generic.5
+				set_country_flag = CHI_pending_invite
+				country_event = {
+					id = DEN_JOINT_china.1
+					random_hours = 6
+				}
 			}
 		}
 	}
@@ -856,10 +921,13 @@
 				factor = 0
 			}
 			modifier = {
-				NOT = {
-					any_controlled_state = {
-						is_coastal = yes
+				OR = {
+					NOT = {
+						any_controlled_state = {
+							is_coastal = yes
+						}
 					}
+					NOT = { is_neighbor_of = MAN }
 				}
 				factor = 0
 			}

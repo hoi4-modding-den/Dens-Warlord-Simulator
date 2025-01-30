@@ -7,10 +7,10 @@ on_actions = {
 						is_historical_focus_on = no
 					}
 					random_list = {
-						80 = {
+						90 = {
 							set_country_flag = XWX_random_com_path
 						}
-						20 = {
+						10 = {
 							set_country_flag = XWX_random_kmt_path
 						}
 					}
@@ -98,6 +98,7 @@ on_actions = {
 			}
 			if = {
 				limit = {
+					original_tag = XWX
 					has_power_balance = {
 						id = XWX_communes_bop
 					}
@@ -110,6 +111,7 @@ on_actions = {
 			}
 			if = {
 				limit = {
+					original_tag = XWX
 					has_country_flag = XWX_dormant_commune_bop
 					has_government = communism
 				}
@@ -118,6 +120,22 @@ on_actions = {
 					left_side = XWX_federalists
 					right_side = XWX_centralists
 				}
+			}
+
+			if = {
+				limit = {
+					original_tag = XWX
+					has_government = neutrality
+				}
+				set_country_flag = DEN_JOINT_will_join_united_front
+			}
+			if = {
+				limit = {
+					original_tag = XWX
+					has_country_flag = DEN_JOINT_will_join_united_front
+					NOT = { has_government = neutrality }
+				}
+				clr_country_flag = DEN_JOINT_will_join_united_front
 			}
         }
     }
@@ -144,15 +162,5 @@ on_actions = {
 			}
 		}
 	}
-
-	on_war = {
-		effect = {
-			if = {
-				limit = {
-					has_country_flag = XWX_entrenched
-				}
-				add_ideas = XWX_prepared_trenches
-			}
-		}
-	}
+	
 }

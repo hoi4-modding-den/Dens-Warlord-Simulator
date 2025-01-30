@@ -1,0 +1,39 @@
+
+Cavalry_XWX = {
+
+	available_for = {
+		XWX
+	}
+
+	role = infantry
+	
+	upgrade_prio = {
+		factor = 0
+
+		modifier = {
+			factor = 100
+			has_idea = XWX_cavalry_commanders
+		}
+	}
+	
+	cavalry_mongolian_XWX = {
+	
+		upgrade_prio = {
+			factor = 5
+		}
+		
+		target_template = {
+			
+			support = {
+				recon = 1
+				logistics_company = 1
+				artillery = 1
+			}
+			
+			regiments = {
+				cavalry = 12
+			}
+		}
+	}
+
+}

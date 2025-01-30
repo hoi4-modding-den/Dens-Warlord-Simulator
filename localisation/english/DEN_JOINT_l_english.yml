@@ -4,3 +4,17 @@
 
  DEN_is_chinese_country_tt: "Is a §YChinese Warlord§!."
  DEN_is_chinese_country_tt_NOT: "Is not a §YChinese Warlord§!."
+
+ DEN_JOINT_china.1.t: "The [From.capital.GetCapitalVictoryPointName] Government offers Alliance."
+ DEN_JOINT_china.1.desc: "In the face of the external threats to China, the national government in [From.capital.GetCapitalVictoryPointName] has proposed a defensive alliance to help protect China from invaders."
+ DEN_JOINT_china.1.a: "We will make our stand with them."
+ DEN_JOINT_china.1.b: "We are better off without them."
+
+ DEN_JOINT_china.2.t: "[alliance_applicant.GetNameDefCap] joins the [FROM.GetFactionName]!"
+ DEN_JOINT_china.2.desc: "[alliance_applicant.GetNameDefCap] has decided to accept our offer to join the [FROM.GetFactionName]. Henceforth we shall stand or fall together."
+ DEN_JOINT_china.2.a: "We stand together."
+ DEN_JOINT_china.2.b: "we stand together. For now."
+
+ DEN_JOINT_china.3.t: "[alliance_applicant.GetNameDefCap] rejects our offer"
+ DEN_JOINT_china.3.desc: "[alliance_applicant.GetNameDefCap] has decided to reject our offer to join the [FROM.GetFactionName]. We will have to make do without their help."
+ DEN_JOINT_china.3.a: "They will fall alone."

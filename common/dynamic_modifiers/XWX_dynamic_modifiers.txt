@@ -25,6 +25,7 @@ XWX_industry_modifier = {
 	# not level
 	research_speed_factor = XWX_industry_research_speed_factor 												# MAX 0.3, 0.02 for every major city
 	monthly_population = XWX_industry_monthly_population													# MAX 0.15, increases through politics branches
+	consumer_goods_factor = XWX_industry_consumer_goods_factor
 
 }
 

@@ -58,6 +58,8 @@ XWX_kmt_insurgency_cat = {
                 }
                 else = { # to make the AI not kill itself because it's stupid
                     XWX_decrease_kmt_power = yes
+                    custom_effect_tooltip = generic_skip_one_line_tt
+                    activate_mission = XWX_kmt_civil_war_timer
                 }
             }
     	}
@@ -193,7 +195,7 @@ XWX_opium_crackdowns = {
         }
 
         remove_effect = {
-            add_stability = 0.1
+            add_political_power = 75
             set_country_flag = XWX_root_out_corruption_completed
             clr_country_flag = XWX_opium_crackdown_active
         }
@@ -250,7 +252,11 @@ XWX_opium_crackdowns = {
         cost = 75
 
         ai_will_do = {
-			base = 300
+			base = 100
+            modifier = {
+                factor = 2
+                has_stability < 0.5
+            }
 		}
 
         fire_only_once = yes
@@ -266,7 +272,7 @@ XWX_opium_crackdowns = {
         }
 
         remove_effect = {
-            add_stability = 0.1
+            add_stability = 0.075
             clr_country_flag = XWX_opium_crackdown_active
         }
     }
@@ -302,7 +308,7 @@ XWX_opium_crackdowns = {
         }
 
         remove_effect = {
-            add_stability = 0.1
+            add_stability = 0.05
             set_country_flag = XWX_arrest_syndicate_members_completed
             clr_country_flag = XWX_opium_crackdown_active
         }
@@ -331,7 +337,7 @@ XWX_opium_crackdowns = {
         fire_only_once = yes
 
         complete_effect = {
-            add_stability = 0.15
+            add_stability = 0.1
             remove_ideas = XWX_opium_magnates
         }
     }
@@ -564,7 +570,7 @@ XWX_construction_decisions = {
         cost = 75
 
         ai_will_do = {
-			base = 50 
+			base = 60 
 		}
 
         days_remove = 80
@@ -1435,7 +1441,7 @@ XWX_bop_cat = {
         ai_will_do = {
 			base = 0
             modifier = {
-                factor = 100
+                factor = 250
                 has_country_flag = XWX_ai_prioritise_federalists
             }
             modifier = {
