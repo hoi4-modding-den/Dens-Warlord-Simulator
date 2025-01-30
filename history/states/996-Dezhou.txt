@@ -7,8 +7,17 @@ state={
 	history={
 		owner = XBG
 		add_core_of = XBG
+
+		buildings = {
+			infrastructure = 2 #was: 5
+		}
+
+		victory_points = { # Dezhou
+			7189 3
+		}
 	}
-	manpower=1
+	manpower=1964050
 	buildings_max_level_factor=1.000
 	local_supplies=0.000
+	state_category=rural
 }

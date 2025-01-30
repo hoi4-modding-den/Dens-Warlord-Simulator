@@ -7,9 +7,17 @@ state={
 	history={
 		owner = XBG
 		add_core_of = XBG
+
+		victory_points = { # Yancheng
+			12067 3
+		}
+
+		buildings = {
+			infrastructure = 2 #was: 5
+		}
 	}
-	manpower=23669300
+	manpower=6821900
 	buildings_max_level_factor=1.000
-	state_category=town
+	state_category=rural
 	local_supplies=0.000
 }

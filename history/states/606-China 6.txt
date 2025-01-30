@@ -10,8 +10,17 @@ state={
 	history={
 		owner = XBG
 		add_core_of = XBG
+
+		buildings = {
+			infrastructure = 3 #was: 5
+			arms_factory = 1
+		}
+
+		victory_points = { # Bengbu
+			1001 10
+		}
 	}
-	manpower=18265400
+	manpower=10583400
 	buildings_max_level_factor=1.000
 	state_category=town
 	local_supplies=2.000
