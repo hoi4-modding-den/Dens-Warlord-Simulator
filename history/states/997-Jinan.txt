@@ -1,15 +1,14 @@
 state={
-	id=598
-	name="STATE_598"
+	id=997
+	name="STATE_997"
 	provinces={
-		4123 7142 9953 10095 12067 13144 
+		1069 4037 4089 10043 10072 10102 12045 12069 
 	}
 	history={
 		owner = XBG
 		add_core_of = XBG
 	}
-	manpower=23669300
+	manpower=1
 	buildings_max_level_factor=1.000
-	state_category=town
 	local_supplies=0.000
 }
