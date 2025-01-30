@@ -1068,7 +1068,7 @@
 		y = 1
 		relative_position_id = JAP_purge_the_kodoha_faction
 
-		cost = 10
+		cost = 14.4
 
 		ai_will_do = {
 			factor = 2
@@ -1103,7 +1103,7 @@
 		y = 1
 		relative_position_id = JAP_liaison_conference
 
-		cost = 10
+		cost = 14.4
 
 		ai_will_do = {
 			factor = 2
@@ -1143,7 +1143,7 @@
 		y = 1
 		relative_position_id = JAP_greater_east_asian_co_prosperity_sphere
 
-		cost = 10
+		cost = 20
 
 		available = { 
 			is_subject = no 

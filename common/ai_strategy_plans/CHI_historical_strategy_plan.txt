@@ -48,19 +48,19 @@ CHI_nationalist_historical_plan = {
 		CHI_military_affairs_commission 
 		CHI_nationalism 
 		CHI_expand_the_academica_sinica
-		CHI_british_cooperation
-		CHI_foreign_threats
-		CHI_united_front
-		CHI_mission_to_the_soviet_union
 		CHI_mission_to_the_us
-		CHI_hire_chennault
+		CHI_british_cooperation
+		CHI_mission_to_the_soviet_union
+		CHI_foreign_threats
 		CHI_army_reform
-		CHI_invite_soviet_advisers
 		CHI_burma_road
+		CHI_financial_policy
+		CHI_invite_soviet_advisers
+		CHI_united_front # should be timed with the Marco Polo Bridge Incident, so the United Front forms accordingly
+		CHI_hire_chennault
 		CHI_fighter_purchases
 		CHI_closer_ties_with_germany
 		CHI_the_soviet_volunteer_group
-		CHI_financial_policy
 		CHI_camco
 		CHI_war_of_resistance
 		CHI_scorched_earth_tactics
