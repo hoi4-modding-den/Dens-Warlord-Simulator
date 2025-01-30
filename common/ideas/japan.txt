@@ -1,5 +1,89 @@
 ideas = {
 
+	hidden_ideas = {
+
+		JAP_imperial_sanction_fake = {
+
+			name = imperial_sanction
+
+			allowed = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+				has_country_leader_with_trait = imperial_sanction
+			}
+
+            cancel = {
+                NOT = { has_country_leader_with_trait = imperial_sanction }
+            }
+
+			removal_cost = -1
+			
+            targeted_modifier = {
+				tag = XSA
+				generate_wargoal_tension_against = 0.75
+			}
+			targeted_modifier = {
+				tag = XMC
+				generate_wargoal_tension_against = 0.75
+			}
+			targeted_modifier = {
+				tag = XWE
+				generate_wargoal_tension_against = 0.75
+			}
+			targeted_modifier = {
+				tag = XWX
+				generate_wargoal_tension_against = 0.75
+			}
+			targeted_modifier = {
+				tag = XIX
+				generate_wargoal_tension_against = 0.75
+			}
+			targeted_modifier = {
+				tag = XYJ
+				generate_wargoal_tension_against = 0.75
+			}
+			targeted_modifier = {
+				tag = XTN
+				generate_wargoal_tension_against = 0.75
+			}
+			targeted_modifier = {
+				tag = XKM
+				generate_wargoal_tension_against = 0.75
+			}
+			targeted_modifier = {
+				tag = XIS
+				generate_wargoal_tension_against = 0.75
+			}
+			targeted_modifier = {
+				tag = XSF
+				generate_wargoal_tension_against = 0.75
+			}
+			targeted_modifier = {
+				tag = XSI
+				generate_wargoal_tension_against = 0.75
+			}
+			targeted_modifier = {
+				tag = XHK
+				generate_wargoal_tension_against = 0.75
+			}
+			targeted_modifier = {
+				tag = XQI
+				generate_wargoal_tension_against = 0.75
+			}
+			targeted_modifier = {
+				tag = XSX
+				generate_wargoal_tension_against = 0.75
+			}
+			targeted_modifier = {
+				tag = XBG
+				generate_wargoal_tension_against = 0.75
+			}
+		}
+
+	}
+
 	country = {
 	
 	

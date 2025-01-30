@@ -94,68 +94,6 @@ leader_traits = {
 			tag = CHI
 			generate_wargoal_tension_against = 0.75
 		}
-		hidden_modifier = {
-			targeted_modifier = {
-				tag = XSA
-				generate_wargoal_tension_against = 0.75
-			}
-			targeted_modifier = {
-				tag = XMC
-				generate_wargoal_tension_against = 0.75
-			}
-			targeted_modifier = {
-				tag = XWE
-				generate_wargoal_tension_against = 0.75
-			}
-			targeted_modifier = {
-				tag = XWX
-				generate_wargoal_tension_against = 0.75
-			}
-			targeted_modifier = {
-				tag = XIX
-				generate_wargoal_tension_against = 0.75
-			}
-			targeted_modifier = {
-				tag = XYJ
-				generate_wargoal_tension_against = 0.75
-			}
-			targeted_modifier = {
-				tag = XTN
-				generate_wargoal_tension_against = 0.75
-			}
-			targeted_modifier = {
-				tag = XKM
-				generate_wargoal_tension_against = 0.75
-			}
-			targeted_modifier = {
-				tag = XIS
-				generate_wargoal_tension_against = 0.75
-			}
-			targeted_modifier = {
-				tag = XSF
-				generate_wargoal_tension_against = 0.75
-			}
-			targeted_modifier = {
-				tag = XSI
-				generate_wargoal_tension_against = 0.75
-			}
-			targeted_modifier = {
-				tag = XHK
-				generate_wargoal_tension_against = 0.75
-			}
-			targeted_modifier = {
-				tag = XQI
-				generate_wargoal_tension_against = 0.75
-			}
-			targeted_modifier = {
-				tag = XSX
-				generate_wargoal_tension_against = 0.75
-			}
-			targeted_modifier = {
-				tag = XBG
-				generate_wargoal_tension_against = 0.75
-			}
-		}
 
 		ai_will_do = {
 			factor = 1
