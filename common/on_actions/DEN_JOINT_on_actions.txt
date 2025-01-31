@@ -1,0 +1,42 @@
+on_actions = {
+	on_war_relation_added = {
+		effect = {
+			if = {
+				limit = {
+					FROM = {
+						DEN_is_chinese_country = yes
+						is_faction_leader = yes
+					}
+					ROOt = {
+						tag = JAP
+					}
+				}
+				FROM = {
+					set_country_flag = DEN_JOINT_uf_leader_got_attacked
+				}
+			}
+		}
+	}
+	on_assume_faction_leadership = {
+		effect = {
+			if = {
+				limit = {
+					FROM = { has_country_flag = DEN_JOINT_uf_leader_got_attacked }
+				}
+				FROM = { clr_country_flag = DEN_JOINT_uf_leader_got_attacked }
+				ROOT = { set_country_flag = DEN_JOINT_uf_leader_got_attacked }
+			}
+		}
+	}
+	on_peace = {
+		effect = {
+			if = {
+				limit = {
+					THIS = { has_country_flag = DEN_JOINT_uf_leader_got_attacked }
+				}
+				THIS = { clr_country_flag = DEN_JOINT_uf_leader_got_attacked }
+				set_country_flag = DEN_JOINT_japan_threat_defeated # allows dissolving of the United Front
+			}
+		}
+	}
+}

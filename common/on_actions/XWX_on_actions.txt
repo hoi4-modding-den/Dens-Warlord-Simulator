@@ -24,6 +24,37 @@ on_actions = {
 	
     on_ruling_party_change = {
         effect = {
+
+			# BOP
+
+			if = {
+				limit = {
+					original_tag = XWX
+					has_power_balance = {
+						id = XWX_communes_bop
+					}
+					NOT = { has_government = communism }
+				}
+				set_country_flag = XWX_dormant_commune_bop
+				remove_power_balance = {
+					id = XWX_communes_bop
+				}
+			}
+			if = {
+				limit = {
+					original_tag = XWX
+					has_country_flag = XWX_dormant_commune_bop
+					has_government = communism
+				}
+				set_power_balance = {
+					id = XWX_communes_bop
+					left_side = XWX_federalists
+					right_side = XWX_centralists
+				}
+			}
+
+			# COSMETIC TAGS
+
             if = {
 				limit = {
 					original_tag = XWX
@@ -55,6 +86,30 @@ on_actions = {
 					NOT = { has_country_leader_with_trait = XWX_japanese_snake_trait }
 				}
 				add_country_leader_trait = XWX_japanese_snake_trait
+			}
+			if = {
+				limit = {
+					original_tag = XWX
+					has_government = communism
+					has_country_flag = XWX_is_china
+					is_power_balance_in_range = {
+						id = XWX_communes_bop
+						range < XWX_bop_balanced
+					}
+				}
+				set_cosmetic_tag = XWX_prc_federalist
+			}
+			if = {
+				limit = {
+					original_tag = XWX
+					has_government = communism
+					has_country_flag = XWX_is_china
+					is_power_balance_in_range = {
+						id = XWX_communes_bop
+						range > XWX_bop_balanced
+					}
+				}
+				set_cosmetic_tag = XWX_prc_centralist
 			}
 			if = {
 				limit = {
@@ -96,31 +151,8 @@ on_actions = {
 				}
 				drop_cosmetic_tag = yes
 			}
-			if = {
-				limit = {
-					original_tag = XWX
-					has_power_balance = {
-						id = XWX_communes_bop
-					}
-					NOT = { has_government = communism }
-				}
-				set_country_flag = XWX_dormant_commune_bop
-				remove_power_balance = {
-					id = XWX_communes_bop
-				}
-			}
-			if = {
-				limit = {
-					original_tag = XWX
-					has_country_flag = XWX_dormant_commune_bop
-					has_government = communism
-				}
-				set_power_balance = {
-					id = XWX_communes_bop
-					left_side = XWX_federalists
-					right_side = XWX_centralists
-				}
-			}
+
+			# UNITED FRONT
 
 			if = {
 				limit = {

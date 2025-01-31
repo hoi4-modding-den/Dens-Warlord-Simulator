@@ -867,13 +867,14 @@
 				limit = {
 					XWE = {
 						is_subject = no
-						NOT = { has_War_with = ROOT }
+						NOT = { has_war_with = ROOT }
 						exists = yes
 					}
 				}
 				custom_effect_tooltip = generic_skip_one_line_tt
 
 				XWE = {
+					set_country_flag = CHI_pending_invite
 					country_event = {
 						id = DEN_JOINT_china.1
 						random_hours = 6

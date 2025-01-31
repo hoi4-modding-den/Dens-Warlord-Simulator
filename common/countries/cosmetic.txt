@@ -58,6 +58,14 @@ XWX_prc = {
 	color = rgb { 221 66 0 }
 	color_ui = rgb { 221 66 0 }
 }
+XWX_prc_federalist = {
+	color = rgb { 221 66 0 }
+	color_ui = rgb { 221 66 0 }
+}
+XWX_prc_centralist = {
+	color = rgb { 125 13 24 }
+	color_ui = rgb { 163 17 31 }
+}
 XWX_JAP_aligned = {
 	color = rgb { 190 122 119 }
 	color_ui = rgb { 190 122 119 }

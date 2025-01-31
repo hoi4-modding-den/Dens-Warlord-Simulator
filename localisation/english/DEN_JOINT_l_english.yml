@@ -4,6 +4,8 @@
 
  DEN_is_chinese_country_tt: "Is a §YChinese Warlord§!."
  DEN_is_chinese_country_tt_NOT: "Is not a §YChinese Warlord§!."
+ DEN_is_chinese_state_tt: "Is a §YChinese§! State."
+ DEN_is_chinese_state_tt_NOT: "Is not a §YChinese§! State."
 
  DEN_JOINT_china.1.t: "The [From.capital.GetCapitalVictoryPointName] Government offers Alliance."
  DEN_JOINT_china.1.desc: "In the face of the external threats to China, the national government in [From.capital.GetCapitalVictoryPointName] has proposed a defensive alliance to help protect China from invaders."
@@ -18,3 +20,9 @@
  DEN_JOINT_china.3.t: "[alliance_applicant.GetNameDefCap] rejects our offer"
  DEN_JOINT_china.3.desc: "[alliance_applicant.GetNameDefCap] has decided to reject our offer to join the [FROM.GetFactionName]. We will have to make do without their help."
  DEN_JOINT_china.3.a: "They will fall alone."
+
+ DEN_JOINT_china.4.t: "Chinese United Front dissolves!"
+ DEN_JOINT_china.4.desc: "With the Japanese threat dealt with, [FROM.GetLeader] has announced the dissolution of the Chinese United Front and the return to the normal state of China. International observers fear for the start of another warlord era in China."
+ DEN_JOINT_china.4.a: "Now we can focus on the internal threats."
+ DEN_JOINT_china.4.b: "That's it, then."
+ DEN_JOINT_china.4.c: "China broke up again, it seems."

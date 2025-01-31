@@ -34,3 +34,33 @@ defined_text = {
         localization_key = XWX_nie_rongzhen_name
     }
 }
+defined_text = {
+	name = XWX_GetNewBopTag
+
+	text = {
+        trigger = {
+            is_power_balance_in_range = {
+                id = XWX_communes_bop
+                range > XWX_bop_balanced
+            }
+        }
+		localization_key = XWX_federalists_proposed_tag_name
+	}
+	text = {
+		localization_key = XWX_centralists_proposed_tag_name
+	}
+}
+
+defined_text = {
+	name = XWX_workers_united_front
+
+	text = {
+        trigger = {
+            XWX = { has_completed_focus = XWX_mantle_of_the_international_revolution }
+        }
+		localization_key = XWX_revintern
+	}
+	text = {
+		localization_key = XWX_rev_united_front
+	}
+}

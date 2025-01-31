@@ -56,6 +56,7 @@ CHI_nationalist_historical_plan = {
 		CHI_burma_road
 		CHI_financial_policy
 		CHI_invite_soviet_advisers
+		CHI_democracy
 		CHI_united_front # should be timed with the Marco Polo Bridge Incident, so the United Front forms accordingly
 		CHI_hire_chennault
 		CHI_fighter_purchases

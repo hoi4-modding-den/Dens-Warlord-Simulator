@@ -38,7 +38,12 @@ XWX_communes_bop = {
 				surrender_limit = 0.05
 			}
 			on_activate = {
-				
+				if = {
+					limit = {
+						has_cosmetic_tag = XWX_prc_centralist
+					}
+					set_cosmetic_tag = XWX_prc_federalist
+				}
 			}
 			on_deactivate = {
 				
@@ -149,7 +154,12 @@ XWX_communes_bop = {
 				stability_factor = 0.02
 			}
 			on_activate = {
-				
+				if = {
+					limit = {
+						has_cosmetic_tag = XWX_prc_federalist
+					}
+					set_cosmetic_tag = XWX_prc_centralist
+				}
 			}
 			on_deactivate = {
 				

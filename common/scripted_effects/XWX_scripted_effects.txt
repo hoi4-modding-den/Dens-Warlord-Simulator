@@ -187,6 +187,20 @@ XWX_decrease_kmt_power = {
     }
 }
 
+XWX_decrease_kmt_power_2 = {
+    custom_effect_tooltip = generic_skip_one_line_tt
+    effect_tooltip = {
+        add_to_variable = {
+            XWX_kmt_power = -2
+            tooltip = XWX_kmt_power_tt
+        }
+    }
+    hidden_effect = {
+        XWX_decrease_kmt_power = yes
+        XWX_decrease_kmt_power = yes
+    }
+}
+
 XWX_choose_opposition_leader = {
     hidden_effect = {
         every_character = {

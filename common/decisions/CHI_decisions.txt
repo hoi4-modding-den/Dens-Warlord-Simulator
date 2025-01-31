@@ -6443,6 +6443,42 @@ political_actions = {
 		}
 	}
 
+	CHI_dissolve_united_front = {
+
+		visible = {
+			DEN_is_chinese_country = yes
+			is_faction_leader = yes
+			has_war = no
+			NOT = {
+				any_other_country = {
+					is_in_faction_with = ROOT
+					any_other_country = {
+						is_justifying_wargoal_against = PREV
+					}
+				}
+			}
+			has_country_flag = DEN_JOINT_japan_threat_defeated # check DEN_JOINT_on_actions for how it works
+		}
+
+		available = {
+			is_faction_leader = yes
+			OR = {
+				is_in_faction_with = CHI
+				tag = CHI
+			}
+			has_war = no
+		}
+
+		ai_will_do = {
+			base = 100
+		}
+
+		complete_effect = {
+			dismantle_faction = yes
+			news_event = DEN_JOINT_china.4
+		}
+	}
+
 	CHI_move_the_capital = {
 		allowed = {
 			is_literally_china = yes

@@ -15,6 +15,31 @@ country_event = { # Industry Focus Unlock Event
 	option = { 
 		name = XWX_political_events.1.a
 		complete_national_focus = XWX_industrial_revolution
+
+		hidden_effect = {
+			add_dynamic_modifier = {
+				modifier = XWX_industry_modifier
+			}
+
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+					is_fully_controlled_by = ROOT
+					is_owned_by = ROOT
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}	
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}	
+			}
+		}
 	}
 
 }
@@ -143,6 +168,10 @@ country_event = { # Military Focus Unlock Event
 	option = { 
 		name = XWX_political_events.5.a
 		complete_national_focus = XWX_provincial_army
+		hidden_effect = {
+			army_experience = 25
+			add_command_power = 10
+		}
 	}
 
 }
@@ -1564,6 +1593,119 @@ country_event = { # Industrierat 2
 
 }
 
+country_event = { # XWX demands Annexation
+	id = XWX_diplomatic_events.25
+	title = XWX_diplomatic_events.25.t
+	desc = XWX_diplomatic_events.25.desc
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+
+	option = { 
+		name = XWX_diplomatic_events.20.a
+		ai_chance = {
+			base = 20
+			modifier = {
+				add = 5
+				has_opinion = {
+					target = FROM
+					value > 50
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = { has_government = ROOT }
+			}
+			modifier = {
+				factor = 0.25
+				strength_ratio = {
+					tag = FROM
+					ratio > 1
+				}
+			}
+		}
+		trigger = {
+			NOT = {
+				any_other_country = {
+					is_subject_of = ROOT
+					is_ai = no
+				}
+			}
+		}
+		effect_tooltip = {
+			FROM = {
+				annex_country = {
+					target = ROOT
+					transfer_troops = yes
+				}
+			}
+			every_subject_country = {
+				FROM = {
+					annex_country = {
+						target = PREV
+						transfer_troops = yes
+					}
+				}
+			}
+		}
+		custom_effect_tooltip = GAME_OVER_TT
+		custom_effect_tooltip = generic_skip_one_line_tt
+		FROM = {
+			country_event = {
+				id = XWX_diplomatic_events.21
+				hours = 2
+				random_hours = 6
+			}
+		}
+	}
+
+	option = { 
+		name = XWX_diplomatic_events.20.b
+		trigger = {
+			OR = {
+				is_subject = no
+				is_ai = no
+				any_other_country = {
+					is_subject_of = ROOT
+					is_ai = no
+				}
+			}
+		}
+		if = {
+			limit = {
+				is_subject = yes
+			}
+			overlord = {
+				set_autonomy = {
+					target = ROOT
+					autonomous_state = autonomy_free
+					end_wars = no
+					end_civil_wars = no
+				}
+			}
+		}
+		leave_faction = yes
+		custom_effect_tooltip = generic_skip_one_line_tt
+		effect_tooltip = {
+			FROM = {
+				create_wargoal = {
+					target = ROOT
+					type = annex_everything
+				}
+			}
+		}
+		custom_effect_tooltip = generic_skip_one_line_tt
+		FROM = {
+			country_event = {
+				id = XWX_diplomatic_events.22
+				hours = 3
+				random_hours = 6
+			}
+		}
+	}
+
+}
+
 news_event = { # KMT Coup
 	id = XWX_news_events.1
 	title = XWX_news_events.1.t
@@ -1695,6 +1837,95 @@ news_event = { # XWX proclaims the United Republics of China
 		name = XWX_news_events.3.d
 		trigger = {
 			NOT = { has_government = communism }
+			DEN_is_chinese_country = no
+		}
+	}
+
+}
+
+news_event = { # XWX unites China
+	id = XWX_news_events.4
+	title = XWX_news_events.4.t
+	desc = XWX_news_events.4.desc
+	picture = GFX_news_event_HUN_leninist_gathering
+
+	is_triggered_only = yes
+
+	option = { 
+		name = XWX_news_events.4.a
+		trigger = {
+			tag = XWX
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					is_power_balance_in_range = {
+						id = XWX_communes_bop
+						range < XWX_bop_balanced
+					}
+				}
+				set_cosmetic_tag = XWX_prc_federalist
+			}
+			else = {
+				set_cosmetic_tag = XWX_prc_centralist
+			}
+		}
+	}
+
+	option = { 
+		name = XWX_news_events.4.b
+		trigger = {
+			NOT = { tag = XWX }
+			has_government = communism
+		}
+	}
+
+	option = { 
+		name = XWX_news_events.4.c
+		trigger = {
+			NOT = { tag = XWX }
+			NOT = { has_government = communism }
+		}
+	}
+
+
+}
+
+news_event = { # XWX dennounces Chiang Kai-Shek's Government (KMT)
+	id = XWX_news_events.5
+	title = XWX_news_events.5.t
+	desc = XWX_news_events.5.desc
+	picture = GFX_news_event_XWX_kmt_victory
+
+	is_triggered_only = yes
+
+	option = { 
+		name = XWX_news_events.5.a
+		trigger = {
+			tag = XWX
+		}
+	}
+
+	option = { 
+		name = XWX_news_events.5.b
+		trigger = {
+			tag = CHI
+			DEN_is_chinese_country = yes
+		}
+	}
+
+	option = { 
+		name = XWX_news_events.5.c
+		trigger = {
+			NOT = { tag = XWX }
+			NOT = { tag = CHI }
+			DEN_is_chinese_country = yes
+		}
+	}
+
+	option = { 
+		name = XWX_news_events.5.d
+		trigger = {
 			DEN_is_chinese_country = no
 		}
 	}

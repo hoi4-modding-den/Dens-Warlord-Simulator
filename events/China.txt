@@ -39,6 +39,18 @@ country_event = { # Chinese United Front Invitation
 				is_faction_leader = yes
 			}
 			modifier = {
+				factor = 25
+				XWX_has_kmt_regime = yes
+			}
+			modifier = {
+				factor = 5
+				FROM = { has_war_with = JAP }
+			}
+			modifier = {
+				factor = 25
+				FROM = { has_war_with = JAP }
+			}
+			modifier = {
 				factor = 0.75
 				NOT = {
 					any_neighbor_country = {
@@ -186,6 +198,40 @@ country_event = {
 		}
 		FROM = { clr_country_flag = CHI_pending_invite }
 	}
+
+}
+
+news_event = { # Chinese United Front dissolved
+	id = DEN_JOINT_china.4
+	title = DEN_JOINT_china.4.t
+	desc = DEN_JOINT_china.4.desc
+	picture = GFX_news_event_chinese_soldiers_city_ruin
+
+	is_triggered_only = yes
+
+	option = { 
+		name = DEN_JOINT_china.4.a
+		trigger = {
+			tag = CHI
+		}
+	}
+
+	option = { 
+		name = DEN_JOINT_china.4.b
+		trigger = {
+			NOT = { tag = CHI }
+			DEN_is_chinese_country = yes
+		}
+	}
+
+	option = { 
+		name = DEN_JOINT_china.4.c
+		trigger = {
+			NOT = { tag = CHI }
+			DEN_is_chinese_country = no
+		}
+	}
+
 
 }
 

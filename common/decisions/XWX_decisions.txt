@@ -26,10 +26,12 @@ XWX_kmt_insurgency_cat = {
 
 		fire_only_once = no
 
-    	days_mission_timeout = 42
+    	days_mission_timeout = 70
 
         complete_effect = {
-            add_stability = 0.15
+            add_political_power = 200
+            add_stability = 0.1
+            add_war_support = 0.1
             custom_effect_tooltip = generic_skip_one_line_tt
             country_event = XWX_kmt_events.3
         }
@@ -109,9 +111,7 @@ XWX_kmt_insurgency_cat = {
             }
 		}
 
-        days_remove = 20
-
-        days_re_enable = 10
+        days_remove = 20 
 
         remove_effect = {
             add_war_support = 0.01
@@ -120,6 +120,40 @@ XWX_kmt_insurgency_cat = {
 				ideology = ROOT
 			}
             XWX_decrease_kmt_power = yes
+        }
+    }
+
+    XWX_arrest_major_kmt_leaders = {
+
+        icon = GFX_decision_generic_arrest
+
+        allowed = {
+            original_tag = XWX
+        }
+
+        available = {
+            XWX_kmt_active = yes
+        }
+
+        visible = {
+            
+        }
+
+        cost = 75
+
+        ai_will_do = {
+			base = 75
+            modifier = {
+                factor = 0
+                XWX_go_kmt_path = yes
+            }
+		}
+
+        days_remove = 30
+
+        remove_effect = {
+            add_stability = -0.03
+            XWX_decrease_kmt_power_2 = yes
         }
     }
 
@@ -150,9 +184,7 @@ XWX_kmt_insurgency_cat = {
             }
 		}
 
-        days_remove = 40
-
-        days_re_enable = 10
+        days_remove = 40 
 
         remove_effect = {
             add_stability = 0.05
