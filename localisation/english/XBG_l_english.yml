@@ -2,11 +2,10 @@
  XBG: "Beiyang Government"
  XBG_DEF: "the Beiyang Government"
  XBG_AJG: "Beiyang"
- XBG_lin_sen: "Lin Sen"
- XBG_lin_sen_desc: "Lin Sen Description"
 
- XBG_Zhang_Zuolin:0 "Zhang Zuolin"
- XBG_Zhang_Zuolin_desc:0 "PLACEHOLDER"
+ XAF: "Anqing Revolutionary Front"
+ XAF_DEF: "the Anqing Revolutionary Front"
+ XAF_AJG: "Anqing"
 
  XBG_neutrality_party_long:0 "National Pacification Army"
  XBG_neutrality_party:0 "NPA"
@@ -17,7 +16,22 @@
  XBG_democratic_party_long:0 "Kuomintang"
  XBG_democratic_party:0 "KMT"
 
+ XAF_neutrality_party_long:0 "Right Kuomintang"
+ XAF_neutrality_party:0 "KMT-R"
+
+ XAF_communism_party_long:0 "Chinese Communist Party"
+ XAF_communism_party:0 "CCP"
+
+ XAF_democratic_party_long:0 "Left Kuomintang"
+ XAF_democratic_party:0 "KMT-L"
+
  ### CHARACTERS ###
+
+ XBG_Zhang_Zuolin:0 "Zhang Zuolin"
+ XBG_Zhang_Zuolin_desc:0 "PLACEHOLDER"
+
+ XAF_Wang_Jingwei:0 "Wang Jingwei"
+ XAF_Wang_Jingwei_desc:0 "PLACEHOLDER"
 
  XBG_Zou_Zuohua:0 "Zou Zuohua"
  XBG_Zhou_Fucheng:0 "Zhou Fucheng"
@@ -147,6 +161,14 @@
  XBG_ideological_fanaticism_desc: "Ideological Fanaticism Description"
  XBG_technology_sharing: "Technology Sharing"
  XBG_technology_sharing_desc: "Technology Sharing Description"
+
+ ### IDEAS ###
+
+ XAF_kuomintang_uprising:0 "Kuomintang Uprising"
+
+ ### TOOLTIP ###
+
+ XAF_alignment_kuomintang_tt:0 "Alignment: £GFX_XWX_kmt_texticon §YLeft Kuomintang§!"
 
  ### VICTORY POINTS ###
 

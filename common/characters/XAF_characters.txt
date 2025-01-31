@@ -1,0 +1,15 @@
+characters={
+	XAF_Wang_Jingwei = { 
+		name = XAF_Wang_Jingwei
+		portraits = {
+			civilian = {
+				large = GFX_portrait_XAF_Wang_Jingwei
+			}
+		}
+		country_leader = {
+			ideology = socialism
+			expire = "1960.1.1.1"
+			id = -1
+		}
+	}
+}

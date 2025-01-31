@@ -59,4 +59,17 @@ spriteTypes = {
 		name = "GFX_portrait_XBG_Zou_Zuohua"
 		texturefile = "gfx/XBG/portraits/XBG_General_Zou_Zuohua.dds"
 	}
+
+
+	# Anqing Front
+
+	spriteType = {
+		name = "GFX_portrait_XAF_Wang_Jingwei"
+		texturefile = "gfx/XAF/portraits/XAF_Leader_Wang_Jingwei.dds"
+	}
+
+	spriteType = {
+		name = "GFX_idea_XAF_kuomintang_uprising"
+		texturefile = "gfx/XAF/XAF_idea_kuomintang_uprising.dds"
+	}
 }

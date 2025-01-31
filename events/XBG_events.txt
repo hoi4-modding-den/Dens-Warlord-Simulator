@@ -1,5 +1,31 @@
-#add_namespace = example
+add_namespace = XBG
+add_namespace = XAF
 
-#country_event = {}
+#test event
+country_event = {
+	id = XBG.1
+	title = XBG.1.t
+	desc = XBG.1.desc
+	picture = GFX_news_event_tank_factory
+	
+	is_triggered_only = yes
+	
+	option = { #test event option
+		name = XBG.1.a
+		XAF = {
+            transfer_state = 1001
+            transfer_state = 606
 
-#news_event = {}
+            declare_war_on = {
+                target = XBG
+                type = civil_war
+            }
+
+            load_oob = "XAF_UPRISING"
+
+            add_ideas = {
+                XAF_kuomintang_uprising
+            }
+        }
+	}
+}
