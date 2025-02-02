@@ -1,0 +1,13 @@
+peace_ai_desires = {
+
+    XWX_puppet_tibet = {
+        peace_action_type = puppet
+        enable = {
+            ROOT.FROM = { tag = XWX NOT = { has_government = fascism } }
+            FROM.FROM = { tag = XTI }
+            ROOT.FROM.FROM.FROM = { NOT = { is_core_of = XWX } }
+        }
+        ai_desire = 100
+    }
+
+}

@@ -13,9 +13,9 @@ CHI_sino_german_technical_mission_organization = {
 	icon = GFX_idea_porsche
 	allowed = {	
 		OR = {
-			is_literally_china = yes
+			tag = CHI
 			tag = MAN
-		} 
+		}
 		has_dlc = "Waking the Tiger"
 	}
 	available = {
@@ -96,7 +96,7 @@ CHI_camco_medium_organization = {
 	icon = GFX_idea_CHI_camco
 	allowed = {	
 		OR = {
-			is_literally_china = yes
+			tag = CHI
 			tag = MAN
 		} 
 		has_dlc = "Waking the Tiger"
@@ -110,9 +110,9 @@ CHI_camco_fighter_organization = {
 	icon = GFX_idea_CHI_camco
 	allowed = {	
 		OR = {
-			is_literally_china = yes
+			tag = CHI
 			tag = MAN
-		} 
+		}
 		has_dlc = "Waking the Tiger"
 	}
 	available = {
@@ -124,9 +124,9 @@ CHI_camco_bomber_organization = {
 	icon = GFX_idea_CHI_camco
 	allowed = {	
 		OR = {
-			is_literally_china = yes
+			tag = CHI
 			tag = MAN
-		} 
+		}
 		has_dlc = "Waking the Tiger"
 	}
 	available = {

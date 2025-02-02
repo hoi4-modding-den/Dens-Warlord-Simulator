@@ -110,7 +110,7 @@ focus_tree = {
 			country_event = { id = XWX_political_events.1 days = 14 }
 		}
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
 			country_event = XWX_political_events.4
 			add_political_power = 120
@@ -131,7 +131,7 @@ focus_tree = {
 		ai_will_do = {
 			base = 25
 			modifier = {
-                add = 100
+                add = 175
                 XWX_go_commie_path = yes
             }
 			modifier = {
@@ -148,7 +148,7 @@ focus_tree = {
 
 		}
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
 			add_political_power = 100
 			custom_effect_tooltip = generic_skip_one_line_tt
@@ -178,7 +178,7 @@ focus_tree = {
 		ai_will_do = {
 			base = 0
             modifier = {
-                add = 150
+                add = 300
                 XWX_go_commie_path = yes
             }
 		}
@@ -195,59 +195,74 @@ focus_tree = {
 
 		}
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			if = {
-				limit = {
-					has_dlc = "Man the Guns"
-				}
-				diplomatic_relation = {
-					country = XWE
-					relation = embargo
-					active = no
-				}
-				XWE = {
+			XWX = { country_event = XWX_diplomatic_events.26 }
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = the_following_will_happen_TT
+			
+			effect_tooltip = {
+				if = {
+					limit = {
+						has_dlc = "Man the Guns"
+					}
 					diplomatic_relation = {
-						country = ROOT
+						country = XWE
 						relation = embargo
 						active = no
 					}
+					XWE = {
+						diplomatic_relation = {
+							country = ROOT
+							relation = embargo
+							active = no
+						}
+					}
+					hidden_effect = {
+						remove_opinion_modifier = {
+							target = XWE
+							modifier = embargoed_us
+						}
+						XWE = {
+							remove_opinion_modifier = {
+								target = ROOT
+								modifier = embargoed_us
+							}
+						}
+					}
 				}
-				hidden_effect = {
+				else = {
 					remove_opinion_modifier = {
 						target = XWE
-						modifier = embargoed_us
+						modifier = embargo
 					}
 					XWE = {
 						remove_opinion_modifier = {
 							target = ROOT
-							modifier = embargoed_us
+							modifier = embargo
 						}
 					}
 				}
 			}
-			else = {
-				remove_opinion_modifier = {
-					target = XWE
-					modifier = embargo
-				}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			effect_tooltip = {
 				XWE = {
 					remove_opinion_modifier = {
 						target = ROOT
-						modifier = embargo
+						modifier = XWX_splinter_faction_modifier
 					}
 				}
 			}
+
 			custom_effect_tooltip = generic_skip_one_line_tt
-			XWE = {
-				remove_opinion_modifier = {
-					target = ROOT
-					modifier = XWX_splinter_faction_modifier
-				}
-			}
-			custom_effect_tooltip = generic_skip_one_line_tt
+			
 			remove_ideas = XWX_splinter_faction
+
 			custom_effect_tooltip = generic_skip_one_line_tt
+
 			custom_effect_tooltip = XWX_unlock_faction_focus_tt
 		}
 	}
@@ -266,7 +281,7 @@ focus_tree = {
 		ai_will_do = {
 			base = 0
             modifier = {
-                add = 150
+                add = 300
                 XWX_go_commie_path = yes
             }
 		}
@@ -279,7 +294,7 @@ focus_tree = {
 
 		}
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_MANPOWER }
 		completion_reward = {
 			swap_ideas = {
 				remove_idea = XWX_splinter_faction
@@ -308,7 +323,7 @@ focus_tree = {
 			has_war = no
 		}
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
 			add_political_power = 50
 			add_stability = 0.02
@@ -350,7 +365,7 @@ focus_tree = {
 			
 		}
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_BALANCE_OF_POWER }
 		completion_reward = {
 			every_owned_state = {
 				limit = {
@@ -419,7 +434,7 @@ focus_tree = {
 			}
 		}
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
 			custom_effect_tooltip = XWX_economic_support_tt
 			every_other_country = {
@@ -495,7 +510,7 @@ focus_tree = {
 			has_government = communism
 		}
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_MANPOWER FOCUS_FILTER_MILITARY_CHARACTER FOCUS_FILTER_POLITICAL_CHARACTER FOCUS_FILTER_RESEARCH }
 		completion_reward = {
 			add_stability = -0.05
 			add_popularity = {
@@ -558,7 +573,7 @@ focus_tree = {
 			has_country_flag = XWX_second_gannan_famine_over
 		}
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_MANPOWER }
 		completion_reward = {
 			custom_effect_tooltip = modify_XWX_industry_tt
 			add_to_variable = {
@@ -597,7 +612,7 @@ focus_tree = {
 			NOT = { has_active_mission = XWX_tianyu_fort_construction }
 		}
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
 			add_political_power = 50
 			add_days_mission_timeout = {
@@ -630,7 +645,7 @@ focus_tree = {
 			has_country_flag = XWX_second_gannan_famine_over
 		}
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_MANPOWER FOCUS_FILTER_STABILITY }
 		completion_reward = {
 			custom_effect_tooltip = modify_XWX_industry_tt
 			add_to_variable = {
@@ -666,7 +681,7 @@ focus_tree = {
 
 		}
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL FOCUS_FILTER_MANPOWER }
 		completion_reward = {
 			add_stability = 0.1
 			add_popularity = {
@@ -705,7 +720,7 @@ focus_tree = {
 			NOT = { has_government = communism }
 		}
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_MANPOWER }
 		completion_reward = {
 			add_political_power = 50
 			add_war_support = 0.1
@@ -743,13 +758,17 @@ focus_tree = {
                 XWX_go_kmt_path = yes
 				has_government = neutrality
             }
+			modifier = {
+                factor = 2
+                has_war = yes
+            }
 		}
 
 		available = {
 			has_tech = radio
 		}
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_POLITICAL FOCUS_FILTER_BALANCE_OF_POWER }
 		completion_reward = {
 			add_war_support = 0.1
 			add_popularity = {
@@ -784,7 +803,7 @@ focus_tree = {
 		cost = 8
 
 		ai_will_do = {
-			base = 200
+			base = 250
 		}
 
 		available = {
@@ -795,7 +814,7 @@ focus_tree = {
 			has_government = neutrality
 		}
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
 			add_political_power = 100
 			add_popularity = {
@@ -842,7 +861,7 @@ focus_tree = {
 			has_government = neutrality
 		}
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
 		completion_reward = {
 			add_war_support = 0.02
 			add_command_power = 30
@@ -876,7 +895,7 @@ focus_tree = {
 			}
 		}
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_MILITARY_CHARACTER }
 		completion_reward = {
 			if = {
 				limit = {
@@ -962,7 +981,7 @@ focus_tree = {
 
 		}
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL FOCUS_FILTER_BALANCE_OF_POWER }
 		completion_reward = {
 			add_stability = 0.02
 			add_popularity = {
@@ -1001,7 +1020,7 @@ focus_tree = {
 			
 		}
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_POLITICAL_CHARACTER }
 		completion_reward = {
 			add_stability = -0.15
 			add_country_leader_trait = XWX_judicial_ministry_merged_trait
@@ -1049,7 +1068,7 @@ focus_tree = {
 
 		}
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
 			XWX_peasant_collective = {
 				swap_country_leader_traits = {
@@ -1095,7 +1114,7 @@ focus_tree = {
 
 		}
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
 			country_event = XWX_kmt_events.1
 			custom_effect_tooltip = generic_skip_one_line_tt
@@ -1132,7 +1151,7 @@ focus_tree = {
 
 		}
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_WAR_SUPPORT }
 		completion_reward = { 
 			add_political_power = 50
 			add_war_support = 0.2
@@ -1162,7 +1181,7 @@ focus_tree = {
 
 		}
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL FOCUS_FILTER_BALANCE_OF_POWER }
 		completion_reward = {
 			add_stability = 0.15
 
@@ -1176,7 +1195,12 @@ focus_tree = {
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
-			hold_election = ROOT
+			hidden_effect = {
+				hold_election = ROOT
+			}
+			effect_tooltip = {
+				country_event = XWX_election_events.1
+			}
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
@@ -1225,16 +1249,8 @@ focus_tree = {
 			
 		}
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			custom_effect_tooltip = modify_XWX_industry_tt
-			add_to_variable = {
-				XWX_industry_consumer_goods_factor = -0.05
-				tooltip = consumer_goods_factor_tt
-			}
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-
 			if = {
 				limit = {
 					has_idea = XWX_socialist_democracy_3
@@ -1273,7 +1289,7 @@ focus_tree = {
 			
 		}
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
 			if = {
 				limit = {
@@ -1314,7 +1330,7 @@ focus_tree = {
 			
 		}
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
 			add_political_power = 100
 
@@ -1350,7 +1366,7 @@ focus_tree = {
 
 		}
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
 			add_stability = 0.05
 
@@ -1358,7 +1374,7 @@ focus_tree = {
 
 			custom_effect_tooltip = modify_XWX_industry_tt
 			add_to_variable = {
-				XWX_industry_consumer_goods_factor = -0.2
+				XWX_industry_consumer_goods_factor = -0.1
 				tooltip = consumer_goods_factor_tt
 			}
 
@@ -1409,7 +1425,7 @@ focus_tree = {
 
 		}
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
 			add_war_support = 0.1
 
@@ -1469,7 +1485,7 @@ focus_tree = {
 
 		}
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
 			set_rule = {
 				can_create_factions = yes
@@ -1540,8 +1556,14 @@ focus_tree = {
 
 		will_lead_to_war_with = XWE
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_ANNEXATION }
 		completion_reward = {
+			set_rule = {
+				can_join_factions = no
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
 			create_wargoal = {
 				target = XWE
 				type = annex_everything
@@ -1574,6 +1596,12 @@ focus_tree = {
 
 		available = {
 			has_government = communism
+			NOT = {
+				has_country_leader = {
+					character = XWX_peasant_collective
+					ruling_only = yes
+				}
+			}
 			if = {
 				limit = {
 					is_subject = yes
@@ -1589,23 +1617,10 @@ focus_tree = {
 			
 		}
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_ANNEXATION }
 		completion_reward = {
 			set_cosmetic_tag = XWX_prc
 			set_country_flag = XWX_is_china
-			if = {
-				limit = {
-					has_country_leader = {
-						character = XWX_peasant_collective
-						ruling_only = yes
-					}
- 				}
-				hidden_effect = {
-					set_country_leader_name = {
-						name = XWX_peasant_collective_PRC_name
-					}
-				}
-			}
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
@@ -1680,7 +1695,7 @@ focus_tree = {
 			}
 		}
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_ANNEXATION }
 		completion_reward = {
 			add_ideas = XWX_liberation_of_china
 		}
@@ -1721,7 +1736,7 @@ focus_tree = {
 			}
 		}
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_ANNEXATION }
 		completion_reward = {
 			custom_effect_tooltip = XWX_crush_the_kmt_tt
 			every_other_country = {
@@ -1763,7 +1778,7 @@ focus_tree = {
 			
 		}
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_MANPOWER }
 		completion_reward = {
 			add_political_power = 120
 			add_stability = 0.07
@@ -1785,6 +1800,33 @@ focus_tree = {
 			}
 
 			custom_effect_tooltip = generic_skip_one_line_tt
+
+			if = {
+				limit = {
+					NOT = { has_rule = can_join_factions }
+				}
+				set_rule = {
+					can_join_factions = yes
+				}
+			}
+			set_rule = {
+				can_send_volunteers = yes
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			if = {
+				limit = {
+					any_character = {
+						is_country_leader = yes
+						is_female = no
+					}
+				}
+				add_country_leader_trait = XWX_father_of_new_china
+			} 
+			else = {
+				add_country_leader_trait = XWX_mother_of_new_china
+			}
 
 			every_other_country = {
 				limit = { 
@@ -1818,7 +1860,6 @@ focus_tree = {
 		cost = 8
 
 		available = {
-			has_government = communism
 			is_subject = no
 		}
 
@@ -1826,11 +1867,42 @@ focus_tree = {
 
 		}
 
-		search_filters = {  }
+		will_lead_to_war_with = XFC
+
+		search_filters = { FOCUS_FILTER_ANNEXATION }
 		completion_reward = {
-			create_wargoal = {
-				target = XFC
-				type = annex_everything
+			every_other_country = {
+				limit = {
+					OR = {
+						owns_state = 671
+						owns_state = 670
+						owns_state = 286
+						owns_state = 741
+						controls_state = 671
+						controls_state = 670
+						controls_state = 286
+						controls_state = 741
+					}
+				}
+				custom_effect_tooltip = CHI_overlordship_over_indochina_tt
+				hidden_effect = {
+					ROOT = {
+						create_wargoal = {
+							type = take_state_focus
+							target = PREV
+							expire = 0
+							generator = { 671 670 286 741 }
+						}
+					}
+				}
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			activate_mission = CHI_overlordship_over_indochina
+
+			hidden_effect = {
+				news_event = { id = wtt_news.47 days = 3}
 			}
 		}
 	}
@@ -1847,7 +1919,6 @@ focus_tree = {
 		cost = 8
 
 		available = {
-			has_government = communism
 			is_subject = no
 		}
 
@@ -1857,7 +1928,9 @@ focus_tree = {
 			}
 		}
 
-		search_filters = {  }
+		will_lead_to_war_with = MON
+
+		search_filters = { FOCUS_FILTER_ANNEXATION }
 		completion_reward = {
 			MON = { country_event = generic.20 }
 		}
@@ -1876,16 +1949,37 @@ focus_tree = {
 
 		available = {
 			has_government = communism
-			is_faction_leader = yes
+			is_subject = no
 		}
 
 		bypass = {
 
 		}
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_WAR_SUPPORT }
 		completion_reward = {
-			set_faction_name = XWX_revintern
+			add_political_power = 120
+			add_war_support = 0.1
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			if = {
+				limit = {
+					NOT = { has_rule = can_create_factions }
+				}
+				set_rule = {
+					can_create_factions = yes
+				}
+			}
+			if = {
+				limit = {
+					is_faction_leader = yes
+				}
+				set_faction_name = XWX_revintern
+			}
+			else = {
+				create_faction = XWX_revintern
+			}
 		}
 	}
 
@@ -1909,8 +2003,9 @@ focus_tree = {
 
 		}
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_MANPOWER FOCUS_FILTER_BALANCE_OF_POWER }
 		completion_reward = {
+			add_war_support = 0.02
 			add_manpower = 10000
 			custom_effect_tooltip = generic_skip_one_line_tt
 			swap_ideas = {
@@ -1969,7 +2064,7 @@ focus_tree = {
 
 		will_lead_to_war_with = XTI
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_ANNEXATION }
 		completion_reward = {
 			create_wargoal = {
 				target = XTI
@@ -1999,8 +2094,13 @@ focus_tree = {
 			
 		}
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_AIR_XP }
 		completion_reward = {
+			army_experience = 25
+			air_experience = 25
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
 			add_ideas = XWX_defensive_preparations_2
 		}
 	}
@@ -2025,7 +2125,7 @@ focus_tree = {
 			
 		}
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_MANPOWER }
 		completion_reward = {
 			swap_ideas = {
 				remove_idea = XWX_liberation_doctrine
@@ -2059,7 +2159,7 @@ focus_tree = {
 
 		}
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_STABILITY }
 		completion_reward = {
 			add_political_power = 75
 			add_popularity = {
@@ -2099,7 +2199,7 @@ focus_tree = {
 
 		}
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
 			add_popularity = {
 				popularity = -0.15
@@ -2140,7 +2240,7 @@ focus_tree = {
 
 		}
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_STABILITY }
 		completion_reward = {
 			add_popularity = {
 				popularity = 0.05
@@ -2157,6 +2257,7 @@ focus_tree = {
 				idea = XWX_promises_of_democracy
 				days = 730
 			}
+
 			custom_effect_tooltip = generic_skip_one_line_tt
 
 			custom_effect_tooltip = after_idea_times_out_tt
@@ -2171,7 +2272,16 @@ focus_tree = {
 			custom_effect_tooltip = generic_skip_one_line_tt
 
 			effect_tooltip = {
-				hold_election = ROOT
+				country_event = XWX_election_events.3
+			}
+
+			hidden_effect = {
+				if = {
+					limit = {
+						has_government = neutrality
+					}
+					set_country_leader_ideology = moderatism
+				}
 			}
 		}
 	}
@@ -2189,6 +2299,14 @@ focus_tree = {
 
 		ai_will_do = {
 			base = 500
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+			modifier = {
+				factor = 2
+				is_historical_focus_on = no
+			}
 		}
 
 		available = {
@@ -2202,7 +2320,7 @@ focus_tree = {
 
 		}
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_MANPOWER FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_POLITICAL }
 		completion_reward = { 
 			army_experience = 20
 			add_command_power = 20
@@ -2256,20 +2374,17 @@ focus_tree = {
 
 		}
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_RESEARCH }
 		completion_reward = {
-			add_stability = 0.1
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-			add_research_slot = 1
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-
 			custom_effect_tooltip = modify_XWX_industry_tt
 			add_to_variable = {
 				XWX_industry_research_speed_factor = 0.05
 				tooltip = research_speed_factor_tt
 			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_research_slot = 1
 		}
 	}
 
@@ -2284,6 +2399,10 @@ focus_tree = {
 
 		cost = 8
 
+		ai_will_do = {
+			base = 300
+		}
+
 		available = {
 			NOT = { has_government = fascism }
 			has_war_with = JAP
@@ -2292,6 +2411,7 @@ focus_tree = {
 					has_dlc = "La Resistance"
 					is_ai = no
 				}
+				has_intelligence_agency = yes
 				network_strength = {
 					target = JAP
 					value > 20
@@ -2303,7 +2423,7 @@ focus_tree = {
 
 		}
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_POLITICAL }
 		completion_reward = {
 			add_war_support = 0.05
 			add_popularity = {
@@ -2334,6 +2454,10 @@ focus_tree = {
 
 		cost = 5
 
+		ai_will_do = {
+			base = 75
+		}
+
 		available = {
 			NOT = { has_government = communism }
 		}
@@ -2342,7 +2466,7 @@ focus_tree = {
 
 		}
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
 			add_stability = 0.05
 			add_popularity = {
@@ -2386,7 +2510,7 @@ focus_tree = {
 		cost = 8
 
 		ai_will_do = {
-			base = 500
+			base = 150
 		}
 
 		available = {
@@ -2397,7 +2521,7 @@ focus_tree = {
 			
 		}
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
 			add_stability = 0.05
 			add_popularity = {
@@ -2482,7 +2606,7 @@ focus_tree = {
 			
 		}
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
 			custom_effect_tooltip = modify_XWX_industry_tt
 			add_to_variable = {
@@ -2521,14 +2645,32 @@ focus_tree = {
 		}
 
 		bypass = {
-			is_ally_with = CHI
+			OR = {
+				is_ally_with = CHI
+				CHI = { NOT = { has_government = neutrality } }
+				NOT = { country_exists = CHI }
+				CHI = { is_subject = yes }
+			}
 		}
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			give_guarantee = CHI
-			CHI = {
-				give_guarantee = ROOT
+			if = {
+				limit = {
+					CHI = { is_faction_leader = yes }
+				}
+				CHI = { 
+					country_event = {
+						id = generic.2
+						hours = 3
+					}
+				}
+			}
+			else = {
+				give_guarantee = CHI
+				CHI = {
+					give_guarantee = ROOT
+				}
 			}
 		}
 	}
@@ -2545,14 +2687,14 @@ focus_tree = {
 		cost = 8
 
 		ai_will_do = {
-			base = 500
+			base = 1000
 		}
 
 		available = {
 			has_war_with = JAP
-			is_in_faction_with = CHI
+			is_in_faction = yes
 			OR = {
-				CHI = {
+				faction_leader = {
 					surrender_progress > 0.25
 				}
 				any_other_country = {
@@ -2568,9 +2710,12 @@ focus_tree = {
 			}
 		}
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
 			set_major = yes
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
 			add_ideas = XWX_safeguard_china_idea
 		}
 	}
@@ -2584,7 +2729,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = XWX_safeguard_china
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			base = 1000
@@ -2594,9 +2739,12 @@ focus_tree = {
 			}
 			modifier = {
 				factor = 0
-				strength_ratio = {
-					tag = CHI
-					ratio < 0.75
+				OR = {
+					strength_ratio = {
+						tag = CHI
+						ratio < 2
+					}
+					date < 1940.01.01
 				}
 			}
 		}
@@ -2618,50 +2766,34 @@ focus_tree = {
 
 		}
 
-		search_filters = {  }
+		will_lead_to_war_with = CHI
+
+		search_filters = { FOCUS_FILTER_ANNEXATION }
 		completion_reward = {
+			hidden_effect = {
+				remove_opinion_modifier = {
+					target = CHI
+					modifier = XWX_is_kmt_ally_modifier
+				}
+				CHI = {
+					remove_opinion_modifier = {
+						target = ROOT
+						modifier = XWX_is_kmt_ally_modifier
+					}
+				}
+			}
+
 			set_cosmetic_tag = CHI_warlord_leader
 			set_country_flag = XWX_is_china
-
-			if = {
-				limit = {
-					CHI = {
-						exists = yes
-						NOT = { is_subject_of = ROOT }
-					}
-				}
-				custom_effect_tooltip = generic_skip_one_line_tt
-				CHI = {
-					country_event = { id = XWX_diplomatic_events.25 hours = 12 }
-				}
-			}
-			else_if = {
-				limit = {
-					CHI = {
-						is_subject_of = ROOT
-					}
-				}
-				custom_effect_tooltip = generic_skip_one_line_tt
-				annex_country = {
-					target = CHI
-					transfer_troops = yes
-				}
-			}
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
 			every_other_country = {
 				limit = {
 					DEN_is_chinese_country = yes
-					NOT = { tag = CHI }
-					NOT = { is_subject_of = ROOT }
+					NOT = { has_war_with = ROOT }
 				}
-				ROOT = {
-					create_wargoal = {
-						target = PREV
-						type = annex_everything
-					}
-				}
+				country_event = { id = XWX_diplomatic_events.25 hours = 12 random_hours = 12 }
 			}
 
 			custom_effect_tooltip = generic_skip_one_line_tt
@@ -2688,6 +2820,14 @@ focus_tree = {
 
 		cost = 8
 
+		ai_will_do = {
+			base = 100
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
+		}
+
 		available = {
 			all_core_state = {
 				is_controlled_by = ROOT
@@ -2699,11 +2839,42 @@ focus_tree = {
 
 		}
 
-		search_filters = {  }
+		will_lead_to_war_with = XFC
+
+		search_filters = { FOCUS_FILTER_ANNEXATION }
 		completion_reward = {
-			create_wargoal = {
-				target = XFC
-				type = annex_everything
+			every_other_country = {
+				limit = {
+					OR = {
+						owns_state = 671
+						owns_state = 670
+						owns_state = 286
+						owns_state = 741
+						controls_state = 671
+						controls_state = 670
+						controls_state = 286
+						controls_state = 741
+					}
+				}
+				custom_effect_tooltip = CHI_overlordship_over_indochina_tt
+				hidden_effect = {
+					ROOT = {
+						create_wargoal = {
+							type = take_state_focus
+							target = PREV
+							expire = 0
+							generator = { 671 670 286 741 }
+						}
+					}
+				}
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			activate_mission = CHI_overlordship_over_indochina
+
+			hidden_effect = {
+				news_event = { id = wtt_news.47 days = 3}
 			}
 		}
 	}
@@ -2719,6 +2890,14 @@ focus_tree = {
 
 		cost = 8
 
+		ai_will_do = {
+			base = 100
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
+		}
+
 		available = {
 			all_core_state = {
 				is_controlled_by = ROOT
@@ -2732,7 +2911,9 @@ focus_tree = {
 			}
 		}
 
-		search_filters = {  }
+		will_lead_to_war_with = MON
+
+		search_filters = { FOCUS_FILTER_ANNEXATION }
 		completion_reward = {
 			MON = { country_event = generic.20 }
 		}
@@ -2751,6 +2932,10 @@ focus_tree = {
 
 		ai_will_do = {
 			base = 100
+			modifier = {
+				factor = 3
+				has_war = yes
+			}
 		}
 
 		available = {
@@ -2761,15 +2946,10 @@ focus_tree = {
 
 		}
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
 			add_ideas = XWX_defensive_preparations
 			hidden_effect = {
-				add_ai_strategy = {
-					type = prepare_for_war
-					id = XTI
-					value = 200
-				}
 				add_ai_strategy = {
 					type = prepare_for_war
 					id = JAP
@@ -2791,7 +2971,11 @@ focus_tree = {
 		cost = 10
 
 		ai_will_do = {
-			base = 100
+			base = 200
+			modifier = {
+				factor = 0.5
+				has_war = yes
+			}
 		}
 
 		available = {
@@ -2808,7 +2992,7 @@ focus_tree = {
 
 		will_lead_to_war_with = XTI
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_ANNEXATION }
 		completion_reward = {
 			if = {
 				limit = {
@@ -2866,6 +3050,10 @@ focus_tree = {
 
 		ai_will_do = {
 			base = 100
+			modifier = {
+				factor = 3
+				has_war = yes
+			}
 		}
 
 		available = {
@@ -2876,7 +3064,7 @@ focus_tree = {
 
 		}
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
 			swap_ideas = {
 				remove_idea = XWX_defensive_preparations
@@ -2897,7 +3085,7 @@ focus_tree = {
 		cost = 8
 
 		ai_will_do = {
-			base = 100
+			base = 300
 		}
 
 		available = {
@@ -2909,7 +3097,7 @@ focus_tree = {
 
 		}
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_POLITICAL }
 		completion_reward = {
 			add_war_support = 0.05
 			add_popularity = {
@@ -2930,7 +3118,7 @@ focus_tree = {
 		icon = GFX_focus_generic_industry_1
 		#prerequisite = { focus = }
 		#mutually_exclusive = { focus = }
-		x = 26
+		x = 24
 		y = 0
 		#relative_position_id =
 
@@ -2944,7 +3132,7 @@ focus_tree = {
 
 		}
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
 			effect_tooltip = {
 				add_dynamic_modifier = {
@@ -3001,7 +3189,7 @@ focus_tree = {
 
 		}
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
 		completion_reward = {
 			custom_effect_tooltip = modify_XWX_industry_tt
 			add_to_variable = {
@@ -3052,7 +3240,7 @@ focus_tree = {
 
 		}
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
 		completion_reward = {
 			custom_effect_tooltip = modify_XWX_industry_tt
 			add_to_variable = {
@@ -3130,7 +3318,7 @@ focus_tree = {
 
 		}
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
 			753 = {
 				add_building_construction = {
@@ -3143,6 +3331,10 @@ focus_tree = {
 					instant_build = yes
 					province = 10787
 				}
+			}
+			add_victory_points = {
+				province = 10787
+				value = 2
 			}
 			build_railway = {
 				level = 2
@@ -3222,9 +3414,9 @@ focus_tree = {
 		cost = 8
 
 		ai_will_do = {
-			base = 9
+			base = 10
 			modifier = {
-				add = 100
+				add = 40
 				OR = {
 					has_completed_focus = XWX_workers_victory
 					has_completed_focus = XWX_kmt_coup
@@ -3244,7 +3436,7 @@ focus_tree = {
 
 		}
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_POLITICAL }
 		completion_reward = {
 			custom_effect_tooltip = modify_XWX_industry_tt
 			add_to_variable = {
@@ -3270,6 +3462,9 @@ focus_tree = {
 				}
 			}
 
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = XWX_clear_space_tt
 			hidden_effect = {
 				country_event = {
 					id = XWX_political_events.3
@@ -3302,7 +3497,7 @@ focus_tree = {
 
 		}
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_RESEARCH }
 		completion_reward = {
 			add_research_slot = 1
 
@@ -3329,7 +3524,7 @@ focus_tree = {
 		cost = 8
 
 		ai_will_do = {
-			base = 125
+			base = 75
 		}
 
 		available = {
@@ -3341,7 +3536,7 @@ focus_tree = {
 
 		}
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
 			custom_effect_tooltip = modify_XWX_industry_tt
 			add_to_variable = {
@@ -3397,7 +3592,7 @@ focus_tree = {
 
 		}
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
 			custom_effect_tooltip = modify_XWX_industry_tt
 			add_to_variable = {
@@ -3438,7 +3633,7 @@ focus_tree = {
 		cost = 5
 
 		ai_will_do = {
-			base = 125
+			base = 75
 		}
 
 		available = {
@@ -3450,7 +3645,7 @@ focus_tree = {
 
 		}
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
 			custom_effect_tooltip = modify_XWX_industry_tt
 			add_to_variable = {
@@ -3500,7 +3695,7 @@ focus_tree = {
 
 		}
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
 		completion_reward = {
 			custom_effect_tooltip = modify_XWX_industry_tt
 			add_to_variable = {
@@ -3526,10 +3721,10 @@ focus_tree = {
 		y = 1
 		relative_position_id = XWX_textile_mills
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
-			base = 125
+			base = 75
 		}
 
 		available = {
@@ -3544,7 +3739,7 @@ focus_tree = {
 
 		}
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
 			custom_effect_tooltip = modify_XWX_industry_tt
 			add_to_variable = {
@@ -3557,16 +3752,17 @@ focus_tree = {
 	shared_focus = {
 		id = XWX_arm_the_nation
 		icon = GFX_focus_generic_military_industry
-		prerequisite = { focus = XWX_local_schools focus = XWX_relocate_civilian_funds focus = XWX_workshop_output focus = XWX_textile_mills }
+		prerequisite = { focus = XWX_workshop_output }
+		prerequisite = { focus = XWX_local_schools focus = XWX_relocate_civilian_funds focus = XWX_textile_mills }
 		mutually_exclusive = { focus = XWX_military_buildup }
 		x = -1
 		y = 1
 		relative_position_id = XWX_workshop_output
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
-			base = 125
+			base = 75
 		}
 
 		available = {
@@ -3581,7 +3777,7 @@ focus_tree = {
 
 		}
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_BALANCE_OF_POWER }
 		completion_reward = {
 			custom_effect_tooltip = modify_XWX_industry_tt
 			add_to_variable = {
@@ -3626,16 +3822,17 @@ focus_tree = {
 	shared_focus = {
 		id = XWX_military_buildup
 		icon = GFX_goal_generic_construct_mil_factory
-		prerequisite = { focus = XWX_local_schools focus = XWX_relocate_civilian_funds focus = XWX_workshop_output focus = XWX_textile_mills }
+		prerequisite = { focus = XWX_workshop_output }
+		prerequisite = { focus = XWX_local_schools focus = XWX_relocate_civilian_funds focus = XWX_textile_mills }
 		mutually_exclusive = { focus = XWX_arm_the_nation }
 		x = 1
 		y = 1
 		relative_position_id = XWX_workshop_output
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
-			base = 125
+			base = 75
 		}
 
 		available = {
@@ -3650,7 +3847,7 @@ focus_tree = {
 
 		}
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_BALANCE_OF_POWER }
 		completion_reward = {
 			custom_effect_tooltip = modify_XWX_industry_tt
 			add_to_variable = {
@@ -3695,9 +3892,7 @@ focus_tree = {
 	shared_focus = {
 		id = XWX_mine_expansion
 		icon = GFX_focus_generic_mining_industry
-		prerequisite = { focus = XWX_construction_sector  }
-		prerequisite = {  focus = XWX_civilian_construction_funds }
-		prerequisite = {  focus = XWX_clear_space }
+		prerequisite = { focus = XWX_construction_sector focus = XWX_civilian_construction_funds focus = XWX_clear_space }
 		#mutually_exclusive = { focus = }
 		x = 6
 		y = 2
@@ -3713,12 +3908,21 @@ focus_tree = {
 
 		}
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
 			custom_effect_tooltip = modify_XWX_industry_tt
 			add_to_variable = {
 				XWX_industry_local_resources_factor = 0.1
 				tooltip = local_resources_factor_tt
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_tech_bonus = {
+				name = XWX_mine_expansion
+				uses = 1
+				bonus = 2
+				category = excavation_tech
 			}
 		}
 	}
@@ -3732,7 +3936,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = XWX_mine_expansion
 
-		cost = 8
+		cost = 10
 
 		available = {
 			controls_state = 752
@@ -3743,7 +3947,7 @@ focus_tree = {
 
 		}
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
 			custom_effect_tooltip = modify_XWX_industry_tt
 			add_to_variable = {
@@ -3772,7 +3976,7 @@ focus_tree = {
 		icon = GFX_focus_chi_army_reform
 		#prerequisite = { focus = }
 		#mutually_exclusive = { focus = }
-		x = 24
+		x = 26
 		y = 5
 		#relative_position_id =
 
@@ -3786,7 +3990,7 @@ focus_tree = {
 
 		}
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_ARMY_XP }
 		completion_reward = {
 			effect_tooltip = {
 				army_experience = 25
@@ -3800,7 +4004,7 @@ focus_tree = {
 		icon = GFX_goal_generic_military_sphere
 		prerequisite = { focus = XWX_provincial_army }
 		#mutually_exclusive = { focus = }
-		x = -2
+		x = -4
 		y = 1
 		relative_position_id = XWX_provincial_army
 
@@ -3818,48 +4022,19 @@ focus_tree = {
 
 		}
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_ARMY_XP }
 		completion_reward = {
 			XWX_disband_peoples_militia = yes
-			custom_effect_tooltip = XWX_reform_the_militias_tt
-			hidden_effect = {
-				if = {
-					limit = {
-						is_ai = yes
-					}
-					activate_advisor = XWX_generic_army_chief_off
-				}
-			}
-		}
-	}
-
-	shared_focus = {
-		id = XWX_prepare_the_lands
-		icon = GFX_focus_FIN_weapon_caches
-		prerequisite = { focus = XWX_reform_the_militias }
-		#mutually_exclusive = { focus = }
-		x = -3
-		y = 1
-		relative_position_id = XWX_reform_the_militias
-
-		cost = 8
-
-		available = {
 			
-		}
-
-		bypass = {
-
-		}
-
-		search_filters = {  }
-		completion_reward = {
-			army_experience = 20
-			custom_effect_tooltip = generic_skip_one_line_tt
-			custom_effect_tooltip = available_chief_of_army
-			show_ideas_tooltip = XWX_rao_guohua_advisor
-			custom_effect_tooltip = generic_skip_one_line_tt
-			add_ideas = XWX_prepared_trenches
+			custom_effect_tooltip = XWX_reform_the_militias_tt
+			
+			if = {
+				limit = {
+					is_ai = yes
+				}
+				custom_effect_tooltip = generic_skip_one_line_tt
+				activate_advisor = XWX_rao_guohua_advisor
+			}
 		}
 	}
 
@@ -3868,11 +4043,11 @@ focus_tree = {
 		icon = GFX_focus_AUS_raid_military_storages
 		prerequisite = { focus = XWX_reform_the_militias }
 		#mutually_exclusive = { focus = }
-		x = -1
+		x = -3
 		y = 1
 		relative_position_id = XWX_reform_the_militias
 
-		cost = 5
+		cost = 8
 
 		ai_will_do = {
 			base = 250
@@ -3886,7 +4061,7 @@ focus_tree = {
 
 		}
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_MILITARY_CHARACTER }
 		completion_reward = {
 			add_command_power = 20
 			custom_effect_tooltip = generic_skip_one_line_tt
@@ -3914,7 +4089,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = XWX_raid_tactics
 
-		cost = 5
+		cost = 10
 
 		ai_will_do = {
 			base = 75
@@ -3928,7 +4103,7 @@ focus_tree = {
 
 		}
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_RESEARCH }
 		completion_reward = {
 			add_tech_bonus = {
 				name = XWX_army_motorisation
@@ -3970,13 +4145,25 @@ focus_tree = {
 
 		}
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
 		completion_reward = {
 			unlock_military_industrial_organization_tooltip = mio:XWX_tank_designer
 			mio:XWX_tank_designer = {
 				add_mio_size = 1
 			}
+			if = {
+				limit = {
+					has_government = SOV
+					NOT = { has_war_with = SOV }
+				}
+				unlock_military_industrial_organization_tooltip = mio:SOV_morozov_design_bureau_organization
+				mio:SOV_morozov_design_bureau_organization = {
+					add_mio_size = 1
+				}
+			}
+
 			custom_effect_tooltip = generic_skip_one_line_tt
+
 			add_tech_bonus = {
 				name = XWX_liu_xiangs_armoured_project
 				bonus = 0.5
@@ -4080,22 +4267,22 @@ focus_tree = {
 	}
 
 	shared_focus = {
-		id = XWX_military_academies
-		icon = GFX_focus_generic_military_academy
+		id = XWX_prepare_the_lands
+		icon = GFX_focus_FIN_weapon_caches
 		prerequisite = { focus = XWX_reform_the_militias }
 		#mutually_exclusive = { focus = }
-		x = 2
+		x = -1
 		y = 1
 		relative_position_id = XWX_reform_the_militias
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
-			base = 150
-		}
-
-		ai_will_do = {
-			base = 500
+			base = 80
+			modifier = {
+				factor = 1.5
+				has_war = yes
+			}
 		}
 
 		available = {
@@ -4106,7 +4293,40 @@ focus_tree = {
 
 		}
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_ARMY_XP }
+		completion_reward = {
+			army_experience = 40
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
+			add_ideas = XWX_prepared_trenches
+		}
+	}
+
+	shared_focus = {
+		id = XWX_military_academies
+		icon = GFX_focus_generic_military_academy
+		prerequisite = { focus = XWX_reform_the_militias }
+		#mutually_exclusive = { focus = }
+		x = 1
+		y = 1
+		relative_position_id = XWX_reform_the_militias
+
+		cost = 10
+
+		ai_will_do = {
+			base = 100
+		}
+
+		available = {
+			
+		}
+
+		bypass = {
+
+		}
+
+		search_filters = { FOCUS_FILTER_RESEARCH }
 		completion_reward = {
 			add_doctrine_cost_reduction = {
 				name = XWX_military_academies
@@ -4126,15 +4346,53 @@ focus_tree = {
 	}
 
 	shared_focus = {
-		id = XWX_artillery_development
-		icon = GFX_goal_generic_army_artillery
+		id = XWX_doctrine_studies
+		icon = GFX_focus_generic_army_doctrines_2
 		prerequisite = { focus = XWX_military_academies }
-		mutually_exclusive = { focus = XWX_aircraft_development }
+		#mutually_exclusive = { focus = }
 		x = -1
 		y = 1
 		relative_position_id = XWX_military_academies
 
 		cost = 8
+
+		ai_will_do = {
+			base = 25
+		}
+
+		available = {
+			
+		}
+
+		bypass = {
+
+		}
+
+		search_filters = { FOCUS_FILTER_ARMY_XP }
+		completion_reward = {
+			army_experience = 25
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_doctrine_cost_reduction = {
+				name = XWX_doctrine_studies
+				cost_reduction = 0.5
+				uses = 2
+				category = land_doctrine
+			}
+		}
+	}
+
+	shared_focus = {
+		id = XWX_artillery_development
+		icon = GFX_goal_generic_army_artillery
+		prerequisite = { focus = XWX_military_academies }
+		mutually_exclusive = { focus = XWX_aircraft_development }
+		x = 1
+		y = 1
+		relative_position_id = XWX_military_academies
+
+		cost = 10
 
 		ai_will_do = {
 			base = 75
@@ -4148,7 +4406,7 @@ focus_tree = {
 
 		}
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_RESEARCH }
 		completion_reward = {
 			add_tech_bonus = {
 				name = XWX_artillery_development
@@ -4170,11 +4428,11 @@ focus_tree = {
 		prerequisite = { focus = XWX_military_academies }
 		prerequisite = { focus = XWX_own_plane_designs }
 		mutually_exclusive = { focus = XWX_artillery_development }
-		x = 1
+		x = 4
 		y = 1
 		relative_position_id = XWX_military_academies
 
-		cost = 8
+		cost = 10
 
 		ai_will_do = {
 			base = 75
@@ -4188,7 +4446,7 @@ focus_tree = {
 
 		}
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_RESEARCH }
 		completion_reward = {
 			add_tech_bonus = {
 				name = XWX_aircraft_development
@@ -4205,6 +4463,63 @@ focus_tree = {
 	}
 
 	shared_focus = {
+		id = XWX_quick_militarisation
+		icon = GFX_focus_secret_rearmament
+		prerequisite = { focus = XWX_provincial_army }
+		#mutually_exclusive = { focus = }
+		x = -1
+		y = 1
+		relative_position_id = XWX_provincial_army
+
+		cost = 3
+
+		ai_will_do = {
+			base = 150
+		}
+
+		available = {
+			OR = {
+				any_other_country = { has_wargoal_against = ROOT }
+				any_other_country = { is_justifying_wargoal_against = ROOT }
+				has_war = yes
+			}
+		}
+
+		bypass = {
+
+		}
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 2500
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+					is_fully_controlled_by = ROOT
+					is_owned_by = ROOT
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}	
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}	
+			}
+		}
+	}
+
+	shared_focus = {
 		id = XWX_heavy_conscription
 		icon = GFX_focus_generic_manpower
 		prerequisite = { focus = XWX_provincial_army }
@@ -4214,6 +4529,10 @@ focus_tree = {
 		relative_position_id = XWX_provincial_army
 
 		cost = 8
+
+		ai_will_do = {
+			base = 150
+		}
 
 		available = {
 			has_war = yes
@@ -4227,9 +4546,45 @@ focus_tree = {
 
 		}
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_MANPOWER }
 		completion_reward = {
 			add_ideas = CHI_forced_conscription
+		}
+	}
+
+	shared_focus = {
+		id = XWX_civil_defence
+		icon = GFX_focus_SWE_lottakoren
+		prerequisite = { focus = XWX_quick_militarisation focus = XWX_heavy_conscription }
+		#mutually_exclusive = { focus = }
+		x = 0
+		y = 2
+		relative_position_id = XWX_provincial_army
+
+		cost = 8
+
+		ai_will_do = {
+			base = 150
+		}
+
+		available = {
+			has_war = yes
+		}
+
+		bypass = {
+
+		}
+
+		search_filters = { FOCUS_FILTER_MANPOWER }
+		completion_reward = {
+			add_war_support = 0.1
+
+			add_manpower = 25000
+
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 5000
+			}
 		}
 	}
 
@@ -4256,7 +4611,7 @@ focus_tree = {
 
 		}
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_AIR_XP }
 		completion_reward = {
 			air_experience = 25
 
@@ -4329,7 +4684,7 @@ focus_tree = {
 
 		}
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
 		completion_reward = {
 			unlock_military_industrial_organization_tooltip = mio:XWX_plane_designer
 			mio:XWX_plane_designer = {
@@ -4368,7 +4723,7 @@ focus_tree = {
 
 		}
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
 			unlock_military_industrial_organization_tooltip = mio:XWX_small_plane_designer
 			mio:XWX_small_plane_designer = {
@@ -4421,7 +4776,7 @@ focus_tree = {
 
 		}
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_AIR_XPFOCUS_FILTER_ }
 		completion_reward = {
 			air_experience = 50
 			custom_effect_tooltip = generic_skip_one_line_tt
@@ -4457,7 +4812,7 @@ focus_tree = {
 
 		}
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_AIR_XP }
 		completion_reward = {
 			air_experience = 20
 			custom_effect_tooltip = generic_skip_one_line_tt
@@ -4472,6 +4827,48 @@ focus_tree = {
 					level = 2
 					instant_build = yes
 				}
+			}
+		}
+	}
+
+	shared_focus = {
+		id = XWX_river_navy
+		icon = GFX_focus_generic_merchant_fleet
+		prerequisite = { focus = XWX_provincial_army }
+		#mutually_exclusive = { focus = }
+		x = 6
+		y = 1
+		relative_position_id = XWX_provincial_army
+
+		cost = 5
+
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 25
+				any_controlled_state = {
+					is_coastal = yes
+				}
+			}
+		}
+
+		available = {
+			
+		}
+
+		bypass = {
+
+		}
+
+		search_filters = { FOCUS_FILTER_NAVY_XP }
+		completion_reward = {
+			navy_experience = 40
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_equipment_to_stockpile = {
+				type = convoy
+				amount = 50
 			}
 		}
 	}
@@ -4501,7 +4898,7 @@ focus_tree = {
 
 		}
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_MANPOWER }
 		completion_reward = {
 			army_experience = 50
 			add_command_power = 25
@@ -4564,7 +4961,7 @@ focus_tree = {
 
 		}
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_ARMY_XP }
 		completion_reward = {
 			add_ideas = XWX_whapoa_advisors
 		}
@@ -4660,7 +5057,7 @@ focus_tree = {
 
 		}
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_MANPOWER }
 		completion_reward = {
 			remove_ideas = XWX_whapoa_advisors
 			remove_ideas = XWX_60_divisions_plan
@@ -4697,7 +5094,7 @@ focus_tree = {
 
 		}
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_MANPOWER }
 		completion_reward = {
 			army_experience = 50
 			add_command_power = 25
@@ -4728,13 +5125,13 @@ focus_tree = {
 
 		}
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_MILITARY_CHARACTER }
 		completion_reward = {
 			add_ideas = XWX_cavalry_commanders
 			if = {
 				limit = {
 					MON = {
-						NOT = { has_government = communism }
+						has_government = communism
 						NOT = { has_war_with = ROOT }
 						exists = yes
 					}
@@ -4742,20 +5139,21 @@ focus_tree = {
 				custom_effect_tooltip = generic_skip_one_line_tt
 
 				MON = { country_event = XWX_diplomatic_events.11 }
-			}
-			custom_effect_tooltip = if_they_accept_tt
-			effect_tooltip = {
-				add_doctrine_cost_reduction = {
-					name = XWX_red_army
-					cost_reduction = 1
-					uses = 1
-					category = land_doctrine
-				}
-				army_experience = 50
-				custom_effect_tooltip = generic_skip_one_line_tt
-				every_army_leader = {
-					random_select_amount = 3
-					gain_xp = 250
+
+				custom_effect_tooltip = if_they_accept_tt
+				effect_tooltip = {
+					add_doctrine_cost_reduction = {
+						name = XWX_red_army
+						cost_reduction = 1
+						uses = 1
+						category = land_doctrine
+					}
+					army_experience = 50
+					custom_effect_tooltip = generic_skip_one_line_tt
+					every_army_leader = {
+						random_select_amount = 3
+						gain_xp = 250
+					}
 				}
 			}
 		}
@@ -4785,7 +5183,7 @@ focus_tree = {
 			
 		}
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_MILITARY_CHARACTER }
 		completion_reward = {
 			add_ideas = XWX_revolutionary_offense_idea
 		}
@@ -4815,7 +5213,7 @@ focus_tree = {
 			
 		}
 
-		search_filters = {  }
+		search_filters = { FOCUS_FILTER_ARMY_XP }
 		completion_reward = {
 			add_ideas = XWX_liberation_planning
 		}
@@ -4886,4 +5284,3 @@ focus_tree = {
 			}
 		}
 	}
-	

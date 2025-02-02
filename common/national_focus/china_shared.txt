@@ -1824,10 +1824,12 @@ shared_focus = {
 				} 
 			} 
 			remove_from_faction = ROOT
+			custom_effect_tooltip = generic_skip_one_line_tt
 		}
 		hidden_effect = {
 			news_event = { id = wtt_news.46 days = 3 }
 		}
+		
 		every_other_country = {
 			limit = {
 				DEN_is_chinese_country = yes
@@ -1844,6 +1846,9 @@ shared_focus = {
 				}
 			}
 		}
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+		DEN_JOINT_give_cores_on_chinese_states = yes
 	}
 }
 
@@ -1875,6 +1880,8 @@ shared_focus = {
 	cancel_if_invalid = yes
 	continue_if_invalid = no
 	available_if_capitulated = no
+
+	will_lead_to_war_with = XTI
 
 	completion_reward = {
 		XTI = { country_event = wtt_china.10 }
@@ -1918,6 +1925,8 @@ shared_focus = {
 	cancel_if_invalid = yes
 	continue_if_invalid = no
 	available_if_capitulated = no
+
+	will_lead_to_war_with = XTI
 
 	completion_reward = {
 		create_wargoal = {
@@ -2352,6 +2361,8 @@ shared_focus = {
 	continue_if_invalid = no
 	available_if_capitulated = no
 
+	will_lead_to_war_with = XFC
+
 	completion_reward = {
 		every_other_country = {
 			limit = {
@@ -2378,7 +2389,11 @@ shared_focus = {
 				}
 			}
 		}
-		activate_mission_tooltip = CHI_overlordship_over_indochina
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+		activate_mission = CHI_overlordship_over_indochina
+
 		hidden_effect = {
 			news_event = { id = wtt_news.47 days = 3}
 		}
@@ -2415,6 +2430,8 @@ shared_focus = {
 	cancel_if_invalid = yes
 	continue_if_invalid = no
 	available_if_capitulated = no
+
+	will_lead_to_war_with = JAP
 
 	completion_reward = {
 		JAP = { country_event = { id = wtt_china.10 } }

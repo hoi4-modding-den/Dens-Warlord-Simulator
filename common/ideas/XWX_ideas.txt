@@ -140,11 +140,6 @@ ideas = {
                 conscription_factor = 0.1
             }
 
-			rule = {
-				can_create_factions = yes
-				can_send_volunteers = yes
-			}
-
         }
 
 		XWX_weak_kmt_insurgency = {
@@ -546,6 +541,7 @@ ideas = {
 				OR = {
 					has_government = fascism
 					has_government = communism
+					is_subject = yes
 				}
 			}
 
@@ -564,6 +560,7 @@ ideas = {
 							OR = {
 								has_government = fascism
 								has_government = communism
+								is_subject = yes
 							}
 						}
 					}
@@ -645,7 +642,10 @@ ideas = {
 			}
 
 			cancel = {
-				has_government = fascism
+				OR = {
+					has_government = fascism
+					is_subject_of = JAP
+				}
 			}
 
             removal_cost = -1
@@ -672,6 +672,7 @@ ideas = {
 			cancel = {
 				OR = {
 					has_government = fascism
+					is_subject_of = JAP
 					has_capitulated = yes
 					has_war = no
 				}
@@ -751,18 +752,23 @@ ideas = {
 			}
 
 			cancel = {
-				has_government = fascism
+				OR = {
+					has_government = fascism
+					is_subject_of = JAP
+				}
 			}
 
             removal_cost = -1
 
 			modifier = {
-				army_org_regain = 0.02
+				army_org_regain = 0.03
+				river_crossing_factor = -0.2
+				amphibious_invasion_defence = 0.25
             }
 
             targeted_modifier = {
 				tag = JAP
-				attack_bonus_against = 0.15
+				attack_bonus_against = 0.05
 				defense_bonus_against = 0.15
             }
 

@@ -8,10 +8,10 @@ Cavalry_XWX = {
 	role = infantry
 	
 	upgrade_prio = {
-		factor = 0
+		factor = 1
 
 		modifier = {
-			factor = 100
+			factor = 30
 			has_idea = XWX_cavalry_commanders
 		}
 	}
@@ -32,6 +32,48 @@ Cavalry_XWX = {
 			
 			regiments = {
 				cavalry = 12
+			}
+		}
+	}
+
+}
+
+Heavy_Armour_XWX = {
+
+	available_for = {
+		XWX
+	}
+
+	role = armor
+	
+	upgrade_prio = {
+		factor = 1
+
+		modifier = {
+			factor = 5
+			has_completed_focus = XWX_liu_xiangs_armoured_project
+		}
+	}
+	
+	heavy_tanks_XWX = {
+	
+		upgrade_prio = {
+			factor = 5
+		}
+		
+		target_template = {
+
+			support = {
+				engineer = 1
+				mot_recon = 1
+				logistics_company = 1
+				maintenance_company = 1
+				artillery = 1
+			}
+
+			regiments = {
+				heavy_armor = 6
+				infantry = 3
 			}
 		}
 	}

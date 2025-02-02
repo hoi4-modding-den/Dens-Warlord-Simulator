@@ -73,12 +73,12 @@ JAP_historical_plan = {
 
 		#1941
 		JAP_strike_south_doctrine # Was completed December 26th 1940	was JAP_sign_tripartite_pact
-		JAP_bomber_modernization # Was completed March 6th 1941
 		JAP_non_aggression_pact_with_the_soviet_union # Was completed April 10th 1941	OBS: was made into 35 days
-		JAP_expand_the_snlf # Was completed June 19th 1941 
 		# Prepare the navy branch for invasions, also allows for a more historical attack date on the USA
 		JAP_secure_the_philippines # Was completed August 28th 1941, HISOTRICALLY HAPPENED December 8th 1941  
+		JAP_expand_the_snlf # Was completed June 19th 1941 
 		JAP_strike_on_the_southern_resource_area # Was completed November 6th 1941
+		JAP_bomber_modernization # Was completed March 6th 1941
 
 		#1942
 		JAP_alliance_with_siam #January 20 1941	was JAP_range_focus

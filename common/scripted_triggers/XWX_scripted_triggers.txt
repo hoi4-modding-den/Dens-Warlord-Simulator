@@ -19,7 +19,7 @@ XWX_has_kmt_regime = {
             }
             AND = {
                 original_tag = XMC
-                NOT = { has_government = communism }
+                has_government = neutrality
             }
             AND = {
                 original_tag = XSA

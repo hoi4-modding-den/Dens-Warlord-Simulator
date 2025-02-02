@@ -39,4 +39,25 @@ on_actions = {
 			}
 		}
 	}
+
+	on_peaceconference_started = {
+		effect = {
+			if = {
+				limit = {
+					ROOT = { tag = JAP }
+					FROM = {
+						DEN_is_chinese_country = yes
+					}
+				}
+				FROM = {
+					every_core_state = {
+						limit = {
+							NOT = { is_core_of = CHI }
+						}
+						add_core_of = CHI
+					}
+				}
+			}
+		}
+	}
 }

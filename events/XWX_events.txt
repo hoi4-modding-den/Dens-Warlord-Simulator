@@ -343,7 +343,7 @@ country_event = { # KMT election
 		name = XWX_election_events.3.a
 		ai_chance = {
 			base = 1
-			modifier = {
+			modifier = { # if OVERLORD is dem, go dem
 				factor = 0
 				any_other_country = {
 					has_government = democratic
@@ -361,7 +361,7 @@ country_event = { # KMT election
 		name = XWX_election_events.3.b
 		ai_chance = {
 			base = 20
-			modifier = {
+			modifier = { # if OVERLORD is not dem, dont go dem
 				factor = 0
 				any_other_country = {
 					NOT = { has_government = democratic }
@@ -1069,7 +1069,7 @@ country_event = { # Gannan demands Tibet becomes puppet
 				factor = 0.25
 				strength_ratio = {
 					tag = FROM
-					ratio > 1
+					ratio < 2
 				}
 			}
 		}
@@ -1396,15 +1396,42 @@ country_event = { # XWX demands annexation
 				}
 			}
 			modifier = {
+				add = 3
+				is_guaranteed_by = FROM
+			}
+			modifier = {
+				factor = 3
+				is_in_faction_with = FROM
+			}
+			modifier = {
+				factor = 10
+				strength_ratio = {
+					tag = FROM
+					ratio > 2
+				}
+			}
+			modifier = {
 				factor = 0.25
 				NOT = { has_government = ROOT }
 			}
 			modifier = {
-				factor = 0.25
+				factor = 0.1
 				strength_ratio = {
 					tag = FROM
-					ratio > 1
+					ratio < 2
 				}
+			}
+			modifier = {
+				factor = 0.25
+				any_other_country = {
+					has_guaranteed = ROOT
+					is_major = yes
+					NOT = { tag = FROM }
+				}
+			}
+			modifier = {
+				factor = 10
+				surrender_progress > 0.5
 			}
 		}
 		trigger = {
@@ -1499,31 +1526,7 @@ country_event = { # FROM gets annexed
 
 	option = { 
 		name = XWX_diplomatic_events.21.a
-		FROM = {
-			every_subject_country = {
-				every_unit_leader = {
-					set_nationality = ROOT
-				}
-			}
-			every_unit_leader = {
-				set_nationality = ROOT
-			}
-		}
-		custom_effect_tooltip = generic_skip_one_line_tt
-		FROM = {
-			every_subject_country = {
-				ROOT = {
-					annex_country = {
-						target = PREV
-						transfer_troops = yes
-					}
-				}
-			}
-		}
-		annex_country = {
-			target = FROM
-			transfer_troops = yes
-		}
+		XWX_ROOT_integrates_FROM = yes
 	}
 
 }
@@ -1538,6 +1541,7 @@ country_event = { # FROM refuses annexation
 
 	option = { 
 		name = XWX_diplomatic_events.22.a
+		add_war_support = 0.02
 		create_wargoal = {
 			target = FROM
 			type = annex_everything
@@ -1613,15 +1617,42 @@ country_event = { # XWX demands Annexation
 				}
 			}
 			modifier = {
+				add = 3
+				is_guaranteed_by = FROM
+			}
+			modifier = {
+				factor = 3
+				is_in_faction_with = FROM
+			}
+			modifier = {
+				factor = 10
+				strength_ratio = {
+					tag = FROM
+					ratio > 2
+				}
+			}
+			modifier = {
 				factor = 0.25
 				NOT = { has_government = ROOT }
 			}
 			modifier = {
-				factor = 0.25
+				factor = 0.1
 				strength_ratio = {
 					tag = FROM
-					ratio > 1
+					ratio < 2
 				}
+			}
+			modifier = {
+				factor = 0.25
+				any_other_country = {
+					has_guaranteed = ROOT
+					is_major = yes
+					NOT = { tag = FROM }
+				}
+			}
+			modifier = {
+				factor = 10
+				surrender_progress > 0.5
 			}
 		}
 		trigger = {
@@ -1706,6 +1737,68 @@ country_event = { # XWX demands Annexation
 
 }
 
+country_event = { # XWE Reconcilliation
+	id = XWX_diplomatic_events.26
+	title = XWX_diplomatic_events.26.t
+	desc = XWX_diplomatic_events.26.desc
+	picture = GFX_report_event_chinese_japanese_handshake
+	is_triggered_only = yes
+
+	option = { 
+		name = XWX_diplomatic_events.26.a
+		FROM = {
+			if = {
+				limit = {
+					has_dlc = "Man the Guns"
+				}
+				diplomatic_relation = {
+					country = XWE
+					relation = embargo
+					active = no
+				}
+				XWE = {
+					diplomatic_relation = {
+						country = ROOT
+						relation = embargo
+						active = no
+					}
+				}
+				hidden_effect = {
+					remove_opinion_modifier = {
+						target = XWE
+						modifier = embargoed_us
+					}
+					XWE = {
+						remove_opinion_modifier = {
+							target = ROOT
+							modifier = embargoed_us
+						}
+					}
+				}
+			}
+			else = {
+				remove_opinion_modifier = {
+					target = XWE
+					modifier = embargo
+				}
+				XWE = {
+					remove_opinion_modifier = {
+						target = ROOT
+						modifier = embargo
+					}
+				}
+			}
+		}
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+		remove_opinion_modifier = {
+			target = ROOT
+			modifier = XWX_splinter_faction_modifier
+		}
+	}
+
+}
 news_event = { # KMT Coup
 	id = XWX_news_events.1
 	title = XWX_news_events.1.t

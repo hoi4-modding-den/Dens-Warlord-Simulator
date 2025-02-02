@@ -39,7 +39,7 @@ country_event = { # Chinese United Front Invitation
 				is_faction_leader = yes
 			}
 			modifier = {
-				factor = 25
+				factor = 50
 				XWX_has_kmt_regime = yes
 			}
 			modifier = {
@@ -51,7 +51,7 @@ country_event = { # Chinese United Front Invitation
 				FROM = { has_war_with = JAP }
 			}
 			modifier = {
-				factor = 0.75
+				factor = 0.9
 				NOT = {
 					any_neighbor_country = {
 						is_in_faction_with = FROM
@@ -86,6 +86,11 @@ country_event = { # Chinese United Front Invitation
 						value > 49
 					}
 				}
+			}
+			modifier = {
+				factor = 100
+				tag = XWX
+				has_completed_focus = XWX_message_the_central_government
 			}
 		}
 		effect_tooltip = {

@@ -41,9 +41,10 @@ leader_traits = {
 	XWX_kmt_marshal_trait = {
 		random = no
 
-		army_morale_factor = 0.03
+		experience_gain_army = 0.075
 		war_support_factor = 0.1 
 		initiative_factor = 0.05
+		equipment_capture_factor = 0.1
 
 		ai_will_do = {
 			factor = 1
@@ -53,7 +54,7 @@ leader_traits = {
 	XWX_japanese_snake_trait = {
 		random = no
 
-		equipment_capture_factor = 0.1
+		equipment_capture_factor = 0.25
 		attrition = -0.02
 		fascism_drift = 0.04
 
@@ -110,6 +111,7 @@ leader_traits = {
 		equipment_conversion_speed = 0.15
 		equipment_capture_factor = 0.07
 		conversion_cost_civ_to_mil_factor = -0.25
+		supply_node_range = 0.1
 
 		ai_will_do = {
 			factor = 1
@@ -121,7 +123,7 @@ leader_traits = {
 
 		weekly_manpower = 500
 		monthly_population = 0.15
-		army_morale_factor = 0.02
+		research_speed_factor = 0.07
 
 		ai_will_do = {
 			factor = 1
@@ -132,7 +134,8 @@ leader_traits = {
 		random = no
 
 		experience_gain_army = 0.05
-		army_core_defence_factor = 0.2
+		army_org_factor = 0.2
+		initiative_factor = 0.05
 		war_support_factor = 0.1
 
 		ai_will_do = {
@@ -144,8 +147,35 @@ leader_traits = {
 		random = no
 
 		political_power_gain = 0.1
-		research_speed_factor = 0.07
-		democratic_drift = 0.05
+		research_speed_factor = 0.12
+		scientist_breakthrough_bonus_factor = 0.05
+		democratic_drift = 0.04
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	XWX_father_of_new_china = {
+		random = no
+
+		political_power_gain = 0.1
+		army_morale_factor = 0.03
+		army_core_defence_factor = 0.05
+		compliance_growth = 0.02
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	XWX_mother_of_new_china = {
+		random = no
+
+		political_power_gain = 0.1
+		army_morale_factor = 0.03
+		army_core_defence_factor = 0.05
+		compliance_growth = 0.02
 
 		ai_will_do = {
 			factor = 1

@@ -6641,13 +6641,13 @@ operations = {
 			controls_state = 741
 		} 
 
+		activation = {
+			always = no
+		}
+
 		days_mission_timeout = 360
 
 		fire_only_once = yes
-
-		activation = {
-			has_completed_focus = CHI_overlordship_over_indochina
-		}
 		
 		complete_effect = {
 			add_political_power = 50
