@@ -40,8 +40,8 @@
  XHK_generate_popularity_fas: "§GInfluence§! the §Y[ROOT.GetNameWithFlag]§! to align §YFascist§!."
  XHK_generate_popularity_neu: "§GInfluence§! the §Y[ROOT.GetNameWithFlag]§! to align §YDespotic§!."
  
- XHK_generate_naval_1: "§GSend§! a §YNaval§! Advisor to the §Y[ROOT.GetNameWithFlag]§!."
- XHK_generate_indus_1: "§GSend§! a §YIndustrial§! Advisor to the §Y[ROOT.GetNameWithFlag]§!."
+ XHK_generate_naval: "§GSend§! a §YNaval§! Advisor to the §Y[ROOT.GetNameWithFlag]§!."
+ XHK_generate_indus: "§GSend§! a §YIndustrial§! Advisor to the §Y[ROOT.GetNameWithFlag]§!."
  
  XHK_become_XWE: "Country changes to §Y[XWE.GetNameWithFlag]§!"
  
@@ -64,6 +64,7 @@
  XHK_accept_ENG_guarantees: "Accept [ENG.GetAdjective] Guarantees"
  XHK_ENG_military_protection: "[ENG.GetAdjective] Military Protection"
  XHK_formal_declaration_of_cooperation: "Formal Declaration Of Cooperation"
+ 
  XHK_align_with_CHI: "Align With China"
  XHK_declare_support_for_chiang_kaishek: "Declare Support For Chiang Kai-Shek"
  XHK_help_with_the_CHI_overpopulation_crisis: "Help With The [CHI.GetAdjective] Overpopulation Crisis"
@@ -84,6 +85,23 @@
  XHK_reduce_religious_influences_in_macau: "Reduce Religious Influences In Macau"
  XHK_communist_industrial_expansion: "Communist Industrial Expansion"
  XHK_an_extension_of_the_revolution: "An Extension Of The Revolution"
+ 
+ XHK_look_to_POR: "Look To [POR.GetNameDef]"
+ XHK_project_timor: "Project Timor"
+ XHK_rubber_extraction_in_timor: "Rubber Extraction In Timor"
+ XHK_expand_the_rubber_plantations: "Expand The Rubber Plantations"
+ XHK_establish_new_local_businesses: "Establish New Local Businesses"
+ XHK_offshore_petroleum_development: "Offshore Petroleum Development"
+ XHK_convoy_escort_collaboration: "Convoy Escort Collaboration"
+ XHK_joint_destroyer_research: "Joint Destroyer Research"
+ XHK_excavation_cooperation: "Excavation Co-operation"
+ XHK_tungsten_purchase: "Tungsten Purchase"
+ XHK_new_iberian_ideals: "New Iberian Ideals"
+ XHK_state_visit_to_lisbon: "State Visit To Lisbon"
+ XHK_propose_the_timor_deal: "Propose The Timor Deal"
+ XHK_ongoing_negotiations_with_POR: "Ongoing Negotiations with [POR.GetNameDef]"
+ XHK_the_purchase_of_timor: "The Purchase of Timor"
+ XHK_sale_of_timor: "Sale of Timor"
 
  #FOCUS LOCALISATIONS
  XHK_army_effort: "Army Effort"

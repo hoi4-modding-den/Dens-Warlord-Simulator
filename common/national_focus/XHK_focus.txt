@@ -17,7 +17,7 @@ focus_tree={
 	default = no
 	reset_on_civilwar = no
 
-	continuous_focus_position = { x = 1000 y = 1000 }
+	continuous_focus_position = { x = 10000 y = 1000 }
 
 	focus = {
 		id = XHK_align_with_ENG
@@ -31,7 +31,7 @@ focus_tree={
 		available_if_capitulated = yes
 		available = {}
 		mutually_exclusive = {}
-		bypass = {}		
+		bypass = {}
 		
 		completion_reward = {
 			add_to_variable = { XHK_ENG_inf = 20 }
@@ -52,7 +52,7 @@ focus_tree={
 		available_if_capitulated = yes
 		available = {}
 		mutually_exclusive = {}
-		bypass = {}		
+		bypass = {}
 		
 		completion_reward = {
 			add_to_variable = { XHK_ENG_inf = 15 }
@@ -74,7 +74,7 @@ focus_tree={
 		available_if_capitulated = yes
 		available = {}
 		mutually_exclusive = {}
-		bypass = {}		
+		bypass = {}
 		
 		completion_reward = {
 			add_to_variable = { XHK_ENG_inf = 5 }
@@ -97,7 +97,7 @@ focus_tree={
 		available_if_capitulated = yes
 		available = {}
 		mutually_exclusive = {}
-		bypass = {}		
+		bypass = {}
 		
 		completion_reward = {
 			add_to_variable = { XHK_ENG_inf = 5 }
@@ -142,7 +142,7 @@ focus_tree={
 		available_if_capitulated = yes
 		available = {}
 		mutually_exclusive = {}
-		bypass = {}		
+		bypass = {}
 		
 		completion_reward = {
 			add_to_variable = { XHK_ENG_inf = 5 }
@@ -172,7 +172,7 @@ focus_tree={
 		completion_reward = {
 			add_to_variable = { XHK_ENG_inf = 5 }
 			custom_effect_tooltip = XHK_ENG_inf_gain
-			ENG = { custom_effect_tooltip = XHK_generate_naval_1 }
+			ENG = { custom_effect_tooltip = XHK_generate_naval }
 			generate_character = {
 				token_base = generic_navy_chief_decisive_bat # token will be TAG_token_base
 				advisor = {
@@ -461,7 +461,7 @@ focus_tree={
 		available_if_capitulated = yes
 		available = {}
 		mutually_exclusive = {}
-		bypass = {}		
+		bypass = {}
 		
 		completion_reward = {
 			add_to_variable = { XHK_CHI_inf = 20 }
@@ -618,7 +618,7 @@ focus_tree={
 		completion_reward = {
 			add_to_variable = { XHK_CHI_inf = 8 }
 			custom_effect_tooltip = XHK_CHI_inf_gain
-			CHI = { custom_effect_tooltip = XHK_generate_indus_1 }
+			CHI = { custom_effect_tooltip = XHK_generate_indus }
 			generate_character = {
 				token_base = generic_captain_of_industry # token will be TAG_token_base
 				advisor = {
@@ -1145,6 +1145,406 @@ focus_tree={
 				factor = 2
 				is_historical_focus_on = yes
 			}
+		}
+	}
+	
+	focus = {
+		id = XHK_look_to_POR
+		icon = GFX_focus_generic_befriend_portugal
+		#prerequisite = { focus =  }
+		x = 10
+		y = 0
+		relative_position_id = XHK_align_with_CHI
+		cost = @BASE_COST
+		
+		available_if_capitulated = yes
+		available = {}
+		mutually_exclusive = {}
+		bypass = {}
+		
+		completion_reward = {
+			add_to_variable = { XHK_POR_inf = 20 }
+			custom_effect_tooltip = XHK_POR_inf_gain
+			add_stability = 0.05
+		}
+	}
+	
+	focus = {
+		id = XHK_project_timor
+		icon = GFX_focus_generic_befriend_portugal
+		prerequisite = { focus = XHK_look_to_POR }
+		x = -2
+		y = 1
+		relative_position_id = XHK_look_to_POR
+		cost = @BASE_COST
+		
+		available_if_capitulated = yes
+		available = { POR = { owns_state = 721 } }
+		mutually_exclusive = {}
+		bypass = {}
+		
+		completion_reward = {
+			add_to_variable = { XHK_POR_inf = 5 }
+			custom_effect_tooltip = XHK_POR_inf_gain
+			add_equipment_to_stockpile = {
+				type = convoy
+				amount = 50
+				producer = ROOT
+			}
+			721 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = XHK_rubber_extraction_in_timor
+		icon = GFX_focus_generic_befriend_portugal
+		prerequisite = { focus = XHK_project_timor }
+		x = -1
+		y = 1
+		relative_position_id = XHK_project_timor
+		cost = @LOW_COST
+		
+		available_if_capitulated = yes
+		available = { POR = { owns_state = 721 } }
+		mutually_exclusive = {}
+		bypass = {}
+		
+		completion_reward = {
+			add_to_variable = { XHK_POR_inf = 10 }
+			custom_effect_tooltip = XHK_POR_inf_gain
+			add_resource = {
+				type = rubber
+				amount = 5
+				state = 729
+			}
+			add_resource = {
+				type = rubber
+				amount = 10
+				state = 721
+			}
+		}
+	}
+	
+	focus = {
+		id = XHK_expand_the_rubber_plantations
+		icon = GFX_focus_generic_befriend_portugal
+		prerequisite = { focus = XHK_rubber_extraction_in_timor }
+		x = 0
+		y = 1
+		relative_position_id = XHK_rubber_extraction_in_timor
+		cost = @HIGH_COST
+		
+		available_if_capitulated = yes
+		available = { POR = { owns_state = 721 } }
+		mutually_exclusive = {}
+		bypass = {}
+		
+		completion_reward = {
+			add_to_variable = { XHK_POR_inf = 15 }
+			custom_effect_tooltip = XHK_POR_inf_gain
+			add_resource = {
+				type = rubber
+				amount = 10
+				state = 729
+			}
+			add_resource = {
+				type = rubber
+				amount = 15
+				state = 721
+			}
+		}
+	}
+	
+	focus = {
+		id = XHK_establish_new_local_businesses
+		icon = GFX_focus_generic_befriend_portugal
+		prerequisite = { focus = XHK_project_timor }
+		x = 1
+		y = 1
+		relative_position_id = XHK_project_timor
+		cost = @BASE_COST
+		
+		available_if_capitulated = yes
+		available = { POR = { owns_state = 721 } }
+		mutually_exclusive = {}
+		bypass = {}
+		
+		completion_reward = {
+			add_to_variable = { XHK_POR_inf = 15 }
+			custom_effect_tooltip = XHK_POR_inf_gain
+			add_offsite_building = { type = industrial_complex level = 1 }
+			721 = {
+				add_extra_state_shared_building_slots = 2
+			}	
+		}
+	}
+	
+	focus = {
+		id = XHK_offshore_petroleum_development
+		icon = GFX_focus_generic_befriend_portugal
+		prerequisite = { focus = XHK_establish_new_local_businesses }
+		prerequisite = { focus = XHK_expand_the_rubber_plantations }
+		x = 2
+		y = 1
+		relative_position_id = XHK_expand_the_rubber_plantations
+		cost = @BASE_COST
+		
+		available_if_capitulated = yes
+		available = { POR = { owns_state = 721 } }
+		mutually_exclusive = {}
+		bypass = {}
+		
+		completion_reward = {
+			add_to_variable = { XHK_POR_inf = 5 }
+			custom_effect_tooltip = XHK_POR_inf_gain
+			add_resource = {
+				type = oil
+				amount = 8
+				state = 729
+			}
+			add_resource = {
+				type = oil
+				amount = 16
+				state = 721
+			}
+		}
+	}
+	
+	focus = {
+		id = XHK_convoy_escort_collaboration
+		icon = GFX_focus_generic_befriend_portugal
+		prerequisite = { focus = XHK_look_to_POR }
+		x = 2
+		y = 1
+		relative_position_id = XHK_look_to_POR
+		cost = @BASE_COST
+		
+		available_if_capitulated = yes
+		available = {}
+		mutually_exclusive = {}
+		bypass = {}
+		
+		completion_reward = {
+			add_to_variable = { XHK_POR_inf = 10 }
+			custom_effect_tooltip = XHK_POR_inf_gain
+			POR = { custom_effect_tooltip = XHK_generate_naval }
+			generate_character = {
+				token_base = generic_navy_anti_submarine # token will be TAG_token_base
+				advisor = {
+					slot = navy_chief
+					traits = { navy_anti_submarine_2 }
+					cost = 75
+				}
+				portraits = { 
+					army = { small = GFX_idea_generic_navy_anti_submarine }
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = XHK_joint_destroyer_research
+		icon = GFX_focus_generic_befriend_portugal
+		prerequisite = { focus = XHK_convoy_escort_collaboration }
+		x = -1
+		y = 1
+		relative_position_id = XHK_convoy_escort_collaboration
+		cost = @LOW_COST
+		
+		available_if_capitulated = yes
+		available = {}
+		mutually_exclusive = {}
+		bypass = {}
+		
+		completion_reward = {
+			add_to_variable = { XHK_POR_inf = 5 }
+			custom_effect_tooltip = XHK_POR_inf_gain
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = dd_tech
+			}
+			POR = {
+				add_tech_bonus = {
+					bonus = 0.5
+					uses = 1
+					category = dd_tech
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = XHK_excavation_cooperation
+		icon = GFX_focus_generic_befriend_portugal
+		prerequisite = { focus = XHK_establish_new_local_businesses focus = XHK_joint_destroyer_research }
+		x = 1
+		y = 1
+		relative_position_id = XHK_establish_new_local_businesses
+		cost = @BASE_COST
+		
+		available_if_capitulated = yes
+		available = {}
+		mutually_exclusive = {}
+		bypass = {}
+		
+		completion_reward = {
+			add_to_variable = { XHK_POR_inf = 5 }
+			custom_effect_tooltip = XHK_POR_inf_gain
+			add_tech_bonus = {
+				bonus = 0.75
+				uses = 2
+				category = industry
+			}
+			POR = {
+				add_tech_bonus = {
+					bonus = 0.75
+					uses = 1
+					category = industry
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = XHK_tungsten_purchase
+		icon = GFX_focus_generic_befriend_portugal
+		prerequisite = { focus = XHK_convoy_escort_collaboration }
+		x = 1
+		y = 1
+		relative_position_id = XHK_convoy_escort_collaboration
+		cost = @BASE_COST
+		
+		available_if_capitulated = yes
+		available = {}
+		mutually_exclusive = {}
+		bypass = {}
+		
+		completion_reward = {
+			add_to_variable = { XHK_POR_inf = 5 }
+			custom_effect_tooltip = XHK_POR_inf_gain
+			add_resource = {
+				type = tungsten
+				amount = 16
+				state = 729
+			}
+			POR = { 
+				add_offsite_building = { type = industrial_complex level = 1 }
+			}
+		}
+	}
+	
+	focus = {
+		id = XHK_new_iberian_ideals
+		icon = GFX_focus_generic_befriend_portugal
+		prerequisite = { focus = XHK_tungsten_purchase }
+		x = -1
+		y = 1
+		relative_position_id = XHK_tungsten_purchase
+		cost = @BASE_COST
+		
+		available_if_capitulated = yes
+		available = {}
+		mutually_exclusive = {}
+		bypass = {}
+		
+		completion_reward = {
+			add_to_variable = { XHK_POR_inf = 5 }
+			custom_effect_tooltip = XHK_POR_inf_gain
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.06
+			}
+			POR = { add_political_power = 40 }
+		}
+	}
+	
+	focus = {
+		id = XHK_state_visit_to_lisbon
+		icon = GFX_focus_generic_befriend_portugal
+		prerequisite = { focus = XHK_tungsten_purchase }
+		x = 1
+		y = 1
+		relative_position_id = XHK_tungsten_purchase
+		cost = @BASE_COST
+		
+		available_if_capitulated = yes
+		available = {}
+		mutually_exclusive = {}
+		bypass = {}
+		
+		completion_reward = {
+			add_to_variable = { XHK_POR_inf = 8 }
+			custom_effect_tooltip = XHK_POR_inf_gain
+			add_political_power = 100
+		}
+	}
+	
+	focus = {
+		id = XHK_propose_the_timor_deal
+		icon = GFX_focus_generic_befriend_portugal
+		prerequisite = { focus = XHK_new_iberian_ideals }
+		prerequisite = { focus = XHK_state_visit_to_lisbon }
+		x = 1
+		y = 1
+		relative_position_id = XHK_new_iberian_ideals
+		cost = @BASE_COST
+		
+		available_if_capitulated = yes
+		available = {}
+		mutually_exclusive = {}
+		bypass = {}
+		
+		completion_reward = {
+			add_to_variable = { XHK_POR_inf = 10 }
+			custom_effect_tooltip = XHK_POR_inf_gain
+			add_timed_idea = {
+				idea = XHK_ongoing_negotiations_with_POR
+				days = 540
+			}
+		}
+	}
+	
+	focus = {
+		id = XHK_the_purchase_of_timor
+		icon = GFX_focus_generic_befriend_portugal
+		prerequisite = { focus = XHK_offshore_petroleum_development }
+		prerequisite = { focus = XHK_propose_the_timor_deal }
+		x = 2
+		y = 1
+		relative_position_id = XHK_offshore_petroleum_development
+		cost = @BASE_COST
+		
+		available_if_capitulated = yes
+		available = {
+			POR = { owns_state = 721 }
+			NOT = { has_idea = XHK_ongoing_negotiations_with_POR } 
+		}
+		mutually_exclusive = {}
+		bypass = {}
+		
+		completion_reward = {
+			add_to_variable = { XHK_POR_inf = 30 }
+			custom_effect_tooltip = XHK_POR_inf_gain
+			add_state_core = 721
+			transfer_state = 721
+			POR = {
+				add_fuel = 4000
+				add_timed_idea = {
+					idea = XHK_sale_of_timor
+					days = 365
+				}
+			}
+		}
+		
+		ai_will_do = {
+			base = 5
 		}
 	}
 
