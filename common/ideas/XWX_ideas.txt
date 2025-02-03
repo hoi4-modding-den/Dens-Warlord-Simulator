@@ -642,10 +642,7 @@ ideas = {
 			}
 
 			cancel = {
-				OR = {
-					has_government = fascism
-					is_subject_of = JAP
-				}
+				NOT = { has_war_with = XWX }
 			}
 
             removal_cost = -1

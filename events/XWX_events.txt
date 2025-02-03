@@ -108,6 +108,9 @@ country_event = { # Second Commune Conference
 	is_triggered_only = yes
 
 	option = { # Centralists
+		ai_chance = {
+			base = 7
+		}
 		name = XWX_political_events.4.a
 		trigger = {
 			OR = {
@@ -126,6 +129,9 @@ country_event = { # Second Commune Conference
 	}
 
 	option = { # Federalists
+		ai_chance = {
+			base = 3
+		}
 		name = XWX_political_events.4.b
 		set_power_balance = {
 			id = XWX_communes_bop
@@ -1752,25 +1758,25 @@ country_event = { # XWE Reconcilliation
 					has_dlc = "Man the Guns"
 				}
 				diplomatic_relation = {
-					country = XWE
+					country = FROM
 					relation = embargo
 					active = no
 				}
-				XWE = {
+				ROOT = {
 					diplomatic_relation = {
-						country = ROOT
+						country = FROM
 						relation = embargo
 						active = no
 					}
 				}
 				hidden_effect = {
 					remove_opinion_modifier = {
-						target = XWE
+						target = FROM
 						modifier = embargoed_us
 					}
-					XWE = {
+					ROOT = {
 						remove_opinion_modifier = {
-							target = ROOT
+							target = FROM
 							modifier = embargoed_us
 						}
 					}
@@ -1778,10 +1784,10 @@ country_event = { # XWE Reconcilliation
 			}
 			else = {
 				remove_opinion_modifier = {
-					target = XWE
+					target = FROM
 					modifier = embargo
 				}
-				XWE = {
+				FROM = {
 					remove_opinion_modifier = {
 						target = ROOT
 						modifier = embargo
@@ -1793,7 +1799,7 @@ country_event = { # XWE Reconcilliation
 		custom_effect_tooltip = generic_skip_one_line_tt
 
 		remove_opinion_modifier = {
-			target = ROOT
+			target = FROM
 			modifier = XWX_splinter_faction_modifier
 		}
 	}

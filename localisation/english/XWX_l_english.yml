@@ -84,8 +84,7 @@ XWX_GATHERING_STORM_DESC: "The Gannan Peasant Republics are a collective in the 
  XWX_foreign_doctor: "Medical Professional"
  xWX_diplomatic_commander: "Military Representative"
  XWX_democratic_leader: "$XWX_democratic_reformer$"
- XWX_father_of_new_china: "Father of the New China"
- XWX_mother_of_new_china: "Mother of the New China"
+ XWX_founder_of_new_china: "Founder of the New China"
  XWX_feminist_revolutionary: "Feminist Revolutionary"
  XWX_feminist_revolutionary_improved: "$XWX_feminist_revolutionary$"
  XWX_democratic_reformer: "Liberal Technocrat"
@@ -102,6 +101,7 @@ XWX_GATHERING_STORM_DESC: "The Gannan Peasant Republics are a collective in the 
  XWX_aided_during_famine: "Aided us during Famine"
  XWX_refused_to_help: "Refused to help us"
  XWX_launched_raid_on_us: "Raided our Lands"
+ XWX_provincial_politics: "Provincial Politics Effort"
 
 
 # TRIGGERS
@@ -250,7 +250,7 @@ XWX_construction_decisions: "Construction Projects"
  XWX_urbanise_ganzi: "Develop Ganzi"
  XWX_urbanise_ganzi_desc: "The Ganzi region is the mountainous part of our nation, having only significance for the mining industry. Our development programme should modernise the infrastructure of the region to allow for larger settlements."
 
-XWX_army_improvement: "Provincial Army Command"
+XWX_army_improvement: "[ROOT.GetAdjectiveCap] Army Command"
 
  XWX_army_reform_decision: "Reform the Provincial Army"
  XWX_army_reform_decision_desc: "The Provincial Army is severly under-equipped and untrained. In its current state, it resembles more a bandit group than an actual army, partly because it is made of people's militia troops that were recruited for national defence while our nation was ill-prepared to take the fight to them."
@@ -733,7 +733,7 @@ XWX_bop_cat: "BoP Category"
  XWX_quick_militarisation: "Emergency Militarisation"
  XWX_quick_militarisation_desc: ""
  XWX_heavy_conscription: "Forced Conscription"
- XWX_heavy_conscription_desc: ""
+ XWX_heavy_conscription_desc: "$CHI_forced_conscription_desc$"
  XWX_civil_defence: "Civil Defence"
  XWX_civil_defence_desc: ""
  XWX_prepare_the_lands: "Prepare Defensive Positions"

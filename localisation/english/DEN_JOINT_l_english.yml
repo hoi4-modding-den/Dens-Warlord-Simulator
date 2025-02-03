@@ -4,6 +4,8 @@
 
  DEN_is_chinese_country_tt: "Is a §YChinese Warlord§!."
  DEN_is_chinese_country_tt_NOT: "Is not a §YChinese Warlord§!."
+ DEN_controls_all_chinese_states_tt: "Controls all §YChinese§! States."
+ DEN_controls_all_chinese_states_tt_NOT: "Does not control all §YChinese§! States."
  DEN_is_chinese_state_tt: "Is a §YChinese§! State."
  DEN_is_chinese_state_tt_NOT: "Is not a §YChinese§! State."
 

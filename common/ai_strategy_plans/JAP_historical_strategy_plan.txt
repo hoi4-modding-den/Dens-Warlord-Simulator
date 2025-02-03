@@ -42,7 +42,7 @@ JAP_historical_plan = {
 		JAP_new_naval_estimates #October 10 1936	
 		JAP_army_expansion #December 20 1936	
 
-		#1937 // Changed the timing so that Chinese Nations have some time for other stuff, dates are no longer accurate
+		#1937 // Changed the timing so that Chinese Nations have some time for other stuff, dates and other comments are no longer accurate
 		JAP_liaison_conference # February 30 1937	
 		JAP_greater_east_asian_co_prosperity_sphere #Completed May 5 1937	
 		JAP_fighter_modernization #September 30 1937	
@@ -74,7 +74,6 @@ JAP_historical_plan = {
 		#1941
 		JAP_strike_south_doctrine # Was completed December 26th 1940	was JAP_sign_tripartite_pact
 		JAP_non_aggression_pact_with_the_soviet_union # Was completed April 10th 1941	OBS: was made into 35 days
-		# Prepare the navy branch for invasions, also allows for a more historical attack date on the USA
 		JAP_secure_the_philippines # Was completed August 28th 1941, HISOTRICALLY HAPPENED December 8th 1941  
 		JAP_expand_the_snlf # Was completed June 19th 1941 
 		JAP_strike_on_the_southern_resource_area # Was completed November 6th 1941
@@ -82,7 +81,7 @@ JAP_historical_plan = {
 
 		#1942
 		JAP_alliance_with_siam #January 20 1941	was JAP_range_focus
-		JAP_modern_artillery #June 10 1941	
+		JAP_secure_china #June 10 1941	
 		JAP_range_focus #January 10	was JAP_alliance_with_siam
 		JAP_strategic_bomber_effort #March 20 1942	
 		JAP_modern_escorts #May 30 1942	
@@ -91,7 +90,7 @@ JAP_historical_plan = {
 		JAP_warrior_spirit #December 30 1942	
 		JAP_coal_liquification #March 10 1943	
 		JAP_exploit_the_southern_resource_area #May 20 1943	
-		JAP_secure_china #July 30 1943	
+		JAP_modern_artillery #July 30 1943	
 		JAP_unified_fighter_development
 
 		JAP_jet_prototypes

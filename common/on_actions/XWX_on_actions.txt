@@ -53,6 +53,22 @@ on_actions = {
 				}
 			}
 
+			# OPINION MODIFIER
+
+			if = {
+				limit = {
+					original_tag = XWX
+					NOT = { has_government = communism }
+					XWE = { has_opinion_modifier = XWX_splinter_faction_modifier }
+				}
+				XWE = {
+					remove_opinion_modifier = {
+						target = ROOT
+						modifier = XWX_splinter_faction_modifier
+					}
+				}
+			}
+
 			# COSMETIC TAGS
 
             if = {

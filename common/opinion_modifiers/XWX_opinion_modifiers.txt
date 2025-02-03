@@ -32,5 +32,9 @@ opinion_modifiers = {
 		value = -20
 		decay = 5
 	}
+
+	XWX_provincial_politics = {
+		value = 45
+	}
 	
 }

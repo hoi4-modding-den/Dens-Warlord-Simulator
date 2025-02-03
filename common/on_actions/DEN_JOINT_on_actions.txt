@@ -1,4 +1,14 @@
 on_actions = {
+	on_startup = {
+		effect = {
+			every_state = {
+				limit = {
+					DEN_is_chinese_state = yes
+				}
+				add_core_of = CHI
+			}
+		}
+	}
 	on_war_relation_added = {
 		effect = {
 			if = {
@@ -36,27 +46,6 @@ on_actions = {
 				}
 				THIS = { clr_country_flag = DEN_JOINT_uf_leader_got_attacked }
 				set_country_flag = DEN_JOINT_japan_threat_defeated # allows dissolving of the United Front
-			}
-		}
-	}
-
-	on_peaceconference_started = {
-		effect = {
-			if = {
-				limit = {
-					ROOT = { tag = JAP }
-					FROM = {
-						DEN_is_chinese_country = yes
-					}
-				}
-				FROM = {
-					every_core_state = {
-						limit = {
-							NOT = { is_core_of = CHI }
-						}
-						add_core_of = CHI
-					}
-				}
 			}
 		}
 	}

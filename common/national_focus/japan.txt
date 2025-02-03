@@ -1300,17 +1300,25 @@
 		}
 
 		available = {
-			CHI = {
-				surrender_progress > 0.3
+			OR = {
+				CHI = {
+					surrender_progress > 0.4
+				}
+				XWE = {
+					surrender_progress > 0.4
+				}
+				XBG = {
+					has_capitulated = yes
+				}
+				XMC = {
+					has_capitulated = yes
+				}
 			}
 			has_war_with = USA
 		}
 
 		bypass = {
-			OR = {
-				NOT = { JAP_has_idea_JAP_intervene_in_china = yes }
-				CHI = { has_capitulated = yes }
-			}
+			DEN_controls_all_chinese_states = yes
 		}
 
 		cancel_if_invalid = yes
@@ -1330,7 +1338,23 @@
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
-			USA = { add_war_support = 0.05 }	
+			every_other_country = {
+				limit = {
+					DEN_is_chinese_country = yes
+					NOT = { is_ally_with = ROOT }
+					NOT = { has_war_with = ROOT }
+				}
+				ROOT = {
+					create_wargoal = {
+						target = PREV
+						type = annex_everything
+					}
+				}
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			USA = { add_war_support = 0.1 }	
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 

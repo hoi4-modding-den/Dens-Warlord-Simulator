@@ -812,15 +812,9 @@
 			modifier = {
 				factor = 0.5
 				OR = {
-					XWX = {
-						OR = {
-							has_war_with = ROOT
-							exists = no
-							AND = {
-								is_subject = yes
-								NOT = { is_subject_of = ROOT }
-							}
-						}
+					any_other_country = {
+						DEN_is_chinese_country = yes
+						has_war_with = ROOT
 					}
 					NOT = { any_other_country = { has_country_flag = DEN_JOINT_will_join_united_front } }
 					NOT = { any_other_country = { is_guaranteed_by = ROOT DEN_is_chinese_country = yes } }
@@ -878,6 +872,28 @@
 					country_event = {
 						id = DEN_JOINT_china.1
 						random_hours = 6
+					}
+				}
+			}
+
+			if = {
+				limit = {
+					any_other_country = {
+						DEN_is_chinese_country = yes
+						has_war_with = JAP
+						is_subject = no
+					}
+				}
+				custom_effect_tooltip = generic_skip_one_line_tt
+
+				every_other_country = {
+					limit = {
+						DEN_is_chinese_country = yes
+						has_war_with = JAP
+						is_subject = no
+					}
+					ROOT = {
+						add_to_faction = PREV
 					}
 				}
 			}
@@ -1093,10 +1109,6 @@
 				custom_effect_tooltip = generic_skip_one_line_tt
 			}
 			unlock_decision_category_tooltip = CHI_integrate_the_warlords
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-
-			DEN_JOINT_give_cores_on_chinese_states = yes
 		}
 	}
 

@@ -1846,9 +1846,6 @@ shared_focus = {
 				}
 			}
 		}
-		custom_effect_tooltip = generic_skip_one_line_tt
-
-		DEN_JOINT_give_cores_on_chinese_states = yes
 	}
 }
 

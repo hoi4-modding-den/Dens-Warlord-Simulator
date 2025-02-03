@@ -158,7 +158,7 @@ focus_tree = {
 				}
 				add_opinion_modifier = {
 					target = ROOT
-					modifier = medium_increase
+					modifier = XWX_provincial_politics
 				}
 			}
 		}
@@ -280,10 +280,6 @@ focus_tree = {
 
 		ai_will_do = {
 			base = 0
-            modifier = {
-                add = 300
-                XWX_go_commie_path = yes
-            }
 		}
 
 		available = {
@@ -538,6 +534,12 @@ focus_tree = {
 							}
 						}
 					}
+				}
+				if = {
+					limit = {
+						has_country_flag = XWX_hired_hu_lanqi
+					}
+					activate_advisor = XWX_hu_lanqi
 				}
 			}
 
@@ -971,6 +973,11 @@ focus_tree = {
                 factor = 0
                 XWX_go_kmt_path = yes
             }
+			modifier = {
+				factor = 3
+				XWX_go_commie_path = yes
+				has_country_flag = XWX_ai_prioritise_federalists
+			}
 		}
 
 		available = {
@@ -1170,7 +1177,7 @@ focus_tree = {
 		cost = 8
 
 		ai_will_do = {
-			base = 120
+			base = 200
 		}
 
 		available = {
@@ -1240,6 +1247,14 @@ focus_tree = {
 
 		cost = 5
 
+		ai_will_do = {
+			base = 120
+			modifier = {
+				factor = 3
+				has_completed_focus = XWX_worker_rights
+			}
+		}
+
 		available = {
 			has_government = communism
 			
@@ -1279,6 +1294,14 @@ focus_tree = {
 		relative_position_id = XWX_hold_local_elections
 
 		cost = 5
+
+		ai_will_do = {
+			base = 120
+			modifier = {
+				factor = 3
+				has_completed_focus = XWX_work_against_corruption
+			}
+		}
 
 		available = {
 			has_government = communism
@@ -1320,6 +1343,10 @@ focus_tree = {
 		relative_position_id = XWX_hold_local_elections
 
 		cost = 8
+
+		ai_will_do = {
+			base = 120
+		}
 
 		available = {
 			has_government = communism
@@ -1585,7 +1612,7 @@ focus_tree = {
 		ai_will_do = {
 			base = 0
             modifier = {
-                add = 100
+                add = 1000
                 OR = {
 					has_completed_focus = XWX_peasant_army
 					has_completed_focus = XWX_peasants_revolution
@@ -1769,9 +1796,7 @@ focus_tree = {
 		cost = 3
 
 		available = {
-			all_core_state = {
-				is_controlled_by = ROOT
-			}
+			DEN_controls_all_chinese_states = yes
 		}
 
 		bypass = {
@@ -1815,18 +1840,7 @@ focus_tree = {
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
-			if = {
-				limit = {
-					any_character = {
-						is_country_leader = yes
-						is_female = no
-					}
-				}
-				add_country_leader_trait = XWX_father_of_new_china
-			} 
-			else = {
-				add_country_leader_trait = XWX_mother_of_new_china
-			}
+			add_country_leader_trait = XWX_founder_of_new_china
 
 			every_other_country = {
 				limit = { 
@@ -1860,12 +1874,16 @@ focus_tree = {
 		cost = 8
 
 		available = {
+			DEN_controls_all_chinese_states = yes
 			is_subject = no
 		}
 
 		bypass = {
 
 		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
 
 		will_lead_to_war_with = XFC
 
@@ -1919,6 +1937,7 @@ focus_tree = {
 		cost = 8
 
 		available = {
+			DEN_controls_all_chinese_states = yes
 			is_subject = no
 		}
 
@@ -1927,6 +1946,9 @@ focus_tree = {
 				is_subject_of = ROOT
 			}
 		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
 
 		will_lead_to_war_with = MON
 
@@ -1994,6 +2016,10 @@ focus_tree = {
 
 		cost = 8
 
+		ai_will_do = {
+			base = 120
+		}
+
 		available = {
 			has_government = communism
 			has_idea = XWX_liberation_efforts
@@ -2046,6 +2072,14 @@ focus_tree = {
 
 		cost = 10
 
+		ai_will_do = {
+			base = 100
+			modifier = {
+				factor = 0.25
+				has_war = yes
+			}
+		}
+
 		available = {
 			has_government = communism
 			is_subject = no
@@ -2085,6 +2119,10 @@ focus_tree = {
 
 		cost = 10
 
+		ai_will_do = {
+			base = 200
+		}
+
 		available = {
 			has_government = communism
 			
@@ -2115,6 +2153,10 @@ focus_tree = {
 		relative_position_id = XWX_enforce_revolutionary_doctrine
 
 		cost = 8
+
+		ai_will_do = {
+			base = 200
+		}
 
 		available = {
 			has_government = communism
@@ -2148,7 +2190,7 @@ focus_tree = {
 		cost = 5
 
 		ai_will_do = {
-			base = 500
+			base = 1000
 		}
 
 		available = {
@@ -2829,15 +2871,16 @@ focus_tree = {
 		}
 
 		available = {
-			all_core_state = {
-				is_controlled_by = ROOT
-			}
+			DEN_controls_all_chinese_states = yes
 			is_subject = no
 		}
 
 		bypass = {
 
 		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
 
 		will_lead_to_war_with = XFC
 
@@ -2899,9 +2942,7 @@ focus_tree = {
 		}
 
 		available = {
-			all_core_state = {
-				is_controlled_by = ROOT
-			}
+			DEN_controls_all_chinese_states = yes
 			is_subject = no
 		}
 
@@ -2911,11 +2952,25 @@ focus_tree = {
 			}
 		}
 
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+
 		will_lead_to_war_with = MON
 
 		search_filters = { FOCUS_FILTER_ANNEXATION }
 		completion_reward = {
-			MON = { country_event = generic.20 }
+			if = {
+				limit = {
+					is_subject = no
+				}	
+				MON = { country_event = generic.20 }
+			}
+			else = {
+				create_wargoal = {
+					target = MON
+					type = puppet_wargoal_focus
+				}
+			}
 		}
 	}
 
@@ -3581,11 +3636,11 @@ focus_tree = {
 		cost = 8
 
 		ai_will_do = {
-			base = 150
+			base = 200
 		}
 
 		available = {
-			num_of_civilian_factories > 14
+			num_of_civilian_factories > 11
 		}
 
 		bypass = {
@@ -3763,6 +3818,10 @@ focus_tree = {
 
 		ai_will_do = {
 			base = 75
+			modifier = {
+				factor = 0
+				has_country_flag = XWX_ai_prioritise_centralists
+			}
 		}
 
 		available = {
@@ -3833,6 +3892,10 @@ focus_tree = {
 
 		ai_will_do = {
 			base = 75
+			modifier = {
+				factor = 0
+				has_country_flag = XWX_ai_prioritise_federalists
+			}
 		}
 
 		available = {
@@ -4535,7 +4598,11 @@ focus_tree = {
 		}
 
 		available = {
-			has_war = yes
+			any_neighbor_state = {
+				controller = {
+					has_war_with = ROOT
+				}
+			}
 			OR = {
 				longest_war_length > 12
 				surrender_progress > 0.2
@@ -4918,7 +4985,7 @@ focus_tree = {
 		cost = 5
 
 		ai_will_do = {
-			base = 1000
+			base = 200
 		}
 
 		available = {

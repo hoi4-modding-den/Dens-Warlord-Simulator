@@ -101,7 +101,7 @@ XWX_kmt_insurgency_cat = {
             
         }
 
-        cost = 50
+        cost = 40
 
         ai_will_do = {
 			base = 100
@@ -139,7 +139,7 @@ XWX_kmt_insurgency_cat = {
             
         }
 
-        cost = 75
+        cost = 60
 
         ai_will_do = {
 			base = 75
@@ -173,7 +173,7 @@ XWX_kmt_insurgency_cat = {
             
         }
 
-        cost = 50
+        cost = 30
 
         ai_will_do = {
 			base = 0
@@ -676,7 +676,12 @@ XWX_army_improvement = {
         remove_effect = {
             XWX_improve_provincial_army = yes
         }
+    
     }
+
+    # XWX_acquire_motorised_equipment // Get Trucks
+
+    # XWX_mobilise_civil_defence_union // temp weekly_manpower and equipment_capture_factor
 
     XWX_raid_neighbouring_states = {
 

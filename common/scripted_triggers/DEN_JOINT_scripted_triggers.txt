@@ -26,6 +26,18 @@ DEN_is_chinese_country_wo_tt = { # this also needs to be updated in ideas/japan.
 	}
 }
 
+DEN_controls_all_chinese_states = {
+	custom_trigger_tooltip = {
+		tooltip = DEN_controls_all_chinese_states_tt
+		all_state = {
+			OR = {
+				DEN_is_chinese_state = no
+				is_controlled_by = ROOT
+			}
+		}
+	}
+}
+
 DEN_is_chinese_state = {
 	custom_trigger_tooltip = {
 		tooltip = DEN_is_chinese_state_tt

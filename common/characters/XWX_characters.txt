@@ -141,6 +141,13 @@ characters = {
 				XWX_feminist_revolutionary
 			}
 
+			on_add = {
+				ROOT = { set_country_flag = XWX_feminist_rev_hired }
+			}
+			on_remove = {
+				ROOT = { clr_country_flag = XWX_feminist_rev_hired}
+			}
+
 		}
 
 		country_leader = {
