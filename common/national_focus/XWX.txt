@@ -403,7 +403,7 @@ focus_tree = {
 		icon = GFX_goal_generic_positive_trade_relations
 		prerequisite = { focus = XWX_reconcile_with_prc focus = XWX_maintain_course }
 		#mutually_exclusive = { focus = }
-		x = -1
+		x = -2
 		y = 1
 		relative_position_id = XWX_maintain_course
 
@@ -1017,7 +1017,7 @@ focus_tree = {
 		icon = GFX_focus_AUS_lawmaking_leniency
 		prerequisite = { focus = XWX_guarantee_military_loyalty focus = XWX_worker_judiciary }
 		#mutually_exclusive = { focus = }
-		x = -1
+		x = 0
 		y = 1
 		relative_position_id = XWX_worker_judiciary
 
@@ -1052,8 +1052,8 @@ focus_tree = {
 		icon = GFX_focus_prc_proclaim_the_peoples_republic
 		prerequisite = { focus = XWX_maintain_course focus = XWX_reconcile_with_prc }
 		mutually_exclusive = { focus = XWX_kmt_coup }
-		x = -5
-		y = 5
+		x = -6
+		y = 4
 		relative_position_id = XWX_communal_report_1936
 
 		cost = 5
@@ -1098,7 +1098,7 @@ focus_tree = {
 		icon = GFX_focus_generic_china1
 		prerequisite = { focus = XWX_guarantee_military_loyalty }
 		mutually_exclusive = { focus = XWX_workers_victory }
-		x = 10
+		x = 12
 		y = 0
 		relative_position_id = XWX_workers_victory
 
@@ -1133,6 +1133,319 @@ focus_tree = {
 		}
 	}
 
+	shared_focus = {
+		id = XWX_international_volunteer_group
+		icon = GFX_focus_chi_mission_to_the_soviet_union
+		prerequisite = { focus = XWX_workers_victory focus = XWX_kmt_coup }
+		mutually_exclusive = { focus = XWX_french_assistance focus = XWX_british_trade_deal focus = XWX_german_military_mission }
+		x = -5
+		y = 2
+		relative_position_id = XWX_prevent_another_famine
+
+		cost = 6
+
+		available = { 
+			country_exists = SOV
+			NOT = { has_war_with = SOV }
+			OR = {
+				AND = {
+					has_government = SOV
+					SOV = {
+						has_opinion = {
+							target = ROOT
+						value > 19
+						}
+					}
+				}
+				SOV = {
+					has_opinion = {
+						target = ROOT
+					value > 79
+					}
+				}
+			}
+		}
+
+		ai_will_do = {
+			base = 1000
+		}
+
+		search_filters = { FOCUS_FILTER_MANPOWER }
+		completion_reward = {
+			add_manpower = 20000
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 5000
+				producer = "SOV"
+			}
+			add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 750
+				producer = "SOV"
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			SOV = { country_event = XWX_diplomatic_events.32 }
+
+			SOV = {
+				add_ai_strategy = {
+					type = send_lend_lease_desire
+					id = ROOT
+					value = 100
+				}
+				add_ai_strategy = {
+					type = send_volunteers_desire
+					id = ROOT
+					value = 100
+				}
+			}
+		}
+	}
+
+	shared_focus = {
+		id = XWX_french_assistance
+		icon = GFX_focus_chi_reach_out_to_france
+		prerequisite = { focus = XWX_workers_victory focus = XWX_kmt_coup }
+		mutually_exclusive = { focus = XWX_international_volunteer_group focus = XWX_british_trade_deal focus = XWX_german_military_mission }
+		x = -1
+		y = 2
+		relative_position_id = XWX_prevent_another_famine
+
+		cost = 6
+
+		available = { 
+			country_exists = FRA
+			NOT = { has_war_with = FRA }
+			OR = {
+				AND = {
+					has_government = FRA
+					FRA = {
+						has_opinion = {
+							target = ROOT
+						value > 19
+						}
+					}
+				}
+				FRA = {
+					has_opinion = {
+						target = ROOT
+					value > 79
+					}
+				}
+			}
+			286 = {
+				owner = {
+					controls_state = 286
+					OR = {
+						tag = FRA
+						is_subject_of = FRA
+					}
+				}
+			}
+		}
+
+		ai_will_do = {
+			base = 1000
+		}
+
+		search_filters = {  }
+		completion_reward = {
+			if = {
+				limit = {
+					286 = { owner = { is_subject = yes } }
+				}
+				286 = {
+					owner = {
+						OVERLORD = {
+							country_event = {
+								id = XWX_diplomatic_events.28
+								hours = 3
+							}
+						}
+					}
+				}
+			}
+			else = {
+				286 = {
+					owner = {
+						country_event = {
+							id = XWX_diplomatic_events.28
+							hours = 3
+						}
+					}
+				}
+			}
+			custom_effect_tooltip = if_they_accept_tt
+			event_option_tooltip = XWX_diplomatic_events.29.a
+
+			FRA = {
+				add_ai_strategy = {
+					type = send_lend_lease_desire
+					id = ROOT
+					value = 100
+				}
+				add_ai_strategy = {
+					type = send_volunteers_desire
+					id = ROOT
+					value = 100
+				}
+			}
+		}
+	}
+
+	shared_focus = {
+		id = XWX_british_trade_deal
+		icon = GFX_focus_chi_british_cooperation
+		prerequisite = { focus = XWX_workers_victory focus = XWX_kmt_coup }
+		mutually_exclusive = { focus = XWX_international_volunteer_group focus = XWX_french_assistance focus = XWX_german_military_mission }
+		x = 1
+		y = 2
+		relative_position_id = XWX_prevent_another_famine
+
+		cost = 6
+
+		available = { 
+			country_exists = ENG
+			NOT = { has_war_with = ENG }
+			OR = {
+				AND = {
+					has_government = ENG
+					ENG = {
+						has_opinion = {
+							target = ROOT
+						value > 19
+						}
+					}
+				}
+				ENG = {
+					has_opinion = {
+						target = ROOT
+					value > 79
+					}
+				}
+			}
+			326 = {
+				owner = {
+					controls_state = 326
+					NOT = { has_war_with = ROOT }
+				}
+			}
+		}
+
+		ai_will_do = {
+			base = 150
+			modifier = {
+				add = 50
+				is_ally_with = XHK
+			}
+		}
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			add_offsite_building = {
+				type = industrial_complex
+				level = 4
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			326 = {
+				owner = {
+					country_event = {
+						id = XWX_diplomatic_events.27
+						hours = 3
+					}
+				}
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = the_following_will_happen_TT
+
+			event_option_tooltip = XWX_diplomatic_events.27.a
+
+			ENG = {
+				add_ai_strategy = {
+					type = send_lend_lease_desire
+					id = ROOT
+					value = 100
+				}
+				add_ai_strategy = {
+					type = send_volunteers_desire
+					id = ROOT
+					value = 100
+				}
+			}
+		}
+	}
+
+	shared_focus = {
+		id = XWX_german_military_mission
+		icon = GFX_focus_chi_mission_to_germany
+		prerequisite = { focus = XWX_workers_victory focus = XWX_kmt_coup }
+		mutually_exclusive = { focus = XWX_international_volunteer_group focus = XWX_french_assistance focus = XWX_british_trade_deal }
+		x = 5
+		y = 2
+		relative_position_id = XWX_prevent_another_famine
+
+		cost = 6
+
+		available = { 
+			country_exists = GER
+			NOT = { has_war_with = GER }
+			OR = {
+				AND = {
+					has_government = GER
+					GER = {
+						has_opinion = {
+							target = ROOT
+						value > 19
+						}
+					}
+				}
+				GER = {
+					has_opinion = {
+						target = ROOT
+					value > 79
+					}
+				}
+			}
+		}
+
+		ai_will_do = {
+			base = 150
+		}
+
+		search_filters = { FOCUS_FILTER_ARMY_XP }
+		completion_reward = {
+			army_experience = 40
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_ideas = XWX_german_advisors
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			GER = { country_event = XWX_diplomatic_events.33 }
+
+			GER = {
+				add_ai_strategy = {
+					type = send_lend_lease_desire
+					id = ROOT
+					value = 100
+				}
+				add_ai_strategy = {
+					type = send_volunteers_desire
+					id = ROOT
+					value = 100
+				}
+			}
+		}
+	}
+
 # Maintain the Peasant Republic
 
 	shared_focus = {
@@ -1140,8 +1453,8 @@ focus_tree = {
 		icon = GFX_focus_generic_join_comintern
 		#prerequisite = { focus =  }
 		#mutually_exclusive = { focus = XWX_workers_victory }
-		x = 5
-		y = 1
+		x = 6
+		y = 2
 		relative_position_id = XWX_workers_victory
 
 		cost = 5
@@ -2183,8 +2496,8 @@ focus_tree = {
 		icon = GFX_goal_generic_political_pressure
 		#prerequisite = { focus =  }
 		#mutually_exclusive = { focus =  }
-		x = 5
-		y = 1
+		x = 6
+		y = 2
 		relative_position_id = XWX_workers_victory
 
 		cost = 5
@@ -2786,7 +3099,7 @@ focus_tree = {
 						tag = CHI
 						ratio < 2
 					}
-					date < 1940.01.01
+					date > 1940.01.01
 				}
 			}
 		}
@@ -4598,9 +4911,11 @@ focus_tree = {
 		}
 
 		available = {
-			any_neighbor_state = {
-				controller = {
-					has_war_with = ROOT
+			any_controlled_state = {
+				any_neighbor_state = {
+					controller = {
+						has_war_with = ROOT
+					}
 				}
 			}
 			OR = {
@@ -4843,7 +5158,7 @@ focus_tree = {
 
 		}
 
-		search_filters = { FOCUS_FILTER_AIR_XPFOCUS_FILTER_ }
+		search_filters = { FOCUS_FILTER_AIR_XP }
 		completion_reward = {
 			air_experience = 50
 			custom_effect_tooltip = generic_skip_one_line_tt

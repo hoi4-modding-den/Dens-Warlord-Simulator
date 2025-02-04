@@ -152,6 +152,8 @@ XWX_GATHERING_STORM_DESC: "The Gannan Peasant Republics are a collective in the 
  XWX_safeguard_china_idea_desc: "Thanks to preemptive plans for the evacuation of important United Front Leaders, they can continue the fight while in exile in our nation."
  XWX_defensive_preparations: "Defensive Preparations"
  XWX_anti_japan_bonus: "Anti-Japanese Tactics"
+ XWX_rubber_sale_cost: "Indochinese Rubber Payments"
+ XWX_german_advisors: "[GER.GetAdjectiveCap] Military Attache"
 
  XWX_land_reform: "Land Reform"
  XWX_famine: "The Second Gannan Famine"
@@ -516,6 +518,35 @@ XWX_bop_cat: "BoP Category"
  XWX_diplomatic_events.26.desc: "Members of the Peasant Collectives in Gannan have approached us with the request to put past quarrels behind us. While their existence is controversial within our country, [ROOT.GetLeader] has accepted their proposal, citing 'Socialist Unity' and 'Left Cooperation' as reasons as to why."
  XWX_diplomatic_events.26.a: "Perhaps we can work together."
 
+ XWX_diplomatic_events.27.t: "[FROM.GetAdjectiveCap] Acquisition of [ENG.GetAdjective] Assets in Hong Kong"
+ XWX_diplomatic_events.27.desc: "The [FROM.GetAdjective] government has made a deal with the [ENG.GetAdjective] to sell them industrial complexes in Hong Kong. The [FROM.GetAdjective] committee overseeing this transaction have approached us with the offer to invest in infrastructure surrounding their newly acquired factories, improving the situation for the both of us."
+ XWX_diplomatic_events.27.a: "A good deal."
+
+ XWX_diplomatic_events.28.t: "[FROM.GetNameDefCap] requests sale of Indochinese Rubber"
+ XWX_diplomatic_events.28.desc: "The [FROM.GetAdjective] government wants to buy the produce of our rubber plantations in Indochina. They have offered significant payment."
+ XWX_diplomatic_events.28.a: "We can agree on this."
+ XWX_diplomatic_events.28.b: "What a stupid deal."
+
+ XWX_diplomatic_events.29.t: "[FROM.GetNameDefCap] approve Rubber Sale"
+ XWX_diplomatic_events.29.desc: "The [FROM.GetAdjective] government has accepted our offer and will sell us the rights to their rubber plantations."
+ XWX_diplomatic_events.29.a: "It was worth it."
+
+ XWX_diplomatic_events.30.t: "[FROM.GetNameDefCap] refuse to sell us Rubber"
+ XWX_diplomatic_events.30.desc: "The [FROM.GetAdjective] government has refused to sell us the rights to their rubber plantations."
+ XWX_diplomatic_events.30.a: "Damn them!"
+
+ XWX_diplomatic_events.31.t: "Our [OVERLORD.GetAdjective] Overlords sell our Rubber!"
+ XWX_diplomatic_events.31.desc: "Our [OVERLORD.GetAdjective] Overlords have made the decision to sell the rights to our rubber plantations to [XWX.GetNameDef]. To appease our government, they have decided to invest some of that money into our infrastructure."
+ XWX_diplomatic_events.31.a: "But what about us?"
+
+ XWX_diplomatic_events.32.t: "[FROM.GetNameDefCap] call for [ROOT.GetAdjective] Volunteers"
+ XWX_diplomatic_events.32.desc: "The [FROM.GetAdjective] Government has called out for support from our people to aid them in their struggle."
+ XWX_diplomatic_events.32.a: "Let them have it."
+
+ XWX_diplomatic_events.33.t: "The [FROM.GetAdjective] Attache"
+ XWX_diplomatic_events.33.desc: "The [FROM.GetAdjective] Government has approached us in request to aid the expansion of the military forces by sending advisors to train their commanders."
+ XWX_diplomatic_events.33.a: "Anything for a friend."
+
  XWX_news_events.1.t: "Kuomintang Coup in Gannan"
  XWX_news_events.1.desc: "News today from the Chinese Province of Gannan, where the Communist government of the 'Peasant Republics of Gannan' was overthrown by members of the Kuomintang. They were backed by Chiang Kai-Shek's Central Government, which enabled them to overthrow the Communist regime without significant displays of violence."
  XWX_news_events.1.a: "Good Work, Brothers!"
@@ -602,6 +633,15 @@ XWX_bop_cat: "BoP Category"
  XWX_judicial_codex: "Merge Legislative and Executive"
  XWX_judicial_codex_desc: ""
  XWX_judicial_codex_tt: "If you switch §Ycountry leaders§!, they will §Gkeep§! this §Ytrait§!."
+
+ XWX_international_volunteer_group: "[SOV.GetAdjectiveCap] Volunteer Group"
+ XWX_international_volunteer_group_desc: ""
+ XWX_french_assistance: "[FRA.GetAdjectiveCap] Colonial Rubber"
+ XWX_french_assistance_desc: ""
+ XWX_british_trade_deal: "[ENG.GetAdjectiveCap] Hong Kong Industry Sale"
+ XWX_british_trade_deal_desc: ""
+ XWX_german_military_mission: "[GER.GetAdjectiveCap] Military Advisors"
+ XWX_german_military_mission_desc: ""
 
  XWX_workers_victory: "The Worker State Secured"
  XWX_workers_victory_desc: ""

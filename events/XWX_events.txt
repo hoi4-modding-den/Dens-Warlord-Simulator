@@ -1805,6 +1805,314 @@ country_event = { # XWE Reconcilliation
 	}
 
 }
+
+country_event = { # XWX buys British industry in Hong Kong
+	id = XWX_diplomatic_events.27
+	title = XWX_diplomatic_events.27.t
+	desc = XWX_diplomatic_events.27.desc
+	picture = GFX_report_event_XWX_industry
+
+	is_triggered_only = yes
+
+	option = { 
+		name = XWX_diplomatic_events.27.a
+		326 = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = naval_base
+				level = 1
+				instant_build = yes
+				province = 10062
+			}
+		}
+		if = {
+			limit = {
+				326 = {
+					owner = {
+						tag = XHK
+					}
+				}
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_to_variable = {
+				tooltip = XHK_ENG_inf_lose
+				XHK_ENG_inf = -10
+			}
+			add_to_variable = {
+				tooltip = XHK_CHI_inf_gain
+				XHK_CHI_inf = 10
+			}
+		}
+	}
+
+}
+
+country_event = { # XWX wants to buy Rubber rights
+	id = XWX_diplomatic_events.28
+	title = XWX_diplomatic_events.28.t
+	desc = XWX_diplomatic_events.28.desc
+	picture = GFX_report_event_chinese_japanese_handshake
+
+	is_triggered_only = yes
+
+	option = { 
+		name = XWX_diplomatic_events.28.a
+		effect_tooltip = {
+			add_resource = {
+				type = rubber
+				amount = 20
+				state = 286
+			}
+		}
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+		effect_tooltip = {
+			give_resource_rights = {
+				receiver = FROM
+				state = 286
+				resources = { rubber }
+			}
+		}
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+		add_offsite_building = {
+			type = industrial_complex
+			level = 7
+		}
+
+		FROM = {
+			add_timed_idea = {
+				idea = XWX_rubber_sale_cost
+				days = 720
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			country_event = {
+				id = XWX_diplomatic_events.29
+				hours = 3
+			}
+		}
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+		if = {
+			limit = {
+				286 = {
+					owner = {
+						is_subject_of = ROOT
+					}
+				}
+			}
+			286 = {
+				owner = {
+					country_event = XWX_diplomatic_events.31
+				}
+			}
+		}
+	}
+
+	option = {
+		name = XWX_diplomatic_events.28.b
+		trigger = {
+			is_ai = no
+		}
+		add_political_power = -20
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+		FROM = {
+			country_event = {
+				id = XWX_diplomatic_events.30
+				hours = 3
+			}
+		}
+	}
+
+}
+
+country_event = { # XWX wants to buy Rubber rights // accepted
+	id = XWX_diplomatic_events.29
+	title = XWX_diplomatic_events.29.t
+	desc = XWX_diplomatic_events.29.desc
+	picture = GFX_report_event_chinese_japanese_handshake
+
+	is_triggered_only = yes
+
+	option = { 
+		name = XWX_diplomatic_events.29.a
+		add_resource = {
+			type = rubber
+			amount = 20
+			state = 286
+		}
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+		286 = {
+			controller = {
+				give_resource_rights = {
+					receiver = ROOT
+					state = 286
+					resources = { rubber }
+				}
+			}
+		}
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+		effect_tooltip = {
+			if = {
+				limit = {
+					286 = { owner = { is_subject = yes } }
+				}
+				286 = {
+					owner = {
+						OVERLORD = {
+							add_offsite_building = {
+								type = industrial_complex
+								level = 7
+							}
+						}
+					}
+				}
+			}
+			else = {
+				286 = {
+					owner = {
+						add_offsite_building = {
+							type = industrial_complex
+							level = 7
+						}
+					}
+				}
+			}
+		}
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+		add_timed_idea = {
+			idea = XWX_rubber_sale_cost
+			days = 720
+		}
+	}
+
+}
+
+country_event = { # XWX wants to buy Rubber rights // refused
+	id = XWX_diplomatic_events.30
+	title = XWX_diplomatic_events.30.t
+	desc = XWX_diplomatic_events.30.desc
+	picture = GFX_report_event_chamberlain_announce
+
+	is_triggered_only = yes
+
+	option = { 
+		name = XWX_diplomatic_events.30.a
+		add_political_power = 50
+	}
+
+}
+
+country_event = { # XWX wants to buy Rubber rights // puppet notification
+	id = XWX_diplomatic_events.31
+	title = XWX_diplomatic_events.31.t
+	desc = XWX_diplomatic_events.31.desc
+	picture = GFX_report_event_chamberlain_announce
+
+	is_triggered_only = yes
+
+	option = { 
+		name = XWX_diplomatic_events.31.a
+		every_owned_state = {
+			random_select_amount = 2
+			limit = {
+				is_core_of = ROOT
+				is_fully_controlled_by = ROOT
+				is_owned_by = ROOT
+				infrastructure < 5	
+			}
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}	
+		}
+	}
+
+}
+
+country_event = { # XWX calls for Volunteers
+	id = XWX_diplomatic_events.32
+	title = XWX_diplomatic_events.32.t
+	desc = XWX_diplomatic_events.32.desc
+	picture = GFX_report_event_soviet_purge_officers_01
+
+	is_triggered_only = yes
+
+	option = { 
+		name = XWX_diplomatic_events.32.a
+		army_experience = 50
+		add_political_power = 25
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+		FROM = {
+			effect_tooltip = {
+				add_manpower = 20000
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			effect_tooltip = {
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = 5000
+					producer = "SOV"
+				}
+				add_equipment_to_stockpile = {
+					type = support_equipment
+					amount = 750
+					producer = "SOV"
+				}
+			}
+		}
+	}
+
+}
+
+country_event = { # XWX requests Advisors
+	id = XWX_diplomatic_events.33
+	title = XWX_diplomatic_events.33.t
+	desc = XWX_diplomatic_events.33.desc
+	picture = GFX_report_event_german_advisors_remain
+
+	is_triggered_only = yes
+
+	option = { 
+		name = XWX_diplomatic_events.33.a
+		army_experience = 25
+		add_political_power = 25
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+		FROM = {
+			effect_tooltip = {
+				add_ideas = XWX_german_advisors
+			}
+		}
+	}
+
+}
+
 news_event = { # KMT Coup
 	id = XWX_news_events.1
 	title = XWX_news_events.1.t

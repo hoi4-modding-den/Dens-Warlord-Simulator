@@ -35,6 +35,65 @@ XWX_army_expansion = {
 
 }
 
+XWX_improve_soviet_opinion = {
+	allowed = {
+		original_tag = XWX
+	}
+	enable = {
+		country_exists = SOV
+		NOT = { has_war_with = SOV }
+		has_government = communism
+		SOV = { has_government = communism }
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = diplo_action_desire
+		id = SOV
+		target = improve_relation
+		value = 200
+	}
+}
+
+XWX_improve_french_opinion = {
+	allowed = {
+		original_tag = XWX
+	}
+	enable = {
+		country_exists = FRA
+		NOT = { has_war_with = FRA }
+		NOT = { has_completed_focus = XWX_french_assistance }
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = diplo_action_desire
+		id = FRA
+		target = improve_relation
+		value = 200
+	}
+}
+
+XWX_improve_XWE_opinion = {
+	allowed = {
+		original_tag = XWX
+	}
+	enable = {
+		country_exists = XWE
+		NOT = { has_war_with = XWE }
+		has_completed_focus = XWX_reconcile_with_prc
+		NOT = { has_completed_focus = XWX_the_peasant_united_front }
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = diplo_action_desire
+		id = XWE
+		target = improve_relation
+		value = 200
+	}
+}
+
 XWX_focus_on_civs = {
 	allowed = {
 		original_tag = XWX

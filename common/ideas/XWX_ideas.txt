@@ -826,6 +826,52 @@ ideas = {
 
         }
 
+		XWX_rubber_sale_cost = {
+
+			picture = generic_goods_red_bonus
+		
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = 0.4
+            }
+
+		}
+
+		XWX_german_advisors = {
+
+			picture = german_advisors
+		
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			cancel = {
+				has_war_with = GER
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				experience_gain_army = 0.03
+                army_org_factor = 0.05
+				land_doctrine_cost_factor = -0.1
+            }
+
+		}
+
         XWX_raid_aftermath = {
 
 			picture = tfv_can_conscription_crisis
