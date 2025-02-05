@@ -147,7 +147,7 @@ characters = {
 			on_remove = {
 				if = {
 					limit = {
-						NOT = { has_completed_focus = XWX_liberated_women }
+						ROOT = { NOT = { has_completed_focus = XWX_liberated_women } }
 					}
 					ROOT = { clr_country_flag = XWX_feminist_rev_hired }
 				}
