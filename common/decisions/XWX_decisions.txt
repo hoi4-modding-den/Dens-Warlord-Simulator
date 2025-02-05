@@ -73,10 +73,13 @@ XWX_kmt_insurgency_cat = {
             tag = XWX
         }
 
-        visible = {
-            is_debug = yes
+        available = {
             is_ai = no
             has_civil_war = no
+        }
+
+        visible = {
+            is_debug = yes
             NOT = { has_active_mission = XWX_kmt_civil_war_timer }
         }
 
@@ -434,10 +437,25 @@ XWX_construction_decisions = {
 				}
             }
             custom_effect_tooltip = generic_skip_one_line_tt
-            swap_ideas = {
-                remove_idea = XWX_mountaineer_corps
-                add_idea = XWX_mountain_fort
+            if = {
+                limit = {
+                    has_idea = XWX_mountaineer_corps
+                }
+                swap_ideas = {
+                    remove_idea = XWX_mountaineer_corps
+                    add_idea = XWX_mountain_fort
+                }
             }
+            else_if = {
+                limit = {
+                    has_idea = XWX_mountaineer_training_corps
+                }
+                swap_ideas = {
+                    remove_idea = XWX_mountaineer_training_corps
+                    add_idea = XWX_mountaineer_training_fort
+                }
+            }
+            custom_effect_tooltip = generic_skip_one_line_tt
             effect_tooltip = {
 	        	add_manpower = 10000
             }
@@ -679,9 +697,88 @@ XWX_army_improvement = {
     
     }
 
-    # XWX_acquire_motorised_equipment // Get Trucks
+    XWX_acquire_motorised_equipment = {
 
-    # XWX_mobilise_civil_defence_union // temp weekly_manpower and equipment_capture_factor
+        icon = GFX_decision_generic_trucks
+
+        allowed = {
+            original_tag = XWX
+        }
+
+        available = {
+            has_completed_focus = XWX_army_motorisation
+        }
+
+        cost = 50
+
+        ai_will_do = {
+			base = 5
+            modifier = {
+                stockpile_ratio = {
+                    archetype = motorized_equipment
+                    ratio > 1.2
+                }
+            } 
+		}
+
+        days_remove = 40
+
+        days_re_enable = 40
+
+        fire_only_once = no
+
+        modifier = {
+            consumer_goods_factor = 0.05
+        }
+
+        remove_effect = {
+            add_equipment_to_stockpile = {
+				type = motorized_equipment
+				amount = 50
+			}
+        }
+    }
+
+    XWX_mobilise_civil_defence_union = {
+
+        icon = GFX_decision_generic_protection
+
+        allowed = {
+            original_tag = XWX
+        }
+
+        available = {
+            has_completed_focus = XWX_army_motorisation
+            has_war = yes
+            OR = {
+                surrender_progress > 0.2
+                casualties_k > 10
+            }
+        }
+
+        cancel_trigger = {
+            has_war = no
+        }
+
+        cost = 100
+
+        ai_will_do = {
+			base = 100
+		}
+
+        days_remove = 100
+
+        fire_only_once = no
+
+        modifier = {
+            weekly_manpower = 700
+            equipment_capture_factor = 0.15
+        }
+
+        remove_effect = {
+            add_war_support = -0.05
+        }
+    }
 
     XWX_raid_neighbouring_states = {
 
@@ -848,6 +945,88 @@ XWX_army_improvement = {
 
     }
 
+}
+
+foreign_support = {
+
+    XWX_foreign_anti_japanese_support = {
+
+        icon = GFX_decision_generic_speech
+
+        allowed = {
+            original_tag = XWX
+        }
+
+        visible = {
+            has_completed_focus = XWX_revolutionary_fervour
+            JAP = {
+				OR = {
+					is_justifying_wargoal_against = ROOT
+					has_wargoal_against = ROOT
+					has_war_with = ROOT
+				}
+			}
+        }
+
+        available = {
+            has_completed_focus = XWX_counteract_the_japanese_threat
+            has_war_with = JAP
+            FROM = {
+                NOT = { has_war_with = ROOT }
+                NOT = { is_ally_with = JAP }
+                NOT = { has_guaranteed = JAP }
+            }
+            NOT = { has_country_flag = XWX_seeking_support }
+        }
+
+        cancel_trigger = {
+            OR = {
+                NOT = { has_war_with = JAP }
+                has_war_with = FROM
+                FROM = { is_ally_with = JAP }
+                FROM = { has_guaranteed = JAP }
+            }
+        }
+
+        targets_dynamic = yes
+
+        target_trigger = {
+            FROM = {
+                DEN_is_chinese_country = no
+                is_major = yes
+            }
+        }
+
+        cost = 100
+
+        ai_will_do = {
+			base = 120
+		}
+
+        days_remove = 100
+
+        fire_only_once = no
+
+        complete_effect = {
+            FROM = {
+                add_war_support = 0.05
+            }
+            set_country_flag = XWX_seeking_support
+        }
+
+        modifier = {
+            weekly_manpower = 750
+        }
+
+        remove_effect = {
+            add_war_support = 0.05
+            clr_country_flag = XWX_seeking_support
+        }
+
+        cancel_effect = {
+            clr_country_flag = XWX_seeking_support
+        }
+    }
 }
 
 XWX_chinese_education_bureau = {
@@ -1393,7 +1572,7 @@ XWX_bop_cat = {
             NOT = { has_country_flag = XWX_doing_bop_decision }
             is_power_balance_in_range = {
                 id = XWX_communes_bop
-                range < XWX_federalists_low_control_range
+                range < XWX_bop_balanced
             }
         }
 
@@ -1467,7 +1646,7 @@ XWX_bop_cat = {
             NOT = { has_country_flag = XWX_doing_bop_decision }
             is_power_balance_in_range = {
                 id = XWX_communes_bop
-                range < XWX_federalists_low_control_range
+                range < XWX_bop_balanced
             }
             has_country_flag = XWX_second_gannan_famine
         }
@@ -1538,7 +1717,7 @@ XWX_bop_cat = {
             NOT = { has_country_flag = XWX_doing_bop_decision }
             is_power_balance_in_range = {
                 id = XWX_communes_bop
-                range < XWX_federalists_low_control_range
+                range < XWX_bop_balanced
             }
             has_war = yes
         }
@@ -1695,7 +1874,7 @@ XWX_bop_cat = {
             NOT = { has_country_flag = XWX_doing_bop_decision }
             is_power_balance_in_range = {
                 id = XWX_communes_bop
-                range > XWX_centralists_low_control_range
+                range > XWX_bop_balanced
             }
         }
 
@@ -1770,7 +1949,7 @@ XWX_bop_cat = {
             NOT = { has_country_flag = XWX_doing_bop_decision }
             is_power_balance_in_range = {
                 id = XWX_communes_bop
-                range > XWX_centralists_low_control_range
+                range > XWX_bop_balanced
             }
             XWX_kmt_active = yes
         }
@@ -1825,7 +2004,7 @@ XWX_bop_cat = {
             NOT = { has_country_flag = XWX_doing_bop_decision }
             is_power_balance_in_range = {
                 id = XWX_communes_bop
-                range > XWX_centralists_low_control_range
+                range > XWX_bop_balanced
             }
             has_war = yes
         }
@@ -1854,7 +2033,7 @@ XWX_bop_cat = {
         days_remove = 180
 
         modifier = {
-            weekly_manpower = 500
+            weekly_manpower = 750
         }
 
         complete_effect = {

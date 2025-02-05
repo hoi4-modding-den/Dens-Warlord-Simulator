@@ -44,6 +44,8 @@ XWX_improve_soviet_opinion = {
 		NOT = { has_war_with = SOV }
 		has_government = communism
 		SOV = { has_government = communism }
+		political_power_daily > 1.2
+		has_completed_focus = XWX_workers_victory
 	}
 	abort_when_not_enabled = yes
 
@@ -62,6 +64,11 @@ XWX_improve_french_opinion = {
 	enable = {
 		country_exists = FRA
 		NOT = { has_war_with = FRA }
+		political_power_daily > 1.2
+		OR = {
+			has_completed_focus = XWX_workers_victory
+			has_completed_focus = XWX_kmt_coup
+		}
 		NOT = { has_completed_focus = XWX_french_assistance }
 	}
 	abort_when_not_enabled = yes
@@ -267,6 +274,31 @@ XWX_approach_ENG_dem = {
 	    type = befriend
 	    id = ENG
 		value = 100
+	}
+}
+
+XWX_dont_guarantee_countries = {
+	allowed = {
+		original_tag = XWX
+	}
+	abort_when_not_enabled = yes
+
+	enable = {
+		always = yes
+	}
+	abort = {
+		has_war = no
+		is_faction_leader = yes
+		any_other_country = {
+			is_major = yes
+			is_ally_with = ROOT
+		}
+	}
+
+	ai_strategy = {
+		type = pp_spend_priority
+		id = guarantee
+		value = -1000
 	}
 }
 

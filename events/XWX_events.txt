@@ -1816,6 +1816,15 @@ country_event = { # XWX buys British industry in Hong Kong
 
 	option = { 
 		name = XWX_diplomatic_events.27.a
+		hidden_effect = {
+			FROM = {
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = XWX_trade_deal
+				}
+			}
+		}
+
 		326 = {
 			add_extra_state_shared_building_slots = 1
 			add_building_construction = {
@@ -1862,16 +1871,6 @@ country_event = { # XWX wants to buy Rubber rights
 
 	option = { 
 		name = XWX_diplomatic_events.28.a
-		effect_tooltip = {
-			add_resource = {
-				type = rubber
-				amount = 20
-				state = 286
-			}
-		}
-
-		custom_effect_tooltip = generic_skip_one_line_tt
-
 		effect_tooltip = {
 			give_resource_rights = {
 				receiver = FROM
@@ -1948,13 +1947,15 @@ country_event = { # XWX wants to buy Rubber rights // accepted
 
 	option = { 
 		name = XWX_diplomatic_events.29.a
-		add_resource = {
-			type = rubber
-			amount = 20
-			state = 286
-		}
 
-		custom_effect_tooltip = generic_skip_one_line_tt
+		hidden_effect = {
+			FROM = {
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = XWX_trade_deal
+				}
+			}
+		}
 
 		286 = {
 			controller = {
@@ -2108,6 +2109,87 @@ country_event = { # XWX requests Advisors
 			effect_tooltip = {
 				add_ideas = XWX_german_advisors
 			}
+		}
+	}
+
+}
+
+country_event = { # XWX-USA Trade
+	id = XWX_diplomatic_events.34
+	title = XWX_diplomatic_events.34.t
+	desc = XWX_diplomatic_events.34.desc
+	picture = GFX_report_event_german_advisors_remain
+
+	is_triggered_only = yes
+
+	option = { 
+		name = XWX_diplomatic_events.34.a
+		add_political_power = 50
+		add_opinion_modifier = {
+			target = FROM
+			modifier = XWX_trade_deal
+		}
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+		add_offsite_building = {
+			type = industrial_complex
+			level = 1
+		}
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+		FROM = {
+			country_event = {
+				id = XWX_diplomatic_events.35
+				hours = 3
+			}
+		}
+	}
+
+}
+
+country_event = { # XWX-USA Trade 2
+	id = XWX_diplomatic_events.35
+	title = XWX_diplomatic_events.35.t
+	desc = XWX_diplomatic_events.35.desc
+	picture = GFX_report_event_german_advisors_remain
+
+	is_triggered_only = yes
+
+	option = { 
+		name = XWX_diplomatic_events.35.a
+		FROM = {
+			effect_tooltip = {
+				add_political_power = 50
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = XWX_trade_deal
+				}
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			effect_tooltip = {	
+				add_offsite_building = {
+					type = industrial_complex
+					level = 1
+				}
+			}
+		}
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+		add_political_power = 25
+		add_stability = 0.05
+		add_opinion_modifier = {
+			target = FROM
+			modifier = XWX_trade_deal
+		}
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+		add_offsite_building = {
+			type = industrial_complex
+			level = 3
 		}
 	}
 

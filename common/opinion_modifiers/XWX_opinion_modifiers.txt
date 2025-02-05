@@ -36,5 +36,10 @@ opinion_modifiers = {
 	XWX_provincial_politics = {
 		value = 45
 	}
+
+	XWX_trade_deal = {
+		value = 25
+		decay = 1
+	}
 	
 }

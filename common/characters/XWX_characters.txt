@@ -145,7 +145,12 @@ characters = {
 				ROOT = { set_country_flag = XWX_feminist_rev_hired }
 			}
 			on_remove = {
-				ROOT = { clr_country_flag = XWX_feminist_rev_hired}
+				if = {
+					limit = {
+						NOT = { has_completed_focus = XWX_liberated_women }
+					}
+					ROOT = { clr_country_flag = XWX_feminist_rev_hired }
+				}
 			}
 
 		}

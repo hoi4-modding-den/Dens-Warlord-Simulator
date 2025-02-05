@@ -197,7 +197,7 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			XWX = { country_event = XWX_diplomatic_events.26 }
+			XWE = { country_event = XWX_diplomatic_events.26 }
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 			custom_effect_tooltip = the_following_will_happen_TT
@@ -614,9 +614,30 @@ focus_tree = {
 			NOT = { has_active_mission = XWX_tianyu_fort_construction }
 		}
 
-		search_filters = { FOCUS_FILTER_POLITICAL }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
 		completion_reward = {
 			add_political_power = 50
+			add_stability = 0.02
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			if = {
+				limit = {
+					985 = {
+						is_controlled_by = ROOT
+						infrastructure < 5
+					}
+				}
+				985 = {
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}	
+				}
+				custom_effect_tooltip = generic_skip_one_line_tt
+			}
+
 			add_days_mission_timeout = {
 				mission = XWX_tianyu_fort_construction
 				days = -100
@@ -1023,6 +1044,14 @@ focus_tree = {
 
 		cost = 10
 
+		ai_will_do = {
+			base = 50
+			modifier = {
+				factor = 0.5
+				has_stability < 0.6
+			}
+		}
+
 		available = {
 			
 		}
@@ -1147,20 +1176,34 @@ focus_tree = {
 		available = { 
 			country_exists = SOV
 			NOT = { has_war_with = SOV }
-			OR = {
-				AND = {
-					has_government = SOV
-					SOV = {
-						has_opinion = {
-							target = ROOT
-						value > 19
-						}
-					}
+			if = {
+				limit = {
+					SOV = { has_government = communism }
 				}
+				has_government = communism
 				SOV = {
 					has_opinion = {
 						target = ROOT
-					value > 79
+						value > 29
+					}
+				}
+			}
+			else = {
+				OR = {
+					AND = {
+						has_government = SOV
+						SOV = {
+							has_opinion = {
+								target = ROOT
+								value > 19
+							}
+						}
+					}
+					SOV = {
+						has_opinion = {
+							target = ROOT
+							value > 79
+						}
 					}
 				}
 			}
@@ -1220,20 +1263,34 @@ focus_tree = {
 		available = { 
 			country_exists = FRA
 			NOT = { has_war_with = FRA }
-			OR = {
-				AND = {
-					has_government = FRA
-					FRA = {
-						has_opinion = {
-							target = ROOT
-						value > 19
-						}
-					}
+			if = {
+				limit = {
+					FRA = { has_government = communism }
 				}
+				has_government = communism
 				FRA = {
 					has_opinion = {
 						target = ROOT
-					value > 79
+						value > 29
+					}
+				}
+			}
+			else = {
+				OR = {
+					AND = {
+						has_government = FRA
+						FRA = {
+							has_opinion = {
+								target = ROOT
+								value > 19
+							}
+						}
+					}
+					FRA = {
+						has_opinion = {
+							target = ROOT
+							value > 79
+						}
 					}
 				}
 			}
@@ -1311,20 +1368,34 @@ focus_tree = {
 		available = { 
 			country_exists = ENG
 			NOT = { has_war_with = ENG }
-			OR = {
-				AND = {
-					has_government = ENG
-					ENG = {
-						has_opinion = {
-							target = ROOT
-						value > 19
-						}
-					}
+			if = {
+				limit = {
+					ENG = { has_government = communism }
 				}
+				has_government = communism
 				ENG = {
 					has_opinion = {
 						target = ROOT
-					value > 79
+						value > 29
+					}
+				}
+			}
+			else = {
+				OR = {
+					AND = {
+						has_government = ENG
+						ENG = {
+							has_opinion = {
+								target = ROOT
+								value > 19
+							}
+						}
+					}
+					ENG = {
+						has_opinion = {
+							target = ROOT
+							value > 79
+						}
 					}
 				}
 			}
@@ -1339,7 +1410,7 @@ focus_tree = {
 		ai_will_do = {
 			base = 150
 			modifier = {
-				add = 50
+				add = 150
 				is_ally_with = XHK
 			}
 		}
@@ -1396,20 +1467,34 @@ focus_tree = {
 		available = { 
 			country_exists = GER
 			NOT = { has_war_with = GER }
-			OR = {
-				AND = {
-					has_government = GER
-					GER = {
-						has_opinion = {
-							target = ROOT
-						value > 19
-						}
-					}
+			if = {
+				limit = {
+					GER = { has_government = communism }
 				}
+				has_government = communism
 				GER = {
 					has_opinion = {
 						target = ROOT
-					value > 79
+						value > 29
+					}
+				}
+			}
+			else = {
+				OR = {
+					AND = {
+						has_government = GER
+						GER = {
+							has_opinion = {
+								target = ROOT
+								value > 19
+							}
+						}
+					}
+					GER = {
+						has_opinion = {
+							target = ROOT
+							value > 79
+						}
 					}
 				}
 			}
@@ -1929,9 +2014,13 @@ focus_tree = {
                 OR = {
 					has_completed_focus = XWX_peasant_army
 					has_completed_focus = XWX_peasants_revolution
-					has_completed_focus = XWX_liberation_army
+					has_completed_focus = XWX_final_army_improvement_2
 				}
             }
+			modifier = {
+				factor = 0.25
+				has_war = yes
+			}
 		}
 
 		available = {
@@ -2180,7 +2269,7 @@ focus_tree = {
 		icon = GFX_goal_generic_more_territorial_claims
 		prerequisite = { focus = XWX_china_united }
 		#mutually_exclusive = { focus =  }
-		x = -2
+		x = 2
 		y = 1
 		relative_position_id = XWX_china_united
 
@@ -2243,7 +2332,7 @@ focus_tree = {
 		icon = GFX_focus_generic_attack_mongolia
 		prerequisite = { focus = XWX_china_united }
 		#mutually_exclusive = { focus =  }
-		x = 2
+		x = -2
 		y = 1
 		relative_position_id = XWX_china_united
 
@@ -2314,6 +2403,21 @@ focus_tree = {
 			}
 			else = {
 				create_faction = XWX_revintern
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			every_other_country = {
+				limit = {
+					has_government = communism
+					is_subject = no
+					is_in_faction = no
+					has_war = no
+				}
+				country_event = {
+					id = XWX_diplomatic_events.1
+					hours = 9
+				}
 			}
 		}
 	}
@@ -2386,7 +2490,11 @@ focus_tree = {
 		cost = 10
 
 		ai_will_do = {
-			base = 100
+			base = 0
+			modifier = {
+				add = 100
+				has_completed_focus = XWX_restart_the_civil_war
+			}
 			modifier = {
 				factor = 0.25
 				has_war = yes
@@ -2453,6 +2561,54 @@ focus_tree = {
 			custom_effect_tooltip = generic_skip_one_line_tt
 
 			add_ideas = XWX_defensive_preparations_2
+		}
+	}
+
+	shared_focus = {
+		id = XWX_counteract_the_japanese_threat
+		icon = GFX_focus_attack_japan
+		prerequisite = { focus = XWX_revolutionary_defense }
+		#mutually_exclusive = { focus =  }
+		x = 0
+		y = 2
+		relative_position_id = XWX_revolutionary_defense
+
+		cost = 8
+
+		ai_will_do = {
+			base = 200
+		}
+
+		available = {
+			has_government = communism
+			JAP = {
+				OR = {
+					is_justifying_wargoal_against = ROOT
+					has_wargoal_against = ROOT
+					has_war_with = ROOT
+				}
+			}
+		}
+
+		bypass = {
+			
+		}
+
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_war_support = 0.05
+			add_popularity = {
+				popularity = -0.05
+				ideology = fascism
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_ideas = XWX_anti_japan_bonus
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = XWX_counteract_the_japanese_threat_tt
 		}
 	}
 	
@@ -2574,7 +2730,7 @@ focus_tree = {
 		icon = GFX_goal_support_democracy
 		prerequisite = { focus = XWX_remove_communist_influence }
 		mutually_exclusive = { focus = XWX_establish_the_xikang_clique }
-		x = 1
+		x = 0
 		y = 1
 		relative_position_id = XWX_remove_communist_influence
 
@@ -2646,7 +2802,7 @@ focus_tree = {
 		icon = GFX_focus_generic_military_dictatorship
 		prerequisite = { focus = XWX_remove_communist_influence }
 		mutually_exclusive = { focus = XWX_power_to_the_parliament }
-		x = -1
+		x = -2
 		y = 1
 		relative_position_id = XWX_remove_communist_influence
 
@@ -2708,7 +2864,7 @@ focus_tree = {
 	shared_focus = {
 		id = XWX_technocratic_democracy
 		icon = GFX_focus_research2
-		prerequisite = { focus = XWX_industrial_basis }
+		prerequisite = { focus = XWX_allied_trade focus = XWX_industrial_basis }
 		prerequisite = { focus = XWX_power_to_the_parliament }
 		#mutually_exclusive = { focus =  }
 		x = 1
@@ -2748,7 +2904,7 @@ focus_tree = {
 		icon = GFX_goal_generic_intelligence_exchange
 		prerequisite = { focus = XWX_power_to_the_parliament focus = XWX_establish_the_xikang_clique }
 		#mutually_exclusive = { focus =  }
-		x = 0
+		x = -1
 		y = 2
 		relative_position_id = XWX_remove_communist_influence
 
@@ -2799,11 +2955,60 @@ focus_tree = {
 	}
 
 	shared_focus = {
+		id = XWX_mountain_corps
+		icon = GFX_focus_AUS_osterreichische_gebirgsjager
+		prerequisite = { focus = XWX_consolidate_control }
+		#mutually_exclusive = { focus =  }
+		x = -2
+		y = 1
+		relative_position_id = XWX_consolidate_control
+
+		cost = 8
+
+		ai_will_do = {
+			base = 80
+		}
+
+		available = {
+			
+		}
+
+		bypass = {
+
+		}
+
+		search_filters = {  }
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = XWX_mountain_fort
+				}
+				swap_ideas = {
+					remove_idea = XWX_mountain_fort
+					add_idea = XWX_mountaineer_training_fort
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = XWX_mountaineer_corps
+				}
+				swap_ideas = {
+					remove_idea = XWX_mountaineer_corps
+					add_idea = XWX_mountaineer_training_corps
+				}
+			}
+			else = {
+				add_ideas = XWX_mountaineer_training
+			}
+		}
+	}
+
+	shared_focus = {
 		id = XWX_free_market_economics
 		icon = GFX_goal_generic_positive_trade_relations
 		prerequisite = { focus = XWX_consolidate_control }
 		#mutually_exclusive = { focus =  }
-		x = -3
+		x = -4
 		y = 1
 		relative_position_id = XWX_consolidate_control
 
@@ -2849,7 +3054,68 @@ focus_tree = {
 					instant_build = yes
 				}	
 			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			every_other_country = {
+				limit = {
+					is_major = yes
+					NOT = { has_government = communism }
+					NOT = { has_war_with = ROOT }
+				}
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = ICE_trade_partner
+				}
+			}
 			
+		}
+	}
+
+	shared_focus = {
+		id = XWX_allied_trade
+		icon = GFX_focus_generic_american_investments
+		prerequisite = { focus = XWX_free_market_economics }
+		#mutually_exclusive = { focus =  }
+		x = 0
+		y = 1
+		relative_position_id = XWX_free_market_economics
+
+		cost = 5
+
+		ai_will_do = {
+			base = 75
+		}
+
+		available = {
+			NOT = { has_government = communism }
+			country_exists = USA
+			NOT = { has_war_with = USA }
+			NOT = { USA = { has_government = communism } }
+			USA = {
+				has_opinion = {
+					target = ROOT
+					value > 79
+				}
+			}
+		}
+
+		bypass = {
+
+		}
+
+		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			USA = {
+				country_event = {
+					id = XWX_diplomatic_events.34
+					hours = 6
+				}
+			}
+
+			custom_effect_tooltip = if_they_accept_tt
+
+			event_option_tooltip = XWX_diplomatic_events.35.a
 		}
 	}
 
@@ -2858,7 +3124,7 @@ focus_tree = {
 		icon = GFX_focus_generic_modernize_industry
 		prerequisite = { focus = XWX_free_market_economics }
 		#mutually_exclusive = { focus =  }
-		x = 1
+		x = 2
 		y = 1
 		relative_position_id = XWX_free_market_economics
 
@@ -2941,9 +3207,9 @@ focus_tree = {
 	shared_focus = {
 		id = XWX_national_bank_of_gannan
 		icon = GFX_focus_usa_reestablish_the_gold_standard
-		prerequisite = { focus = XWX_industrial_basis }
+		prerequisite = { focus = XWX_allied_trade focus = XWX_industrial_basis }
 		#mutually_exclusive = { focus =  }
-		x = 0
+		x = -1
 		y = 1
 		relative_position_id = XWX_industrial_basis
 
@@ -3479,6 +3745,58 @@ focus_tree = {
 		}
 	}
 
+	shared_focus = {
+		id = XWX_last_resort
+		icon = GFX_focus_AST_war_japan
+		prerequisite = { focus = XWX_mistakes_of_the_first_war }
+		#mutually_exclusive = { focus =  }
+		x = 0
+		y = 1
+		relative_position_id = XWX_mistakes_of_the_first_war
+
+		cost = 8
+
+		ai_will_do = {
+			base = 300
+		}
+
+		available = {
+			NOT = { has_government = fascism }
+			has_war_with = JAP
+			OR = {
+				longest_war_length > 24
+				surrender_progress > 0.5
+			}
+			has_idea = XWX_anti_japan_bonus
+		}
+
+		bypass = {
+
+		}
+
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+		completion_reward = {
+			add_war_support = 0.1
+			add_popularity = {
+				popularity = -0.25
+				ideology = fascism
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			set_rule = {
+				can_use_kamikaze_pilots = yes
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			swap_ideas = {
+				remove_idea = XWX_anti_japan_bonus
+				add_idea = XWX_anti_japan_bonus_2
+			}
+		}
+	}
+
 # INDUSTRY
 
 	shared_focus = {
@@ -3964,7 +4282,7 @@ focus_tree = {
 		completion_reward = {
 			custom_effect_tooltip = modify_XWX_industry_tt
 			add_to_variable = {
-				XWX_industry_industrial_capacity_factory = 0.15
+				XWX_industry_industrial_capacity_factory = 0.1
 				tooltip = industrial_capacity_factory_tt
 			}
 			custom_effect_tooltip = generic_skip_one_line_tt
@@ -4113,6 +4431,84 @@ focus_tree = {
 			add_to_variable = {
 				XWX_industry_production_lack_of_resource_penalty_factor = -0.2
 				tooltip = production_lack_of_resource_penalty_factor_tt
+			}
+		}
+	}
+
+	shared_focus = {
+		id = XWX_funds_for_kangding_arsenal
+		icon = GFX_goal_generic_army_artillery2
+		prerequisite = { focus = XWX_resource_deficit_management focus = XWX_arm_the_nation focus = XWX_military_buildup }
+		#mutually_exclusive = { focus = }
+		x = 1
+		y = 1
+		relative_position_id = XWX_resource_deficit_management
+
+		cost = 5
+
+		ai_will_do = {
+			base = 50
+		}
+
+		available = {
+			controls_state = 984
+		}
+
+		bypass = {
+
+		}
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			custom_effect_tooltip = modify_XWX_industry_tt
+			add_to_variable = {
+				XWX_industry_industrial_capacity_factory = 0.03
+				tooltip = industrial_capacity_factory_tt
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			mio:XWX_kangding_arsenal = {
+				add_mio_size = 1
+			}
+		}
+	}
+
+	shared_focus = {
+		id = XWX_funds_for_gannan_arsenal
+		icon = GFX_focus_CONGO_copper_cartridges
+		prerequisite = { focus = XWX_resource_deficit_management focus = XWX_arm_the_nation focus = XWX_military_buildup }
+		#mutually_exclusive = { focus = }
+		x = 3
+		y = 1
+		relative_position_id = XWX_resource_deficit_management
+
+		cost = 5
+
+		ai_will_do = {
+			base = 50
+		}
+
+		available = {
+			controls_state = 983
+		}
+
+		bypass = {
+
+		}
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			custom_effect_tooltip = modify_XWX_industry_tt
+			add_to_variable = {
+				XWX_industry_industrial_capacity_factory = 0.03
+				tooltip = industrial_capacity_factory_tt
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			mio:XWX_gannan_arsenal = {
+				add_mio_size = 1
 			}
 		}
 	}
@@ -4276,6 +4672,10 @@ focus_tree = {
 
 		cost = 8
 
+		ai_will_do = {
+			base = 75
+		}
+
 		available = {
 			
 		}
@@ -4313,6 +4713,10 @@ focus_tree = {
 		relative_position_id = XWX_mine_expansion
 
 		cost = 10
+
+		ai_will_do = {
+			base = 75
+		}
 
 		available = {
 			controls_state = 752
@@ -4353,7 +4757,7 @@ focus_tree = {
 		#prerequisite = { focus = }
 		#mutually_exclusive = { focus = }
 		x = 26
-		y = 5
+		y = 6
 		#relative_position_id =
 
 		cost = 0.2
@@ -4371,6 +4775,58 @@ focus_tree = {
 			effect_tooltip = {
 				army_experience = 25
 				add_command_power = 10
+			}
+		}
+	}
+
+	shared_focus = {
+		id = XWX_improve_logistics
+		icon = GFX_focus_generic_reinforcing_the_supply_network
+		prerequisite = { focus = XWX_provincial_army }
+		#mutually_exclusive = { focus = }
+		x = -6
+		y = 1
+		relative_position_id = XWX_provincial_army
+
+		cost = 5
+
+		ai_will_do = {
+			base = 500
+		}
+
+		available = {
+			OR = {
+				has_completed_focus = XWX_railway_construction
+				AND = {
+					has_built = {
+						type = rail_way
+						value > 7
+					}
+					has_built = {
+						type = supply_node
+						value > 1
+					}
+				}
+			}
+		}
+
+		bypass = {
+
+		}
+
+		search_filters = { FOCUS_FILTER_ARMY_XP }
+		completion_reward = {
+			army_experience = 30
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_ideas = XWX_improved_logistics
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			every_army_leader = {
+				random_select_amount = 5
+				add_logistics = 1
 			}
 		}
 	}
@@ -4440,7 +4896,9 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_MILITARY_CHARACTER }
 		completion_reward = {
 			add_command_power = 20
+
 			custom_effect_tooltip = generic_skip_one_line_tt
+
 			custom_effect_tooltip = XWX_two_generals_get_scavenger_tt
 			every_army_leader = {
 				limit = {
@@ -4449,10 +4907,15 @@ focus_tree = {
 				random_select_amount = 2
 				add_trait = { trait = scavenger }
 			}
-			custom_effect_tooltip = XWX_raid_tactics_tt
+
 			custom_effect_tooltip = generic_skip_one_line_tt
+
 			custom_effect_tooltip = available_theorist
 			show_ideas_tooltip = XWX_liu_wenhui_theorist
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = XWX_raid_tactics_tt
 		}
 	}
 
@@ -4487,12 +4950,18 @@ focus_tree = {
 				uses = 2
 				category = motorized_equipment
 			}
+
 			custom_effect_tooltip = generic_skip_one_line_tt
+
 			add_equipment_to_stockpile = {
 				type = motorized_equipment
 				amount = 100
 				producer = XWX
 			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = XWX_army_motorisation_tt
 		}
 	}
 
@@ -4847,7 +5316,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = XWX_provincial_army
 
-		cost = 3
+		cost = 2.9
 
 		ai_will_do = {
 			base = 150
@@ -4904,7 +5373,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = XWX_provincial_army
 
-		cost = 8
+		cost = 2.9
 
 		ai_will_do = {
 			base = 150
@@ -4943,7 +5412,7 @@ focus_tree = {
 		y = 2
 		relative_position_id = XWX_provincial_army
 
-		cost = 8
+		cost = 5
 
 		ai_will_do = {
 			base = 150
@@ -4960,13 +5429,18 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_MANPOWER }
 		completion_reward = {
 			add_war_support = 0.1
-
 			add_manpower = 25000
+
+			custom_effect_tooltip = generic_skip_one_line_tt
 
 			add_equipment_to_stockpile = {
 				type = infantry_equipment
 				amount = 5000
 			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = XWX_civil_defence_tt
 		}
 	}
 

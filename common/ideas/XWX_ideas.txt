@@ -45,6 +45,72 @@ ideas = {
 
         }
 
+		XWX_mountaineer_training_fort = { # XWX_mountaineer_training + XWX_mountain_fort
+            
+            picture = tur_arctic_wolves
+
+            allowed = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+           removal_cost = -1
+
+            modifier = {
+                mountaineers_special_forces_contribution_factor = -0.2
+				land_bunker_effectiveness_factor = 0.25
+                surrender_limit = 0.4
+                acclimatization_cold_climate_gain_factor = 0.12
+            }
+
+        }
+
+		XWX_mountaineer_training_corps = { # XWX_mountaineer_training + XWX_mountaineer_corps
+            
+            picture = tur_arctic_wolves
+
+            allowed = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+           removal_cost = -1
+
+            modifier = {
+                mountaineers_special_forces_contribution_factor = -0.2
+                surrender_limit = 0.2
+                acclimatization_cold_climate_gain_factor = 0.12
+            }
+
+        }
+
+		XWX_mountaineer_training = {
+            
+            picture = tur_arctic_wolves
+
+            allowed = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+           removal_cost = -1
+
+            modifier = {
+                mountaineers_special_forces_contribution_factor = -0.1
+                acclimatization_cold_climate_gain_factor = 0.12
+            }
+
+        }
+
         XWX_splinter_faction = {
             
             picture = trotskyite_plot
@@ -752,6 +818,7 @@ ideas = {
 				OR = {
 					has_government = fascism
 					is_subject_of = JAP
+					NOT = { has_war_with = JAP }
 				}
 			}
 
@@ -766,6 +833,43 @@ ideas = {
             targeted_modifier = {
 				tag = JAP
 				attack_bonus_against = 0.05
+				defense_bonus_against = 0.15
+            }
+
+        }
+
+		XWX_anti_japan_bonus_2 = {
+            
+            picture = generic_japanese_conflict
+
+            allowed = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			cancel = {
+				OR = {
+					has_government = fascism
+					is_subject_of = JAP
+					NOT = { has_war_with = JAP }
+				}
+			}
+
+            removal_cost = -1
+
+			modifier = {
+				army_org_regain = 0.05
+				river_crossing_factor = -0.2
+				amphibious_invasion_defence = 0.25
+				army_core_attack_factor = 0.08
+            }
+
+            targeted_modifier = {
+				tag = JAP
+				attack_bonus_against = 0.25
 				defense_bonus_against = 0.15
             }
 
@@ -868,6 +972,28 @@ ideas = {
 				experience_gain_army = 0.03
                 army_org_factor = 0.05
 				land_doctrine_cost_factor = -0.1
+            }
+
+		}
+
+		XWX_improved_logistics = {
+
+			picture = generic_supply_depot
+		
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				supply_combat_penalties_on_core_factor = -0.25
+                supply_node_range = 0.05
+				attrition = -0.08
             }
 
 		}
