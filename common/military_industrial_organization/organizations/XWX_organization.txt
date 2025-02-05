@@ -9,7 +9,7 @@
  #################### 
 
 XWX_tank_designer = {
-	include = generic_infantry_tank_organization
+	include = generic_tank_organization
 	icon = GFX_idea_generic_armor
 	allowed = {	
 		original_tag = XWX
@@ -19,6 +19,9 @@ XWX_tank_designer = {
 			has_completed_focus = XWX_liu_xiangs_armoured_project
 		}
 	}
+
+	equipment_type = { mio_cat_eq_all_light_tank mio_cat_eq_all_medium_tank mio_cat_eq_all_heavy_tank }
+	research_categories = { mio_cat_tech_light_armor_and_modules mio_cat_tech_medium_armor_and_modules mio_cat_eq_all_heavy_tank_and_modules }
 
 	initial_trait = {
 		name = XWX_tank_designer_init
@@ -43,10 +46,10 @@ XWX_tank_designer = {
 		name = XWX_mio_trait_improved_fuel_use
 		icon = GFX_generic_mio_trait_icon_fuel_consumption
 
-		position = { x = -3 y = 1 }
-		relative_position_id = generic_mio_trait_heavy_tank_improvements
+		position = { x = -1 y = 1 }
+		relative_position_id = generic_mio_trait_crew_ergonomics
 
-		any_parent = { generic_mio_trait_heavy_tank_improvements generic_mio_trait_medium_tank_improvements }
+		all_parents = { generic_mio_trait_crew_ergonomics }
 
 		limit_to_equipment_type = { mio_cat_eq_all_heavy_tank mio_cat_eq_all_medium_tank }
 		
@@ -56,9 +59,27 @@ XWX_tank_designer = {
 	}
 
 	override_trait = {
-		token = generic_mio_trait_modular_construction
+		token = generic_mio_trait_long_barreled_guns
 		
-		any_parent = { generic_mio_trait_heavy_tank_improvements generic_mio_trait_medium_tank_improvements generic_mio_trait_light_tank_improvements }
+		position = { x = -1 y = 2 }
+	}
+
+	override_trait = {
+		token = generic_mio_trait_anti_tank_specialization
+		
+		position = { x = 0 y = 2 }
+	}
+
+	override_trait = {
+		token = generic_mio_trait_standardized_components
+
+		position = { x = 2 y = 2 }
+	}
+
+	override_trait = {
+		token = generic_mio_trait_improved_tooling
+
+		position = { x = 0 y = 1 }
 	}
 
 	add_trait = {
@@ -66,12 +87,10 @@ XWX_tank_designer = {
 		name = XWX_mio_trait_improved_production_lines
 		icon = GFX_generic_mio_department_icon_facilities
 
-		position = { x = -1 y = 1 }
-		relative_position_id = generic_mio_trait_heavy_tank_improvements
+		position = { x = 1 y = 1 }
+		relative_position_id = generic_mio_trait_simplified_suspension
 
-		all_parents = { generic_mio_trait_heavy_tank_improvements }
-
-		limit_to_equipment_type = { mio_cat_eq_all_heavy_tank }
+		all_parents = { generic_mio_trait_simplified_suspension }
 		
 		production_bonus = {
 			production_efficiency_cap_factor = 0.05
@@ -92,10 +111,10 @@ XWX_tank_designer = {
 		name = XWX_mio_trait_experimental_defences
 		icon = GFX_generic_mio_department_icon_tank_general_armor
 
-		position = { x = 0 y = 2 }
-		relative_position_id = generic_mio_trait_heavy_tank_improvements
+		position = { x = 1 y = 2 }
+		relative_position_id = generic_mio_trait_defensive_equipment
 
-		all_parents = { generic_mio_trait_heavy_tank_improvements }
+		all_parents = { generic_mio_trait_defensive_equipment }
 
 		limit_to_equipment_type = { mio_cat_eq_all_heavy_tank }
 		
