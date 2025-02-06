@@ -1,17 +1,54 @@
 ﻿l_english:
- XFC: "Indochinese Federation"
- XFC_DEF: "Indochinese Federation"
- XFC_AJG: "Indochinese"
- XFC_subject: "$OVERLORDADJ$ Indochina"
 
- XFC_neutral: "Republic of Indochina"
- XFC_neutral_DEF: "Federal Republic of Indochina"
+XFC_GATHERING_STORM_DESC:0 "As the French colonial empire expanded, so too did their ambitions. France invaded Vietnam and warred with the Qing, siezing control over the majority of Indochina and creating French Indochina."
 
- XFC_democratic: "Inochinese Republic"
- XFC_democratic_DEF: "Democratic Republic of Indochina"
+#French Puppet Names
+XFC_FRA_subject:0 "French Indochina"
 
- XFC_fascism: "Empire of Indochina"
- XFC_fascism_DEF: "Free Empire of Indochina"
 
- XFC_communism: "People's Republic of Indochina"
- XFC_communism_DEF: "People's Free Indochinese Republic"
+#Default Names
+ XFC:0 "Indochinese Federation"
+ XFC_DEF:0 "Indochinese Federation"
+ XFC_AJG:0 "Indochinese"
+ XFC_subject:0 "$OVERLORDADJ$ Indochina"
+
+#Neutrality
+ XFC_neutral:0 "Republic of Indochina"
+ XFC_neutral_DEF:0 "Federal Republic of Indochina"
+
+#Democracy
+ XFC_democratic:0 "United States of Indochina"
+ XFC_democratic_DEF:0 "United States of Indochina"
+
+#Fascism
+ XFC_fascism:0 "Empire of Indochina"
+ XFC_fascism_DEF:0 "Free Empire of Indochina"
+
+ XFC_fascism_party:0 "NEP"
+ XFC_fascism_party_long:0 "New Emperor's Party"
+
+#Communism
+ XFC_communism:0 ""
+ XFC_communism_DEF:0 "People's Democratic Republic of Indochina"
+
+ XFC_communism_party:0 "CPI"
+ XFC_communism_party_long:0 "Communist Party of Indochina"
+
+
+#Focuses
+
+
+# Ideas
+ XFC_life_idea:0 "French Colonial State"
+ XFC_liberty_idea0:0 "Freedom From France"
+ XFC_liberty_idea1:0 "Freedom From France"
+ XFC_liberty_idea2:0 "Freedom From France"
+ XFC_liberty_idea3:0 "Freedom From France"
+ XFC_liberty_idea4:0 "Freedom From France"
+
+
+# Decisions
+
+ # Liberty Decisions
+  XFC_liberty_decision_category:0 "Liberté"
+  XFC_liberty_decision_category_desc:0 "For too long have the French colonisers abused and exploited our peoples, we shall no longer put up with their devestation of our lands."

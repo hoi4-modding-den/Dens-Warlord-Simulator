@@ -1,0 +1,47 @@
+ideas = {
+	country = {
+		XFC_french_colony_idea = {
+			picture = something
+			modifier = {
+				political_power_gain = -0.45
+				autonomy_gain = -0.1
+			}
+		}
+		XFC_liberty_idea0 = {
+			picture = something
+			modifier = {
+				political_power_gain = -0.75
+				autonomy_gain = -0.2
+			}
+		}
+		XFC_liberty_idea1 = {
+			picture = something
+			modifier = {
+				political_power_gain = -0.85
+				autonomy_gain = 0.05
+			}
+		}
+		XFC_liberty_idea2 = {
+			picture = something
+			modifier = {
+				political_power_gain = -1
+				autonomy_gain = 0.2
+			}
+		}
+		XFC_liberty_idea3 = {
+			picture = something
+			modifier = {
+				political_power_gain = -0.4
+				autonomy_gain = 0.5
+			}
+		}
+		XFC_liberty_idea4 = {
+			picture = something
+			modifier = {
+				political_power_gain = -0.2
+				autonomy_gain = 1.2
+			}
+		}
+	}
+
+}

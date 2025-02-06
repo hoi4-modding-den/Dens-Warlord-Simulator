@@ -161,6 +161,16 @@ bookmarks = {
 				XWX_kmt_coup
 			}
 		}
+		"XFC"={
+			history = "XFC_GATHERING_STORM_DESC"
+			ideology = democratic
+			minor = yes
+			ideas = {
+				XFC_french_colony_idea
+			}
+			focuses = {
+			}
+		}
 		effect = {
 			randomize_weather = 22345 # <- Obligatory in every bookmark !
 			#123 = { rain_light = yes }

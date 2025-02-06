@@ -1,0 +1,7 @@
+XFC_liberty_decision_category = {
+	visible = {
+		original_tag = XFC
+		has_idea = XFC_liberty_idea0
+		is_puppet_of = FRA
+	}
+}

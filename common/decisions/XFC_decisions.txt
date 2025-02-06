@@ -1,0 +1,17 @@
+XFC_liberty_decision_category = {
+
+	XFC_toss_the_baguettes_decision = {
+		fire_only_once = yes
+		cost = 20
+		days_remove = 25
+		complete_effect = {
+			add_stability = -0.075
+		}		
+		remove_effect = {
+			swap_ideas = {
+				remove_idea = XFC_liberty_idea0
+				add_idea = XFC_liberty_idea1
+			}
+		}
+	}
+}

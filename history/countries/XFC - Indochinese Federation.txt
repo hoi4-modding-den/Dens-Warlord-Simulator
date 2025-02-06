@@ -2,8 +2,9 @@ capital = 671
 
 oob = "XFC_1936"
 
-set_research_slots = 3
-
+set_research_slots = 2
+set_stability = 0.45
+set_war_support = 0.15
 #set_technology = {
 #}
 
@@ -20,3 +21,11 @@ set_popularities = {
 	fascism = 10
 	neutrality = 70
 }
+
+FRA = {
+	set_autonomy = {
+		target = ROOT
+		autonomy_state = autonomy_colony
+	}
+}
+add_ideas = XFC_french_colony_idea

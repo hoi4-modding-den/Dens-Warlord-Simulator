@@ -1,0 +1,5 @@
+opinion_modifiers = {
+	XFC_france_over_freedom_focus = {
+		value = 50
+	}
+}

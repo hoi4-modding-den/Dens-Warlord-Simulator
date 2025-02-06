@@ -1,0 +1,67 @@
+focus_tree = {
+	id = XFC_focus
+	country = {
+		factor = 0
+		modifier = {
+			add = 20
+			original_tag = XFC
+		}
+	}
+	default = no
+	reset_on_civilwar = no
+
+	continuous_focus_position = { x = 1000 y = 1000 }
+
+
+	    #focus = {
+        #id = XFC_
+        #icon = icon_here
+        #cost = 10
+        #prerequisite = { focus = XFC_ }
+        #relative_position_id = XFC_
+        #mutually_exclusive = { focus = XFC_ }
+        #x = 0
+        #y = 0
+        #completion_reward = {
+
+        #}
+    #}
+
+ # French Path
+ focus = {
+	id = XFC_life
+	icon = icon_here
+	cost = 3
+	x = 5
+	y = 0
+	available = {
+		is_subject_of = FRA
+	}
+	completion_reward = {
+		add_political_power = 125
+	}
+ }
+
+ focus = {
+	id = XFC_liberty
+	icon = icon_here
+	cost = 3
+	relative_position_id = XFC_life
+	prerequisite = {
+		focus = XFC_life
+	}
+	x = 0
+	y = 1
+	available = {
+		is_subject_of = FRA
+	}
+	completion_reward = {
+		add_political_power = 75
+		swap_ideas = {
+			remove_idea = XFC_french_colony_idea
+			add_idea = XFC_liberty_idea0
+		}
+
+	}
+ }
+}

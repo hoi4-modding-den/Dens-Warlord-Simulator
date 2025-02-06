@@ -1,0 +1,164 @@
+focus_tree = {
+	id = XFC
+	country = {
+		factor = 0
+		modifier = {
+			add = 20
+			original_tag = XFC
+		}
+	}
+	default = no
+	reset_on_civilwar = no
+
+	continuous_focus_position = { x = 1000 y = 1000 }
+
+
+	    #focus = {
+        #id = XFC_
+        #icon = icon_here
+        #cost = 10
+        #prerequisite = { focus = XFC_ }
+        #relative_position_id = XFC_
+        #mutually_exclusive = { focus = XFC_ }
+        #x = 0
+        #y = 0
+        #completion_reward = {
+
+        #}
+    #}
+
+# French Path
+	    focus = {
+        id = XFC_france_over_freedom
+        icon = icon_here
+        cost = 3
+        x = 0
+        y = 0
+		available = {
+			is_subject_of = FRA
+		}
+		mutually_exclusive = { focus = XFC_liberty }
+        completion_reward = {
+			add_autonomy_score = {
+				value = -125
+			}
+			add_political_power = 125
+			add_opinion_modifier = {
+				target = FRA
+				modifier = XFC_france_over_freedom_focus
+			}
+			FRA = {
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = XFC_france_over_freedom_focus
+				}
+			}
+        }
+    }
+	focus = {
+        id = XFC_economic_investments
+        icon = icon_here
+        cost = 3
+        prerequisite = { focus = XFC_france_over_freedom }
+		relative_position_id = XFC_france_over_freedom
+        x = 0
+        y = 1
+        completion_reward = {
+			add_autonomy_score = {
+				value = -150
+			}
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+        }
+    }
+	focus = {
+        id = XFC_five_year_plan
+        icon = icon_here
+        cost = 3
+        prerequisite = { focus = XFC_economic_investments }
+        mutually_exclusive = { focus = XFC_ }
+		relative_position_id = XFC_economic_investments
+        x = -1.5
+        y = 1
+        completion_reward = {
+			add_tech_bonus = {
+				name = XFC_five_year_plan_focus
+				bonus = 1.0
+				uses = 3
+				category = construction_tech
+			}
+        }
+    }
+
+	focus = {
+        id = XFC_import_military_industry
+        icon = icon_here
+        cost = 3
+        prerequisite = { focus = XFC_economic_investments }
+        mutually_exclusive = { focus = XFC_ }
+		relative_position_id = XFC_economic_investments
+        x = 1.5
+        y = 1
+        completion_reward = {
+			random_owned_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+				}
+			}
+			random_owned_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+        }
+    }
+
+# Freedom Path
+	focus = {
+        id = XFC_liberty
+        icon = icon_here
+        cost = 3
+        relative_position_id = XFC_france_over_freedom
+        mutually_exclusive = { focus = XFC_france_over_freedom }
+        x = 10
+        y = 0
+        completion_reward = {
+			start_civil_war = {
+				ruling_party = neutrality
+				ideology = ROOT
+				size = 0.4
+				capital = 286
+				states = {
+					286 741
+				}
+			}
+        }
+    }
+}
