@@ -835,10 +835,14 @@
 			OR = {
 				is_faction_leader = yes
 				AND = {
-					XWE = {
+					any_other_country = {
+						DEN_is_chinese_country = yes
 						is_faction_leader = yes
 						is_in_faction_with = ROOT
 					}
+				}
+				hidden_trigger = {
+					has_country_flag = DEN_JOINT_japan_threat_defeated
 				}
 			}
 		}

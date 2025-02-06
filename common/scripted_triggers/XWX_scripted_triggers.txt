@@ -63,9 +63,16 @@ XWX_kmt_active = {
 }
 
 XWX_go_kmt_path = {
-    has_country_flag = XWX_random_kmt_path
+    OR = {
+        has_country_flag = XWX_random_kmt_path
+        XWX_go_japan_path = yes # Japan path needs KMT path first
+    }
 }
 
 XWX_go_commie_path = {
     has_country_flag = XWX_random_com_path
+}
+
+XWX_go_japan_path = {
+    has_country_flag = XWX_random_jap_path
 }

@@ -3,40 +3,14 @@ CHI_alternate_plan_1 = {
 	desc = "With the threat of Japanese Imperialism gone, Nationalist China focuses on eradicating warlords instead"
 
 	allowed = {
-		DEN_is_chinese_country_wo_tt = yes
+		original_tag = CHI
 		has_dlc = "Waking the Tiger"
 	}
 	enable = {
-		OR = {
-			original_tag = CHI
-			AND = {
-				DEN_is_chinese_country_wo_tt = yes
-				has_focus_tree = china_nationalist_focus
-			}
-		}
-		OR = {
-			AND = {
-				JAP = {
-					has_completed_focus = JAP_strengthen_civilian_government
-				}
-				has_game_rule = {
-					rule = CHI_ai_behavior
-					option = DEFAULT
-				}
-			}
-			has_country_flag = CHI_AI_RANDOM_ALTERNATE
-			has_game_rule = {
-				rule = CHI_ai_behavior
-				option = ALTERNATE
-			}
-		}
+		has_country_flag = DEN_JOINT_japan_threat_defeated
 	}
 	abort = {
-		has_war_with = JAP
-		has_game_rule = {
-			rule = CHI_ai_behavior
-			option = DEFAULT
-		}
+		
 	}
 	ai_national_focuses = {
 		CHI_unified_industrial_planning
@@ -109,16 +83,10 @@ CHI_alternate_plan_2 = {
 	desc = "China selects Germany over Soviet Union"
 
 	allowed = {
-		DEN_is_chinese_country_wo_tt = yes
+		original_tag = CHI
 	}
 	enable = {
-		OR = {
-			original_tag = CHI
-			AND = {
-				DEN_is_chinese_country_wo_tt = yes
-				has_focus_tree = china_nationalist_focus
-			}
-		}
+		original_tag = CHI
 		GER = {
 			has_completed_focus = GER_befriend_china
 		}

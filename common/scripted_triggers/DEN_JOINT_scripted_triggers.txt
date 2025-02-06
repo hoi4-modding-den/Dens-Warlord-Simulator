@@ -23,6 +23,7 @@ DEN_is_chinese_country_wo_tt = { # this also needs to be updated in ideas/japan.
 		original_tag = XQI
 		original_tag = XSX
 		original_tag = XBG
+		original_tag = XAF
 	}
 }
 

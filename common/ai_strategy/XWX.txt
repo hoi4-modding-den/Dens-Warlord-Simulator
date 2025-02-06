@@ -81,6 +81,27 @@ XWX_improve_french_opinion = {
 	}
 }
 
+XWX_improve_usa_opinion = {
+	allowed = {
+		original_tag = XWX
+	}
+	enable = {
+		country_exists = USA
+		NOT = { has_war_with = USA }
+		political_power_daily > 1.2
+		has_completed_focus = XWX_free_market_economics
+		NOT = { has_completed_focus = XWX_allied_trade }
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = diplo_action_desire
+		id = USA
+		target = improve_relation
+		value = 200
+	}
+}
+
 XWX_improve_XWE_opinion = {
 	allowed = {
 		original_tag = XWX

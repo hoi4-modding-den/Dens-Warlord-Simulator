@@ -260,6 +260,53 @@ country_event = { # Democratic Party event
 
 }
 
+country_event = { # Activate Japanese Collaboration Decisions
+	id = XWX_political_events.8
+	title = XWX_political_events.8.t
+	desc = XWX_political_events.8.desc
+	picture = GFX_report_event_japanese_officers
+
+	trigger = {
+		tag = XWX
+		exists = yes
+		OR = {
+			has_war_with = JAP
+			is_ally_with = JAP
+		}
+		JAP = {
+			exists = yes
+			OR = {
+				has_government = fascism
+				has_government = neutrality
+			}
+		}
+		if = {
+			limit = {
+				XWX_go_japan_path = yes
+			}
+			is_ai = yes
+		}
+		else = {
+			fascism > 0.09
+		}
+		has_completed_focus = XWX_consolidate_control
+	}
+
+	fire_only_once = yes
+
+	option = { 
+		name = XWX_political_events.8.a
+		add_stability = -0.075
+		add_popularity = {
+			ideology = fascism
+			popularity = 0.05
+		}
+
+		set_country_flag = XWX_japanese_collaboration_active
+	}
+
+}
+
 country_event = { # Communism: First Election
 	id = XWX_election_events.1
 	title = XWX_election_events.1.t
@@ -1887,9 +1934,11 @@ country_event = { # XWX wants to buy Rubber rights
 		}
 
 		FROM = {
-			add_timed_idea = {
-				idea = XWX_rubber_sale_cost
-				days = 720
+			effect_tooltip = {
+				add_timed_idea = {
+					idea = XWX_rubber_sale_cost
+					days = 720
+				}
 			}
 
 			custom_effect_tooltip = generic_skip_one_line_tt
@@ -1914,6 +1963,14 @@ country_event = { # XWX wants to buy Rubber rights
 				owner = {
 					country_event = XWX_diplomatic_events.31
 				}
+			}
+		}
+
+		hidden_effect = {
+			set_country_flag = {
+				flag = XWX_made_the_rubber_deal
+				days = 720
+				value = 1
 			}
 		}
 	}
@@ -2118,7 +2175,7 @@ country_event = { # XWX-USA Trade
 	id = XWX_diplomatic_events.34
 	title = XWX_diplomatic_events.34.t
 	desc = XWX_diplomatic_events.34.desc
-	picture = GFX_report_event_german_advisors_remain
+	picture = GFX_report_event_chinese_japanese_handshake
 
 	is_triggered_only = yes
 
@@ -2153,13 +2210,13 @@ country_event = { # XWX-USA Trade 2
 	id = XWX_diplomatic_events.35
 	title = XWX_diplomatic_events.35.t
 	desc = XWX_diplomatic_events.35.desc
-	picture = GFX_report_event_german_advisors_remain
+	picture = GFX_report_event_chinese_japanese_handshake
 
 	is_triggered_only = yes
 
 	option = { 
 		name = XWX_diplomatic_events.35.a
-		FROM = {
+		USA = {
 			effect_tooltip = {
 				add_political_power = 50
 				add_opinion_modifier = {
@@ -2195,6 +2252,422 @@ country_event = { # XWX-USA Trade 2
 
 }
 
+country_event = { # country seizes rubber plantations
+	id = XWX_diplomatic_events.36
+	title = XWX_diplomatic_events.36.t
+	desc = XWX_diplomatic_events.36.desc
+	picture = GFX_report_event_GER_grenzshutz_forces
+
+	is_triggered_only = yes
+
+	option = { 
+		name = XWX_diplomatic_events.36.a
+		add_opinion_modifier = {
+			target = FROM
+			modifier = XWX_seized_rubber_fields
+		}
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+		add_timed_idea = {
+			idea = XWX_retake_rubber_fields
+			days = 365
+		}
+	}
+
+}
+
+country_event = { # XWX requests overlords Chinese states
+	id = XWX_diplomatic_events.37
+	title = XWX_diplomatic_events.37.t
+	desc = XWX_diplomatic_events.37.desc
+	picture = GFX_report_event_japanese_chinese_surrender
+
+	is_triggered_only = yes
+
+	option = { 
+		name = XWX_diplomatic_events.37.a
+		effect_tooltip = {
+			every_owned_state = {
+				limit = {
+					DEN_is_chinese_state = yes
+				}
+				transfer_state_to = FROM
+			}
+		}
+
+		FROM = {
+				if = {
+				limit = {
+					FROM = { is_subject_of = ROOT }
+				}
+				custom_effect_tooltip = generic_skip_one_line_tt
+				effect_tooltip = {
+					add_autonomy_score = {
+						value = -250
+						localization = XWX_accepted_land_handover_tt
+					}
+				}
+			}
+		}
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+		FROM = {
+			country_event = {
+				id = XWX_diplomatic_events.38
+				hours = 6
+			}
+		}
+	}
+
+	option = { 
+		name = XWX_diplomatic_events.37.b
+		trigger = {
+			is_ai = no
+		}
+		add_political_power = -75
+		FROM = {
+				if = {
+				limit = {
+					FROM = { is_subject_of = ROOT }
+				}
+				effect_tooltip = {
+					add_autonomy_score = {
+						value = 500
+						localization = XWX_refused_land_handover_tt
+					}
+				}
+			}
+		}
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+		FROM = {
+			country_event = {
+				id = XWX_diplomatic_events.39
+				hours = 6
+			}
+		}
+	}
+
+}
+
+country_event = { # XWX gets overlords chinese states
+	id = XWX_diplomatic_events.38
+	title = XWX_diplomatic_events.38.t
+	desc = XWX_diplomatic_events.38.desc
+	picture = GFX_report_event_chinese_japanese_handshake
+
+	is_triggered_only = yes
+
+	option = { 
+		name = XWX_diplomatic_events.38.a
+		FROM = {
+			every_owned_state = {
+				limit = {
+					DEN_is_chinese_state = yes
+				}
+				transfer_state_to = ROOT
+			}
+		}
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+		if = {
+			limit = {
+				is_subject_of = FROM
+			}
+			add_autonomy_score = {
+				value = -250
+				localization = XWX_accepted_land_handover_tt
+			}
+		}
+	}
+
+}
+
+country_event = { # XWX doesnt get overlords chinese states
+	id = XWX_diplomatic_events.39
+	title = XWX_diplomatic_events.39.t
+	desc = XWX_diplomatic_events.39.desc
+	picture = GFX_report_event_japanese_chinese_surrender
+
+	is_triggered_only = yes
+
+	option = { 
+		name = XWX_diplomatic_events.39.a
+		add_political_power = 75
+		if = {
+			limit = {
+				is_subject_of = FROM
+			}
+			add_autonomy_score = {
+				value = 750
+				localization = XWX_refused_land_handover_tt
+			}
+		}
+	}
+
+}
+
+country_event = { # XWX requests overlords Chinese states
+	id = XWX_diplomatic_events.40
+	title = XWX_diplomatic_events.40.t
+	desc = XWX_diplomatic_events.40.desc
+	picture = GFX_report_event_japanese_chinese_surrender
+
+	is_triggered_only = yes
+
+	option = { 
+		name = XWX_diplomatic_events.40.a
+		effect_tooltip = {
+			FROM = {
+				every_other_country = {
+					limit = {
+						is_subject_of = FROM
+						OR = {
+							original_tag = MAN
+							original_tag = MEN
+							original_tag = XTI
+							DEN_is_chinese_country = yes
+						}
+					}
+					ROOT = {
+						annex_country = {
+							target = PREV
+							transfer_troops = yes
+						}
+					}
+				}
+			}
+		}
+
+		FROM = {
+				if = {
+				limit = {
+					FROM = { is_subject_of = ROOT }
+				}
+				effect_tooltip = {
+					add_autonomy_score = {
+						value = -250
+						localization = XWX_accepted_land_handover_tt
+					}
+				}
+			}
+		}
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+		FROM = {
+			country_event = {
+				id = XWX_diplomatic_events.41
+				hours = 6
+			}
+		}
+	}
+
+	option = { 
+		name = XWX_diplomatic_events.40.b
+		trigger = {
+			is_ai = no
+		}
+		add_political_power = -75
+		FROM = {
+				if = {
+				limit = {
+					FROM = { is_subject_of = ROOT }
+				}
+				effect_tooltip = {
+					add_autonomy_score = {
+						value = 500
+						localization = XWX_refused_land_handover_tt
+					}
+				}
+			}
+		}
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+		FROM = {
+			country_event = {
+				id = XWX_diplomatic_events.42
+				hours = 6
+			}
+		}
+	}
+
+}
+
+country_event = { # XWX gets overlords chinese puppets
+	id = XWX_diplomatic_events.41
+	title = XWX_diplomatic_events.41.t
+	desc = XWX_diplomatic_events.41.desc
+	picture = GFX_report_event_chinese_japanese_handshake
+
+	is_triggered_only = yes
+
+	option = { 
+		name = XWX_diplomatic_events.38.a
+		every_other_country = {
+			limit = {
+				is_subject_of = FROM
+				OR = {
+					original_tag = MAN
+					original_tag = MEN
+					original_tag = XTI
+					DEN_is_chinese_country = yes
+				}
+			}
+			ROOT = {
+				annex_country = {
+					target = PREV
+					transfer_troops = yes
+				}
+			}
+		}
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+		if = {
+			limit = {
+				is_subject_of = FROM
+			}
+			add_autonomy_score = {
+				value = -250
+				localization = XWX_accepted_land_handover_tt
+			}
+		}
+	}
+
+}
+
+country_event = { # XWX doesnt get overlords chinese puppets
+	id = XWX_diplomatic_events.42
+	title = XWX_diplomatic_events.42.t
+	desc = XWX_diplomatic_events.42.desc
+	picture = GFX_report_event_japanese_chinese_surrender
+
+	is_triggered_only = yes
+
+	option = { 
+		name = XWX_diplomatic_events.39.a
+		if = {
+			limit = {
+				is_subject_of = FROM
+			}
+			add_autonomy_score = {
+				value = 750
+				localization = XWX_refused_land_handover_tt
+			}
+		}
+	}
+
+}
+
+country_event = { # XWX requests generals
+	id = XWX_diplomatic_events.43
+	title = XWX_diplomatic_events.43.t
+	desc = XWX_diplomatic_events.43.desc
+	picture = GFX_report_event_chinese_japanese_handshake
+
+	is_triggered_only = yes
+
+	option = { 
+		name = XWX_diplomatic_events.43.a
+		ai_chance = {
+			base = 3
+		}
+		add_war_support = 0.02
+		JAP_yasuji_okamura = {
+			set_nationality = FROM
+		}
+		JAP_kanji_ishiwara = {
+			set_nationality = FROM
+		}
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+		effect_tooltip = {
+			FROM = { add_ideas = XWX_japanese_advisors }
+		}
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+		FROM = {
+			country_event = {
+				id = XWX_diplomatic_events.44
+				hours = 6
+			}
+		}
+	}
+
+	option = { 
+		name = XWX_diplomatic_events.43.b
+		ai_chance = {
+			base = 1
+			modifier = {
+				factor = 0
+				FROM = { is_subject_of = ROOT }
+			}
+		}
+		effect_tooltip = {
+			FROM = { add_ideas = XWX_japanese_advisors }
+		}
+		
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+		FROM = {
+			country_event = {
+				id = XWX_diplomatic_events.45
+				hours = 6
+			}
+		}
+	}
+
+}
+
+country_event = { # XWX gets generals
+	id = XWX_diplomatic_events.44
+	title = XWX_diplomatic_events.44.t
+	desc = XWX_diplomatic_events.44.desc
+	picture = GFX_report_event_chinese_japanese_handshake
+
+	is_triggered_only = yes
+
+	option = { 
+		name = XWX_diplomatic_events.44.a
+		effect_tooltip = {
+			JAP_yasuji_okamura = {
+				set_nationality = ROOT
+			}
+			JAP_kanji_ishiwara = {
+				set_nationality = ROOT
+			}
+		}
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+		add_ideas = XWX_japanese_advisors
+	}
+
+}
+
+country_event = { # XWX doesnt get generals
+	id = XWX_diplomatic_events.45
+	title = XWX_diplomatic_events.45.t
+	desc = XWX_diplomatic_events.45.desc
+	picture = GFX_report_event_chinese_japanese_handshake
+
+	is_triggered_only = yes
+
+	option = { 
+		name = XWX_diplomatic_events.44.a
+		add_ideas = XWX_japanese_advisors
+	}
+
+}
+
 news_event = { # KMT Coup
 	id = XWX_news_events.1
 	title = XWX_news_events.1.t
@@ -2202,6 +2675,7 @@ news_event = { # KMT Coup
 	picture = GFX_news_event_XWX_kmt_victory
 
 	is_triggered_only = yes
+	major = yes
 
 	option = { 
 		name = XWX_news_events.1.a
@@ -2250,6 +2724,7 @@ news_event = { # KMT Civil War
 	picture = GFX_news_event_chinese_soldiers_city_ruin
 
 	is_triggered_only = yes
+	major = yes
 
 	option = { 
 		name = XWX_news_events.2.a
@@ -2298,6 +2773,7 @@ news_event = { # XWX proclaims the United Republics of China
 	picture = GFX_news_event_HUN_leninist_gathering
 
 	is_triggered_only = yes
+	major = yes
 
 	option = { 
 		name = XWX_news_events.3.a
@@ -2339,6 +2815,7 @@ news_event = { # XWX unites China
 	picture = GFX_news_event_HUN_leninist_gathering
 
 	is_triggered_only = yes
+	major = yes
 
 	option = { 
 		name = XWX_news_events.4.a
@@ -2387,6 +2864,7 @@ news_event = { # XWX dennounces Chiang Kai-Shek's Government (KMT)
 	picture = GFX_news_event_XWX_kmt_victory
 
 	is_triggered_only = yes
+	major = yes
 
 	option = { 
 		name = XWX_news_events.5.a
@@ -2415,6 +2893,48 @@ news_event = { # XWX dennounces Chiang Kai-Shek's Government (KMT)
 	option = { 
 		name = XWX_news_events.5.d
 		trigger = {
+			DEN_is_chinese_country = no
+		}
+	}
+
+}
+
+news_event = { # Pro-Japanese Coup in XWX
+	id = XWX_news_events.6
+	title = XWX_news_events.6.t
+	desc = XWX_news_events.6.desc
+	picture = GFX_news_event_japanese_army_parade
+
+	is_triggered_only = yes
+	major = yes
+
+	option = { 
+		name = XWX_news_events.6.a
+		trigger = {
+			tag = XWX
+		}
+	}
+
+	option = { 
+		name = XWX_news_events.6.b
+		trigger = {
+			NOT = { tag = XWX }
+			DEN_is_chinese_country = yes
+		}
+	}
+
+	option = { 
+		name = XWX_news_events.6.c
+		trigger = {
+			tag = JAP
+		}
+	}
+
+	option = { 
+		name = XWX_news_events.6.d
+		trigger = {
+			NOT = { tag = XWX }
+			NOT = { tag = JAP }
 			DEN_is_chinese_country = no
 		}
 	}

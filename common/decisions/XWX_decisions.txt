@@ -399,6 +399,10 @@ XWX_construction_decisions = {
 			NOT = { 985 = { is_controlled_by = ROOT } }
     	}
 
+        highlight_states = {
+            highlight_provinces = { 8104 }
+        }
+
     	is_good = yes
 
 		fire_only_once = no
@@ -539,7 +543,7 @@ XWX_construction_decisions = {
                     }
                 }
                 fallback = yes
-                #path = { 42 10 20 30 40 84 }
+                #path = {  }
                 start_province = 2045
                 target_province = 8104
             }
@@ -576,6 +580,12 @@ XWX_construction_decisions = {
 
         visible = {
             NOT = { has_country_flag = developed_gannan }
+        }
+
+        highlight_states = {
+            highlight_state_targets = {
+                state = 753
+            }
         }
 
         cost = 75
@@ -625,6 +635,13 @@ XWX_construction_decisions = {
             NOT = { has_country_flag = developed_ganzi }
         }
 
+        highlight_states = {
+            highlight_state_targets = {
+                state = 752
+                state = 985
+            }
+        }
+
         cost = 75
 
         ai_will_do = {
@@ -647,6 +664,255 @@ XWX_construction_decisions = {
                 increase_state_category = yes
             }
             set_country_flag = developed_ganzi
+        }
+    }
+
+}
+
+XWX_japanese_collaboration = {
+
+    XWX_request_japanese_support = {
+
+        icon = GFX_decision_generic_prepare_civil_war
+
+        allowed = {
+            original_tag = XWX
+        }
+
+        available = {
+            country_exists = JAP
+            JAP = {
+                OR = {
+                    has_government = fascism
+                    has_government = neutrality
+                }
+            }
+        }
+
+        cost = 80
+
+        ai_will_do = {
+			base = 0
+            modifier = {
+                add = 80
+                XWX_go_japan_path = yes
+            } 
+		}
+
+        days_remove = 70
+
+        fire_only_once = no
+
+        modifier = {
+            fascism_drift = 0.04
+        }
+
+        remove_effect = {
+            add_political_power = 40
+            add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 200
+			}
+        }
+    
+    }
+
+    XWX_pro_japan_propaganda = {
+
+        icon = GFX_decision_eng_propaganda_campaigns
+
+        allowed = {
+            original_tag = XWX
+        }
+
+        available = {
+            country_exists = JAP
+            JAP = {
+                OR = {
+                    has_government = fascism
+                    has_government = neutrality
+                }
+            }
+        }
+
+        cost = 80
+
+        ai_will_do = {
+			base = 0
+            modifier = {
+                add = 60
+                XWX_go_japan_path = yes
+            } 
+		}
+
+        days_remove = 70
+
+        fire_only_once = no
+
+        complete_effect = {
+            add_war_support = -0.02
+            add_popularity = {
+				ideology = fascism
+				popularity = 0.05
+			}
+        }
+    
+    }
+
+    XWX_slander_government = {
+
+        icon = GFX_decision_eng_blackshirt_speech
+
+        allowed = {
+            original_tag = XWX
+        }
+
+        available = {
+            country_exists = JAP
+            JAP = {
+                OR = {
+                    has_government = fascism
+                    has_government = neutrality
+                }
+            }
+        }
+
+        cost = 80
+
+        ai_will_do = {
+			base = 0
+            modifier = {
+                add = 60
+                XWX_go_japan_path = yes
+            } 
+		}
+
+        days_remove = 70
+
+        fire_only_once = no
+
+        modifier = {
+            neutrality_drift = -0.02
+            democratic_drift = -0.02
+            communism_drift = -0.01
+        }
+    
+    }
+
+    XWX_collaborator_coup = {
+
+        icon = GFX_decision_eng_blackshirt_march
+
+        allowed = {
+            original_tag = XWX
+        }
+
+        available = {
+            fascism > 0.30
+            if = {
+                limit = {
+                    is_subject = yes
+                }
+                OVERLORD = {
+                    OR = {
+                        has_war_with = JAP
+                        tag = JAP
+                    }
+                }
+            }
+            else = {
+                is_subject = no
+            }
+        }
+
+        cancel = {
+            if = {
+                limit = {
+                    is_subject = yes
+                }
+                OVERLORD = {
+                    OR = {
+                        NOT = { tag = JAP }
+                        has_war_with = JAP
+                    }
+                }
+            }
+            else = {
+                is_subject = yes
+            }
+        }
+
+        cost = 100
+
+        ai_will_do = {
+			base = 0
+            modifier = {
+                add = 1000
+                XWX_go_japan_path = yes
+            } 
+		}
+
+        fire_only_once = yes
+
+        days_remove = 70
+
+        complete_effect = {
+            # TODO: add warning event so AI and players arent surprised by their ally switching sides
+        }
+
+        remove_effect = {
+            JAP = {
+                if = {
+                    limit = {
+                        has_dlc = "Waking the Tiger"
+                        has_government = fascism
+                    }
+                    set_autonomy = {
+                        target = ROOT
+                        autonomous_state = autonomy_wtt_imperial_associate
+                        end_wars = no
+                        end_civil_wars = no
+                    }
+                }
+                else = {
+                    set_autonomy = {
+                        target = ROOT
+                        autonomous_state = autonomy_puppet
+                        end_wars = no
+                        end_civil_wars = no
+                    }
+                }
+            }
+
+            custom_effect_tooltip = generic_skip_one_line_tt
+
+            add_war_support = 0.05
+            add_popularity = {
+				ideology = fascism
+				popularity = 0.1
+			}
+
+            custom_effect_tooltip = generic_skip_one_line_tt
+
+            set_politics = {
+				ruling_party = fascism
+				elections_allowed = no
+			}
+
+            custom_effect_tooltip = generic_skip_one_line_tt
+
+            custom_effect_tooltip = XWX_loads_new_focus_tree_tt_alt
+			hidden_effect = {
+				load_focus_tree = { tree = XWX_focus_tree_japan keep_completed = yes }
+				mark_focus_tree_layout_dirty = yes
+			}
+
+            hidden_effect = {
+                news_event = {
+                    id = XWX_news_events.6
+                    hours = 2
+                }
+            }
         }
     }
 
@@ -714,6 +980,7 @@ XWX_army_improvement = {
         ai_will_do = {
 			base = 5
             modifier = {
+                factor = 3
                 stockpile_ratio = {
                     archetype = motorized_equipment
                     ratio > 1.2
@@ -737,6 +1004,7 @@ XWX_army_improvement = {
 				amount = 50
 			}
         }
+    
     }
 
     XWX_mobilise_civil_defence_union = {
@@ -748,7 +1016,7 @@ XWX_army_improvement = {
         }
 
         available = {
-            has_completed_focus = XWX_army_motorisation
+            has_completed_focus = XWX_civil_defence
             has_war = yes
             OR = {
                 surrender_progress > 0.2
@@ -778,6 +1046,7 @@ XWX_army_improvement = {
         remove_effect = {
             add_war_support = -0.05
         }
+    
     }
 
     XWX_raid_neighbouring_states = {
@@ -947,6 +1216,160 @@ XWX_army_improvement = {
 
 }
 
+political_actions = {
+
+    XWX_block_rubber_export = {
+
+        icon = GFX_decision_hol_draw_up_staff_plans
+
+        visible = {
+            286 = {
+                is_owned_and_controlled_by = ROOT
+            }
+        }
+
+        available = {
+            is_subject = no
+            NOT = { is_ally_with = FROM }
+            has_opinion = {
+                target = FROM
+                value < 0
+            }
+            NOT = {
+                has_country_flag = XWX_made_the_rubber_deal
+            }
+        }
+
+        targets_dynamic = yes
+
+        target_trigger = {
+            FROM = {
+                has_resources_rights = {
+                    state = 286
+                    resources = { rubber }
+                }
+            }
+        }
+
+        cost = 100
+
+        ai_will_do = {
+			base = 0
+            modifier = {
+                add = 500
+                has_war_with = FROM
+            }
+            modifier = {
+                add = 20
+                has_opinion = {
+                    target = FROM
+                    value < -49
+                }
+            }
+		}
+
+        complete_effect = {
+            add_named_threat = {
+                threat = 1
+                name = "Seized [FROM.GetAdjective] Rubber Plantations"
+            }
+
+            custom_effect_tooltip = generic_skip_one_line_tt
+
+            FROM = { remove_resource_rights = 286 }
+
+            custom_effect_tooltip = generic_skip_one_line_tt
+
+            FROM = {
+                country_event = {
+                    id = XWX_diplomatic_events.36
+                    hours = 3
+                }
+                set_variable = {
+                    XWX_rubber_field_seizer = ROOT
+                }
+            }
+
+        }
+
+    }
+
+    XWX_demand_JAP_occupied_china = {
+
+        allowed = {
+            tag = XWX
+        }
+
+        visible = {
+            FROM = {
+                any_owned_state = {
+                    DEN_is_chinese_state = yes
+                }
+            }
+            is_ally_with = FROM
+        }
+
+        available = {
+            has_completed_focus = XWX_reorganised_chinese_government
+            is_ally_with = FROM
+            FROM = {
+                all_owned_state = {
+                    is_controlled_by = FROM
+                }
+            }
+            all_owned_state = {
+                is_controlled_by = ROOT
+            }
+        }
+
+        targets_dynamic = yes
+
+        target_trigger = {
+            FROM = {
+                original_tag = JAP
+                is_ally_with = ROOT
+            }
+        }
+
+        cost = 100
+
+        ai_will_do = {
+			base = 500
+		}
+
+        complete_effect = {
+            FROM = {
+                country_event = {
+                    id = XWX_diplomatic_events.37
+                    hours = 3
+                }
+            }
+
+            custom_effect_tooltip = if_they_accept_tt
+            effect_tooltip = {
+                FROM = {
+                    every_owned_state = {
+                        limit = {
+                            DEN_is_chinese_state = yes
+                        }
+                        transfer_state_to = ROOT
+                    }
+                }
+            }
+            custom_effect_tooltip = generic_skip_one_line_tt
+
+            effect_tooltip = {
+                add_autonomy_score = {
+                    value = -500
+                    localization = XWX_accepted_land_handover_tt
+                }
+            }
+        }
+
+    }
+
+}
+
 foreign_support = {
 
     XWX_foreign_anti_japanese_support = {
@@ -1027,6 +1450,7 @@ foreign_support = {
             clr_country_flag = XWX_seeking_support
         }
     }
+
 }
 
 XWX_chinese_education_bureau = {

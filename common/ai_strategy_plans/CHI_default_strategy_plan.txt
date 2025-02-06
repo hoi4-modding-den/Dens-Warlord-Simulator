@@ -38,16 +38,10 @@ CHI_industrial_buildup = {
 	desc = "Makes Nationalist China more likely to expand industry if not at war"
 
 	allowed = {
-		DEN_is_chinese_country_wo_tt = yes
+		original_tag = CHI
 	}
 	enable = {
-		OR = {
-			original_tag = CHI
-			AND = {
-				DEN_is_chinese_country_wo_tt = yes
-				has_focus_tree = china_nationalist_focus
-			}
-		}
+		original_tag = CHI
 		has_war = no
 	}
 	abort = {
@@ -88,7 +82,7 @@ CHI_inflation_handling = {
 	desc = "Teaches the AI to handle the inflation mechanic for China"
 
 	allowed = {
-		DEN_is_chinese_country_wo_tt = yes
+		original_tag = CHI
 	}
 	enable = {
 		OR = {
@@ -192,16 +186,10 @@ CHI_war_measures = {
 	desc = "Teaches the AI to fix issues if at war"
 
 	allowed = {
-		DEN_is_chinese_country_wo_tt = yes
+		original_tag = CHI
 	}
 	enable = {
-		OR = {
-			original_tag = CHI
-			AND = {
-				DEN_is_chinese_country_wo_tt = yes
-				has_focus_tree = china_nationalist_focus
-			}
-		}
+		original_tag = CHI
 		has_war = yes
 	}
 	abort = {
@@ -244,7 +232,7 @@ CHI_befriend_britain = {
 	desc = "Teaches the AI to make friends with britain to progress further down the tree"
 
 	allowed = {
-		DEN_is_chinese_country_wo_tt = yes
+		original_tag = CHI
 	}
 	enable = {
 		has_completed_focus = CHI_british_cooperation
@@ -317,7 +305,7 @@ CHI_befriend_america = {
 	desc = "Teaches the AI to make friends with britain to progress further down the tree"
 
 	allowed = {
-		DEN_is_chinese_country_wo_tt = yes
+		original_tag = CHI
 	}
 	enable = {
 		has_completed_focus = CHI_mission_to_the_us
@@ -391,7 +379,7 @@ CHI_befriend_France = {
 	desc = "Teaches the AI to make friends with britain to progress further down the tree"
 
 	allowed = {
-		DEN_is_chinese_country_wo_tt = yes
+		original_tag = CHI
 	}
 	enable = {
 		has_completed_focus = CHI_reach_out_to_france
@@ -465,7 +453,7 @@ CHI_befriend_Soviet = {
 	desc = "Teaches the AI to make friends with Soviet to progress further down the tree"
 
 	allowed = {
-		DEN_is_chinese_country_wo_tt = yes
+		original_tag = CHI
 	}
 	enable = {
 		has_completed_focus = CHI_mission_to_the_soviet_union

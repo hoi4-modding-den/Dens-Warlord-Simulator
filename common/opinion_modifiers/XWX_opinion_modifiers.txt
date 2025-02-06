@@ -41,5 +41,9 @@ opinion_modifiers = {
 		value = 25
 		decay = 1
 	}
+
+	XWX_seized_rubber_fields = {
+		value = -75
+	}
 	
 }

@@ -50,6 +50,29 @@ XWX_construction_decisions = {
 
 }
 
+XWX_japanese_collaboration = {
+
+	icon = GFX_decision_category_generic_fascism
+
+    allowed = {
+        original_tag = XWX
+    }
+
+    priority = 60
+
+	visible = {
+		has_country_flag = XWX_japanese_collaboration_active
+        OR = {
+            fascism > 0.09
+            AND = {
+                XWX_go_japan_path = yes
+                is_ai = yes
+            }
+        }
+	}
+
+}
+
 XWX_army_improvement = {
 
 	icon = GFX_decision_category_military_operation

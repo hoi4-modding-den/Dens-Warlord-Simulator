@@ -7,6 +7,20 @@ on_actions = {
 				}
 				add_core_of = CHI
 			}
+			every_state = {
+				limit = {
+					is_core_of = PRC
+				}
+				remove_core_of = PRC
+			}
+			every_country = {
+				limit = {
+					DEN_is_chinese_country = yes
+				}
+				add_to_variable = {
+                    global.DEN_JOINT_is_china_var = THIS
+                }
+			}
 		}
 	}
 	on_war_relation_added = {
