@@ -687,6 +687,7 @@ XWX_japanese_collaboration = {
                     has_government = neutrality
                 }
             }
+            has_war_with = JAP
         }
 
         cost = 80
@@ -733,6 +734,7 @@ XWX_japanese_collaboration = {
                     has_government = neutrality
                 }
             }
+            has_war_with = JAP
         }
 
         cost = 80
@@ -775,6 +777,7 @@ XWX_japanese_collaboration = {
                     has_government = neutrality
                 }
             }
+            has_war_with = JAP
         }
 
         cost = 80
@@ -809,36 +812,13 @@ XWX_japanese_collaboration = {
 
         available = {
             fascism > 0.30
-            if = {
-                limit = {
-                    is_subject = yes
-                }
-                OVERLORD = {
-                    OR = {
-                        has_war_with = JAP
-                        tag = JAP
-                    }
-                }
-            }
-            else = {
-                is_subject = no
-            }
+            has_war_with = JAP
         }
 
-        cancel = {
-            if = {
-                limit = {
-                    is_subject = yes
-                }
-                OVERLORD = {
-                    OR = {
-                        NOT = { tag = JAP }
-                        has_war_with = JAP
-                    }
-                }
-            }
-            else = {
-                is_subject = yes
+        cancel_trigger = {
+            OR = {
+                NOT = { has_war_with = JAP }
+                fascism < 0.25
             }
         }
 
@@ -857,7 +837,12 @@ XWX_japanese_collaboration = {
         days_remove = 70
 
         complete_effect = {
-            # TODO: add warning event so AI and players arent surprised by their ally switching sides
+            every_other_country = {
+                limit = {
+                    is_ally_with = ROOT
+                }
+                country_event = XWX_diplomatic_events.46
+            }
         }
 
         remove_effect = {

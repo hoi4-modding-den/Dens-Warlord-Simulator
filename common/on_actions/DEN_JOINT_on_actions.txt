@@ -29,14 +29,16 @@ on_actions = {
 				limit = {
 					FROM = {
 						DEN_is_chinese_country = yes
-						is_faction_leader = yes
+						is_in_faction = yes
 					}
-					ROOt = {
+					ROOT = {
 						tag = JAP
 					}
 				}
 				FROM = {
-					set_country_flag = DEN_JOINT_uf_leader_got_attacked
+					faction_leader = {
+						set_country_flag = DEN_JOINT_uf_leader_got_attacked
+					}
 				}
 			}
 		}

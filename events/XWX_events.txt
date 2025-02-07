@@ -457,7 +457,7 @@ country_event = { # Kuomintang Coup (without Civil War)
 
 		custom_effect_tooltip = generic_skip_one_line_tt
 
-		add_ideas = XWX_low_popular_support_2
+		add_ideas = XWX_low_popular_support
 
 		custom_effect_tooltip = generic_skip_one_line_tt
 
@@ -1373,6 +1373,10 @@ country_event = { # Gannan demands Tibet joins United Front
 					target = FROM
 					value < 30
 				}
+			}
+			modifier = {
+				factor = 0
+				FROM = { has_war_with = JAP }
 			}
 		}
 		FROM = { 
@@ -2664,6 +2668,26 @@ country_event = { # XWX doesnt get generals
 	option = { 
 		name = XWX_diplomatic_events.44.a
 		add_ideas = XWX_japanese_advisors
+	}
+
+}
+
+country_event = { # XWX prepares to switch sides
+	id = XWX_diplomatic_events.46
+	title = XWX_diplomatic_events.46.t
+	desc = XWX_diplomatic_events.46.desc
+	picture = GFX_report_event_japanese_transport_soldiers
+
+	is_triggered_only = yes
+
+	option = { 
+		name = XWX_diplomatic_events.46.a
+		custom_effect_tooltip = XWX_diplomatic_events.46.a.tt
+		add_ai_strategy = {
+			type = prepare_for_war
+			id = FROM
+			value = 200
+		}
 	}
 
 }

@@ -6653,6 +6653,21 @@ operations = {
 			add_political_power = 50
 			add_war_support = 0.05
 			add_stability = 0.05
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
+			every_state = {
+				limit = {
+					NOT = { is_core_of = ROOT }
+					OR = {
+						state = 671
+						state = 670
+						state = 286
+						state = 741
+					}
+				}
+				add_core_of = ROOT
+			}
 		}
 
 		timeout_effect = {

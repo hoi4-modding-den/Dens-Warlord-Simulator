@@ -672,6 +672,11 @@ XWX_bop_cat: "BoP Category"
  XWX_diplomatic_events.45.t: "[FROM.GetNameDefCap] sends Attache"
  XWX_diplomatic_events.45.desc: "The [FROM.GetAdjective] government has decided to send us a general attache to instruct our own commanders."
 
+ XWX_diplomatic_events.46.t: "Japanese Collaborators prepare Coup in [FROM.GetNameDef]!"
+ XWX_diplomatic_events.46.desc: "News has reached us that our ally, [FROM.GetNameDef] has been compromised by Japanese collaborators. They plan to coup the current leadership and install a pro-Japanese dictatorship, switching sides in the war."
+ XWX_diplomatic_events.46.a: "We must be prepared."
+ XWX_diplomatic_events.46.a.tt: "§Y[FROM.GetNameDef]§! §Rwill switch to Japan's side, unless§! §Ythe war with Japan is ended§! §Ror their§! §YFascism Support decreases to under 25%§!§R.§!"
+
  XWX_news_events.1.t: "Kuomintang Coup in Gannan"
  XWX_news_events.1.desc: "News today from the Chinese Province of Gannan, where the Communist government of the 'Peasant Republics of Gannan' was overthrown by members of the Kuomintang. They were backed by Chiang Kai-Shek's Central Government, which enabled them to overthrow the Communist regime without significant displays of violence."
  XWX_news_events.1.a: "Good Work, Brothers!"

@@ -2803,7 +2803,7 @@ focus_tree = {
 			
 			add_timed_idea = {
 				idea = XWX_promises_of_democracy
-				days = 730
+				days = 180
 			}
 
 			custom_effect_tooltip = generic_skip_one_line_tt
@@ -3360,7 +3360,9 @@ focus_tree = {
 			has_war = yes
 			is_in_faction = yes
 			OR = {
-				faction_leader = {
+				any_other_country = {
+					is_faction_leader = yes
+					is_in_faction_with = ROOT
 					surrender_progress > 0.25
 				}
 				any_other_country = {
@@ -3398,7 +3400,7 @@ focus_tree = {
 		cost = 10
 
 		ai_will_do = {
-			base = 1000
+			base = 5000
 			modifier = {
 				factor = 0
 				has_war = yes
@@ -3513,38 +3515,139 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_ANNEXATION }
 		completion_reward = {
-			every_other_country = {
+			if = {
 				limit = {
-					OR = {
+					NOT = {
 						owns_state = 671
 						owns_state = 670
 						owns_state = 286
 						owns_state = 741
-						controls_state = 671
-						controls_state = 670
-						controls_state = 286
-						controls_state = 741
 					}
 				}
-				custom_effect_tooltip = CHI_overlordship_over_indochina_tt
+				every_other_country = {
+					limit = {
+						OR = {
+							owns_state = 671
+							owns_state = 670
+							owns_state = 286
+							owns_state = 741
+							controls_state = 671
+							controls_state = 670
+							controls_state = 286
+							controls_state = 741
+						}
+					}
+					custom_effect_tooltip = CHI_overlordship_over_indochina_tt
+					hidden_effect = {
+						ROOT = {
+							create_wargoal = {
+								type = take_state_focus
+								target = PREV
+								expire = 0
+								generator = { 671 670 286 741 }
+							}
+						}
+					}
+				}
+
+				custom_effect_tooltip = generic_skip_one_line_tt
+
+				activate_mission = CHI_overlordship_over_indochina
+
 				hidden_effect = {
-					ROOT = {
-						create_wargoal = {
-							type = take_state_focus
-							target = PREV
-							expire = 0
-							generator = { 671 670 286 741 }
+					news_event = { id = wtt_news.47 days = 3}
+				}
+			}
+			else = {
+				every_state = {
+					limit = {
+						NOT = { is_core_of = ROOT }
+						OR = {
+							state = 671
+							state = 670
+							state = 286
+							state = 741
+						}
+					}
+					add_core_of = ROOT
+				}
+			}
+		}
+	}
+
+	shared_focus = {
+		id = XWX_puppet_korea
+		icon = GFX_focus_generic_self_management
+		prerequisite = { focus = XWX_proclaim_new_nationalist_government }
+		#mutually_exclusive = { focus =  }
+		x = 0
+		y = 2
+		relative_position_id = XWX_proclaim_new_nationalist_government
+
+		cost = 8
+
+		ai_will_do = {
+			base = 100
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
+		}
+
+		available = {
+			DEN_controls_all_chinese_states = yes
+			is_subject = no
+		}
+
+		bypass = {
+			OR = {
+				KOR = {
+					is_subject_of = ROOT
+				}
+				AND = {
+					527 = { is_owned_by = ROOT }
+					525 = { is_owned_by = ROOT }
+				}
+			}
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+
+		will_lead_to_war_with = MON
+
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		completion_reward = {
+			if = {
+				limit = {
+					KOR = { exists = no }
+				}
+				every_other_country = {
+					limit = {
+						OR = {
+							owns_state = 527
+							owns_state = 525
+							controls_state = 527
+							controls_state = 525
+						}
+					}
+					custom_effect_tooltip = CHI_overlordship_over_indochina_tt
+					hidden_effect = {
+						ROOT = {
+							create_wargoal = {
+								type = take_state_focus
+								target = PREV
+								expire = 0
+								generator = { 527 525 }
+							}
 						}
 					}
 				}
 			}
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-
-			activate_mission = CHI_overlordship_over_indochina
-
-			hidden_effect = {
-				news_event = { id = wtt_news.47 days = 3}
+			else = {
+				KOR = {
+					country_event = generic.20
+				}
 			}
 		}
 	}
@@ -3628,8 +3731,12 @@ focus_tree = {
 
 		}
 
-		search_filters = { FOCUS_FILTER_INDUSTRY }
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
+			add_war_support = 0.05
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
 			add_ideas = XWX_defensive_preparations
 			hidden_effect = {
 				add_ai_strategy = {

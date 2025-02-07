@@ -21,7 +21,7 @@ XWX_communes_bop = {
 		range = {
 			id = XWX_federalists_low_control_range
 			min = -0.2
-			max = -0.06
+			max = -0.05
 			modifier = {
 				# ARMY
 				army_core_defence_factor = 0.01
@@ -53,7 +53,7 @@ XWX_communes_bop = {
 		range = {
 			id = XWX_federalists_medium_control_range
 			min = -0.6
-			max = -0.21
+			max = -0.2
 			modifier = {
 				# ARMY
 				army_core_defence_factor = 0.03
@@ -79,8 +79,8 @@ XWX_communes_bop = {
 
 		range = {
 			id = XWX_federalists_high_control_range
-			min = -0.98
-			max = -0.61
+			min = -0.99
+			max = -0.6
 			modifier = {
 				# ARMY
 				army_core_defence_factor = 0.05
@@ -137,7 +137,7 @@ XWX_communes_bop = {
 		range = {
 			id = XWX_centralists_low_control_range
 			min = 0.06
-			max = 0.21
+			max = 0.2
 			modifier = {
 				# ARMY
 				#army_core_defence_factor = 0
@@ -169,7 +169,7 @@ XWX_communes_bop = {
 		range = {
 			id = XWX_centralists_medium_control_range
 			min = 0.2
-			max = 0.61
+			max = 0.5
 			modifier = {
 				# ARMY
 				#army_core_defence_factor = 0
@@ -196,7 +196,7 @@ XWX_communes_bop = {
 		range = {
 			id = XWX_centralists_high_control_range
 			min = 0.6
-			max = 0.98
+			max = 0.99
 			modifier = {
 				# ARMY
 				#army_core_defence_factor = 0
