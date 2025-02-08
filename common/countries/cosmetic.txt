@@ -85,6 +85,11 @@ XSA_unified_china = {
 	color_ui = rgb { 20 90 180 }
 }
 
+XHK_iafc_cosmetic = {
+    color = rgb { 255 255 255 }
+    color_ui = rgb { 255 255 255 }
+}
+
 #vanilla HOI4 cosmetic tags#
 MAL_UK = {
     color = rgb { 201 56 93 }

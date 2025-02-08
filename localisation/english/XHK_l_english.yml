@@ -7,6 +7,9 @@
  XHK_japan: "Japanese Mandate of Chinese Ports"
  XHK_japan_DEF: "the Japanese Mandate of Chinese Ports"
  XHK_japan_AJG: "Japanese-Chinese"
+ XHK_iafc_cosmetic: "The International State"
+ XHK_iafc_cosmetic_DEF: "The International State"
+ XHK_iafc_cosmetic_AJG: "International-Chinese"
  XHK_sir_mark_young: "Sir Mark Young"
  XHK_sir_mark_young_desc: "Sir Mark Young Description"
  XHK_STRAIT: "Hong Kong Strait"
@@ -14,7 +17,7 @@
  xhk_strait_blocked_tt: "§RThe strait is closed to [ROOT.GetName] due to deteriorating relations with the strait's controller.§!"
 
  XHK_international_city: "International City"
- XHK_international_city_tt: "§Y[CHI.GetAdjective]§! Influence Metric: [?XHK_CHI_inf|+0] \n§Y[ENG.GetNameWithFlag]§! Influence Metric: [?XHK_ENG_inf|+0] \n§Y[POR.GetNameWithFlag]§! Influence Metric: [?XHK_POR_inf|+0] \n§Y[USA.GetNameWithFlag]§! Influence Metric: [?XHK_USA_inf|+0] \n§Y[RAJ.GetNameWithFlag]§! Influence Metric: [?XHK_RAJ_inf|+0] \n§Y[JAP.GetNameWithFlag]§! Influence Metric: [?XHK_JAP_inf|+0] \n§Y[SOV.GetNameWithFlag]§! Influence Metric: [?XHK_SOV_inf|+0]"
+ XHK_international_city_tt: "§Y[CHI.GetAdjective]§! Influence Metric: [?XHK_CHI_inf|+0] \n§Y[ENG.GetNameWithFlag]§! Influence Metric: [?XHK_ENG_inf|+0] \n§Y[POR.GetNameWithFlag]§! Influence Metric: [?XHK_POR_inf|+0] \n§Y[USA.GetNameWithFlag]§! Influence Metric: [?XHK_USA_inf|+0] \n§Y[JAP.GetNameWithFlag]§! Influence Metric: [?XHK_JAP_inf|+0] \n§Y[SOV.GetNameWithFlag]§! Influence Metric: [?XHK_SOV_inf|+0]"
 
  XHK_ENG_inf_gain: "§GGain§! Influence with §Y[ENG.GetNameWithFlag]§!"
  XHK_POR_inf_gain: "§GGain§! Influence with §Y[POR.GetNameWithFlag]§!"
@@ -42,6 +45,8 @@
  
  XHK_generate_naval: "§GSend§! a §YNaval§! Advisor to the §Y[ROOT.GetNameWithFlag]§!."
  XHK_generate_indus: "§GSend§! a §YIndustrial§! Advisor to the §Y[ROOT.GetNameWithFlag]§!."
+ XHK_generate_theorist: "§GSend§! a §YMilitary Theorist§! to the §Y[ROOT.GetNameWithFlag]§!."
+ XHK_generate_intelligence: "§GSend§! a §YIntelligence§! Advisor to the §Y[ROOT.GetNameWithFlag]§!."
  
  XHK_become_XWE: "Country changes to §Y[XWE.GetNameWithFlag]§!"
  
@@ -49,7 +54,7 @@
  XHK_country.1.desc: "After five years of appealing and working with the Great Powers of the world, the politicians have finally decided that [ROOT.GetNameDef] should choose its own destiny and forge a new path. The path will be influenced by the actions of the nation, but will be one that the citizens of [ROOT.GetNameDef] can be proud of."
  XHK_country.1.t: "Begin The New Age!"
  
- XHK_align_with_ENG: "Align with [ENG.GetNameDef]"
+ XHK_align_with_ENG: "Loyalty to [ENG.GetNameDef]"
  XHK_invite_ENG_politicians: "Invite [ENG.GetAdjective] Politicians"
  XHK_ENG_ideas_on_politics: "[ENG.GetAdjective] Ideas On Politics"
  XHK_adopt_ENG_ideals: "Adopt [ENG.GetAdjective] Ideals"
@@ -102,6 +107,32 @@
  XHK_ongoing_negotiations_with_POR: "Ongoing Negotiations with [POR.GetNameDef]"
  XHK_the_purchase_of_timor: "The Purchase of Timor"
  XHK_sale_of_timor: "Sale of Timor"
+ 
+ XHK_recognise_the_new_great_powers: "Recognise The New Great Powers"
+ XHK_reach_out_to_the_USA: "Reach Out To [USA.GetNameDef]"
+ XHK_accept_USA_financial_aid: "Accept [USA.GetAdjective] Financial Aid"
+ XHK_USA_military_intelligence: "[USA.GetAdjectiveCap] Military Intelligence"
+ XHK_USA_military_training: "[USA.GetAdjectiveCap] Military Training Academy"
+ XHK_open_USA_trade_lanes: "Open [USA.GetAdjective] Trade Lanes"
+ XHK_invite_president_to_hong_kong: "Invite [USA.GetLeader] to Hong Kong"
+ XHK_USA_guard_force: "[USA.GetAdjectiveCap] Guard Force"
+ XHK_phillipino_project: "[PHI.GetAdjectiveCap] Naval Project"
+ XHK_USA_counter_intelligence: "[USA.GetAdjectiveCap] Counter Intelligence"
+ XHK_global_monroe_doctrine: "Global Monroe Doctrine"
+ XHK_international_power_in_china: "International Power in China"
+ XHK_iafc: "International Alliance of Free Cities"
+ XHK_legal_recognition_of_SOV: "Legal Recognition of [SOV.GetNameDef]"
+ XHK_extend_an_official_invitation: "Extend An Official Invitation"
+ XHK_visit_vladivostok: "Visit Vladivostok"
+ XHK_new_SOV_university_in_macau: "New [SOV.GetAdjective] University In Macau"
+ XHK_collaborative_research: "Collaborative Research"
+ XHK_further_research_collaboration: "Further Research Collaboration"
+ XHK_sino_soviet_group_name: "Sino Soviet Research Project"
+ XHK_sino_soviet_research_group: "Sino Soviet Research Group"
+ XHK_chinese_university_of_vladivostock: "[ROOT.GetAdjectiveCap] University Of Vladivostock"
+ XHK_inherit_SOV_ideals: "Inherit [SOV.GetAdjective] Ideals"
+ XHK_SOV_armor_scientists: "Host [SOV.GetAdjective] Armor Scientists"
+ XHK_denounce_JAP_imperialism: "Denounce [JAP.GetAdjective] Imperialism"
 
  #FOCUS LOCALISATIONS
  XHK_army_effort: "Army Effort"

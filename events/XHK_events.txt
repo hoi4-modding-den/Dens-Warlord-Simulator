@@ -31,17 +31,13 @@ country_event = {
 			add_to_temp_variable = { XHK_european_inf = XHK_POR_inf }
 			add_to_temp_array = { XHK_inf_check = XHK_european_inf }
 			
-			add_to_temp_variable = { XHK_asian_inf = XHK_JAP_inf }
-			add_to_temp_variable = { XHK_asian_inf = XHK_RAJ_inf }
-			add_to_temp_array = { XHK_inf_check = XHK_asian_inf }
-			
 			add_to_temp_variable = { XHK_cold_war_inf = XHK_USA_inf	}
 			add_to_temp_variable = { XHK_cold_war_inf = XHK_SOV_inf }
 			add_to_temp_array = { XHK_inf_check = XHK_cold_war_inf }
 			
-			add_to_temp_variable = { XHK_china_inf = XHK_CHI_inf }
-			multiply_temp_variable = { XHK_china_inf = 1.5 }
-			add_to_temp_array = { XHK_inf_check = XHK_china_inf }
+			add_to_temp_variable = { XHK_asian_inf = XHK_CHI_inf }
+			add_to_temp_variable = { XHK_asian_inf = XHK_JAP_inf }
+			add_to_temp_array = { XHK_inf_check = XHK_asian_inf }
 			
 			find_highest_in_array = {
 				array = XHK_inf_check
@@ -60,10 +56,6 @@ country_event = {
 			else_if = {
 				limit = { check_variable = { XHK_inf_largest_num = 2 } }
 				set_country_flag = XHK_cold_war_inf
-			}
-			else_if = {
-				limit = { check_variable = { XHK_inf_largest_num = 3 } }
-				set_country_flag = XHK_china_inf
 			}
 			
 			mark_focus_tree_layout_dirty = yes

@@ -1,6 +1,6 @@
-@HIGH_COST = 11
-@BASE_COST = 7
-@LOW_COST = 4
+@HIGH_COST = 9
+@BASE_COST = 5
+@LOW_COST = 3
 
 focus_tree={
 
@@ -17,7 +17,7 @@ focus_tree={
 	default = no
 	reset_on_civilwar = no
 
-	continuous_focus_position = { x = 10000 y = 1000 }
+	continuous_focus_position = { x = 10000 y = 10000 }
 
 	focus = {
 		id = XHK_align_with_ENG
@@ -236,7 +236,7 @@ focus_tree={
 		completion_reward = {
 			add_to_variable = { XHK_ENG_inf = 15 }
 			custom_effect_tooltip = XHK_ENG_inf_gain
-			add_offsite_building = { type = naval_base level = 1 }
+			add_offsite_building = { type = dockyard level = 1 }
 			diplomatic_relation = {
 				country = ENG
 				relation = docking_rights
@@ -349,8 +349,8 @@ focus_tree={
 		completion_reward = {
 			add_to_variable = { XHK_ENG_inf = 5 }
 			custom_effect_tooltip = XHK_ENG_inf_gain
-			add_offsite_building = { type = naval_base level = 2 }
-			AST = { add_offsite_building = { type = naval_base level = 1 } }
+			add_offsite_building = { type = dockyard level = 2 }
+			AST = { add_offsite_building = { type = dockyard level = 1 } }
 		}
 	}
 	
@@ -1545,6 +1545,717 @@ focus_tree={
 		
 		ai_will_do = {
 			base = 5
+		}
+	}
+	
+	focus = {
+		id = XHK_recognise_the_new_great_powers
+		icon = GFX_focus_POL_support_global_falangism
+		#prerequisite = { focus =  }
+		x = 11
+		y = 0
+		relative_position_id = XHK_look_to_POR
+		cost = @BASE_COST
+		
+		available_if_capitulated = yes
+		available = {}
+		mutually_exclusive = {}
+		bypass = {}
+		
+		completion_reward = {
+			add_to_variable = { XHK_USA_inf = 10 }
+			custom_effect_tooltip = XHK_USA_inf_gain
+			add_to_variable = { XHK_SOV_inf = 10 }
+			custom_effect_tooltip = XHK_SOV_inf_gain
+			add_political_power = 100
+		}
+		
+		ai_will_do = {
+			base = 1
+		}
+	}
+	
+	focus = {
+		id = XHK_reach_out_to_the_USA
+		icon = GFX_focus_generic_befriend_usa
+		prerequisite = { focus = XHK_recognise_the_new_great_powers }
+		x = -3
+		y = 1
+		relative_position_id = XHK_recognise_the_new_great_powers
+		cost = @BASE_COST
+		
+		available_if_capitulated = yes
+		available = {}
+		mutually_exclusive = {}
+		bypass = {}
+		
+		completion_reward = {
+			add_to_variable = { XHK_USA_inf = 15 }
+			custom_effect_tooltip = XHK_USA_inf_gain
+			USA = { XHK_generate_ideology_advisor = yes }
+		}
+		
+		ai_will_do = {
+			base = 1
+		}
+	}
+	
+	focus = {
+		id = XHK_accept_USA_financial_aid
+		icon = GFX_focus_generic_befriend_usa
+		prerequisite = { focus = XHK_reach_out_to_the_USA }
+		x = -1
+		y = 1
+		relative_position_id = XHK_reach_out_to_the_USA
+		cost = @HIGH_COST
+		
+		available_if_capitulated = yes
+		available = {}
+		mutually_exclusive = {}
+		bypass = {}
+		
+		completion_reward = {
+			add_to_variable = { XHK_USA_inf = 10 }
+			custom_effect_tooltip = XHK_USA_inf_gain
+			add_offsite_building = { type = arms_factory level = 2 }
+			add_offsite_building = { type = dockyard level = 1 }
+		}
+		
+		ai_will_do = {
+			base = 1
+		}
+	}
+	
+	focus = {
+		id = XHK_USA_military_intelligence
+		icon = GFX_focus_generic_befriend_usa
+		prerequisite = { focus = XHK_reach_out_to_the_USA }
+		x = 1
+		y = 1
+		relative_position_id = XHK_reach_out_to_the_USA
+		cost = @BASE_COST
+		
+		available_if_capitulated = yes
+		available = {}
+		mutually_exclusive = {}
+		bypass = {}
+		
+		completion_reward = {
+			add_to_variable = { XHK_USA_inf = 10 }
+			custom_effect_tooltip = XHK_USA_inf_gain
+			USA = { custom_effect_tooltip = XHK_generate_theorist }
+			generate_character = {
+				token_base = generic_military_theorist # token will be TAG_token_base
+				advisor = {
+					slot = theorist
+					traits = { military_theorist }
+					ledger = army
+					cost = 50
+				}
+				portraits = { 
+					army = { small = GFX_idea_generic_military_theorist }
+				}
+			}
+		}
+		
+		ai_will_do = {
+			base = 1
+		}
+	}
+	
+	focus = {
+		id = XHK_USA_military_training
+		icon = GFX_focus_generic_befriend_usa
+		prerequisite = { focus = XHK_USA_military_intelligence }
+		x = 1
+		y = 1
+		relative_position_id = XHK_USA_military_intelligence
+		cost = @LOW_COST
+		
+		available_if_capitulated = yes
+		available = {}
+		mutually_exclusive = {}
+		bypass = {}
+		
+		completion_reward = {
+			add_to_variable = { XHK_USA_inf = 5 }
+			custom_effect_tooltip = XHK_USA_inf_gain
+			army_experience = 75
+			add_war_support = 0.05
+			USA = { 
+				army_experience = 50
+				add_war_support = 0.02
+			}
+		}
+		
+		ai_will_do = {
+			base = 1
+		}
+	}
+	
+	focus = {
+		id = XHK_open_USA_trade_lanes
+		icon = GFX_focus_generic_befriend_usa
+		prerequisite = { focus = XHK_reach_out_to_the_USA }
+		x = -3
+		y = 1
+		relative_position_id = XHK_reach_out_to_the_USA
+		cost = @BASE_COST
+		
+		available_if_capitulated = yes
+		available = {}
+		mutually_exclusive = {}
+		bypass = {}
+		
+		completion_reward = {
+			add_to_variable = { XHK_USA_inf = 10 }
+			custom_effect_tooltip = XHK_USA_inf_gain
+			add_resource = {
+				type = steel
+				amount = 12
+				state = 326
+			}
+		}
+		
+		ai_will_do = {
+			base = 1
+		}
+	}
+	
+	focus = {
+		id = XHK_invite_president_to_hong_kong
+		icon = GFX_focus_generic_befriend_usa
+		prerequisite = { focus = XHK_open_USA_trade_lanes focus = XHK_accept_USA_financial_aid }
+		x = 1
+		y = 1
+		relative_position_id = XHK_open_USA_trade_lanes
+		cost = @BASE_COST
+		
+		available_if_capitulated = yes
+		available = {}
+		mutually_exclusive = {}
+		bypass = {}
+		
+		completion_reward = {
+			add_to_variable = { XHK_USA_inf = 8 }
+			custom_effect_tooltip = XHK_USA_inf_gain
+			add_popularity = {
+				ideology = USA
+				popularity = 0.1
+			}
+			USA = { add_political_power = 75 }
+		}
+		
+		ai_will_do = {
+			base = 1
+		}
+	}
+	
+	focus = {
+		id = XHK_USA_guard_force
+		icon = GFX_focus_generic_befriend_usa
+		prerequisite = { focus = XHK_accept_USA_financial_aid focus = XHK_USA_military_intelligence }
+		x = 1
+		y = 1
+		relative_position_id = XHK_accept_USA_financial_aid
+		cost = @BASE_COST
+		
+		available_if_capitulated = yes
+		available = {}
+		mutually_exclusive = {}
+		bypass = {}
+		
+		completion_reward = {
+			add_to_variable = { XHK_USA_inf = 12 }
+			custom_effect_tooltip = XHK_USA_inf_gain
+			division_template = {
+				name = "American Foreign Volunteers"
+				division_names_group = USA_INF_01
+				
+				is_locked = yes
+				force_allow_recruiting = yes
+				division_cap = 10
+				
+				support={}
+				regiments={
+					militia={ x=0 y=0 }
+					militia={ x=0 y=1 }
+					militia={ x=0 y=2 }
+					militia={ x=1 y=0 }
+					militia={ x=1 y=1 }
+					militia={ x=1 y=2 }
+				}
+			}
+			random_owned_controlled_state = { 
+				create_unit = {
+					division = "name = \"American Foreign Volunteer\" division_template = \"American Foreign Volunteers\" start_experience_factor = 0.2"
+					owner = XHK
+					count = 3
+				}
+			}
+			USA = { add_war_support = 0.04 }
+		}
+		
+		ai_will_do = {
+			base = 1
+		}
+	}
+	
+	focus = {
+		id = XHK_phillipino_project
+		icon = GFX_focus_generic_befriend_usa
+		prerequisite = { focus = XHK_invite_president_to_hong_kong }
+		x = 0
+		y = 1
+		relative_position_id = XHK_invite_president_to_hong_kong
+		cost = @HIGH_COST
+		
+		available_if_capitulated = yes
+		available = { 
+			PHI = { 
+				is_subject_of = USA
+				owns_state = 327
+			}
+		}
+		mutually_exclusive = {}
+		bypass = {}
+		
+		completion_reward = {
+			add_to_variable = { XHK_USA_inf = 15 }
+			custom_effect_tooltip = XHK_USA_inf_gain
+			326 = {
+				add_building_construction = {
+					type = naval_base
+					level = 3
+					instant_build = yes
+				}
+			}
+			327 = {
+				add_building_construction = {
+					type = naval_base
+					level = 3
+					instant_build = yes
+				}
+			}
+		}
+		
+		ai_will_do = {
+			base = 1
+		}
+	}
+	
+	focus = {
+		id = XHK_USA_counter_intelligence
+		icon = GFX_focus_generic_befriend_usa
+		prerequisite = { focus = XHK_USA_military_intelligence focus = XHK_USA_guard_force }
+		x = 0
+		y = 2
+		relative_position_id = XHK_USA_military_intelligence
+		cost = @BASE_COST
+		
+		available_if_capitulated = yes
+		available = {}
+		mutually_exclusive = {}
+		bypass = {}
+		
+		completion_reward = {
+			add_to_variable = { XHK_USA_inf = 8 }
+			custom_effect_tooltip = XHK_USA_inf_gain
+			if = { 
+				limit= { 
+					has_dlc = "La Resistance"
+					#always = no
+				}
+				USA = { custom_effect_tooltip = XHK_generate_intelligence }
+				generate_character = {
+					token_base = generic_head_of_intelligence # token will be TAG_token_base
+					advisor = {
+						slot = political_advisor
+						traits = { head_of_intelligence }
+						available = {
+							has_intelligence_agency = yes
+						}
+						ai_will_do = {
+							factor = 1
+							modifier = {
+								has_intelligence_agency = no
+								factor = 0
+							}
+						}
+					}
+					portraits = { 
+						army = { small = GFX_idea_generic_head_of_intelligence }
+					}
+				}
+			}
+			else = {
+				add_tech_bonus = {
+					bonus = 1.5
+					uses = 1
+					category = electronics
+				}
+			}
+		}
+		
+		ai_will_do = {
+			base = 1
+		}
+	}
+	
+	focus = {
+		id = XHK_global_monroe_doctrine
+		icon = GFX_focus_generic_befriend_usa
+		prerequisite = { focus = XHK_phillipino_project }
+		prerequisite = { focus = XHK_USA_counter_intelligence  }
+		x = 2
+		y = 1
+		relative_position_id = XHK_phillipino_project
+		cost = @HIGH_COST
+		
+		available_if_capitulated = yes
+		available = {
+			USA = {
+				OR = {
+					has_completed_focus = USA_intervention_in_asia
+					has_completed_focus = USA_focus_on_asia
+				}
+			}
+		}
+		mutually_exclusive = {}
+		bypass = {}
+		
+		completion_reward = {
+			add_to_variable = { XHK_USA_inf = 30 }
+			custom_effect_tooltip = XHK_USA_inf_gain
+			set_country_flag = monroe_doctrine
+			add_ideas = USA_monroe_doctrine_idea
+		}
+		
+		ai_will_do = {
+			base = 1
+		}
+	}
+	
+	focus = {
+		id = XHK_international_power_in_china
+		icon = GFX_focus_POL_support_global_falangism
+		prerequisite = { focus = XHK_recognise_the_new_great_powers }
+		x = 0
+		y = 1
+		relative_position_id = XHK_recognise_the_new_great_powers
+		cost = @LOW_COST
+		
+		available_if_capitulated = yes
+		available = {
+			num_of_factories > 50
+		}
+		mutually_exclusive = {}
+		bypass = {}
+		
+		completion_reward = {
+			hidden_effect = { set_major = yes }
+			if = {
+				limit = {
+					is_in_faction = no
+				}
+				create_faction = XHK_iafc
+				set_country_flag = XHK_iafc
+				set_cosmetic_tag = XHK_iafc_cosmetic
+			}
+			add_political_power = 250
+		}
+		
+		ai_will_do = {
+			base = 1
+		}
+	}
+	
+	focus = {
+		id = XHK_legal_recognition_of_SOV
+		icon = GFX_focus_chi_mission_to_the_soviet_union
+		prerequisite = { focus = XHK_recognise_the_new_great_powers }
+		x = 3
+		y = 1
+		relative_position_id = XHK_recognise_the_new_great_powers
+		cost = @BASE_COST
+		
+		available_if_capitulated = yes
+		available = {}
+		mutually_exclusive = {}
+		bypass = {}
+		
+		completion_reward = {
+			add_to_variable = { XHK_SOV_inf = 10 }
+			custom_effect_tooltip = XHK_SOV_inf_gain
+			add_political_power = 50
+			SOV = { add_stability = 0.03 }
+		}
+		
+		ai_will_do = {
+			base = 1
+		}
+	}
+	
+	focus = {
+		id = XHK_extend_an_official_invitation
+		icon = GFX_focus_chi_mission_to_the_soviet_union
+		prerequisite = { focus = XHK_legal_recognition_of_SOV }
+		x = -2
+		y = 1
+		relative_position_id = XHK_legal_recognition_of_SOV
+		cost = @BASE_COST
+		
+		available_if_capitulated = yes
+		available = {}
+		mutually_exclusive = {}
+		bypass = {}
+		
+		completion_reward = {
+			add_to_variable = { XHK_SOV_inf = 15 }
+			custom_effect_tooltip = XHK_SOV_inf_gain
+			SOV = { XHK_generate_ideology_advisor = yes }
+		}
+		
+		ai_will_do = {
+			base = 1
+		}
+	}
+	
+	focus = {
+		id = XHK_new_SOV_university_in_macau
+		icon = GFX_focus_chi_mission_to_the_soviet_union
+		prerequisite = { focus = XHK_legal_recognition_of_SOV }
+		x = 0
+		y = 1
+		relative_position_id = XHK_legal_recognition_of_SOV
+		cost = @HIGH_COST
+		
+		available_if_capitulated = yes
+		available = {}
+		mutually_exclusive = {}
+		bypass = {}
+		
+		completion_reward = {
+			add_to_variable = { XHK_SOV_inf = 10 }
+			custom_effect_tooltip = XHK_SOV_inf_gain
+			add_research_slot = 1
+			SOV = { add_ideas = XHK_collaborative_research_1 }
+		}
+		
+		ai_will_do = {
+			base = 1
+		}
+	}
+	
+	focus = {
+		id = XHK_further_research_collaboration
+		icon = GFX_focus_chi_mission_to_the_soviet_union
+		prerequisite = { focus = XHK_new_SOV_university_in_macau }
+		x = 0
+		y = 1
+		relative_position_id = XHK_new_SOV_university_in_macau
+		cost = @BASE_COST
+		
+		available_if_capitulated = yes
+		available = {}
+		mutually_exclusive = {}
+		bypass = {}
+		
+		completion_reward = {
+			add_to_variable = { XHK_SOV_inf = 10 }
+			custom_effect_tooltip = XHK_SOV_inf_gain
+			add_ideas = XHK_collaborative_research_2
+			SOV = { 
+				swap_ideas = {
+					add_idea = XHK_collaborative_research_2
+					remove_idea = XHK_collaborative_research_1
+				}
+			}
+		}
+		
+		ai_will_do = {
+			base = 1
+		}
+	}
+	
+	focus = {
+		id = XHK_sino_soviet_research_group
+		icon = GFX_focus_chi_mission_to_the_soviet_union
+		prerequisite = { focus = XHK_further_research_collaboration }
+		x = 0
+		y = 1
+		relative_position_id = XHK_further_research_collaboration
+		cost = @BASE_COST
+		
+		available_if_capitulated = yes
+		available = {}
+		mutually_exclusive = {}
+		bypass = {}
+		
+		completion_reward = {
+			add_to_variable = { XHK_SOV_inf = 15 }
+			custom_effect_tooltip = XHK_SOV_inf_gain
+			add_to_tech_sharing_group = XHK_sino_soviet_group
+			SOV = { add_to_tech_sharing_group = XHK_sino_soviet_group }
+		}
+		
+		ai_will_do = {
+			base = 1
+		}
+	}
+	
+	focus = {
+		id = XHK_visit_vladivostok
+		icon = GFX_focus_chi_mission_to_the_soviet_union
+		prerequisite = { focus = XHK_extend_an_official_invitation }
+		x = 0
+		y = 1
+		relative_position_id = XHK_extend_an_official_invitation
+		cost = @BASE_COST
+		
+		available_if_capitulated = yes
+		available = {
+			SOV = { controls_state = 408 }
+		}
+		mutually_exclusive = {}
+		bypass = {}
+		
+		completion_reward = {
+			add_to_variable = { XHK_SOV_inf = 5 }
+			custom_effect_tooltip = XHK_SOV_inf_gain
+			army_experience = 25
+			navy_experience = 25
+			air_experience = 25
+		}
+		
+		ai_will_do = {
+			base = 1
+		}
+	}
+	
+	focus = {
+		id = XHK_chinese_university_of_vladivostock
+		icon = GFX_focus_chi_mission_to_the_soviet_union
+		prerequisite = { focus = XHK_visit_vladivostok }
+		prerequisite = { focus = XHK_sino_soviet_research_group }
+		x = 0
+		y = 2
+		relative_position_id = XHK_visit_vladivostok
+		cost = @HIGH_COST
+		
+		available_if_capitulated = yes
+		available = {
+			SOV = { controls_state = 408 }
+			is_in_tech_sharing_group = XHK_sino_soviet_group
+		}
+		mutually_exclusive = {}
+		bypass = {}
+		
+		completion_reward = {
+			add_to_variable = { XHK_SOV_inf = 15 }
+			custom_effect_tooltip = XHK_SOV_inf_gain
+			add_research_slot = 1
+			SOV = {
+				add_tech_bonus = {
+					bonus = 0.5
+					uses = 4
+					category = industry
+					category = electronics
+					category = artillery
+					category = infantry_weapons
+				}
+			}
+		}
+		
+		ai_will_do = {
+			base = 1
+		}
+	}
+	
+	focus = {
+		id = XHK_denounce_JAP_imperialism
+		icon = GFX_focus_chi_mission_to_the_soviet_union
+		prerequisite = { focus = XHK_legal_recognition_of_SOV }
+		x = 2
+		y = 1
+		relative_position_id = XHK_legal_recognition_of_SOV
+		cost = @LOW_COST
+		
+		available_if_capitulated = yes
+		available = { NOT = { JAP = { has_government = communism } } }
+		mutually_exclusive = {}
+		bypass = {}
+		
+		completion_reward = {
+			add_to_variable = { XHK_SOV_inf = 5 }
+			custom_effect_tooltip = XHK_SOV_inf_gain
+			subtract_from_variable = { XHK_JAP_inf = 15 }
+			custom_effect_tooltip = XHK_JAP_inf_lose
+			add_popularity = {
+				ideology = JAP
+				popularity = -0.1
+			}
+		}
+		
+		ai_will_do = {
+			base = 1
+		}
+	}
+	
+	focus = {
+		id = XHK_inherit_SOV_ideals
+		icon = GFX_focus_chi_mission_to_the_soviet_union
+		prerequisite = { focus = XHK_new_SOV_university_in_macau }
+		x = 2
+		y = 1
+		relative_position_id = XHK_new_SOV_university_in_macau
+		cost = @LOW_COST
+		
+		available_if_capitulated = yes
+		available = {}
+		mutually_exclusive = {}
+		bypass = {}
+		
+		completion_reward = {
+			add_to_variable = { XHK_SOV_inf = 5 }
+			custom_effect_tooltip = XHK_SOV_inf_gain
+			add_popularity = {
+				ideology = SOV
+				popularity = 0.075
+			}
+		}
+		
+		ai_will_do = {
+			base = 1
+		}
+	}
+	
+	focus = {
+		id = XHK_SOV_armor_scientists
+		icon = GFX_focus_chi_mission_to_the_soviet_union
+		prerequisite = { focus = XHK_further_research_collaboration }
+		x = 2
+		y = 1
+		relative_position_id = XHK_further_research_collaboration
+		cost = @LOW_COST
+		
+		available_if_capitulated = yes
+		available = {}
+		mutually_exclusive = {}
+		bypass = {}
+		
+		completion_reward = {
+			add_to_variable = { XHK_SOV_inf = 5 }
+			custom_effect_tooltip = XHK_SOV_inf_gain
+			add_tech_bonus = {
+				bonus = 0.75
+				uses = 2
+				category = armor
+			}
+		}
+		
+		ai_will_do = {
+			base = 1
 		}
 	}
 

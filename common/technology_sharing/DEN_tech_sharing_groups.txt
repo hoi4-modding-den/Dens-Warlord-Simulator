@@ -1,0 +1,20 @@
+technology_sharing_group = {
+
+	id = XHK_sino_soviet_group
+	name = XHK_sino_soviet_group_name
+	desc = XHK_sino_soviet_group_name_desc
+	picture = GFX_technology_sharing_default
+    
+	research_sharing_per_country_bonus = 0.1
+
+	available = {
+		NOT = { has_war_with = SOV }
+		NOT = { is_justifying_wargoal_against = SOV }
+		NOT = {
+			any_allied_country = {
+				has_war_with = SOV
+			}
+		}
+	}
+
+}

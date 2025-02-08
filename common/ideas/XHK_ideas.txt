@@ -92,5 +92,45 @@ ideas = {
 				political_power_factor = 0.1
 			}
 		}
+		XHK_collaborative_research_1 = {
+
+			name = XHK_collaborative_research
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = generic_manpower_bonus
+
+			modifier = {
+				research_speed_factor = 0.02
+			}
+		}
+		XHK_collaborative_research_2 = {
+
+			name = XHK_collaborative_research
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = generic_manpower_bonus
+
+			modifier = {
+				research_speed_factor = 0.04
+			}
+		}
 	}
 }
