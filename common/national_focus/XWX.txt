@@ -1243,7 +1243,7 @@ focus_tree = {
 		}
 
 		ai_will_do = {
-			base = 1000
+			base = 200
 		}
 
 		search_filters = { FOCUS_FILTER_MANPOWER }
@@ -1340,6 +1340,10 @@ focus_tree = {
 
 		ai_will_do = {
 			base = 1000
+			modifier = {
+				factor = 10
+				XFC = { is_ai = no }
+			}
 		}
 
 		search_filters = {  }
@@ -1441,10 +1445,14 @@ focus_tree = {
 		}
 
 		ai_will_do = {
-			base = 150
+			base = 500
 			modifier = {
 				add = 150
 				is_ally_with = XHK
+			}
+			modifier = {
+				factor = 10
+				XHK = { is_ai = no }
 			}
 		}
 
@@ -2324,38 +2332,62 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_ANNEXATION }
 		completion_reward = {
-			every_other_country = {
+			if = {
 				limit = {
-					OR = {
-						owns_state = 671
-						owns_state = 670
-						owns_state = 286
-						owns_state = 741
-						controls_state = 671
-						controls_state = 670
-						controls_state = 286
-						controls_state = 741
+					NOT = {
+						671 = { owns_or_subject_of = yes }
+						670 = { owns_or_subject_of = yes }
+						286 = { owns_or_subject_of = yes }
+						741 = { owns_or_subject_of = yes }
 					}
 				}
-				custom_effect_tooltip = CHI_overlordship_over_indochina_tt
-				hidden_effect = {
-					ROOT = {
-						create_wargoal = {
-							type = take_state_focus
-							target = PREV
-							expire = 0
-							generator = { 671 670 286 741 }
+				every_other_country = {
+					limit = {
+						OR = {
+							owns_state = 671
+							owns_state = 670
+							owns_state = 286
+							owns_state = 741
+							controls_state = 671
+							controls_state = 670
+							controls_state = 286
+							controls_state = 741
+						}
+					}
+					custom_effect_tooltip = CHI_overlordship_over_indochina_tt
+					hidden_effect = {
+						ROOT = {
+							create_wargoal = {
+								type = take_state_focus
+								target = PREV
+								expire = 0
+								generator = { 671 670 286 741 }
+							}
 						}
 					}
 				}
+
+				custom_effect_tooltip = generic_skip_one_line_tt
+
+				activate_mission = CHI_overlordship_over_indochina
+
+				hidden_effect = {
+					news_event = { id = wtt_news.47 days = 3}
+				}
 			}
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-
-			activate_mission = CHI_overlordship_over_indochina
-
-			hidden_effect = {
-				news_event = { id = wtt_news.47 days = 3}
+			else = {
+				every_state = {
+					limit = {
+						NOT = { is_core_of = ROOT }
+						OR = {
+							state = 671
+							state = 670
+							state = 286
+							state = 741
+						}
+					}
+					add_core_of = ROOT
+				}
 			}
 		}
 	}
@@ -3518,10 +3550,10 @@ focus_tree = {
 			if = {
 				limit = {
 					NOT = {
-						owns_state = 671
-						owns_state = 670
-						owns_state = 286
-						owns_state = 741
+						671 = { owns_or_subject_of = yes }
+						670 = { owns_or_subject_of = yes }
+						286 = { owns_or_subject_of = yes }
+						741 = { owns_or_subject_of = yes }
 					}
 				}
 				every_other_country = {
@@ -3600,27 +3632,25 @@ focus_tree = {
 		}
 
 		bypass = {
-			OR = {
-				KOR = {
-					is_subject_of = ROOT
-				}
-				AND = {
-					527 = { is_owned_by = ROOT }
-					525 = { is_owned_by = ROOT }
-				}
+			KOR = {
+				is_subject_of = ROOT
 			}
 		}
 
 		cancel_if_invalid = no
 		continue_if_invalid = yes
 
-		will_lead_to_war_with = MON
+		will_lead_to_war_with = KOR
 
 		search_filters = { FOCUS_FILTER_ANNEXATION }
 		completion_reward = {
 			if = {
 				limit = {
 					KOR = { exists = no }
+					NOT = {
+						527 = { owns_or_subject_of = yes }
+						525 = { owns_or_subject_of = yes }
+					}
 				}
 				every_other_country = {
 					limit = {
@@ -3643,6 +3673,14 @@ focus_tree = {
 						}
 					}
 				}
+			}
+			else_if = {
+				limit = {
+					KOR = { exists = no }
+					owns_state = 527
+					owns_state = 525
+				}
+				release_puppet = KOR
 			}
 			else = {
 				KOR = {

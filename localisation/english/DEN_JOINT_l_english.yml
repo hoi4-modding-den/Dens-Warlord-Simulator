@@ -1,5 +1,7 @@
 ﻿l_english:
 
+ CHI_dissolve_united_front: "Dissolve [ROOT.GetFactionName]"
+
  JAP_intervene_in_china_fake_tt: "The following §YModifiers§! apply to §Yall Chinese nations§!:"
 
  DEN_is_chinese_country_tt: "Is a §YChinese Warlord§!."

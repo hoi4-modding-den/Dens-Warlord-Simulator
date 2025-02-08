@@ -21,7 +21,7 @@ peace_ai_desires = {
     }
 
     XWX_puppet_asian_nations = {
-        peace_action_type = puppet liberate
+        peace_action_type = { puppet liberate }
         enable = {
             ROOT.FROM = { tag = XWX }
             FROM.FROM = { 
@@ -32,11 +32,10 @@ peace_ai_desires = {
                     original_tag = MON 
                 } 
             }
-            ROOT.FROM.FROM.FROM = {
-                is_core_of = FROM.FROM
+            ROOT.FROM.FROM.FROM  = {
                 NOT = {
                     OR = {
-                        is_core_of = ROOT.FROM
+                        is_core_of = XWX
                         DEN_is_chinese_state = yes
                     }
                 }
