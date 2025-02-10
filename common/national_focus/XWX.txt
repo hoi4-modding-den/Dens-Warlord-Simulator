@@ -232,16 +232,16 @@ focus_tree = {
 			custom_effect_tooltip = generic_skip_one_line_tt
 			custom_effect_tooltip = the_following_will_happen_TT
 			
-			effect_tooltip = {
-				if = {
-					limit = {
-						has_dlc = "Man the Guns"
-					}
-					diplomatic_relation = {
-						country = XWE
-						relation = embargo
-						active = no
-					}
+			if = {
+				limit = {
+					has_dlc = "Man the Guns"
+				}
+				diplomatic_relation = {
+					country = XWE
+					relation = embargo
+					active = no
+				}
+				effect_tooltip = {
 					XWE = {
 						diplomatic_relation = {
 							country = ROOT
@@ -249,20 +249,22 @@ focus_tree = {
 							active = no
 						}
 					}
-					hidden_effect = {
+				}
+				hidden_effect = {
+					remove_opinion_modifier = {
+						target = XWE
+						modifier = embargoed_us
+					}
+					XWE = {
 						remove_opinion_modifier = {
-							target = XWE
+							target = ROOT
 							modifier = embargoed_us
-						}
-						XWE = {
-							remove_opinion_modifier = {
-								target = ROOT
-								modifier = embargoed_us
-							}
 						}
 					}
 				}
-				else = {
+			}
+			else = {
+				effect_tooltip = {
 					remove_opinion_modifier = {
 						target = XWE
 						modifier = embargo
@@ -522,7 +524,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = XWX_civilian_focus
 
-		cost = 10
+		cost = 8
 
 		ai_will_do = {
 			base = 0

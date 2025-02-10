@@ -1813,22 +1813,12 @@ country_event = { # XWE Reconcilliation
 					relation = embargo
 					active = no
 				}
-				ROOT = {
-					diplomatic_relation = {
-						country = FROM
-						relation = embargo
-						active = no
-					}
-				}
-				hidden_effect = {
-					remove_opinion_modifier = {
-						target = FROM
-						modifier = embargoed_us
-					}
-					ROOT = {
-						remove_opinion_modifier = {
-							target = FROM
-							modifier = embargoed_us
+				effect_tooltip = {
+					FROM = {
+						diplomatic_relation = {
+							country = ROOT
+							relation = embargo
+							active = no
 						}
 					}
 				}
