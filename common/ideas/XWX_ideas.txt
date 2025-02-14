@@ -1607,7 +1607,7 @@ ideas = {
 				original_tag = XWX
 			}
 
-			available = {
+			visible = {
 				has_idea = XWX_opium_magnates
 			}
 			
@@ -1686,6 +1686,38 @@ ideas = {
 					factor = 5
 					has_government = democratic
 				}
+			}
+		}
+
+		XWX_tungsten_mines = {
+
+			picture = generic_industrial_concern_3			
+			
+			available = {
+				controls_state = 984
+			}
+
+			allowed = { 
+				OR = {
+					original_tag = MAN
+					is_literally_china = yes
+				}
+			}
+
+			modifier = {
+				country_resource_tungsten = 8
+			}
+
+			research_bonus = {
+				industry = 0.1
+			}
+
+			traits = {
+				XWX_tungsten_mines_trait
+			}
+			
+			ai_will_do = {
+				factor = 1
 			}
 		}
 

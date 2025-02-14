@@ -553,25 +553,14 @@ focus_tree = {
 			}
 			hidden_effect = {
 				XWX_hu_lanqi = {
-					remove_advisor_role = {
+					add_trait = {
 						slot = political_advisor
+						trait = XWX_feminist_revolutionary_improved
 					}
-					add_advisor_role = {
-						advisor = {
-							slot = political_advisor
-							cost = 100
-							idea_token = XWX_hu_lanqi_advisor
-							traits = {
-								XWX_feminist_revolutionary_improved
-							}
-						}
+					remove_trait = {
+						slot = political_advisor
+						trait = XWX_feminist_revolutionary
 					}
-				}
-				if = {
-					limit = {
-						has_country_flag = XWX_hired_hu_lanqi
-					}
-					activate_advisor = XWX_hu_lanqi
 				}
 			}
 

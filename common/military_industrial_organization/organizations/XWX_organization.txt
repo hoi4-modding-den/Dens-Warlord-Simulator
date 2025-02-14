@@ -420,6 +420,10 @@ XWX_kangding_arsenal = {
 			production_resource_penalty_factor = -0.15
 		}
 
+		available = {
+			FROM = { has_idea = XWX_tungsten_mines }
+		}
+
 	}
 
 }

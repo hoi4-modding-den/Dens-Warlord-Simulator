@@ -265,5 +265,13 @@ leader_traits = {
 		}
 	}
 
+	XWX_tungsten_mines_trait = {
+		random = no
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
 
 }

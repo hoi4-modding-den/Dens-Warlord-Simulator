@@ -1,6 +1,6 @@
 ﻿l_english:
  
-XWX_GATHERING_STORM_DESC: "The Gannan Peasant Republics are a group of collectives in the Gannan and Ganzi Regions of the former Sichuan Province.\n \nFollowing political purges in the People's Republic of China, the Peasant Republics seceeded to escape the bloodbath. Headed by the Peasant Collectives, the administratorial structure of the Republics is divided between Federalists and Centralists.\n \nEven worse, the Republics are plagued by Kuomintang Insurgents supported by the Chongqing Government."
+ XWX_GATHERING_STORM_DESC: "The Gannan Peasant Republics are a group of collectives in the Gannan and Ganzi Regions of the former Sichuan Province.\n \nFollowing political purges in the People's Republic of China, the Peasant Republics seceeded to escape the bloodbath. Headed by the Peasant Collectives, the administratorial structure of the Republics is divided between Federalists and Centralists.\n \nEven worse, the Republics are plagued by Kuomintang Insurgents supported by the Chongqing Government."
 
 # COUNTRY NAMES
 
@@ -159,6 +159,7 @@ XWX_GATHERING_STORM_DESC: "The Gannan Peasant Republics are a group of collectiv
  XWX_opium_magnates_trait: "Crime Syndicates"
  XWX_modernisation_committee_trait: "Modernisation Committee"
  XWX_education_office_trait: "Education Coordination"
+ XWX_tungsten_mines_trait: "Mining Company"
 
 
 # OPINION MODIFIERS
@@ -275,6 +276,7 @@ XWX_GATHERING_STORM_DESC: "The Gannan Peasant Republics are a group of collectiv
  XWX_opium_magnates_trigger: "§Rcan only be removed via the decision§! §Y$XWX_erase_opium_syndicate_influence$§!§R!§!"
  XWX_modernisation_committee: "Committee for the Industrialisation of Gannan"
  XWX_education_office: "$XWX_local_schools$"
+ XWX_tungsten_mines: "Kangding Tungsten Corporation"
 
 
 # MIOs
@@ -300,7 +302,7 @@ XWX_GATHERING_STORM_DESC: "The Gannan Peasant Republics are a group of collectiv
 
 # DECISIONS
 
-XWX_kmt_insurgency_cat: "Dealing with the Kuomintang"
+ XWX_kmt_insurgency_cat: "Dealing with the Kuomintang"
 
  XWX_kmt_civil_war_timer: "Imminent Kuomintang Activity..."
  XWX_kmt_civil_war_timer_desc: "The Kuomintang is plotting something..."
@@ -311,7 +313,7 @@ XWX_kmt_insurgency_cat: "Dealing with the Kuomintang"
  XWX_ignore_kmt: "Disregard the Threat"
  XWX_ignore_kmt_desc: "We have much bigger problems than the reactionaries of the Kuomintang. Let us ignore them while we better our nation."
 
-XWX_opium_crackdowns: "Crackdown on Opium"
+ XWX_opium_crackdowns: "Crackdown on Opium"
  XWX_opium_crackdowns_desc: "The poison that is opium is spread throughout the province. The syndicates that peddle this drug hold a great influence over our economy, to the extend that a large part of our officials is being bribed by them."
  XWX_opium_crackdown_active: "currently doing a §Y$XWX_opium_crackdowns$§! decision."
 
@@ -331,7 +333,7 @@ XWX_opium_crackdowns: "Crackdown on Opium"
  XWX_erase_opium_syndicate_influence: "Crush the Opium Syndicates"
  XWX_erase_opium_syndicate_influence_desc: "We will deal a final blow to Syndicate influence in the provinces, driving them out once and for all."
 
-XWX_construction_decisions: "Construction Projects"
+ XWX_construction_decisions: "Construction Projects"
 
  XWX_tianyu_fort_construction: "Finalise Tianyu Fort Construction"
  XWX_tianyu_fort_construction_desc: "The Tianyu Fort is a project to construct a massive fortification in the Ganzi mountains to serve as a last line of defence."
@@ -342,14 +344,14 @@ XWX_construction_decisions: "Construction Projects"
  XWX_urbanise_ganzi: "Develop Ganzi"
  XWX_urbanise_ganzi_desc: "The Ganzi region is the mountainous part of our nation, having only significance for the mining industry. Our development programme should modernise the infrastructure of the region to allow for larger settlements."
 
-XWX_japanese_collaboration: "The Red Dragon Society"
+ XWX_japanese_collaboration: "The Red Dragon Society"
 
  XWX_request_japanese_support: "Request Japanese Support"
  XWX_pro_japan_propaganda: "Pro-Japanese Propaganda"
  XWX_slander_government: "Slander the Parties"
  XWX_collaborator_coup: "The Red Dragon Coup"
 
-XWX_army_improvement: "[ROOT.GetAdjectiveCap] Army Command"
+ XWX_army_improvement: "[ROOT.GetAdjectiveCap] Army Command"
 
  XWX_army_reform_decision: "Reform the Provincial Army"
  XWX_army_reform_decision_desc: "The Provincial Army is severly under-equipped and untrained. In its current state, it resembles more a bandit group than an actual army, partly because it is made of people's militia troops that were recruited for national defence while our nation was ill-prepared to take the fight to them."
@@ -361,29 +363,29 @@ XWX_army_improvement: "[ROOT.GetAdjectiveCap] Army Command"
  XWX_failed_raid_effects_tt: "§YIf the Raid fails:§!"
  XWX_demand_JAP_occupied_china: "Demand Japanese Territories in China"
 
-#political_actions
+ #political_actions
 
  XWX_block_rubber_export: "Retake Control over Rubber Plantations"
  XWX_block_rubber_export_desc: "Indochinese Rubber is directly exported to [FROM.GetNameDef]. The situation however demands we take control of the plantations."
  XWX_made_the_rubber_deal: "Has personally negotiated the sale of Rubber §Yless than two years§! ago. (Does not count if your Puppet master made the deal for you.)"
 
-#foreign_support
+ #foreign_support
 
  XWX_foreign_anti_japanese_support: "Seek [FROM.GetAdjective] Support against @JAP Japan"
  XWX_seeking_support: "currently seeking support"
 
-XWX_chinese_education_bureau: "Chinese Education Bureau"
+ XWX_chinese_education_bureau: "Chinese Education Bureau"
 
  XWX_wuchang_military_academy: "Establish the [620.GetCapitalVictoryPointName] Military Science Academy"
  XWX_nanning_military_academy: "Establish the [594.GetCapitalVictoryPointName] Military Science Academy"
  XWX_open_rural_university: "Open Public University in [FROM.GetCapitalVictoryPointName]"
  XWX_open_rural_university_desc: "To improve our nation's education, we will support the founding of a university open to the people in [FROM.GetCapitalVictoryPointName]."
 
-XWX_peasant_united_front_cat: "The [FROM.GetFactionName]"
+ XWX_peasant_united_front_cat: "The [FROM.GetFactionName]"
 
  XWX_invite_to_united_front: "Invite [FROM.GetNameDef] to the [FROM.GetFactionName]"
 
-XWX_second_gannan_famine_cat: "Famine Relief Efforts"
+ XWX_second_gannan_famine_cat: "Famine Relief Efforts"
  XWX_second_gannan_famine_cat_desc: "\nThe province is currently undergoing a famine. We must gather Relief Supplies to ensure we can recover from it.\n \nCurrent Amount of Relief Supplies: [?XWX_famine_progress|.0+]\n "
 
  XWX_end_the_famine: "End the Famine"
@@ -391,24 +393,24 @@ XWX_second_gannan_famine_cat: "Famine Relief Efforts"
  XWX_scavenge_supplies: "Confiscate Private Supplies"
  XWX_request_supplies_from_neighbours: "Request Aid from [FROM.GetNameDef]"
 
-XWX_bop_cat: "BoP Category"
+ XWX_bop_cat: "BoP Category"
  XWX_doing_bop_decision: "currently swaying the §YBalance of Power§!"
 
  XWX_decentralise_the_state: "£GFX_BoP_left_texticon  Decentralise the State"
-  XWX_implement_federalist_policies: "£GFX_BoP_left_texticon  National Federalisation Act"
-  XWX_implement_federalist_policies_desc: "The National Federalisation Act will give more autonomy to local governments and to ease the grip of the central government on regional projects."
-  XWX_support_regional_specialisation: "£GFX_BoP_left_texticon  Support Regional Specialisation"
-  XWX_aid_during_famine: "£GFX_BoP_left_texticon  Distribute Supplies"
-  XWX_aid_during_famine_desc: "To aid the people affected by the Famine, supplies will be shared via the local administrations."
-  XWX_promote_self_defence: "£GFX_BoP_left_texticon  Promote Self-Defence Initiatives"
+ XWX_implement_federalist_policies: "£GFX_BoP_left_texticon  National Federalisation Act"
+ XWX_implement_federalist_policies_desc: "The National Federalisation Act will give more autonomy to local governments and to ease the grip of the central government on regional projects."
+ XWX_support_regional_specialisation: "£GFX_BoP_left_texticon  Support Regional Specialisation"
+ XWX_aid_during_famine: "£GFX_BoP_left_texticon  Distribute Supplies"
+ XWX_aid_during_famine_desc: "To aid the people affected by the Famine, supplies will be shared via the local administrations."
+ XWX_promote_self_defence: "£GFX_BoP_left_texticon  Promote Self-Defence Initiatives"
 
  XWX_centralise_the_state: "£GFX_BoP_right_texticon  Centralise the State"
-  XWX_implement_centralist_policies: "£GFX_BoP_right_texticon  Protection of Socialism Act"
-  XWX_implement_centralist_policies_desc: "The Protection of Socialism Act will give the Central Government the power to interfere directly in the doings of local governments, if they exhibit reactionary behaviour."
-  XWX_nationalise_arms_industries: "£GFX_BoP_right_texticon  Nationalise Arms Industries"
-  XWX_crush_kmt_insurgents: "£GFX_BoP_right_texticon  Hunt the Insurgents"
-  XWX_crush_kmt_insurgents_desc: "The power of the central government must be strengthened to root out the reactionary Kuomintang insurgents."
-  XWX_army_recruitment_drive: "£GFX_BoP_right_texticon  Army Recruitment Drive"
+ XWX_implement_centralist_policies: "£GFX_BoP_right_texticon  Protection of Socialism Act"
+ XWX_implement_centralist_policies_desc: "The Protection of Socialism Act will give the Central Government the power to interfere directly in the doings of local governments, if they exhibit reactionary behaviour."
+ XWX_nationalise_arms_industries: "£GFX_BoP_right_texticon  Nationalise Arms Industries"
+ XWX_crush_kmt_insurgents: "£GFX_BoP_right_texticon  Hunt the Insurgents"
+ XWX_crush_kmt_insurgents_desc: "The power of the central government must be strengthened to root out the reactionary Kuomintang insurgents."
+ XWX_army_recruitment_drive: "£GFX_BoP_right_texticon  Army Recruitment Drive"
 
 # Decision Costs
 
@@ -428,21 +430,21 @@ XWX_bop_cat: "BoP Category"
 
  XWX_communes_bop: "Balance in the Communes"
 
-  XWX_bop_balanced: "Faction Equilibrium"
+ XWX_bop_balanced: "Faction Equilibrium"
 
-  XWX_federalists: "Federalists"
+ XWX_federalists: "Federalists"
 
-   XWX_federalists_low_control_range: "Low Federalist Influence"
-   XWX_federalists_medium_control_range: "Rising Federalist Influence"
-   XWX_federalists_high_control_range: "High Federalist Influence"
-   XWX_federalists_total_control_range: "The Federalist Model"
+ XWX_federalists_low_control_range: "Low Federalist Influence"
+ XWX_federalists_medium_control_range: "Rising Federalist Influence"
+ XWX_federalists_high_control_range: "High Federalist Influence"
+ XWX_federalists_total_control_range: "The Federalist Model"
 
-  XWX_centralists: "Centralists"
+ XWX_centralists: "Centralists"
 
-   XWX_centralists_low_control_range: "Low Centralist Influence"
-   XWX_centralists_medium_control_range: "Rising Centralist Influence"
-   XWX_centralists_high_control_range: "High Centralist Influence"
-   XWX_centralists_total_control_range: "The Centralist Model"
+ XWX_centralists_low_control_range: "Low Centralist Influence"
+ XWX_centralists_medium_control_range: "Rising Centralist Influence"
+ XWX_centralists_high_control_range: "High Centralist Influence"
+ XWX_centralists_total_control_range: "The Centralist Model"
 
 
 # EVENTS

@@ -1803,36 +1803,34 @@ country_event = { # XWE Reconcilliation
 
 	option = { 
 		name = XWX_diplomatic_events.26.a
-		FROM = {
-			if = {
-				limit = {
-					has_dlc = "Man the Guns"
-				}
-				diplomatic_relation = {
-					country = FROM
-					relation = embargo
-					active = no
-				}
-				effect_tooltip = {
-					FROM = {
-						diplomatic_relation = {
-							country = ROOT
-							relation = embargo
-							active = no
-						}
+		if = {
+			limit = {
+				has_dlc = "Man the Guns"
+			}
+			diplomatic_relation = {
+				country = FROM
+				relation = embargo
+				active = no
+			}
+			effect_tooltip = {
+				FROM = {
+					diplomatic_relation = {
+						country = ROOT
+						relation = embargo
+						active = no
 					}
 				}
 			}
-			else = {
+		}
+		else = {
+			remove_opinion_modifier = {
+				target = FROM
+				modifier = embargo
+			}
+			FROM = {
 				remove_opinion_modifier = {
-					target = FROM
+					target = ROOT
 					modifier = embargo
-				}
-				FROM = {
-					remove_opinion_modifier = {
-						target = ROOT
-						modifier = embargo
-					}
 				}
 			}
 		}
