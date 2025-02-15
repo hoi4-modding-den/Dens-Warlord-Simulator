@@ -306,13 +306,7 @@ characters = {
 			idea_token = XWX_liu_wenhui_advisor
 
 			available = {
-				if = {
-					limit = {
-						tag = XWX
-					}
-					NOT = { has_government = fascism }
-				}
-				NOT = { is_subject_of = JAP }
+				XWX_is_traitor = no
 				is_theorist = no
 			}
 			
@@ -331,21 +325,15 @@ characters = {
 			idea_token = XWX_liu_wenhui_theorist
 
 			available = {
-				if = {
-					limit = {
-						tag = XWX
-					}
-					NOT = { has_government = fascism }
-				}
-				NOT = { is_subject_of = JAP }
+				XWX_is_traitor = no
 				is_high_command = no
 				has_completed_focus = XWX_raid_tactics
 			}
 			
-			cost = 50
+			cost = 75
 
 			ai_will_do = {
-				factor = 15
+				factor = 10
 			}
 
 			traits = {
@@ -381,13 +369,7 @@ characters = {
 			idea_token = XWX_liu_xiang_advisor
 
 			available = {
-				if = {
-					limit = {
-						tag = XWX
-					}
-					NOT = { has_government = fascism }
-				}
-				NOT = { is_subject_of = JAP }
+				XWX_is_traitor = no
 				is_air_chief = no
 			}
 			
@@ -410,13 +392,7 @@ characters = {
 			idea_token = XWX_liu_xiang_advisor_air
 
 			available = {
-				if = {
-					limit = {
-						tag = XWX
-					}
-					NOT = { has_government = fascism }
-				}
-				NOT = { is_subject_of = JAP }
+				XWX_is_traitor = no
 				is_high_command = no
 			}
 			
@@ -459,13 +435,7 @@ characters = {
 			idea_token = XWX_rao_guohua_advisor
 
 			available = {
-				if = {
-					limit = {
-						tag = XWX
-					}
-					NOT = { has_government = fascism }
-				}
-				NOT = { is_subject_of = JAP }
+				XWX_is_traitor = no
 			}
 			
 			cost = 200
@@ -513,14 +483,14 @@ characters = {
                 }
 			}
 			
-			cost = 100
+			cost = 200
 
 			ai_will_do = {
 				factor = 5
 			}
 
 			traits = {
-				GER_adaptive_engineer
+				XWX_adaptive_engineer
 			}
 		}
 

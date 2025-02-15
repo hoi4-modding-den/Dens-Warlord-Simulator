@@ -355,9 +355,9 @@ ideas = {
 			allowed = {
 				has_dlc = "Waking the Tiger"
 				OR = {
-					is_literally_china = yes
+					tag = CHI
 					tag = MAN
-				}
+				} 
 			}
 			
 			available = {
@@ -412,9 +412,9 @@ ideas = {
 			allowed = {
 				has_DLC = "Waking the Tiger"
 				OR = {
-					is_literally_china = yes
+					tag = CHI
 					tag = MAN
-				}
+				} 
 			}
 			
 			research_bonus = {
@@ -448,9 +448,9 @@ ideas = {
 			allowed = {
 				has_DLC = "Waking the Tiger"
 				OR = {
-					is_literally_china = yes
+					tag = CHI
 					tag = MAN
-				}
+				} 
 
 			}
 			
@@ -487,9 +487,9 @@ ideas = {
 			allowed = {
 				has_DLC = "Waking the Tiger"
 				OR = {
-					is_literally_china = yes
+					tag = CHI
 					tag = MAN
-				}
+				} 
 			}
 
 			equipment_bonus = {

@@ -3,6 +3,8 @@ capital = 983
 oob = "XWX_1936"
 
 set_country_flag = dont_use_default_political_advisors
+set_country_flag = dont_use_default_military_advisors
+set_country_flag = dont_use_default_head_of_intelligence
 
 set_stability = 0.7
 set_war_support = 0.05
@@ -61,6 +63,7 @@ if = {
 add_ideas = {
 	XWX_opium_magnates
 	XWX_mountaineer_corps
+	XWX_low_border_security
 	XWX_kmt_insurgency
 	XWX_splinter_faction
 	XWX_incompetent_provincial_army
@@ -109,6 +112,327 @@ recruit_character = XWX_liu_wenhui
 recruit_character = XWX_liu_xiang
 recruit_character = XWX_rao_guohua
 recruit_character = XWX_nie_rongzhen
+
+# Generic Generated Characters
+	generate_character = {
+		token_base = XWX_captain_of_industry
+		advisor = {
+			slot = political_advisor
+			traits = { captain_of_industry }
+		}
+		portraits = { 
+			army = { small = GFX_idea_XWX_captain_of_industry }
+		}
+	}
+	generate_character = {
+		token_base = XWX_economic_organizer
+		advisor = {
+			slot = political_advisor
+			traits = { economic_organizer }
+			available = {
+				XWX_is_traitor = no
+			}
+		}
+		portraits = { 
+			army = { small = GFX_idea_XWX_economic_organizer }
+		}
+	}
+	generate_character = {
+		token_base = XWX_smalltime_industrialist
+		advisor = {
+			slot = political_advisor
+			traits = { XWX_smalltime_industrialist_trait }
+			available = {
+				NOT = { has_government = communism }
+			}
+		}
+		portraits = { 
+			army = { small = GFX_idea_XWX_smalltime_industrialist }
+		}
+	}
+	generate_character = {
+		token_base = XWX_war_industrialist
+		advisor = {
+			slot = political_advisor
+			traits = { war_industrialist }
+		}
+		portraits = { 
+			army = { small = GFX_idea_XWX_war_industrialist }
+		}
+	}
+	generate_character = {
+		token_base = XWX_propaganda_expert
+		advisor = {
+			slot = political_advisor
+			traits = { propaganda_expert }
+		}
+		portraits = { 
+			army = { small = GFX_idea_XWX_propaganda_expert }
+		}
+	}
+	if = {
+		limit = {
+			has_dlc = "La Resistance"
+		}
+		generate_character = {
+			token_base = XWX_head_of_intelligence
+			advisor = {
+				slot = political_advisor
+				traits = { XWX_intelligence_officer }
+				cost = 100
+				available = {
+					has_intelligence_agency = yes
+				}
+				ai_will_do = {
+					factor = 1
+					modifier = {
+						has_intelligence_agency = no
+						factor = 0
+					}
+				}
+				on_add = {
+					PREV = {
+						if = {
+							limit = {
+								XWX_kmt_active = yes
+							}
+							add_stability = -0.05
+							XWX_decrease_kmt_power = yes
+						}
+					}
+				}
+				on_remove = {
+					PREV = {
+						if = {
+							limit = {
+								XWX_kmt_active = yes
+							}
+							add_stability = 0.05
+							XWX_increase_kmt_power = yes
+						}
+					}
+				}
+			}
+			portraits = { 
+				army = { small = GFX_idea_XWX_head_of_intelligence }
+			}
+		}
+	}
+	if = {
+		limit = {
+			NOT = { has_dlc = "La Resistance" }
+		}
+		generate_character = {
+			token_base = XWX_head_of_intelligence_no_lar
+			advisor = {
+				slot = political_advisor
+				traits = { XWX_intelligence_officer_no_lar }
+				cost = 75
+				on_add = {
+					PREV = {
+						if = {
+							limit = {
+								XWX_kmt_active = yes
+							}
+							add_stability = -0.05
+							XWX_decrease_kmt_power = yes
+						}
+					}
+				}
+				on_remove = {
+					PREV = {
+						if = {
+							limit = {
+								XWX_kmt_active = yes
+							}
+							add_stability = 0.05
+							XWX_increase_kmt_power = yes
+						}
+					}
+				}
+			}
+			portraits = { 
+				army = { small = GFX_idea_XWX_head_of_intelligence }
+			}
+		}
+	}
+	generate_character = {
+		token_base = XWX_military_theorist
+		advisor = {
+			slot = theorist
+			traits = { military_theorist }
+			ledger = army
+			cost = 50
+			available = {
+				XWX_is_traitor = no
+			}
+		}
+		portraits = { 
+			army = { small = GFX_idea_XWX_military_theorist }
+		}
+	}
+	generate_character = {
+		token_base = XWX_naval_theorist
+		advisor = {
+			slot = theorist
+			traits = { naval_theorist }
+			ledger = navy
+			cost = 50
+			available = {
+				XWX_is_traitor = no
+			}
+			ai_will_do = {
+				factor = 0
+				modifier = {
+					add = 0.5
+					any_owned_State = {
+						is_controlled_by = ROOT
+						is_coastal = yes
+					}
+				}
+			}
+		}
+		portraits = { 
+			army = { small = GFX_idea_XWX_naval_theorist }
+		}
+	}
+	generate_character = {
+		token_base = XWX_air_warfare_theorist
+		advisor = {
+			slot = theorist
+			traits = { air_warfare_theorist }
+			ledger = air
+			cost = 50
+		}
+		portraits = { 
+			army = { small = GFX_idea_XWX_air_warfare_theorist }
+		}
+	}
+	generate_character = {
+		token_base = XWX_army_chief_morale
+		advisor = {
+			slot = army_chief
+			traits = { army_chief_morale_2 }
+			cost = 100
+		}
+		portraits = { 
+			army = { small = GFX_idea_XWX_army_chief_morale }
+		}
+	}
+	generate_character = {
+		token_base = XWX_army_chief_maneuver
+		advisor = {
+			slot = army_chief
+			traits = { army_chief_maneuver_2 }
+			cost = 100
+			available = {
+				OR = {
+					has_government = democratic
+					has_government = neutrality
+				}
+				NOT = { is_subject_of = JAP }
+			}
+		}
+		portraits = { 
+			army = { small = GFX_idea_XWX_army_chief_maneuver }
+		}
+	}
+	generate_character = {
+		token_base = XWX_navy_chief_reform
+		advisor = {
+			slot = navy_chief
+			traits = { navy_chief_reform_2 }
+			cost = 100
+			ai_will_do = {
+				factor = 0
+				modifier = {
+					add = 1
+					any_owned_State = {
+						is_controlled_by = ROOT
+						is_coastal = yes
+					}
+				}
+			}
+		}
+		portraits = { 
+			army = { small = GFX_idea_XWX_navy_chief_reform }
+		}
+	}
+	generate_character = {
+		token_base = XWX_air_chief_reform
+		advisor = {
+			slot = air_chief
+			traits = { air_chief_reform_2 }
+			cost = 100
+		}
+		portraits = { 
+			army = { small = GFX_idea_XWX_air_chief_reform }
+		}
+	}
+	generate_character = {
+		token_base = XWX_army_artillery
+		advisor = {
+			slot = high_command
+			traits = { army_artillery_1 }
+			ledger = army
+			cost = 50
+			available = {
+				XWX_is_traitor = no
+			}
+		}
+		portraits = { 
+			army = { small = GFX_idea_XWX_army_artillery }
+		}
+	}
+	generate_character = {
+		token_base = XWX_army_logistics
+		advisor = {
+			slot = high_command
+			traits = { army_logistics_2 }
+			ledger = army
+			cost = 100
+		}
+		portraits = { 
+			army = { small = GFX_idea_XWX_army_logistics }
+		}
+	}
+	generate_character = {
+		token_base = XWX_air_close_air_support
+		advisor = {
+			slot = high_command
+			traits = { air_close_air_support_2 }
+			ledger = air
+			cost = 100
+		}
+		portraits = { 
+			army = { small = GFX_idea_XWX_air_close_air_support }
+		}
+	}
+	generate_character = {
+		token_base = XWX_navy_anti_submarine
+		advisor = {
+			slot = high_command
+			traits = { navy_anti_submarine_2 }
+			ledger = navy
+			cost = 100
+			available = {
+				XWX_is_traitor = no
+			}
+			ai_will_do = {
+				factor = 0
+				modifier = {
+					add = 0.5
+					any_owned_State = {
+						is_controlled_by = ROOT
+						is_coastal = yes
+					}
+				}
+			}
+		}
+		portraits = { 
+			army = { small = GFX_idea_XWX_navy_anti_submarine }
+		}
+	}
 
 set_politics = {
 	ruling_party = communism

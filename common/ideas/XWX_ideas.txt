@@ -111,6 +111,25 @@ ideas = {
 
         }
 
+		XWX_low_border_security = {
+
+            allowed = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+            removal_cost = -1
+
+            modifier = {
+                civilian_intel_to_others = 40
+				stability_factor = -0.1
+            }
+
+        }
+
         XWX_splinter_faction = {
             
             picture = trotskyite_plot
@@ -225,9 +244,10 @@ ideas = {
            removal_cost = -1
 
             modifier = {
-                stability_factor = -0.05
-				resistance_activity = 0.05
-				resistance_decay = -0.1
+                stability_factor = -0.1
+				army_core_defence_factor = -0.1
+				land_reinforce_rate = -0.04
+				max_command_power = -40
 				neutrality_drift = 0.03
 				custom_modifier_tooltip = XWX_show_kmt_power_tt
             }
@@ -249,9 +269,10 @@ ideas = {
            removal_cost = -1
 
             modifier = {
-                stability_factor = -0.1
-				resistance_activity = 0.08
-				resistance_decay = -0.15
+                stability_factor = -0.15
+				army_core_defence_factor = -0.1
+				land_reinforce_rate = -0.04
+				max_command_power = -30
 				neutrality_drift = 0.04
 				custom_modifier_tooltip = XWX_show_kmt_power_tt
             }
@@ -273,9 +294,10 @@ ideas = {
            removal_cost = -1
 
             modifier = {
-                stability_factor = -0.2
-				resistance_activity = 0.1
-				resistance_decay = -0.25
+                stability_factor = -0.25
+				army_core_defence_factor = -0.1
+				land_reinforce_rate = -0.04
+				max_command_power = -20
 				neutrality_drift = 0.05
 				custom_modifier_tooltip = XWX_show_kmt_power_tt
             }
@@ -1596,6 +1618,93 @@ ideas = {
 		}
 
     }
+
+	materiel_manufacturer = {
+
+		designer = yes
+
+		XWX_gannan_arsenal_no_aat = {
+			picture = generic_infantry_equipment_manufacturer_3
+
+			
+			allowed = {
+				OR = {
+					DEN_is_chinese_country = yes
+					tag = MAN
+					tag = MEN
+				}
+			}
+
+			available = {
+				controls_state = 983
+			}
+			
+			research_bonus = {
+				infantry_weapons = 0.15
+			}
+				
+			traits = { infantry_equipment_manufacturer }
+			
+		}
+
+		XWX_kangding_arsenal_no_aat = {
+			picture = generic_artillery_manufacturer_2
+
+			
+			allowed = {
+				OR = {
+					DEN_is_chinese_country = yes
+					tag = MAN
+					tag = MEN
+				}
+			}
+
+			available = {
+				controls_state = 984
+			}
+			
+			research_bonus = {
+				artillery = 0.15
+			}
+				
+			traits = { artillery_manufacturer }
+			
+		}
+
+	}
+
+	tank_manufacturer = {
+
+		designer = yes
+
+		XWX_tank_designer_no_aat = {
+
+			picture = generic_armor
+			
+			allowed = {
+				tag = XWX
+			}
+			
+			available = {
+				has_completed_focus = XWX_liu_xiangs_armoured_project
+			}
+			
+			cost = 150
+			removal_cost = 10
+			
+			research_bonus = {
+				armor = 0.15
+			}
+			
+			traits = { heavy_tank_manufacturer }
+
+			ai_will_do = {
+				factor = 1
+			}
+
+		}
+
+	}
 
     industrial_concern = {
 

@@ -1,5 +1,391 @@
 spriteTypes = {
 
+# CHARACTERS
+
+	spriteType = {
+		name = "GFX_portrait_XWX_chen_yi"
+		texturefile = "gfx/XWX/portrait_XWX_chen_yi.png"
+	}
+
+	spriteType = {
+		name = "GFX_idea_XWX_chen_yi"
+		texturefile = "gfx/XWX/idea_XWX_chen_yi.png"
+	}
+
+	spriteType = {
+		name = "GFX_portrait_XWX_deng_xihou"
+		texturefile = "gfx/XWX/portrait_XWX_deng_xihou.png"
+	}
+
+	spriteType = {
+		name = "GFX_idea_XWX_deng_xihou"
+		texturefile = "gfx/XWX/idea_XWX_deng_xihou.png"
+	}
+
+	spriteType = {
+		name = "GFX_portrait_XWX_rao_guohua"
+		texturefile = "gfx/XWX/portrait_XWX_rao_guohua.png"
+	}
+
+	spriteType = {
+		name = "GFX_idea_XWX_rao_guohua"
+		texturefile = "gfx/XWX/idea_XWX_rao_guohua.png"
+	}
+
+	spriteType = {
+		name = "GFX_portrait_XWX_hu_lanqi"
+		texturefile = "gfx/XWX/portrait_XWX_hu_lanqi.png"
+	}
+
+	spriteType = {
+		name = "GFX_idea_XWX_hu_lanqi"
+		texturefile = "gfx/XWX/idea_XWX_hu_lanqi.png"
+	}
+
+	spriteType = {
+		name = "GFX_portrait_XWX_huangqi_xiang"
+		texturefile = "gfx/XWX/portrait_XWX_huangqi_xiang.png"
+	}
+
+	spriteType = {
+		name = "GFX_idea_XWX_huangqi_xiang"
+		texturefile = "gfx/XWX/idea_XWX_huangqi_xiang.png"
+	}
+
+
+	spriteType = {
+		name = "GFX_portrait_XWX_jacob_rosenberg"
+		texturefile = "gfx/XWX/portrait_XWX_jacob_rosenberg.png"
+	}
+
+	spriteType = {
+		name = "GFX_idea_XWX_jacob_rosenberg"
+		texturefile = "gfx/XWX/idea_XWX_jacob_rosenberg.png"
+	}
+
+	spriteType = {
+		name = "GFX_portrait_XWX_liu_wenhui"
+		texturefile = "gfx/XWX/portrait_XWX_liu_wenhui.png"
+	}
+
+	spriteType = {
+		name = "GFX_idea_XWX_liu_wenhui"
+		texturefile = "gfx/XWX/idea_XWX_liu_wenhui.png"
+	}
+
+	spriteType = {
+		name = "GFX_portrait_XWX_liu_xiang"
+		texturefile = "gfx/XWX/portrait_XWX_liu_xiang.png"
+	}
+
+	spriteType = {
+		name = "GFX_idea_XWX_liu_xiang"
+		texturefile = "gfx/XWX/idea_XWX_liu_xiang.png"
+	}
+
+	spriteType = {
+		name = "GFX_portrait_XWX_nie_rongzhen"
+		texturefile = "gfx/XWX/portrait_XWX_nie_rongzhen.png"
+	}
+
+	spriteType = {
+		name = "GFX_idea_XWX_nie_rongzhen"
+		texturefile = "gfx/XWX/idea_XWX_nie_rongzhen.png"
+	}
+
+	spriteType = {
+		name = "GFX_portrait_XWX_peasant_collective"
+		texturefile = "gfx/XWX/portrait_XWX_peasant_collective.png"
+	}
+
+# GENERIC CHARACTERS
+
+	spriteType = {
+		name = "GFX_portrait_XWX_generic_communism"
+		texturefile = "gfx/XWX/generic/portrait_XWX_generic_communism.dds"
+	}
+
+	spriteType = {
+		name = "GFX_portrait_XWX_generic_democratic"
+		texturefile = "gfx/XWX/generic/portrait_XWX_generic_democratic.dds"
+	}
+
+	spriteType = {
+		name = "GFX_portrait_XWX_generic_land_1"
+		texturefile = "gfx/XWX/generic/portrait_XWX_generic_land_1.dds"
+	}
+
+	spriteType = {
+		name = "GFX_portrait_XWX_generic_land_1_small"
+		texturefile = "gfx/XWX/generic/idea_XWX_army_chief_maneuver.dds"
+	}
+
+	spriteType = {
+		name = "GFX_portrait_XWX_generic_land_2"
+		texturefile = "gfx/XWX/generic/portrait_XWX_generic_land_2.dds"
+	}
+
+	spriteType = {
+		name = "GFX_portrait_XWX_generic_land_2_small"
+		texturefile = "gfx/XWX/generic/idea_XWX_navy_anti_submarine.dds"
+	}
+
+	spriteType = {
+		name = "GFX_portrait_XWX_generic_land_3"
+		texturefile = "gfx/XWX/generic/portrait_XWX_generic_land_3.dds"
+	}
+
+	spriteType = {
+		name = "GFX_portrait_XWX_generic_land_3_small"
+		texturefile = "gfx/XWX/generic/idea_XWX_army_chief_morale.dds"
+	}
+
+	spriteType = {
+		name = "GFX_portrait_XWX_generic_land_4"
+		texturefile = "gfx/XWX/generic/portrait_XWX_generic_land_4.dds"
+	}
+
+	spriteType = {
+		name = "GFX_portrait_XWX_generic_land_4_small"
+		texturefile = "gfx/XWX/generic/idea_XWX_naval_theorist.dds"
+	}
+
+	spriteType = {
+		name = "GFX_portrait_XWX_generic_land_5"
+		texturefile = "gfx/XWX/generic/portrait_XWX_generic_land_5.dds"
+	}
+
+	spriteType = {
+		name = "GFX_portrait_XWX_generic_land_5_small"
+		texturefile = "gfx/XWX/generic/idea_XWX_army_chief_maneuver.dds"
+	}
+
+	spriteType = {
+		name = "GFX_portrait_XWX_generic_land_6"
+		texturefile = "gfx/XWX/generic/portrait_XWX_generic_land_6.dds"
+	}
+
+	spriteType = {
+		name = "GFX_portrait_XWX_generic_land_6_small"
+		texturefile = "gfx/XWX/generic/idea_XWX_army_chief_maneuver.dds"
+	}
+
+	spriteType = {
+		name = "GFX_portrait_XWX_generic_land_7"
+		texturefile = "gfx/XWX/generic/portrait_XWX_generic_land_7.dds"
+	}
+
+	spriteType = {
+		name = "GFX_portrait_XWX_generic_land_7_small"
+		texturefile = "gfx/XWX/generic/idea_XWX_naval_theorist.dds"
+	}
+
+	spriteType = {
+		name = "GFX_portrait_XWX_generic_land_8"
+		texturefile = "gfx/XWX/generic/portrait_XWX_generic_land_8.dds"
+	}
+
+	spriteType = {
+		name = "GFX_portrait_XWX_generic_land_8_small"
+		texturefile = "gfx/XWX/generic/idea_XWX_army_chief_maneuver.dds"
+	}
+
+	spriteType = {
+		name = "GFX_portrait_XWX_generic_land_9"
+		texturefile = "gfx/XWX/generic/portrait_XWX_generic_land_9.dds"
+	}
+
+	spriteType = {
+		name = "GFX_portrait_XWX_generic_land_9_small"
+		texturefile = "gfx/XWX/generic/idea_XWX_army_logistics.dds"
+	}
+
+	spriteType = {
+		name = "GFX_portrait_XWX_generic_land_10"
+		texturefile = "gfx/XWX/generic/portrait_XWX_generic_land_10.dds"
+	}
+
+	spriteType = {
+		name = "GFX_portrait_XWX_generic_land_10_small"
+		texturefile = "gfx/XWX/generic/idea_XWX_army_logistics.dds"
+	}
+
+	spriteType = {
+		name = "GFX_portrait_XWX_generic_land_11"
+		texturefile = "gfx/XWX/generic/portrait_XWX_generic_land_11.dds"
+	}
+
+	spriteType = {
+		name = "GFX_portrait_XWX_generic_land_11_small"
+		texturefile = "gfx/XWX/generic/idea_XWX_army_chief_morale.dds"
+	}
+
+	spriteType = {
+		name = "GFX_portrait_XWX_generic_land_12"
+		texturefile = "gfx/XWX/generic/portrait_XWX_generic_land_12.dds"
+	}
+
+	spriteType = {
+		name = "GFX_portrait_XWX_generic_land_12_small"
+		texturefile = "gfx/XWX/generic/idea_XWX_army_chief_maneuver.dds"
+	}
+
+	spriteType = {
+		name = "GFX_portrait_XWX_generic_land_13"
+		texturefile = "gfx/XWX/generic/portrait_XWX_generic_land_13.dds"
+	}
+
+	spriteType = {
+		name = "GFX_portrait_XWX_generic_land_13_small"
+		texturefile = "gfx/XWX/generic/idea_XWX_naval_theorist.dds"
+	}
+
+	spriteType = {
+		name = "GFX_portrait_XWX_generic_navy_1"
+		texturefile = "gfx/XWX/generic/portrait_XWX_generic_navy_1.dds"
+	}
+
+	spriteType = {
+		name = "GFX_portrait_XWX_generic_navy_1_small"
+		texturefile = "gfx/XWX/generic/idea_XWX_army_chief_morale.dds"
+	}
+
+	spriteType = {
+		name = "GFX_portrait_XWX_generic_navy_2"
+		texturefile = "gfx/XWX/generic/portrait_XWX_generic_navy_2.dds"
+	}
+
+	spriteType = {
+		name = "GFX_portrait_XWX_generic_navy_2_small"
+		texturefile = "gfx/XWX/generic/idea_XWX_navy_anti_submarine.dds"
+	}
+
+	spriteType = {
+		name = "GFX_portrait_XWX_generic_navy_3"
+		texturefile = "gfx/XWX/generic/portrait_XWX_generic_navy_3.dds"
+	}
+
+	spriteType = {
+		name = "GFX_portrait_XWX_generic_navy_3_small"
+		texturefile = "gfx/XWX/generic/idea_XWX_army_chief_maneuver.dds"
+	}
+
+# GENERIC CHARACTERS ADVISORS
+
+	spriteType = {
+		name = "GFX_idea_XWX_captain_of_industry"
+		texturefile = "gfx/XWX/generic/idea_XWX_captain_of_industry.png"
+	}
+
+	spriteType = {
+		name = "GFX_idea_XWX_economic_organizer"
+		texturefile = "gfx/XWX/generic/idea_XWX_economic_organizer.dds"
+	}
+
+	spriteType = {
+		name = "GFX_idea_XWX_smalltime_industrialist"
+		texturefile = "gfx/XWX/generic/idea_XWX_smalltime_industrialist.png"
+	}
+
+	spriteType = {
+		name = "GFX_idea_XWX_propaganda_expert"
+		texturefile = "gfx/XWX/generic/idea_XWX_propaganda_expert.png"
+	}
+
+	spriteType = {
+		name = "GFX_idea_XWX_war_industrialist"
+		texturefile = "gfx/XWX/generic/idea_XWX_war_industrialist.png"
+	}
+
+	spriteType = {
+		name = "GFX_idea_XWX_head_of_intelligence"
+		texturefile = "gfx/XWX/generic/idea_XWX_head_of_intelligence.png"
+	}
+
+	spriteType = {
+		name = "GFX_idea_XWX_military_theorist"
+		texturefile = "gfx/XWX/generic/idea_XWX_military_theorist.dds"
+	}
+
+	spriteType = {
+		name = "GFX_idea_XWX_naval_theorist"
+		texturefile = "gfx/XWX/generic/idea_XWX_naval_theorist.dds"
+	}
+
+	spriteType = {
+		name = "GFX_idea_XWX_air_warfare_theorist"
+		texturefile = "gfx/XWX/generic/idea_XWX_air_warfare_theorist.dds"
+	}
+
+	spriteType = {
+		name = "GFX_idea_XWX_army_chief_morale"
+		texturefile = "gfx/XWX/generic/idea_XWX_army_chief_morale.dds"
+	}
+
+	spriteType = {
+		name = "GFX_idea_XWX_army_chief_maneuver"
+		texturefile = "gfx/XWX/generic/idea_XWX_army_chief_maneuver.dds"
+	}
+
+	spriteType = {
+		name = "GFX_idea_XWX_navy_chief_reform"
+		texturefile = "gfx/XWX/generic/idea_XWX_navy_chief_reform.dds"
+	}
+
+	spriteType = {
+		name = "GFX_idea_XWX_air_chief_reform"
+		texturefile = "gfx/XWX/generic/idea_XWX_air_chief_reform.dds"
+	}
+
+	spriteType = {
+		name = "GFX_idea_XWX_army_artillery"
+		texturefile = "gfx/XWX/generic/idea_XWX_army_artillery.dds"
+	}
+
+	spriteType = {
+		name = "GFX_idea_XWX_army_logistics"
+		texturefile = "gfx/XWX/generic/idea_XWX_army_logistics.dds"
+	}
+
+	spriteType = {
+		name = "GFX_idea_XWX_air_close_air_support"
+		texturefile = "gfx/XWX/generic/idea_XWX_air_close_air_support.dds"
+	}
+
+	spriteType = {
+		name = "GFX_idea_XWX_navy_anti_submarine"
+		texturefile = "gfx/XWX/generic/idea_XWX_navy_anti_submarine.dds"
+	}
+
+
+# IDEA
+
+	spriteType = {
+		name = "GFX_idea_XWX_low_border_security"
+		texturefile = "gfx/XWX/idea_XWX_low_border_security.png"
+	}
+
+	spriteType = {
+		name = "GFX_idea_XWX_kmt_influencee"
+		texturefile = "gfx/XWX/idea_XWX_kmt_influence.png"
+	}
+
+	spriteType = {
+		name = "GFX_idea_XWX_nationalist_army"
+		texturefile = "gfx/XWX/idea_XWX_nationalist_army.png"
+	}
+
+	spriteType = {
+		name = "GFX_idea_XWX_nra_restored"
+		texturefile = "gfx/XWX/idea_XWX_nra_restored.png"
+	}
+
+	spriteType = {
+		name = "GFX_idea_XWX_safeguard_china"
+		texturefile = "gfx/XWX/idea_XWX_safeguard_china.png"
+	}
+
+
 # FOCI
 
 	spriteType = {
@@ -113,126 +499,6 @@ spriteTypes = {
 		legacy_lazy_load = no
 	}
 
-# IDEA
-
-	spriteType = {
-		name = "GFX_idea_XWX_kmt_influencee"
-		texturefile = "gfx/XWX/idea_XWX_kmt_influence.png"
-	}
-
-	spriteType = {
-		name = "GFX_idea_XWX_nationalist_army"
-		texturefile = "gfx/XWX/idea_XWX_nationalist_army.png"
-	}
-
-	spriteType = {
-		name = "GFX_idea_XWX_nra_restored"
-		texturefile = "gfx/XWX/idea_XWX_nra_restored.png"
-	}
-
-	spriteType = {
-		name = "GFX_idea_XWX_safeguard_china"
-		texturefile = "gfx/XWX/idea_XWX_safeguard_china.png"
-	}
-
-# CHARACTERS
-
-	spriteType = {
-		name = "GFX_portrait_XWX_chen_yi"
-		texturefile = "gfx/XWX/portrait_XWX_chen_yi.png"
-	}
-
-	spriteType = {
-		name = "GFX_portrait_XWX_deng_xihou"
-		texturefile = "gfx/XWX/portrait_XWX_deng_xihou.png"
-	}
-
-	spriteType = {
-		name = "GFX_portrait_XWX_hu_lanqi"
-		texturefile = "gfx/XWX/portrait_XWX_hu_lanqi.png"
-	}
-
-	spriteType = {
-		name = "GFX_portrait_XWX_huangqi_xiang"
-		texturefile = "gfx/XWX/portrait_XWX_huangqi_xiang.png"
-	}
-
-	spriteType = {
-		name = "GFX_portrait_XWX_jacob_rosenberg"
-		texturefile = "gfx/XWX/portrait_XWX_jacob_rosenberg.png"
-	}
-
-	spriteType = {
-		name = "GFX_portrait_XWX_liu_wenhui"
-		texturefile = "gfx/XWX/portrait_XWX_liu_wenhui.png"
-	}
-
-	spriteType = {
-		name = "GFX_portrait_XWX_liu_xiang"
-		texturefile = "gfx/XWX/portrait_XWX_liu_xiang.png"
-	}
-
-	spriteType = {
-		name = "GFX_portrait_XWX_nie_rongzhen"
-		texturefile = "gfx/XWX/portrait_XWX_nie_rongzhen.png"
-	}
-
-	spriteType = {
-		name = "GFX_portrait_XWX_peasant_collective"
-		texturefile = "gfx/XWX/portrait_XWX_peasant_collective.png"
-	}
-
-	spriteType = {
-		name = "GFX_portrait_XWX_rao_guohua"
-		texturefile = "gfx/XWX/portrait_XWX_rao_guohua.png"
-	}
-
-# ADVISORS
-
-	spriteType = {
-		name = "GFX_idea_XWX_chen_yi"
-		texturefile = "gfx/XWX/idea_XWX_chen_yi.png"
-	}
-
-	spriteType = {
-		name = "GFX_idea_XWX_deng_xihou"
-		texturefile = "gfx/XWX/idea_XWX_deng_xihou.png"
-	}
-
-	spriteType = {
-		name = "GFX_idea_XWX_hu_lanqi"
-		texturefile = "gfx/XWX/idea_XWX_hu_lanqi.png"
-	}
-
-	spriteType = {
-		name = "GFX_idea_XWX_huangqi_xiang"
-		texturefile = "gfx/XWX/idea_XWX_huangqi_xiang.png"
-	}
-
-	spriteType = {
-		name = "GFX_idea_XWX_jacob_rosenberg"
-		texturefile = "gfx/XWX/idea_XWX_jacob_rosenberg.png"
-	}
-
-	spriteType = {
-		name = "GFX_idea_XWX_liu_wenhui"
-		texturefile = "gfx/XWX/idea_XWX_liu_wenhui.png"
-	}
-
-	spriteType = {
-		name = "GFX_idea_XWX_liu_xiang"
-		texturefile = "gfx/XWX/idea_XWX_liu_xiang.png"
-	}
-
-	spriteType = {
-		name = "GFX_idea_XWX_nie_rongzhen"
-		texturefile = "gfx/XWX/idea_XWX_nie_rongzhen.png"
-	}
-
-	spriteType = {
-		name = "GFX_idea_XWX_rao_guohua"
-		texturefile = "gfx/XWX/idea_XWX_rao_guohua.png"
-	}
 
 # EVENTS
 

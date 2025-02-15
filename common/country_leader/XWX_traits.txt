@@ -134,9 +134,9 @@ leader_traits = {
 		random = no
 
 		experience_gain_army = 0.05
-		army_org_factor = 0.2
 		initiative_factor = 0.05
 		war_support_factor = 0.1
+		improve_relations_maintain_cost_factor = -0.25
 
 		ai_will_do = {
 			factor = 1
@@ -222,8 +222,46 @@ leader_traits = {
 		random = no
         sprite = 13
 
+		production_speed_industrial_complex_factor = 0.05
 		research_speed_factor = 0.07
         democratic_drift = 0.03
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	XWX_smalltime_industrialist_trait = {
+		random = no
+        sprite = 10
+
+		industrial_capacity_factory = 0.15
+		industrial_capacity_dockyard = 0.15
+		political_power_factor = -0.02
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	XWX_intelligence_officer = {
+		random = no
+        sprite = 15
+
+		operative_slot = 1
+		intel_network_gain_factor = 0.1
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	XWX_intelligence_officer_no_lar = {
+		random = no
+        sprite = 15
+
+		encryption = 1
+		encryption_factor = 0.15
 
 		ai_will_do = {
 			factor = 1
@@ -235,6 +273,22 @@ leader_traits = {
         sprite = 14
 
 		command_power_gain = 0.2
+
+		ai_will_do = {
+			factor = 2
+		}
+	}
+
+	XWX_adaptive_engineer = {
+		random = no
+        sprite = 10
+
+		equipment_conversion_speed = 0.15
+		equipment_capture_factor = 0.15
+		conversion_cost_civ_to_mil_factor = -0.3
+		supply_node_range = 0.15
+
+		command_cap_increase = 30
 
 		ai_will_do = {
 			factor = 2

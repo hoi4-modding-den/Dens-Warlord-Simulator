@@ -147,7 +147,7 @@
  XWX_judicial_ministry_merged_trait: "Executive Powers"
  XWX_socialist_premier: "Socialist Premier"
  XWX_feminist_revolutionary_leader: "Feminist Representative"
- XWX_master_engineer: "Learned Engineer"
+ XWX_master_engineer: "Adaptive Engineer"
  XWX_foreign_doctor: "Medical Professional"
  xWX_diplomatic_commander: "Military Representative"
  XWX_democratic_leader: "$XWX_democratic_reformer$"
@@ -155,7 +155,11 @@
  XWX_feminist_revolutionary: "Feminist Revolutionary"
  XWX_feminist_revolutionary_improved: "$XWX_feminist_revolutionary$"
  XWX_democratic_reformer: "Liberal Technocrat"
+ XWX_smalltime_industrialist_trait: "Cooperative Industrialist"
+ XWX_intelligence_officer: "Intelligence Officer"
+ XWX_intelligence_officer_no_lar: "$XWX_intelligence_officer$"
  XWX_raid_theorist: "Raid Strategist"
+ XWX_adaptive_engineer: "Adaptive Engineer\n(Genius)"
  XWX_opium_magnates_trait: "Crime Syndicates"
  XWX_modernisation_committee_trait: "Modernisation Committee"
  XWX_education_office_trait: "Education Coordination"
@@ -204,6 +208,8 @@
  XWX_mountaineer_training_corps_desc: "$XWX_mountaineer_corps_desc$ $XWX_mountaineer_training_desc$"
  XWX_mountaineer_training: "Wolves of the Mountains"
  XWX_mountaineer_training_desc: "To steel our forces for fights in the winter and the mountainous terrain of Western China, special training regimen are being held."
+ XWX_low_border_security: "Low Border Security"
+ XWX_low_border_security_desc: "Most of our military is busy fighting banditry and preparing against possible incursions from the south, so that our other borders remain sparsely patrolled."
  XWX_splinter_faction: "Independent Communes"
  XWX_splinter_faction_desc: "The Peasants Republics are a splinter faction of the People's Republic of China, having seceeded from them in a conflict over ideological disparities in 1933."
  XWX_splinter_faction_3: "Revolutionary Bastion"
@@ -271,6 +277,15 @@
  modify_XWX_industry_tt: "Modify §Y$XWX_industry_modifier$§! by:"
 
  after_idea_times_out_tt: "§YAfter the National Spirit runs out:§!"
+
+# DESIGNERS
+
+ XWX_gannan_arsenal_no_aat: "$XWX_gannan_arsenal$"
+ XWX_kangding_arsenal_no_aat: "$XWX_kangding_arsenal$"
+ XWX_tank_designer_no_aat: "$XWX_tank_designer$"
+
+
+# INDUSTRIAL CONCERNS
 
  XWX_opium_magnates: "Opium Syndicates"
  XWX_opium_magnates_trigger: "§Rcan only be removed via the decision§! §Y$XWX_erase_opium_syndicate_influence$§!§R!§!"
@@ -1010,8 +1025,8 @@
 
  XWX_improve_logistics: "Utilise the Railways"
  XWX_improve_logistics_desc: ""
- XWX_reform_the_militias: "Disband the Militia Brigades"
- XWX_reform_the_militias_desc: "While the People's Militia has been the backbone of our army for long, it is time to move away from their structures in favour of a professionally trained and commandeered army. The members of the People's Militia will however still be used as reservists."
+ XWX_reform_the_militias: "Reorganise the Militia Brigades"
+ XWX_reform_the_militias_desc: "While the People's Militia has been the backbone of our army for long, it is time to move away from their structures in favour of a professionally trained and commandeered army. The members of the People's Militia will be delegated to border security."
  XWX_reform_the_militias_tt: "Unlock £GFX_decision_icon_small §Y$XWX_army_reform_decision$§!."
  XWX_quick_militarisation: "Emergency Militarisation"
  XWX_quick_militarisation_desc: ""

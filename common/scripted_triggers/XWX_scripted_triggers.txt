@@ -62,6 +62,18 @@ XWX_kmt_active = {
     }
 }
 
+XWX_is_traitor = {
+    OR = {
+        if = {
+			limit = {
+				tag = XWX
+			}
+			has_government = fascism
+		}
+        is_subject_of = JAP
+    }
+}
+
 XWX_go_kmt_path = {
     OR = {
         has_country_flag = XWX_random_kmt_path
