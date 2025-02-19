@@ -27,6 +27,51 @@ DEN_is_chinese_country_wo_tt = { # this also needs to be updated in ideas/japan.
 	}
 }
 
+DEN_jap_puppets_scope = {
+	OR = {
+        DEN_is_chinese_country = yes
+        original_tag = MAN
+        original_tag = MEN
+        original_tag = MON
+        original_tag = XFC
+        original_tag = SIA
+		original_tag = XTI
+    }
+    is_subject_of = JAP
+}
+
+DEN_JAP_can_surrender = {
+	JAP = {
+		NOT = {
+			custom_trigger_tooltip = {
+				tooltip = DEN_is_req_JAP_mainland_state_tt
+				any_controlled_state = {
+					OR = {
+						DEN_is_chinese_state_wo_taiwan = yes
+						is_core_of = KOR
+						is_core_of = XFC
+						is_core_of = XTI
+						is_core_of = MON
+						is_core_of = SIA
+					}
+				}	
+			}
+		}
+	}
+	custom_trigger_tooltip = {
+		tooltip = DEN_all_JAP_subjects_capped_tt
+		all_other_country = {
+			OR = {
+				NOT = {
+					is_subject_of = JAP
+				}
+				NOT = { capital_scope = { is_on_continent = asia } }
+				has_capitulated = yes
+			}
+		}
+	}
+}
+
 DEN_controls_all_chinese_states = {
 	custom_trigger_tooltip = {
 		tooltip = DEN_controls_all_chinese_states_tt
@@ -61,6 +106,34 @@ DEN_is_chinese_state = {
 			region = 249 # Yunnan
 			region = 143 # Northern China
 			state = 524 # Taiwan
+			state = 757 # Shigatse/Tibet
+			state = 322 # Nagqu/Tibet
+			state = 758 # Ngari/Tibet
+		}
+	}
+}
+
+DEN_is_chinese_state_wo_taiwan = { # only for japanese surrender
+	custom_trigger_tooltip = {
+		tooltip = DEN_is_chinese_state_wo_taiwan_tt
+		OR = {
+			region = 252 # Tien Shan
+			region = 242 # Northern Manchuria
+			region = 243 # Eastern Manchuria
+			region = 155 # Western Manchuria
+			region = 244 # Chahar
+			region = 144 # Western China
+			region = 245 # Shanxi Region
+			region = 247 # Yangtze River Region
+			region = 145 # Taklamakan
+			region = 200 # Qinghai
+			region = 250 # Kham
+			region = 246 # Central China
+			region = 164 # Eastern China
+			region = 165 # Southern China
+			region = 248 # Guangxi
+			region = 249 # Yunnan
+			region = 143 # Northern China
 			state = 757 # Shigatse/Tibet
 			state = 322 # Nagqu/Tibet
 			state = 758 # Ngari/Tibet

@@ -1,8 +1,24 @@
+add_namespace = XWX_intro_event
 add_namespace = XWX_political_events
 add_namespace = XWX_election_events
 add_namespace = XWX_kmt_events
 add_namespace = XWX_diplomatic_events
 add_namespace = XWX_news_events
+
+country_event = { # Intro Event 
+	id = XWX_intro_event.1
+	title = XWX_intro_event.1.t
+	desc = XWX_intro_event.1.desc
+	picture = GFX_report_event_XWX_start
+
+	is_triggered_only = yes
+
+	option = { 
+		name = XWX_intro_event.1.a
+		custom_effect_tooltip = XWX_intro_event.1.a.tt
+	}
+
+}
 
 country_event = { # Industry Focus Unlock Event 
 	id = XWX_political_events.1

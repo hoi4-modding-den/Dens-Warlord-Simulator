@@ -240,6 +240,154 @@ news_event = { # Chinese United Front dissolved
 
 }
 
+country_event = { # United Front member requests we demand Japanese Surrender
+	id = DEN_JOINT_china.5
+	title = DEN_JOINT_china.5.t
+	desc = DEN_JOINT_china.5.desc
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+
+	option = {
+		name = DEN_JOINT_china.5.a
+		activate_mission = CHI_demand_japanese_surrender_mission
+		custom_effect_tooltip = CHI_demand_japanese_surrender_mission_tt
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+		FROM = {
+			country_event = {
+				id = DEN_JOINT_china.7
+				hours = 3
+			}
+		}
+	}
+
+	option = { 
+		name = DEN_JOINT_china.5.b
+		FROM = {
+			country_event = {
+				id = DEN_JOINT_china.6
+				hours = 3
+			}
+		}
+	}
+
+}
+
+country_event = { # Faction leader refuses to send surrender request
+	id = DEN_JOINT_china.6
+	title = DEN_JOINT_china.6.t
+	desc = DEN_JOINT_china.6.desc
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+
+	option = { 
+		name = DEN_JOINT_china.6.a
+		
+	}
+
+
+}
+
+country_event = { # Faction leader sends surrender request
+	id = DEN_JOINT_china.7
+	title = DEN_JOINT_china.7.t
+	desc = DEN_JOINT_china.7.desc
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+
+	option = { 
+		name = DEN_JOINT_china.7.a
+		
+	}
+
+
+}
+
+country_event = { # China demands surrender
+	id = DEN_JOINT_china.8
+	title = DEN_JOINT_china.8.t
+	desc = DEN_JOINT_china.8.desc
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+
+	option = { 
+		name = DEN_JOINT_china.8.a
+		FROM = {
+			country_event = {
+				id = DEN_JOINT_china.9
+				hours = 3
+			}
+		}
+	}
+
+	option = { 
+		name = DEN_JOINT_china.8.b
+		trigger = {
+			is_ai = no
+		}
+		add_war_support = 0.02
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+		
+		FROM = {
+			country_event = {
+				id = DEN_JOINT_china.10
+				hours = 3
+			}
+		}
+	}
+
+}
+
+country_event = { # Japan surrenders
+	id = DEN_JOINT_china.9
+	title = DEN_JOINT_china.9.t
+	desc = DEN_JOINT_china.9.desc
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+
+	option = { 
+		name = DEN_JOINT_china.9.a
+		custom_effect_tooltip = DEN_JOINT_japanese_surrenders_mainland_tt
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+		effect_tooltip = {
+			white_peace = FROM
+		}
+		hidden_effect = {
+			d_DEN_JOINT_japanese_surrenders_mainland = yes
+		}
+	}
+
+}
+
+country_event = { # Japan refuses to surrender
+	id = DEN_JOINT_china.10
+	title = DEN_JOINT_china.10.t
+	desc = DEN_JOINT_china.10.desc
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+
+	option = { 
+		name = DEN_JOINT_china.10.a
+		every_country = {
+			limit = {
+				has_war_with = FROM
+			}
+			add_war_support = 0.1
+		}
+	}
+
+}
+
 # Japanese Stage Border Incident
 country_event = {
 	id = china.1

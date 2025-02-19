@@ -19,3 +19,125 @@ DEN_JOINT_give_cores_on_chinese_states = {
     }
     log = "ROOT: [ROOT.GetName] gained cores on all chinese states"
 }
+
+d_DEN_JOINT_transfer_every_mainland_JAP_state_to_THIS = {
+    THIS = {
+        log = "[THIS.GetName] gets Japanese mainland states:"
+        JAP = {
+            every_owned_state = {
+                limit = {
+                    OR = {
+                        DEN_is_chinese_state = yes
+                        is_core_of = KOR
+                        is_core_of = XFC
+                        is_core_of = XTI
+                        is_core_of = MON
+                        is_core_of = SIA
+                        is_controlled_by = ROOT
+                    }
+                }
+                THIS = {
+                    transfer_state_to = PREV.PREV.PREV
+                    log = "     [PREV.PREV.PREV.GetName]: gained [THIS.GetName]"
+                }
+            }
+        }
+    }
+}
+
+d_DEN_JOINT_japanese_surrenders_mainland = {
+    log = " -- Executing Japanese Surrender: -- "
+    if = { # make a random JAP puppet faction leader
+        limit = {
+            any_country = {
+                DEN_jap_puppets_scope = yes
+            }
+        }
+        random_country = {
+            limit = {
+                DEN_jap_puppets_scope = yes
+            }
+            set_country_flag = DEN_JOINT_jap_rep_in_china
+            log = "[THIS.GetName] made Japanese Rep."
+            d_DEN_JOINT_transfer_every_mainland_JAP_state_to_THIS = yes
+            create_faction = DEN_JOINT_jap_rep_in_china_faction
+            log = "[THIS.GetName] made [THIS.GetFactionName] leader"
+        }
+    }
+    else = { # create a temporary JAP "puppet" to make faction leader
+        create_dynamic_country = {
+            original_tag = MAN
+            copy_tag = MAN
+            set_politics = {
+                ruling_party = neutrality
+                elections_allowed = no
+            }
+            add_popularity = {
+                ideology = neutrality
+                popularity = 1
+            }
+            declare_war_on = {
+                target = ROOT
+                type = annex_everything
+            }
+            set_country_flag = DEN_JOINT_jap_rep_in_china
+            log = "[THIS.GetName] made Japanese Representative"
+            d_DEN_JOINT_transfer_every_mainland_JAP_state_to_THIS = yes
+            create_faction = DEN_JOINT_jap_rep_in_china_faction
+            log = "[THIS.GetName] made [THIS.GetFactionName] leader"
+        }
+    }
+    # Free Puppets and prepare for Peace Conference
+    every_country = {
+        limit = {
+            DEN_jap_puppets_scope = yes
+        }
+        end_puppet = JAP
+        log = "[THIS.GetName] made independent"
+        random_country = {
+            limit = {
+                has_country_flag = DEN_JOINT_jap_rep_in_china
+            }
+            puppet = PREV
+            log = "[PREV.GetName] puppeted by [THIS.GetName]"
+        }
+    }
+    # White Peace
+    every_country = {
+        limit = {
+            OR = {
+                is_ally_with = JAP
+                tag = JAP
+            }
+        }
+        log = "[THIS.GetName] signs white peace with [PREV.GetName]"
+        ROOT = {
+            white_peace = PREV
+            log = "[ROOT.GetName] signs white peace with [PREV.GetName]"
+        }
+    }
+    # Peace Conference
+    random_country = {
+        limit = {
+            has_country_flag = DEN_JOINT_jap_rep_in_china
+        }
+        log = "[THIS.GetName] starts peacedeal:"
+        ROOT = {
+            log = "Winner Faction Leader: [ROOT.GetName]"
+            start_peace_conference = {
+                tag = PREV
+                score_factor = 1
+                message = DEN_JOINT_JAP_surrender_tt
+            }
+        }
+    }
+    # Clear Flags
+    every_country = {
+        limit = {
+            has_country_flag = DEN_JOINT_jap_rep_in_china
+        }
+        clr_country_flag = DEN_JOINT_jap_rep_in_china
+        log = "[THIS.GetName] cleared representative flag"
+    }
+    log = " -- End Surrender Log -- "
+}

@@ -95,6 +95,7 @@ reverse_add_opinion_modifier = {
 	modifier = XWX_splinter_faction_modifier
 }
 
+country_event = { id = XWX_intro_event.1 }
 country_event = { id = XWX_kmt_events.2 days = 7 }
 
 activate_mission = XWX_tianyu_fort_construction
@@ -154,7 +155,7 @@ recruit_character = XWX_nie_rongzhen
 		token_base = XWX_war_industrialist
 		advisor = {
 			slot = political_advisor
-			traits = { war_industrialist }
+			traits = { XWX_military_contractor }
 		}
 		portraits = { 
 			army = { small = GFX_idea_XWX_war_industrialist }

@@ -26,7 +26,7 @@ XWX_kmt_insurgency_cat = {
 
 		fire_only_once = no
 
-    	days_mission_timeout = 70
+    	days_mission_timeout = 56
 
         complete_effect = {
             add_political_power = 200
@@ -671,6 +671,46 @@ XWX_construction_decisions = {
 
 XWX_japanese_collaboration = {
 
+    XWX_suppress_collaborators = {
+
+        icon = GFX_decision_oppression
+
+        allowed = {
+            original_tag = XWX
+        }
+
+        cancel_trigger = {
+            fascism < 0.1
+        }
+
+        cost = 50
+
+        ai_will_do = {
+			base = 80
+            modifier = {
+                factor = 0
+                XWX_go_japan_path = yes
+            } 
+		}
+
+        days_remove = 120
+
+        fire_only_once = no
+
+        modifier = {
+            fascism_drift = -0.1
+        }
+
+        cancel_effect = {
+            add_political_power = 50
+            add_popularity = {
+                ideology = fascism
+                popularity = -0.1
+            }
+        }
+    
+    }
+
     XWX_request_japanese_support = {
 
         icon = GFX_decision_generic_prepare_civil_war
@@ -1005,7 +1045,7 @@ XWX_army_improvement = {
             has_war = yes
             OR = {
                 surrender_progress > 0.2
-                casualties_k > 10
+                casualties_k > 50
             }
         }
 

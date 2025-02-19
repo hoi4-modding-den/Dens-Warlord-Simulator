@@ -524,7 +524,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = XWX_civilian_focus
 
-		cost = 8
+		cost = 5
 
 		ai_will_do = {
 			base = 0
@@ -2752,7 +2752,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = XWX_consolidate_control
 
-		cost = 8
+		cost = 5
 
 		ai_will_do = {
 			base = 500
@@ -2768,6 +2768,7 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
+			add_political_power = 75
 			add_popularity = {
 				popularity = -0.15
 				ideology = communism
@@ -2821,6 +2822,11 @@ focus_tree = {
 			custom_effect_tooltip = generic_skip_one_line_tt
 
 			remove_ideas = XWX_low_popular_support_2
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			set_cosmetic_tag = XWX_republic
+			set_country_flag = XWX_republic_tag
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 			
@@ -2991,9 +2997,18 @@ focus_tree = {
 					is_ai = no
 				}
 				has_intelligence_agency = yes
-				network_strength = {
-					target = JAP
-					value > 20
+				OR = {
+					network_strength = {
+						target = JAP
+						value > 20
+					}
+					has_idea_with_trait = XWX_intelligence_officer
+				}
+			}
+			else = {
+				OR = {
+					has_tech = basic_decryption
+					has_idea_with_trait = XWX_intelligence_officer_no_lar
 				}
 			}
 		}
@@ -3887,6 +3902,15 @@ focus_tree = {
 			swap_ideas = {
 				remove_idea = XWX_defensive_preparations
 				add_idea = XWX_defensive_preparations_2
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_tech_bonus = {
+				name = XWX_air_defence
+				bonus = 1
+				uses = 1
+				category = cat_anti_air
 			}
 		}
 	}
@@ -5071,6 +5095,15 @@ focus_tree = {
 				}
 				add_extra_state_shared_building_slots = 1
 			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_tech_bonus = {
+				name = XWX_relocate_civilian_funds
+				uses = 1
+				bonus = 0.5
+				category = construction_tech
+			}
 		}
 	}
 
@@ -5142,13 +5175,17 @@ focus_tree = {
 		y = 1
 		relative_position_id = XWX_industrial_revolution
 
-		cost = 5
+		cost = 4
 
 		ai_will_do = {
 			base = 50
 			modifier = {
 				factor = 4
 				has_war = yes
+			}
+			modifier = {
+				factor = 10
+				XWX_go_kmt_path = yes
 			}
 		}
 
@@ -5462,7 +5499,9 @@ focus_tree = {
 				XWX_industry_industrial_capacity_factory = 0.1
 				tooltip = industrial_capacity_factory_tt
 			}
+
 			custom_effect_tooltip = generic_skip_one_line_tt
+
 			random_owned_controlled_state = {
 				limit = {
 					is_core_of = ROOT
@@ -5480,6 +5519,28 @@ focus_tree = {
 					level = 2
 					instant_build = yes
 				}	
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			if = {
+				limit = {
+					has_tech = concentrated_industry
+				}
+				add_tech_bonus = {
+					name = XWX_workshop_output
+					uses = 1
+					bonus = 0.75
+					category = concentrated_industry_category
+				}
+			}
+			else = {
+				add_tech_bonus = {
+					name = XWX_workshop_output
+					uses = 1
+					bonus = 0.75
+					category = dispersed_industry_category
+				}
 			}
 		}
 	}
@@ -5519,7 +5580,9 @@ focus_tree = {
 				XWX_industry_production_speed_buildings_factor = 0.1
 				tooltip = production_speed_buildings_factor_tt
 			}
+
 			custom_effect_tooltip = generic_skip_one_line_tt
+
 			every_core_state = {
 				limit = {
 					is_controlled_by = ROOT
@@ -5531,6 +5594,15 @@ focus_tree = {
 					level = 1
 					instant_build = yes
 				}
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_tech_bonus = {
+				name = XWX_relocate_civilian_funds
+				uses = 1
+				bonus = 1
+				category = industry
 			}
 		}
 	}
@@ -6703,7 +6775,7 @@ focus_tree = {
 
 		}
 
-		search_filters = { FOCUS_FILTER_MANPOWER }
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_MANPOWER }
 		completion_reward = {
 			add_war_support = 0.1
 			add_manpower = 15000

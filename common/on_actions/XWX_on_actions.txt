@@ -56,7 +56,7 @@ on_actions = {
 				}
 			}
 
-			# OPINION MODIFIER
+			# OPINION MODIFIER (Still doesnt work, but its not that important anyways)
 
 			if = {
 				limit = {
@@ -74,11 +74,24 @@ on_actions = {
 
 			# COSMETIC TAGS
 
+			if = {
+				limit = {
+					original_tag = XWX
+					OR = {
+						has_government = neutrality
+						has_government = democratic
+					}
+					NOT = { has_country_flag = XWX_is_china }
+					has_country_flag = XWX_republic_tag
+				}
+				set_cosmetic_tag = XWX_republic
+			}
             if = {
 				limit = {
 					original_tag = XWX
 					has_government = neutrality
 					NOT = { has_country_flag = XWX_is_china }
+					NOT = { has_country_flag = XWX_republic_tag }
 				}
 				set_cosmetic_tag = XWX_kmt_aligned
 			}
@@ -145,6 +158,18 @@ on_actions = {
 					has_country_flag = XWX_is_china
 				}
 				set_cosmetic_tag = XWX_china
+			}
+			if = {
+				limit = {
+					original_tag = XWX
+					OR = {
+						has_government = fascism
+						has_government = communism
+						has_country_flag = XWX_is_china
+					}
+					has_cosmetic_tag = XWX_republic
+				}
+				drop_cosmetic_tag = yes
 			}
 			if = {
 				limit = {

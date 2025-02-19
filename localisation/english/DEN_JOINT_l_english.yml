@@ -1,5 +1,10 @@
 ﻿l_english:
 
+ CHI_demand_faction_leader_demands_surrender: "Pressure [ROOT.faction_leader.GetName] into approaching the Japanese"
+ CHI_demand_japanese_surrender: "Approach the Japanese"
+ CHI_demand_japanese_surrender_mission: "Hold out against Japan!"
+ CHI_demand_japanese_surrender_mission_desc: "To make clear that they will never defeat us, we must ensure that no Japanese boots reach our shores. Until then, they have time to consider our ultimatum."
+ CHI_demand_japanese_surrender_mission_tt: "We must prevent any §RJapanese naval invasions§! for §Y100 Days§!. After the mission times out, an Ultimatum will be sent, signing a §Ywhite peace§! with @JAP §YJapan§! and handing over all of their §YChinese territories§! to us."
  CHI_dissolve_united_front: "Dissolve [ROOT.GetFactionName]"
 
  JAP_intervene_in_china_fake_tt: "The following §YModifiers§! apply to §Yall Chinese nations§!:"
@@ -10,6 +15,10 @@
  DEN_controls_all_chinese_states_tt_NOT: "Does not control all §YChinese§! States."
  DEN_is_chinese_state_tt: "Is a §YChinese§! State."
  DEN_is_chinese_state_tt_NOT: "Is not a §YChinese§! State."
+ DEN_is_req_JAP_mainland_state_tt: "Controls any @XFC §YIndochinese§!, @KOR §YKorean§!, @MON §YMongolian§!, @SIA §YSiamese§! or @CHI §YChinese§! state (excluding [524.GetName])."
+ DEN_is_req_JAP_mainland_state_tt_NOT: "Does control not any @XFC §YIndochinese§!, @KOR §YKorean§!, @MON §YMongolian§!, @SIA §YSiamese§! or @CHI §YChinese§! states (excluding [524.GetName])."
+ DEN_all_JAP_subjects_capped_tt: "All @JAP §YJapanese Subjects§! in Asia have §Ycapitulated§!."
+ DEN_all_JAP_subjects_capped_tt_NOT: "Any @JAP §YJapanese Subject§! in Asia has not §Ycapitulated§!."
 
  DEN_JOINT_china.1.t: "The [From.capital.GetCapitalVictoryPointName] Government offers Alliance."
  DEN_JOINT_china.1.desc: "In the face of the external threats to China, the national government in [From.capital.GetCapitalVictoryPointName] has proposed a defensive alliance to help protect China from invaders."
@@ -31,4 +40,34 @@
  DEN_JOINT_china.4.b: "That's it, then."
  DEN_JOINT_china.4.c: "China broke up again, it seems."
 
+ DEN_JOINT_china.5.t: "[FROM.GetNameDefCap] pressures for Peace with Japan!"
+ DEN_JOINT_china.5.desc: "A delegation from [FROM.GetNameDef] has approached [ROOT.GetLeader] with the demand that we pressure the Japanese into surrendering their mainland territories and signing a white peace."
+ DEN_JOINT_china.5.a: "We will approach the Japanese."
+ DEN_JOINT_china.5.b: "Who do they think they are? We make the proposals here!"
+
+ DEN_JOINT_china.6.t: "[FROM.GetLeader] gives into pressure!"
+ DEN_JOINT_china.6.desc: "Our delegation to [FROM.GetNameDef] has accomplished their goal of pressuring [FROM.GetLeader] into approaching the Japanese into giving up their mainland territories and ending this war."
+ DEN_JOINT_china.6.a: "But will the Japanese accept?"
+
+ DEN_JOINT_china.7.t: "[FROM.GetLeader] continues the War!"
+ DEN_JOINT_china.7.desc: "Our delegation to [FROM.GetNameDef] has failed to convince [FROM.GetLeader] and his government of the idea of ending this war. A statement drafted by [FROM.GetLeader] proclaims that the Chinese will continue fighting until Japan fully surrenders."
+ DEN_JOINT_china.7.a: "A War without Reason..."
+
+ DEN_JOINT_china.8.t: "[FROM.GetNameDefCap] demands Surrender!"
+ DEN_JOINT_china.8.desc: "[FROM.GetLeader] has send a delegation to negotiate terms for our surrender. They demand we retreat from the mainland, only keeping our islands and territories beyond Chinese interests."
+ DEN_JOINT_china.8.a: "The situation has not neccessarily developed to our advantage."
+ DEN_JOINT_china.8.b: "The Sun will never bow!"
+
+ DEN_JOINT_china.9.t: "The Japanese surrender!"
+ DEN_JOINT_china.9.desc: "The Japanese have officially ratified a treaty giving up all mainland territories in Eastasia. [FROM.GetLeader] has spoken to the nation and while many are definitively not happy about this turn of events, it is obvious that it is for the good of our both nations."
+ DEN_JOINT_china.9.a: "Peace at last!"
+
+ DEN_JOINT_china.10.t: "The Japanese continue the War!"
+ DEN_JOINT_china.10.desc: "The foolish [FROM.GetLeader] will not see reason. Despite the massive failure that was the Japanese attack on China, they wish to continue until all of Eastasia is in ruins."
+ DEN_JOINT_china.10.a: "Why continue this senseless slaughter?"
+
  DEN_JOINT_give_cores_on_chinese_states_tt: "Gain §GCores§! on all §YChinese States§!."
+
+ DEN_JOINT_japanese_surrenders_mainland_tt: "We will enter a §Ypeace conference§! to negotiate ownership of the §OJapanese-occupied mainland§! with the other §Y[ROOT.GetFactionName]§! members."
+ DEN_JOINT_JAP_surrender_tt: "@JAP §YJapan§! has surrendered its mainland possessions to §YChina§!."
+ DEN_JOINT_jap_rep_in_china_faction: "Japanese Sphere Territories"

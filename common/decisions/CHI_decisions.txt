@@ -38,6 +38,131 @@ CHI_anti_imperialism = {
 			add_stability = -0.1 #naughty
 		}
 	}
+
+}
+
+foreign_politics = {
+
+	CHI_demand_faction_leader_demands_surrender = {
+
+		icon = GFX_decision_eng_trade_unions_support
+
+		visible = {
+			DEN_is_chinese_country = yes
+			is_faction_leader = no
+			any_other_country = {
+				DEN_is_chinese_country = yes
+				is_in_faction_with = ROOT
+				is_faction_leader = yes
+			}
+			has_war_with = JAP
+			faction_leader = {
+				NOT = { has_active_mission = CHI_demand_japanese_surrender_mission }
+			}
+		}
+
+		available = {
+			is_faction_leader = no
+			is_in_faction = yes
+			has_war_with = JAP
+			DEN_JAP_can_surrender = yes
+			faction_leader = {
+				surrender_progress < 0.2
+			}
+		}
+
+		ai_will_do = {
+			base = 0
+		}
+
+		cost = 75
+
+		complete_effect = {
+			faction_leader = {
+				country_event = {
+					id = DEN_JOINT_china.5
+					hours = 3
+				}
+			}
+			custom_effect_tooltip = if_they_accept_tt
+			effect_tooltip = {
+				faction_leader = {
+					activate_mission = CHI_demand_japanese_surrender_mission
+				}
+			}
+			custom_effect_tooltip = CHI_demand_japanese_surrender_mission_tt
+		}
+	}
+
+	CHI_demand_japanese_surrender = {
+
+		icon = generic_nationalism
+
+		visible = {
+			DEN_is_chinese_country = yes
+			is_faction_leader = yes
+			has_war_with = JAP
+			NOT = { has_active_mission = CHI_demand_japanese_surrender_mission }
+		}
+
+		available = {
+			is_faction_leader = yes
+			has_war_with = JAP
+			DEN_JAP_can_surrender = yes
+			surrender_progress < 0.2
+		}
+
+		ai_will_do = {
+			base = 100
+			modifier = {
+				factor = 0
+				any_other_country = {
+					is_in_faction_with = ROOT
+					is_ai = no
+				}
+			}
+		}
+
+		cost = 75
+
+		complete_effect = {
+			activate_mission = CHI_demand_japanese_surrender_mission
+			custom_effect_tooltip = CHI_demand_japanese_surrender_mission_tt
+		}
+	}
+
+	CHI_demand_japanese_surrender_mission = {
+
+		icon = generic_nationalism
+
+		available = {
+			DEN_JAP_can_surrender = no
+		}
+
+		cancel_trigger = {
+			NOT = { has_war_with = JAP }
+		}
+
+		days_mission_timeout = 100
+
+		activation = {			
+			always = no
+		}
+
+		timeout_effect = {
+			JAP = {
+				country_event = {
+					id = DEN_JOINT_china.8
+					hours = 3
+				}
+			}
+		}
+		complete_effect = {
+			add_political_power = -50
+			add_war_support = -0.01
+		}
+	}
+	
 }
 
 

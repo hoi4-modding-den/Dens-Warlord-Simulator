@@ -508,6 +508,11 @@ spriteTypes = {
 	}
 
 	spriteType = {
+		name = "GFX_report_event_XWX_start"
+		texturefile = "gfx/XWX/report_event_XWX_start.png"
+	}
+
+	spriteType = {
 		name = "GFX_report_event_XWX_farmer"
 		texturefile = "gfx/XWX/report_event_XWX_farmer.png"
 	}
