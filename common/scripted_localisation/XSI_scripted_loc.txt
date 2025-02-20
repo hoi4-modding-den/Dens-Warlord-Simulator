@@ -1,0 +1,36 @@
+defined_text = { #Focus name
+	name = XSI_secure_control_name
+	text = {
+		trigger = {
+			original_tag = XSI
+			has_completed_focus = XSI_american_dominance
+		}
+		localization_key = XSI_secure_control_name_american
+	}
+	text = {
+		trigger = {
+			original_tag = XSI
+			has_completed_focus = XSI_british_dominance
+		}
+		localization_key = XSI_secure_control_name_british
+	}
+	text = {
+		localization_key = XSI_secure_control_name_fallback
+	}
+}
+defined_text = { #event name
+	name = XSI_faction_name
+	text = {
+		trigger = {
+			ENG = { is_faction_leader = yes }
+		}
+		localization_key = XSI_faction_name_british
+	}
+	text = {
+		trigger = {
+			ENG = { is_faction_leader = no }
+			USA = { is_in_faction = yes }
+		}
+		localization_key = XSI_faction_name_american
+	}
+}

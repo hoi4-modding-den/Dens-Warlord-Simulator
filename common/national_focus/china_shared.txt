@@ -1764,6 +1764,14 @@ shared_focus = {
 
 	available = {
 		is_subject = no
+		if = {
+			limit = { tag = XSI }
+			OR = { 
+				has_completed_focus = XSI_rival_government
+				has_completed_focus = XSI_international_china
+			}
+			 
+		}
 	}
 
 	bypass = {

@@ -1,0 +1,7 @@
+spriteTypes = {
+#event photo
+	spriteType = {
+		name = "GFX_event_XSI_Izumo"
+		texturefile = "gfx/XSI/event_XSI_Izumo.png"
+	}
+}

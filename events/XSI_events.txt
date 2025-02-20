@@ -11,34 +11,183 @@ country_event = { #intro event
     desc = XSI.NE_1.d
 
     is_triggered_only = yes
-    fire_only_once = no
 	option = {
         name = XSI.NE_1.a
 		ai_chance = {
 			base = 100
 		}
+		
 	hidden_effect = {
-			#country_event = { id = XSI_natural_event.2 days = 35 }
+			
+		}
+    }
+}
+country_event = { #collapse event
+    id = XSI_natural_event.2
+    title = XSI.NE_2.t
+    # picture = GFX_report_event_DEN_celebration
+    desc = XSI.NE_2.d
+
+    is_triggered_only = yes
+	option = {
+        name = XSI.NE_2.a
+		ai_chance = {
+			base = 20
+			modifier = {
+				CHI = {
+					is_ai = no
+				}
+				factor = 100
+			}
+		}
+		trigger = {
+			CHI = {
+				exists = yes
+			}
+		}
+		CHI = {
+			annex_country = {
+				target = XSI
+			}
+			add_state_core = 982
+			country_event = XSI_natural_event.3
+		}
+    }
+	option = {
+        name = XSI.NE_2.b
+		ai_chance = {
+			base = 10
+			modifier = {
+				XBG = {
+					is_ai = no
+				}
+				factor = 100
+			}
+		}
+		trigger = {
+			XBG = {
+				exists = yes
+			}
+		}
+		XBG = {
+			annex_country = {
+				target = XSI
+			}
+			add_state_core = 982
+			country_event = XSI_natural_event.3
+		}
+    }
+	option = {
+        name = XSI.NE_2.c
+		ai_chance = {
+			base = 10
+			modifier = {
+				XWE = {
+					is_ai = no
+				}
+				factor = 100
+			}
+		}
+		trigger = {
+			XWE = {
+				exists = yes
+			}
+		}
+		XWE = {
+			annex_country = {
+				target = XSI
+			}
+			add_state_core = 982
+			country_event = XSI_natural_event.3
+		}
+    }
+	option = {
+        name = XSI.NE_2.e
+		ai_chance = {
+			base = 10
+			modifier = {
+				JAP = {
+					is_ai = no
+				}
+				factor = 100
+			}
+		}
+		trigger = {
+			JAP = {
+				exists = yes
+			}
+		}
+		JAP = {
+			annex_country = {
+				target = XSI
+			}
+			add_state_claim = 982
+			country_event = XSI_natural_event.3
+		}
+    }
+	option = {
+        name = XSI.NE_2.f
+		ai_chance = {
+			base = 50
+			modifier = {
+				613 = {
+					OWNER = {
+						is_ai = no
+					}
+				}
+				factor = 100
+			}
+		}
+			613 = {
+				OWNER = {
+					annex_country = {
+						target = XSI
+					}
+					add_state_core = 982
+					country_event = XSI_natural_event.3
+				}
+			}
+		}
+    
+}
+country_event = { #collapse event notification
+    id = XSI_natural_event.3
+    title = XSI.NE_3.t
+    # picture = GFX_report_event_DEN_celebration
+    desc = XSI.NE_3.d
+    is_triggered_only = yes
+	option = {
+        name = XSI.NE_3.a
+		ai_chance = {
+			base = 100
+		}
+		add_timed_idea = { 
+			idea = XSI_debt_payments
+			days = 70
+		}
+	hidden_effect = {
+			country_event = { id = XSI_news_event.1 days = 1 }
 		}
     }
 }
 
 #Focus Events# (events from focuses)
-country_event = { #intro event
+country_event = { #Replacing Chén Jiè, occurs 7 days after selecting starting focus
     id = XSI_focus_event.1
     title = XSI.FE_1.t
     # picture = GFX_report_event_DEN_celebration
     desc = XSI.FE_1.d
 
     is_triggered_only = yes
-    fire_only_once = no
 	option = {
         name = XSI.FE_1.a
 		ai_chance = {
 			base = 50 #historical
 		}
+		custom_effect_tooltip = XSI_historical_tooltip
+		custom_effect_tooltip = XSI_japan_anger_tooltip
 	hidden_effect = {
-			#country_event = { id = XSI_natural_event.2 days = 35 }
+			country_event = { id = XSI_focus_event.2 days = 35 } 
 		}
     }
 	option = {
@@ -50,14 +199,284 @@ country_event = { #intro event
 				factor = 0
 			}
 		}
+		custom_effect_tooltip = XSI_china_anger_tooltip
 	hidden_effect = {
 			#country_event = { id = XSI_natural_event.2 days = 35 }
 		}
-    	}
+    }
+}
+country_event = { #Japanese push for increased representation, occurs 35 days after selection
+    id = XSI_focus_event.2
+    title = XSI.FE_2.t
+    # picture = GFX_report_event_DEN_celebration
+    desc = XSI.FE_2.d
+
+    is_triggered_only = yes
+	option = { #try not to get involved
+        name = XSI.FE_2.a
+		ai_chance = {
+			base = 66 #historical
+		}
+		add_stability = 0.03
+		custom_effect_tooltip = XSI_historical_tooltip
+		custom_effect_tooltip = XSI_foreign_anger_tooltip
+	hidden_effect = {
+			country_event = { id = XSI_focus_event.3 days = 14 }
+		}
+    }
+	option = { #reject japanese advances
+        name = XSI.FE_2.b
+		ai_chance = {
+			base = 34
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 0
+			}
+		}
+		add_popularity = {
+			ideology = fascism
+			popularity = 0.05
+		}
+		custom_effect_tooltip = XSI_japan_anger_tooltip2
+	hidden_effect = {
+			country_event = { id = XSI_focus_event.7 days = 14 }
+		}
+    }
+}
+country_event = { #Anglo-American Associations campaign against Japanese Candidates, occurs 14 days after selection
+    id = XSI_focus_event.3
+    title = XSI.FE_3.t
+    # picture = GFX_report_event_DEN_celebration
+    desc = XSI.FE_3.d
+
+    is_triggered_only = yes
+	option = {
+        name = XSI.FE_3.a
+		ai_chance = {
+			base = 100 #historical
+		}
+		#next event occurs when focus concludes
+    }
+}
+country_event = { #1936 Municipal Election
+    id = XSI_focus_event.4
+    title = XSI.FE_4.t
+    # picture = GFX_report_event_DEN_celebration
+    desc = XSI.FE_4.d
+
+    is_triggered_only = yes
+	option = { #call for re-elections
+        name = XSI.FE_4.a
+		ai_chance = {
+			base = 66 #historical
+		}
+		add_stability = -0.05
+		add_popularity = {
+			ideology = fascism
+			popularity = -0.05
+		}
+
+		custom_effect_tooltip = XSI_historical_tooltip
+	 	hidden_effect = {
+			country_event = { id = XSI_focus_event.5 days = 14 }
+		}
+    }
+	option = { #dismiss anti-japanese voter suppression
+        name = XSI.FE_4.b
+		ai_chance = {
+			base = 34
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 0
+			}
+		}
+		add_stability = 0.05
+		add_popularity = {
+			ideology = fascism
+			popularity = 0.05
+		}
+		custom_effect_tooltip = XSI_japan_anger_tooltip
+	hidden_effect = {
+			country_event = { id = XSI_focus_event.6 days = 7 }
+		}
+    }
+}
+country_event = { #Japanese members accept having 2 council members, for now
+    id = XSI_focus_event.5
+    title = XSI.FE_5.t
+    # picture = GFX_report_event_DEN_celebration
+    desc = XSI.FE_5.d
+
+    is_triggered_only = yes
+	option = { #well that was easy
+        name = XSI.FE_5.a
+		ai_chance = {
+			base = 66 #historical
+		}
+		add_stability = 0.05
+		complete_national_focus = XSI_british_dominance
+    }
+}
+country_event = { #Japanese protest voter suppression
+    id = XSI_focus_event.6
+    title = XSI.FE_6.t
+    # picture = GFX_report_event_DEN_celebration
+    desc = XSI.FE_6.d
+
+    is_triggered_only = yes
+	option = { #okay fine, call for re-elections
+        name = XSI.FE_6.a
+		ai_chance = {
+			base = 66 #historical-ish
+		}
+		add_stability = -0.05
+	 	hidden_effect = {
+			country_event = { id = XSI_focus_event.5 days = 14 }
+		}
+    }
+	option = { #nope. I have no regard for self preservation
+        name = XSI.FE_6.b
+		ai_chance = {
+			base = 34
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 0
+			}
+		}
+		custom_effect_tooltip = XSI_japan_anger_tooltip3
+	hidden_effect = {
+			country_event = { id = XSI_focus_event.7 days = 7 }
+		}
+    }
+}
+country_event = { #knock knock, it's Japan, with boats, and guns, boat guns, gunboats...
+    id = XSI_focus_event.7
+    title = XSI.FE_7.t
+    picture = GFX_event_XSI_Izumo
+    desc = XSI.FE_7.d
+
+    is_triggered_only = yes
+	option = { #AAAAAAAAAAAAA
+        name = XSI.FE_7.a
+		ai_chance = {
+			base = 75
+		}
+		custom_effect_tooltip = XSI_submissive_tooltip
+		add_political_power = -50
+		swap_ideas = {
+			remove_idea = XSI_japanese_occupation_zone
+			add_idea = XSI_japanese_occupation_zone_worse
+		}
+	 	hidden_effect = {
+			set_country_flag = XSI_submissive
+		}
+    }
+	option = { #https://media.tenor.com/OtT2NeyRHXUAAAAe/kill-yourself-kill.png
+        name = XSI.FE_7.b
+		ai_chance = {
+			base = 25
+		}
+		custom_effect_tooltip = XSI_japan_anger_tooltip3
+	hidden_effect = {
+			country_event = { id = XSI_focus_event.9 days = 7 }
+		}
+    }
+}
+country_event = { #alt 1936 Municipal Election
+    id = XSI_focus_event.8
+    title = XSI.FE_8.t
+    # picture = GFX_report_event_DEN_celebration
+    desc = XSI.FE_8.d
+
+    is_triggered_only = yes
+	option = { #okay...
+        name = XSI.FE_8.a
+		ai_chance = {
+			base = 100
+		}
+		add_stability = -0.05
+		complete_national_focus = XSI_british_dominance
+		hidden_effect = {
+			add_opinion_modifier = {
+				target = JAP
+				modifier = XSI_election_interference 
+			}
+		}
+    }
 }
 
 #News Events# (the big news pop-ups)
+news_event = { #Collapse news event
+	id = XSI_news_event.1
+	title = XSI_WE.1.t
+	desc = XSI_WE.1.d
+	picture = GFX_news_event_018
 
+	is_triggered_only = yes
+	major = yes
+	option = {
+		name = XSI_WE.1.a
+	}
+}
 
 #Diplomatic Events# (events from interactions with other countries)
+country_event = { #event for Britain for Shanghai to join the allies
+	id = XSI_diplo_event.1
+	title = XSI_diplo_event.1.t
+	desc = XSI_diplo_event.1.d
+	#picture = GFX_report_event_degaulle_churchill
 
+	is_triggered_only = yes
+	
+	option = {
+		name = XSI_diplo_event.1.a
+		add_to_faction = FROM
+		FROM = {
+			add_ai_strategy = {
+				type = alliance
+				id = "ENG"
+				value = 200
+			}
+		}
+		FROM = { country_event = { id = XSI_diplo_event.2} }
+	}
+	
+	option = {
+		name = XSI_diplo_event.1.b
+		ai_chance = { base = 0 } #should always accept, what would be the point otherwise?
+		FROM = { 
+			add_opinion_modifier = {
+				target = ROOT
+				modifier = FRA_go_with_britain_reject
+			}
+			country_event = { id = XSI_diplo_event.3 }
+		}
+	}
+}
+country_event = { #Britain Accepts
+	id = XSI_diplo_event.2
+	title = XSI_diplo_event.2.t
+	desc = XSI_diplo_event.2.d
+	#picture = GFX_report_event_degaulle_churchill
+
+	is_triggered_only = yes
+	
+	option = {
+		name = XSI_diplo_event.2.a
+		set_variable = {
+			XSI_in_allies = true
+		}
+	}
+}
+country_event = { #Britain Denies
+	id = XSI_diplo_event.3
+	title = XSI_diplo_event.3.t
+	desc = XSI_diplo_event.3.d
+	#picture = GFX_report_event_degaulle_churchill
+
+	is_triggered_only = yes
+	
+	option = {
+		name = XSI_diplo_event.3.a
+	}
+}

@@ -1,0 +1,94 @@
+XSI_economy_tab = {
+    XSI_economic_collapse_timer = {
+		icon = GFX_decision_generic_scorched_earth
+
+		priority = 100
+
+		activation = {
+			check_variable = {
+                XSI_funds = -3
+            }
+		}
+
+    	allowed = {
+    	    tag = XSI
+    	}
+
+    	available = {
+            check_variable = {
+                XSI_funds  > -3
+            }
+    	}
+
+        cancel_trigger = {
+            check_variable = {
+                XSI_funds  > -3
+            }
+        }
+
+    	is_good = no
+
+		fire_only_once = no
+
+    	days_mission_timeout = 100
+        selectable_mission = no
+
+        complete_effect = {
+             
+        }
+
+    	timeout_effect = {
+            country_event = XSI_natural_event.2
+    	}
+    }
+    XSI_debug_funds_positive = {
+        allowed = {
+    	    tag = XSI
+    	}
+        fire_only_once = no
+        complete_effect = {
+            add_to_variable = {
+               XSI_funds = 1
+            }
+        }
+    }
+    XSI_debug_funds_negative = {
+        allowed = {
+    	    tag = XSI
+    	}
+        fire_only_once = no
+        complete_effect = {
+            subtract_from_variable = {
+                XSI_funds = 1
+            }
+        }
+    }
+    XSI_take_out_loan = {
+        allowed = {
+    	    tag = XSI
+    	}
+        available = {
+            check_variable = {
+                XSI_funds  < -2
+            }
+            custom_trigger_tooltip = {
+                tooltip = XSI_prerequisite_tooltip
+                check_variable = {
+                    XSI_funds  < -2
+                }
+            }
+    	}
+        fire_only_once = yes
+        complete_effect = {
+            add_to_variable = {
+                XSI_funds = 1
+            }
+            custom_effect_tooltip = XSI_funds_tooltip
+            custom_effect_tooltip = XSI_funds_tooltip_2
+            add_timed_idea = {
+                idea = XSI_debt_payments
+                days = 70
+            }
+        }
+    }
+}

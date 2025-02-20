@@ -13,12 +13,14 @@ focus_tree={
 	default = no
 	reset_on_civilwar = no
 
-	continuous_focus_position = { x = 1 y = 1 }
+	continuous_focus_position = { x = 2000 y = 666 }
+
+	shared_focus = CHI_invite_foreign_investors
 
 	focus = {
 		id = XSI_elections_focus 
 		icon = GFX_focus_ARG_crackdown_on_corruption
-		x = 15
+		x = 13.5
 		y = 0
 		cost = 12
 		#search_filters = {  FOCUS_FILTER_RESEARCH }
@@ -29,7 +31,880 @@ focus_tree={
 
 		completion_reward = {
 			custom_effect_tooltip = XSI_election_focus_tooltip
+			if = {
+				limit = {
+					has_country_flag = XSI_submissive
+				}
+				country_event = XSI_focus_event.8
+			}
+			else = {
+				country_event = XSI_focus_event.4
+			}
 		}
 	}
 
+	#Faction Focuses#
+	focus = {
+		id = XSI_join_united_front 
+		icon = GFX_focus_chi_united_front
+		x = 6
+		y = 2
+		cost = 5
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus =  XSI_chinese_dominance  focus = XSI_british_dominance }
+		available = {
+			any_country = {
+				is_faction_leader = yes
+				DEN_is_chinese_country = yes
+			}
+		}
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XSI_prepare_for_war
+		icon = GFX_focus_generic_combined_arms
+		x = 6
+		y = 3
+		cost = 5
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus =  XSI_join_united_front }
+		available = {
+			any_country = {
+				is_faction_leader = yes
+				DEN_is_chinese_country = yes
+			}
+		}
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = XSI_join_allies
+		icon = GFX_focus_ARG_join_the_allies
+		x = 8
+		y = 2
+		cost = 5
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus =  XSI_chinese_dominance  focus = XSI_british_dominance }
+		available = {
+			OR = { 
+				ENG = { is_faction_leader = yes }
+				USA = { is_in_faction = yes }
+			}
+			NOT = {
+				has_idea = neutrality_idea
+			}
+		}
+		completion_reward = {
+			if = {
+				limit = { ENG = { is_faction_leader = yes } }
+				ENG = {
+					country_event = XSI_diplo_event.1
+				}
+			}
+			else = {
+				USA = {
+					country_event = XSI_diplo_event.1
+				}
+			}
+		}
+	}
+	focus = {
+		id = XSI_volunteer_forces
+		icon = GFX_focus_NORDIC_dem_army
+		x = 8
+		y = 3
+		cost = 5
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus =  XSI_join_allies }
+		available = {
+
+		}
+		completion_reward = {
+			set_rule = { can_send_volunteers = yes }
+			add_ideas = volunteer_corps_focus
+		}
+	}
+	focus = {
+		id = XSI_neutrality_focus
+		icon = GFX_goal_generic_neutrality_focus
+		x = 12
+		y = 2
+		cost = 5
+		
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus =  XSI_american_dominance  focus = XSI_british_dominance }
+		available = {
+			NOT = {
+				has_war_with = JAP
+				is_in_faction = yes
+				is_guaranteed_by = USA
+			}
+		}
+		completion_reward = {
+			if = {
+				limit = { NOT = { has_idea = neutrality_idea } }
+				add_ideas = neutrality_idea
+			}
+			add_political_power = 150
+		}
+	}
+	focus = {
+		id = XSI_american_guarentees
+		icon = GFX_focus_usa_guarantee_the_american_dream
+		x = 14
+		y = 2
+		cost = 5
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus =  XSI_american_dominance }
+		available = {
+			NOT = {
+				has_war_with = JAP
+			}
+		}
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XSI_economic_safety
+		icon = GFX_focus_BEL_engine_of_the_economy
+		x = 12
+		y = 3
+		cost = 5
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus = XSI_neutrality_focus focus =  XSI_american_guarentees }
+		available = {
+
+		}
+		completion_reward = {
+			
+		}
+	}
+
+	#Chinese Branch#
+	focus = {
+		id = XSI_chinese_dominance 
+		icon = GFX_focus_chi_one_china_policy
+		x = 4
+		y = 1
+		cost = 1
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus =  XSI_elections_focus }
+		available_if_capitulated = yes
+		available = {
+			NOT = {
+				has_completed_focus = XSI_elections_focus
+			}
+		}
+		completion_reward = {
+			custom_effect_tooltip = XSI_post_election_tooltip
+		}
+	}
+	focus = {
+		id = XSI_universal_suffrage
+		icon = GFX_focus_generic_universal_suffrage
+		x = 0
+		y = 2
+		cost = 5
+		mutually_exclusive = { focus = XSI_universal_suffrage }
+		mutually_exclusive = { focus = XSI_wealth_voting }
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus =  XSI_chinese_dominance }
+
+		completion_reward = {
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.15
+			}
+			add_ideas = XSI_universal_suffrage_idea
+		}
+	}
+	focus = {
+		id = XSI_wealth_voting
+		icon = GFX_focus_usa_voter_registration_act
+		x = 2
+		y = 2
+		cost = 5
+		mutually_exclusive = { focus = XSI_universal_suffrage }
+		mutually_exclusive = { focus = XSI_wealth_voting }
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus =  XSI_chinese_dominance }
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XSI_repair_factories
+		icon = GFX_goal_generic_production
+		x = 4
+		y = 2
+		cost = 5
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus =  XSI_chinese_dominance }
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XSI_raise_taxes
+		icon = GFX_focus_generic_currency_reforms
+		x = -2
+		y = 3
+		cost = 5
+		mutually_exclusive = { focus = XSI_raise_taxes }
+		mutually_exclusive = { focus = XSI_austerity }
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus =  XSI_universal_suffrage focus = XSI_wealth_voting }
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XSI_austerity
+		icon = GFX_focus_ICE_thungur_hnifur
+		x = 0
+		y = 3
+		cost = 5
+		mutually_exclusive = { focus = XSI_raise_taxes }
+		mutually_exclusive = { focus = XSI_austerity }
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus =  XSI_universal_suffrage focus = XSI_wealth_voting }
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XSI_chinese_investment
+		icon = GFX_focus_chi_cooperation_with_the_nationalists
+		x = 2
+		y = 3
+		cost = 5
+		mutually_exclusive = { focus = XSI_chinese_investment }
+		mutually_exclusive = { focus = XSI_foreign_investment }
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus =  XSI_universal_suffrage focus = XSI_wealth_voting }
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XSI_foreign_investment
+		icon = GFX_focus_generic_american_investments
+		x = 4
+		y = 3
+		cost = 5
+		mutually_exclusive = { focus = XSI_chinese_investment }
+		mutually_exclusive = { focus = XSI_foreign_investment }
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus =  XSI_universal_suffrage focus = XSI_wealth_voting }
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XSI_nationalize_industry
+		icon = GFX_focus_generic_annex_country_2
+		x = -2
+		y = 4
+		cost = 5
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus =  XSI_raise_taxes focus = XSI_austerity }
+		available = {
+			NOT = {
+				has_completed_focus = XSI_foreign_investment
+			}
+		}
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XSI_road_boom
+		icon = GFX_focus_generic_road_investment
+		x = 0
+		y = 4
+		cost = 5
+		mutually_exclusive = { focus = XSI_road_boom }
+		mutually_exclusive = { focus = XSI_maintain_current_inf }
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus =  XSI_universal_suffrage focus = XSI_wealth_voting }
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XSI_maintain_current_inf
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 2
+		y = 4
+		cost = 5
+		mutually_exclusive = { focus = XSI_road_boom }
+		mutually_exclusive = { focus = XSI_maintain_current_inf }
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus =  XSI_raise_taxes focus = XSI_austerity }
+		prerequisite = { focus = XSI_chinese_investment focus = XSI_foreign_investment }
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XSI_request_kmt_garrison
+		icon = GFX_focus_chi_whampoa_military_academy
+		x = 4
+		y = 4
+		cost = 5
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus =  XSI_foreign_investment focus = XSI_chinese_investment }
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XSI_city_anarchist
+		icon = GFX_focus_ARG_establish_the_free_association
+		x = -3
+		y = 5
+		cost = 1
+		allow_branch = {
+			has_completed_focus = XSI_city_anarchist
+		}
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus =  XSI_road_boom focus = XSI_maintain_current_inf }
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XSI_city_communist
+		icon = GFX_focus_GER_the_peoples_victory
+		x = -1
+		y = 5
+		cost = 1
+		available = {
+			has_government = communism
+		}
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus =  XSI_road_boom focus = XSI_maintain_current_inf }
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = XSI_city_democratic
+		icon = GFX_focus_chi_legislative_yuan
+		x = 1
+		y = 5
+		cost = 1
+		available = {
+			has_government = democratic
+		}
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus =  XSI_road_boom focus = XSI_maintain_current_inf }
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XSI_city_neutrality
+		icon = GFX_focus_generic_china1
+		x = 3
+		y = 5
+		cost = 1
+		available = {
+			has_government = neutrality
+		}
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus =  XSI_road_boom focus = XSI_maintain_current_inf }
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XSI_free_asia
+		icon = GFX_focus_spr_anarchism_knows_no_borders
+		x = -3
+		y = 6
+		cost = 1
+		available = {
+			if = {
+				limit = { has_government = communism XWE = { exists = yes } }
+				else_if = {
+					limit = { has_government = neutrality CHI = { exists = yes }  }
+					else_if = {
+						limit = { XBG = { exists = yes }  }
+					}
+				}
+			}
+
+		}
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus =  XSI_city_anarchist }
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XSI_loyalty
+		icon = GFX_focus_prc_social_democracy
+		x = -1
+		y = 6
+		cost = 1
+		available = {
+			if = {
+				limit = { has_government = communism XWE = { exists = yes } }
+				else_if = {
+					limit = { has_government = neutrality CHI = { exists = yes }  }
+					else_if = {
+						limit = { XBG = { exists = yes }  }
+					}
+				}
+			}
+
+		}
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus =  XSI_city_communist focus =  XSI_city_democratic focus = XSI_city_neutrality }
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XSI_rival_government
+		icon = GFX_focus_chi_proclaim_rival_government
+		x = 1
+		y = 6
+		cost = 1
+
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus =  XSI_city_communist focus =  XSI_city_anarchist focus =  XSI_city_democratic focus = XSI_city_neutrality }
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XSI_free_shanghai
+		icon = GFX_goal_support_democracy
+		x = 3
+		y = 6
+		cost = 1
+
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus = XSI_city_communist focus = XSI_city_anarchist focus = XSI_city_democratic focus = XSI_city_neutrality }
+		completion_reward = {
+			add_stability = 0.1
+			add_popularity = {
+				ideology = XSI
+				popularity = 0.25
+			}
+			613 = { add_core_of = XSI }
+		}
+	}
+
+	#British and American Branches# 
+	focus = {
+		id = XSI_british_dominance 
+		icon = GFX_focus_chi_british_cooperation
+		x = 10
+		y = 1
+		cost = 1
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus =  XSI_elections_focus }
+		available_if_capitulated = yes
+		available = {
+			NOT = {
+				has_completed_focus = XSI_elections_focus
+			}
+		}
+		completion_reward = {
+			custom_effect_tooltip = XSI_post_election_tooltip
+		}
+	}
+	focus = {
+		id = XSI_status_quo
+		icon = GFX_focus_generic_treaty
+		x = 10
+		y = 3
+		cost = 5
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus =  XSI_british_dominance }
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XSI_fund_university
+		icon = GFX_focus_research
+		x = 6
+		y = 4
+		cost = 5
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus =  XSI_chinese_investment focus =  XSI_foreign_investment focus = XSI_status_quo focus = XSI_capitalism }
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+	focus = {
+		id = XSI_foreign_investment_british
+		icon = GFX_focus_generic_british_trade
+		x = 8
+		y = 4
+		cost = 5
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus = XSI_status_quo }
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XSI_rebuild_factories
+		icon = GFX_focus_generic_modernize_industry
+		x = 10
+		y = 4
+		cost = 5
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus = XSI_status_quo }
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XSI_roads
+		icon = GFX_focus_generic_improve_roads
+		x = 12
+		y = 4
+		cost = 5
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus = XSI_status_quo focus = XSI_ford }
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XSI_american_dominance 
+		icon = GFX_focus_ARG_the_american_push
+		x = 17
+		y = 1
+		cost = 1
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus =  XSI_elections_focus }
+		available_if_capitulated = yes
+		available = {
+			NOT = {
+				has_completed_focus = XSI_elections_focus
+			}
+		}
+		completion_reward = {
+			custom_effect_tooltip = XSI_post_election_tooltip
+		}
+	}
+	focus = {
+		id = XSI_international_city
+		icon = GFX_focus_generic_democratic_europe
+		x = 17
+		y = 2
+		cost = 5
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus = XSI_american_dominance }
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XSI_ford
+		icon = GFX_focus_generic_road_investment
+		x = 15
+		y = 3
+		cost = 5
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus = XSI_international_city }
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XSI_american_immigration
+		icon = GFX_focus_generic_population_growth
+		x = 17
+		y = 3
+		cost = 5
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus = XSI_international_city }
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XSI_capitalism
+		icon = GFX_focus_generic_american_investments
+		x = 19
+		y = 3
+		cost = 5
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus = XSI_international_city }
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XSI_pearl_of_the_orient
+		icon = GFX_focus_GER_south_east_asian_natural_wealth
+		x = 10
+		y = 5
+		cost = 5
+		mutually_exclusive = {
+			focus = XSI_economic_zone focus = XSI_international_china focus = XSI_pearl_of_the_orient
+		}
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus = XSI_rebuild_factories }
+		prerequisite = { focus = XSI_foreign_investment_british }
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XSI_international_china
+		icon = GFX_focus_chi_one_china_policy
+		x = 13
+		y = 5
+		cost = 5
+		mutually_exclusive = {
+			focus = XSI_economic_zone focus = XSI_international_china focus = XSI_pearl_of_the_orient
+		}
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus = XSI_rebuild_factories  focus = XSI_american_immigration}
+		prerequisite = { focus = XSI_foreign_investment_british focus = XSI_capitalism }
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XSI_economic_zone
+		icon = GFX_focus_generic_monetary_union
+		x = 16
+		y = 5
+		cost = 5
+		mutually_exclusive = {
+			focus = XSI_economic_zone focus = XSI_international_china focus = XSI_pearl_of_the_orient
+		}
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		prerequisite = {  focus = XSI_american_immigration}
+		prerequisite = { focus = XSI_capitalism }
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XSI_chinese_representation
+		icon = GFX_focus_chi_examination_yuan
+		x = 11
+		y = 6
+		cost = 5
+		mutually_exclusive = {
+			focus = XSI_secure_control focus = XSI_expand_foreign_seats focus = XSI_chinese_representation
+		}
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus = XSI_economic_zone focus = XSI_international_china focus = XSI_pearl_of_the_orient }
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XSI_expand_foreign_seats
+		icon = GFX_focus_GER_european_confederation
+		x = 13
+		y = 6
+		cost = 5
+		mutually_exclusive = {
+			focus = XSI_secure_control focus = XSI_expand_foreign_seats focus = XSI_chinese_representation
+		}
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus = XSI_economic_zone focus = XSI_international_china focus = XSI_pearl_of_the_orient }
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XSI_secure_control
+		icon = GFX_focus_ARG_join_the_allies
+		x = 15
+		y = 6
+		cost = 5
+		dynamic = yes
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		mutually_exclusive = {
+			focus = XSI_secure_control focus = XSI_expand_foreign_seats focus = XSI_chinese_representation
+		}
+		prerequisite = { focus = XSI_economic_zone focus = XSI_international_china focus = XSI_pearl_of_the_orient }
+		completion_reward = {
+			
+		}
+	}
+	#Japanese Branch#
+	focus = {
+		id = XSI_japanese_dominance 
+		icon = GFX_focus_chi_collaboration_with_the_japanese
+		x = 24
+		y = 1
+		cost = 1
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus =  XSI_elections_focus }
+		available_if_capitulated = yes
+		available = {
+			NOT = {
+				has_completed_focus = XSI_elections_focus
+			}
+		}
+		completion_reward = {
+			custom_effect_tooltip = XSI_post_election_tooltip
+		}
+	}
+	focus = {
+		id = XSI_sphere_puppet
+		icon = GFX_focus_jap_strike_south
+		x = 26
+		y = 2
+		cost = 5
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus =  XSI_japanese_dominance }
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XSI_zaibatsu
+		icon = GFX_focus_jap_zaibatsu
+		x = 20
+		y = 2
+		cost = 5
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus =  XSI_japanese_dominance }
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XSI_japanese_immigration
+		icon = GFX_focus_jap_manchurian_project
+		x = 22
+		y = 2
+		cost = 5
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus =  XSI_japanese_dominance }
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XSI_stack_the_council
+		icon = GFX_focus_usa_voter_registration_act
+		x = 24
+		y = 2
+		cost = 5
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus =  XSI_japanese_dominance }
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XSI_IJA
+		icon = GFX_focus_generic_combined_arms
+		x = 25
+		y = 3
+		cost = 5
+		mutually_exclusive = {
+			focus = XSI_IJA focus = XSI_IJN
+		}
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus =  XSI_sphere_puppet }
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XSI_IJN
+		icon = GFX_focus_GER_japanese_naval_cooperation
+		x = 27
+		y = 3
+		cost = 5
+		mutually_exclusive = {
+			focus = XSI_IJA focus = XSI_IJN
+		}
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus =  XSI_sphere_puppet }
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XSI_pearl_of_the_east
+		icon = GFX_focus_POL_support_global_falangism
+		x = 22
+		y = 3
+		cost = 5
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus =  XSI_stack_the_council   }
+		prerequisite = { focus = XSI_japanese_immigration }
+		prerequisite = { focus = XSI_zaibatsu }
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XSI_security_zone
+		icon = GFX_focus_usa_focus_on_asia
+		x = 23
+		y = 4
+		cost = 5
+		mutually_exclusive = {
+			focus = XSI_security_zone focus = XSI_unify_concessions
+		}
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus =  XSI_IJN focus = XSI_IJA }
+		prerequisite = {
+			focus = XSI_pearl_of_the_east
+		}
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = XSI_unify_concessions
+		icon = GFX_focus_GER_sentinels_of_the_pacific
+		x = 25
+		y = 4
+		cost = 5
+		mutually_exclusive = {
+			focus = XSI_security_zone focus = XSI_unify_concessions
+		}
+		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		prerequisite = { focus =  XSI_IJN focus = XSI_IJA }
+		prerequisite = {
+			focus = XSI_pearl_of_the_east
+		}
+
+		completion_reward = {
+			
+		}
+	}
 }

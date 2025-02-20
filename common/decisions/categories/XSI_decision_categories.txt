@@ -1,0 +1,7 @@
+XSI_economy_tab = {
+	icon = decision_category_generic_economy
+	visible = {
+		tag = XSI
+	}
+	priority = 100
+}
