@@ -402,9 +402,10 @@
  XWX_open_rural_university: "Open Public University in [FROM.GetCapitalVictoryPointName]"
  XWX_open_rural_university_desc: "To improve our nation's education, we will support the founding of a university open to the people in [FROM.GetCapitalVictoryPointName]."
 
- XWX_peasant_united_front_cat: "The [FROM.GetFactionName]"
+ XWX_peasant_united_front_cat: "Peasant Unity in China"
 
  XWX_invite_to_united_front: "Invite [FROM.GetNameDef] to the [FROM.GetFactionName]"
+ XWX_integrate_allies: "Hold Integration Referendum in [FROM.GetNameDef]"
 
  XWX_second_gannan_famine_cat: "Famine Relief Efforts"
  XWX_second_gannan_famine_cat_desc: "\nThe province is currently undergoing a famine. We must gather Relief Supplies to ensure we can recover from it.\n \nCurrent Amount of Relief Supplies: [?XWX_famine_progress|.0+]\n "
@@ -880,7 +881,7 @@
  XWX_liberation_of_china_desc: ""
  XWX_crush_the_kmt: "Crush the Reactionaries"
  XWX_crush_the_kmt_desc: ""
- XWX_crush_the_kmt_tt: "Gain §OWargoals§! against any §YChinese§! countries that are §YKuomintang-aligned§! or §Yfascist§!."
+ XWX_crush_the_kmt_tt: "Gain §OWargoals§! against every §2Kuomintang-aligned§! or §8fascist§! Chinese country."
  XWX_china_united: "Proclaim Chinese Reunification"
  XWX_china_united_desc: "Through the valiant efforts of our people, we have gained control over all of China. Now the time has come to officially declare China for reunified!"
  XWX_invade_indochina: "Liberate Indochina"

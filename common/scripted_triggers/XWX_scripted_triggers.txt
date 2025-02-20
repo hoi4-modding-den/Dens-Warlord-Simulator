@@ -43,10 +43,6 @@ XWX_has_kmt_regime = {
             AND = {
                 original_tag = XQI
             }
-            any_other_country = {
-                is_ally_with = PREV
-                XWX_has_kmt_regime = yes
-            }
         }
     }
 }

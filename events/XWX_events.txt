@@ -1599,7 +1599,43 @@ country_event = { # FROM gets annexed
 
 	option = { 
 		name = XWX_diplomatic_events.21.a
-		XWX_ROOT_integrates_FROM = yes
+		FROM = {
+			every_subject_country = {
+				every_unit_leader = {
+					limit = {
+						#can_be_country_leader = no
+						is_country_leader = no
+						is_political_advisor = no
+					}
+					set_nationality = ROOT
+				}
+			}
+			every_unit_leader = {
+				limit = {
+					#can_be_country_leader = no
+					is_country_leader = no
+					is_political_advisor = no
+				}
+				set_nationality = ROOT
+			}
+		}
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+		FROM = {
+			every_subject_country = {
+				ROOT = {
+					annex_country = {
+						target = PREV
+						transfer_troops = yes
+					}
+				}
+			}
+		}
+		annex_country = {
+			target = FROM
+			transfer_troops = yes
+		}
 	}
 
 }

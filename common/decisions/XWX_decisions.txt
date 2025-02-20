@@ -1668,6 +1668,10 @@ XWX_peasant_united_front_cat = {
             original_tag = XWX
         }
 
+        visible = {
+            is_faction_leader = yes
+        }
+
         available = {
             FROM = {
                 NOT = { has_war_with = ROOT }
@@ -1679,7 +1683,14 @@ XWX_peasant_united_front_cat = {
 
         target_trigger = {
             FROM = {
-                DEN_is_chinese_country = yes
+                OR = {
+                    DEN_is_chinese_country = yes
+                    original_tag = XTI
+                    original_tag = MAN
+                    original_tag = MEN
+                    original_tag = XFC
+                    original_tag = MON
+                }
                 has_government = communism
                 NOT = { is_ally_with = ROOT }
             }
@@ -1706,6 +1717,60 @@ XWX_peasant_united_front_cat = {
             FROM = {
                 country_event = {
 					id = XWX_diplomatic_events.1
+					hours = 6
+				}
+            }
+        }
+    }
+
+    XWX_integrate_allies = {
+
+        icon = GFX_decision_eng_trade_unions_demand
+
+        allowed = {
+            original_tag = XWX
+        }
+
+        visible = {
+            is_subject = no
+            has_completed_focus = XWX_restart_the_civil_war
+        }
+
+        available = {
+            FROM = {
+                has_government = communism
+                is_subject_of = ROOT
+                compare_autonomy_state < autonomy_puppet
+                has_capitulated = no
+            }
+        }
+
+        targets_dynamic = yes
+
+        target_trigger = {
+            FROM = {
+                OR = {
+                    DEN_is_chinese_country = yes
+                    original_tag = XTI
+                    original_tag = MAN
+                    original_tag = MEN
+                }
+                is_subject_of = ROOT
+            }
+        }
+
+        days_re_enable = 30
+
+        cost = 100
+
+        ai_will_do = {
+			base = 50
+		}
+
+        complete_effect = {
+            FROM = {
+                country_event = {
+					id = XWX_diplomatic_events.20
 					hours = 6
 				}
             }

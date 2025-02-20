@@ -37,56 +37,6 @@ d_XWX_gain_cores_on_china = {
     DEN_JOINT_give_cores_on_chinese_states = yes
 }
 
-XWX_ROOT_integrates_FROM = {
-    FROM = {
-		every_subject_country = {
-			every_unit_leader = {
-				limit = {
-					can_be_country_leader = no
-					is_country_leader = no
-					is_political_advisor = no
-				}
-				set_nationality = ROOT
-			}
-		}
-		every_unit_leader = {
-			limit = {
-				can_be_country_leader = no
-				is_country_leader = no
-				is_political_advisor = no
-			}
-			set_nationality = ROOT
-		}
-	}
-
-	custom_effect_tooltip = generic_skip_one_line_tt
-
-    FROM = {
-        every_subject_country = {
-            ROOT = {
-                annex_country = {
-                    target = PREV
-                    transfer_troops = yes
-                }
-            }
-            every_core_state = {
-                add_core_of = ROOT
-                remove_core_of = THIS
-            }
-        }
-    }
-    annex_country = {
-		target = FROM
-		transfer_troops = yes
-	}
-	FROM = {
-		every_core_state = {
-			add_core_of = ROOT
-			remove_core_of = THIS
-		}
-	}
-}
-
 XWX_improve_provincial_army = {
     if = {
         limit = {
