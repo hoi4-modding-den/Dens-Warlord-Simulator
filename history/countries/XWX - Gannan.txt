@@ -95,7 +95,6 @@ reverse_add_opinion_modifier = {
 	modifier = XWX_splinter_faction_modifier
 }
 
-country_event = { id = XWX_intro_event.1 }
 country_event = { id = XWX_kmt_events.2 days = 7 }
 
 activate_mission = XWX_tianyu_fort_construction

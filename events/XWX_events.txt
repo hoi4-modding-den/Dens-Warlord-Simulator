@@ -952,6 +952,7 @@ country_event = { # RAID successful -> ROOT
 				}
 			}
 		}
+		clr_country_flag = XWX_raid_disabled
 	}
 
 }
@@ -1003,6 +1004,7 @@ country_event = { # RAID failed -> ROOT
             days = 80
     	} 
 		add_manpower = -1000
+		clr_country_flag = XWX_raid_disabled
 	}
 
 }
@@ -1630,11 +1632,25 @@ country_event = { # FROM gets annexed
 						transfer_troops = yes
 					}
 				}
+				every_core_state = {
+					limit = {
+						is_core_of = ROOT
+					}
+					remove_core_of = PREV
+				}
 			}
 		}
 		annex_country = {
 			target = FROM
 			transfer_troops = yes
+		}
+		FROM = {
+			every_core_state = {
+				limit = {
+					is_core_of = ROOT
+				}
+				remove_core_of = FROM
+			}
 		}
 	}
 
@@ -2728,6 +2744,53 @@ country_event = { # XWX prepares to switch sides
 			id = FROM
 			value = 200
 		}
+	}
+
+}
+
+country_event = { # XWX declares war on Japan
+	id = XWX_diplomatic_events.47
+	title = XWX_diplomatic_events.47.t
+	desc = XWX_diplomatic_events.47.desc
+	picture = GFX_report_event_japanese_army_parade
+
+	trigger = {
+		tag = XWX
+		exists = yes
+
+		is_faction_leader = yes
+
+		NOT = { has_war_with = JAP }
+		NOT = { has_war_with = CHI }
+		CHI = { has_defensive_war_with = JAP }
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = XWX_diplomatic_events.47.a
+		CHI = {
+			add_to_war = {
+				targeted_alliance = ROOT
+				enemy = JAP
+				hostility_reason = XWX_protecting_china_tt
+			}
+		}
+	}
+
+	option = { 
+		name = XWX_diplomatic_events.47.a
+		trigger = {
+			OR = {
+				is_ai = no
+				NOT = { has_completed_focus = XWX_the_peasant_united_front }
+			}
+		}
+		add_war_support = -0.05
 	}
 
 }

@@ -16,7 +16,7 @@
  DEN_is_chinese_state_tt: "Is a §YChinese§! State."
  DEN_is_chinese_state_tt_NOT: "Is not a §YChinese§! State."
  DEN_is_req_JAP_mainland_state_tt: "Controls any @XFC §YIndochinese§!, @KOR §YKorean§!, @MON §YMongolian§!, @SIA §YSiamese§! or @CHI §YChinese§! state (excluding [524.GetName])."
- DEN_is_req_JAP_mainland_state_tt_NOT: "Does control not any @XFC §YIndochinese§!, @KOR §YKorean§!, @MON §YMongolian§!, @SIA §YSiamese§! or @CHI §YChinese§! states (excluding [524.GetName])."
+ DEN_is_req_JAP_mainland_state_tt_NOT: "Does not control any @XFC §YIndochinese§!, @KOR §YKorean§!, @MON §YMongolian§!, @SIA §YSiamese§! or @CHI §YChinese§! states (excluding [524.GetName])."
  DEN_all_JAP_subjects_capped_tt: "All @JAP §YJapanese Subjects§! in Asia have §Ycapitulated§!."
  DEN_all_JAP_subjects_capped_tt_NOT: "Any @JAP §YJapanese Subject§! in Asia has not §Ycapitulated§!."
 

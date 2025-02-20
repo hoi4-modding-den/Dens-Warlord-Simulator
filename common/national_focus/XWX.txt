@@ -121,7 +121,7 @@ focus_tree = {
 		y = 0
 		#relative_position_id =
 
-		cost = 3
+		cost = 2.9
 
 		ai_will_do = {
 			base = 100
@@ -203,7 +203,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = XWX_commune_discussion
 
-		cost = 5
+		cost = 2.9
 
 		ai_will_do = {
 			base = 0
@@ -308,7 +308,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = XWX_commune_discussion
 
-		cost = 5
+		cost = 2.9
 
 		ai_will_do = {
 			base = 0
@@ -886,7 +886,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = XWX_hunt_for_kmt_reactionaries
 
-		cost = 5
+		cost = 2.9
 
 		ai_will_do = {
 			base = 0
@@ -923,7 +923,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = XWX_guarantee_military_loyalty
 
-		cost = 10
+		cost = 8
 
 		available = {
 			has_government = communism
@@ -1007,7 +1007,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = XWX_hunt_for_kmt_reactionaries
 
-		cost = 3
+		cost = 2.9
 
 		ai_will_do = {
 			base = 100
@@ -1063,7 +1063,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = XWX_worker_judiciary
 
-		cost = 10
+		cost = 8
 
 		ai_will_do = {
 			base = 50
@@ -1130,6 +1130,8 @@ focus_tree = {
 				load_focus_tree = { tree = XWX_focus_tree_peasants keep_completed = yes }
 				mark_focus_tree_layout_dirty = yes
 			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = XWX_dev_comments_1
 		}
 	}
 
@@ -1173,6 +1175,8 @@ focus_tree = {
 				load_focus_tree = { tree = XWX_focus_tree_kmt keep_completed = yes }
 				mark_focus_tree_layout_dirty = yes
 			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = XWX_dev_comments_2
 		}
 	}
 
@@ -1581,7 +1585,7 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_WAR_SUPPORT }
 		completion_reward = { 
 			add_political_power = 50
-			add_war_support = 0.2
+			add_war_support = 0.1
 		}
 	}
 
@@ -1608,9 +1612,9 @@ focus_tree = {
 
 		}
 
-		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL FOCUS_FILTER_BALANCE_OF_POWER }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_BALANCE_OF_POWER }
 		completion_reward = {
-			add_stability = 0.15
+			add_political_power = 100
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
@@ -2176,15 +2180,7 @@ focus_tree = {
 		}
 
 		bypass = {
-			NOT = {
-				any_other_country = {
-					DEN_is_chinese_country = yes
-					OR = {
-						XWX_has_kmt_regime = yes
-						has_government = fascism
-					}
-				}
-			}
+			has_completed_focus = XWX_china_united
 		}
 
 		search_filters = { FOCUS_FILTER_ANNEXATION }
@@ -2217,7 +2213,7 @@ focus_tree = {
 		y = 2
 		relative_position_id = XWX_restart_the_civil_war
 
-		cost = 3
+		cost = 2.9
 
 		available = {
 			DEN_controls_all_chinese_states = yes
@@ -2282,6 +2278,251 @@ focus_tree = {
 					id = XWX_news_events.4
 					hours = 1
 				}
+			}
+		}
+	}
+
+	shared_focus = {
+		id = XWX_puppet_mongolia
+		icon = GFX_focus_generic_attack_mongolia
+		prerequisite = { focus = XWX_china_united }
+		#mutually_exclusive = { focus =  }
+		x = -2
+		y = 1
+		relative_position_id = XWX_china_united
+
+		cost = 8
+
+		available = {
+			DEN_controls_all_chinese_states = yes
+			is_subject = no
+		}
+
+		bypass = {
+			MON = {
+				is_subject_of = ROOT
+			}
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+
+		will_lead_to_war_with = MON
+
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		completion_reward = {
+			MON = { country_event = generic.20 }
+		}
+	}
+
+	shared_focus = {
+		id = XWX_cultural_revolution
+		icon = GFX_focus_SWE_refuge_for_revolutionaries
+		prerequisite = { focus = XWX_china_united }
+		#mutually_exclusive = { focus =  }
+		x = -1
+		y = 2
+		relative_position_id = XWX_china_united
+
+		cost = 8
+
+		available = {
+			DEN_controls_all_chinese_states = yes
+		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY FOCUS_FILTER_MANPOWER }
+		completion_reward = {
+			add_political_power = 120
+			add_stability = -0.1
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+			
+			custom_effect_tooltip = XWX_cultural_revolution_tt
+			hidden_effect = {
+				every_possible_country = {
+					limit = {
+						OR = {
+							DEN_is_chinese_country = yes
+							original_tag = XTI
+							original_tag = MEN
+						}
+						NOT = { tag = ROOT }
+						exists = no
+					}
+					every_core_state = {
+						remove_core_of = PREV
+					}
+				}
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			every_state = {
+				limit = {
+					DEN_is_chinese_state = yes
+					NOT = { is_core_of = XTI }
+				}
+				add_dynamic_modifier = {
+					modifier = XWX_cultural_revolution_state_modifier
+				}
+			}
+		}
+	}
+
+	shared_focus = {
+		id = XWX_mantle_of_the_international_revolution
+		icon = GFX_focus_SOV_international_union_of_soviet_republics
+		prerequisite = { focus = XWX_china_united }
+		#mutually_exclusive = { focus =  }
+		x = 0
+		y = 1
+		relative_position_id = XWX_china_united
+
+		cost = 8
+
+		available = {
+			has_government = communism
+			is_subject = no
+		}
+
+		bypass = {
+
+		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_WAR_SUPPORT }
+		completion_reward = {
+			add_political_power = 120
+			add_war_support = 0.1
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			if = {
+				limit = {
+					NOT = { has_rule = can_create_factions }
+				}
+				set_rule = {
+					can_create_factions = yes
+				}
+			}
+			if = {
+				limit = {
+					is_faction_leader = yes
+				}
+				set_faction_name = XWX_revintern
+			}
+			else = {
+				create_faction = XWX_revintern
+			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			every_other_country = {
+				limit = {
+					has_government = communism
+					is_subject = no
+					is_in_faction = no
+					has_war = no
+				}
+				country_event = {
+					id = XWX_diplomatic_events.1
+					hours = 9
+				}
+			}
+		}
+	}
+
+	shared_focus = {
+		id = XWX_age_of_chinese_prosperity
+		icon = GFX_focus_GER_wirtschaftswunder
+		prerequisite = { focus = XWX_china_united }
+		#mutually_exclusive = { focus =  }
+		x = 1
+		y = 2
+		relative_position_id = XWX_china_united
+
+		cost = 8
+
+		available = {
+			DEN_controls_all_chinese_states = yes
+		}
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+					is_fully_controlled_by = ROOT
+					is_owned_by = ROOT
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}	
+				}
+				prioritize = { 613 982 }
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}	
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+					is_fully_controlled_by = ROOT
+					is_owned_by = ROOT
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}	
+				}
+				prioritize = { 608 }
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}	
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+					is_fully_controlled_by = ROOT
+					is_owned_by = ROOT
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}	
+				}
+				prioritize = { 605 }
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}	
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+					is_fully_controlled_by = ROOT
+					is_owned_by = ROOT
+					free_building_slots = {
+						building = arms_factory
+						size > 2
+						include_locked = yes
+					}	
+				}
+				prioritize = { 602 }
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = arms_factory
+					level = 3
+					instant_build = yes
+				}	
 			}
 		}
 	}
@@ -2373,100 +2614,6 @@ focus_tree = {
 		}
 	}
 
-	shared_focus = {
-		id = XWX_puppet_mongolia
-		icon = GFX_focus_generic_attack_mongolia
-		prerequisite = { focus = XWX_china_united }
-		#mutually_exclusive = { focus =  }
-		x = -2
-		y = 1
-		relative_position_id = XWX_china_united
-
-		cost = 8
-
-		available = {
-			DEN_controls_all_chinese_states = yes
-			is_subject = no
-		}
-
-		bypass = {
-			MON = {
-				is_subject_of = ROOT
-			}
-		}
-
-		cancel_if_invalid = no
-		continue_if_invalid = yes
-
-		will_lead_to_war_with = MON
-
-		search_filters = { FOCUS_FILTER_ANNEXATION }
-		completion_reward = {
-			MON = { country_event = generic.20 }
-		}
-	}
-
-	shared_focus = {
-		id = XWX_mantle_of_the_international_revolution
-		icon = GFX_focus_SOV_international_union_of_soviet_republics
-		prerequisite = { focus = XWX_china_united }
-		#mutually_exclusive = { focus =  }
-		x = 0
-		y = 1
-		relative_position_id = XWX_china_united
-
-		cost = 8
-
-		available = {
-			has_government = communism
-			is_subject = no
-		}
-
-		bypass = {
-
-		}
-
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_WAR_SUPPORT }
-		completion_reward = {
-			add_political_power = 120
-			add_war_support = 0.1
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-
-			if = {
-				limit = {
-					NOT = { has_rule = can_create_factions }
-				}
-				set_rule = {
-					can_create_factions = yes
-				}
-			}
-			if = {
-				limit = {
-					is_faction_leader = yes
-				}
-				set_faction_name = XWX_revintern
-			}
-			else = {
-				create_faction = XWX_revintern
-			}
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-
-			every_other_country = {
-				limit = {
-					has_government = communism
-					is_subject = no
-					is_in_faction = no
-					has_war = no
-				}
-				country_event = {
-					id = XWX_diplomatic_events.1
-					hours = 9
-				}
-			}
-		}
-	}
 
 	shared_focus = {
 		id = XWX_enforce_revolutionary_doctrine
@@ -4014,7 +4161,7 @@ focus_tree = {
 		y = 1
 		#relative_position_id = 
 
-		cost = 3
+		cost = 2.9
 
 		ai_will_do = {
 			base = 1000
@@ -5683,7 +5830,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = XWX_resource_deficit_management
 
-		cost = 5
+		cost = 5.8
 
 		ai_will_do = {
 			base = 50
@@ -5745,7 +5892,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = XWX_resource_deficit_management
 
-		cost = 5
+		cost = 5.8
 
 		ai_will_do = {
 			base = 50
@@ -6316,9 +6463,6 @@ focus_tree = {
 					}
 					custom_effect_tooltip = generic_skip_one_line_tt
 					unlock_military_industrial_organization_tooltip = mio:SOV_morozov_design_bureau_organization
-					mio:SOV_morozov_design_bureau_organization = {
-						add_mio_size = 1
-					}
 				}
 			}
 			else = {

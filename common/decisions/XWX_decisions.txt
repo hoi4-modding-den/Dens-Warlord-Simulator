@@ -938,6 +938,9 @@ XWX_japanese_collaboration = {
                     hours = 2
                 }
             }
+
+            custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = XWX_dev_comments_4
         }
     }
 
@@ -1101,6 +1104,9 @@ XWX_army_improvement = {
                 }
             }
             NOT = { has_idea = XWX_raid_aftermath }
+            hidden_trigger = {
+                NOT = { has_country_flag = XWX_raid_disabled }
+            }
         }
 
         visible = {
@@ -1148,6 +1154,7 @@ XWX_army_improvement = {
 
         complete_effect = {
             hidden_effect = {
+                set_country_flag = XWX_raid_disabled
                 add_command_power = -20
                 random_list = {
                     20 = {
@@ -1157,6 +1164,13 @@ XWX_army_improvement = {
                                 owner = {
                                     has_war = yes
                                 }
+                            }
+                        }
+                        modifier = {
+                            factor = 2
+                            network_strength = {
+                                target = FROM
+                                value > 30
                             }
                         }
                         FROM = {
@@ -1235,6 +1249,9 @@ XWX_army_improvement = {
                     }
                 }
             }
+
+            custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = XWX_dev_comments_3
         }
 
     }
@@ -1676,6 +1693,7 @@ XWX_peasant_united_front_cat = {
             FROM = {
                 NOT = { has_war_with = ROOT }
                 is_subject = no
+                is_in_faction = no
             }
         }
 
@@ -1713,7 +1731,7 @@ XWX_peasant_united_front_cat = {
             } 
 		}
 
-        remove_effect = {
+        complete_effect = {
             FROM = {
                 country_event = {
 					id = XWX_diplomatic_events.1

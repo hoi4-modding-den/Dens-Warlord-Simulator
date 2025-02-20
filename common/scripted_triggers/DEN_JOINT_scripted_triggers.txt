@@ -60,13 +60,21 @@ DEN_JAP_can_surrender = {
 	}
 	custom_trigger_tooltip = {
 		tooltip = DEN_all_JAP_subjects_capped_tt
-		all_other_country = {
-			OR = {
-				NOT = {
+		OR = {
+			all_other_country = {
+				OR = {
+					NOT = {
+						is_subject_of = JAP
+					}
+					NOT = { capital_scope = { is_on_continent = asia } }
+					has_capitulated = yes
+				}
+			}
+			NOT = {
+				any_country = {
+					capital_scope = { is_on_continent = asia }
 					is_subject_of = JAP
 				}
-				NOT = { capital_scope = { is_on_continent = asia } }
-				has_capitulated = yes
 			}
 		}
 	}

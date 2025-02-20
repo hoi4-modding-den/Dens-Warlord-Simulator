@@ -280,6 +280,7 @@
  XWX_industry_modifier: "National Industrialisation"
  XWX_industry_modifier_desc: "Our nation is lacking in many aspects. Comparably, it is the least industrialised province in all of China. Still, our development plans are layed out before us and with great effort will be turn our backwater region into the industrial heartlands of China."
  modify_XWX_industry_tt: "Modify §Y$XWX_industry_modifier$§! by:"
+ XWX_cultural_revolution_state_modifier: "Cultural Revolution"
 
  after_idea_times_out_tt: "§YAfter the National Spirit runs out:§!"
 
@@ -404,7 +405,7 @@
 
  XWX_peasant_united_front_cat: "Peasant Unity in China"
 
- XWX_invite_to_united_front: "Invite [FROM.GetNameDef] to the [FROM.GetFactionName]"
+ XWX_invite_to_united_front: "Invite [FROM.GetNameDef] to the [ROOT.GetFactionName]"
  XWX_integrate_allies: "Hold Integration Referendum in [FROM.GetNameDef]"
 
  XWX_second_gannan_famine_cat: "Famine Relief Efforts"
@@ -473,8 +474,8 @@
 
  XWX_intro_event.1.t: "The United Peasant Republics of Gannan and Ganzi"
  XWX_intro_event.1.desc: "Following political purges in 1933 in the People's Republic of China, peasant self-defence groups in Gannan organised an independent commune, seceeding from the PRC, with peasants from Ganzi following. Political activists with arrest warrants on their heads fled to Gannan, seeking refuge.\n \nIn 1934, the Kuomintang organised an expedition into Gannan territories but were beaten back by the militias. However, they did not give up went into hiding sabotaging the republic and preparing for revenge.\n \nTwo factions have formed within the Peasant Collectives that are the de-facto government of the Republics. The Federalists wish for more autonomy for the regional governments, while the Centralists demand more control for the Tianshui Peasant Collectives to better defend and organise national construction projects.\n \nThe Gannan region is severely under-developed in terms of industry. While some industrialisation has occured, the larger parts of the country are agrarian. Additionally, large opium syndicates have their production facilities in the region, opposing national plans to industrialise and improve the lifes of the people.\n \nMany challenges lie before the people of Gannan and the future of China as a whole is uncertain. Will the revolution succeed in creating a socialist China, or will the reactionary forces of the Kuomintang and the Japanese Empire crush the experiment?"
- XWX_intro_event.1.a: "Welcome to China..."
- XWX_intro_event.1.a.tt: "§6Development of [ROOT.GetNameDef] is completed! Have fun!§!"
+ XWX_intro_event.1.a: "Welcome to China!"
+ XWX_intro_event.1.a.tt: "§6Development of [ROOT.GetNameDef] is completed! Have fun!§!\n \nFor Additional information, see the §CDev Comments§! in the focus tree."
 
  XWX_political_events.1.t: "The Matters of Industry"
  XWX_political_events.1.desc: "$XWX_industrial_revolution_desc$\n \nThe Third Commune Conference will also handle some of these matters of industry, hopefully pushing our province towards becoming a modern nation."
@@ -748,6 +749,11 @@
  XWX_diplomatic_events.46.a: "We must be prepared."
  XWX_diplomatic_events.46.a.tt: "§Y[FROM.GetNameDef]§! §Rwill switch to Japan's side, unless§! §Ythe war with Japan is ended§! §Ror their§! §YFascism Support decreases to under 25%§!§R.§!"
 
+ XWX_diplomatic_events.47.t: "[JAP.GetNameDefCap] invades China!"
+ XWX_diplomatic_events.47.desc: "[JAP.GetAdjectiveCap] have attacked China once more! While we are not in immediate danger, further [JAP.GetAdjective] power in China may lead to us being overwhelmed before the reunification can even begin!"
+ XWX_diplomatic_events.47.a: "Reactionary or not, Japan is the greater foe."
+ XWX_diplomatic_events.47.b: "We will not cooperate with [CHI.GetLeader]!"
+
  XWX_news_events.1.t: "Kuomintang Coup in Gannan"
  XWX_news_events.1.desc: "News today from the Chinese Province of Gannan, where the Communist government of the 'United Peasant Republics of Gannan and Ganzi' was overthrown by members of the Kuomintang. They were backed by Chiang Kai-Shek's Central Government, which enabled them to overthrow the Communist regime without significant displays of violence."
  XWX_news_events.1.a: "Good Work, Brothers!"
@@ -794,6 +800,13 @@
  XWX_revintern: "Revolutionary Internationale"
  XWX_federalists_proposed_tag_name: "Revolutionary State"
  XWX_centralists_proposed_tag_name: "Peasant Federation"
+
+ XWX_protecting_china_tt: "§Y[XWX.GetNameDefCap]§! has entered the §YSino-Japanese War§! to protect China from invasion."
+
+ XWX_dev_comments_1: "§CThe Communist path was designed with Chinese Unification in mind, which means less boni for the fight against Japan and quick wargoals on Chinese neighbours and additional post-unification content.§!"
+ XWX_dev_comments_2: "§CThe Kuomintang path is primarily focused on defeating Japan together with the United Front, though Chinese Unification can still be accomplished afterwards. Switching to Democracy is also available through the KMT path.\n§!"
+ XWX_dev_comments_3: "§CThe chance to win a raid increases by deploying more divisions than the enemy. If they are at war, the chance also increases. If you have §!§YLa Resistance§!§C, the chance also increases if you have a spy network with at least 30% strength in their country.§!"
+ XWX_dev_comments_4: "§CThe Fascist path features no notable content. It is however fully playable, including Chinese Unification.§!"
 
 
 # NATIONAL FOCI
@@ -884,12 +897,17 @@
  XWX_crush_the_kmt_tt: "Gain §OWargoals§! against every §2Kuomintang-aligned§! or §8fascist§! Chinese country."
  XWX_china_united: "Proclaim Chinese Reunification"
  XWX_china_united_desc: "Through the valiant efforts of our people, we have gained control over all of China. Now the time has come to officially declare China for reunified!"
- XWX_invade_indochina: "Liberate Indochina"
- XWX_invade_indochina_desc: ""
- XWX_mantle_of_the_international_revolution: "Mantle of the International Revolution"
- XWX_mantle_of_the_international_revolution_desc: ""
  XWX_puppet_mongolia: "Demand Mongolian Subjugation"
  XWX_puppet_mongolia_desc: ""
+ XWX_cultural_revolution: "Begin the Cultural Revolution"
+ XWX_cultural_revolution_desc: ""
+ XWX_cultural_revolution_tt: "The §YWarlords§! will lose their cores on §YChinese states§!."
+ XWX_mantle_of_the_international_revolution: "Mantle of the International Revolution"
+ XWX_mantle_of_the_international_revolution_desc: ""
+ XWX_age_of_chinese_prosperity: "The Chinese Century"
+ XWX_age_of_chinese_prosperity_desc: ""
+ XWX_invade_indochina: "Liberate Indochina"
+ XWX_invade_indochina_desc: ""
  XWX_enforce_revolutionary_doctrine: "The Ideological Doctrine"
  XWX_enforce_revolutionary_doctrine_desc: ""
  XWX_invade_tibet: "Liberate Tibet"
@@ -1058,7 +1076,7 @@
  XWX_army_motorisation_desc: ""
  XWX_army_motorisation_tt: "Unlock £GFX_decision_icon_small §Y$XWX_acquire_motorised_equipment$§!."
  XWX_liu_xiangs_armoured_project: "Liu Xiangs Armour Project"
- XWX_liu_xiangs_armoured_project_desc: "Liu Xiang has some interesting ideas for how to involve armoured vehicles in combat. Perhaps he is onto something?"
+ XWX_liu_xiangs_armoured_project_desc: "Liu Xiang has some interesting ideas for how to involve armoured vehicles in combat. We will give him control of his own experimental armour brigade to present his ideas."
  XWX_liu_xiangs_armoured_project_tt: "A §g10-Width§! §CArmoured Division§! composed of §Y3 Infantry Battalions§!, §Y2 Heavy Tank Battalions§! and an §YEngineer Company§! are deployed in §Y[ROOT.capital.GetName]§!."
  XWX_military_academies: "Gannan Military Science Academy"
  XWX_military_academies_desc: ""

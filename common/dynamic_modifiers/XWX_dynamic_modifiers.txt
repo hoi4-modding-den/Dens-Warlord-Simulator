@@ -29,3 +29,12 @@ XWX_industry_modifier = {
 
 }
 
+XWX_cultural_revolution_state_modifier = {
+	enable = { always = yes }
+	icon = GFX_modifiers_GER_socialist_movement
+
+	state_production_speed_buildings_factor = 0.05
+	local_building_slots_factor = 0.05
+	local_manpower = 0.02
+
+}

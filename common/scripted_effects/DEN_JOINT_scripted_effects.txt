@@ -57,6 +57,10 @@ d_DEN_JOINT_japanese_surrenders_mainland = {
             limit = {
                 DEN_jap_puppets_scope = yes
             }
+            declare_war_on = {
+                target = ROOT
+                type = annex_everything
+            }
             set_country_flag = DEN_JOINT_jap_rep_in_china
             log = "[THIS.GetName] made Japanese Rep."
             d_DEN_JOINT_transfer_every_mainland_JAP_state_to_THIS = yes
@@ -127,6 +131,7 @@ d_DEN_JOINT_japanese_surrenders_mainland = {
             start_peace_conference = {
                 tag = PREV
                 score_factor = 1
+                winner_scope = ALL
                 message = DEN_JOINT_JAP_surrender_tt
             }
         }

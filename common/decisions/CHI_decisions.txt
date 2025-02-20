@@ -123,7 +123,7 @@ foreign_politics = {
 			}
 		}
 
-		cost = 75
+		cost = 50
 
 		complete_effect = {
 			activate_mission = CHI_demand_japanese_surrender_mission
