@@ -18,10 +18,13 @@ recruit_character = XSI_Arnhold
 recruit_character = XSI_Franklin
 recruit_character = XSI_Keswick
 recruit_character = XSI_Liddell
+recruit_character = XSI_Xiwen
 recruit_character = XSI_Okazaki
 recruit_character = XSI_Shushi
 recruit_character = XSI_Tiecheng
 recruit_character = XSI_Commune
+recruit_character = CHI_alexander_von_falkenhausen_army_chief 
+
 
 set_research_slots = 3
 set_stability = 0.45

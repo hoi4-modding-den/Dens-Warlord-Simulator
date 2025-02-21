@@ -32,7 +32,7 @@ XSI_economy_tab = {
 
     	days_mission_timeout = 100
         selectable_mission = no
-
+        
         complete_effect = {
              
         }

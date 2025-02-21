@@ -11,4 +11,11 @@ opinion_modifiers = {
 	XSI_election_interference = {
 		value = -50
 	}
+	XSI_conciliatory = {
+		value = 25
+	}
+	XSI_butcher = {
+		value = -50
+		decay = 1.5
+	}
 }

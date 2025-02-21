@@ -8,9 +8,57 @@ on_actions = {
 					random_days = 0
 				}
 				set_variable = {
-					XSI_funds = -1
+					XSI_funds = 0
+					
 					localization_key = "[?XSI_funds_value]"
 				}
+				subtract_from_variable = {
+					XSI_funds = 1
+				}
+			}
+		}
+	}
+	on_weekly_XSI = {
+		effect = {
+			if = {
+				limit = {
+					has_idea = XSI_broke
+					check_variable = {
+						XSI_funds < -2
+					}
+					
+				}
+				swap_ideas = {
+					remove_idea = XSI_broke
+					add_idea = XSI_broke_oops
+				}
+			}
+			if = {
+				limit = {
+					has_idea = XSI_broke_oops
+					check_variable = {
+						XSI_funds > -3 
+					}
+				}
+				swap_ideas = {
+					remove_idea = XSI_broke_oops
+					add_idea = XSI_broke
+				}
+			}
+		}
+	}
+	on_capitulation = {
+		effect = {
+			if = {
+				limit = { 
+					982 = {
+						any_country = {
+							has_government = fascism
+						}
+						is_controlled_by = PREV
+					}
+				}
+				XSI = { country_event = { id = XSI_natural_event.4 days = 1 } }
 			}
 		}
 	}

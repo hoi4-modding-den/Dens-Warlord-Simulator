@@ -15,9 +15,9 @@ characters = {
 	XSI_Franklin = {
 		name = XSI_Franklin
 		portraits = {
-			#civilian = {
-			#	large = gfx/XSI/franklin_portrait.png
-			#}
+			civilian = {
+				large = gfx/leaders/USA/Portrait_USA_Generic_3.dds
+			}
 		}
 		country_leader = {
 			ideology = oligarchism
@@ -44,14 +44,30 @@ characters = {
 	XSI_Okazaki = {
 		name = XSI_Okazaki
 		portraits = {
-			#civilian = {
-			#	large = gfx/XSI/okazaki_portrait.png
-			#}
+			civilian = { #looks a lot like Hyakutake
+				large = gfx/leaders/JAP/Portrait_Japan_Harukichi_Hyakutake.dds
+			}
 		}
 		country_leader = {
 			ideology = fascism_ideology
 			expire = "1965.10.10.1"
 			id = -1
+		}
+	}
+	XSI_Xiwen = {
+		name = XSI_Xiwen
+		portraits = {
+			civilian = {
+				large = gfx/leaders/JAP/Portrait_Japan_Generic_3.dds
+			}
+		}
+		country_leader = {
+			ideology = falangism
+			expire = "1945.10.10.1"
+			id = -1
+			traits = {
+				XSI_occult_embezzler 
+			}
 		}
 	}
 	XSI_Shushi = {
@@ -72,11 +88,11 @@ characters = {
 	}
 	XSI_Commune = {
 		name = XSI_Commune 
-		portraits = {
+		#portraits = {
 			#civilian = {
 			#	large = gfx/XSI/commune_portrait.png
 			#}
-		}
+		#}
 		country_leader = {
 			ideology = anarchist_communism
 			expire = "9999.1.1.1"

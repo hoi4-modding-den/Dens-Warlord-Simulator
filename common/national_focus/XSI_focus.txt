@@ -37,8 +37,29 @@ focus_tree={
 				}
 				country_event = XSI_focus_event.8
 			}
-			else = {
+			else_if = {
+				limit = {
+					has_country_flag = XSI_american_election
+				}
+				country_event = XSI_focus_event.12
+			}
+			else_if = {
+				limit = {
+					has_country_flag = XSI_american_election_alt
+				}
+				country_event = XSI_focus_event.16
+			}
+			else_if = {
+				limit = {
+					has_country_flag = XSI_british_election
+					NOT = {
+						has_country_flag = XSI_imminent_takeover
+					}
+				}
 				country_event = XSI_focus_event.4
+			}
+			else = {
+				#nothing because elections get cancelled otherwise
 			}
 		}
 	}
@@ -52,6 +73,8 @@ focus_tree={
 		cost = 5
 		#search_filters = {  FOCUS_FILTER_RESEARCH }
 		prerequisite = { focus =  XSI_chinese_dominance  focus = XSI_british_dominance }
+		mutually_exclusive = { focus = XSI_join_united_front }
+		mutually_exclusive = { focus = XSI_join_allies }
 		available = {
 			any_country = {
 				is_faction_leader = yes
@@ -98,6 +121,8 @@ focus_tree={
 				has_idea = neutrality_idea
 			}
 		}
+		mutually_exclusive = { focus = XSI_join_united_front }
+		mutually_exclusive = { focus = XSI_join_allies }
 		completion_reward = {
 			if = {
 				limit = { ENG = { is_faction_leader = yes } }
@@ -144,6 +169,8 @@ focus_tree={
 				is_guaranteed_by = USA
 			}
 		}
+		mutually_exclusive = { focus = XSI_neutrality_focus }
+		mutually_exclusive = { focus = XSI_american_guarentees }
 		completion_reward = {
 			if = {
 				limit = { NOT = { has_idea = neutrality_idea } }
@@ -165,6 +192,8 @@ focus_tree={
 				has_war_with = JAP
 			}
 		}
+		mutually_exclusive = { focus = XSI_neutrality_focus }
+		mutually_exclusive = { focus = XSI_american_guarentees }
 		completion_reward = {
 			
 		}

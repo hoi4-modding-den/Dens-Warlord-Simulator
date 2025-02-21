@@ -36,6 +36,10 @@ XSI_JAP_aligned = {
     color = rgb { 150 70 125 }
     color_ui = rgb { 150 70 125 }
 }
+XSI_JAP_aligned_zone = {
+    color = rgb { 150 70 125 }
+    color_ui = rgb { 150 70 125 }
+}
 XSI_democratic = {
     color = rgb { 190 255 250 }
     color_ui = rgb { 190 255 250 }

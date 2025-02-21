@@ -1,4 +1,51 @@
 division_template={
+	name = "Police Unit"
+	regiments = {
+        	militia = { x = 0 y = 0 }
+        	militia = { x = 0 y = 1 }
+        	militia = { x = 0 y = 2 }
+        	cavalry = { x = 1 y = 0 }
+        	cavalry = { x = 1 y = 1 }
+       		cavalry = { x = 1 y = 2 }
+	}
+}
+division_template = {
+	name = "Shanghai Volunteer Corps"											
+	regiments = {
+		infantry = { x = 0 y = 0 }	
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+	}
+	support = {
+        	artillery = { x = 0 y = 0 }
+		engineer = { x = 0 y = 1 }
+	}
+}
+division_template = {
+	name = "Sanjiao Jun"											
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+	}
 }
 units = {
+	division= {	
+		name = "Precinct 41"
+		location = 7014
+		division_template = "Police Unit"
+		start_experience_factor = 1
+		start_equipment_factor = 1
+	}
+	division= {	
+		name = "Precinct 57"
+		location = 13370
+		division_template = "Police Unit"
+		start_experience_factor = 1
+		start_equipment_factor = 1
+	}
 }

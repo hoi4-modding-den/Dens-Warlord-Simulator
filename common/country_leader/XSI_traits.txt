@@ -1,0 +1,8 @@
+leader_traits = {
+	XSI_occult_embezzler = {
+		random = no
+		equipment_capture_factor = -0.25
+		legitimacy_gain_factor = -0.25
+	}
+
+}
