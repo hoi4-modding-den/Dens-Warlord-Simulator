@@ -865,6 +865,7 @@
 				limit = {
 					XWE = {
 						is_subject = no
+						is_in_faction = no
 						NOT = { has_war_with = ROOT }
 						exists = yes
 					}
@@ -895,6 +896,7 @@
 						DEN_is_chinese_country = yes
 						has_war_with = JAP
 						is_subject = no
+						is_in_faction = no
 					}
 					ROOT = {
 						add_to_faction = PREV
@@ -911,6 +913,8 @@
 						AND = {
 							is_guaranteed_by = ROOT
 							DEN_is_chinese_country = yes
+							is_subject = no
+							is_in_faction = no
 						}
 					}
 				}
@@ -1088,7 +1092,6 @@
 			any_other_country = {
 				DEN_is_chinese_country = yes
 				NOT = { is_ally_with = ROOT }
-				NOT = { has_war_with = ROOT }
 			}
 		}
 

@@ -75,7 +75,7 @@ foreign_politics = {
 			base = 0
 		}
 
-		cost = 75
+		cost = 25
 
 		complete_effect = {
 			faction_leader = {
@@ -110,6 +110,11 @@ foreign_politics = {
 			has_war_with = JAP
 			DEN_JAP_can_surrender = yes
 			surrender_progress < 0.2
+			NOT = {
+				any_other_country = {
+					has_active_mission = CHI_demand_japanese_surrender_mission
+				}
+			}
 		}
 
 		ai_will_do = {
@@ -123,7 +128,7 @@ foreign_politics = {
 			}
 		}
 
-		cost = 50
+		cost = 0
 
 		complete_effect = {
 			activate_mission = CHI_demand_japanese_surrender_mission

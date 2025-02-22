@@ -393,7 +393,7 @@
 
  #foreign_support
 
- XWX_foreign_anti_japanese_support: "Seek [FROM.GetAdjective] Support against @JAP Japan"
+ XWX_foreign_anti_japanese_support: "Seek [FROM.GetAdjective] Support against @JAPJapan"
  XWX_seeking_support: "currently seeking support"
 
  XWX_chinese_education_bureau: "Chinese Education Bureau"
@@ -797,7 +797,7 @@
 # OTHER STUFF
 
  XWX_rev_united_front: "Revolutionary United Front"
- XWX_revintern: "Revolutionary Internationale"
+ XWX_revintern: "Revintern" # Revolutionary International
  XWX_federalists_proposed_tag_name: "Revolutionary State"
  XWX_centralists_proposed_tag_name: "Peasant Federation"
 
@@ -885,11 +885,12 @@
  XWX_rifles_for_farmers_desc: ""
  XWX_the_peasant_united_front: "The $XWX_rev_united_front$"
  XWX_the_peasant_united_front_desc: ""
- XWX_the_peasant_united_front_tt: "Unlock £GFX_decision_icon_small §YInvite Countries to the $XWX_rev_united_front$§!."
+ XWX_the_peasant_united_front_tt: "Unlock £GFX_decision_icon_small §YInvite Country to the $XWX_rev_united_front$§!."
  XWX_end_the_false_revolution: "Extinguish the False Revolution"
  XWX_end_the_false_revolution_desc: ""
  XWX_restart_the_civil_war: "Proclaim a Rival Government"
  XWX_restart_the_civil_war_desc: "The Nationalist Government in Chongqing is illigitimate, as it was not chosen by the People. It is time to right their wrongs and proclaim our own National Government under the $XWX_prc$!"
+ XWX_restart_the_civil_war_tt: "Unlock £GFX_decision_icon_small §YHold Integration Referendum in Subject Country§!."
  XWX_liberation_of_china: "Liberation of China"
  XWX_liberation_of_china_desc: ""
  XWX_crush_the_kmt: "Crush the Reactionaries"
@@ -915,8 +916,8 @@
  XWX_revolutionary_defense: "In Defence of the Revolution"
  XWX_revolutionary_defense_desc: ""
  XWX_counteract_the_japanese_threat: "The False Red Sun"
- XWX_counteract_the_japanese_threat_desc: ""
- XWX_counteract_the_japanese_threat_tt: "Unlock £GFX_decision_icon_small §Y$XWX_foreign_anti_japanese_support$§!."
+ XWX_counteract_the_japanese_threat_desc: "The Japanese Empire pretends to be a Red Sun in the sky, working towards a Pan-Asian federation. But we see through their imperialist disguise. We must make sure that the only Red Sun rising over Asia is the Sun of Communism."
+ XWX_counteract_the_japanese_threat_tt: "Unlock £GFX_decision_icon_small §YSeek Foreign Support against @JAPJapan§!."
  XWX_peasant_army: "March Towards International Liberation"
  XWX_peasant_army_desc: ""
 
@@ -1023,7 +1024,7 @@
  XWX_railway_construction_desc: "Hezuo is one of the few larger cities in our nation, next to our capital. Having a railway line connect Hezuo and Tianshui with the major cities in the Sichuan province will prove to be a good move later on."
  XWX_clear_space: "Appropriate Farmlands"
  XWX_clear_space_desc: "While not the best way of industrialising the nation, appropriating farmland for industrial uses seems to be the most efficient way. Let's hope nothing bad comes from it."
- XWX_clear_space_tt: "§ROur country is not sufficiently prepared for the §!§YIndustrial Revolution§!§R and land appropriation will have consequences!t§!"
+ XWX_clear_space_tt: "§RTo prevent unfortunate consequences, we must have at least §!§Y30 Civilian Factories§!§R while completing this focus!§!"
  XWX_local_schools: "Regional Education Office"
  XWX_local_schools_desc: ""
  XWX_local_schools_tt: "Unlock £GFX_decision_icon_small §Y$XWX_chinese_education_bureau$§! category."

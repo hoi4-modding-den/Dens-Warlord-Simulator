@@ -1,7 +1,7 @@
 ﻿l_english:
 
- CHI_demand_faction_leader_demands_surrender: "Pressure [ROOT.faction_leader.GetName] into approaching the Japanese"
- CHI_demand_japanese_surrender: "Approach the Japanese"
+ CHI_demand_faction_leader_demands_surrender: "Pressure the Faction Leader into approaching the Japanese"
+ CHI_demand_japanese_surrender: "Demand Japanese Surrender"
  CHI_demand_japanese_surrender_mission: "Hold out against Japan!"
  CHI_demand_japanese_surrender_mission_desc: "To make clear that they will never defeat us, we must ensure that no Japanese boots reach our shores. Until then, they have time to consider our ultimatum."
  CHI_demand_japanese_surrender_mission_tt: "We must prevent any §RJapanese naval invasions§! for §Y100 Days§!. After the mission times out, an Ultimatum will be sent, signing a §Ywhite peace§! with @JAP §YJapan§! and handing over all of their §YChinese territories§! to us."

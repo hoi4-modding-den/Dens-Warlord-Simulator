@@ -75,7 +75,7 @@ XWX_china = {
 	color_ui = rgb { 0 31 77 }
 }
 XWX_republic = {
-	color = rgb { 255 180 136 }
+	color = hsv { 0.1 0.47 0.8 }
 	color_ui = rgb { 255 234 177 }
 }
 XWX_JAP_aligned = {

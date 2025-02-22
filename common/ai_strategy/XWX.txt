@@ -607,3 +607,30 @@ XWX_improve_relations_because_famine = {
 		value = 100
 	}
 }
+
+XWX_get_military_access = {
+	allowed = {
+		DEN_is_chinese_country = yes
+	}
+	abort_when_not_enabled = yes
+
+	enable = {
+		has_war_with = JAP
+		XWX = { has_war_with = JAP }
+		XWX = { NOT = { has_war_with = ROOT } }
+		NOT = { is_ally_with = XWX }
+	}
+
+	ai_strategy = {
+		id = XWX
+		value = 100
+		type = diplo_action_acceptance
+		target = offer_military_access
+	}
+	ai_strategy = {
+		id = XWX
+		value = 100
+		type = diplo_action_desire
+		target = offer_military_access
+	}
+}

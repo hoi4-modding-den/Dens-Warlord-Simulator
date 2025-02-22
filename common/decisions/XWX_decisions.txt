@@ -187,10 +187,10 @@ XWX_kmt_insurgency_cat = {
             }
 		}
 
-        days_remove = 40 
+        days_remove = 20
 
         remove_effect = {
-            add_stability = 0.05
+            add_stability = -0.05
             XWX_increase_kmt_power = yes
         }
     }
@@ -969,7 +969,7 @@ XWX_army_improvement = {
 
         ai_hint_pp_cost = 0
         custom_cost_trigger = {
-			has_army_experience > 99
+			has_army_experience > 99.99
 		}
 		custom_cost_text = decision_cost_100_army_xp
 
@@ -1168,9 +1168,15 @@ XWX_army_improvement = {
                         }
                         modifier = {
                             factor = 2
-                            network_strength = {
-                                target = FROM
-                                value > 30
+                            FROM = {
+                                owner = {
+                                    ROOT = {
+                                        network_strength = {
+                                            target = PREV
+                                            value > 30
+                                        }
+                                    }
+                                }
                             }
                         }
                         FROM = {
@@ -1412,7 +1418,7 @@ political_actions = {
 
 }
 
-foreign_support = {
+foreign_politics = {
 
     XWX_foreign_anti_japanese_support = {
 
@@ -1458,11 +1464,12 @@ foreign_support = {
         target_trigger = {
             FROM = {
                 DEN_is_chinese_country = no
+                NOT = { tag = JAP }
                 is_major = yes
             }
         }
 
-        cost = 100
+        cost = 50
 
         ai_will_do = {
 			base = 120

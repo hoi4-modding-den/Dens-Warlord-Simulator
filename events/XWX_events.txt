@@ -1632,25 +1632,11 @@ country_event = { # FROM gets annexed
 						transfer_troops = yes
 					}
 				}
-				every_core_state = {
-					limit = {
-						is_core_of = ROOT
-					}
-					remove_core_of = PREV
-				}
 			}
 		}
 		annex_country = {
 			target = FROM
 			transfer_troops = yes
-		}
-		FROM = {
-			every_core_state = {
-				limit = {
-					is_core_of = ROOT
-				}
-				remove_core_of = FROM
-			}
 		}
 	}
 
@@ -1818,12 +1804,20 @@ country_event = { # XWX demands Annexation
 	option = { 
 		name = XWX_diplomatic_events.20.b
 		trigger = {
-			OR = {
-				is_subject = no
+			if = {
+				FROM = {
+					is_ai = yes
+				}
 				is_ai = no
-				any_other_country = {
-					is_subject_of = ROOT
+			}
+			else = {
+				OR = {
+					is_subject = no
 					is_ai = no
+					any_other_country = {
+						is_subject_of = ROOT
+						is_ai = no
+					}
 				}
 			}
 		}
@@ -1955,13 +1949,16 @@ country_event = { # XWX buys British industry in Hong Kong
 				}
 			}
 			custom_effect_tooltip = generic_skip_one_line_tt
-			add_to_variable = {
-				tooltip = XHK_ENG_inf_lose
-				XHK_ENG_inf = -10
-			}
-			add_to_variable = {
-				tooltip = XHK_CHI_inf_gain
-				XHK_CHI_inf = 10
+			XHK = {
+				add_to_variable = {
+					tooltip = XHK_ENG_inf_lose
+					XHK_ENG_inf = -10
+				}
+				custom_effect_tooltip = generic_skip_one_line_tt
+				add_to_variable = {
+					tooltip = XHK_CHI_inf_gain
+					XHK_CHI_inf = 10
+				}
 			}
 		}
 	}
@@ -2759,6 +2756,7 @@ country_event = { # XWX declares war on Japan
 		exists = yes
 
 		is_faction_leader = yes
+		NOT = { is_ally_with = CHI }
 
 		NOT = { has_war_with = JAP }
 		NOT = { has_war_with = CHI }
@@ -2773,22 +2771,29 @@ country_event = { # XWX declares war on Japan
 
 	option = {
 		name = XWX_diplomatic_events.47.a
-		CHI = {
-			add_to_war = {
-				targeted_alliance = ROOT
-				enemy = JAP
-				hostility_reason = XWX_protecting_china_tt
+		add_to_war = {
+			targeted_alliance = CHI
+			enemy = JAP
+			hostility_reason = XWX_protecting_china_tt
+		}
+		hidden_effect = {
+			every_country = {
+				limit = {
+					OR = {
+						has_war_with = JAP
+						is_ally_with = CHI
+					}
+					NOT = { has_war_with = ROOT }
+				}
+				give_military_access = ROOT
 			}
 		}
 	}
 
 	option = { 
-		name = XWX_diplomatic_events.47.a
+		name = XWX_diplomatic_events.47.b
 		trigger = {
-			OR = {
-				is_ai = no
-				NOT = { has_completed_focus = XWX_the_peasant_united_front }
-			}
+			is_ai = no
 		}
 		add_war_support = -0.05
 	}
