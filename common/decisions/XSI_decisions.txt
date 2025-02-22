@@ -41,28 +41,28 @@ XSI_economy_tab = {
             country_event = XSI_natural_event.2
     	}
     }
-    XSI_debug_funds_positive = {
-        allowed = {
-    	    tag = XSI
-    	}
-        fire_only_once = no
-        complete_effect = {
-            add_to_variable = {
-               XSI_funds = 1
-            }
-        }
-    }
-    XSI_debug_funds_negative = {
-        allowed = {
-    	    tag = XSI
-    	}
-        fire_only_once = no
-        complete_effect = {
-            subtract_from_variable = {
-                XSI_funds = 1
-            }
-        }
-    }
+    #XSI_debug_funds_positive = {
+    #    allowed = {
+    #	    tag = XSI
+    #	}
+    #   fire_only_once = no
+    #   complete_effect = {
+    #       add_to_variable = {
+    #          XSI_funds = 1
+    #       }
+    #    }
+    #}
+   # XSI_debug_funds_negative = {
+    #    allowed = {
+    #	    tag = XSI
+    #	}
+    #    fire_only_once = no
+    #    complete_effect = {
+    #       subtract_from_variable = {
+    #            XSI_funds = 1
+    #        }
+    #    }
+    # }
     XSI_collect_tax_income = {
         allowed = {
     	    tag = XSI
