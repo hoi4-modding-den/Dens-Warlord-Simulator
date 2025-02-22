@@ -108,12 +108,24 @@ on_actions = {
 				XSI = { country_event = { id = XSI_natural_event.4 days = 1 } }
 			}
 		}
+		effect = {
+			if = {
+				limit = { tag = JAP has_capitulated = yes }
+				XSI = {
+					remove_ideas = XSI_japanese_occupation_zone
+				}
+			}
+		}
 	}
 	on_war = {
 		effect = {
 			if = {
 				limit = { tag = XSI has_war = yes  }
 				country_event = XSI_natural_event.5
+			}
+			if = {
+				limit = { tag = XSI has_war_with = JAP  }
+				country_event = XSI_natural_event.10
 			}
 		}
 	}

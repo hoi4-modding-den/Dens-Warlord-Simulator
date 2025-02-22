@@ -5,8 +5,8 @@ XSI_democratic_balance = {
 
     range = { 
         id = XSI_city_primacy
-        min = -0.25
-        max = 0.25
+        min = -0.24
+        max = 0.24
         modifier = {
 		political_power_gain = 0.1
 		stability_factor = 0.1
@@ -17,15 +17,15 @@ XSI_democratic_balance = {
     range = {
         id = XSI_communist_low
         min = -0.50
-        max = -0.25
+        max = -0.24
         modifier = {
         	stability_factor = -0.05
         }
     }
     range = {
         id = XSI_neutrality_low
-        min = 0.25
-        max = 0.50
+        min = 0.24
+        max = 0.49
         modifier = {
             war_support_factor = -0.05
         }
@@ -35,8 +35,8 @@ XSI_democratic_balance = {
 
     range = {
         id = XSI_communist_medium
-        min = -0.80
-        max = -0.50
+        min = -0.74
+        max = -0.49
         modifier = {
             stability_factor = -0.1
             communism_drift = 0.01
@@ -44,8 +44,8 @@ XSI_democratic_balance = {
     }
     range = {
         id = XSI_neutrality_medium
-        min = 0.50
-        max = 0.80
+        min = 0.49
+        max = 0.74
         modifier = {
             war_support_factor = -0.1
             neutrality_drift = 0.01
@@ -55,7 +55,7 @@ XSI_democratic_balance = {
     range = {
         id = XSI_communist_high
             min = -0.95
-            max = -0.80
+            max = -0.74
             modifier = {
             	stability_factor = -0.15
             	communism_drift = 0.03
@@ -63,7 +63,7 @@ XSI_democratic_balance = {
     }
     range = {
         id = XSI_neutrality_high
-            min = 0.80
+            min = 0.74
             max = 0.95
             modifier = {
                 war_support_factor = -0.15
@@ -82,7 +82,7 @@ XSI_democratic_balance = {
                 communism_drift = 0.05
             }
 	    on_activate = {
-		country_event = XSI_natural_event.2
+		country_event = XSI_natural_event.6
             }
         }
     }
@@ -98,7 +98,7 @@ XSI_democratic_balance = {
                 neutrality_drift = 0.05
             }
 	    on_activate = {
-		country_event = XSI_natural_event.3
+		country_event = XSI_natural_event.7
             }
         }
     }

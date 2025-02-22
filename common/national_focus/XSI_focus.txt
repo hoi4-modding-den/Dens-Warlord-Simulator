@@ -13,7 +13,7 @@ focus_tree={
 	default = no
 	reset_on_civilwar = no
 
-	continuous_focus_position = { x = 2000 y = 666 }
+	continuous_focus_position = { x = 2075 y = 666 }
 
 	shared_focus = CHI_invite_foreign_investors
 
@@ -23,7 +23,7 @@ focus_tree={
 		x = 13.5
 		y = 0
 		cost = 12
-		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		search_filters = { FOCUS_FILTER_HISTORICAL }
 		select_effect = { 
 			country_event = { id = XSI_focus_event.1 days = 7 }
 		}
@@ -80,6 +80,7 @@ focus_tree={
 			}
 			NOT = {
 				is_in_faction = yes
+				has_completed_focus = XSI_city_anarchist
 			}
 		}
 		completion_reward = {
@@ -136,6 +137,7 @@ focus_tree={
 			NOT = {
 				has_idea = neutrality_idea
 				is_in_faction = yes
+				has_completed_focus = XSI_city_anarchist
 			}
 		}
 		completion_reward = {
@@ -175,7 +177,7 @@ focus_tree={
 		y = 2
 		cost = 5
 		
-		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		search_filters = { FOCUS_FILTER_HISTORICAL }
 		prerequisite = { focus =  XSI_american_dominance  focus = XSI_british_dominance }
 		available = {
 			NOT = {
@@ -192,7 +194,7 @@ focus_tree={
 				add_ideas = neutrality_idea
 			}
 			add_political_power = 150
-			add_stability = 0.5
+			add_stability = 0.05
 		}
 	}
 	focus = {
@@ -264,11 +266,19 @@ focus_tree={
 		prerequisite = { focus =  XSI_chinese_dominance }
 
 		completion_reward = {
+			add_power_balance_value = {
+				id = XSI_democratic_balance
+				value = -0.25
+				tooltip_side = XSI_communist_side
+			}
 			add_popularity = {
 				ideology = democratic
 				popularity = 0.15
 			}
-			add_ideas = XSI_universal_suffrage_idea
+			swap_ideas = {
+				remove_idea = XSI_foreigner_republic
+				add_idea = XSI_universal_suffrage_idea
+			}
 		}
 	}
 	focus = {
@@ -283,7 +293,19 @@ focus_tree={
 		prerequisite = { focus =  XSI_chinese_dominance }
 
 		completion_reward = {
-			
+			custom_effect_tooltip = XSI_funds_tooltip
+			add_to_variable = {
+				XSI_funds = 1
+			}
+			add_power_balance_value = {
+				id = XSI_democratic_balance
+				value = 0.25
+				tooltip_side = XSI_neutrality_side
+			}
+			swap_ideas = {
+				remove_idea = XSI_foreigner_republic
+				add_idea = XSI_wealth_voting_idea
+			}
 		}
 	}
 	focus = {
@@ -295,8 +317,50 @@ focus_tree={
 		#search_filters = {  FOCUS_FILTER_RESEARCH }
 		prerequisite = { focus =  XSI_chinese_dominance }
 
+		complete_tooltip = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}			
+		}
+
 		completion_reward = {
-			
+			custom_effect_tooltip = XSI_funds_tooltip_3
+			subtract_from_variable = {
+				XSI_funds = 1
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
 		}
 	}
 	focus = {
@@ -311,7 +375,16 @@ focus_tree={
 		prerequisite = { focus =  XSI_universal_suffrage focus = XSI_wealth_voting }
 
 		completion_reward = {
-			
+			custom_effect_tooltip = XSI_funds_tooltip_4
+			add_to_variable = {
+				XSI_funds = 2
+			}
+			add_stability = -0.05
+			add_power_balance_value = {
+				id = XSI_democratic_balance
+				value = -0.25
+				tooltip_side = XSI_communist_side
+			}
 		}
 	}
 	focus = {
@@ -326,7 +399,19 @@ focus_tree={
 		prerequisite = { focus =  XSI_universal_suffrage focus = XSI_wealth_voting }
 
 		completion_reward = {
-			
+			custom_effect_tooltip = XSI_funds_tooltip_4
+			add_to_variable = {
+				XSI_funds = 2
+			}
+			add_popularity = {
+				ideology = democratic
+				popularity = -0.05
+			}
+			add_power_balance_value = {
+				id = XSI_democratic_balance
+				value = 0.25
+				tooltip_side = XSI_neutrality_side
+			}
 		}
 	}
 	focus = {
@@ -340,8 +425,66 @@ focus_tree={
 		#search_filters = {  FOCUS_FILTER_RESEARCH }
 		prerequisite = { focus =  XSI_universal_suffrage focus = XSI_wealth_voting }
 
+		complete_tooltip = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}			
+		}
+
 		completion_reward = {
-			
+			custom_effect_tooltip = XSI_bop_effect
+			if = {
+				limit = { power_balance_value = {
+					id = XSI_democratic_balance
+					value < 0
+				} }
+				add_power_balance_value = {
+					id = XSI_democratic_balance
+					value = -0.25
+					tooltip_side = XSI_communist_side
+				}
+			}
+			else = {
+				add_power_balance_value = {
+					id = XSI_democratic_balance
+					value = 0.25
+					tooltip_side = XSI_neutrality_side
+				}
+			}
+
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
 		}
 	}
 	focus = {
@@ -354,9 +497,33 @@ focus_tree={
 		mutually_exclusive = { focus = XSI_foreign_investment }
 		#search_filters = {  FOCUS_FILTER_RESEARCH }
 		prerequisite = { focus =  XSI_universal_suffrage focus = XSI_wealth_voting }
-
+		available = {
+			NOT = {
+				has_completed_focus = XSI_nationalize_industry
+			}
+		}
 		completion_reward = {
-			
+			add_political_power = -100
+			custom_effect_tooltip = XSI_bop_effect_2
+			if = {
+				limit = { power_balance_value = {
+					id = XSI_democratic_balance
+					value < 0
+				} }
+				add_power_balance_value = {
+					id = XSI_democratic_balance
+					value = 0.25
+					tooltip_side = XSI_neutrality_side
+				}
+			}
+			else = {
+				add_power_balance_value = {
+					id = XSI_democratic_balance
+					value = -0.25
+					tooltip_side = XSI_communist_side
+				}
+			}
+			add_offsite_building = { type = industrial_complex level = 1 }
 		}
 	}
 	focus = {
@@ -373,7 +540,46 @@ focus_tree={
 			}
 		}
 		completion_reward = {
-			
+			add_stability = -0.05
+			add_popularity = {
+				ideology = communism
+				popularity = 0.05
+			}
+			add_power_balance_value = {
+				id = XSI_democratic_balance
+				value = -0.25
+				tooltip_side = XSI_communist_side
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
 		}
 	}
 	focus = {
@@ -387,8 +593,78 @@ focus_tree={
 		#search_filters = {  FOCUS_FILTER_RESEARCH }
 		prerequisite = { focus =  XSI_universal_suffrage focus = XSI_wealth_voting }
 
+		complete_tooltip = {
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+		}
+
 		completion_reward = {
-			
+			custom_effect_tooltip = XSI_funds_tooltip_3
+			subtract_from_variable = {
+				XSI_funds = 1
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 0
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = infrastructure
+										size > 0
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 1
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = infrastructure
+										size > 1
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
 		}
 	}
 	focus = {
@@ -403,7 +679,7 @@ focus_tree={
 		prerequisite = { focus =  XSI_raise_taxes focus = XSI_austerity }
 		prerequisite = { focus = XSI_chinese_investment focus = XSI_foreign_investment }
 		completion_reward = {
-			
+			add_ideas = XSI_maintain_current_inf_idea
 		}
 	}
 	focus = {
@@ -415,8 +691,27 @@ focus_tree={
 		#search_filters = {  FOCUS_FILTER_RESEARCH }
 		prerequisite = { focus =  XSI_foreign_investment focus = XSI_chinese_investment }
 		completion_reward = {
-			
+			add_political_power = -50
+			add_power_balance_value = {
+				id = XSI_democratic_balance
+				value = 0.25
+				tooltip_side = XSI_neutrality_side
+			}
+			custom_effect_tooltip = XSI_kmt_garrison_tooltip
+			hidden_effect = {
+				982 = {
+					create_unit = {
+						division = "name = \"Shíjiu lù jūn\" division_template = \"Sanjiao Jun\" start_experience_factor = [0;1] start_equipment_factor = [0;1]"
+						owner = XSI
+					}	
+					create_unit = {
+						division = "name = \"88 Bubing Shi\" division_template = \"Sanjiao Jun\" start_experience_factor = [0;1] start_equipment_factor = [0;1]"
+						owner = XSI
+					}						
+				}
+			}
 		}
+		
 	}
 	focus = {
 		id = XSI_city_anarchist
@@ -425,12 +720,12 @@ focus_tree={
 		y = 5
 		cost = 1
 		allow_branch = {
-			has_completed_focus = XSI_city_anarchist
+			has_country_flag = XSI_anarchist_flag
 		}
 		#search_filters = {  FOCUS_FILTER_RESEARCH }
 		prerequisite = { focus =  XSI_road_boom focus = XSI_maintain_current_inf }
 		completion_reward = {
-			
+			custom_effect_tooltip = XSI_funds_tooltip_6
 		}
 	}
 	focus = {
@@ -441,11 +736,22 @@ focus_tree={
 		cost = 1
 		available = {
 			has_government = communism
+			custom_trigger_tooltip = {
+				tooltip = XSI_city_focuses_tooltip
+			}
+			hidden_trigger = {
+				NOT = {
+					has_completed_focus = XSI_city_anarchist
+				}
+			}
+		}
+		bypass = {
+
 		}
 		#search_filters = {  FOCUS_FILTER_RESEARCH }
 		prerequisite = { focus =  XSI_road_boom focus = XSI_maintain_current_inf }
 		completion_reward = {
-			
+			custom_effect_tooltip = XSI_funds_tooltip_6
 		}
 	}
 
@@ -454,14 +760,42 @@ focus_tree={
 		icon = GFX_focus_chi_legislative_yuan
 		x = 1
 		y = 5
-		cost = 1
+		cost = 5
+		select_effect = { 
+			if = {
+				limit = { 
+					has_stability < 0.3
+				}
+				country_event = { id = XSI_natural_event.8 days = 7 } #secret path
+			}
+		}
+
 		available = {
 			has_government = democratic
+			OR = {
+				has_completed_focus = XSI_universal_suffrage
+				has_completed_focus = XSI_wealth_voting
+			}
+			OR = {
+				has_completed_focus = XSI_raise_taxes
+				has_completed_focus = XSI_austerity
+			}
+			OR = {
+				has_completed_focus = XSI_chinese_investment
+				has_completed_focus = XSI_foreign_investment
+			}
+			hidden_trigger = {
+				NOT = {
+					has_completed_focus = XSI_city_anarchist
+				}
+			}
+
 		}
 		#search_filters = {  FOCUS_FILTER_RESEARCH }
 		prerequisite = { focus =  XSI_road_boom focus = XSI_maintain_current_inf }
 		completion_reward = {
-			
+			custom_effect_tooltip = XSI_funds_tooltip_6
+			add_ideas = XSI_democratic_city_idea
 		}
 	}
 	focus = {
@@ -472,11 +806,19 @@ focus_tree={
 		cost = 1
 		available = {
 			has_government = neutrality
+			custom_trigger_tooltip = {
+				tooltip = XSI_city_focuses_tooltip
+			}
+			hidden_trigger = {
+				NOT = {
+					has_completed_focus = XSI_city_anarchist
+				}
+			}
 		}
 		#search_filters = {  FOCUS_FILTER_RESEARCH }
 		prerequisite = { focus =  XSI_road_boom focus = XSI_maintain_current_inf }
 		completion_reward = {
-			
+			custom_effect_tooltip = XSI_funds_tooltip_6
 		}
 	}
 	focus = {
@@ -484,7 +826,7 @@ focus_tree={
 		icon = GFX_focus_spr_anarchism_knows_no_borders
 		x = -3
 		y = 6
-		cost = 1
+		cost = 5
 		available = {
 			if = {
 				limit = { has_government = communism XWE = { exists = yes } }
@@ -500,7 +842,31 @@ focus_tree={
 		#search_filters = {  FOCUS_FILTER_RESEARCH }
 		prerequisite = { focus =  XSI_city_anarchist }
 		completion_reward = {
-			
+			add_ideas = XSI_anarchism_idea
+			custom_effect_tooltip = XSI_free_asia_tooltip
+			every_other_country = {
+				limit = {
+					capital_scope = {
+						OR = {
+							is_on_continent = asia
+							is_on_continent = middle_east
+						}
+						
+					}
+				}
+				ROOT = {
+					create_wargoal = {
+						type = annex_everything
+						target = PREV
+						expire = 0
+					}
+				}
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = SOV
+				expire = 0
+			}
 		}
 	}
 	focus = {
@@ -508,7 +874,7 @@ focus_tree={
 		icon = GFX_focus_prc_social_democracy
 		x = -1
 		y = 6
-		cost = 1
+		cost = 5
 		available = {
 			if = {
 				limit = { has_government = communism XWE = { exists = yes } }
@@ -521,10 +887,37 @@ focus_tree={
 			}
 
 		}
+		mutually_exclusive = { focus = XSI_free_shanghai }
+		mutually_exclusive = { focus = XSI_rival_government }
+		mutually_exclusive = { focus = XSI_loyalty }
 		#search_filters = {  FOCUS_FILTER_RESEARCH }
 		prerequisite = { focus =  XSI_city_communist focus =  XSI_city_democratic focus = XSI_city_neutrality }
 		completion_reward = {
-			
+			add_stability = 0.1
+			add_political_power = 100
+			if = {
+				limit = { has_government = communism }
+				set_cosmetic_tag = XSI_XWE_aligned
+				XWE = {
+					puppet = XSI
+					country_event = XSI_natural_event.9
+				}
+			}
+			else_if = {
+				limit = { has_government = democratic }
+				set_cosmetic_tag = XSI_XBG_aligned
+				XBG = {
+					puppet = XSI
+					country_event = XSI_natural_event.9
+				}
+			}
+			else = {
+				set_cosmetic_tag = XSI_KMT_aligned
+				CHI = {
+					puppet = XSI
+					country_event = XSI_natural_event.9
+				}
+			}
 		}
 	}
 	focus = {
@@ -532,12 +925,59 @@ focus_tree={
 		icon = GFX_focus_chi_proclaim_rival_government
 		x = 1
 		y = 6
-		cost = 1
-
+		cost = 5
+		mutually_exclusive = { focus = XSI_free_shanghai }
+		mutually_exclusive = { focus = XSI_rival_government }
+		mutually_exclusive = { focus = XSI_loyalty }
 		#search_filters = {  FOCUS_FILTER_RESEARCH }
 		prerequisite = { focus =  XSI_city_communist focus =  XSI_city_anarchist focus =  XSI_city_democratic focus = XSI_city_neutrality }
 		completion_reward = {
-			
+			every_state = {
+				limit = {
+					is_core_of = CHI
+				}
+				add_core_of = ROOT
+			}
+			#Switch to dominant ideology or split into 2 focus
+			if = {
+				limit = {
+					OR = {
+						has_government = communism
+					}
+					NOT = { 
+						has_country_flag = XSI_anarchist_flag
+					}
+				}
+				load_focus_tree = china_communist_focus
+				set_cosmetic_tag = XSI_XWE_aligned_china
+			}
+			else_if= {
+				limit = {
+					has_government = democratic
+					NOT = {
+						has_country_flag = XSI_anarchist_flag
+					}
+				}
+				load_focus_tree = china_nationalist_focus
+				set_cosmetic_tag = XSI_democratic_china
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						has_country_flag = XSI_anarchist_flag
+					}
+				 }
+				load_focus_tree = china_nationalist_focus
+				set_cosmetic_tag = XSI_KMT_aligned_china
+			}
+			else = {
+				set_cosmetic_tag = XSI_ancom_china	
+			}
+			custom_effect_tooltip = CHL_skip_one_line_tt
+			CHI_no_longer_a_warlord_idea_removal = yes
+			custom_effect_tooltip = CHI_institute_cross_border_raids_effect_tooltip
+			set_country_flag = CHI_institute_cross_border_raids
+			set_country_flag = CHI_provoke_border_clashes
 		}
 	}
 	focus = {
@@ -545,8 +985,10 @@ focus_tree={
 		icon = GFX_goal_support_democracy
 		x = 3
 		y = 6
-		cost = 1
-
+		cost = 5
+		mutually_exclusive = { focus = XSI_free_shanghai }
+		mutually_exclusive = { focus = XSI_rival_government }
+		mutually_exclusive = { focus = XSI_loyalty }
 		#search_filters = {  FOCUS_FILTER_RESEARCH }
 		prerequisite = { focus = XSI_city_communist focus = XSI_city_anarchist focus = XSI_city_democratic focus = XSI_city_neutrality }
 		completion_reward = {
@@ -556,6 +998,8 @@ focus_tree={
 				popularity = 0.25
 			}
 			613 = { add_core_of = XSI }
+			custom_effect_tooltip = CHI_institute_cross_border_raids_effect_tooltip
+			set_country_flag = CHI_institute_cross_border_raids
 		}
 	}
 
@@ -566,7 +1010,7 @@ focus_tree={
 		x = 10
 		y = 1
 		cost = 1
-		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		search_filters = { FOCUS_FILTER_HISTORICAL }
 		prerequisite = { focus =  XSI_elections_focus }
 		available_if_capitulated = yes
 		available = {
@@ -584,11 +1028,11 @@ focus_tree={
 		x = 10
 		y = 3
 		cost = 5
-		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		search_filters = { FOCUS_FILTER_HISTORICAL }
 		prerequisite = { focus =  XSI_british_dominance }
 
 		completion_reward = {
-			
+			add_ideas = XSI_status_quo_idea
 		}
 	}
 	focus = {
@@ -600,6 +1044,10 @@ focus_tree={
 		#search_filters = {  FOCUS_FILTER_RESEARCH }
 		prerequisite = { focus =  XSI_chinese_investment focus =  XSI_foreign_investment focus = XSI_status_quo focus = XSI_capitalism }
 		completion_reward = {
+			custom_effect_tooltip = XSI_funds_tooltip_3
+			subtract_from_variable = {
+				XSI_funds = 1
+			}
 			add_research_slot = 1
 		}
 	}
@@ -609,10 +1057,20 @@ focus_tree={
 		x = 8
 		y = 4
 		cost = 5
-		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		search_filters = { FOCUS_FILTER_HISTORICAL }
 		prerequisite = { focus = XSI_status_quo }
 		completion_reward = {
-			
+			custom_effect_tooltip = XSI_funds_tooltip_4
+			add_to_variable = {
+				XSI_funds = 2
+			}
+			add_ideas = XSI_foreign_investment_idea
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = industry
+				name = XSI_foreign_investment_british_tech_name
+			}
 		}
 	}
 	focus = {
@@ -621,10 +1079,52 @@ focus_tree={
 		x = 10
 		y = 4
 		cost = 5
-		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		search_filters = { FOCUS_FILTER_HISTORICAL }
 		prerequisite = { focus = XSI_status_quo }
+		complete_tooltip = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}			
+		}
+
 		completion_reward = {
-			
+			custom_effect_tooltip = XSI_funds_tooltip_3
+			subtract_from_variable = {
+				XSI_funds = 1
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
 		}
 	}
 	focus = {
@@ -633,10 +1133,80 @@ focus_tree={
 		x = 12
 		y = 4
 		cost = 5
-		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		search_filters = { FOCUS_FILTER_HISTORICAL }
 		prerequisite = { focus = XSI_status_quo focus = XSI_ford }
+		complete_tooltip = {
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+		}
+
 		completion_reward = {
-			
+			custom_effect_tooltip = XSI_funds_tooltip_3
+			subtract_from_variable = {
+				XSI_funds = 1
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 0
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = infrastructure
+										size > 0
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 1
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = infrastructure
+										size > 1
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
 		}
 	}
 	focus = {
@@ -666,7 +1236,8 @@ focus_tree={
 		#search_filters = {  FOCUS_FILTER_RESEARCH }
 		prerequisite = { focus = XSI_american_dominance }
 		completion_reward = {
-			
+			add_ideas = XSI_international_city_idea
+			add_political_power = 100
 		}
 	}
 	focus = {
@@ -678,7 +1249,11 @@ focus_tree={
 		#search_filters = {  FOCUS_FILTER_RESEARCH }
 		prerequisite = { focus = XSI_international_city }
 		completion_reward = {
-			
+			custom_effect_tooltip = XSI_funds_tooltip_4
+			add_to_variable = {
+				XSI_funds = 2
+			}
+			add_ideas = XSI_ford_idea
 		}
 	}
 	focus = {
@@ -690,7 +1265,7 @@ focus_tree={
 		#search_filters = {  FOCUS_FILTER_RESEARCH }
 		prerequisite = { focus = XSI_international_city }
 		completion_reward = {
-			
+			add_ideas = XSI_american_immigration_idea
 		}
 	}
 	focus = {
@@ -701,8 +1276,50 @@ focus_tree={
 		cost = 5
 		#search_filters = {  FOCUS_FILTER_RESEARCH }
 		prerequisite = { focus = XSI_international_city }
+		complete_tooltip = {
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			}
+		}
+
 		completion_reward = {
-			
+			custom_effect_tooltip = XSI_funds_tooltip_3
+			subtract_from_variable = {
+				XSI_funds = 1
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 1
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
 		}
 	}
 	focus = {
@@ -714,11 +1331,13 @@ focus_tree={
 		mutually_exclusive = {
 			focus = XSI_economic_zone focus = XSI_international_china focus = XSI_pearl_of_the_orient
 		}
-		#search_filters = {  FOCUS_FILTER_RESEARCH }
+		search_filters = { FOCUS_FILTER_HISTORICAL }
 		prerequisite = { focus = XSI_rebuild_factories }
 		prerequisite = { focus = XSI_foreign_investment_british }
 		completion_reward = {
-			
+			custom_effect_tooltip = XSI_funds_tooltip_6
+			add_stability = 0.1
+			add_ideas = XSI_pearl_of_the_orient_idea
 		}
 	}
 	focus = {
@@ -734,7 +1353,113 @@ focus_tree={
 		prerequisite = { focus = XSI_rebuild_factories  focus = XSI_american_immigration}
 		prerequisite = { focus = XSI_foreign_investment_british focus = XSI_capitalism }
 		completion_reward = {
+			add_stability = -0.1
+			custom_effect_tooltip = XSI_funds_tooltip_6
+			set_cosmetic_tag = XSI_china
+			custom_effect_tooltip = XSI_international_china_tooltip
 			
+			custom_effect_tooltip = CHI_institute_cross_border_raids_effect_tooltip
+			set_country_flag = CHI_institute_cross_border_raids
+			set_country_flag = CHI_provoke_border_clashes
+
+			hidden_effect = {
+				every_state = {
+					limit = {
+						is_core_of = CHI
+					}
+					add_claim_by = XSI
+				}
+				add_ai_strategy = {
+					type = conquer
+					id = CHI
+					value = 100
+				}
+				add_ai_strategy = {
+					type = conquer
+					id = XBG
+					value = 100
+				}
+				add_ai_strategy = {
+					type = conquer
+					id = XMC
+					value = 100
+				}
+				add_ai_strategy = {
+					type = conquer
+					id = XSA
+					value = 100
+				}
+				add_ai_strategy = {
+					type = conquer
+					id = XSX
+					value = 100
+				}
+				add_ai_strategy = {
+					type = conquer
+					id = XSF
+					value = 100
+				}
+				add_ai_strategy = {
+					type = conquer
+					id = MEN
+					value = 100
+				}
+				add_ai_strategy = {
+					type = conquer
+					id = MAN
+					value = 100
+				}
+				add_ai_strategy = {
+					type = conquer
+					id = XQI
+					value = 100
+				}
+				add_ai_strategy = {
+					type = conquer
+					id = XWE
+					value = 100
+				}
+				add_ai_strategy = {
+					type = conquer
+					id = XWX
+					value = 100
+				}
+				add_ai_strategy = {
+					type = conquer
+					id = XYJ
+					value = 100
+				}
+				add_ai_strategy = {
+					type = conquer
+					id = XIS
+					value = 100
+				}
+				add_ai_strategy = {
+					type = conquer
+					id = XTN
+					value = 100
+				}
+				add_ai_strategy = {
+					type = conquer
+					id = XKM
+					value = 100
+				}
+				add_ai_strategy = {
+					type = conquer
+					id = XTI
+					value = 100
+				}
+				add_ai_strategy = {
+					type = conquer
+					id = XAF
+					value = 100
+				}
+				add_ai_strategy = {
+					type = conquer
+					id = XHK
+					value = 100
+				}
+			}
 		}
 	}
 	focus = {
@@ -750,7 +1475,8 @@ focus_tree={
 		prerequisite = {  focus = XSI_american_immigration}
 		prerequisite = { focus = XSI_capitalism }
 		completion_reward = {
-			
+			custom_effect_tooltip = XSI_funds_tooltip_6
+			add_ideas = XSI_economic_zone_idea
 		}
 	}
 	focus = {
@@ -765,7 +1491,12 @@ focus_tree={
 		#search_filters = {  FOCUS_FILTER_RESEARCH }
 		prerequisite = { focus = XSI_economic_zone focus = XSI_international_china focus = XSI_pearl_of_the_orient }
 		completion_reward = {
-			
+			add_ideas = XSI_chinese_representation_idea
+			add_stability = 0.05
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.05
+			}
 		}
 	}
 	focus = {
@@ -780,7 +1511,23 @@ focus_tree={
 		#search_filters = {  FOCUS_FILTER_RESEARCH }
 		prerequisite = { focus = XSI_economic_zone focus = XSI_international_china focus = XSI_pearl_of_the_orient }
 		completion_reward = {
-			
+			add_ideas = XSI_shanghai_profits_alt
+			every_country = {
+				limit = {
+					capital_scope = {
+						is_on_continent = europe
+					}
+					NOT = {
+						has_opinion_modifier = XSI_minor_benefactor
+						has_opinion_modifier = XSI_imperial_benefactor
+					}
+				}
+				add_opinion_modifier = {
+					target = PREV
+					modifier = XSI_friends_yay
+				}
+				add_ideas = XSI_shanghai_profits
+			}
 		}
 	}
 	focus = {
@@ -796,7 +1543,7 @@ focus_tree={
 		}
 		prerequisite = { focus = XSI_economic_zone focus = XSI_international_china focus = XSI_pearl_of_the_orient }
 		completion_reward = {
-			
+			add_ideas = XSI_control_the_council
 		}
 	}
 	#Japanese Branch#
@@ -828,7 +1575,7 @@ focus_tree={
 		prerequisite = { focus =  XSI_japanese_dominance }
 
 		completion_reward = {
-			
+			add_ideas = XSI_sphere_puppet_idea
 		}
 	}
 	focus = {
@@ -841,7 +1588,11 @@ focus_tree={
 		prerequisite = { focus =  XSI_japanese_dominance }
 
 		completion_reward = {
-			
+			custom_effect_tooltip = XSI_funds_tooltip_5
+			add_to_variable = {
+				XSI_funds = 4
+			}
+			custom_effect_tooltip = XSI_zaibatsu_tooltip
 		}
 	}
 	focus = {
@@ -854,7 +1605,7 @@ focus_tree={
 		prerequisite = { focus =  XSI_japanese_dominance }
 
 		completion_reward = {
-			
+			add_ideas = XSI_japanese_immigration_idea
 		}
 	}
 	focus = {
@@ -867,7 +1618,18 @@ focus_tree={
 		prerequisite = { focus =  XSI_japanese_dominance }
 
 		completion_reward = {
-			
+			add_popularity = {
+				ideology = neutrality
+				popularity = -0.20
+			}
+			add_popularity = {
+				ideology = democratic
+				popularity = -0.20
+			}
+			add_popularity = {
+				ideology = communism
+				popularity = -0.10
+			}
 		}
 	}
 	focus = {
@@ -883,7 +1645,18 @@ focus_tree={
 		prerequisite = { focus =  XSI_sphere_puppet }
 
 		completion_reward = {
-			
+			add_tech_bonus = {
+				category = infantry_tech
+				bonus = 0.5
+				uses = 2
+				name = XSI_IJA_tech_tt
+			}
+			add_tech_bonus = {
+				category = artillery
+				bonus = 0.5
+				uses = 2
+				name = XSI_IJA_tech_tt
+			}
 		}
 	}
 	focus = {
@@ -899,7 +1672,12 @@ focus_tree={
 		prerequisite = { focus =  XSI_sphere_puppet }
 
 		completion_reward = {
-			
+			add_tech_bonus = {
+				category = mio_cat_tech_all_submarine_and_modules 
+				bonus = 0.5
+				uses = 4
+				name = XSI_IJA_tech_tt
+			}
 		}
 	}
 	focus = {
@@ -913,8 +1691,76 @@ focus_tree={
 		prerequisite = { focus = XSI_japanese_immigration }
 		prerequisite = { focus = XSI_zaibatsu }
 
+		complete_tooltip = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+		}		
 		completion_reward = {
-			
+			add_ideas = XSI_pearl_of_the_east_idea
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
 		}
 	}
 	focus = {
@@ -933,7 +1779,73 @@ focus_tree={
 		}
 
 		completion_reward = {
-			
+			set_cosmetic_tag = XSI_JAP_aligned_zone
+			custom_effect_tooltip = XSI_security_zone_tooltip
+			hidden_effect = {
+				326 = {
+					add_core_of = XSI
+				}
+				591 = {
+					add_core_of = XSI
+				}
+				592 = {
+					add_core_of = XSI
+				}
+				593 = {
+					add_core_of = XSI
+				}
+				595 = {
+					add_core_of = XSI
+				}
+				596 = {
+					add_core_of = XSI
+				}
+				597 = {
+					add_core_of = XSI
+				}
+				598 = {
+					add_core_of = XSI
+				}
+				613 = {
+					add_core_of = XSI
+				}
+				728 = {
+					add_core_of = XSI
+				}
+				729 = {
+					add_core_of = XSI
+				}
+				743 = {
+					add_core_of = XSI
+				}
+				986 = {
+					add_core_of = XSI
+				}
+				987 = {
+					add_core_of = XSI
+				}
+				989 = {
+					add_core_of = XSI
+				}
+				990 = {
+					add_core_of = XSI
+				}
+				994 = {
+					add_core_of = XSI
+				}
+				995 = {
+					add_core_of = XSI
+				}
+				997 = {
+					add_core_of = XSI
+				}
+				999 = {
+					add_core_of = XSI
+				}
+				1000 = {
+					add_core_of = XSI
+				}
+			}
 		}
 	}
 	focus = {
@@ -952,7 +1864,43 @@ focus_tree={
 		}
 
 		completion_reward = {
-			
+			set_cosmetic_tag = XSI_JAP_aligned_zone_alt
+			JAP = {
+				country_event = XSI_diplo_event.11
+			}
+			320 = {
+				add_core_of = XSI
+			}
+			321 = {
+				add_core_of = XSI
+			}
+			326 = {
+				add_core_of = XSI
+			}
+			333 = {
+				add_core_of = XSI
+			}
+			336 = {
+				add_core_of = XSI
+			}
+			524 = {
+				add_core_of = XSI
+			}
+			609 = {
+				add_core_of = XSI
+			}
+			721 = {
+				add_core_of = XSI
+			}
+			729 = {
+				add_core_of = XSI
+			}
+			743 = {
+			add_core_of = XSI
+			}
+			745 = {
+				add_core_of = XSI
+			}
 		}
 	}
 }

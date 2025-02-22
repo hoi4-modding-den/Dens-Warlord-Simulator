@@ -121,11 +121,11 @@ characters = {
 	}
 	XSI_Commune = {
 		name = XSI_Commune 
-		#portraits = {
-			#civilian = {
-			#	large = gfx/XSI/commune_portrait.png
-			#}
-		#}
+		portraits = {
+			civilian = {
+				large = gfx/leaders/SPR/portrait_spr_anarchist_commune.dds
+			}
+		}
 		country_leader = {
 			ideology = anarchist_communism
 			expire = "9999.1.1.1"

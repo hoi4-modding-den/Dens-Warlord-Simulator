@@ -63,6 +63,32 @@ XSI_economy_tab = {
             }
         }
     }
+    XSI_collect_tax_income = {
+        allowed = {
+    	    tag = XSI
+    	}
+        available = {
+            OR = {
+                has_completed_focus = XSI_city_democratic
+                has_completed_focus = XSI_city_neutrality
+                has_completed_focus = XSI_city_communist
+                has_completed_focus = XSI_city_anarchist
+                has_completed_focus = XSI_pearl_of_the_orient
+                has_completed_focus = XSI_international_china
+                has_completed_focus = XSI_economic_zone
+            } 
+        }
+        days_re_enable = 365
+        
+        fire_only_once = no
+        
+        complete_effect = {
+            custom_effect_tooltip = XSI_funds_tooltip
+            add_to_variable = {
+               XSI_funds = 1
+            }
+        }
+    }
     XSI_take_out_loan = {
         allowed = {
     	    tag = XSI

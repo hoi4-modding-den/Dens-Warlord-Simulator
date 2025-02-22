@@ -198,6 +198,93 @@ country_event = { #lose economic safety idea
 		remove_ideas = XSI_economic_safety_idea
     }
 }
+country_event = { #communist takeover
+    id = XSI_natural_event.6
+    title = XSI.NE_6.t
+    # picture = GFX_report_event_DEN_celebration
+    desc = XSI.NE_6.d
+    is_triggered_only = yes
+	option = {
+        name = XSI.NE_6.a
+		ai_chance = {
+			base = 100
+		}
+		complete_national_focus = XSI_city_communist
+		set_politics = {
+			ruling_party = communism
+    		elections_allowed = no
+		}
+    }
+}
+country_event = { #kuomintang takeover
+    id = XSI_natural_event.7
+    title = XSI.NE_7.t
+    # picture = GFX_report_event_DEN_celebration
+    desc = XSI.NE_7.d
+    is_triggered_only = yes
+	option = {
+        name = XSI.NE_7.a
+		ai_chance = {
+			base = 100
+		}
+		complete_national_focus = XSI_city_neutrality
+		set_politics = {
+			ruling_party = neutrality
+    		elections_allowed = no
+		}
+    }
+}
+country_event = { #anarchist takeover
+    id = XSI_natural_event.8
+    title = XSI.NE_8.t
+    # picture = GFX_report_event_DEN_celebration
+    desc = XSI.NE_8.d
+    is_triggered_only = yes
+	option = {
+        name = XSI.NE_8.a
+		ai_chance = {
+			base = 100
+		}
+		complete_national_focus = XSI_city_anarchist
+		promote_character = {
+			character = XSI_Commune
+			ideology = anarchist_communism
+		}
+		set_politics = {
+			ruling_party = communism
+    		elections_allowed = no
+		}
+		set_cosmetic_tag = XSI_ancom
+		set_country_flag = XSI_anarchist_flag
+    }
+}
+country_event = { #puppet notification
+    id = XSI_natural_event.9
+    title = XSI.NE_9.t
+    # picture = GFX_report_event_DEN_celebration
+    desc = XSI.NE_9.d
+    is_triggered_only = yes
+	option = {
+        name = XSI.NE_9.a
+		ai_chance = {
+			base = 100
+		}
+    }
+}
+country_event = { #Japanese pushed out of Hongkou
+    id = XSI_natural_event.10
+    title = XSI.NE_10.t
+    # picture = GFX_report_event_DEN_celebration
+    desc = XSI.NE_10.d
+    is_triggered_only = yes
+	option = {
+        name = XSI.NE_10.a
+		ai_chance = {
+			base = 100
+		}
+		remove_ideas = XSI_japanese_occupation_zone
+    }
+}
 
 #Focus Events# (events from focuses)
 country_event = { #Replacing Chén Jiè, occurs 7 days after selecting starting focus
@@ -1173,7 +1260,70 @@ country_event = { #China Denies
 	}
 }
 
+country_event = { #event for Japan to hand over new core territory
+	id = XSI_diplo_event.11
+	title = XSI.DE_.11.t
+	desc = XSI.DE_.11.d
+	#picture = GFX_report_event_degaulle_churchill
 
+	is_triggered_only = yes
+	
+	option = {
+		name = XSI.DE_.11.a
+		if = {
+			limit = { owns_state = 745 }
+			XSI = {
+				transfer_state = 745
+			}
+		}
+		if = {
+			limit = { owns_state = 609 }
+			XSI = {
+				transfer_state = 609
+			}
+		}
+		if = {
+			limit = { owns_state = 524 }
+			XSI = {
+				transfer_state = 524
+			}
+		}
+
+		FROM = { country_event = { id = XSI_diplo_event.12} }
+	}
+	
+	option = {
+		name = XSI.DE_.11.b
+		ai_chance = { base = 0 } #should always accept, what would be the point otherwise?
+		FROM = { 
+			country_event = { id = XSI_diplo_event.10 }
+		}
+	}
+}
+country_event = { #Japan Accepts
+	id = XSI_diplo_event.12
+	title = XSI.DE_.12.t
+	desc = XSI.DE_.12.d
+	#picture = GFX_report_event_degaulle_churchill
+
+	is_triggered_only = yes
+	
+	option = {
+		name = XSI.DE_.12.a
+		custom_effect_tooltip = XSI_transferred_territory
+	}
+}
+country_event = { #Japan Denies
+	id = XSI_diplo_event.13
+	title = XSI.DE_.13.t
+	desc = XSI.DE_.13.d
+	#picture = GFX_report_event_degaulle_churchill
+
+	is_triggered_only = yes
+	option = {
+		name = XSI.DE_.13.a
+	}
+}
 
 
 

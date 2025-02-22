@@ -143,7 +143,9 @@ bookmarks = {
 				XSI_white_terror
 			}
 			focuses = {
-				
+				XSI_free_shanghai
+				XSI_international_china
+				XSI_security_zone
 			}
 		}
 		"XWX"={
