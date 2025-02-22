@@ -21,7 +21,9 @@ recruit_character = XSI_Liddell
 recruit_character = XSI_Xiwen
 recruit_character = XSI_Okazaki
 recruit_character = XSI_Shushi
+recruit_character = XSI_Yanpei 
 recruit_character = XSI_Tiecheng
+recruit_character = XSI_Huang 
 recruit_character = XSI_Commune
 recruit_character = CHI_alexander_von_falkenhausen_army_chief 
 

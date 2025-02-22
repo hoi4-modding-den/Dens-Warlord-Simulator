@@ -197,5 +197,21 @@ ideas = {
 				political_power_factor = 0.1
 			}
 		}
+		XSI_economic_safety_idea = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = ARG_civilian_economy_boost
+			modifier = {
+				consumer_goods_factor = -0.1
+				production_speed_buildings_factor = 0.25
+				industrial_capacity_factory = 0.25
+				custom_modifier_tooltip = XSI_economic_safety_idea_tooltip
+			}
+		}
 	}
 }

@@ -35,6 +35,19 @@ on_actions = {
 			}
 			if = {
 				limit = {
+					has_idea = XSI_broke
+					check_variable = {
+						XSI_funds > -1
+					}
+					
+				}
+				swap_ideas = {
+					remove_idea = XSI_broke
+					add_idea = XSI_broke_recovering
+				}
+			}
+			if = {
+				limit = {
 					has_idea = XSI_broke_oops
 					check_variable = {
 						XSI_funds > -3 
@@ -44,6 +57,40 @@ on_actions = {
 					remove_idea = XSI_broke_oops
 					add_idea = XSI_broke
 				}
+			}
+			if = {
+				limit = {
+					has_idea = XSI_broke_recovering
+					check_variable = {
+						XSI_funds < 0
+					}
+				}
+				swap_ideas = {
+					remove_idea = XSI_broke_recovering
+					add_idea = XSI_broke
+				}
+			}
+			if = {
+				limit = {
+					has_idea = XSI_broke_recovering
+					check_variable = {
+						XSI_funds > 2
+					}
+				}
+				remove_ideas = XSI_broke_recovering
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_idea = XSI_broke_recovering
+						has_idea = XSI_broke
+						has_idea = XSI_broke_oops
+					}
+					check_variable = {
+						XSI_funds < 3
+					}
+				}
+				add_ideas = XSI_broke_recovering
 			}
 		}
 	}
@@ -59,6 +106,14 @@ on_actions = {
 					}
 				}
 				XSI = { country_event = { id = XSI_natural_event.4 days = 1 } }
+			}
+		}
+	}
+	on_war = {
+		effect = {
+			if = {
+				limit = { tag = XSI has_war = yes  }
+				country_event = XSI_natural_event.5
 			}
 		}
 	}

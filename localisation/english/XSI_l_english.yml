@@ -14,7 +14,7 @@
  XSI_fascism_DEF:0 "the Shanghai National State"
  XSI_fascism_party: "Japanese Army"
  XSI_fascism_party_long: "Shanhai-haken-gun"
- XSI_YCP:0 "YCP"
+ XSI_YCP:0 "CYP" #didn't realize until later that it's appreviated CYP in Chinese, not YCP
  XSI_YCP_full:0 "Young China Party"
  XSI_democratic:0 "Republic of Shanghai"
  XSI_democratic_DEF:0 "the Republic of Shanghai"
@@ -86,6 +86,8 @@
  XSI_Xiwen:0 "Su Xiwen" #Chinese collaborationist leader of Great Way Shanghai
  XSI_Shushi:0 "Rao Shushi" #communist mayor of Shanghai in 1949
  XSI_Tiecheng:0 "Wu Tiecheng" #mayor of non-international Shanghai in 1936
+ XSI_Yanpei:0 "Huang Yanpei" #founding chairman of the CDL, active Shanghainese politician in the 1930s
+ XSI_Huang:0 "Li Huang" #leader of the Young China Party, I think?
  XSI_Commune:0 "Anarchist Commune"
  #traits
  XSI_occult_embezzler:0 "Corrupt Cultist"
@@ -113,6 +115,8 @@
  XSI_broke_recovering:0 "We have taken efforts to restabilize our budget. While this will upset taxpayers, it is necessary to ensure the stability of our government."
  XSI_debt_payments:0 "Repaying Shanghai Debt"
  XSI_general_strike:0 "Ongoing General Strike"
+ XSI_economic_safety_idea:0 "Economic Security"
+ XSI_economic_safety_idea_tooltip:0 "§RThis idea will be removed if we end up at war§W"
  #political
  XSI_universal_suffrage_idea:0 "True Shanghai Democracy"
  
@@ -127,6 +131,7 @@
  XSI_join_united_front_desc:0 ""
  XSI_prepare_for_war:0 "Prepare for the Inevitable"
  XSI_prepare_for_war_desc:0 ""
+ XSI_prepare_for_war_tooltip:0 "Prepare for the Inevitable"
  XSI_join_allies:0 "Petition the British for Protection"
  XSI_join_allies_desc:0 ""
  XSI_volunteer_forces:0 "International Volunteer Force"
@@ -259,6 +264,9 @@
  XSI.NE_4.t:0 "End of the Refuge"
  XSI.NE_4.d:0 "Prior to the Japanese takeover, Shanghai effectively had no restrictions on immigration, allowing anyone to move here, provided that they could get out of their home country. However, this has changed, as the Japanese government, seeking to legitimize the country and seek favor with other fascist nations, has implemented immigration restrictions on us. While the people who moved here can stay, this puts an end to our status as a ‘safe-haven’, and paves the path forward for increased discrimination at a later date."  
  XSI.NE_4.a:0 "So much for that"
+ XSI.NE_5.t:0 "Loss of economic security"
+ XSI.NE_5.d:0 "With the outbreak of war in our country, investors have lost confidence in our government. The sole purpose of investing in Shanghai was to create a economic safe-haven from the war in China, but now that we're involved, we cannot reap the benefits of peace anymore."
+ XSI.NE_5.a:0 "But, but, line go up..."
  #election lead-up
  XSI_historical_tooltip:0 "§gThis is the historical option for Shanghai§W"
  XSI_china_anger_tooltip:0 "§RThis will upset the §8Chinese §Rmembers of the council§W"
@@ -341,7 +349,7 @@
  XSI.FE_19.d:0 "On [GetDateText], the Japanese cruiser Izumo, upon arriving in the river Huangpu, fired on Shanghai. Japanese forces marched into the city center, dispersing crowds and firing on civilians. The crowds were larger than expected, but could not stand up to the bombardment of artillery. After several hours of what can only be described as a massacre, the general strike has been crushed. While it will take some time to fully raid any remaining hideouts, the situation has been stabilized, at the cost of a lot of blood.\n\nAlready, the Japanese have made demands for us, notably, the expansion of the council to add 8 more Japanese members, and the replacement of the chairman with a Japanese council member. While this effectively makes us a Japanese puppet state, there is nothing we can do about this. After all, we’re the ones who asked them in."
  XSI.FE_19.a:0 "Deal with the devil, and the devil takes your soul"
  XSI.FE_20.t:0 "The Dissolution of the International Settlement"
- XSI.FE_20.d:0 "Created in 1863 from the merger of the British and American concessions of Shanghai, the Shanghai International Settlement was officially dissolved as of [GetDateText]. The council has been dissolved, and its foreign members have returned to their home countries. While some Japanese forces attempted to fight against the protestors, they were outnumbered, and were forced to leave via cruiser. Shanghai is now, once again, Chinese.\n\nThe disparate groups that made up the strike have coalesced into the offices of the former municipal council. While not in agreement in nearly everything, the groups involved are simply too disorganized to strike against each other. Gradually, several parties came into being, the main one being the newly formed ‘‘China Democratic League’’ (CDL), created out of the remnants of the Chinese Peasants' and Workers' Democratic Party, the Productive People's Party, and other minor left-democratic parties. On the far left, the Communist Party of China (CPC) has returned from exile, and gathered most of the Marxist-Leninists of the city. On the right-wing, the Kuomintang (KMT) have firmly established themselves as the primary opposition party of Shanghai. Lastly, the Young China Party (YCP), while very minor in support, has made itself known, primarily through its most extreme members, who have expressed a fiercely nationalist and anti-communist message. It seems that, for the time being, Shanghai may get its first taste of democracy, though it seems unlikely that the city will not inevitably face a purge in the future..."
+ XSI.FE_20.d:0 "Created in 1863 from the merger of the British and American concessions of Shanghai, the Shanghai International Settlement was officially dissolved as of [GetDateText]. The council has been dissolved, and its foreign members have returned to their home countries. While some Japanese forces attempted to fight against the protestors, they were outnumbered, and were forced to leave via cruiser. Shanghai is now, once again, Chinese.\n\nThe disparate groups that made up the strike have coalesced into the offices of the former municipal council. While not in agreement in nearly everything, the groups involved are simply too disorganized to strike against each other. Gradually, several parties came into being, the main one being the newly formed ‘‘China Democratic League’’ (CDL), created out of the remnants of the Chinese Peasants' and Workers' Democratic Party, the Productive People's Party, and other minor left-democratic parties. On the far left, the Communist Party of China (CPC) has returned from exile, and gathered most of the Marxist-Leninists of the city. On the right-wing, the Kuomintang (KMT) have firmly established themselves as the primary opposition party of Shanghai. Lastly, the Young China Party (CYP), while very minor in support, has made itself known, primarily through its most extreme members, who have expressed a fiercely nationalist and anti-communist message. It seems that, for the time being, Shanghai may get its first taste of democracy, though it seems unlikely that the city will not inevitably face a purge in the future..."
  XSI.FE_20.a:0 "A communist, a centrist, and a fascist walk into a bar..."
  XSI_FE.X.t:0 "The Unthinkable Option"
  XSI_FE.X.d:0 "UNLEASE THE POLAR BEARS!!!!!"
@@ -363,7 +371,6 @@
  XSI_WE.5.t:0 "The Shanghai International Settlement is Disbanded"
  XSI_WE.5.d:0 "The Shanghai International Settlement, after 73 years of existence, has officially been dissolved by the council in the face of massive unrest. A dispute between the municipal council and its Chinese members had apparently escalated into a full blown general strike against the very existence of the Shanghai International Settlement. The new government of Shanghai has elected to establish a democratic republic, currently under the leadership of the newly formed ‘China Democratic League’. Time will tell if the new democracy will last."
  XSI_WE.5.a:0 "China and Democracy is like oil and water"
- 
  #diplo
  XSI_diplo_event.1.t:0 "[XSI.GetName] seeks to join the [XSI_faction_name]"
  XSI_diplo_event.1.d:0 "The Shanghai International Settlement, one of our colonial projects in China, has been effectively self-governing for some time now, but remains predominantly a British project, with British council members holding a plurality of seats. However, fears of an imminent war with the Japanese have pushed the settlement to see outside support. The municipal government has requested that we bring them into our military alliance, so as to dissuade a Japanese invasion of the city. While this would protect our interests in the region, and give us a valuable port city to extend our military influence, this risks potentially bringing us into a war with the Japanese or Chinese governments in the near future, perhaps too near for us to feasibly prepare for."
@@ -379,7 +386,26 @@
  XSI_DE.4.d:0 "In a clear violation of our national interests, [JAP.GetNameDef] has taken over the government of Shanghai, repatriating our council members and replacing the council with a hostile collaboration government. Our advisors recommend harsh punitive measures, in order to pressure Japan to end their expansionism."
  XSI_DE.4.a:0 "It's like they don't think we're here"
  XSI_DE.4.b:0 "Shanghai isn't worth it"
- 
+ XSI.DE_5.t:0 "[XSI.GetName] requests guarentees"
+ XSI.DE_5.d:0 "Shanghai, having recently faced unrest due to interference in their elections from other East Asian nations, has requested that we guarentee their independence, so as to avoid getting involved in any wars in East Asia. Naturally if they do get involved, we will be drawn into the conflict, but considering that the government of Shanghai is currently dominated by American interests, we have an obligation to protect our own citizens."
+ XSI.DE_5.a:0 "Who are we if we don't protect our own?"
+ XSI.DE_5.b:0 "We can't afford to risk a land war in Asia"
+ XSI.DE_6.t:0 "[USA.GetName] guarentees us"
+ XSI.DE_6.d:0 "[USA.GetNameDef] has agreed to guarentee our independence. They will come to our aid if we are invaded."
+ XSI.DE_6.a:0 "Cool and good"
+ XSI.DE_7.t:0 "[USA.GetName] refuses to guarentee us"
+ XSI.DE_7.d:0 "[USA.GetNameDef] has refused to protect us, citing a lack of desire to get involved in any conflicts in East Asia at this time."
+ XSI.DE_7.a:0 "wadda hell"
+ XSI.DE_8.t:0 "[XSI.GetName] requests to join our faction"
+ XSI.DE_8.d:0 "A representative from [XSI.GetName] has arrived today, requesting for [XSI.GetName] to officially join our military alliance. While small, Shanghai is a major industrial city, and it would be in our best interests to make sure it remains out of Japanese hands."
+ XSI.DE_8.a:0 "Welcome to the fray"
+ XSI.DE_8.b:0 "Don't you have something better to be doing?"
+ XSI.DE_9.t:0 "[CHI.GetFactionName] accepts our offer to join"
+ XSI.DE_9.d:0 "The leader of the [CHI.GetFactionName] has accepted our offer to join their faction. We are now fighting to keep Asia out of the hands of the Japanese."
+ XSI.DE_9.a:0 "Good"
+ XSI.DE_10.t:0 "[CHI.GetFactionName] rejects our offer to join"
+ XSI.DE_10.d:0 "Despite our efforts to appease them, the leader of the [CHI.GetFactionName] has rejected us from joining their faction."
+ XSI.DE_10.a:0 "Thrown to the wolves..."
  ###decisions###
  XSI_economy_tab:0 "Economic Status"
  XSI_economy_tab_desc:0 "\n\nFunds Available: [?XSI_funds]"

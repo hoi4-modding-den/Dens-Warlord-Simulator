@@ -76,14 +76,47 @@ characters = {
 			ideology = marxism
 			expire = "1975.1.1.1"
 			id = -1
+			traits = {
+				international_revolutionary
+			}
+		}
+	}
+	XSI_Yanpei = {
+		name = XSI_Yanpei
+		portraits = {
+			civilian = {
+				large = gfx/leaders/CHI/Portrait_China_weng_wenhao.dds
+			}
+		}
+		country_leader = {
+			ideology = socialism
+			expire = "1965.12.21.1"
+			id = -1
+			traits = {
+				liberal_professor 
+			}
 		}
 	}
 	XSI_Tiecheng = {
 		name = XSI_Tiecheng
 		country_leader = {
-			ideology = conservatism
+			ideology = despotism
 			expire = "1953.11.19.1"
 			id = -1
+			traits = {
+				anti_communist 
+			}
+		}
+	}
+	XSI_Huang = {
+		name = XSI_Huang 
+		country_leader = {
+			ideology = fascism_ideology
+			expire = "1991.11.15.1"
+			id = -1
+			traits = {
+				fascism_ideology
+			}
 		}
 	}
 	XSI_Commune = {
@@ -97,6 +130,9 @@ characters = {
 			ideology = anarchist_communism
 			expire = "9999.1.1.1"
 			id = -1
+			traits = {
+				anarcho_communist_council 
+			}
 		}
 	}
 }

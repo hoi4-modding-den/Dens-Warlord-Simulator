@@ -184,6 +184,20 @@ country_event = { #japanese restrict ghetto
 		remove_ideas = XSI_safe_place
     }
 }
+country_event = { #lose economic safety idea
+    id = XSI_natural_event.5
+    title = XSI.NE_5.t
+    # picture = GFX_report_event_DEN_celebration
+    desc = XSI.NE_5.d
+    is_triggered_only = yes
+	option = {
+        name = XSI.NE_5.a
+		ai_chance = {
+			base = 100
+		}
+		remove_ideas = XSI_economic_safety_idea
+    }
+}
 
 #Focus Events# (events from focuses)
 country_event = { #Replacing Chén Jiè, occurs 7 days after selecting starting focus
@@ -784,6 +798,12 @@ country_event = { #chinese takeover
 			base = 100
 		}
 		complete_national_focus = XSI_chinese_dominance
+		set_power_balance = {
+			id = XSI_democratic_balance
+			left_side = XSI_communist_side
+			right_side = XSI_neutrality_side
+		}
+		
 		if = {
 			limit = {
 				NOT = {
@@ -816,6 +836,14 @@ country_event = { #chinese takeover
 			ideology = communism
 			name = XSI_CPC
 			long_name = XSI_communism_party_long
+		}
+		promote_character = {
+			character = XSI_Tiecheng
+			ideology = despotism
+		}
+		promote_character = {
+			character = XSI_Huang
+			ideology = fascism_ideology
 		}
 		
 		hidden_effect = {
@@ -931,18 +959,15 @@ news_event = { #Japanese violent takeover news event
 }
 news_event = { #dissolve colonialism
 	id = XSI_news_event.5
-	title = XSI_WE.4.t
-	desc = XSI_WE.4.d
-	picture = GFX_news_event_kiev_ruins
+	title = XSI_WE.5.t
+	desc = XSI_WE.5.d
+	picture = GFX_news_event_indonesia_handover
 
 	is_triggered_only = yes
 	major = yes
 	option = {
-		name = XSI_WE.4.a
-		add_opinion_modifier = {
-			target = JAP
-			modifier = XSI_butcher
-		}
+		name = XSI_WE.5.a
+
 	}
 }
 
@@ -1032,8 +1057,121 @@ country_event = { #event for Britain and America to embargo Japan for occupying 
 		}
 	}
 }
+country_event = { #event for gaining guarentees from the US
+	id = XSI_diplo_event.5
+	title = XSI.DE_5.t
+	desc = XSI.DE_5.d
+	#picture = GFX_report_event_degaulle_churchill
 
+	is_triggered_only = yes
+	
+	option = {
+		name = XSI.DE_5.a
+		give_guarantee = XSI
+		FROM = {
+			add_ai_strategy = {
+				type = alliance
+				id = "USA"
+				value = 200
+			}
+		}
+		FROM = { country_event = { id = XSI_diplo_event.6} }
+	}
+	
+	option = {
+		name = XSI.DE_5.b
+		ai_chance = { base = 0 } #should always accept, what would be the point otherwise?
+		FROM = { 
+			country_event = { id = XSI_diplo_event.7 }
+		}
+	}
+}
+country_event = { #America Accepts
+	id = XSI_diplo_event.6
+	title = XSI.DE_6.t
+	desc = XSI.DE_6.d
+	#picture = GFX_report_event_degaulle_churchill
 
+	is_triggered_only = yes
+	
+	option = {
+		name = XSI.DE_6.a
+		set_variable = {
+			XSI_in_allies = true
+		}
+	}
+}
+country_event = { #America Denies
+	id = XSI_diplo_event.7
+	title = XSI.DE_7.t
+	desc = XSI.DE_7.d
+	#picture = GFX_report_event_degaulle_churchill
+
+	is_triggered_only = yes
+	
+	option = {
+		name = XSI.DE_7.a
+	}
+}
+country_event = { #event for whoever leads Chinese United Front for Shanghai to join the Chinese United Front
+	id = XSI_diplo_event.8
+	title = XSI.DE_.8.t
+	desc = XSI.DE_.8.d
+	#picture = GFX_report_event_degaulle_churchill
+
+	is_triggered_only = yes
+	
+	option = {
+		name = XSI.DE_.8.a
+		add_to_faction = FROM
+		FROM = {
+			add_ai_strategy = {
+				type = alliance
+				id = "CHI"
+				value = 200
+			}
+		}
+		FROM = { country_event = { id = XSI_diplo_event.9} }
+	}
+	
+	option = {
+		name = XSI.DE_.8.b
+		ai_chance = { base = 0 } #should always accept, what would be the point otherwise?
+		FROM = { 
+			add_opinion_modifier = {
+				target = ROOT
+				modifier = FRA_go_with_britain_reject
+			}
+			country_event = { id = XSI_diplo_event.10 }
+		}
+	}
+}
+country_event = { #China Accepts
+	id = XSI_diplo_event.9
+	title = XSI.DE_.9.t
+	desc = XSI.DE_.9.d
+	#picture = GFX_report_event_degaulle_churchill
+
+	is_triggered_only = yes
+	
+	option = {
+		name = XSI.DE_.9.a
+		set_variable = {
+			XSI_in_united_front = true
+		}
+	}
+}
+country_event = { #China Denies
+	id = XSI_diplo_event.10
+	title = XSI.DE_.10.t
+	desc = XSI.DE_.10.d
+	#picture = GFX_report_event_degaulle_churchill
+
+	is_triggered_only = yes
+	option = {
+		name = XSI.DE_.10.a
+	}
+}
 
 
 

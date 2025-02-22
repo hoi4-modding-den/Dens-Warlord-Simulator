@@ -73,16 +73,27 @@ focus_tree={
 		cost = 5
 		#search_filters = {  FOCUS_FILTER_RESEARCH }
 		prerequisite = { focus =  XSI_chinese_dominance  focus = XSI_british_dominance }
-		mutually_exclusive = { focus = XSI_join_united_front }
-		mutually_exclusive = { focus = XSI_join_allies }
 		available = {
 			any_country = {
 				is_faction_leader = yes
 				DEN_is_chinese_country = yes
 			}
+			NOT = {
+				is_in_faction = yes
+			}
 		}
 		completion_reward = {
-			
+			if = {
+				limit = { 
+					any_country = {
+						is_faction_leader = yes
+						DEN_is_chinese_country = yes
+					}
+				}
+				PREV = {
+					country_event = XSI_diplo_event.8
+				}
+			}
 		}
 	}
 	focus = {
@@ -100,7 +111,12 @@ focus_tree={
 			}
 		}
 		completion_reward = {
-			
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = infantry_tech
+				name = XSI_prepare_for_war_tooltip
+			}
 		}
 	}
 
@@ -119,10 +135,9 @@ focus_tree={
 			}
 			NOT = {
 				has_idea = neutrality_idea
+				is_in_faction = yes
 			}
 		}
-		mutually_exclusive = { focus = XSI_join_united_front }
-		mutually_exclusive = { focus = XSI_join_allies }
 		completion_reward = {
 			if = {
 				limit = { ENG = { is_faction_leader = yes } }
@@ -177,6 +192,7 @@ focus_tree={
 				add_ideas = neutrality_idea
 			}
 			add_political_power = 150
+			add_stability = 0.5
 		}
 	}
 	focus = {
@@ -195,7 +211,9 @@ focus_tree={
 		mutually_exclusive = { focus = XSI_neutrality_focus }
 		mutually_exclusive = { focus = XSI_american_guarentees }
 		completion_reward = {
-			
+			USA = {
+				country_event = XSI_diplo_event.5
+			}
 		}
 	}
 	focus = {
@@ -210,7 +228,8 @@ focus_tree={
 
 		}
 		completion_reward = {
-			
+			add_ideas = XSI_economic_safety_idea
+			custom_effect_tooltip =  XSI_economic_safety_idea_tooltip
 		}
 	}
 
