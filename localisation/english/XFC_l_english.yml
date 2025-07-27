@@ -28,7 +28,7 @@ XFC_FRA_subject:0 "French Indochina"
  XFC_fascism_party_long:0 "New Emperor's Party"
 
 #Communism
- XFC_communism:0 ""
+ XFC_communism:0 "People's Republic of Indochina"
  XFC_communism_DEF:0 "People's Democratic Republic of Indochina"
 
  XFC_communism_party:0 "CPI"
